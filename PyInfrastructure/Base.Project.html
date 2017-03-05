@@ -1,0 +1,1324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Base.Project &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Base.Project</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Base.Project.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Base.Project">
+<span id="base-project"></span><h1>Base.Project<a class="headerlink" href="#module-Base.Project" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Base.Project.FileTypes" title="Base.Project.FileTypes"><code class="xref py py-class docutils literal"><span class="pre">FileTypes</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.Environment" title="Base.Project.Environment"><code class="xref py py-class docutils literal"><span class="pre">Environment</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="ToolChain.html#module-ToolChain" title="ToolChain"><code class="xref py py-class docutils literal"><span class="pre">ToolChain</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#Base.Project.Tool" title="Base.Project.Tool"><code class="xref py py-class docutils literal"><span class="pre">Tool</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#Base.Project.VHDLVersion" title="Base.Project.VHDLVersion"><code class="xref py py-class docutils literal"><span class="pre">VHDLVersion</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#Base.Project.Project" title="Base.Project.Project"><code class="xref py py-class docutils literal"><span class="pre">Project</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.FileSet" title="Base.Project.FileSet"><code class="xref py py-class docutils literal"><span class="pre">FileSet</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.VHDLLibrary" title="Base.Project.VHDLLibrary"><code class="xref py py-class docutils literal"><span class="pre">VHDLLibrary</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.File" title="Base.Project.File"><code class="xref py py-class docutils literal"><span class="pre">File</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.ProjectFile" title="Base.Project.ProjectFile"><code class="xref py py-class docutils literal"><span class="pre">ProjectFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.ConstraintFile" title="Base.Project.ConstraintFile"><code class="xref py py-class docutils literal"><span class="pre">ConstraintFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.SettingsFile" title="Base.Project.SettingsFile"><code class="xref py py-class docutils literal"><span class="pre">SettingsFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.SourceFile" title="Base.Project.SourceFile"><code class="xref py py-class docutils literal"><span class="pre">SourceFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.VHDLSourceFile" title="Base.Project.VHDLSourceFile"><code class="xref py py-class docutils literal"><span class="pre">VHDLSourceFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.VerilogSourceFile" title="Base.Project.VerilogSourceFile"><code class="xref py py-class docutils literal"><span class="pre">VerilogSourceFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.PythonSourceFile" title="Base.Project.PythonSourceFile"><code class="xref py py-class docutils literal"><span class="pre">PythonSourceFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Base.Project.CocotbSourceFile" title="Base.Project.CocotbSourceFile"><code class="xref py py-class docutils literal"><span class="pre">CocotbSourceFile</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="Base.Project.FileTypes">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">FileTypes</code><a class="reference internal" href="../_modules/Base/Project.html#FileTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.FileTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-24ef260398cceb909026ba1a900cc0a4a285d8d3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FileTypes</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Project.FileTypes.Extension">
+<code class="descname">Extension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#FileTypes.Extension"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.FileTypes.Extension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileTypes._FlagsArithmeticMixin__bits">
+<code class="descname">_FlagsArithmeticMixin__bits</code><a class="headerlink" href="#Base.Project.FileTypes._FlagsArithmeticMixin__bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes._FlagsArithmeticMixin__create_flags_instance">
+<code class="descname">_FlagsArithmeticMixin__create_flags_instance</code><span class="sig-paren">(</span><em>bits</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes._FlagsArithmeticMixin__create_flags_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes._Flags__internal_str">
+<code class="descname">_Flags__internal_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes._Flags__internal_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes.bits_from_simple_str">
+<code class="descname">bits_from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes.bits_from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes.bits_from_str">
+<code class="descname">bits_from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes.bits_from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the output of __str__ into an integer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileTypes.data">
+<code class="descname">data</code><a class="headerlink" href="#Base.Project.FileTypes.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes.from_simple_str">
+<code class="descname">from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes.from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts only the output of to_simple_str(). The output of __str__() is invalid as input.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes.from_str">
+<code class="descname">from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes.from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts both the output of to_simple_str() and __str__().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes.is_disjoint">
+<code class="descname">is_disjoint</code><span class="sig-paren">(</span><em>*flags_instances</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes.is_disjoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileTypes.is_member">
+<code class="descname">is_member</code><a class="headerlink" href="#Base.Project.FileTypes.is_member" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>flags.is_member</cite> is a shorthand for <cite>flags.properties is not None</cite>.
+If this property is False then this Flags instance has either zero bits or holds a combination
+of flag member bits.
+If this property is True then the bits of this Flags instance match exactly the bits associated
+with one of the members. This however doesn&#8217;t necessarily mean that this flag instance isn&#8217;t a
+combination of several flags because the bits of a member can be the subset of another member.
+For example if member0_bits=0x1 and member1_bits=0x3 then the bits of member0 are a subset of
+the bits of member1. If a flag instance holds the bits of member1 then Flags.is_member returns
+True and Flags.properties returns the properties of member1 but __len__() returns 2 and
+__iter__() yields both member0 and member1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileTypes.name">
+<code class="descname">name</code><a class="headerlink" href="#Base.Project.FileTypes.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileTypes.properties">
+<code class="descname">properties</code><a class="headerlink" href="#Base.Project.FileTypes.properties" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns None if this flag isn&#8217;t an exact member of a flags class but a combination of flags,</td>
+</tr>
+</tbody>
+</table>
+<p>returns an object holding the properties (e.g.: name, data, index, ...) of the flag otherwise.
+We don&#8217;t store flag properties directly in Flags instances because this way Flags instances that are
+the (temporary) result of flags arithmetic don&#8217;t have to maintain these fields and it also has some
+benefits regarding memory usage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileTypes.to_simple_str">
+<code class="descname">to_simple_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.FileTypes.to_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.Environment">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">Environment</code><a class="reference internal" href="../_modules/Base/Project.html#Environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e172c5a088e6503688d9d0bbaec09e82c1eec386.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Environment</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.Environment.Any">
+<code class="descname">Any</code><em class="property"> = 0</em><a class="headerlink" href="#Base.Project.Environment.Any" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Environment.Simulation">
+<code class="descname">Simulation</code><em class="property"> = 1</em><a class="headerlink" href="#Base.Project.Environment.Simulation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Environment.Synthesis">
+<code class="descname">Synthesis</code><em class="property"> = 2</em><a class="headerlink" href="#Base.Project.Environment.Synthesis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.ToolChain">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">ToolChain</code><a class="reference internal" href="../_modules/Base/Project.html#ToolChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.ToolChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6f42d1d7d0c3e9d40beb872d37ea31b3cf271efa.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ToolChain</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Any">
+<code class="descname">Any</code><em class="property"> = 0</em><a class="headerlink" href="#Base.Project.ToolChain.Any" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Aldec_ActiveHDL">
+<code class="descname">Aldec_ActiveHDL</code><em class="property"> = 10</em><a class="headerlink" href="#Base.Project.ToolChain.Aldec_ActiveHDL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Aldec_RivieraPRO">
+<code class="descname">Aldec_RivieraPRO</code><em class="property"> = 15</em><a class="headerlink" href="#Base.Project.ToolChain.Aldec_RivieraPRO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Altera_Quartus">
+<code class="descname">Altera_Quartus</code><em class="property"> = 20</em><a class="headerlink" href="#Base.Project.ToolChain.Altera_Quartus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Altera_ModelSim">
+<code class="descname">Altera_ModelSim</code><em class="property"> = 21</em><a class="headerlink" href="#Base.Project.ToolChain.Altera_ModelSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Cocotb">
+<code class="descname">Cocotb</code><em class="property"> = 30</em><a class="headerlink" href="#Base.Project.ToolChain.Cocotb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.GHDL_GTKWave">
+<code class="descname">GHDL_GTKWave</code><em class="property"> = 40</em><a class="headerlink" href="#Base.Project.ToolChain.GHDL_GTKWave" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Intel_Quartus">
+<code class="descname">Intel_Quartus</code><em class="property"> = 50</em><a class="headerlink" href="#Base.Project.ToolChain.Intel_Quartus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Intel_ModelSim">
+<code class="descname">Intel_ModelSim</code><em class="property"> = 51</em><a class="headerlink" href="#Base.Project.ToolChain.Intel_ModelSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Lattice_Diamond">
+<code class="descname">Lattice_Diamond</code><em class="property"> = 60</em><a class="headerlink" href="#Base.Project.ToolChain.Lattice_Diamond" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Lattice_Synplify">
+<code class="descname">Lattice_Synplify</code><em class="property"> = 65</em><a class="headerlink" href="#Base.Project.ToolChain.Lattice_Synplify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Mentor_ModelSim">
+<code class="descname">Mentor_ModelSim</code><em class="property"> = 70</em><a class="headerlink" href="#Base.Project.ToolChain.Mentor_ModelSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Mentor_QuestaSim">
+<code class="descname">Mentor_QuestaSim</code><em class="property"> = 75</em><a class="headerlink" href="#Base.Project.ToolChain.Mentor_QuestaSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Xilinx_ISE">
+<code class="descname">Xilinx_ISE</code><em class="property"> = 80</em><a class="headerlink" href="#Base.Project.ToolChain.Xilinx_ISE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Xilinx_PlanAhead">
+<code class="descname">Xilinx_PlanAhead</code><em class="property"> = 81</em><a class="headerlink" href="#Base.Project.ToolChain.Xilinx_PlanAhead" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ToolChain.Xilinx_Vivado">
+<code class="descname">Xilinx_Vivado</code><em class="property"> = 82</em><a class="headerlink" href="#Base.Project.ToolChain.Xilinx_Vivado" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.Tool">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">Tool</code><span class="sig-paren">(</span><em>*_</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Tool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c81919a26270c8b248f803fec00a906e117ce8dc.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Tool</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.Tool.Any">
+<code class="descname">Any</code><em class="property"> = 0</em><a class="headerlink" href="#Base.Project.Tool.Any" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Aldec_aSim">
+<code class="descname">Aldec_aSim</code><em class="property"> = ('ASIM', 'Aldec Active-HDL', 'Aldec Active-HDL')</em><a class="headerlink" href="#Base.Project.Tool.Aldec_aSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Aldec_rPro">
+<code class="descname">Aldec_rPro</code><em class="property"> = ('RPRO', 'Aldec Riviera-PRO', 'Aldec Riviera-PRO')</em><a class="headerlink" href="#Base.Project.Tool.Aldec_rPro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Altera_Quartus_Map">
+<code class="descname">Altera_Quartus_Map</code><em class="property"> = ('QMAP', 'Quartus Map', 'Altera Quartus Map (quartus_map)')</em><a class="headerlink" href="#Base.Project.Tool.Altera_Quartus_Map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Cocotb_QuestaSim">
+<code class="descname">Cocotb_QuestaSim</code><em class="property"> = ('COCO', 'Cocotb', 'Coroutine Cosimulation Testbench (Cocotb)')</em><a class="headerlink" href="#Base.Project.Tool.Cocotb_QuestaSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.GHDL">
+<code class="descname">GHDL</code><em class="property"> = ('GHDL', 'GHDL', 'GHDL')</em><a class="headerlink" href="#Base.Project.Tool.GHDL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.GTKwave">
+<code class="descname">GTKwave</code><em class="property"> = ('GTKW', 'GTKWave', 'GTKWave')</em><a class="headerlink" href="#Base.Project.Tool.GTKwave" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Lattice_LSE">
+<code class="descname">Lattice_LSE</code><em class="property"> = ('LSE', 'Lattice LSE', 'Lattice Synthesis Engine (LSE)')</em><a class="headerlink" href="#Base.Project.Tool.Lattice_LSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Mentor_vSim">
+<code class="descname">Mentor_vSim</code><em class="property"> = ('VSIM', 'Mentor ModelSim', 'Mentor Graphics ModelSim (vSim)')</em><a class="headerlink" href="#Base.Project.Tool.Mentor_vSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Xilinx_iSim">
+<code class="descname">Xilinx_iSim</code><em class="property"> = ('XSIM', 'Xilinx iSim', 'Xilinx ISE Simulator (iSim)')</em><a class="headerlink" href="#Base.Project.Tool.Xilinx_iSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Xilinx_XST">
+<code class="descname">Xilinx_XST</code><em class="property"> = ('XST', 'Xilinx XST', 'Xilinx Synthesis Tool (XST)')</em><a class="headerlink" href="#Base.Project.Tool.Xilinx_XST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Xilinx_CoreGen">
+<code class="descname">Xilinx_CoreGen</code><em class="property"> = ('CG', 'Xilinx CoreGen', 'Xilinx Core Generator Tool (CoreGen)')</em><a class="headerlink" href="#Base.Project.Tool.Xilinx_CoreGen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Xilinx_xSim">
+<code class="descname">Xilinx_xSim</code><em class="property"> = ('XSIM', 'Xilinx xSim', 'Xilinx Vivado Simulator (xSim)')</em><a class="headerlink" href="#Base.Project.Tool.Xilinx_xSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Xilinx_Synth">
+<code class="descname">Xilinx_Synth</code><em class="property"> = ('VIVADO', 'Xilinx Vivado Synthesis', 'Xilinx Vivado Synthesis (synth)')</em><a class="headerlink" href="#Base.Project.Tool.Xilinx_Synth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Tool.Xilinx_IPCatalog">
+<code class="descname">Xilinx_IPCatalog</code><em class="property"> = ('XCI', 'Xilinx Vivado IP Catalog', 'Xilinx Vivado IP Catalog')</em><a class="headerlink" href="#Base.Project.Tool.Xilinx_IPCatalog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.VHDLVersion">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">VHDLVersion</code><span class="sig-paren">(</span><em>*_</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#VHDLVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8e210aba79fe11155852fc57f8ada75dd6133b47.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLVersion</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.VHDLVersion.Any">
+<code class="descname">Any</code><em class="property"> = 0</em><a class="headerlink" href="#Base.Project.VHDLVersion.Any" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLVersion.VHDL87">
+<code class="descname">VHDL87</code><em class="property"> = 87</em><a class="headerlink" href="#Base.Project.VHDLVersion.VHDL87" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLVersion.VHDL93">
+<code class="descname">VHDL93</code><em class="property"> = 93</em><a class="headerlink" href="#Base.Project.VHDLVersion.VHDL93" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLVersion.VHDL2002">
+<code class="descname">VHDL2002</code><em class="property"> = 2002</em><a class="headerlink" href="#Base.Project.VHDLVersion.VHDL2002" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLVersion.VHDL2008">
+<code class="descname">VHDL2008</code><em class="property"> = 2008</em><a class="headerlink" href="#Base.Project.VHDLVersion.VHDL2008" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.Project">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a54cc6a082a7fb5d5a6a797195fdd32a56c8426e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Project</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.Project.Name">
+<code class="descname">Name</code><a class="headerlink" href="#Base.Project.Project.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.RootDirectory">
+<code class="descname">RootDirectory</code><a class="headerlink" href="#Base.Project.Project.RootDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.Board">
+<code class="descname">Board</code><a class="headerlink" href="#Base.Project.Project.Board" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.Device">
+<code class="descname">Device</code><a class="headerlink" href="#Base.Project.Project.Device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.Environment">
+<code class="descname">Environment</code><a class="headerlink" href="#Base.Project.Project.Environment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.ToolChain">
+<code class="descname">ToolChain</code><a class="headerlink" href="#Base.Project.Project.ToolChain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.Tool">
+<code class="descname">Tool</code><a class="headerlink" href="#Base.Project.Project.Tool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.VHDLVersion">
+<code class="descname">VHDLVersion</code><a class="headerlink" href="#Base.Project.Project.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.CreateFileSet">
+<code class="descname">CreateFileSet</code><span class="sig-paren">(</span><em>name</em>, <em>setDefault=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.CreateFileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.CreateFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.AddFileSet">
+<code class="descname">AddFileSet</code><span class="sig-paren">(</span><em>fileSet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.AddFileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.AddFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.FileSets">
+<code class="descname">FileSets</code><a class="headerlink" href="#Base.Project.Project.FileSets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.DefaultFileSet">
+<code class="descname">DefaultFileSet</code><a class="headerlink" href="#Base.Project.Project.DefaultFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.AddFile">
+<code class="descname">AddFile</code><span class="sig-paren">(</span><em>file</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.AddFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.AddFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.AddSourceFile">
+<code class="descname">AddSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.AddSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.AddSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.Files">
+<code class="descname">Files</code><span class="sig-paren">(</span><em>fileType=&lt;FileTypes(Text|ProjectFile|FileListFile|RulesFile|SourceFile|VHDLSourceFile|VerilogSourceFile|PythonSourceFile|CocotbSourceFile|ConstraintFile|UcfConstraintFile|XdcConstraintFile|SdcConstraintFile|LdcConstraintFile|SettingsFile|QuartusSettingsFile) bits=0xFFFF&gt;</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.Files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.ExtractVHDLLibrariesFromVHDLSourceFiles">
+<code class="descname">ExtractVHDLLibrariesFromVHDLSourceFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.ExtractVHDLLibrariesFromVHDLSourceFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.ExtractVHDLLibrariesFromVHDLSourceFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.VHDLLibraries">
+<code class="descname">VHDLLibraries</code><a class="headerlink" href="#Base.Project.Project.VHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.Project.ExternalVHDLLibraries">
+<code class="descname">ExternalVHDLLibraries</code><a class="headerlink" href="#Base.Project.Project.ExternalVHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.AddExternalVHDLLibraries">
+<code class="descname">AddExternalVHDLLibraries</code><span class="sig-paren">(</span><em>library</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.AddExternalVHDLLibraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.AddExternalVHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.GetVariables">
+<code class="descname">GetVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.GetVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.GetVariables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.Project.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#Project.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.Project.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.FileSet">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">FileSet</code><span class="sig-paren">(</span><em>name</em>, <em>project=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#FileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-cd6b5585b26a770537ced7d183717cabaa723410.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FileSet</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.FileSet.Name">
+<code class="descname">Name</code><a class="headerlink" href="#Base.Project.FileSet.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileSet.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.FileSet.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.FileSet.Files">
+<code class="descname">Files</code><a class="headerlink" href="#Base.Project.FileSet.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileSet.AddFile">
+<code class="descname">AddFile</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#FileSet.AddFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.FileSet.AddFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.FileSet.AddSourceFile">
+<code class="descname">AddSourceFile</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#FileSet.AddSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.FileSet.AddSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.VHDLLibrary">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">VHDLLibrary</code><span class="sig-paren">(</span><em>name</em>, <em>project=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#VHDLLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.VHDLLibrary" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9413c0c147b400d8df54b53800b72deaca73323d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLLibrary</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.VHDLLibrary.Name">
+<code class="descname">Name</code><a class="headerlink" href="#Base.Project.VHDLLibrary.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLLibrary.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.VHDLLibrary.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLLibrary.Files">
+<code class="descname">Files</code><a class="headerlink" href="#Base.Project.VHDLLibrary.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VHDLLibrary.AddFile">
+<code class="descname">AddFile</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#VHDLLibrary.AddFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.VHDLLibrary.AddFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.File">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">File</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#File"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.File" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c849245642bc13a9ccd838d49f1c3344100288d2.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of File</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.File._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes() bits=0x0000&gt;</em><a class="headerlink" href="#Base.Project.File._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.File.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.File.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.File.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.File.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.File.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.File.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.File.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.File.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.File.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.File.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.File.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#File.Open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.File.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.File.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#File.ReadFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.File.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.File._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#File._ReadContent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.File._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.ProjectFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">ProjectFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#ProjectFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.ProjectFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-3e971e39a6c01c77b86989f2b046581cc6e90845.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ProjectFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.ProjectFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.ProjectFile bits=0x0002 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.ProjectFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ProjectFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.ProjectFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ProjectFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.ProjectFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ProjectFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.ProjectFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.ProjectFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.ProjectFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ProjectFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.ProjectFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ProjectFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.ProjectFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.ProjectFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.ProjectFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.ProjectFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.ProjectFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.ConstraintFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">ConstraintFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#ConstraintFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.ConstraintFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6f0f9816c5b1b07c04167f153129e477ab9dc5fa.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ConstraintFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.ConstraintFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.ConstraintFile bits=0x0200 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.ConstraintFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ConstraintFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.ConstraintFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ConstraintFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.ConstraintFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ConstraintFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.ConstraintFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.ConstraintFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.ConstraintFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ConstraintFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.ConstraintFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.ConstraintFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.ConstraintFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.ConstraintFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.ConstraintFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.ConstraintFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.ConstraintFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.SettingsFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">SettingsFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#SettingsFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.SettingsFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e140b7520e86a18aa22855b9f82c0a3857b6fce3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SettingsFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.SettingsFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.SettingsFile bits=0x4000 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.SettingsFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SettingsFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.SettingsFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SettingsFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.SettingsFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SettingsFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.SettingsFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.SettingsFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.SettingsFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SettingsFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.SettingsFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SettingsFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.SettingsFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.SettingsFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.SettingsFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.SettingsFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.SettingsFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.SourceFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">SourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#SourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.SourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f11f285ccb633fa74491e60e07d4bc41a57b8526.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SourceFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.SourceFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.SourceFile bits=0x0010 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.SourceFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SourceFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.SourceFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SourceFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.SourceFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SourceFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.SourceFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.SourceFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.SourceFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SourceFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.SourceFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.SourceFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.SourceFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.SourceFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.SourceFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.SourceFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.SourceFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.VHDLSourceFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">VHDLSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>vhdlLibraryName</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#VHDLSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.VHDLSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-26a1093875d3abaeb0dc5fbd1cf89452299f8cda.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLSourceFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.VHDLSourceFile bits=0x0020 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.VHDLSourceFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VHDLSourceFile.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#VHDLSourceFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.VHDLSourceFile.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.File">
+<code class="descname">File</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.LibraryName">
+<code class="descname">LibraryName</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.LibraryName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VHDLSourceFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.VHDLSourceFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VHDLSourceFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.VHDLSourceFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VHDLSourceFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.VHDLSourceFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VHDLSourceFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.VHDLSourceFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.VerilogSourceFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">VerilogSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#VerilogSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.VerilogSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1f8bd213057e647190edb660d16f03e23192fe26.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VerilogSourceFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile.File">
+<code class="descname">File</code><a class="headerlink" href="#Base.Project.VerilogSourceFile.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.VerilogSourceFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.VerilogSourceFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.VerilogSourceFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VerilogSourceFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.VerilogSourceFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.VerilogSourceFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.VerilogSourceFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VerilogSourceFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.VerilogSourceFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.VerilogSourceFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.VerilogSourceFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.VerilogSourceFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.VerilogSourceFile bits=0x0040 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.VerilogSourceFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.PythonSourceFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">PythonSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#PythonSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.PythonSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-85fd075a24d6912037e6da49cd8d4fe6090043be.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PythonSourceFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.PythonSourceFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.PythonSourceFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.PythonSourceFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.PythonSourceFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.PythonSourceFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.PythonSourceFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.PythonSourceFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.PythonSourceFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.PythonSourceFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.PythonSourceFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.PythonSourceFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.PythonSourceFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.PythonSourceFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.PythonSourceFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.PythonSourceFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.PythonSourceFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.PythonSourceFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.PythonSourceFile bits=0x0080 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.PythonSourceFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Base.Project.CocotbSourceFile">
+<em class="property">class </em><code class="descclassname">Base.Project.</code><code class="descname">CocotbSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Project.html#CocotbSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Project.CocotbSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a96d7db66a28ab246cabb73c73b14bfd47cea3e5.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CocotbSourceFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile.File">
+<code class="descname">File</code><a class="headerlink" href="#Base.Project.CocotbSourceFile.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#Base.Project.CocotbSourceFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#Base.Project.CocotbSourceFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#Base.Project.CocotbSourceFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.CocotbSourceFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.CocotbSourceFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Base.Project.CocotbSourceFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#Base.Project.CocotbSourceFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.CocotbSourceFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.CocotbSourceFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Base.Project.CocotbSourceFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Project.CocotbSourceFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Project.CocotbSourceFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.CocotbSourceFile bits=0x0100 data=UNDEFINED&gt;</em><a class="headerlink" href="#Base.Project.CocotbSourceFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

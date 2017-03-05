@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiler.XCICompiler &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Compiler.XCICompiler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Compiler.XCICompiler.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Compiler.XCICompiler">
+<span id="compiler-xcicompiler"></span><h1>Compiler.XCICompiler<a class="headerlink" href="#module-Compiler.XCICompiler" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="Compiler.html#module-Compiler" title="Compiler"><code class="xref py py-class docutils literal"><span class="pre">Compiler</span></code></a>:
+Base class for all Compiler classes.</li>
+</ul>
+<dl class="class">
+<dt id="Compiler.XCICompiler.Compiler">
+<em class="property">class </em><code class="descclassname">Compiler.XCICompiler.</code><code class="descname">Compiler</code><span class="sig-paren">(</span><em>host</em>, <em>dryRun</em>, <em>noCleanUp</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d5c35f208405f6ab2bfb4f6bb14e60ad57bd956f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Compiler</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.TOOL_CHAIN">
+<code class="descname">TOOL_CHAIN</code><em class="property"> = 82</em><a class="headerlink" href="#Compiler.XCICompiler.Compiler.TOOL_CHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.TOOL">
+<code class="descname">TOOL</code><em class="property"> = ('XCI', 'Xilinx Vivado IP Catalog', 'Xilinx Vivado IP Catalog')</em><a class="headerlink" href="#Compiler.XCICompiler.Compiler.TOOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._PrepareCompiler">
+<code class="descname">_PrepareCompiler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler._PrepareCompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._PrepareCompiler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.RunAll">
+<code class="descname">RunAll</code><span class="sig-paren">(</span><em>fqnList</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler.RunAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler.RunAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a list of netlist compilations. Expand wildcards to all selected netlists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.Run">
+<code class="descname">Run</code><span class="sig-paren">(</span><em>netlist</em>, <em>board</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler.Run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._WriteSpecialSectionIntoConfig">
+<code class="descname">_WriteSpecialSectionIntoConfig</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler._WriteSpecialSectionIntoConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._WriteSpecialSectionIntoConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._RunCompile">
+<code class="descname">_RunCompile</code><span class="sig-paren">(</span><em>netlist</em>, <em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler._RunCompile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._RunCompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._WriteTclFile">
+<code class="descname">_WriteTclFile</code><span class="sig-paren">(</span><em>netlist</em>, <em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/XCICompiler.html#Compiler._WriteTclFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._WriteTclFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.Directories">
+<code class="descname">Directories</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.Directories" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.DryRun">
+<code class="descname">DryRun</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.DryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.ENVIRONMENT">
+<code class="descname">ENVIRONMENT</code><em class="property"> = 2</em><a class="headerlink" href="#Compiler.XCICompiler.Compiler.ENVIRONMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.Host">
+<code class="descname">Host</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.Host" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.NoCleanUp">
+<code class="descname">NoCleanUp</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.NoCleanUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.PoCProject">
+<code class="descname">PoCProject</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.PoCProject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.PrintCompileReportLine">
+<code class="descname">PrintCompileReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.PrintCompileReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler.PrintCompileReportLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.PrintOverallCompileReport">
+<code class="descname">PrintOverallCompileReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.PrintOverallCompileReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler.PrintOverallCompileReport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler.TryRun">
+<code class="descname">TryRun</code><span class="sig-paren">(</span><em>netlist</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler.TryRun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to run a testbench. Skip skipable exceptions by printing the error and its cause.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.VHDLVersion">
+<code class="descname">VHDLVersion</code><a class="headerlink" href="#Compiler.XCICompiler.Compiler.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.XCICompiler.Compiler.VHDL_VERSION">
+<code class="descname">VHDL_VERSION</code><em class="property"> = 93</em><a class="headerlink" href="#Compiler.XCICompiler.Compiler.VHDL_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._AddFileListFile">
+<code class="descname">_AddFileListFile</code><span class="sig-paren">(</span><em>fileListFilePath</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._AddFileListFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._AddRulesFiles">
+<code class="descname">_AddRulesFiles</code><span class="sig-paren">(</span><em>rulesFilePath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._AddRulesFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._AddRulesFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._CreatePoCProject">
+<code class="descname">_CreatePoCProject</code><span class="sig-paren">(</span><em>projectName</em>, <em>board</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._CreatePoCProject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._ExecuteCopyTasks">
+<code class="descname">_ExecuteCopyTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteCopyTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._ExecuteCopyTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._ExecuteDeleteTasks">
+<code class="descname">_ExecuteDeleteTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteDeleteTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._ExecuteDeleteTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._ExecuteReplaceTasks">
+<code class="descname">_ExecuteReplaceTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteReplaceTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._ExecuteReplaceTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._GetHDLParameters">
+<code class="descname">_GetHDLParameters</code><span class="sig-paren">(</span><em>configSectionName</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._GetHDLParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse option &#8216;HDLParameters&#8217; for Verilog Parameters / VHDL Generics.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._GetTimeDeltaSinceLastEvent">
+<code class="descname">_GetTimeDeltaSinceLastEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._GetTimeDeltaSinceLastEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._ParseCopyRules">
+<code class="descname">_ParseCopyRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>copyTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseCopyRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._ParseCopyRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._ParseDeleteRules">
+<code class="descname">_ParseDeleteRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>deleteTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseDeleteRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._ParseDeleteRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._ParseReplaceRules">
+<code class="descname">_ParseReplaceRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>replaceTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseReplaceRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._ParseReplaceRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._Prepare">
+<code class="descname">_Prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._Prepare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._PrepareCompilerEnvironment">
+<code class="descname">_PrepareCompilerEnvironment</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._PrepareCompilerEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._PrepareCompilerEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._PrepareEnvironment">
+<code class="descname">_PrepareEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._PrepareEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._PrepareEnvironment_ChangeDirectory">
+<code class="descname">_PrepareEnvironment_ChangeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._PrepareEnvironment_ChangeDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change working directory to temporary path &#8216;temp/&lt;tool&gt;&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._PrepareEnvironment_CreatingDirectory">
+<code class="descname">_PrepareEnvironment_CreatingDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._PrepareEnvironment_CreatingDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._PrepareEnvironment_PurgeDirectory">
+<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._RunPostCopy">
+<code class="descname">_RunPostCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._RunPostCopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._RunPostDelete">
+<code class="descname">_RunPostDelete</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostDelete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._RunPostDelete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._RunPostReplace">
+<code class="descname">_RunPostReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._RunPostReplace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._RunPreCopy">
+<code class="descname">_RunPreCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPreCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._RunPreCopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._RunPreReplace">
+<code class="descname">_RunPreReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPreReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.XCICompiler.Compiler._RunPreReplace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.XCICompiler.Compiler._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.XCICompiler.Compiler._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

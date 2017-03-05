@@ -1,0 +1,851 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.Config &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="DataBase" href="../DataBase.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../DataBase.html">DataBase</a> &raquo;</li>
+        
+      <li>DataBase.Config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for DataBase.Config</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     TODO</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">enum</span>                 <span class="k">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
+<span class="kn">from</span> <span class="nn">re</span>                   <span class="k">import</span> <span class="nb">compile</span> <span class="k">as</span> <span class="n">re_compile</span>
+
+<span class="kn">from</span> <span class="nn">ToolChain</span>            <span class="k">import</span> <span class="n">ConfigurationException</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;BaseEnum&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Vendors&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Families&#39;</span><span class="p">,</span> <span class="s1">&#39;GenericFamilies&#39;</span><span class="p">,</span> <span class="s1">&#39;AlteraFamilies&#39;</span><span class="p">,</span> <span class="s1">&#39;LatticeFamilies&#39;</span><span class="p">,</span> <span class="s1">&#39;XilinxFamilies&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Devices&#39;</span><span class="p">,</span>  <span class="s1">&#39;GenericDevices&#39;</span><span class="p">,</span>  <span class="s1">&#39;AlteraDevices&#39;</span><span class="p">,</span>  <span class="s1">&#39;LatticeDevices&#39;</span><span class="p">,</span>  <span class="s1">&#39;XilinxDevices&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;SubTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;GenericSubTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;AlteraSubTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;LatticeSubTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;XilinxSubTypes&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Packages&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Device&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Board&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="BaseEnum"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.BaseEnum">[docs]</a><span class="k">class</span> <span class="nc">BaseEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+		
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+		
+		
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="Vendors"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Vendors">[docs]</a><span class="k">class</span> <span class="nc">Vendors</span><span class="p">(</span><span class="n">BaseEnum</span><span class="p">):</span>
+	<span class="n">Unknown</span> <span class="o">=</span>     <span class="mi">0</span>
+	<span class="n">Generic</span> <span class="o">=</span>     <span class="mi">1</span>
+	<span class="n">Altera</span> <span class="o">=</span>      <span class="mi">2</span>
+	<span class="n">Lattice</span> <span class="o">=</span>     <span class="mi">3</span>
+	<span class="n">MicroSemi</span> <span class="o">=</span>   <span class="mi">4</span>
+	<span class="n">Xilinx</span> <span class="o">=</span>      <span class="mi">5</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+		
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+		
+		
+<div class="viewcode-block" id="Families"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Families">[docs]</a><span class="k">class</span> <span class="nc">Families</span><span class="p">(</span><span class="n">BaseEnum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base enum for all Family enums.&quot;&quot;&quot;</span>
+	
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Token</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+		
+<div class="viewcode-block" id="GenericFamilies"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.GenericFamilies">[docs]</a><span class="k">class</span> <span class="nc">GenericFamilies</span><span class="p">(</span><span class="n">Families</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all generic families.&quot;&quot;&quot;</span>
+	<span class="n">Unknown</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">Generic</span> <span class="o">=</span> <span class="s2">&quot;g&quot;</span></div>
+	
+<div class="viewcode-block" id="AlteraFamilies"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.AlteraFamilies">[docs]</a><span class="k">class</span> <span class="nc">AlteraFamilies</span><span class="p">(</span><span class="n">Families</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Altera families.&quot;&quot;&quot;</span>
+	<span class="n">Max</span> <span class="o">=</span>       <span class="s2">&quot;m&quot;</span>
+	<span class="n">Cyclone</span> <span class="o">=</span>   <span class="s2">&quot;c&quot;</span>
+	<span class="n">Arria</span> <span class="o">=</span>     <span class="s2">&quot;a&quot;</span>
+	<span class="n">Stratix</span> <span class="o">=</span>   <span class="s2">&quot;s&quot;</span></div>
+	
+<div class="viewcode-block" id="LatticeFamilies"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.LatticeFamilies">[docs]</a><span class="k">class</span> <span class="nc">LatticeFamilies</span><span class="p">(</span><span class="n">Families</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Lattice families.&quot;&quot;&quot;</span>
+	<span class="n">ECP</span> <span class="o">=</span>       <span class="s2">&quot;lfe&quot;</span></div>
+	<span class="c1"># TODO: MachXO, iCE, ...</span>
+	
+<div class="viewcode-block" id="XilinxFamilies"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.XilinxFamilies">[docs]</a><span class="k">class</span> <span class="nc">XilinxFamilies</span><span class="p">(</span><span class="n">Families</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Xilinx families.&quot;&quot;&quot;</span>
+	<span class="n">Spartan</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span>
+	<span class="n">Artix</span> <span class="o">=</span>   <span class="s2">&quot;a&quot;</span>
+	<span class="n">Kintex</span> <span class="o">=</span>  <span class="s2">&quot;k&quot;</span>
+	<span class="n">Virtex</span> <span class="o">=</span>  <span class="s2">&quot;v&quot;</span>
+	<span class="n">Zynq</span> <span class="o">=</span>    <span class="s2">&quot;z&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="Devices"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Devices">[docs]</a><span class="k">class</span> <span class="nc">Devices</span><span class="p">(</span><span class="n">BaseEnum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base enum for all Device enums.&quot;&quot;&quot;</span></div>
+	
+<div class="viewcode-block" id="GenericDevices"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.GenericDevices">[docs]</a><span class="k">class</span> <span class="nc">GenericDevices</span><span class="p">(</span><span class="n">Devices</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all generic devices.&quot;&quot;&quot;</span>
+	<span class="n">Unknown</span> <span class="o">=</span>                   <span class="mi">0</span>
+	<span class="n">Generic</span> <span class="o">=</span>                   <span class="mi">1</span></div>
+	
+<div class="viewcode-block" id="AlteraDevices"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.AlteraDevices">[docs]</a><span class="k">class</span> <span class="nc">AlteraDevices</span><span class="p">(</span><span class="n">Devices</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Altera devices.&quot;&quot;&quot;</span>
+	<span class="c1"># Altera.Max devices</span>
+	<span class="n">Max2</span> <span class="o">=</span>                    <span class="mi">100</span>
+	<span class="n">Max4</span> <span class="o">=</span>                    <span class="mi">101</span>
+	<span class="n">Max5</span> <span class="o">=</span>                    <span class="mi">102</span>
+	<span class="n">Max10</span> <span class="o">=</span>                   <span class="mi">103</span>
+	<span class="c1"># Altera.Cyclone devices</span>
+	<span class="n">Cyclone3</span> <span class="o">=</span>                <span class="mi">110</span>
+	<span class="n">Cyclone4</span> <span class="o">=</span>                <span class="mi">111</span>
+	<span class="n">Cyclone5</span> <span class="o">=</span>                <span class="mi">112</span>
+	<span class="c1"># Altera.Arria devices</span>
+	<span class="n">Arria2</span> <span class="o">=</span>                  <span class="mi">120</span>
+	<span class="n">Arria5</span> <span class="o">=</span>                  <span class="mi">121</span>
+	<span class="c1"># Altera.Stratix devices</span>
+	<span class="n">Stratix2</span> <span class="o">=</span>                <span class="mi">130</span>
+	<span class="n">Stratix4</span> <span class="o">=</span>                <span class="mi">131</span>
+	<span class="n">Stratix5</span> <span class="o">=</span>                <span class="mi">132</span>
+	<span class="n">Stratix10</span> <span class="o">=</span>               <span class="mi">133</span></div>
+	
+<div class="viewcode-block" id="LatticeDevices"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.LatticeDevices">[docs]</a><span class="k">class</span> <span class="nc">LatticeDevices</span><span class="p">(</span><span class="n">Devices</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Lattice devices.&quot;&quot;&quot;</span>
+	<span class="c1"># Lattice.iCE device</span>
+	<span class="n">iCE40</span> <span class="o">=</span>                   <span class="mi">200</span>
+	<span class="c1"># Lattice.MachXO</span>
+	<span class="n">MachXO</span> <span class="o">=</span>                  <span class="mi">210</span>
+	<span class="n">MachXO2</span> <span class="o">=</span>                 <span class="mi">211</span>
+	<span class="n">MachXO3</span> <span class="o">=</span>                 <span class="mi">212</span>
+	<span class="c1"># Lattice.ECP</span>
+	<span class="n">ECP2</span> <span class="o">=</span>                    <span class="mi">220</span>
+	<span class="n">ECP3</span> <span class="o">=</span>                    <span class="mi">221</span>
+	<span class="n">ECP5</span> <span class="o">=</span>                    <span class="mi">222</span></div>
+	
+<div class="viewcode-block" id="XilinxDevices"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.XilinxDevices">[docs]</a><span class="k">class</span> <span class="nc">XilinxDevices</span><span class="p">(</span><span class="n">Devices</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Xilinx devices.&quot;&quot;&quot;</span>
+	<span class="c1"># Xilinx.Spartan devices</span>
+	<span class="n">Spartan3</span> <span class="o">=</span>                <span class="mi">310</span>
+	<span class="n">Spartan6</span> <span class="o">=</span>                <span class="mi">311</span>
+	<span class="c1"># Spartan7 =                312</span>
+	<span class="c1"># Xilinx.Artix devices</span>
+	<span class="n">Artix7</span> <span class="o">=</span>                  <span class="mi">320</span>
+	<span class="c1"># Xilinx.Kintex devices</span>
+	<span class="n">Kintex7</span> <span class="o">=</span>                 <span class="mi">330</span>
+	<span class="n">KintexUltraScale</span> <span class="o">=</span>        <span class="mi">331</span>
+	<span class="n">KintexUltraScalePlus</span> <span class="o">=</span>    <span class="mi">332</span>
+	<span class="c1"># Xilinx.Virtex devices</span>
+	<span class="n">Virtex2</span> <span class="o">=</span>                 <span class="mi">340</span>
+	<span class="n">Virtex4</span> <span class="o">=</span>                 <span class="mi">341</span>
+	<span class="n">Virtex5</span> <span class="o">=</span>                 <span class="mi">342</span>
+	<span class="n">Virtex6</span> <span class="o">=</span>                 <span class="mi">343</span>
+	<span class="n">Virtex7</span> <span class="o">=</span>                 <span class="mi">344</span>
+	<span class="n">VirtexUltraScale</span> <span class="o">=</span>        <span class="mi">345</span>
+	<span class="n">VirtexUltraScalePlus</span> <span class="o">=</span>    <span class="mi">346</span>
+	<span class="c1"># Xilinx.Zynq devices</span>
+	<span class="n">Zynq7000</span> <span class="o">=</span>                <span class="mi">350</span></div>
+	
+	
+<div class="viewcode-block" id="SubTypes"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.SubTypes">[docs]</a><span class="k">class</span> <span class="nc">SubTypes</span><span class="p">(</span><span class="n">BaseEnum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base enum for all SubType enums.&quot;&quot;&quot;</span>
+	
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+		
+<div class="viewcode-block" id="GenericSubTypes"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.GenericSubTypes">[docs]</a><span class="k">class</span> <span class="nc">GenericSubTypes</span><span class="p">(</span><span class="n">SubTypes</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all generic device subtype.&quot;&quot;&quot;</span>
+	<span class="n">Unknown</span> <span class="o">=</span>   <span class="kc">None</span>
+	<span class="n">Generic</span> <span class="o">=</span>   <span class="mi">1</span>
+	<span class="n">NoSubType</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+	
+<div class="viewcode-block" id="AlteraSubTypes"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.AlteraSubTypes">[docs]</a><span class="k">class</span> <span class="nc">AlteraSubTypes</span><span class="p">(</span><span class="n">SubTypes</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Altera device subtype.&quot;&quot;&quot;</span>
+	<span class="n">NoSubType</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	
+	<span class="n">LS</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">E</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span>		<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">GS</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;gs&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">GX</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;gx&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">GT</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;gt&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">GZ</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;gz&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">SX</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;sx&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">ST</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;st&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+	
+<div class="viewcode-block" id="LatticeSubTypes"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.LatticeSubTypes">[docs]</a><span class="k">class</span> <span class="nc">LatticeSubTypes</span><span class="p">(</span><span class="n">SubTypes</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Lattice device subtype.&quot;&quot;&quot;</span>
+	<span class="n">NoSubType</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	
+	<span class="n">U</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span>		<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">UM</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;um&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+	
+<div class="viewcode-block" id="XilinxSubTypes"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.XilinxSubTypes">[docs]</a><span class="k">class</span> <span class="nc">XilinxSubTypes</span><span class="p">(</span><span class="n">SubTypes</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all Xilinx device subtype.&quot;&quot;&quot;</span>
+	<span class="n">NoSubType</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	
+	<span class="n">DA</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span>		<span class="s2">&quot;a&quot;</span><span class="p">)</span>
+	<span class="n">E</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>		<span class="s2">&quot;e&quot;</span><span class="p">)</span>
+	<span class="n">AN</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>		<span class="s2">&quot;an&quot;</span><span class="p">)</span>
+	<span class="n">X</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>		<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">T</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>		<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">XT</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>		<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">HT</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">,</span>		<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">LX</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;lx&quot;</span><span class="p">,</span>	<span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">SXT</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;sx&quot;</span><span class="p">,</span>	<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">LXT</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;lx&quot;</span><span class="p">,</span>	<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">TXT</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;tx&quot;</span><span class="p">,</span>	<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">FXT</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;fx&quot;</span><span class="p">,</span>	<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">CXT</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;cx&quot;</span><span class="p">,</span>	<span class="s2">&quot;t&quot;</span><span class="p">)</span>
+	<span class="n">HXT</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;hx&quot;</span><span class="p">,</span>	<span class="s2">&quot;t&quot;</span><span class="p">)</span></div>
+	
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="Packages"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Packages">[docs]</a><span class="k">class</span> <span class="nc">Packages</span><span class="p">(</span><span class="n">BaseEnum</span><span class="p">):</span>
+	<span class="n">Unknown</span> <span class="o">=</span>  <span class="mi">0</span>
+	<span class="n">Generic</span> <span class="o">=</span>  <span class="mi">1</span>
+	
+	<span class="n">TQG</span> <span class="o">=</span>     <span class="mi">10</span>
+	
+	<span class="n">CLG</span> <span class="o">=</span>     <span class="mi">20</span>
+	<span class="n">CPG</span> <span class="o">=</span>     <span class="mi">21</span>
+	<span class="n">CSG</span> <span class="o">=</span>     <span class="mi">22</span>
+	
+	<span class="n">CABGA</span> <span class="o">=</span>   <span class="mi">25</span>
+	
+	<span class="n">FBG</span> <span class="o">=</span>     <span class="mi">30</span>
+	<span class="n">FF</span> <span class="o">=</span>      <span class="mi">31</span>
+	<span class="n">FFG</span> <span class="o">=</span>     <span class="mi">32</span>
+	<span class="n">FG</span> <span class="o">=</span>      <span class="mi">33</span>
+	<span class="n">FGG</span> <span class="o">=</span>     <span class="mi">34</span>
+	<span class="n">FLG</span> <span class="o">=</span>     <span class="mi">35</span>
+	<span class="n">FT</span> <span class="o">=</span>      <span class="mi">36</span>
+	<span class="n">FTG</span> <span class="o">=</span>     <span class="mi">37</span>
+	
+	<span class="n">RB</span> <span class="o">=</span>      <span class="mi">40</span>
+	<span class="n">RBG</span> <span class="o">=</span>     <span class="mi">41</span>
+	<span class="n">RF</span> <span class="o">=</span>      <span class="mi">42</span>
+	<span class="n">RS</span> <span class="o">=</span>      <span class="mi">43</span>
+	
+	<span class="n">E</span> <span class="o">=</span>       <span class="mi">50</span>
+	<span class="n">Q</span> <span class="o">=</span>       <span class="mi">51</span>
+	<span class="n">F</span> <span class="o">=</span>       <span class="mi">52</span>
+	<span class="n">U</span> <span class="o">=</span>       <span class="mi">53</span>
+	<span class="n">M</span> <span class="o">=</span>       <span class="mi">54</span></div>
+	
+	
+<div class="viewcode-block" id="Device"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device">[docs]</a><span class="k">class</span> <span class="nc">Device</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span>
+		<span class="c1"># Device members</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span>       <span class="n">Vendors</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="o">=</span>       <span class="n">GenericFamilies</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span>       <span class="n">GenericDevices</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">=</span>   <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span>      <span class="n">GenericSubTypes</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__number</span> <span class="o">=</span>       <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span> <span class="o">=</span>   <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__package</span> <span class="o">=</span>      <span class="n">Packages</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span> <span class="o">=</span>     <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span> <span class="o">=</span> <span class="n">deviceString</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">deviceString</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;deviceString&#39; is not of type str.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">((</span><span class="n">deviceString</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">deviceString</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;deviceString&#39; is empty.&quot;</span><span class="p">)</span>
+			
+		<span class="c1"># vendor = GENERIC</span>
+		<span class="c1"># ==========================================================================</span>
+		<span class="k">if</span>   <span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ge&quot;</span><span class="p">):</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeGeneric</span><span class="p">()</span>									<span class="c1"># ge - Generic FPGA device</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;xc&quot;</span><span class="p">):</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeXilinx</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>			<span class="c1"># xc - Xilinx devices (XC = Xilinx Commercial)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ep&quot;</span><span class="p">):</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeAltera</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>			<span class="c1"># ep - Altera devices</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ice&quot;</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeLatticeICE</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>	<span class="c1"># ice - Lattice iCE series</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;lcm&quot;</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeLatticeLCM</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>	<span class="c1"># lcm - Lattice MachXO series</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;lfe&quot;</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeLatticeLFE</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>	<span class="c1"># lfe - Lattice ECP series</span>
+		<span class="k">else</span><span class="p">:</span>                                       <span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown manufacturer code in device string &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">deviceString</span><span class="p">))</span>
+		
+<div class="viewcode-block" id="Device._DecodeGeneric"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeGeneric">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeGeneric</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span>   <span class="n">Vendors</span><span class="o">.</span><span class="n">Generic</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="o">=</span>   <span class="n">GenericFamilies</span><span class="o">.</span><span class="n">Generic</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span>   <span class="n">GenericDevices</span><span class="o">.</span><span class="n">Generic</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span>  <span class="n">GenericSubTypes</span><span class="o">.</span><span class="n">Generic</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__package</span> <span class="o">=</span>  <span class="n">Packages</span><span class="o">.</span><span class="n">Generic</span></div>
+		
+<div class="viewcode-block" id="Device._DecodeAltera"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeAltera">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeAltera</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Altera</span>
+		
+		<span class="n">deviceRegExpStr</span>  <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;gen&gt;\d{1,2})&quot;</span>  <span class="c1"># generation</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;fam&gt;[acms])&quot;</span>  <span class="c1"># family</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;st&gt;(ls|e|g|x|t|gs|gx|gt|gz|sx|st)?)&quot;</span>  <span class="c1"># subtype</span>
+		<span class="n">deviceRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">deviceRegExpStr</span><span class="p">)</span>
+		<span class="n">deviceRegExpMatch</span> <span class="o">=</span> <span class="n">deviceRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">deviceRegExpMatch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;gen&#39;</span><span class="p">))</span>
+			
+			<span class="n">family</span> <span class="o">=</span> <span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;fam&#39;</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">fam</span> <span class="ow">in</span> <span class="n">AlteraFamilies</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">fam</span><span class="o">.</span><span class="n">Token</span> <span class="o">==</span> <span class="n">family</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="o">=</span> <span class="n">fam</span>
+					<span class="k">break</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown Altera device family.&quot;</span><span class="p">)</span>
+				
+			<span class="n">subtype</span> <span class="o">=</span> <span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;st&#39;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">subtype</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+				<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;g&quot;</span><span class="p">:</span> <span class="s2">&quot;gx&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;sx&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="s2">&quot;gt&quot;</span><span class="p">}</span> <span class="c1"># re-name for Stratix 10 and Arria 10</span>
+				<span class="k">if</span> <span class="n">subtype</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="n">subtype</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">subtype</span><span class="p">]</span>
+				<span class="k">try</span><span class="p">:</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span> <span class="n">AlteraSubTypes</span><span class="p">[</span><span class="n">subtype</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span>
+				<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>  <span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown subtype &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subtype</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span> <span class="n">AlteraSubTypes</span><span class="o">.</span><span class="n">NoSubType</span>
+				
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;RegExp mismatch.&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Device._DecodeLatticeICE"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeLatticeICE">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeLatticeICE</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span> <span class="c1"># pylint:disable=unused-argument</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span></div>
+		
+<div class="viewcode-block" id="Device._DecodeLatticeLCM"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeLatticeLCM">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeLatticeLCM</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span> <span class="c1"># pylint:disable=unused-argument</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span></div>
+		
+<div class="viewcode-block" id="Device._DecodeLatticeLFE"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeLatticeLFE">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeLatticeLFE</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="o">=</span> <span class="n">LatticeFamilies</span><span class="o">.</span><span class="n">ECP</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+		
+		<span class="k">if</span>   <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeLatticeECP3</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">==</span> <span class="mi">5</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_DecodeLatticeECP5</span><span class="p">(</span><span class="n">deviceString</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown Lattice ECP generation.&quot;</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Device._DecodeLatticeECP3"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeLatticeECP3">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeLatticeECP3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span>       <span class="n">LatticeDevices</span><span class="o">.</span><span class="n">ECP3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span>      <span class="n">LatticeSubTypes</span><span class="o">.</span><span class="n">NoSubType</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__number</span> <span class="o">=</span>       <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span></div>
+		
+<div class="viewcode-block" id="Device._DecodeLatticeECP5"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeLatticeECP5">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeLatticeECP5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span>       <span class="n">LatticeDevices</span><span class="o">.</span><span class="n">ECP5</span>
+		<span class="n">familyToken</span> <span class="o">=</span> <span class="n">deviceString</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">familyToken</span> <span class="o">==</span> <span class="s2">&quot;u-&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span>    <span class="n">LatticeSubTypes</span><span class="o">.</span><span class="n">U</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__number</span> <span class="o">=</span>     <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">11</span><span class="p">])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__package</span> <span class="o">=</span>    <span class="n">Packages</span><span class="o">.</span><span class="n">CABGA</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span> <span class="o">=</span>   <span class="mi">381</span>                            <span class="c1"># TODO: implement other packages and pin counts</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">familyToken</span> <span class="o">==</span> <span class="s2">&quot;um&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span>    <span class="n">LatticeSubTypes</span><span class="o">.</span><span class="n">UM</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__number</span> <span class="o">=</span>     <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__package</span> <span class="o">=</span>    <span class="n">Packages</span><span class="o">.</span><span class="n">CABGA</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span> <span class="o">=</span>   <span class="mi">381</span>                            <span class="c1"># TODO: implement other packages and pin counts</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown Lattice ECP5 subtype.&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Device._DecodeXilinx"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device._DecodeXilinx">[docs]</a>	<span class="k">def</span> <span class="nf">_DecodeXilinx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deviceString</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span>     <span class="n">Vendors</span><span class="o">.</span><span class="n">Xilinx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+		
+		<span class="n">familyToken</span> <span class="o">=</span> <span class="n">deviceString</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">fam</span> <span class="ow">in</span> <span class="n">XilinxFamilies</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">fam</span><span class="o">.</span><span class="n">Token</span> <span class="o">==</span> <span class="n">familyToken</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="o">=</span> <span class="n">fam</span>
+				<span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown Xilinx device family.&quot;</span><span class="p">)</span>
+			
+		<span class="n">deviceRegExpStr</span>  <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;st1&gt;[a-z]{0,2})&quot;</span>   <span class="c1"># device subtype - part 1</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;no&gt;\d{1,4})&quot;</span>       <span class="c1"># device number</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;st2&gt;[aent]{0,2})&quot;</span>  <span class="c1"># device subtype - part 2</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;sg&gt;[-1-5]</span><span class="si">{2}</span><span class="s2">)&quot;</span>     <span class="c1"># speed grade</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;pack&gt;[a-z]{1,3})&quot;</span>  <span class="c1"># package</span>
+		<span class="n">deviceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;pins&gt;\d{1,4})&quot;</span>     <span class="c1"># pin count</span>
+		<span class="n">deviceRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">deviceRegExpStr</span><span class="p">)</span>
+		<span class="n">deviceRegExpMatch</span> <span class="o">=</span> <span class="n">deviceRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">deviceString</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">deviceRegExpMatch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="n">subtype</span> <span class="o">=</span> <span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;st1&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;st2&#39;</span><span class="p">)</span>
+			<span class="n">package</span> <span class="o">=</span> <span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;pack&#39;</span><span class="p">)</span>
+			
+			<span class="k">if</span> <span class="p">(</span><span class="n">subtype</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+				<span class="k">try</span><span class="p">:</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span> <span class="n">XilinxSubTypes</span><span class="p">[</span><span class="n">subtype</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span>
+				<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>  <span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown subtype &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subtype</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			<span class="k">else</span><span class="p">:</span>	                    <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span> <span class="o">=</span> <span class="n">XilinxSubTypes</span><span class="o">.</span><span class="n">NoSubType</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__number</span> <span class="o">=</span>           <span class="nb">int</span><span class="p">(</span><span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;no&#39;</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span> <span class="o">=</span>       <span class="nb">int</span><span class="p">(</span><span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;sg&#39;</span><span class="p">))</span>
+			<span class="k">try</span><span class="p">:</span>                      <span class="bp">self</span><span class="o">.</span><span class="n">__package</span> <span class="o">=</span> <span class="n">Packages</span><span class="p">[</span><span class="n">package</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span>
+			<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>    <span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown package &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">package</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span> <span class="o">=</span>         <span class="nb">int</span><span class="p">(</span><span class="n">deviceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;pins&#39;</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;RegExp mismatch.&quot;</span><span class="p">)</span></div>
+			
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Vendor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Family</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__family</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Device</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__device</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Generation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__generation</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__number</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">SpeedGrade</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">PinCount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Package</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__package</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">FullName</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+	
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ShortName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Generic</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;GENERIC&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Xilinx</span><span class="p">):</span>
+			<span class="n">subtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span><span class="o">.</span><span class="n">Groups</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="ow">is</span> <span class="n">XilinxFamilies</span><span class="o">.</span><span class="n">Zynq</span><span class="p">):</span>
+				<span class="n">number_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{num:03d}</span><span class="s2">&quot;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">number_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{num}</span><span class="s2">&quot;</span>
+			<span class="k">return</span> <span class="p">(</span><span class="s2">&quot;XC</span><span class="si">{gen}{fam}{st0}{num}{st1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+				<span class="n">gen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">,</span>
+				<span class="n">fam</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="o">.</span><span class="n">Token</span><span class="p">,</span>
+				<span class="n">st0</span><span class="o">=</span><span class="n">subtype</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+				<span class="n">num</span><span class="o">=</span><span class="n">number_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__number</span><span class="p">),</span>
+				<span class="n">st1</span><span class="o">=</span><span class="n">subtype</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+			<span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Altera</span><span class="p">):</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0!s}{1!s}{2!s}</span><span class="s2">-</span><span class="si">{3!s}</span><span class="s2">F&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__number</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Device.ShortName() not implemented for vendor </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span><span class="p">))</span>
+			
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FullName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Generic</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;GENERIC&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Xilinx</span><span class="p">):</span>
+			<span class="n">subtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span><span class="o">.</span><span class="n">Groups</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="ow">is</span> <span class="n">XilinxFamilies</span><span class="o">.</span><span class="n">Zynq</span><span class="p">):</span>
+				<span class="n">number_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{num:03d}</span><span class="s2">&quot;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">number_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{num}</span><span class="s2">&quot;</span>
+			<span class="k">return</span> <span class="p">(</span><span class="s2">&quot;XC</span><span class="si">{gen}{fam}{st0}{num}{st1}{sg}{pack}{pin}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+				<span class="n">gen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">,</span>
+				<span class="n">fam</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="o">.</span><span class="n">Token</span><span class="p">,</span>
+				<span class="n">st0</span><span class="o">=</span><span class="n">subtype</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+				<span class="n">num</span><span class="o">=</span><span class="n">number_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__number</span><span class="p">),</span>
+				<span class="n">st1</span><span class="o">=</span><span class="n">subtype</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+				<span class="n">sg</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span><span class="p">,</span>
+				<span class="n">pack</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__package</span><span class="p">),</span>
+				<span class="n">pin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span>
+			<span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Altera</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Device.FullName() not implemented for vendor </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span><span class="p">))</span>
+			
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FullName2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Generic</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;GENERIC&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Xilinx</span><span class="p">):</span>
+			<span class="n">subtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span><span class="o">.</span><span class="n">Groups</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="ow">is</span> <span class="n">XilinxFamilies</span><span class="o">.</span><span class="n">Zynq</span><span class="p">):</span>
+				<span class="n">number_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{num:03d}</span><span class="s2">&quot;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">number_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{num}</span><span class="s2">&quot;</span>
+			<span class="k">return</span> <span class="p">(</span><span class="s2">&quot;XC</span><span class="si">{gen}{fam}{st0}{num}{st1}{pack}{pin}{sg}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+				<span class="n">gen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">,</span>
+				<span class="n">fam</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="o">.</span><span class="n">Token</span><span class="p">,</span>
+				<span class="n">st0</span><span class="o">=</span><span class="n">subtype</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+				<span class="n">num</span><span class="o">=</span><span class="n">number_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__number</span><span class="p">),</span>
+				<span class="n">st1</span><span class="o">=</span><span class="n">subtype</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+				<span class="n">pack</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__package</span><span class="p">),</span>
+				<span class="n">pin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__pinCount</span><span class="p">,</span>
+				<span class="n">sg</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__speedGrade</span>
+			<span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Altera</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__deviceString</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Device.FullName() not implemented for vendor </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span><span class="p">))</span>
+			
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FamilyName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span> <span class="ow">is</span> <span class="n">XilinxFamilies</span><span class="o">.</span><span class="n">Zynq</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">)</span>
+			
+	<span class="c1"># @CachedReadOnlyProperty</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Series</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Generic</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;GENERIC&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Altera</span><span class="p">:</span>
+			<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot; II&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot; III&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot; IV&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s2">&quot; V&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="s2">&quot; 10&quot;</span><span class="p">}</span>
+			<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0!s}{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Xilinx</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__generation</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span>
+				<span class="k">return</span> <span class="s2">&quot;Series-7&quot;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2">-</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__family</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__generation</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0!s}{1!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subtype</span><span class="p">)</span>
+			
+<div class="viewcode-block" id="Device.GetVariables"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Device.GetVariables">[docs]</a>	<span class="k">def</span> <span class="nf">GetVariables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;DeviceShortName&quot;</span><span class="p">:</span>    <span class="bp">self</span><span class="o">.</span><span class="n">ShortName</span><span class="p">,</span>
+			<span class="s2">&quot;DeviceFullName&quot;</span><span class="p">:</span>     <span class="bp">self</span><span class="o">.</span><span class="n">FullName</span><span class="p">,</span>
+			<span class="s2">&quot;DeviceVendor&quot;</span><span class="p">:</span>       <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Vendor</span><span class="p">),</span>
+			<span class="s2">&quot;DeviceFamily&quot;</span><span class="p">:</span>       <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Family</span><span class="p">),</span>
+			<span class="s2">&quot;DeviceGeneration&quot;</span><span class="p">:</span>   <span class="bp">self</span><span class="o">.</span><span class="n">Generation</span><span class="p">,</span>
+			<span class="s2">&quot;DeviceSeries&quot;</span><span class="p">:</span>       <span class="bp">self</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+			<span class="s2">&quot;DeviceNumber&quot;</span><span class="p">:</span>       <span class="bp">self</span><span class="o">.</span><span class="n">Number</span><span class="p">,</span>
+			<span class="s2">&quot;DeviceSpeedGrade&quot;</span><span class="p">:</span>   <span class="bp">self</span><span class="o">.</span><span class="n">SpeedGrade</span><span class="p">,</span>
+			<span class="s2">&quot;DevicePackage&quot;</span><span class="p">:</span>      <span class="bp">self</span><span class="o">.</span><span class="n">Package</span><span class="p">,</span>
+			<span class="s2">&quot;DevicePinCount&quot;</span><span class="p">:</span>     <span class="bp">self</span><span class="o">.</span><span class="n">PinCount</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">FullName</span></div>
+		
+		
+<div class="viewcode-block" id="Board"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Board">[docs]</a><span class="k">class</span> <span class="nc">Board</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">boardName</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="c1"># Board members</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">boardName</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="n">boardName</span> <span class="o">=</span> <span class="s2">&quot;GENERIC&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">boardName</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;board&#39; is empty.&quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">boardName</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;board&#39; is not of type str.&quot;</span><span class="p">)</span>
+			
+		<span class="n">boardName</span> <span class="o">=</span> <span class="n">boardName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">boardName</span> <span class="o">==</span> <span class="s2">&quot;custom&quot;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;device&#39; is None.&quot;</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">Device</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span> <span class="n">device</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span> <span class="n">Device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">boardSectionName</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">for</span> <span class="n">board</span> <span class="ow">in</span> <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;BOARDS&#39;</span><span class="p">]:</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">boardName</span><span class="p">):</span>
+					<span class="n">boardSectionName</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;BOARDS&#39;</span><span class="p">][</span><span class="n">board</span><span class="p">]</span> <span class="c1"># real board name</span>
+					<span class="n">boardName</span> <span class="o">=</span> <span class="n">boardSectionName</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+					<span class="k">break</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Unknown board &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">boardName</span><span class="p">))</span>
+				
+			<span class="n">deviceName</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">boardSectionName</span><span class="p">][</span><span class="s1">&#39;FPGA&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__device</span> <span class="o">=</span> <span class="n">Device</span><span class="p">(</span><span class="n">deviceName</span><span class="p">)</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">__boardName</span> <span class="o">=</span> <span class="n">boardName</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__boardName</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Device</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__device</span>
+	
+<div class="viewcode-block" id="Board.GetVariables"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Config.html#DataBase.Config.Board.GetVariables">[docs]</a>	<span class="k">def</span> <span class="nf">GetVariables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;BoardName&quot;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__boardName</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__boardName</span>
+		
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

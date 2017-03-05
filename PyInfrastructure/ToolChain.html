@@ -1,0 +1,1674 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ToolChain</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/ToolChain.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ToolChain">
+<span id="toolchain"></span><h1>ToolChain<a class="headerlink" href="#module-ToolChain" title="Permalink to this headline">¶</a></h1>
+<p><strong>Submodules</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Aldec.html">ToolChain.Aldec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Aldec.ActiveHDL.html">ToolChain.Aldec.ActiveHDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Aldec.RivieraPRO.html">ToolChain.Aldec.RivieraPRO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Altera.html">ToolChain.Altera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Altera.ModelSim.html">ToolChain.Altera.ModelSim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Altera.Quartus.html">ToolChain.Altera.Quartus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.GHDL.html">ToolChain.GHDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.GNU.html">ToolChain.GNU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.GTKWave.html">ToolChain.GTKWave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Git.html">ToolChain.Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Intel.html">ToolChain.Intel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Intel.ModelSim.html">ToolChain.Intel.ModelSim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Intel.Quartus.html">ToolChain.Intel.Quartus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Lattice.html">ToolChain.Lattice</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Lattice.ActiveHDL.html">ToolChain.Lattice.ActiveHDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Lattice.Diamond.html">ToolChain.Lattice.Diamond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Lattice.Synplify.html">ToolChain.Lattice.Synplify</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Mentor.html">ToolChain.Mentor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Mentor.ModelSim.html">ToolChain.Mentor.ModelSim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Mentor.PrecisionRTL.html">ToolChain.Mentor.PrecisionRTL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Mentor.QuestaSim.html">ToolChain.Mentor.QuestaSim</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.PoC.html">ToolChain.PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Synopsys.html">ToolChain.Synopsys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Windows.html">ToolChain.Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChain.Xilinx.html">ToolChain.Xilinx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Xilinx.ISE.html">ToolChain.Xilinx.ISE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.Xilinx.Vivado.html">ToolChain.Xilinx.Vivado</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.ToolChainException" title="ToolChain.ToolChainException"><code class="xref py py-exc docutils literal"><span class="pre">ToolChainException</span></code></a>:
+Base class for all tool specific exceptions</li>
+<li><a class="reference internal" href="#ToolChain.ConfigurationException" title="ToolChain.ConfigurationException"><code class="xref py py-exc docutils literal"><span class="pre">ConfigurationException</span></code></a>:
+<code class="docutils literal"><span class="pre">ConfigurationException</span></code> is raise while running configuration or database</li>
+<li><a class="reference internal" href="#ToolChain.SkipConfigurationException" title="ToolChain.SkipConfigurationException"><code class="xref py py-exc docutils literal"><span class="pre">SkipConfigurationException</span></code></a>:
+<code class="docutils literal"><span class="pre">SkipConfigurationException</span></code> is a <a class="reference internal" href="#ToolChain.ConfigurationException" title="ToolChain.ConfigurationException"><code class="xref py py-exc docutils literal"><span class="pre">ConfigurationException</span></code></a>,</li>
+</ul>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.ConfigurationState" title="ToolChain.ConfigurationState"><code class="xref py py-class docutils literal"><span class="pre">ConfigurationState</span></code></a>:
+Describes the configuration state of a tool or vendor.</li>
+<li><a class="reference internal" href="#ToolChain.ChangeState" title="ToolChain.ChangeState"><code class="xref py py-class docutils literal"><span class="pre">ChangeState</span></code></a>:
+Describes if a configuration was changed.</li>
+<li><a class="reference internal" href="#ToolChain.ToolMixIn" title="ToolChain.ToolMixIn"><code class="xref py py-class docutils literal"><span class="pre">ToolMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.AskMixIn" title="ToolChain.AskMixIn"><code class="xref py py-class docutils literal"><span class="pre">AskMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Configuration" title="ToolChain.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>:
+Base class for all Configuration classes.</li>
+<li><a class="reference internal" href="#ToolChain.VendorConfiguration" title="ToolChain.VendorConfiguration"><code class="xref py py-class docutils literal"><span class="pre">VendorConfiguration</span></code></a>:
+Base class for all vendor Configuration classes.</li>
+<li><a class="reference internal" href="#ToolChain.ToolConfiguration" title="ToolChain.ToolConfiguration"><code class="xref py py-class docutils literal"><span class="pre">ToolConfiguration</span></code></a>:
+Base class for all tool Configuration classes.</li>
+<li><a class="reference internal" href="#ToolChain.EditionDescription" title="ToolChain.EditionDescription"><code class="xref py py-class docutils literal"><span class="pre">EditionDescription</span></code></a>:
+EditionDescription(Name, Section)</li>
+<li><a class="reference internal" href="#ToolChain.Edition" title="ToolChain.Edition"><code class="xref py py-class docutils literal"><span class="pre">Edition</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#ToolChain.ToolSelector" title="ToolChain.ToolSelector"><code class="xref py py-class docutils literal"><span class="pre">ToolSelector</span></code></a>:
+Base class for all Selector classes.</li>
+<li><a class="reference internal" href="#ToolChain.Configurator" title="ToolChain.Configurator"><code class="xref py py-class docutils literal"><span class="pre">Configurator</span></code></a>:
+A instance of this class controls the interactive configuration process.</li>
+</ul>
+<dl class="exception">
+<dt id="ToolChain.ToolChainException">
+<em class="property">exception </em><code class="descclassname">ToolChain.</code><code class="descname">ToolChainException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolChainException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolChainException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all tool specific exceptions</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-dbcbbf90f9cef0a5801b94ae839fab55a4b3a99c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ToolChainException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.ToolChainException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolChainException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolChainException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolChainException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolChainException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.ToolChainException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ToolChain.ConfigurationException">
+<em class="property">exception </em><code class="descclassname">ToolChain.</code><code class="descname">ConfigurationException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ConfigurationException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ConfigurationException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">ConfigurationException</span></code> is raise while running configuration or database
+tasks in PoC</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-fe2750413d26e526104a36b0fccd33e979d6092c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ConfigurationException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.ConfigurationException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ConfigurationException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ConfigurationException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ConfigurationException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ConfigurationException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.ConfigurationException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ToolChain.SkipConfigurationException">
+<em class="property">exception </em><code class="descclassname">ToolChain.</code><code class="descname">SkipConfigurationException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#SkipConfigurationException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.SkipConfigurationException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">SkipConfigurationException</span></code> is a <a class="reference internal" href="#ToolChain.ConfigurationException" title="ToolChain.ConfigurationException"><code class="xref py py-exc docutils literal"><span class="pre">ConfigurationException</span></code></a>,
+which can be skipped.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b8631e6a529bda5040128995b0af3b3089487462.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SkipConfigurationException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.SkipConfigurationException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.SkipConfigurationException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.SkipConfigurationException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.SkipConfigurationException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.SkipConfigurationException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.SkipConfigurationException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.ConfigurationState">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">ConfigurationState</code><a class="reference internal" href="../_modules/ToolChain.html#ConfigurationState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ConfigurationState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes the configuration state of a tool or vendor.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8d45831be3cf0a107652c250856d6668c7971a52.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ConfigurationState</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.ConfigurationState.Unconfigured">
+<code class="descname">Unconfigured</code><em class="property"> = 0</em><a class="headerlink" href="#ToolChain.ConfigurationState.Unconfigured" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ConfigurationState.Configured">
+<code class="descname">Configured</code><em class="property"> = 1</em><a class="headerlink" href="#ToolChain.ConfigurationState.Configured" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.ChangeState">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">ChangeState</code><a class="reference internal" href="../_modules/ToolChain.html#ChangeState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ChangeState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes if a configuration was changed.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0cc7cbde78bf448561ee614e87d48dd7ff99c66f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ChangeState</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.ChangeState.Unchanged">
+<code class="descname">Unchanged</code><em class="property"> = 0</em><a class="headerlink" href="#ToolChain.ChangeState.Unchanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ChangeState.Changed">
+<code class="descname">Changed</code><em class="property"> = 1</em><a class="headerlink" href="#ToolChain.ChangeState.Changed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.ToolMixIn">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">ToolMixIn</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4235dbee9d55d0351dc7410c2c30b4d7a2686c7c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ToolMixIn</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.AskMixIn">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">AskMixIn</code><a class="reference internal" href="../_modules/ToolChain.html#AskMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.AskMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-446fcb6ae2fc5f961f656b9de27007c4fd82b3e5.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AskMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.AskMixIn._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#AskMixIn._Ask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.AskMixIn._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.AskMixIn._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#AskMixIn._Ask_YesNoPass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.AskMixIn._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.AskMixIn._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#AskMixIn._AskYes_NoPass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.AskMixIn._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.AskMixIn._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#AskMixIn._PrintAvailableEditions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.AskMixIn._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Configuration">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all Configuration classes.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-bd09db656a54623c2ecb125cf747c09bb8fa8fb3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Configuration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Configuration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'Unknown'</em><a class="headerlink" href="#ToolChain.Configuration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tools vendor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.Name'</em><a class="headerlink" href="#ToolChain.Configuration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Tool</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = False</em><a class="headerlink" href="#ToolChain.Configuration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if a tool supports multiple versions installed on the same system.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration._template">
+<code class="descname">_template</code><em class="property"> = {'ALL': {'INSTALL.Name': {}}, 'Darwin': {'INSTALL.Name': {}}, 'Linux': {'INSTALL.Name': {}}, 'Windows': {'INSTALL.Name': {}}}</em><a class="headerlink" href="#ToolChain.Configuration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration sections represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.Configuration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.Configuration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.Configuration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the configurations section is configured</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ToolChain.Configuration.GetSections">
+<em class="property">classmethod </em><code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Configuration.ConfigureForAll" title="ToolChain.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Configuration.ConfigureForAll" title="ToolChain.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Configuration.ConfigureForAll" title="ToolChain.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a generic (platform independent) configuration procedure.</p>
+<p>Overwrite this method to implement a generic configuration routine for a
+(tool) Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unresolved default installation directory (str) from template.</p>
+<p>Overwrite function in sub-class for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Virtual method. Overwrite to execute post-configuration tasks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configuration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Configuration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configuration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configuration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.VendorConfiguration">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">VendorConfiguration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#VendorConfiguration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.VendorConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all vendor Configuration classes.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-947b227e0ff38c79443fab7a287cb10fb3974f8d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VendorConfiguration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.Vendor.Tool'</em><a class="headerlink" href="#ToolChain.VendorConfiguration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Vendor</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration._template">
+<code class="descname">_template</code><em class="property"> = {'Darwin': {'INSTALL.Vendor.Tool': {'InstallationDirectory': '/opt/Vendor'}}, 'Linux': {'INSTALL.Vendor.Tool': {'InstallationDirectory': '/opt/Vendor'}}, 'Windows': {'INSTALL.Vendor.Tool': {'InstallationDirectory': 'C:/Vendor'}}}</em><a class="headerlink" href="#ToolChain.VendorConfiguration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration section represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the vendor represented by this Configuration class is
+configured in PoC.</p>
+<p>Inherited method <a class="reference internal" href="#ToolChain.Configuration.IsConfigured" title="ToolChain.Configuration.IsConfigured"><code class="xref py py-meth docutils literal"><span class="pre">IsConfigured()</span></code></a> from class
+<a class="reference internal" href="#ToolChain.Configuration" title="ToolChain.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#VendorConfiguration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.VendorConfiguration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a generic (platform independent) vendor configuration procedure.</p>
+<p>This method configures a vendor path. Overwrite this method to implement a
+vendor specific configuration routine for a vendor Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.VendorConfiguration.ConfigureForAll" title="ToolChain.VendorConfiguration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.VendorConfiguration.ConfigureForAll" title="ToolChain.VendorConfiguration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.VendorConfiguration.ConfigureForAll" title="ToolChain.VendorConfiguration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.GetSections">
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.VendorConfiguration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.VendorConfiguration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Virtual method. Overwrite to execute post-configuration tasks.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.VendorConfiguration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.VendorConfiguration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unresolved default installation directory (str) from template.</p>
+<p>Overwrite function in sub-class for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.VendorConfiguration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.VendorConfiguration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = False</em><a class="headerlink" href="#ToolChain.VendorConfiguration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.VendorConfiguration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'Unknown'</em><a class="headerlink" href="#ToolChain.VendorConfiguration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.ToolConfiguration">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">ToolConfiguration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all tool Configuration classes.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-751c7c5a9d948c7f6dec049cbe64b1bee4748b6e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ToolConfiguration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.Vendor.Tool'</em><a class="headerlink" href="#ToolChain.ToolConfiguration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Vendor.ToolName</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration._toolName">
+<code class="descname">_toolName</code><em class="property"> = 'Tool'</em><a class="headerlink" href="#ToolChain.ToolConfiguration._toolName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tool.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration._template">
+<code class="descname">_template</code><em class="property"> = {'ALL': {'INSTALL.Vendor.Tool': {'Version': '1.0'}}, 'Darwin': {'INSTALL.Vendor.Tool': {'InstallationDirectory': '${INSTALL.Vendor:InstallationDirectory}/${Version}/Tool', 'BinaryDirectory': '${InstallationDirectory}/bin'}}, 'Linux': {'INSTALL.Vendor.Tool': {'InstallationDirectory': '${INSTALL.Vendor:InstallationDirectory}/${Version}/Tool', 'BinaryDirectory': '${InstallationDirectory}/bin'}}, 'Windows': {'INSTALL.Vendor.Tool': {'InstallationDirectory': '${INSTALL.Vendor:InstallationDirectory}/${Version}/Tool/', 'BinaryDirectory': '${InstallationDirectory}/bin'}}}</em><a class="headerlink" href="#ToolChain.ToolConfiguration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration section represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the tool represented by this Configuration class is
+configured in PoC.</p>
+<p>Inherited method <a class="reference internal" href="#ToolChain.Configuration.IsConfigured" title="ToolChain.Configuration.IsConfigured"><code class="xref py py-meth docutils literal"><span class="pre">IsConfigured()</span></code></a> from class
+<a class="reference internal" href="#ToolChain.Configuration" title="ToolChain.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._ConfigureVersion">
+<code class="descname">_ConfigureVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration._ConfigureVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration._ConfigureVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>If no version was configured before, then _GetDefaultVersion is called.
+Asks for version and updates section. Returns version as string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._GetDefaultVersion">
+<code class="descname">_GetDefaultVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration._GetDefaultVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration._GetDefaultVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default version (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._ConfigureEdition">
+<code class="descname">_ConfigureEdition</code><span class="sig-paren">(</span><em>editions</em>, <em>defaultEdition</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration._ConfigureEdition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration._ConfigureEdition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._GetDefaultEdition">
+<code class="descname">_GetDefaultEdition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration._GetDefaultEdition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration._GetDefaultEdition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default edition (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of editions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._ConfigureBinaryDirectory">
+<code class="descname">_ConfigureBinaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration._ConfigureBinaryDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration._ConfigureBinaryDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates section with value from <a class="reference internal" href="#ToolChain.ToolConfiguration._template" title="ToolChain.ToolConfiguration._template"><code class="xref py py-attr docutils literal"><span class="pre">_template</span></code></a> and returns directory
+as <a class="reference external" href="https://docs.python.org/3.6/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Path</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.PrepareVersionedSections">
+<code class="descname">PrepareVersionedSections</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolConfiguration.PrepareVersionedSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolConfiguration.PrepareVersionedSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a generic (platform independent) configuration procedure.</p>
+<p>Overwrite this method to implement a generic configuration routine for a
+(tool) Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.ToolConfiguration.ConfigureForAll" title="ToolChain.ToolConfiguration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.ToolConfiguration.ConfigureForAll" title="ToolChain.ToolConfiguration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.ToolConfiguration.ConfigureForAll" title="ToolChain.ToolConfiguration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.GetSections">
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.ToolConfiguration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.ToolConfiguration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Virtual method. Overwrite to execute post-configuration tasks.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.ToolConfiguration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.ToolConfiguration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unresolved default installation directory (str) from template.</p>
+<p>Overwrite function in sub-class for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolConfiguration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolConfiguration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = False</em><a class="headerlink" href="#ToolChain.ToolConfiguration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolConfiguration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'Unknown'</em><a class="headerlink" href="#ToolChain.ToolConfiguration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.EditionDescription">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">EditionDescription</code><span class="sig-paren">(</span><em>Name</em>, <em>Section</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.EditionDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-229ffcb394d74fb758027f91be7ac0396672d6df.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of EditionDescription</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.EditionDescription.Name">
+<code class="descname">Name</code><a class="headerlink" href="#ToolChain.EditionDescription.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.EditionDescription.Section">
+<code class="descname">Section</code><a class="headerlink" href="#ToolChain.EditionDescription.Section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.EditionDescription._asdict">
+<code class="descname">_asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.EditionDescription._asdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new OrderedDict which maps field names to their values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.EditionDescription._fields">
+<code class="descname">_fields</code><em class="property"> = ('Name', 'Section')</em><a class="headerlink" href="#ToolChain.EditionDescription._fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="ToolChain.EditionDescription._make">
+<em class="property">classmethod </em><code class="descname">_make</code><span class="sig-paren">(</span><em>iterable</em>, <em>new=&lt;built-in method __new__ of type object&gt;</em>, <em>len=&lt;built-in function len&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.EditionDescription._make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a new EditionDescription object from a sequence or iterable</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.EditionDescription._replace">
+<code class="descname">_replace</code><span class="sig-paren">(</span><em>_self</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.EditionDescription._replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new EditionDescription object replacing specified fields with new values</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.EditionDescription._source">
+<code class="descname">_source</code><em class="property"> = &quot;from builtins import property as _property, tuple as _tuple\nfrom operator import itemgetter as _itemgetter\nfrom collections import OrderedDict\n\nclass EditionDescription(tuple):\n    'EditionDescription(Name, Section)'\n\n    __slots__ = ()\n\n    _fields = ('Name', 'Section')\n\n    def __new__(_cls, Name, Section):\n        'Create new instance of EditionDescription(Name, Section)'\n        return _tuple.__new__(_cls, (Name, Section))\n\n    &#64;classmethod\n    def _make(cls, iterable, new=tuple.__new__, len=len):\n        'Make a new EditionDescription object from a sequence or iterable'\n        result = new(cls, iterable)\n        if len(result) != 2:\n            raise TypeError('Expected 2 arguments, got %d' % len(result))\n        return result\n\n    def _replace(_self, **kwds):\n        'Return a new EditionDescription object replacing specified fields with new values'\n        result = _self._make(map(kwds.pop, ('Name', 'Section'), _self))\n        if kwds:\n            raise ValueError('Got unexpected field names: %r' % list(kwds))\n        return result\n\n    def __repr__(self):\n        'Return a nicely formatted representation string'\n        return self.__class__.__name__ + '(Name=%r, Section=%r)' % self\n\n    def _asdict(self):\n        'Return a new OrderedDict which maps field names to their values.'\n        return OrderedDict(zip(self._fields, self))\n\n    def __getnewargs__(self):\n        'Return self as a plain tuple.  Used by copy and pickle.'\n        return tuple(self)\n\n    Name = _property(_itemgetter(0), doc='Alias for field number 0')\n\n    Section = _property(_itemgetter(1), doc='Alias for field number 1')\n\n&quot;</em><a class="headerlink" href="#ToolChain.EditionDescription._source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.EditionDescription.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span> &#x2192; integer -- return number of occurrences of value<a class="headerlink" href="#ToolChain.EditionDescription.count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.EditionDescription.index">
+<code class="descname">index</code><span class="sig-paren">(</span><em>value</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>stop</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; integer -- return first index of value.<a class="headerlink" href="#ToolChain.EditionDescription.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Edition">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">Edition</code><span class="sig-paren">(</span><em>name</em>, <em>section</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Edition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Edition" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-82d57a96f0131ac23592167a6f9eea0dbba62f97.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Edition</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.ToolSelector">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">ToolSelector</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolSelector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolSelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all Selector classes.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ba5ac59b2a2e3dc4786180805340eda3c3ccbaf8.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ToolSelector</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.ToolSelector._toolName">
+<code class="descname">_toolName</code><em class="property"> = ''</em><a class="headerlink" href="#ToolChain.ToolSelector._toolName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolSelector.ToolName">
+<code class="descname">ToolName</code><a class="headerlink" href="#ToolChain.ToolSelector.ToolName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._GetConfiguredEditions">
+<code class="descname">_GetConfiguredEditions</code><span class="sig-paren">(</span><em>editions</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolSelector._GetConfiguredEditions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolSelector._GetConfiguredEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all configured editions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._AskSelection">
+<code class="descname">_AskSelection</code><span class="sig-paren">(</span><em>editions</em>, <em>defaultEdition</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#ToolSelector._AskSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.ToolSelector._AskSelection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.ToolSelector.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.ToolSelector.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.ToolSelector._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.ToolSelector._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Configurator">
+<em class="property">class </em><code class="descclassname">ToolChain.</code><code class="descname">Configurator</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator" title="Permalink to this definition">¶</a></dt>
+<dd><p>A instance of this class controls the interactive configuration process.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-28af1e41afa9ef1bf544d74caca94c0d49b60b10.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Configurator</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Configurator.Configurations">
+<code class="descname">Configurations</code><em class="property"> = None</em><a class="headerlink" href="#ToolChain.Configurator.Configurations" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of all available (and thus enabled) Configuration classes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configurator.Selectors">
+<code class="descname">Selectors</code><em class="property"> = None</em><a class="headerlink" href="#ToolChain.Configurator.Selectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of all available (and thus enabled) Selector classes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.ConfigureAll">
+<code class="descname">ConfigureAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator.ConfigureAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator.ConfigureAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select all tool chains for configuration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.ConfigureTool">
+<code class="descname">ConfigureTool</code><span class="sig-paren">(</span><em>toolChain</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator.ConfigureTool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator.ConfigureTool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select tool chains for configuration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.InitializeConfiguration">
+<code class="descname">InitializeConfiguration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator.InitializeConfiguration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator.InitializeConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize PoC&#8217;s configuration with empty sections.</p>
+<p>The list of sections is gathered from all enabled configurators&#8217;
+<code class="xref py py-data docutils literal"><span class="pre">_template</span></code> fields.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.UpdateConfiguration">
+<code class="descname">UpdateConfiguration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator.UpdateConfiguration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator.UpdateConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an existing configuration e.g. after a PoC update.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._ConfigureTools">
+<code class="descname">_ConfigureTools</code><span class="sig-paren">(</span><em>configurators</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator._ConfigureTools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator._ConfigureTools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the configuration routines for a list of configurators</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._ConfigurationLoop">
+<code class="descname">_ConfigurationLoop</code><span class="sig-paren">(</span><em>configurator</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator._ConfigurationLoop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator._ConfigurationLoop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retry to configure a vendor or tool until it succeeds or the user presses
+<code class="kbd docutils literal"><span class="pre">P</span></code> to pass a configuration step.</p>
+<p>A <a href="#id1"><span class="problematic" id="id2">:py:exec:`KeyboardInterrupt`</span></a> should be handled in a calling method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.ConfigureDefaultTools">
+<code class="descname">ConfigureDefaultTools</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator.ConfigureDefaultTools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator.ConfigureDefaultTools" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._ConfigureDefaultTools">
+<code class="descname">_ConfigureDefaultTools</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator._ConfigureDefaultTools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator._ConfigureDefaultTools" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._WriteConfigurationHeader">
+<code class="descname">_WriteConfigurationHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator._WriteConfigurationHeader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator._WriteConfigurationHeader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a header containing general information about the configuration
+and list allowed input values for yes/no/pass questions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._AskConfigureDefaultTools">
+<code class="descname">_AskConfigureDefaultTools</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator._AskConfigureDefaultTools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator._AskConfigureDefaultTools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask if default tools should be configured now.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.Relocated">
+<code class="descname">Relocated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configurator.Relocated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Configurator.Relocated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Configurator.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Configurator.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Configurator._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Configurator._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.ExtendedConfigParser &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>lib.ExtendedConfigParser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/lib.ExtendedConfigParser.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.ExtendedConfigParser">
+<span id="lib-extendedconfigparser"></span><h1>lib.ExtendedConfigParser<a class="headerlink" href="#module-lib.ExtendedConfigParser" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#lib.ExtendedConfigParser.ExtendedSectionProxy" title="lib.ExtendedConfigParser.ExtendedSectionProxy"><code class="xref py py-class docutils literal"><span class="pre">ExtendedSectionProxy</span></code></a>:
+A proxy for a single section from a parser.</li>
+<li><a class="reference internal" href="#lib.ExtendedConfigParser.ExtendedInterpolation" title="lib.ExtendedConfigParser.ExtendedInterpolation"><code class="xref py py-class docutils literal"><span class="pre">ExtendedInterpolation</span></code></a>:
+Dummy interpolation that passes the value through with no changes.</li>
+<li><a class="reference internal" href="#lib.ExtendedConfigParser.ExtendedConfigParser" title="lib.ExtendedConfigParser.ExtendedConfigParser"><code class="xref py py-class docutils literal"><span class="pre">ExtendedConfigParser</span></code></a>:
+ConfigParser implementing interpolation.</li>
+</ul>
+<dl class="class">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy">
+<em class="property">class </em><code class="descclassname">lib.ExtendedConfigParser.</code><code class="descname">ExtendedSectionProxy</code><span class="sig-paren">(</span><em>parser</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedSectionProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-89a952c800b685c70ca57f207dc3f3f0e7751a3a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ExtendedSectionProxy</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy._MutableMapping__marker">
+<code class="descname">_MutableMapping__marker</code><em class="property"> = &lt;object object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy._MutableMapping__marker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy._abc_cache">
+<code class="descname">_abc_cache</code><em class="property"> = &lt;_weakrefset.WeakSet object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy._abc_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy._abc_negative_cache">
+<code class="descname">_abc_negative_cache</code><em class="property"> = &lt;_weakrefset.WeakSet object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy._abc_negative_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy._abc_negative_cache_version">
+<code class="descname">_abc_negative_cache_version</code><em class="property"> = 43</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy._abc_negative_cache_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy._abc_registry">
+<code class="descname">_abc_registry</code><em class="property"> = &lt;_weakrefset.WeakSet object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy._abc_registry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy._options">
+<code class="descname">_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy._options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from D.<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>option</em>, <em>fallback=None</em>, <em>*</em>, <em>raw=False</em>, <em>vars=None</em>, <em>_impl=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an option value.</p>
+<p>Unless <cite>fallback</cite> is provided, <cite>None</cite> will be returned if the option
+is not found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D's items<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D's keys<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.name">
+<code class="descname">name</code><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.parser">
+<code class="descname">parser</code><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; (k, v), remove and return some (key, value) pair<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>as a 2-tuple; but raise KeyError if D is empty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D.get(k,d), also set D[k]=d if k not in D<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>E</em>, <span class="optional">]</span><em>**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from mapping/iterable E and F.<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedSectionProxy.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D's values<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedSectionProxy.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation">
+<em class="property">class </em><code class="descclassname">lib.ExtendedConfigParser.</code><code class="descname">ExtendedInterpolation</code><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-3314e21b504310ffce6cd875296d5e006519cb09.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ExtendedInterpolation</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation._KEYCRE">
+<code class="descname">_KEYCRE</code><em class="property"> = re.compile('\\$\\{(?P&lt;ref&gt;[^}]+)\\}')</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation._KEYCRE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation._KEYCRE2">
+<code class="descname">_KEYCRE2</code><em class="property"> = re.compile('\\$\\[(?P&lt;ref&gt;[^\\]]+)\\}')</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation._KEYCRE2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.clear_cache">
+<code class="descname">clear_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.clear_cache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.before_get">
+<code class="descname">before_get</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em>, <em>option</em>, <em>value</em>, <em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.before_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.before_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.before_set">
+<code class="descname">before_set</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em>, <em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.before_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.before_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.interpolate">
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em>, <em>option</em>, <em>value</em>, <em>_</em>, <em>depth=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.interpolate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.GetSpecial">
+<em class="property">static </em><code class="descname">GetSpecial</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.GetSpecial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.GetSpecial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.GetValue">
+<code class="descname">GetValue</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em>, <em>option</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.GetValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.GetValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.GetCached">
+<code class="descname">GetCached</code><span class="sig-paren">(</span><em>section</em>, <em>option</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.GetCached"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.GetCached" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.UpdateCache">
+<code class="descname">UpdateCache</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedInterpolation.UpdateCache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.UpdateCache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.before_read">
+<code class="descname">before_read</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em>, <em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.before_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedInterpolation.before_write">
+<code class="descname">before_write</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em>, <em>option</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedInterpolation.before_write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser">
+<em class="property">class </em><code class="descclassname">lib.ExtendedConfigParser.</code><code class="descname">ExtendedConfigParser</code><span class="sig-paren">(</span><em>defaults=None</em>, <em>dict_type=&lt;class 'collections.OrderedDict'&gt;</em>, <em>allow_no_value=False</em>, <em>*</em>, <em>delimiters=('='</em>, <em>':')</em>, <em>comment_prefixes=('#'</em>, <em>';')</em>, <em>inline_comment_prefixes=None</em>, <em>strict=True</em>, <em>empty_lines_in_values=True</em>, <em>default_section='DEFAULT'</em>, <em>interpolation=&lt;object object&gt;</em>, <em>converters=&lt;object object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedConfigParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-39e854649605108c9b17d18777b172db2dcf59ac.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ExtendedConfigParser</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._DEFAULT_INTERPOLATION">
+<code class="descname">_DEFAULT_INTERPOLATION</code><em class="property"> = &lt;lib.ExtendedConfigParser.ExtendedInterpolation object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._DEFAULT_INTERPOLATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.BOOLEAN_STATES">
+<code class="descname">BOOLEAN_STATES</code><em class="property"> = {'1': True, 'yes': True, 'true': True, 'on': True, '0': False, 'no': False, 'false': False, 'off': False}</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.BOOLEAN_STATES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.NONSPACECRE">
+<code class="descname">NONSPACECRE</code><em class="property"> = re.compile('\\S')</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.NONSPACECRE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.OPTCRE">
+<code class="descname">OPTCRE</code><em class="property"> = re.compile('\n        (?P&lt;option&gt;.*?)                    # very permissive!\n        \\s*(?P&lt;vi&gt;=|:)\\s*              # any number of space/tab,\n                                           # followed by any of t, re.VERBOSE)</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.OPTCRE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.OPTCRE_NV">
+<code class="descname">OPTCRE_NV</code><em class="property"> = re.compile('\n        (?P&lt;option&gt;.*?)                    # very permissive!\n        \\s*(?:                             # any number of space/tab,\n        (?P&lt;vi&gt;=|:)\\s*                 # optionally followed , re.VERBOSE)</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.OPTCRE_NV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.SECTCRE">
+<code class="descname">SECTCRE</code><em class="property"> = re.compile('\n        \\[                                 # [\n        (?P&lt;header&gt;[^]]+)                  # very permissive!\n        \\]                                 # ]\n        ', re.VERBOSE)</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.SECTCRE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._MutableMapping__marker">
+<code class="descname">_MutableMapping__marker</code><em class="property"> = &lt;object object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._MutableMapping__marker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._OPT_NV_TMPL">
+<code class="descname">_OPT_NV_TMPL</code><em class="property"> = '\n        (?P&lt;option&gt;.*?)                    # very permissive!\n        \\s*(?:                             # any number of space/tab,\n        (?P&lt;vi&gt;{delim})\\s*                 # optionally followed by\n                                           # any of the allowed\n                                           # delimiters, followed by any\n                                           # space/tab\n        (?P&lt;value&gt;.*))?$                   # everything up to eol\n        '</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._OPT_NV_TMPL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._OPT_TMPL">
+<code class="descname">_OPT_TMPL</code><em class="property"> = '\n        (?P&lt;option&gt;.*?)                    # very permissive!\n        \\s*(?P&lt;vi&gt;{delim})\\s*              # any number of space/tab,\n                                           # followed by any of the\n                                           # allowed delimiters,\n                                           # followed by any space/tab\n        (?P&lt;value&gt;.*)$                     # everything up to eol\n        '</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._OPT_TMPL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._SECT_TMPL">
+<code class="descname">_SECT_TMPL</code><em class="property"> = '\n        \\[                                 # [\n        (?P&lt;header&gt;[^]]+)                  # very permissive!\n        \\]                                 # ]\n        '</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._SECT_TMPL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._abc_cache">
+<code class="descname">_abc_cache</code><em class="property"> = &lt;_weakrefset.WeakSet object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._abc_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._abc_negative_cache">
+<code class="descname">_abc_negative_cache</code><em class="property"> = &lt;_weakrefset.WeakSet object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._abc_negative_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._abc_negative_cache_version">
+<code class="descname">_abc_negative_cache_version</code><em class="property"> = 43</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._abc_negative_cache_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._abc_registry">
+<code class="descname">_abc_registry</code><em class="property"> = &lt;_weakrefset.WeakSet object&gt;</em><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._abc_registry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._convert_to_boolean">
+<code class="descname">_convert_to_boolean</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._convert_to_boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a boolean value translating from other types if necessary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._get">
+<code class="descname">_get</code><span class="sig-paren">(</span><em>section</em>, <em>conv</em>, <em>option</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._get_conv">
+<code class="descname">_get_conv</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>conv</em>, <em>*</em>, <em>raw=False</em>, <em>vars=None</em>, <em>fallback=&lt;object object&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._get_conv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._handle_error">
+<code class="descname">_handle_error</code><span class="sig-paren">(</span><em>exc</em>, <em>fpname</em>, <em>lineno</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._handle_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._join_multiline_values">
+<code class="descname">_join_multiline_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._join_multiline_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._read">
+<code class="descname">_read</code><span class="sig-paren">(</span><em>fp</em>, <em>fpname</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a sectioned configuration file.</p>
+<p>Each section in a configuration file contains a header, indicated by
+a name in square brackets (<a href="#id1"><span class="problematic" id="id2">`</span></a>[]&#8217;), plus key/value options, indicated by
+<a href="#id3"><span class="problematic" id="id4">`</span></a>name&#8217; and <a href="#id5"><span class="problematic" id="id6">`</span></a>value&#8217; delimited with a specific substring (<a href="#id7"><span class="problematic" id="id8">`</span></a>=&#8217; or <a href="#id9"><span class="problematic" id="id10">`</span></a>:&#8217; by
+default).</p>
+<p>Values can span multiple lines, as long as they are indented deeper
+than the first line of the value. Depending on the parser&#8217;s mode, blank
+lines may be treated as parts of multiline values or ignored.</p>
+<p>Configuration files may include comments, prefixed by specific
+characters (<a href="#id11"><span class="problematic" id="id12">`</span></a>#&#8217; and <a href="#id13"><span class="problematic" id="id14">`</span></a>;&#8217; by default). Comments may appear on their own
+in an otherwise empty line or may be entered in lines holding values or
+section names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._validate_value_types">
+<code class="descname">_validate_value_types</code><span class="sig-paren">(</span><em>*</em>, <em>section=''</em>, <em>option=''</em>, <em>value=''</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._validate_value_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises a TypeError for non-string values.</p>
+<p>The only legal non-string value if we allow valueless
+options is None, so we need to check if the value is a
+string if:
+- we do not allow valueless options, or
+- we allow valueless options but the value is not None</p>
+<p>For compatibility reasons this method is not used in classic set()
+for RawConfigParsers. It is invoked in every case for mapping protocol
+access and in ConfigParser.set().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._write_section">
+<code class="descname">_write_section</code><span class="sig-paren">(</span><em>fp</em>, <em>section_name</em>, <em>section_items</em>, <em>delimiter</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._write_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a single section to the specified <a href="#id15"><span class="problematic" id="id16">`</span></a>fp&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.add_section">
+<code class="descname">add_section</code><span class="sig-paren">(</span><em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.add_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new section in the configuration.  Extends
+RawConfigParser.add_section by validating if the section name is
+a string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedConfigParser.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.converters">
+<code class="descname">converters</code><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.converters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.defaults">
+<code class="descname">defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>*</em>, <em>raw=False</em>, <em>vars=None</em>, <em>fallback=&lt;object object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an option value for a given section.</p>
+<p>If <a href="#id17"><span class="problematic" id="id18">`</span></a>vars&#8217; is provided, it must be a dictionary. The option is looked up
+in <a href="#id19"><span class="problematic" id="id20">`</span></a>vars&#8217; (if provided), <a href="#id21"><span class="problematic" id="id22">`</span></a>section&#8217;, and in <a href="#id23"><span class="problematic" id="id24">`</span></a>DEFAULTSECT&#8217; in that order.
+If the key is not found and <a href="#id25"><span class="problematic" id="id26">`</span></a>fallback&#8217; is provided, it is used as
+a fallback value. <a href="#id27"><span class="problematic" id="id28">`</span></a>None&#8217; can be provided as a <a href="#id29"><span class="problematic" id="id30">`</span></a>fallback&#8217; value.</p>
+<p>If interpolation is enabled and the optional argument <a href="#id31"><span class="problematic" id="id32">`</span></a>raw&#8217; is False,
+all interpolations are expanded in the return values.</p>
+<p>Arguments <a href="#id33"><span class="problematic" id="id34">`</span></a>raw&#8217;, <a href="#id35"><span class="problematic" id="id36">`</span></a>vars&#8217;, and <a href="#id37"><span class="problematic" id="id38">`</span></a>fallback&#8217; are keyword only.</p>
+<p>The section DEFAULT is special.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.getboolean">
+<code class="descname">getboolean</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>*</em>, <em>raw=False</em>, <em>vars=None</em>, <em>fallback=&lt;object object&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.getboolean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.getfloat">
+<code class="descname">getfloat</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>*</em>, <em>raw=False</em>, <em>vars=None</em>, <em>fallback=&lt;object object&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.getfloat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.getint">
+<code class="descname">getint</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>*</em>, <em>raw=False</em>, <em>vars=None</em>, <em>fallback=&lt;object object&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.getint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.has_section">
+<code class="descname">has_section</code><span class="sig-paren">(</span><em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.has_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate whether the named section is present in the configuration.</p>
+<p>The DEFAULT section is not acknowledged.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.items">
+<code class="descname">items</code><span class="sig-paren">(</span><em>section=&lt;object object&gt;</em>, <em>raw=False</em>, <em>vars=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of (name, value) tuples for each option in a section.</p>
+<p>All % interpolations are expanded in the return values, based on the
+defaults passed into the constructor, unless the optional argument
+<a href="#id39"><span class="problematic" id="id40">`</span></a>raw&#8217; is true.  Additional substitutions may be provided using the
+<a href="#id41"><span class="problematic" id="id42">`</span></a>vars&#8217; argument, which must be a dictionary whose contents overrides
+any pre-existing defaults.</p>
+<p>The section DEFAULT is special.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D's keys<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.options">
+<code class="descname">options</code><span class="sig-paren">(</span><em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of option names for the given section name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.optionxform">
+<code class="descname">optionxform</code><span class="sig-paren">(</span><em>optionstr</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.optionxform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a section from the parser and return it as
+a (section_name, section_proxy) tuple. If no section is present, raise
+KeyError.</p>
+<p>The section DEFAULT is never returned because it cannot be removed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>filenames</em>, <em>encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read and parse a filename or a list of filenames.</p>
+<p>Files that cannot be opened are silently ignored; this is
+designed so that you can specify a list of potential
+configuration file locations (e.g. current directory, user&#8217;s
+home directory, systemwide directory), and all existing
+configuration files in the list will be read.  A single
+filename may also be given.</p>
+<p>Return list of successfully read files.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.read_dict">
+<code class="descname">read_dict</code><span class="sig-paren">(</span><em>dictionary</em>, <em>source='&lt;dict&gt;'</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.read_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read configuration from a dictionary.</p>
+<p>Keys are section names, values are dictionaries with keys and values
+that should be present in the section. If the used dictionary type
+preserves order, sections and their keys will be added in order.</p>
+<p>All types held in the dictionary are converted to strings during
+reading, including section names, option names and keys.</p>
+<p>Optional second argument is the <a href="#id43"><span class="problematic" id="id44">`</span></a>source&#8217; specifying the name of the
+dictionary being read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.read_file">
+<code class="descname">read_file</code><span class="sig-paren">(</span><em>f</em>, <em>source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like read() but the argument must be a file-like object.</p>
+<p>The <a href="#id45"><span class="problematic" id="id46">`</span></a>f&#8217; argument must be iterable, returning one line at a time.
+Optional second argument is the <a href="#id47"><span class="problematic" id="id48">`</span></a>source&#8217; specifying the name of the
+file being read. If not given, it is taken from f.name. If <a href="#id49"><span class="problematic" id="id50">`</span></a>f&#8217; has no
+<a href="#id51"><span class="problematic" id="id52">`</span></a>name&#8217; attribute, <a href="#id53"><span class="problematic" id="id54">`</span></a>&lt;???&gt;&#8217; is used.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.read_string">
+<code class="descname">read_string</code><span class="sig-paren">(</span><em>string</em>, <em>source='&lt;string&gt;'</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.read_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read configuration from a given string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.readfp">
+<code class="descname">readfp</code><span class="sig-paren">(</span><em>fp</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.readfp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated, use read_file instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.remove_option">
+<code class="descname">remove_option</code><span class="sig-paren">(</span><em>section</em>, <em>option</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.remove_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an option.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.remove_section">
+<code class="descname">remove_section</code><span class="sig-paren">(</span><em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.remove_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a file section.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.sections">
+<code class="descname">sections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.sections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of section names, excluding [DEFAULT]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an option.  Extends RawConfigParser.set by validating type and
+interpolation syntax on the value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D.get(k,d), also set D[k]=d if k not in D<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>E</em>, <span class="optional">]</span><em>**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from mapping/iterable E and F.<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D's values<a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>fp</em>, <em>space_around_delimiters=True</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an .ini-format representation of the configuration state.</p>
+<p>If <a href="#id55"><span class="problematic" id="id56">`</span></a>space_around_delimiters&#8217; is True (the default), delimiters
+between keys and values are surrounded by spaces.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.Interpolation">
+<code class="descname">Interpolation</code><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.Interpolation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser._unify_values">
+<code class="descname">_unify_values</code><span class="sig-paren">(</span><em>section</em>, <em>variables</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedConfigParser._unify_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser._unify_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a sequence of lookups with &#8216;variables&#8217; taking priority over
+the &#8216;section&#8217; which takes priority over the DEFAULTSECT.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.ExtendedConfigParser.ExtendedConfigParser.has_option">
+<code class="descname">has_option</code><span class="sig-paren">(</span><em>section</em>, <em>option</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/ExtendedConfigParser.html#ExtendedConfigParser.has_option"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.ExtendedConfigParser.ExtendedConfigParser.has_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for the existence of a given option in a given section.
+If the specified <cite>section</cite> is None or an empty string, DEFAULT is
+assumed. If the specified <cite>section</cite> does not exist, returns False.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.PoC &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ToolChain.PoC</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/ToolChain.PoC.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ToolChain.PoC">
+<span id="toolchain-poc"></span><h1>ToolChain.PoC<a class="headerlink" href="#module-ToolChain.PoC" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.PoC.Configuration" title="ToolChain.PoC.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>:
+Base class for all tool Configuration classes.</li>
+</ul>
+<dl class="class">
+<dt id="ToolChain.PoC.Configuration">
+<em class="property">class </em><code class="descclassname">ToolChain.PoC.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/PoC.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4e1c77a956693ba1025abe3bf956ad0a357c2276.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Configuration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'VLSI-EDA'</em><a class="headerlink" href="#ToolChain.PoC.Configuration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tools vendor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration._toolName">
+<code class="descname">_toolName</code><em class="property"> = 'PoC'</em><a class="headerlink" href="#ToolChain.PoC.Configuration._toolName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tool.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.PoC'</em><a class="headerlink" href="#ToolChain.PoC.Configuration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Vendor.ToolName</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration._template">
+<code class="descname">_template</code><em class="property"> = {'ALL': {'INSTALL.PoC': {'Version': '1.1.1', 'InstallationDirectory': '', 'RepositoryKind': 'Public', 'IsGitRepository': 'True', 'GitRemoteBranch': 'master', 'MultiVersionSupport': 'True', 'HasInstalledGitHooks': 'False', 'HasInstalledGitFilters': 'False'}, 'SOLUTION.Solutions': {}}}</em><a class="headerlink" href="#ToolChain.PoC.Configuration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration sections represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/PoC.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/PoC.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.PoC.Configuration.ConfigureForAll" title="ToolChain.PoC.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.PoC.Configuration.ConfigureForAll" title="ToolChain.PoC.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.PoC.Configuration.ConfigureForAll" title="ToolChain.PoC.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.GetSections">
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.PoC.Configuration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the configurations section is configured</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.PoC.Configuration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration.PrepareVersionedSections">
+<code class="descname">PrepareVersionedSections</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration.PrepareVersionedSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.PoC.Configuration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.PoC.Configuration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._ConfigureBinaryDirectory">
+<code class="descname">_ConfigureBinaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._ConfigureBinaryDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates section with value from <a class="reference internal" href="#ToolChain.PoC.Configuration._template" title="ToolChain.PoC.Configuration._template"><code class="xref py py-attr docutils literal"><span class="pre">_template</span></code></a> and returns directory
+as <a class="reference external" href="https://docs.python.org/3.6/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Path</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._ConfigureEdition">
+<code class="descname">_ConfigureEdition</code><span class="sig-paren">(</span><em>editions</em>, <em>defaultEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._ConfigureEdition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._ConfigureVersion">
+<code class="descname">_ConfigureVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._ConfigureVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>If no version was configured before, then _GetDefaultVersion is called.
+Asks for version and updates section. Returns version as string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._GetDefaultEdition">
+<code class="descname">_GetDefaultEdition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._GetDefaultEdition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default edition (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of editions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unresolved default installation directory (str) from template.</p>
+<p>Overwrite function in sub-class for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._GetDefaultVersion">
+<code class="descname">_GetDefaultVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._GetDefaultVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default version (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.PoC.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.PoC.Configuration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.PoC.Configuration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.PoC.Configuration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = False</em><a class="headerlink" href="#ToolChain.PoC.Configuration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

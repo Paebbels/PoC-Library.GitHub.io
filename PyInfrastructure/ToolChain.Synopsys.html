@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.Synopsys &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ToolChain.Synopsys</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/ToolChain.Synopsys.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ToolChain.Synopsys">
+<span id="toolchain-synopsys"></span><h1>ToolChain.Synopsys<a class="headerlink" href="#module-ToolChain.Synopsys" title="Permalink to this headline">¶</a></h1>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Synopsys.SynopsysException" title="ToolChain.Synopsys.SynopsysException"><code class="xref py py-exc docutils literal"><span class="pre">SynopsysException</span></code></a>:
+Base class for all tool specific exceptions</li>
+</ul>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Synopsys.Configuration" title="ToolChain.Synopsys.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>:
+Configuration routines for Synopsys as a vendor.</li>
+<li><a class="reference internal" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile" title="ToolChain.Synopsys.SynopsysDesignConstraintFile"><code class="xref py py-class docutils literal"><span class="pre">SynopsysDesignConstraintFile</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="exception">
+<dt id="ToolChain.Synopsys.SynopsysException">
+<em class="property">exception </em><code class="descclassname">ToolChain.Synopsys.</code><code class="descname">SynopsysException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Synopsys.html#SynopsysException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.SynopsysException" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1e6baaa54bd69243c530e6e1fafee05e83095a45.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SynopsysException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Synopsys.SynopsysException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.SynopsysException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.SynopsysException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.SynopsysException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.Synopsys.SynopsysException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Synopsys.Configuration">
+<em class="property">class </em><code class="descclassname">ToolChain.Synopsys.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Synopsys.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configuration routines for Synopsys as a vendor.</p>
+<p>This configuration provides a common installation directory setup for all
+Synopsys tools installed on a system.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-cd426deb9f204958d4aaf46a15ad79a5642a7af3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Configuration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'Synopsys'</em><a class="headerlink" href="#ToolChain.Synopsys.Configuration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tools vendor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.Synopsys'</em><a class="headerlink" href="#ToolChain.Synopsys.Configuration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Vendor.ToolName</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration._template">
+<code class="descname">_template</code><em class="property"> = {'Windows': {'INSTALL.Synopsys': {'InstallationDirectory': 'C:/Synopsys'}}, 'Linux': {'INSTALL.Synopsys': {'InstallationDirectory': '/opt/Synopsys'}}}</em><a class="headerlink" href="#ToolChain.Synopsys.Configuration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration sections represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Synopsys.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a generic (platform independent) vendor configuration procedure.</p>
+<p>This method configures a vendor path. Overwrite this method to implement a
+vendor specific configuration routine for a vendor Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Synopsys.Configuration.ConfigureForAll" title="ToolChain.Synopsys.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Synopsys.Configuration.ConfigureForAll" title="ToolChain.Synopsys.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Synopsys.Configuration.ConfigureForAll" title="ToolChain.Synopsys.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.GetSections">
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.Synopsys.Configuration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the configurations section is configured</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Synopsys.Configuration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Virtual method. Overwrite to execute post-configuration tasks.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.Synopsys.Configuration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.Synopsys.Configuration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.Configuration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.Configuration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.Configuration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = False</em><a class="headerlink" href="#ToolChain.Synopsys.Configuration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile">
+<em class="property">class </em><code class="descclassname">ToolChain.Synopsys.</code><code class="descname">SynopsysDesignConstraintFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Synopsys.html#SynopsysDesignConstraintFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0889fb365486cf905aaca623ce682fe8a85b1236.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SynopsysDesignConstraintFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.SdcConstraintFile bits=0x1000 data=UNDEFINED&gt;</em><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Synopsys.SynopsysDesignConstraintFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Synopsys.SynopsysDesignConstraintFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

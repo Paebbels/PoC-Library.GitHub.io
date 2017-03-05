@@ -1,0 +1,666 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.pyAttribute.ArgParseAttributes &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>lib.pyAttribute.ArgParseAttributes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/lib.pyAttribute.ArgParseAttributes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.pyAttribute.ArgParseAttributes">
+<span id="lib-pyattribute-argparseattributes"></span><h1>lib.pyAttribute.ArgParseAttributes<a class="headerlink" href="#module-lib.pyAttribute.ArgParseAttributes" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute" title="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute"><code class="xref py py-class docutils literal"><span class="pre">CommandGroupAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute" title="lib.pyAttribute.ArgParseAttributes.DefaultAttribute"><code class="xref py py-class docutils literal"><span class="pre">DefaultAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute" title="lib.pyAttribute.ArgParseAttributes.CommandAttribute"><code class="xref py py-class docutils literal"><span class="pre">CommandAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute" title="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute"><code class="xref py py-class docutils literal"><span class="pre">ArgumentAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute" title="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute"><code class="xref py py-class docutils literal"><span class="pre">SwitchArgumentAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute" title="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute"><code class="xref py py-class docutils literal"><span class="pre">CommonArgumentAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute" title="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute"><code class="xref py py-class docutils literal"><span class="pre">CommonSwitchArgumentAttribute</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin" title="lib.pyAttribute.ArgParseAttributes.ArgParseMixin"><code class="xref py py-class docutils literal"><span class="pre">ArgParseMixin</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">CommandGroupAttribute</code><span class="sig-paren">(</span><em>groupName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#CommandGroupAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-73ad59745529f59ad9ff416c2112c4a068bd95f7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CommandGroupAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute.GroupName">
+<code class="descname">GroupName</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute.GroupName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute._CommandGroupAttribute__groupName">
+<code class="descname">_CommandGroupAttribute__groupName</code><em class="property"> = ''</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute._CommandGroupAttribute__groupName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">DefaultAttribute</code><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#DefaultAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-27655378134de669fb237d49fdad85951ef2bd8f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of DefaultAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute.Handler">
+<code class="descname">Handler</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute.Handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute._DefaultAttribute__handler">
+<code class="descname">_DefaultAttribute__handler</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute._DefaultAttribute__handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.DefaultAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.DefaultAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">CommandAttribute</code><span class="sig-paren">(</span><em>command</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#CommandAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-574d0206acf2c17f7494c0d2834d6ef5f2c0aebe.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CommandAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute.Command">
+<code class="descname">Command</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute.Command" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute.Handler">
+<code class="descname">Handler</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute.Handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute.KWArgs">
+<code class="descname">KWArgs</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute.KWArgs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute._CommandAttribute__command">
+<code class="descname">_CommandAttribute__command</code><em class="property"> = ''</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute._CommandAttribute__command" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute._CommandAttribute__handler">
+<code class="descname">_CommandAttribute__handler</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute._CommandAttribute__handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute._CommandAttribute__kwargs">
+<code class="descname">_CommandAttribute__kwargs</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute._CommandAttribute__kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommandAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommandAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">ArgumentAttribute</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#ArgumentAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-06635521afd0af0019a32d4727a9f96ed7cbdcd2.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ArgumentAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.Args">
+<code class="descname">Args</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.Args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.KWArgs">
+<code class="descname">KWArgs</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.KWArgs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._ArgumentAttribute__args">
+<code class="descname">_ArgumentAttribute__args</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._ArgumentAttribute__args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._ArgumentAttribute__kwargs">
+<code class="descname">_ArgumentAttribute__kwargs</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._ArgumentAttribute__kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">SwitchArgumentAttribute</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#SwitchArgumentAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-92b15f53b40b83f6e67a941f4b4cefe43943fd7a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SwitchArgumentAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.Args">
+<code class="descname">Args</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.Args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.KWArgs">
+<code class="descname">KWArgs</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute.KWArgs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._ArgumentAttribute__args">
+<code class="descname">_ArgumentAttribute__args</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._ArgumentAttribute__args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._ArgumentAttribute__kwargs">
+<code class="descname">_ArgumentAttribute__kwargs</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._ArgumentAttribute__kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">CommonArgumentAttribute</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#CommonArgumentAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e6f311c0e12a4603c424d31ae54fbd4ed16115aa.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CommonArgumentAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.Args">
+<code class="descname">Args</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.Args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.KWArgs">
+<code class="descname">KWArgs</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute.KWArgs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._ArgumentAttribute__args">
+<code class="descname">_ArgumentAttribute__args</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._ArgumentAttribute__args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._ArgumentAttribute__kwargs">
+<code class="descname">_ArgumentAttribute__kwargs</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._ArgumentAttribute__kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">CommonSwitchArgumentAttribute</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#CommonSwitchArgumentAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8d053f848af503af78f3631c751013c59e5ebc54.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CommonSwitchArgumentAttribute</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.Args">
+<code class="descname">Args</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.Args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><em>cl</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.KWArgs">
+<code class="descname">KWArgs</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute.KWArgs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._AppendAttribute">
+<code class="descname">_AppendAttribute</code><span class="sig-paren">(</span><em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._AppendAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._ArgumentAttribute__args">
+<code class="descname">_ArgumentAttribute__args</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._ArgumentAttribute__args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._ArgumentAttribute__kwargs">
+<code class="descname">_ArgumentAttribute__kwargs</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._ArgumentAttribute__kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._debug">
+<code class="descname">_debug</code><em class="property"> = False</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute._debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin">
+<em class="property">class </em><code class="descclassname">lib.pyAttribute.ArgParseAttributes.</code><code class="descname">ArgParseMixin</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#ArgParseMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-24878bafa0f5305c3bceca5de2ee9e77aa20542b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ArgParseMixin</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin.GetMethods">
+<code class="descname">GetMethods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.GetMethods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin.HasAttribute">
+<code class="descname">HasAttribute</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.HasAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin._ArgParseMixin__mainParser">
+<code class="descname">_ArgParseMixin__mainParser</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin._ArgParseMixin__mainParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin._ArgParseMixin__subParser">
+<code class="descname">_ArgParseMixin__subParser</code><em class="property"> = None</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin._ArgParseMixin__subParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin._ArgParseMixin__subParsers">
+<code class="descname">_ArgParseMixin__subParsers</code><em class="property"> = {}</em><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin._ArgParseMixin__subParsers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin.Run">
+<code class="descname">Run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/pyAttribute/ArgParseAttributes.html#ArgParseMixin.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.Run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin.MainParser">
+<code class="descname">MainParser</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.MainParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.pyAttribute.ArgParseAttributes.ArgParseMixin.SubParsers">
+<code class="descname">SubParsers</code><a class="headerlink" href="#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.SubParsers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

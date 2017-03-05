@@ -1,0 +1,2465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.Entity &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DataBase.Entity</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/DataBase.Entity.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-DataBase.Entity">
+<span id="database-entity"></span><h1>DataBase.Entity<a class="headerlink" href="#module-DataBase.Entity" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#DataBase.Entity.EntityTypes" title="DataBase.Entity.EntityTypes"><code class="xref py py-class docutils literal"><span class="pre">EntityTypes</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.Entity.BaseFlags" title="DataBase.Entity.BaseFlags"><code class="xref py py-class docutils literal"><span class="pre">BaseFlags</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.TestbenchKind" title="DataBase.Entity.TestbenchKind"><code class="xref py py-class docutils literal"><span class="pre">TestbenchKind</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.NetlistKind" title="DataBase.Entity.NetlistKind"><code class="xref py py-class docutils literal"><span class="pre">NetlistKind</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.NamespaceRoot" title="DataBase.Entity.NamespaceRoot"><code class="xref py py-class docutils literal"><span class="pre">NamespaceRoot</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.Visibility" title="DataBase.Entity.Visibility"><code class="xref py py-class docutils literal"><span class="pre">Visibility</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.Entity.PathElement" title="DataBase.Entity.PathElement"><code class="xref py py-class docutils literal"><span class="pre">PathElement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.Namespace" title="DataBase.Entity.Namespace"><code class="xref py py-class docutils literal"><span class="pre">Namespace</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.Library" title="DataBase.Entity.Library"><code class="xref py py-class docutils literal"><span class="pre">Library</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.WildCard" title="DataBase.Entity.WildCard"><code class="xref py py-class docutils literal"><span class="pre">WildCard</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.StarWildCard" title="DataBase.Entity.StarWildCard"><code class="xref py py-class docutils literal"><span class="pre">StarWildCard</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.AskWildCard" title="DataBase.Entity.AskWildCard"><code class="xref py py-class docutils literal"><span class="pre">AskWildCard</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.IPCore" title="DataBase.Entity.IPCore"><code class="xref py py-class docutils literal"><span class="pre">IPCore</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.LazyPathElement" title="DataBase.Entity.LazyPathElement"><code class="xref py py-class docutils literal"><span class="pre">LazyPathElement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.Testbench" title="DataBase.Entity.Testbench"><code class="xref py py-class docutils literal"><span class="pre">Testbench</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.VHDLTestbench" title="DataBase.Entity.VHDLTestbench"><code class="xref py py-class docutils literal"><span class="pre">VHDLTestbench</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.CocoTestbench" title="DataBase.Entity.CocoTestbench"><code class="xref py py-class docutils literal"><span class="pre">CocoTestbench</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.Netlist" title="DataBase.Entity.Netlist"><code class="xref py py-class docutils literal"><span class="pre">Netlist</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.XstNetlist" title="DataBase.Entity.XstNetlist"><code class="xref py py-class docutils literal"><span class="pre">XstNetlist</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.QuartusNetlist" title="DataBase.Entity.QuartusNetlist"><code class="xref py py-class docutils literal"><span class="pre">QuartusNetlist</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.LatticeNetlist" title="DataBase.Entity.LatticeNetlist"><code class="xref py py-class docutils literal"><span class="pre">LatticeNetlist</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.CoreGeneratorNetlist" title="DataBase.Entity.CoreGeneratorNetlist"><code class="xref py py-class docutils literal"><span class="pre">CoreGeneratorNetlist</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.VivadoNetlist" title="DataBase.Entity.VivadoNetlist"><code class="xref py py-class docutils literal"><span class="pre">VivadoNetlist</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Entity.FQN" title="DataBase.Entity.FQN"><code class="xref py py-class docutils literal"><span class="pre">FQN</span></code></a>:
+Undocumented.</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#DataBase.Entity._PoCEntityTypes_parser" title="DataBase.Entity._PoCEntityTypes_parser"><code class="xref py py-func docutils literal"><span class="pre">_PoCEntityTypes_parser()</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="DataBase.Entity.EntityTypes">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">EntityTypes</code><a class="reference internal" href="../_modules/DataBase/Entity.html#EntityTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.EntityTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a84cc667cc20cce68901a2f170ce5dcb29a08124.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of EntityTypes</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.EntityTypes.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.Entity.EntityTypes.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.EntityTypes.Source">
+<code class="descname">Source</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.Entity.EntityTypes.Source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.EntityTypes.Testbench">
+<code class="descname">Testbench</code><em class="property"> = 2</em><a class="headerlink" href="#DataBase.Entity.EntityTypes.Testbench" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.EntityTypes.NetList">
+<code class="descname">NetList</code><em class="property"> = 3</em><a class="headerlink" href="#DataBase.Entity.EntityTypes.NetList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.BaseFlags">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">BaseFlags</code><a class="reference internal" href="../_modules/DataBase/Entity.html#BaseFlags"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.BaseFlags" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-28196770ed144770ddac6fee93d9130758f8234d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of BaseFlags</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.BaseFlags._FlagsArithmeticMixin__bits">
+<code class="descname">_FlagsArithmeticMixin__bits</code><a class="headerlink" href="#DataBase.Entity.BaseFlags._FlagsArithmeticMixin__bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags._FlagsArithmeticMixin__create_flags_instance">
+<code class="descname">_FlagsArithmeticMixin__create_flags_instance</code><span class="sig-paren">(</span><em>bits</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags._FlagsArithmeticMixin__create_flags_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags._Flags__internal_str">
+<code class="descname">_Flags__internal_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags._Flags__internal_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags.bits_from_simple_str">
+<code class="descname">bits_from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags.bits_from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags.bits_from_str">
+<code class="descname">bits_from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags.bits_from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the output of __str__ into an integer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.BaseFlags.data">
+<code class="descname">data</code><a class="headerlink" href="#DataBase.Entity.BaseFlags.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags.from_simple_str">
+<code class="descname">from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags.from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts only the output of to_simple_str(). The output of __str__() is invalid as input.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags.from_str">
+<code class="descname">from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags.from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts both the output of to_simple_str() and __str__().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags.is_disjoint">
+<code class="descname">is_disjoint</code><span class="sig-paren">(</span><em>*flags_instances</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags.is_disjoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.BaseFlags.is_member">
+<code class="descname">is_member</code><a class="headerlink" href="#DataBase.Entity.BaseFlags.is_member" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>flags.is_member</cite> is a shorthand for <cite>flags.properties is not None</cite>.
+If this property is False then this Flags instance has either zero bits or holds a combination
+of flag member bits.
+If this property is True then the bits of this Flags instance match exactly the bits associated
+with one of the members. This however doesn&#8217;t necessarily mean that this flag instance isn&#8217;t a
+combination of several flags because the bits of a member can be the subset of another member.
+For example if member0_bits=0x1 and member1_bits=0x3 then the bits of member0 are a subset of
+the bits of member1. If a flag instance holds the bits of member1 then Flags.is_member returns
+True and Flags.properties returns the properties of member1 but __len__() returns 2 and
+__iter__() yields both member0 and member1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.BaseFlags.name">
+<code class="descname">name</code><a class="headerlink" href="#DataBase.Entity.BaseFlags.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.BaseFlags.properties">
+<code class="descname">properties</code><a class="headerlink" href="#DataBase.Entity.BaseFlags.properties" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns None if this flag isn&#8217;t an exact member of a flags class but a combination of flags,</td>
+</tr>
+</tbody>
+</table>
+<p>returns an object holding the properties (e.g.: name, data, index, ...) of the flag otherwise.
+We don&#8217;t store flag properties directly in Flags instances because this way Flags instances that are
+the (temporary) result of flags arithmetic don&#8217;t have to maintain these fields and it also has some
+benefits regarding memory usage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.BaseFlags.to_simple_str">
+<code class="descname">to_simple_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.BaseFlags.to_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.TestbenchKind">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">TestbenchKind</code><a class="reference internal" href="../_modules/DataBase/Entity.html#TestbenchKind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.TestbenchKind" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f791c3ee3d6bf9ac308e5dc582c67447904c9a4d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of TestbenchKind</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.TestbenchKind._FlagsArithmeticMixin__bits">
+<code class="descname">_FlagsArithmeticMixin__bits</code><a class="headerlink" href="#DataBase.Entity.TestbenchKind._FlagsArithmeticMixin__bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind._FlagsArithmeticMixin__create_flags_instance">
+<code class="descname">_FlagsArithmeticMixin__create_flags_instance</code><span class="sig-paren">(</span><em>bits</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind._FlagsArithmeticMixin__create_flags_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind._Flags__internal_str">
+<code class="descname">_Flags__internal_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind._Flags__internal_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind.bits_from_simple_str">
+<code class="descname">bits_from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind.bits_from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind.bits_from_str">
+<code class="descname">bits_from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind.bits_from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the output of __str__ into an integer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.TestbenchKind.data">
+<code class="descname">data</code><a class="headerlink" href="#DataBase.Entity.TestbenchKind.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind.from_simple_str">
+<code class="descname">from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind.from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts only the output of to_simple_str(). The output of __str__() is invalid as input.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind.from_str">
+<code class="descname">from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind.from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts both the output of to_simple_str() and __str__().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind.is_disjoint">
+<code class="descname">is_disjoint</code><span class="sig-paren">(</span><em>*flags_instances</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind.is_disjoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.TestbenchKind.is_member">
+<code class="descname">is_member</code><a class="headerlink" href="#DataBase.Entity.TestbenchKind.is_member" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>flags.is_member</cite> is a shorthand for <cite>flags.properties is not None</cite>.
+If this property is False then this Flags instance has either zero bits or holds a combination
+of flag member bits.
+If this property is True then the bits of this Flags instance match exactly the bits associated
+with one of the members. This however doesn&#8217;t necessarily mean that this flag instance isn&#8217;t a
+combination of several flags because the bits of a member can be the subset of another member.
+For example if member0_bits=0x1 and member1_bits=0x3 then the bits of member0 are a subset of
+the bits of member1. If a flag instance holds the bits of member1 then Flags.is_member returns
+True and Flags.properties returns the properties of member1 but __len__() returns 2 and
+__iter__() yields both member0 and member1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.TestbenchKind.name">
+<code class="descname">name</code><a class="headerlink" href="#DataBase.Entity.TestbenchKind.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.TestbenchKind.properties">
+<code class="descname">properties</code><a class="headerlink" href="#DataBase.Entity.TestbenchKind.properties" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns None if this flag isn&#8217;t an exact member of a flags class but a combination of flags,</td>
+</tr>
+</tbody>
+</table>
+<p>returns an object holding the properties (e.g.: name, data, index, ...) of the flag otherwise.
+We don&#8217;t store flag properties directly in Flags instances because this way Flags instances that are
+the (temporary) result of flags arithmetic don&#8217;t have to maintain these fields and it also has some
+benefits regarding memory usage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.TestbenchKind.to_simple_str">
+<code class="descname">to_simple_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.TestbenchKind.to_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.NetlistKind">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">NetlistKind</code><a class="reference internal" href="../_modules/DataBase/Entity.html#NetlistKind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.NetlistKind" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c29467062ffd810eea3a5f07df56c0a8f7b3f467.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of NetlistKind</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.NetlistKind._FlagsArithmeticMixin__bits">
+<code class="descname">_FlagsArithmeticMixin__bits</code><a class="headerlink" href="#DataBase.Entity.NetlistKind._FlagsArithmeticMixin__bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind._FlagsArithmeticMixin__create_flags_instance">
+<code class="descname">_FlagsArithmeticMixin__create_flags_instance</code><span class="sig-paren">(</span><em>bits</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind._FlagsArithmeticMixin__create_flags_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind._Flags__internal_str">
+<code class="descname">_Flags__internal_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind._Flags__internal_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind.bits_from_simple_str">
+<code class="descname">bits_from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind.bits_from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind.bits_from_str">
+<code class="descname">bits_from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind.bits_from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the output of __str__ into an integer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NetlistKind.data">
+<code class="descname">data</code><a class="headerlink" href="#DataBase.Entity.NetlistKind.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind.from_simple_str">
+<code class="descname">from_simple_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind.from_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts only the output of to_simple_str(). The output of __str__() is invalid as input.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind.from_str">
+<code class="descname">from_str</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind.from_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts both the output of to_simple_str() and __str__().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind.is_disjoint">
+<code class="descname">is_disjoint</code><span class="sig-paren">(</span><em>*flags_instances</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind.is_disjoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NetlistKind.is_member">
+<code class="descname">is_member</code><a class="headerlink" href="#DataBase.Entity.NetlistKind.is_member" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>flags.is_member</cite> is a shorthand for <cite>flags.properties is not None</cite>.
+If this property is False then this Flags instance has either zero bits or holds a combination
+of flag member bits.
+If this property is True then the bits of this Flags instance match exactly the bits associated
+with one of the members. This however doesn&#8217;t necessarily mean that this flag instance isn&#8217;t a
+combination of several flags because the bits of a member can be the subset of another member.
+For example if member0_bits=0x1 and member1_bits=0x3 then the bits of member0 are a subset of
+the bits of member1. If a flag instance holds the bits of member1 then Flags.is_member returns
+True and Flags.properties returns the properties of member1 but __len__() returns 2 and
+__iter__() yields both member0 and member1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NetlistKind.name">
+<code class="descname">name</code><a class="headerlink" href="#DataBase.Entity.NetlistKind.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NetlistKind.properties">
+<code class="descname">properties</code><a class="headerlink" href="#DataBase.Entity.NetlistKind.properties" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns None if this flag isn&#8217;t an exact member of a flags class but a combination of flags,</td>
+</tr>
+</tbody>
+</table>
+<p>returns an object holding the properties (e.g.: name, data, index, ...) of the flag otherwise.
+We don&#8217;t store flag properties directly in Flags instances because this way Flags instances that are
+the (temporary) result of flags arithmetic don&#8217;t have to maintain these fields and it also has some
+benefits regarding memory usage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NetlistKind.to_simple_str">
+<code class="descname">to_simple_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.NetlistKind.to_simple_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.NamespaceRoot">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">NamespaceRoot</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#NamespaceRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.NamespaceRoot" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8512742c09b01c1ca730dbbc231b8bcdc79b063d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of NamespaceRoot</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.NamespaceRoot.Libraries">
+<code class="descname">Libraries</code><a class="headerlink" href="#DataBase.Entity.NamespaceRoot.Libraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NamespaceRoot.LibraryNames">
+<code class="descname">LibraryNames</code><a class="headerlink" href="#DataBase.Entity.NamespaceRoot.LibraryNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NamespaceRoot.GetLibraries">
+<code class="descname">GetLibraries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#NamespaceRoot.GetLibraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.NamespaceRoot.GetLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NamespaceRoot.GetLibraryNames">
+<code class="descname">GetLibraryNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#NamespaceRoot.GetLibraryNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.NamespaceRoot.GetLibraryNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.NamespaceRoot.AddLibrary">
+<code class="descname">AddLibrary</code><span class="sig-paren">(</span><em>libraryName</em>, <em>libraryPrefix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#NamespaceRoot.AddLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.NamespaceRoot.AddLibrary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NamespaceRoot._NamespaceRoot__POCRoot_Name">
+<code class="descname">_NamespaceRoot__POCRoot_Name</code><em class="property"> = 'PoC'</em><a class="headerlink" href="#DataBase.Entity.NamespaceRoot._NamespaceRoot__POCRoot_Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.NamespaceRoot._NamespaceRoot__POCRoot_SectionName">
+<code class="descname">_NamespaceRoot__POCRoot_SectionName</code><em class="property"> = 'PoC'</em><a class="headerlink" href="#DataBase.Entity.NamespaceRoot._NamespaceRoot__POCRoot_SectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.Visibility">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">Visibility</code><a class="reference internal" href="../_modules/DataBase/Entity.html#Visibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8db77dbe7af537fa5634811ff82b4be786d0e416.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Visibility</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.Visibility.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.Entity.Visibility.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Visibility.Private">
+<code class="descname">Private</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.Entity.Visibility.Private" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Visibility.Public">
+<code class="descname">Public</code><em class="property"> = 2</em><a class="headerlink" href="#DataBase.Entity.Visibility.Public" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.PathElement">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">PathElement</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#PathElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.PathElement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-149df8dbd29da6e7a22fa10433a037d15ce953a3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PathElement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.PathElement.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.PathElement.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.PathElement.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.PathElement.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.PathElement.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.PathElement.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.PathElement.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.PathElement.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.PathElement.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.PathElement._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#PathElement._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.PathElement._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.Namespace">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">Namespace</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ad85472104235555162a9dde8713e2f569021e4c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Namespace</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Entity.Namespace._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Namespaces">
+<code class="descname">Namespaces</code><a class="headerlink" href="#DataBase.Entity.Namespace.Namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.NamespaceNames">
+<code class="descname">NamespaceNames</code><a class="headerlink" href="#DataBase.Entity.Namespace.NamespaceNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Entities">
+<code class="descname">Entities</code><a class="headerlink" href="#DataBase.Entity.Namespace.Entities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.EntityNames">
+<code class="descname">EntityNames</code><a class="headerlink" href="#DataBase.Entity.Namespace.EntityNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Namespace.GetNamespaces">
+<code class="descname">GetNamespaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace.GetNamespaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace.GetNamespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Namespace.GetNamespaceNames">
+<code class="descname">GetNamespaceNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace.GetNamespaceNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace.GetNamespaceNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Namespace.GetEntities">
+<code class="descname">GetEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace.GetEntities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace.GetEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Namespace.GetEntityNames">
+<code class="descname">GetEntityNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace.GetEntityNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace.GetEntityNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Namespace.GetAllEntities">
+<code class="descname">GetAllEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace.GetAllEntities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace.GetAllEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Namespace.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Namespace.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Namespace.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.Namespace.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.Namespace.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.Namespace.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.Namespace.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.Namespace.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.Namespace.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.Namespace.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Namespace.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.Namespace.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.Library">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">Library</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Library" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c6510a61dae1c6724d1f85054c3df2d12c1a5772.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Library</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.Library.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.Library.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.Library.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Entities">
+<code class="descname">Entities</code><a class="headerlink" href="#DataBase.Entity.Library.Entities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.EntityNames">
+<code class="descname">EntityNames</code><a class="headerlink" href="#DataBase.Entity.Library.EntityNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library.GetAllEntities">
+<code class="descname">GetAllEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library.GetAllEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library.GetEntities">
+<code class="descname">GetEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library.GetEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library.GetEntityNames">
+<code class="descname">GetEntityNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library.GetEntityNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library.GetNamespaceNames">
+<code class="descname">GetNamespaceNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library.GetNamespaceNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library.GetNamespaces">
+<code class="descname">GetNamespaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library.GetNamespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.Library.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.Library.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.NamespaceNames">
+<code class="descname">NamespaceNames</code><a class="headerlink" href="#DataBase.Entity.Library.NamespaceNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Namespaces">
+<code class="descname">Namespaces</code><a class="headerlink" href="#DataBase.Entity.Library.Namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.Library.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.Library.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Library.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.Library.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Library.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Library.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.WildCard">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">WildCard</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-82adbb4598bba920741c924f39b781ae4375cf45.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of WildCard</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetEntities">
+<code class="descname">GetEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetEntities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetTestbenches">
+<code class="descname">GetTestbenches</code><span class="sig-paren">(</span><em>kind=&lt;TestbenchKind(VHDLTestbench|CocoTestbench) bits=0x0003&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetTestbenches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetVHDLTestbenches">
+<code class="descname">GetVHDLTestbenches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetVHDLTestbenches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetVHDLTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetCocoTestbenches">
+<code class="descname">GetCocoTestbenches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetCocoTestbenches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetCocoTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetNetlists">
+<code class="descname">GetNetlists</code><span class="sig-paren">(</span><em>kind=&lt;NetlistKind(LatticeNetlist|QuartusNetlist|XstNetlist|CoreGeneratorNetlist|VivadoNetlist) bits=0x001F&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetLatticeNetlists">
+<code class="descname">GetLatticeNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetLatticeNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetLatticeNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetQuartusNetlists">
+<code class="descname">GetQuartusNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetQuartusNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetQuartusNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetXSTNetlists">
+<code class="descname">GetXSTNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetXSTNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetXSTNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetCoreGenNetlists">
+<code class="descname">GetCoreGenNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetCoreGenNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetCoreGenNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard.GetVivadoNetlists">
+<code class="descname">GetVivadoNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#WildCard.GetVivadoNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.WildCard.GetVivadoNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Testbenches">
+<code class="descname">Testbenches</code><a class="headerlink" href="#DataBase.Entity.WildCard.Testbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.VHDLTestbenches">
+<code class="descname">VHDLTestbenches</code><a class="headerlink" href="#DataBase.Entity.WildCard.VHDLTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.CocoTestbenches">
+<code class="descname">CocoTestbenches</code><a class="headerlink" href="#DataBase.Entity.WildCard.CocoTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Netlists">
+<code class="descname">Netlists</code><a class="headerlink" href="#DataBase.Entity.WildCard.Netlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.LatticeNetlists">
+<code class="descname">LatticeNetlists</code><a class="headerlink" href="#DataBase.Entity.WildCard.LatticeNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.QuartusNetlists">
+<code class="descname">QuartusNetlists</code><a class="headerlink" href="#DataBase.Entity.WildCard.QuartusNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.XSTNetlists">
+<code class="descname">XSTNetlists</code><a class="headerlink" href="#DataBase.Entity.WildCard.XSTNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.CoreGenNetlists">
+<code class="descname">CoreGenNetlists</code><a class="headerlink" href="#DataBase.Entity.WildCard.CoreGenNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.VivadoNetlists">
+<code class="descname">VivadoNetlists</code><a class="headerlink" href="#DataBase.Entity.WildCard.VivadoNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.WildCard.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.WildCard.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.WildCard.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.WildCard.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.WildCard.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.WildCard.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.WildCard.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.WildCard.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.WildCard.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.WildCard._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.WildCard._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.StarWildCard">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">StarWildCard</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#StarWildCard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.StarWildCard" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-456640927f009f07bcde2116c2a9d4c1a49b30de.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of StarWildCard</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#StarWildCard._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.StarWildCard._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetEntities">
+<code class="descname">GetEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#StarWildCard.GetEntities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.CocoTestbenches">
+<code class="descname">CocoTestbenches</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.CocoTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.CoreGenNetlists">
+<code class="descname">CoreGenNetlists</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.CoreGenNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetCocoTestbenches">
+<code class="descname">GetCocoTestbenches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetCocoTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetCoreGenNetlists">
+<code class="descname">GetCoreGenNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetCoreGenNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetLatticeNetlists">
+<code class="descname">GetLatticeNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetLatticeNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetNetlists">
+<code class="descname">GetNetlists</code><span class="sig-paren">(</span><em>kind=&lt;NetlistKind(LatticeNetlist|QuartusNetlist|XstNetlist|CoreGeneratorNetlist|VivadoNetlist) bits=0x001F&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetQuartusNetlists">
+<code class="descname">GetQuartusNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetQuartusNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetTestbenches">
+<code class="descname">GetTestbenches</code><span class="sig-paren">(</span><em>kind=&lt;TestbenchKind(VHDLTestbench|CocoTestbench) bits=0x0003&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetVHDLTestbenches">
+<code class="descname">GetVHDLTestbenches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetVHDLTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetVivadoNetlists">
+<code class="descname">GetVivadoNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetVivadoNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.StarWildCard.GetXSTNetlists">
+<code class="descname">GetXSTNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.StarWildCard.GetXSTNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.LatticeNetlists">
+<code class="descname">LatticeNetlists</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.LatticeNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Netlists">
+<code class="descname">Netlists</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Netlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.QuartusNetlists">
+<code class="descname">QuartusNetlists</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.QuartusNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Testbenches">
+<code class="descname">Testbenches</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Testbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.VHDLTestbenches">
+<code class="descname">VHDLTestbenches</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.VHDLTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.VivadoNetlists">
+<code class="descname">VivadoNetlists</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.VivadoNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.StarWildCard.XSTNetlists">
+<code class="descname">XSTNetlists</code><a class="headerlink" href="#DataBase.Entity.StarWildCard.XSTNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.AskWildCard">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">AskWildCard</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#AskWildCard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.AskWildCard" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f1ade2ff297b35d7e6bd45ee7a008399ef448b88.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AskWildCard</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#AskWildCard._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.AskWildCard._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetEntities">
+<code class="descname">GetEntities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#AskWildCard.GetEntities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.CocoTestbenches">
+<code class="descname">CocoTestbenches</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.CocoTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.CoreGenNetlists">
+<code class="descname">CoreGenNetlists</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.CoreGenNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetCocoTestbenches">
+<code class="descname">GetCocoTestbenches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetCocoTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetCoreGenNetlists">
+<code class="descname">GetCoreGenNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetCoreGenNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetLatticeNetlists">
+<code class="descname">GetLatticeNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetLatticeNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetNetlists">
+<code class="descname">GetNetlists</code><span class="sig-paren">(</span><em>kind=&lt;NetlistKind(LatticeNetlist|QuartusNetlist|XstNetlist|CoreGeneratorNetlist|VivadoNetlist) bits=0x001F&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetQuartusNetlists">
+<code class="descname">GetQuartusNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetQuartusNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetTestbenches">
+<code class="descname">GetTestbenches</code><span class="sig-paren">(</span><em>kind=&lt;TestbenchKind(VHDLTestbench|CocoTestbench) bits=0x0003&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetVHDLTestbenches">
+<code class="descname">GetVHDLTestbenches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetVHDLTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetVivadoNetlists">
+<code class="descname">GetVivadoNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetVivadoNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.AskWildCard.GetXSTNetlists">
+<code class="descname">GetXSTNetlists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.AskWildCard.GetXSTNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.LatticeNetlists">
+<code class="descname">LatticeNetlists</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.LatticeNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Netlists">
+<code class="descname">Netlists</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Netlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.QuartusNetlists">
+<code class="descname">QuartusNetlists</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.QuartusNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Testbenches">
+<code class="descname">Testbenches</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Testbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.VHDLTestbenches">
+<code class="descname">VHDLTestbenches</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.VHDLTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.VivadoNetlists">
+<code class="descname">VivadoNetlists</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.VivadoNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.AskWildCard.XSTNetlists">
+<code class="descname">XSTNetlists</code><a class="headerlink" href="#DataBase.Entity.AskWildCard.XSTNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.IPCore">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">IPCore</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#IPCore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.IPCore" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d035e7abd9b332d22b212f51629ef3d104d5e2d4.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IPCore</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.Dependencies">
+<code class="descname">Dependencies</code><a class="headerlink" href="#DataBase.Entity.IPCore.Dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.VHDLTestbench">
+<code class="descname">VHDLTestbench</code><a class="headerlink" href="#DataBase.Entity.IPCore.VHDLTestbench" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.CocoTestbench">
+<code class="descname">CocoTestbench</code><a class="headerlink" href="#DataBase.Entity.IPCore.CocoTestbench" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.IPCore.GetTestbenches">
+<code class="descname">GetTestbenches</code><span class="sig-paren">(</span><em>kind=&lt;TestbenchKind(VHDLTestbench|CocoTestbench) bits=0x0003&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#IPCore.GetTestbenches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.IPCore.GetTestbenches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.LatticeNetlist">
+<code class="descname">LatticeNetlist</code><a class="headerlink" href="#DataBase.Entity.IPCore.LatticeNetlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.QuartusNetlist">
+<code class="descname">QuartusNetlist</code><a class="headerlink" href="#DataBase.Entity.IPCore.QuartusNetlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.XSTNetlist">
+<code class="descname">XSTNetlist</code><a class="headerlink" href="#DataBase.Entity.IPCore.XSTNetlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.CGNetlist">
+<code class="descname">CGNetlist</code><a class="headerlink" href="#DataBase.Entity.IPCore.CGNetlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.VivadoNetlist">
+<code class="descname">VivadoNetlist</code><a class="headerlink" href="#DataBase.Entity.IPCore.VivadoNetlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.IPCore.GetNetlists">
+<code class="descname">GetNetlists</code><span class="sig-paren">(</span><em>kind=&lt;NetlistKind(LatticeNetlist|QuartusNetlist|XstNetlist|CoreGeneratorNetlist|VivadoNetlist) bits=0x001F&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#IPCore.GetNetlists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.IPCore.GetNetlists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.IPCore._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#IPCore._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.IPCore._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.IPCore.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#IPCore.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.IPCore.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.IPCore.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.IPCore.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.IPCore.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.IPCore.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.IPCore.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.IPCore.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.IPCore.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.IPCore.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.IPCore.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.LazyPathElement">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">LazyPathElement</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#LazyPathElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.LazyPathElement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6540827818839d29ec4a447727f59b87ec50c800.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LazyPathElement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LazyPathElement.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.LazyPathElement.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.LazyPathElement._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.LazyPathElement._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.LazyPathElement._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.LazyPathElement._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.Testbench">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">Testbench</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Testbench"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Testbench" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-19890ff5363a9331afefd5d1e83fe94b87f82b13.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Testbench</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.Testbench.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.Testbench.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Result">
+<code class="descname">Result</code><a class="headerlink" href="#DataBase.Entity.Testbench.Result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Testbench._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Testbench._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Testbench._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Testbench.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Testbench.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Testbench.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.Testbench.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.Testbench.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.Testbench.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.Testbench.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.Testbench.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.Testbench.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.Testbench.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.Testbench.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.Testbench.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Testbench.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.Testbench.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Testbench._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Testbench._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.VHDLTestbench">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">VHDLTestbench</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#VHDLTestbench"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.VHDLTestbench" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4cda390738a46ac7991c11e37c6ce06e3d8ff999.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLTestbench</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Entity.VHDLTestbench._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#VHDLTestbench._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.VHDLTestbench._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.VHDLTestbench.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#VHDLTestbench.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Result">
+<code class="descname">Result</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VHDLTestbench.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.VHDLTestbench.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.VHDLTestbench._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.VHDLTestbench._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.CocoTestbench">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">CocoTestbench</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#CocoTestbench"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.CocoTestbench" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-97c8f8d4f0d02da24a338345932e72a55e3c7b67.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CocoTestbench</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.TopLevel">
+<code class="descname">TopLevel</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.TopLevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.CocoTestbench._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#CocoTestbench._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.CocoTestbench._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.CocoTestbench.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#CocoTestbench.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.CocoTestbench.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Result">
+<code class="descname">Result</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CocoTestbench.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.CocoTestbench.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.CocoTestbench._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.CocoTestbench._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.Netlist">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">Netlist</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Netlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Netlist" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-5a231ba26717abdb5d6acbe740106ae30afd4558.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Netlist</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.Netlist.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.RulesFile">
+<code class="descname">RulesFile</code><a class="headerlink" href="#DataBase.Entity.Netlist.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Netlist._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#Netlist._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.Netlist._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.Netlist.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.Netlist.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.Netlist.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.Netlist.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.Netlist.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.Netlist.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.Netlist.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.Netlist.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.Netlist.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.Netlist.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.Netlist.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.Netlist._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.Netlist._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.XstNetlist">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">XstNetlist</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#XstNetlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.XstNetlist" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d41982f49f042ead09b6c131302fe8a942eba157.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XstNetlist</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.XcfFile">
+<code class="descname">XcfFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.XcfFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.FilterFile">
+<code class="descname">FilterFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.FilterFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.XstTemplateFile">
+<code class="descname">XstTemplateFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.XstTemplateFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.PrjFile">
+<code class="descname">PrjFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.PrjFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.XstFile">
+<code class="descname">XstFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.XstFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.XstNetlist._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#XstNetlist._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.XstNetlist._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.XstNetlist.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#XstNetlist.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.XstNetlist.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.RulesFile">
+<code class="descname">RulesFile</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.XstNetlist.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.XstNetlist.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.XstNetlist._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.XstNetlist._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.QuartusNetlist">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">QuartusNetlist</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#QuartusNetlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.QuartusNetlist" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f80a1dcabecaca3433aba077089fcdaf0afd82b7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of QuartusNetlist</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.QsfFile">
+<code class="descname">QsfFile</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.QsfFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.QuartusNetlist._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#QuartusNetlist._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.QuartusNetlist._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.QuartusNetlist.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#QuartusNetlist.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.RulesFile">
+<code class="descname">RulesFile</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.QuartusNetlist.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.QuartusNetlist.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.QuartusNetlist._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.QuartusNetlist._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.LatticeNetlist">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">LatticeNetlist</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#LatticeNetlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.LatticeNetlist" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8301249fed301875c5b8f4b2cbf9b8075f797694.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LatticeNetlist</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.PrjFile">
+<code class="descname">PrjFile</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.PrjFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.LatticeNetlist._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#LatticeNetlist._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.LatticeNetlist._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.LatticeNetlist.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#LatticeNetlist.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.RulesFile">
+<code class="descname">RulesFile</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.LatticeNetlist.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.LatticeNetlist.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.LatticeNetlist._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.LatticeNetlist._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.CoreGeneratorNetlist">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">CoreGeneratorNetlist</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#CoreGeneratorNetlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ecab070d73326d199540c96b8d14209cba4c5592.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CoreGeneratorNetlist</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.XcoFile">
+<code class="descname">XcoFile</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.XcoFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.CoreGeneratorNetlist._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#CoreGeneratorNetlist._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#CoreGeneratorNetlist.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.RulesFile">
+<code class="descname">RulesFile</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.CoreGeneratorNetlist.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.CoreGeneratorNetlist._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.CoreGeneratorNetlist._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.VivadoNetlist">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">VivadoNetlist</code><span class="sig-paren">(</span><em>host</em>, <em>name</em>, <em>configSectionName</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#VivadoNetlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.VivadoNetlist" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-900b752791b5deff491e307cbdb6b208987fb406.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VivadoNetlist</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.FilesFile">
+<code class="descname">FilesFile</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.FilesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.TclFile">
+<code class="descname">TclFile</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.TclFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.VivadoNetlist._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#VivadoNetlist._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.VivadoNetlist._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.VivadoNetlist.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#VivadoNetlist.pprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.ConfigSection">
+<code class="descname">ConfigSection</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.IsVisible">
+<code class="descname">IsVisible</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.IsVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.Level">
+<code class="descname">Level</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.Level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.ModuleName">
+<code class="descname">ModuleName</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.ModuleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.RulesFile">
+<code class="descname">RulesFile</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.VivadoNetlist.Visibility">
+<code class="descname">Visibility</code><a class="headerlink" href="#DataBase.Entity.VivadoNetlist.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Entity.VivadoNetlist._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Entity.VivadoNetlist._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Entity.FQN">
+<em class="property">class </em><code class="descclassname">DataBase.Entity.</code><code class="descname">FQN</code><span class="sig-paren">(</span><em>host</em>, <em>fqn</em>, <em>defaultLibrary='PoC'</em>, <em>defaultType=&lt;EntityTypes.Source: 1&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#FQN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.FQN" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-592349c00a60b36f284f4075f5d24e8f17b03c8e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FQN</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Entity.FQN.Root">
+<code class="descname">Root</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#FQN.Root"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity.FQN.Root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Entity.FQN.Entity">
+<code class="descname">Entity</code><a class="headerlink" href="#DataBase.Entity.FQN.Entity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p><strong>Functions</strong></p>
+<dl class="function">
+<dt id="DataBase.Entity._PoCEntityTypes_parser">
+<code class="descclassname">DataBase.Entity.</code><code class="descname">_PoCEntityTypes_parser</code><span class="sig-paren">(</span><em>cls</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Entity.html#_PoCEntityTypes_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Entity._PoCEntityTypes_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

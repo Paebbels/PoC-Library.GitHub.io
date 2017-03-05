@@ -1,0 +1,1548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.Git &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ToolChain.Git</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/ToolChain.Git.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ToolChain.Git">
+<span id="toolchain-git"></span><h1>ToolChain.Git<a class="headerlink" href="#module-ToolChain.Git" title="Permalink to this headline">¶</a></h1>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Git.GitException" title="ToolChain.Git.GitException"><code class="xref py py-exc docutils literal"><span class="pre">GitException</span></code></a>:
+Base class for all tool specific exceptions</li>
+</ul>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Git.Configuration" title="ToolChain.Git.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>:
+Base class for all tool Configuration classes.</li>
+<li><a class="reference internal" href="#ToolChain.Git.Git" title="ToolChain.Git.Git"><code class="xref py py-class docutils literal"><span class="pre">Git</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Git.GitSCM" title="ToolChain.Git.GitSCM"><code class="xref py py-class docutils literal"><span class="pre">GitSCM</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Git.GitRevParse" title="ToolChain.Git.GitRevParse"><code class="xref py py-class docutils literal"><span class="pre">GitRevParse</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Git.GitRevList" title="ToolChain.Git.GitRevList"><code class="xref py py-class docutils literal"><span class="pre">GitRevList</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Git.GitDescribe" title="ToolChain.Git.GitDescribe"><code class="xref py py-class docutils literal"><span class="pre">GitDescribe</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Git.GitConfig" title="ToolChain.Git.GitConfig"><code class="xref py py-class docutils literal"><span class="pre">GitConfig</span></code></a>:
+Represent an executable.</li>
+</ul>
+<dl class="exception">
+<dt id="ToolChain.Git.GitException">
+<em class="property">exception </em><code class="descclassname">ToolChain.Git.</code><code class="descname">GitException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitException" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1c2d7c0e54e5f169b815d901903f59dd95fa81c3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GitException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.GitException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.Git.GitException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.Configuration">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-16a0cf9d4242b02ee2978fa79748baac5dd888d9.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Configuration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'Git SCM'</em><a class="headerlink" href="#ToolChain.Git.Configuration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tools vendor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration._toolName">
+<code class="descname">_toolName</code><em class="property"> = 'Git'</em><a class="headerlink" href="#ToolChain.Git.Configuration._toolName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tool.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.Git'</em><a class="headerlink" href="#ToolChain.Git.Configuration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Vendor.ToolName</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration._template">
+<code class="descname">_template</code><em class="property"> = {'Windows': {'INSTALL.Git': {'Version': '2.8.2', 'InstallationDirectory': 'C:/Program Files/Git', 'BinaryDirectory': '${InstallationDirectory}/cmd'}}, 'Linux': {'INSTALL.Git': {'Version': '2.8.1', 'InstallationDirectory': '/usr/bin', 'BinaryDirectory': '${InstallationDirectory}'}}}</em><a class="headerlink" href="#ToolChain.Git.Configuration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration sections represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Git.Configuration.ConfigureForAll" title="ToolChain.Git.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Git.Configuration.ConfigureForAll" title="ToolChain.Git.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Git.Configuration.ConfigureForAll" title="ToolChain.Git.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.GetSections">
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.Git.Configuration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the configurations section is configured</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Git.Configuration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration.PrepareVersionedSections">
+<code class="descname">PrepareVersionedSections</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration.PrepareVersionedSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.Git.Configuration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.Git.Configuration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__GetGitDirectory">
+<code class="descname">_Configuration__GetGitDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__GetGitDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__InstallGitFilters">
+<code class="descname">_Configuration__InstallGitFilters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__InstallGitFilters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__InstallGitHooks">
+<code class="descname">_Configuration__InstallGitHooks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__InstallGitHooks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__IsUnderGitControl">
+<code class="descname">_Configuration__IsUnderGitControl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__IsUnderGitControl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__UninstallGitFilters">
+<code class="descname">_Configuration__UninstallGitFilters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__UninstallGitFilters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__UninstallGitHooks">
+<code class="descname">_Configuration__UninstallGitHooks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__UninstallGitHooks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._Configuration__WriteGitSection">
+<code class="descname">_Configuration__WriteGitSection</code><span class="sig-paren">(</span><em>binPath</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._Configuration__WriteGitSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._ConfigureBinaryDirectory">
+<code class="descname">_ConfigureBinaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._ConfigureBinaryDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates section with value from <a class="reference internal" href="#ToolChain.Git.Configuration._template" title="ToolChain.Git.Configuration._template"><code class="xref py py-attr docutils literal"><span class="pre">_template</span></code></a> and returns directory
+as <a class="reference external" href="https://docs.python.org/3.6/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Path</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._ConfigureEdition">
+<code class="descname">_ConfigureEdition</code><span class="sig-paren">(</span><em>editions</em>, <em>defaultEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._ConfigureEdition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._ConfigureVersion">
+<code class="descname">_ConfigureVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._ConfigureVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>If no version was configured before, then _GetDefaultVersion is called.
+Asks for version and updates section. Returns version as string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._GetDefaultEdition">
+<code class="descname">_GetDefaultEdition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._GetDefaultEdition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default edition (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of editions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._GetDefaultVersion">
+<code class="descname">_GetDefaultVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._GetDefaultVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default version (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Configuration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.Configuration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.Configuration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = False</em><a class="headerlink" href="#ToolChain.Git.Configuration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.Git">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">Git</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Git"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Git" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-17ed13dceed6e2688a31cd6ce8df79564bcd4c2f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Git</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.Git.GetGitRevParse">
+<code class="descname">GetGitRevParse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Git.GetGitRevParse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Git.GetGitRevParse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Git.GetGitRevList">
+<code class="descname">GetGitRevList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Git.GetGitRevList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Git.GetGitRevList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Git.GetGitDescribe">
+<code class="descname">GetGitDescribe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Git.GetGitDescribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Git.GetGitDescribe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.Git.GetGitConfig">
+<code class="descname">GetGitConfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#Git.GetGitConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.Git.GetGitConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitSCM">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">GitSCM</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitSCM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitSCM" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6255edd7a48e0e4a94a34ddc9219a45951823b94.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GitSCM</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitSCM.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitSCM.Clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitSCM.Executable">
+<em class="property">class </em><code class="descname">Executable</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitSCM.Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitSCM.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitSCM.Switch_Version">
+<em class="property">class </em><code class="descclassname">GitSCM.</code><code class="descname">Switch_Version</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitSCM.Switch_Version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitSCM.Switch_Version" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitSCM.Switch_Version._name">
+<code class="descname">_name</code><em class="property"> = 'version'</em><a class="headerlink" href="#ToolChain.Git.GitSCM.Switch_Version._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitSCM.Parameters">
+<code class="descclassname">GitSCM.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitSCM.Executable'&gt;, &lt;class 'ToolChain.Git.GitSCM.Switch_Version'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitSCM.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.GetReader">
+<code class="descclassname">GitSCM.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.Log">
+<code class="descclassname">GitSCM.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogDebug">
+<code class="descclassname">GitSCM.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogDryRun">
+<code class="descclassname">GitSCM.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogError">
+<code class="descclassname">GitSCM.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogFatal">
+<code class="descclassname">GitSCM.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogInfo">
+<code class="descclassname">GitSCM.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogNormal">
+<code class="descclassname">GitSCM.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogQuiet">
+<code class="descclassname">GitSCM.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogVerbose">
+<code class="descclassname">GitSCM.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.LogWarning">
+<code class="descclassname">GitSCM.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitSCM.Logger">
+<code class="descclassname">GitSCM.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Git.GitSCM.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitSCM.Path">
+<code class="descclassname">GitSCM.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Git.GitSCM.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.ReadUntilBoundary">
+<code class="descclassname">GitSCM.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.Send">
+<code class="descclassname">GitSCM.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.SendBoundary">
+<code class="descclassname">GitSCM.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.StartProcess">
+<code class="descclassname">GitSCM.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM.Terminate">
+<code class="descclassname">GitSCM.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitSCM._POC_BOUNDARY">
+<code class="descclassname">GitSCM.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Git.GitSCM._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitSCM._TryLog">
+<code class="descclassname">GitSCM.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitSCM._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">GitRevParse</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6a4887ba1c403c9e98fab866db807154e81a4aaf.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GitRevParse</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse.Clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse.Command">
+<em class="property">class </em><code class="descname">Command</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse.Command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse.Command" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.Command._name">
+<code class="descname">_name</code><em class="property"> = 'rev-parse'</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.Command._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse.SwitchInsideWorkingTree">
+<em class="property">class </em><code class="descclassname">GitRevParse.</code><code class="descname">SwitchInsideWorkingTree</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse.SwitchInsideWorkingTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse.SwitchInsideWorkingTree" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.SwitchInsideWorkingTree._name">
+<code class="descname">_name</code><em class="property"> = 'is-inside-work-tree'</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.SwitchInsideWorkingTree._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse.SwitchShowTopLevel">
+<em class="property">class </em><code class="descclassname">GitRevParse.</code><code class="descname">SwitchShowTopLevel</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse.SwitchShowTopLevel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse.SwitchShowTopLevel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.SwitchShowTopLevel._name">
+<code class="descname">_name</code><em class="property"> = 'show-toplevel'</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.SwitchShowTopLevel._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse.SwitchGitDir">
+<em class="property">class </em><code class="descclassname">GitRevParse.</code><code class="descname">SwitchGitDir</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse.SwitchGitDir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse.SwitchGitDir" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.SwitchGitDir._name">
+<code class="descname">_name</code><em class="property"> = 'git-dir'</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.SwitchGitDir._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.RevParseParameters">
+<code class="descclassname">GitRevParse.</code><code class="descname">RevParseParameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitRevParse.Command'&gt;, &lt;class 'ToolChain.Git.GitRevParse.SwitchInsideWorkingTree'&gt;, &lt;class 'ToolChain.Git.GitRevParse.SwitchShowTopLevel'&gt;, &lt;class 'ToolChain.Git.GitRevParse.SwitchGitDir'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.RevParseParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.Execute">
+<code class="descclassname">GitRevParse.</code><code class="descname">Execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevParse.Execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevParse.Execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse.Executable">
+<em class="property">class </em><code class="descclassname">GitRevParse.</code><code class="descname">Executable</code><a class="headerlink" href="#ToolChain.Git.GitRevParse.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.GetReader">
+<code class="descclassname">GitRevParse.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.Log">
+<code class="descclassname">GitRevParse.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogDebug">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogDryRun">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogError">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogFatal">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogInfo">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogNormal">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogQuiet">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogVerbose">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.LogWarning">
+<code class="descclassname">GitRevParse.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.Logger">
+<code class="descclassname">GitRevParse.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Git.GitRevParse.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.Parameters">
+<code class="descclassname">GitRevParse.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitSCM.Executable'&gt;, &lt;class 'ToolChain.Git.GitSCM.Switch_Version'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.Path">
+<code class="descclassname">GitRevParse.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Git.GitRevParse.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.ReadUntilBoundary">
+<code class="descclassname">GitRevParse.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.Send">
+<code class="descclassname">GitRevParse.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.SendBoundary">
+<code class="descclassname">GitRevParse.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.StartProcess">
+<code class="descclassname">GitRevParse.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevParse.Switch_Version">
+<em class="property">class </em><code class="descclassname">GitRevParse.</code><code class="descname">Switch_Version</code><a class="headerlink" href="#ToolChain.Git.GitRevParse.Switch_Version" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse.Switch_Version._name">
+<code class="descname">_name</code><em class="property"> = 'version'</em><a class="headerlink" href="#ToolChain.Git.GitRevParse.Switch_Version._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse.Terminate">
+<code class="descclassname">GitRevParse.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevParse._POC_BOUNDARY">
+<code class="descclassname">GitRevParse.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Git.GitRevParse._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevParse._TryLog">
+<code class="descclassname">GitRevParse.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevParse._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevList">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">GitRevList</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevList" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a0d8b6d6e80bb065fbf2b2c7b5ecc2033c7edd8b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GitRevList</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevList.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevList.Clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevList.Command">
+<em class="property">class </em><code class="descname">Command</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevList.Command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevList.Command" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.Command._name">
+<code class="descname">_name</code><em class="property"> = 'rev-list'</em><a class="headerlink" href="#ToolChain.Git.GitRevList.Command._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevList.SwitchTags">
+<em class="property">class </em><code class="descclassname">GitRevList.</code><code class="descname">SwitchTags</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevList.SwitchTags"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevList.SwitchTags" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.SwitchTags._name">
+<code class="descname">_name</code><em class="property"> = 'tags'</em><a class="headerlink" href="#ToolChain.Git.GitRevList.SwitchTags._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevList.SwitchMaxCount">
+<em class="property">class </em><code class="descclassname">GitRevList.</code><code class="descname">SwitchMaxCount</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevList.SwitchMaxCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevList.SwitchMaxCount" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.SwitchMaxCount._name">
+<code class="descname">_name</code><em class="property"> = 'max-count'</em><a class="headerlink" href="#ToolChain.Git.GitRevList.SwitchMaxCount._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.RevListParameters">
+<code class="descclassname">GitRevList.</code><code class="descname">RevListParameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitRevList.Command'&gt;, &lt;class 'ToolChain.Git.GitRevList.SwitchTags'&gt;, &lt;class 'ToolChain.Git.GitRevList.SwitchMaxCount'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitRevList.RevListParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.Execute">
+<code class="descclassname">GitRevList.</code><code class="descname">Execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitRevList.Execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitRevList.Execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevList.Executable">
+<em class="property">class </em><code class="descclassname">GitRevList.</code><code class="descname">Executable</code><a class="headerlink" href="#ToolChain.Git.GitRevList.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.GetReader">
+<code class="descclassname">GitRevList.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.Log">
+<code class="descclassname">GitRevList.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogDebug">
+<code class="descclassname">GitRevList.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogDryRun">
+<code class="descclassname">GitRevList.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogError">
+<code class="descclassname">GitRevList.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogFatal">
+<code class="descclassname">GitRevList.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogInfo">
+<code class="descclassname">GitRevList.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogNormal">
+<code class="descclassname">GitRevList.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogQuiet">
+<code class="descclassname">GitRevList.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogVerbose">
+<code class="descclassname">GitRevList.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.LogWarning">
+<code class="descclassname">GitRevList.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.Logger">
+<code class="descclassname">GitRevList.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Git.GitRevList.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.Parameters">
+<code class="descclassname">GitRevList.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitSCM.Executable'&gt;, &lt;class 'ToolChain.Git.GitSCM.Switch_Version'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitRevList.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.Path">
+<code class="descclassname">GitRevList.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Git.GitRevList.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.ReadUntilBoundary">
+<code class="descclassname">GitRevList.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.Send">
+<code class="descclassname">GitRevList.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.SendBoundary">
+<code class="descclassname">GitRevList.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.StartProcess">
+<code class="descclassname">GitRevList.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitRevList.Switch_Version">
+<em class="property">class </em><code class="descclassname">GitRevList.</code><code class="descname">Switch_Version</code><a class="headerlink" href="#ToolChain.Git.GitRevList.Switch_Version" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitRevList.Switch_Version._name">
+<code class="descname">_name</code><em class="property"> = 'version'</em><a class="headerlink" href="#ToolChain.Git.GitRevList.Switch_Version._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList.Terminate">
+<code class="descclassname">GitRevList.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitRevList._POC_BOUNDARY">
+<code class="descclassname">GitRevList.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Git.GitRevList._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitRevList._TryLog">
+<code class="descclassname">GitRevList.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitRevList._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitDescribe">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">GitDescribe</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitDescribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitDescribe" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-308bde2646f32b67b863cf78e2935a8240282565.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GitDescribe</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitDescribe.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitDescribe.Clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitDescribe.Command">
+<em class="property">class </em><code class="descname">Command</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitDescribe.Command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitDescribe.Command" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.Command._name">
+<code class="descname">_name</code><em class="property"> = 'describe'</em><a class="headerlink" href="#ToolChain.Git.GitDescribe.Command._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitDescribe.SwitchAbbrev">
+<em class="property">class </em><code class="descclassname">GitDescribe.</code><code class="descname">SwitchAbbrev</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitDescribe.SwitchAbbrev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitDescribe.SwitchAbbrev" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.SwitchAbbrev._name">
+<code class="descname">_name</code><em class="property"> = 'abbrev'</em><a class="headerlink" href="#ToolChain.Git.GitDescribe.SwitchAbbrev._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitDescribe.SwitchTags">
+<em class="property">class </em><code class="descclassname">GitDescribe.</code><code class="descname">SwitchTags</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitDescribe.SwitchTags"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitDescribe.SwitchTags" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.SwitchTags._name">
+<code class="descname">_name</code><em class="property"> = 'tags'</em><a class="headerlink" href="#ToolChain.Git.GitDescribe.SwitchTags._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.DescribeParameters">
+<code class="descclassname">GitDescribe.</code><code class="descname">DescribeParameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitDescribe.Command'&gt;, &lt;class 'ToolChain.Git.GitDescribe.SwitchAbbrev'&gt;, &lt;class 'ToolChain.Git.GitDescribe.SwitchTags'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitDescribe.DescribeParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.Execute">
+<code class="descclassname">GitDescribe.</code><code class="descname">Execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitDescribe.Execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitDescribe.Execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitDescribe.Executable">
+<em class="property">class </em><code class="descclassname">GitDescribe.</code><code class="descname">Executable</code><a class="headerlink" href="#ToolChain.Git.GitDescribe.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.GetReader">
+<code class="descclassname">GitDescribe.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.Log">
+<code class="descclassname">GitDescribe.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogDebug">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogDryRun">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogError">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogFatal">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogInfo">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogNormal">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogQuiet">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogVerbose">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.LogWarning">
+<code class="descclassname">GitDescribe.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.Logger">
+<code class="descclassname">GitDescribe.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Git.GitDescribe.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.Parameters">
+<code class="descclassname">GitDescribe.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitSCM.Executable'&gt;, &lt;class 'ToolChain.Git.GitSCM.Switch_Version'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitDescribe.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.Path">
+<code class="descclassname">GitDescribe.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Git.GitDescribe.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.ReadUntilBoundary">
+<code class="descclassname">GitDescribe.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.Send">
+<code class="descclassname">GitDescribe.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.SendBoundary">
+<code class="descclassname">GitDescribe.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.StartProcess">
+<code class="descclassname">GitDescribe.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitDescribe.Switch_Version">
+<em class="property">class </em><code class="descclassname">GitDescribe.</code><code class="descname">Switch_Version</code><a class="headerlink" href="#ToolChain.Git.GitDescribe.Switch_Version" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe.Switch_Version._name">
+<code class="descname">_name</code><em class="property"> = 'version'</em><a class="headerlink" href="#ToolChain.Git.GitDescribe.Switch_Version._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe.Terminate">
+<code class="descclassname">GitDescribe.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitDescribe._POC_BOUNDARY">
+<code class="descclassname">GitDescribe.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Git.GitDescribe._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitDescribe._TryLog">
+<code class="descclassname">GitDescribe.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitDescribe._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig">
+<em class="property">class </em><code class="descclassname">ToolChain.Git.</code><code class="descname">GitConfig</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d068a86ad6b546c702d1641f145d59be8b8cc6d6.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GitConfig</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.Clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.Command">
+<em class="property">class </em><code class="descname">Command</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.Command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.Command" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.Command._name">
+<code class="descname">_name</code><em class="property"> = 'config'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.Command._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.SwitchUnset">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">SwitchUnset</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.SwitchUnset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.SwitchUnset" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.SwitchUnset._name">
+<code class="descname">_name</code><em class="property"> = 'unset'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.SwitchUnset._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.SwitchRemoveSection">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">SwitchRemoveSection</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.SwitchRemoveSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.SwitchRemoveSection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.SwitchRemoveSection._name">
+<code class="descname">_name</code><em class="property"> = 'remove-section'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.SwitchRemoveSection._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.ValueFilterClean">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">ValueFilterClean</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.ValueFilterClean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterClean" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.ValueFilterClean._name">
+<code class="descname">_name</code><em class="property"> = 'clean'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterClean._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.ValueFilterClean._pattern">
+<code class="descname">_pattern</code><em class="property"> = 'filter.{1}.{0}'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterClean._pattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.ValueFilterSmudge">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">ValueFilterSmudge</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.ValueFilterSmudge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterSmudge" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.ValueFilterSmudge._name">
+<code class="descname">_name</code><em class="property"> = 'smudge'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterSmudge._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.ValueFilterSmudge._pattern">
+<code class="descname">_pattern</code><em class="property"> = 'filter.{1}.{0}'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterSmudge._pattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.ValueFilterParameters">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">ValueFilterParameters</code><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.ValueFilterParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.ValueFilterParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.ConfigParameters">
+<code class="descclassname">GitConfig.</code><code class="descname">ConfigParameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitConfig.Command'&gt;, &lt;class 'ToolChain.Git.GitConfig.SwitchUnset'&gt;, &lt;class 'ToolChain.Git.GitConfig.SwitchRemoveSection'&gt;, &lt;class 'ToolChain.Git.GitConfig.ValueFilterClean'&gt;, &lt;class 'ToolChain.Git.GitConfig.ValueFilterSmudge'&gt;, &lt;class 'ToolChain.Git.GitConfig.ValueFilterParameters'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitConfig.ConfigParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.Executable">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">Executable</code><a class="headerlink" href="#ToolChain.Git.GitConfig.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.GetReader">
+<code class="descclassname">GitConfig.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.Log">
+<code class="descclassname">GitConfig.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogDebug">
+<code class="descclassname">GitConfig.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogDryRun">
+<code class="descclassname">GitConfig.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogError">
+<code class="descclassname">GitConfig.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogFatal">
+<code class="descclassname">GitConfig.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogInfo">
+<code class="descclassname">GitConfig.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogNormal">
+<code class="descclassname">GitConfig.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogQuiet">
+<code class="descclassname">GitConfig.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogVerbose">
+<code class="descclassname">GitConfig.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.LogWarning">
+<code class="descclassname">GitConfig.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.Logger">
+<code class="descclassname">GitConfig.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Git.GitConfig.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.Parameters">
+<code class="descclassname">GitConfig.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Git.GitSCM.Executable'&gt;, &lt;class 'ToolChain.Git.GitSCM.Switch_Version'&gt;]</em><a class="headerlink" href="#ToolChain.Git.GitConfig.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.Path">
+<code class="descclassname">GitConfig.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Git.GitConfig.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.ReadUntilBoundary">
+<code class="descclassname">GitConfig.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.Send">
+<code class="descclassname">GitConfig.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.SendBoundary">
+<code class="descclassname">GitConfig.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.StartProcess">
+<code class="descclassname">GitConfig.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Git.GitConfig.Switch_Version">
+<em class="property">class </em><code class="descclassname">GitConfig.</code><code class="descname">Switch_Version</code><a class="headerlink" href="#ToolChain.Git.GitConfig.Switch_Version" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Git.GitConfig.Switch_Version._name">
+<code class="descname">_name</code><em class="property"> = 'version'</em><a class="headerlink" href="#ToolChain.Git.GitConfig.Switch_Version._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.Terminate">
+<code class="descclassname">GitConfig.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Git.GitConfig._POC_BOUNDARY">
+<code class="descclassname">GitConfig.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Git.GitConfig._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig._TryLog">
+<code class="descclassname">GitConfig.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Git.GitConfig._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Git.GitConfig.Execute">
+<code class="descclassname">GitConfig.</code><code class="descname">Execute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Git.html#GitConfig.Execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Git.GitConfig.Execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

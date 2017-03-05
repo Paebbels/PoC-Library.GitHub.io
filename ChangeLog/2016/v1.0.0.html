@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>New in 1.0 (13.05.2016) &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="2016" href="index.html"/>
+        <link rel="next" title="New in 0.21 (17.02.2016)" href="v0.21.0.html"/>
+        <link rel="prev" title="New in 1.x (upcomming)" href="v1.0.1.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Change Log</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2016</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="v1.x.html">v1.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v1.1.0.html">v1.1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v1.0.1.html">v1.0.1</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">v1.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v0.21.0.html">v0.21.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v0.20.0.html">v0.20.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v0.19.0.html">v0.19.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/index.html">2015</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/index.html">2014</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Change Log</a> &raquo;</li>
+        
+          <li><a href="index.html">2016</a> &raquo;</li>
+        
+      <li>New in 1.0 (13.05.2016)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ChangeLog/2016/v1.0.0.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="new-in-1-0-13-05-2016">
+<span id="change-v1-0-0"></span><h1>New in 1.0 (13.05.2016)<a class="headerlink" href="#new-in-1-0-13-05-2016" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Python Infrastructure (Completely Reworked)</p>
+<ul class="simple">
+<li>New Requirements<ul>
+<li>Python 3.5</li>
+<li>py-flags</li>
+</ul>
+</li>
+<li>New command line interface<ul>
+<li>Synopsis: <code class="docutils literal"><span class="pre">poc.sh|ps1</span> <span class="pre">[common</span> <span class="pre">options]</span> <span class="pre">&lt;command&gt;</span> <span class="pre">&lt;entity&gt;</span> <span class="pre">[options]</span></code></li>
+<li>Removed task specific wrapper scripts: <code class="docutils literal"><span class="pre">testbench.sh|ps1</span></code>, <code class="docutils literal"><span class="pre">netlist.sh|ps1</span></code>, ...</li>
+<li>Updated <code class="docutils literal"><span class="pre">wrapper.ps1</span></code> and <code class="docutils literal"><span class="pre">wrapper.sh</span></code> files</li>
+</ul>
+</li>
+<li>New ini-file database<ul>
+<li></li>
+<li>Added a new config.boards.ini file to list known boards (real and virtual ones)</li>
+</ul>
+</li>
+<li>New parser for <code class="docutils literal"><span class="pre">*.files</span></code> files<ul>
+<li>conditional compiling (if-then-elseif-else)</li>
+<li>include statement - include other <code class="docutils literal"><span class="pre">*.files</span></code> files</li>
+<li>library statement - reference external VHDL libraries</li>
+<li>prepared for Cocotb testbenches</li>
+</ul>
+</li>
+<li>New parser for <code class="docutils literal"><span class="pre">*.rules</span></code> files<ul>
+<li></li>
+</ul>
+</li>
+<li>All Tool Flows<ul>
+<li>Unbuffered outputs from vendor tools (realtime output to stdout from subprocess)</li>
+<li>Output filtering from vendor tools<ul>
+<li>verbose message suppression</li>
+<li>error and warning message highlighting</li>
+<li>abort flow on vendor tool errors</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>All Simulators<ul>
+<li>Run testbenches for different board or device configurations (see <code class="docutils literal"><span class="pre">--board</span></code> and <code class="docutils literal"><span class="pre">--device</span></code> command line options)</li>
+</ul>
+</li>
+<li>New Simulators<ul>
+<li>Aldec Active-HDL support (no GUI support)<ul>
+<li>Tested with Active-HDL from Lattice Diamond</li>
+<li>Tested with Active-HDL Student Edition</li>
+</ul>
+</li>
+<li>Cocotb (with QuestaSim backend on Linux)</li>
+</ul>
+</li>
+<li>New Synthesizers<ul>
+<li>Altera Quartus II and Quartus Prime<ul>
+<li>Command: <code class="docutils literal"><span class="pre">quartus</span></code></li>
+</ul>
+</li>
+<li>Lattice Synthesis Engine (LSE) from Diamond<ul>
+<li>Command: <code class="docutils literal"><span class="pre">lse</span></code></li>
+</ul>
+</li>
+<li>Xilinx Vivado<ul>
+<li>Command: <code class="docutils literal"><span class="pre">vivado</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GHDL<ul>
+<li>GHDLSimulator can distinguish different backends (mcode, gcc, llvm)</li>
+<li>Pre-compiled library support for GHDL</li>
+</ul>
+</li>
+<li>QuestaSim / ModelSim Altera Edition<ul>
+<li>Pre-compiled library support for GHDL</li>
+</ul>
+</li>
+<li>Vivado Simulator<ul>
+<li>Tested Vivado Simulator 2016.1 (xSim) with PoC -&gt; still produces errors or false results</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">New Entities</p>
+<blockquote>
+<div><ul class="simple">
+<li></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">New Testbenches</p>
+<blockquote>
+<div><ul class="simple">
+<li></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">New Constraints</p>
+<blockquote>
+<div><ul class="simple">
+<li></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">New dependencies</p>
+<blockquote>
+<div><ul class="simple">
+<li>Embedded Cocotb in <code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;/lib/cocotb</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Shipped Tool and Helper Scripts</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Updated and new Notepad++ syntax files</p>
+</li>
+<li><p class="first">Pre-compiled vendor library support</p>
+<blockquote>
+<div><ul class="simple">
+<li>Added a new <code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;/temp/precompiled</span></code> folder for precompiled vendor libraries</li>
+<li>QuestaSim supports Altera QuartusII, Xilinx ISE and Xilinx Vivado libraries</li>
+<li>GHDL supports Altera QuartusII, Xilinx ISE and Xilinx Vivado libraries</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="v0.21.0.html" class="btn btn-neutral float-right" title="New in 0.21 (17.02.2016)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="v1.0.1.html" class="btn btn-neutral" title="New in 1.x (upcomming)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

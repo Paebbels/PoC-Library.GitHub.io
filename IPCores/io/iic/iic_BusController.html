@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PoC.io.iic.BusController &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="PoC.io.iic" href="index.html"/>
+        <link rel="next" title="PoC.io.iic.Controller" href="iic_Controller.html"/>
+        <link rel="prev" title="PoC.io.iic Package" href="iic.pkg.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">IP Core Documentations</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../common/index.html">common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sim/index.html">sim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../alt/index.html">alt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arith/index.html">arith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bus/index.html">bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../comm/index.html">comm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dstruct/index.html">dstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fifo/index.html">fifo</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">io</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ddrio/index.html">ddrio</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">iic</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="iic.pkg.html">Package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">iic_BusController</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iic_Controller.html">iic_Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iic_Switch_PCA9548A.html">iic_Switch_PCA9548A</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../jtag/index.html">jtag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lcd/index.html">lcd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mdio/index.html">mdio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ow/index.html">ow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pio/index.html">pio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pmod/index.html">pmod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ps2/index.html">ps2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uart/index.html">uart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vga/index.html">vga</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io.pkg.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_7SegmentMux_BCD.html">PoC.io.7SegmentMux_BCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_7SegmentMux_HEX.html">PoC.io.7SegmentMux_HEX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_Debounce.html">PoC.io.Debounce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_FanControl.html">PoC.io.FanControl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_FrequencyCounter.html">PoC.io.FrequencyCounter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_GlitchFilter.html">PoC.io.GlitchFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_KeyPadScanner.html">PoC.io.KeyPadScanner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_PulseWidthModulation.html">PoC.io.PulseWidthModulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io_TimingCounter.html">PoC.io.TimingCounter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../mem/index.html">mem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../net/index.html">net</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sort/index.html">sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../xil/index.html">xil</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">IP Core Documentations</a> &raquo;</li>
+        
+          <li><a href="../index.html">PoC.io</a> &raquo;</li>
+        
+          <li><a href="index.html">PoC.io.iic</a> &raquo;</li>
+        
+      <li>PoC.io.iic.BusController</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/IPCores/io/iic/iic_BusController.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="poc-io-iic-buscontroller">
+<span id="ip-iic-buscontroller"></span><h1>PoC.io.iic.BusController<a class="headerlink" href="#poc-io-iic-buscontroller" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">GitHub Links</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://github.com/VLSI-EDA/PoC/blob/master/src/io/iic/iic_BusController.vhdl"><img alt="Source Code on GitHub" src="../../../_images/GitHub-Mark-32px.png" style="width: 12.8px; height: 12.8px;" /></a> <a class="reference external" href="https://github.com/VLSI-EDA/PoC/blob/master/src/io/iic/iic_BusController.vhdl?ts=2">Sourcecode</a></li>
+<li><a class="reference external" href="https://github.com/VLSI-EDA/PoC/blob/master/tb/io/iic/iic_BusController_tb.vhdl"><img alt="Source Code on GitHub" src="../../../_images/GitHub-Mark-32px.png" style="width: 12.8px; height: 12.8px;" /></a> <a class="reference external" href="https://github.com/VLSI-EDA/PoC/blob/master/tb/io/iic/iic_BusController_tb.vhdl?ts=2">Testbench</a></li>
+</ul>
+</div>
+<p>The I2C BusController transmitts bits over the I2C bus (SerialClock - SCL,
+SerialData - SDA) and also receives them.       To send/receive words over the
+I2C bus, use the I2C Controller, which utilizes this controller. This
+controller is compatible to the System Management Bus (SMBus).</p>
+<p class="rubric">Entity Declaration:</p>
+<div class="highlight-vhdl"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">entity</span> <span class="nc">iic_BusController</span> <span class="k">is</span>
+  <span class="k">generic</span> <span class="p">(</span>
+    <span class="n">CLOCK_FREQ</span>              <span class="o">:</span> <span class="n">FREQ</span>                          <span class="o">:=</span> <span class="mi">100</span> <span class="n">MHz</span><span class="p">;</span>
+    <span class="n">ADD_INPUT_SYNCHRONIZER</span>  <span class="o">:</span> <span class="kt">boolean</span>                       <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">IIC_BUSMODE</span>             <span class="o">:</span> <span class="n">T_IO_IIC_BUSMODE</span>              <span class="o">:=</span> <span class="n">IO_IIC_BUSMODE_STANDARDMODE</span><span class="p">;</span>     <span class="c1">-- 100 kHz</span>
+    <span class="n">ALLOW_MEALY_TRANSITION</span>  <span class="o">:</span> <span class="kt">boolean</span>                       <span class="o">:=</span> <span class="n">TRUE</span>
+  <span class="p">);</span>
+  <span class="k">port</span> <span class="p">(</span>
+    <span class="n">Clock</span>                   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">Reset</span>                   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+    
+    <span class="n">Request</span>                 <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">Grant</span>                   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">Command</span>                 <span class="o">:</span> <span class="k">in</span>  <span class="n">T_IO_IICBUS_COMMAND</span><span class="p">;</span>
+    <span class="n">Status</span>                  <span class="o">:</span> <span class="k">out</span> <span class="n">T_IO_IICBUS_STATUS</span><span class="p">;</span>
+    
+    <span class="n">Serial</span>                  <span class="o">:</span> <span class="k">inout</span> <span class="n">T_IO_IIC_SERIAL</span>
+  <span class="p">);</span>
+<span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="iic_Controller.html" class="btn btn-neutral float-right" title="PoC.io.iic.Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iic.pkg.html" class="btn btn-neutral" title="PoC.io.iic Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

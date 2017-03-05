@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Base.Logging &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Base" href="../Base.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../Base.html">Base</a> &raquo;</li>
+        
+      <li>Base.Logging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Base.Logging</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Thomas B. Preusser</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     Contains PoC&#39;s logging (console output) mechanism.</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">enum</span>             <span class="k">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>    <span class="k">import</span> <span class="n">Init</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;Severity&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;LogEntry&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Logger&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ILogable&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="Severity"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Severity">[docs]</a><span class="k">class</span> <span class="nc">Severity</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Logging message severity levels.&quot;&quot;&quot;</span>
+	<span class="n">Fatal</span> <span class="o">=</span>     <span class="mi">30</span>
+	<span class="n">Error</span> <span class="o">=</span>     <span class="mi">25</span>
+	<span class="n">Quiet</span> <span class="o">=</span>     <span class="mi">20</span>
+	<span class="ne">Warning</span> <span class="o">=</span>   <span class="mi">15</span>
+	<span class="n">Info</span> <span class="o">=</span>      <span class="mi">10</span>
+	<span class="n">DryRun</span> <span class="o">=</span>     <span class="mi">5</span>
+	<span class="n">Normal</span> <span class="o">=</span>     <span class="mi">4</span>
+	<span class="n">Verbose</span> <span class="o">=</span>    <span class="mi">2</span>
+	<span class="n">Debug</span> <span class="o">=</span>      <span class="mi">1</span>
+	<span class="n">All</span> <span class="o">=</span>        <span class="mi">0</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Patch the embedded MAP dictionary.&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__VHDL_SEVERITY_LEVEL_MAP__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="p">((</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__VHDL_SEVERITY_LEVEL_MAP__</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+				
+	<span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span>		<span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;=</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span>		<span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	
+	<span class="n">__VHDL_SEVERITY_LEVEL_MAP__</span> <span class="o">=</span>  <span class="p">{</span>
+		<span class="s2">&quot;failure&quot;</span><span class="p">:</span> <span class="n">Fatal</span><span class="p">,</span>
+		<span class="s2">&quot;error&quot;</span><span class="p">:</span>   <span class="n">Error</span><span class="p">,</span>
+		<span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="ne">Warning</span><span class="p">,</span>
+		<span class="s2">&quot;note&quot;</span><span class="p">:</span>    <span class="n">Info</span>
+	<span class="p">}</span>
+	
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">ParseVHDLSeverityLevel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">severity</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Translate a VHDL severity level into logging severity level.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__VHDL_SEVERITY_LEVEL_MAP__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">severity</span><span class="p">,</span> <span class="n">fallback</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="LogEntry"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.LogEntry">[docs]</a><span class="k">class</span> <span class="nc">LogEntry</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;Represents a single line log message with a severity and indentation level.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">severity</span><span class="o">=</span><span class="n">Severity</span><span class="o">.</span><span class="n">Normal</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_severity</span> <span class="o">=</span>        <span class="n">severity</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_message</span> <span class="o">=</span>         <span class="n">message</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_indent</span> <span class="o">=</span>          <span class="n">indent</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">AppendLinebreak</span> <span class="o">=</span>  <span class="n">appendLinebreak</span>
+		
+	<span class="n">_Log_MESSAGE_FORMAT__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Fatal</span><span class="p">:</span>     <span class="s2">&quot;FATAL: </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">:</span>     <span class="s2">&quot;ERROR: </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">:</span>   <span class="s2">&quot;WARNING: </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Info</span><span class="p">:</span>      <span class="s2">&quot;INFO: </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Quiet</span><span class="p">:</span>     <span class="s2">&quot;</span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Normal</span><span class="p">:</span>    <span class="s2">&quot;</span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">:</span>   <span class="s2">&quot;VERBOSE: </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Debug</span><span class="p">:</span>     <span class="s2">&quot;DEBUG: </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">DryRun</span><span class="p">:</span>    <span class="s2">&quot;DRYRUN: </span><span class="si">{message}</span><span class="s2">&quot;</span>
+	<span class="p">}</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Severity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the log message&#39;s severity level.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_severity</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Indent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the log message&#39;s indentation level.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indent</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the indented log message.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indent</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message</span>
+		
+<div class="viewcode-block" id="LogEntry.IndentBy"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.LogEntry.IndentBy">[docs]</a>	<span class="k">def</span> <span class="nf">IndentBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Increase a log message&#39;s indentation level.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_indent</span> <span class="o">+=</span> <span class="n">indent</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Log_MESSAGE_FORMAT__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_severity</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_message</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="Logger"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger">[docs]</a><span class="k">class</span> <span class="nc">Logger</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logLevel</span><span class="p">,</span> <span class="n">printToStdOut</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Class nitializer.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_LogLevel</span> <span class="o">=</span>        <span class="n">logLevel</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_printToStdOut</span> <span class="o">=</span>   <span class="n">printToStdOut</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_entries</span> <span class="o">=</span>         <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">=</span>      <span class="mi">0</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">LogLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the currently logged minimal severity level.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_LogLevel</span>
+	<span class="nd">@LogLevel</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">LogLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Set the logged minimal severity level.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_LogLevel</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">BaseIndent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>           <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span>
+	<span class="nd">@BaseIndent</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">BaseIndent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>    <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">=</span> <span class="n">value</span>
+	
+	<span class="n">_Log_MESSAGE_FORMAT__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Fatal</span><span class="p">:</span>   <span class="s2">&quot;</span><span class="si">{DARK_RED}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">:</span>   <span class="s2">&quot;</span><span class="si">{RED}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Quiet</span><span class="p">:</span>   <span class="s2">&quot;</span><span class="si">{WHITE}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{YELLOW}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Info</span><span class="p">:</span>    <span class="s2">&quot;</span><span class="si">{WHITE}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">DryRun</span><span class="p">:</span>  <span class="s2">&quot;</span><span class="si">{DARK_CYAN}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Normal</span><span class="p">:</span>  <span class="s2">&quot;</span><span class="si">{WHITE}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{GRAY}{message}{NOCOLOR}</span><span class="s2">&quot;</span><span class="p">,</span>
+		<span class="n">Severity</span><span class="o">.</span><span class="n">Debug</span><span class="p">:</span>   <span class="s2">&quot;</span><span class="si">{DARK_GRAY}{message}{NOCOLOR}</span><span class="s2">&quot;</span>
+	<span class="p">}</span>
+	
+<div class="viewcode-block" id="Logger.Write"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.Write">[docs]</a>	<span class="k">def</span> <span class="nf">Write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">Severity</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_LogLevel</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_printToStdOut</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_Log_MESSAGE_FORMAT__</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">Severity</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">entry</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">AppendLinebreak</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span></div>
+			
+<div class="viewcode-block" id="Logger.TryWrite"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.TryWrite">[docs]</a>	<span class="k">def</span> <span class="nf">TryWrite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">):</span>
+		<span class="k">return</span> <span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">Severity</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_LogLevel</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteFatal"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteFatal">[docs]</a>	<span class="k">def</span> <span class="nf">WriteFatal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Fatal</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteError"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteError">[docs]</a>	<span class="k">def</span> <span class="nf">WriteError</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteWarning"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteWarning">[docs]</a>	<span class="k">def</span> <span class="nf">WriteWarning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteInfo"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteInfo">[docs]</a>	<span class="k">def</span> <span class="nf">WriteInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Info</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteQuiet"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteQuiet">[docs]</a>	<span class="k">def</span> <span class="nf">WriteQuiet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Quiet</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteNormal"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteNormal">[docs]</a>	<span class="k">def</span> <span class="nf">WriteNormal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Normal</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteVerbose"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteVerbose">[docs]</a>	<span class="k">def</span> <span class="nf">WriteVerbose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteDebug"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteDebug">[docs]</a>	<span class="k">def</span> <span class="nf">WriteDebug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Debug</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Logger.WriteDryRun"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.Logger.WriteDryRun">[docs]</a>	<span class="k">def</span> <span class="nf">WriteDryRun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">DryRun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_baseIndent</span> <span class="o">+</span> <span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="p">))</span></div></div>
+		
+		
+<div class="viewcode-block" id="ILogable"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable">[docs]</a><span class="k">class</span> <span class="nc">ILogable</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;A mixin class to provide local logging methods.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;MixIn initializer.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">logger</span>
+		
+		<span class="c1"># FIXME: Alter methods if a logger is present or set dummy methods</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the local logger instance.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span>
+		
+<div class="viewcode-block" id="ILogable.Log"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.Log">[docs]</a>	<span class="k">def</span> <span class="nf">Log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Write an entry to the local logger.&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable._TryLog"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable._TryLog">[docs]</a>	<span class="k">def</span> <span class="nf">_TryLog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">TryWrite</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogFatal"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogFatal">[docs]</a>	<span class="k">def</span> <span class="nf">LogFatal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteFatal</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogError"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogError">[docs]</a>	<span class="k">def</span> <span class="nf">LogError</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteError</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogWarning"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogWarning">[docs]</a>	<span class="k">def</span> <span class="nf">LogWarning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteWarning</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogInfo"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogInfo">[docs]</a>	<span class="k">def</span> <span class="nf">LogInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteInfo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogQuiet"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogQuiet">[docs]</a>	<span class="k">def</span> <span class="nf">LogQuiet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteQuiet</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogNormal"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogNormal">[docs]</a>	<span class="k">def</span> <span class="nf">LogNormal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteNormal</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogVerbose"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogVerbose">[docs]</a>	<span class="k">def</span> <span class="nf">LogVerbose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteVerbose</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogDebug"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogDebug">[docs]</a>	<span class="k">def</span> <span class="nf">LogDebug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteDebug</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+		
+<div class="viewcode-block" id="ILogable.LogDryRun"><a class="viewcode-back" href="../../PyInfrastructure/Base.Logging.html#Base.ILogable.LogDryRun">[docs]</a>	<span class="k">def</span> <span class="nf">LogDryRun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">WriteDryRun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">False</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

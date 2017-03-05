@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Third Party Libraries &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="next" title="Constraint Files" href="../ConstraintFiles/index.html"/>
+        <link rel="prev" title="PoC.xil.SystemMonitor_Series7" href="../IPCores/xil/xil_SystemMonitor_Series7.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Third Party Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cocotb">Cocotb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#osvvm">OSVVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uvvm">UVVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vunit">VUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-linked-git-submodules">Updating Linked Git Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-linux">On Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-os-x">On OS X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-windows">On Windows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Third Party Libraries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Miscelaneous/ThirdParty.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="third-party-libraries">
+<span id="third"></span><span id="index-0"></span><h1>Third Party Libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this headline">¶</a></h1>
+<p>The PoC-Library is shiped with different third party libraries, which are
+located in the <code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;/lib/</span></code> folder. This document lists all these
+libraries, their websites and licenses.</p>
+<div class="section" id="cocotb">
+<span id="third-cocotb"></span><span id="index-1"></span><h2>Cocotb<a class="headerlink" href="#cocotb" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://cocotb.readthedocs.org/">Cocotb</a> is a coroutine based cosimulation
+library for writing VHDL and Verilog testbenches in Python.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Folder:</strong></td>
+<td><code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;\lib\cocotb\</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Copyright:</strong></td>
+<td>Copyright © 2013, <a class="reference external" href="http://potential.ventures/">Potential Ventures Ltd.</a>, SolarFlare Communications Inc.</td>
+</tr>
+<tr class="row-odd"><td><strong>License:</strong></td>
+<td><a class="reference internal" href="../References/Licenses/Cocotb_BSDLicense.html"><span class="doc">Revised BSD License (local copy)</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>Documentation:</strong></td>
+<td><a class="reference external" href="http://cocotb.readthedocs.org/">http://cocotb.readthedocs.org/</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Source:</strong></td>
+<td><a class="reference external" href="https://github.com/potentialventures/cocotb">https://github.com/potentialventures/cocotb</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="osvvm">
+<span id="third-osvvm"></span><span id="index-2"></span><h2>OSVVM<a class="headerlink" href="#osvvm" title="Permalink to this headline">¶</a></h2>
+<p><strong>Open Source VHDL Verification Methodology (OS-VVM)</strong> is an intelligent
+testbench methodology that allows mixing of “Intelligent Coverage” (coverage
+driven randomization) with directed, algorithmic, file based, and constrained
+random test approaches. The methodology can be adopted in part or in whole as
+needed. With OSVVM you can add advanced verification methodologies to your
+current testbench without having to learn a new language or throw out your
+existing testbench or testbench models.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Folder:</strong></td>
+<td><code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;\lib\osvvm\</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Copyright:</strong></td>
+<td>Copyright © 2012-2016 by <a class="reference external" href="http://www.synthworks.com/">SynthWorks Design Inc.</a></td>
+</tr>
+<tr class="row-odd"><td><strong>License:</strong></td>
+<td><a class="reference internal" href="../References/Licenses/ArtisticLicense2.0.html"><span class="doc">Artistic License 2.0 (local copy)</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>Website:</strong></td>
+<td><a class="reference external" href="http://osvvm.org/">http://osvvm.org/</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Source:</strong></td>
+<td><a class="reference external" href="https://github.com/JimLewis/OSVVM">https://github.com/JimLewis/OSVVM</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="uvvm">
+<span id="third-uvvm"></span><span id="index-3"></span><h2>UVVM<a class="headerlink" href="#uvvm" title="Permalink to this headline">¶</a></h2>
+<p>The Open Source <strong>UVVM (Universal VHDL Verification Methodology) - VVC (VHDL
+Verification Component) Framework</strong> for making structured VHDL testbenches for
+verification of FPGA. UVVM consists currently of: Utility Library, VVC
+Framework and Verification IPs (VIP) for various protocols.</p>
+<p><strong>For what do I need this VVC Framework?</strong> <br />
+The VVC Framework is a VHDL Verification Component system that allows multiple
+interfaces on a DUT to be stimulated/handled simultaneously in a very structured
+manner, and controlled by a very simple to understand software like a test
+sequencer. VVC Framework is unique as an open source VHDL approach to building
+a structured testbench architecture using Verification components and a simple
+protocol to access these. As an example a simple command like
+<code class="docutils literal"><span class="pre">uart_expect(UART_VVCT,</span> <span class="pre">my_data)</span></code>, or <code class="docutils literal"><span class="pre">axilite_write(AXILITE_VVCT,</span> <span class="pre">my_addr,</span> <span class="pre">my_data,</span> <span class="pre">my_message)</span></code>
+will automatically tell the respective VVC (for UART or AXI-Lite) to execute
+the <code class="docutils literal"><span class="pre">uart_receive()</span></code> or <code class="docutils literal"><span class="pre">axilite_write()</span></code> BFM respectively.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Folder:</strong></td>
+<td><code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;\lib\uvvm\</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Copyright:</strong></td>
+<td>Copyright © 2016 by <a class="reference external" href="http://bitvis.no/">Bitvis AS</a></td>
+</tr>
+<tr class="row-odd"><td><strong>License:</strong></td>
+<td><a class="reference internal" href="../References/Licenses/UVVM_MIT.html"><span class="doc">The MIT License (local copy)</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>Website:</strong></td>
+<td><a class="reference external" href="http://bitvis.no/">http://bitvis.no/</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Source:</strong></td>
+<td><a class="reference external" href="https://github.com/UVVM/UVVM_All">https://github.com/UVVM/UVVM_All</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vunit">
+<span id="third-vunit"></span><span id="index-4"></span><h2>VUnit<a class="headerlink" href="#vunit" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://vunit.github.io/">VUnit</a> is an open source unit testing framework for
+VHDL released under the terms of <a class="reference internal" href="../References/Licenses/MozillaPublicLicense2.0.html"><span class="doc">Mozilla Public License, v. 2.0</span></a>.
+It features the functionality needed to realize continuous and automated testing
+of your VHDL code. VUnit doesn&#8217;t replace but rather complements traditional
+testing methodologies by supporting a &#8220;test early and often&#8221; approach through
+automation.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Folder:</strong></td>
+<td><code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;\lib\vunit\</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Copyright:</strong></td>
+<td>Copyright © 2014-2016, Lars Asplund <a class="reference external" href="mailto://lars&#46;anders&#46;asplund&#37;&#52;&#48;gmail&#46;com">lars<span>&#46;</span>anders<span>&#46;</span>asplund<span>&#64;</span>gmail<span>&#46;</span>com</a></td>
+</tr>
+<tr class="row-odd"><td><strong>License:</strong></td>
+<td><a class="reference internal" href="../References/Licenses/MozillaPublicLicense2.0.html"><span class="doc">Mozilla Public License, Version 2.0 (local copy)</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>Website:</strong></td>
+<td><a class="reference external" href="https://vunit.github.io/">https://vunit.github.io/</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Source:</strong></td>
+<td><a class="reference external" href="https://github.com/VUnit/vunit">https://github.com/VUnit/vunit</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="updating-linked-git-submodules">
+<h2>Updating Linked Git Submodules<a class="headerlink" href="#updating-linked-git-submodules" title="Permalink to this headline">¶</a></h2>
+<p>The third party libraries are embedded as Git submodules. So if the PoC-Library
+was not cloned with option <code class="docutils literal"><span class="pre">--recursive</span></code> it&#8217;s required to run the sub-module
+initialization manually:</p>
+<div class="section" id="on-linux">
+<h3>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> PoCRoot
+git submodule init
+git submodule update
+</pre></div>
+</div>
+<p>We recommend to rename the default remote repository name from &#8216;origin&#8217; to
+&#8216;github&#8217;.</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> PoCRoot<span class="se">\l</span>ib<span class="se">\</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="index-5">
+<p class="first admonition-title">Todo</p>
+<p class="last">write Bash code for Linux</p>
+</div>
+</div>
+<div class="section" id="on-os-x">
+<h3>On OS X<a class="headerlink" href="#on-os-x" title="Permalink to this headline">¶</a></h3>
+<p>Please see the Linux instructions.</p>
+</div>
+<div class="section" id="on-windows">
+<h3>On Windows<a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>We recommend to rename the default remote repository name from &#8216;origin&#8217; to
+&#8216;github&#8217;.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span><span class="p">\</span><span class="n">lib</span><span class="p">\</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$dir</span> <span class="k">in</span> <span class="p">(</span><span class="n">dir</span> <span class="n">-Directory</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">cd</span> <span class="nv">$dir</span>
+  <span class="n">git</span> <span class="n">remote</span> <span class="n">rename</span> <span class="n">origin</span> <span class="n">github</span>
+  <span class="n">cd</span> <span class="p">..</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ConstraintFiles/index.html" class="btn btn-neutral float-right" title="Constraint Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../IPCores/xil/xil_SystemMonitor_Series7.html" class="btn btn-neutral" title="PoC.xil.SystemMonitor_Series7" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

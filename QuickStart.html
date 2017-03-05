@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quick Start Guide &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="index.html"/>
+        <link rel="next" title="Get Involved" href="GetInvolved/index.html"/>
+        <link rel="prev" title="Who uses PoC?" href="WhatIsPoC/WhoUsesPoC.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-poc-on-a-local-system">Configuring PoC on a Local System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integration">Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-simulation">Run a Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-synthesis">Run a Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Quick Start Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/QuickStart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <style>kbd
+{ -moz-border-radius:3px;
+  -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  -webkit-border-radius:3px;
+  -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  background-color:#f7f7f7;
+  border:1px solid #ccc;
+  border-radius:3px;
+  box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  color:#333;
+  display:inline-block;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:11px;
+  line-height:1.4;
+  margin:0 .1em;
+  padding:.1em .6em;
+  text-shadow:0 1px 0 #fff;
+}</style><div class="section" id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>This <strong>Quick Start Guide</strong> gives a fast and simple introduction into PoC. All
+topics can be found in the <a class="reference internal" href="UsingPoC/index.html#using"><span class="std std-ref">Using PoC</span></a> section with much more
+details and examples.</p>
+<div class="contents local topic" id="contents-of-this-page">
+<p class="topic-title first">Contents of this Page</p>
+<ul class="simple">
+<li><a class="reference internal" href="#requirements-and-dependencies" id="id1">Requirements and Dependencies</a></li>
+<li><a class="reference internal" href="#download" id="id2">Download</a></li>
+<li><a class="reference internal" href="#configuring-poc-on-a-local-system" id="id3">Configuring PoC on a Local System</a></li>
+<li><a class="reference internal" href="#integration" id="id4">Integration</a></li>
+<li><a class="reference internal" href="#run-a-simulation" id="id5">Run a Simulation</a></li>
+<li><a class="reference internal" href="#run-a-synthesis" id="id6">Run a Synthesis</a></li>
+<li><a class="reference internal" href="#updating" id="id7">Updating</a></li>
+</ul>
+</div>
+<div class="section" id="requirements-and-dependencies">
+<span id="quick-requirements"></span><h2><a class="toc-backref" href="#id1">Requirements and Dependencies</a><a class="headerlink" href="#requirements-and-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>The PoC-Library comes with some scripts to ease most of the common tasks, like
+running testbenches or generating IP cores. PoC uses Python 3 as a platform
+independent scripting environment. All Python scripts are wrapped in Bash or
+PowerShell scripts, to hide some platform specifics of Darwin, Linux or Windows.
+See <a class="reference internal" href="UsingPoC/Requirements.html#using-require"><span class="std std-ref">Requirements</span></a> for further details.</p>
+<p class="rubric">PoC requires:</p>
+<ul class="simple">
+<li>A <a class="reference internal" href="WhatIsPoC/SupportedToolChains.html#intro-toolchains"><span class="std std-ref">supported synthesis tool chain</span></a>, if you want to synthezise IP cores.</li>
+<li>A <a class="reference internal" href="WhatIsPoC/SupportedToolChains.html#intro-toolchains"><span class="std std-ref">supported simulator too chain</span></a>, if you want to simulate IP cores.</li>
+<li>The <strong>Python 3</strong> programming language and runtime, if you want to use PoC&#8217;s infrastructure.</li>
+<li>A shell to execute shell scripts:<ul>
+<li><strong>Bash</strong> on Linux and OS X</li>
+<li><strong>PowerShell</strong> on Windows</li>
+</ul>
+</li>
+</ul>
+<p class="rubric">PoC optionally requires:</p>
+<ul class="simple">
+<li><strong>Git</strong> command line tools or</li>
+<li><strong>Git User Interface</strong>, if you want to check out the latest &#8216;master&#8217; or &#8216;release&#8217; branch.</li>
+</ul>
+<p class="rubric">PoC depends on third part libraries:</p>
+<ul class="simple">
+<li><a class="reference internal" href="Miscelaneous/ThirdParty.html#third-cocotb"><span class="std std-ref">Cocotb</span></a> <a class="reference external" href="https://github.com/potentialventures/cocotb"><img alt="Source Code on GitHub" src="_images/GitHub-Mark-32px.png" style="width: 12.8px; height: 12.8px;" /></a> <br />
+A coroutine based cosimulation library for writing VHDL and Verilog testbenches in Python.</li>
+<li><a class="reference internal" href="Miscelaneous/ThirdParty.html#third-osvvm"><span class="std std-ref">OSVVM</span></a> <a class="reference external" href="https://github.com/JimLewis/OSVVM"><img alt="Source Code on GitHub" src="_images/GitHub-Mark-32px.png" style="width: 12.8px; height: 12.8px;" /></a> <br />
+Open Source VHDL Verification Methodology.</li>
+<li><a class="reference internal" href="Miscelaneous/ThirdParty.html#third-uvvm"><span class="std std-ref">UVVM</span></a> <a class="reference external" href="https://github.com/UVVM/UVVM_All"><img alt="Source Code on GitHub" src="_images/GitHub-Mark-32px.png" style="width: 12.8px; height: 12.8px;" /></a> <br />
+Universal VHDL Verification Methodology.</li>
+<li><a class="reference internal" href="Miscelaneous/ThirdParty.html#third-vunit"><span class="std std-ref">VUnit</span></a> <a class="reference external" href="https://github.com/VUnit/vunit"><img alt="Source Code on GitHub" src="_images/GitHub-Mark-32px.png" style="width: 12.8px; height: 12.8px;" /></a> <br />
+An unit testing framework for VHDL.</li>
+</ul>
+<p>All dependencies are available as GitHub repositories and are linked to
+PoC as Git submodules into the <a class="reference external" href="https://github.com/VLSI-EDA/PoC/tree/master/lib">PoCRoot\lib</a>
+directory. See <a class="reference internal" href="Miscelaneous/ThirdParty.html#third"><span class="std std-ref">Third Party Libraries</span></a> for more details on these
+libraries.</p>
+</div>
+<div class="section" id="download">
+<span id="quick-download"></span><h2><a class="toc-backref" href="#id2">Download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p>The PoC-Library can be downloaded as a <a class="reference external" href="https://github.com/VLSI-EDA/PoC/archive/master.zip">zip-file</a>
+(latest &#8216;master&#8217; branch), cloned with <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code> or embedded with
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">add</span></code> from GitHub. GitHub offers HTTPS and SSH as transfer
+protocols. See the <a class="reference internal" href="UsingPoC/Download.html#using-download"><span class="std std-ref">Download</span></a> page for further
+details. The installation directory is referred to as <code class="docutils literal"><span class="pre">PoCRoot</span></code>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Protocol</th>
+<th class="head">Git Clone Command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>HTTPS</td>
+<td><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">https://github.com/VLSI-EDA/PoC.git</span> <span class="pre">PoC</span></code></td>
+</tr>
+<tr class="row-odd"><td>SSH</td>
+<td><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">ssh://git&#64;github.com:VLSI-EDA/PoC.git</span> <span class="pre">PoC</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuring-poc-on-a-local-system">
+<span id="quick-configuration"></span><h2><a class="toc-backref" href="#id3">Configuring PoC on a Local System</a><a class="headerlink" href="#configuring-poc-on-a-local-system" title="Permalink to this headline">¶</a></h2>
+<p>To explore PoC&#8217;s full potential, it&#8217;s required to configure some paths and
+synthesis or simulation tool chains. The following commands start a guided
+configuration process. Please follow the instructions on screen. It&#8217;s possible
+to relaunch the process at any time, for example to register new tools or to
+update tool versions. See <a class="reference internal" href="UsingPoC/PoCConfiguration.html#using-pocconfig"><span class="std std-ref">Configuration</span></a> for
+more details. Run the following command line instructions to configure PoC on
+your local system:</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="p">.\</span><span class="n">poc</span><span class="p">.</span><span class="n">ps1</span> <span class="n">configure</span>
+</pre></div>
+</div>
+<p>Use the keyboard buttons: <kbd>Y</kbd> to accept, <kbd>N</kbd> to decline, <kbd>P</kbd> to
+skip/pass a step and <kbd>Return</kbd> to accept a default value displayed in
+brackets.</p>
+</div>
+<div class="section" id="integration">
+<span id="quick-integration"></span><h2><a class="toc-backref" href="#id4">Integration</a><a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<p>The PoC-Library is meant to be integrated into other HDL projects. Therefore
+it&#8217;s recommended to create a library folder and add the PoC-Library as a Git
+submodule. After the repository linking is done, some short configuration
+steps are required to setup paths, tool chains and the target platform. The
+following command line instructions show a short example on how to integrate
+PoC.</p>
+<p class="rubric">1. Adding the Library as a Git submodule</p>
+<p>The following command line instructions will create the folder <code class="docutils literal"><span class="pre">lib\PoC\</span></code> and
+clone the PoC-Library as a Git <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Tools-Submodules">submodule</a>
+into that folder. <code class="docutils literal"><span class="pre">ProjectRoot</span></code> is the directory of the hosting Git. A detailed
+list of steps can be found at <a class="reference internal" href="UsingPoC/Integration.html"><span class="doc">Integration</span></a>.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span>cd ProjectRoot
+mkdir lib | cd
+git submodule add https://github.com:VLSI-EDA/PoC.git PoC
+cd PoC
+git remote rename origin github
+cd ..\..
+git add .gitmodules lib\PoC
+git commit -m &quot;Added new git submodule PoC in &#39;lib\PoC&#39; (PoC-Library).&quot;
+</pre></div>
+</div>
+<p class="rubric">2. Configuring PoC</p>
+<p>The PoC-Library should be configured to explore its full potential. See
+<a class="reference internal" href="UsingPoC/PoCConfiguration.html"><span class="doc">Configuration</span></a> for more details. The
+following command lines will start the configuration process:</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ProjectRoot</span>
+<span class="p">.\</span><span class="n">lib</span><span class="p">\</span><span class="n">PoC</span><span class="p">\</span><span class="n">poc</span><span class="p">.</span><span class="n">ps1</span> <span class="n">configure</span>
+</pre></div>
+</div>
+<p class="rubric">3. Creating PoC&#8217;s <code class="docutils literal"><span class="pre">my_config.vhdl</span></code> and <code class="docutils literal"><span class="pre">my_project.vhdl</span></code> Files</p>
+<p>The PoC-Library needs two VHDL files for its configuration. These files are
+used to determine the most suitable implementation depending on the provided
+target information. Copy the following two template files into your project&#8217;s
+source folder. Rename these files to *.vhdl and configure the VHDL constants
+in the files:</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ProjectRoot</span>
+<span class="n">cp</span> <span class="n">lib</span><span class="p">\</span><span class="n">PoC</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">common</span><span class="p">\</span><span class="n">my_config</span><span class="p">.</span><span class="n">vhdl</span><span class="p">.</span><span class="n">template</span> <span class="n">src</span><span class="p">\</span><span class="n">common</span><span class="p">\</span><span class="n">my_config</span><span class="p">.</span><span class="n">vhdl</span>
+<span class="n">cp</span> <span class="n">lib</span><span class="p">\</span><span class="n">PoC</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">common</span><span class="p">\</span><span class="n">my_project</span><span class="p">.</span><span class="n">vhdl</span><span class="p">.</span><span class="n">template</span> <span class="n">src</span><span class="p">\</span><span class="n">common</span><span class="p">\</span><span class="n">my_project</span><span class="p">.</span><span class="n">vhdl</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/VLSI-EDA/PoC/blob/master/src/common/my_config.vhdl.template">my_config.vhdl</a> defines two global constants, which need to be adjusted:</p>
+<div class="highlight-vhdl"><div class="highlight"><pre><span></span><span class="k">constant</span> <span class="n">MY_BOARD</span>            <span class="o">:</span> <span class="kt">string</span> <span class="o">:=</span> <span class="s">&quot;CHANGE THIS&quot;</span><span class="p">;</span> <span class="c1">-- e.g. Custom, ML505, KC705, Atlys</span>
+<span class="k">constant</span> <span class="n">MY_DEVICE</span>           <span class="o">:</span> <span class="kt">string</span> <span class="o">:=</span> <span class="s">&quot;CHANGE THIS&quot;</span><span class="p">;</span> <span class="c1">-- e.g. None, XC5VLX50T-1FF1136, EP2SGX90FF1508C3</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/VLSI-EDA/PoC/blob/master/src/common/my_project.vhdl.template">my_project.vhdl</a>
+also defines two global constants, which need to be adjusted:</p>
+<div class="highlight-vhdl"><div class="highlight"><pre><span></span><span class="k">constant</span> <span class="n">MY_PROJECT_DIR</span>      <span class="o">:</span> <span class="kt">string</span> <span class="o">:=</span> <span class="s">&quot;CHANGE THIS&quot;</span><span class="p">;</span> <span class="c1">-- e.g. d:/vhdl/myproject/, /home/me/projects/myproject/&quot;</span>
+<span class="k">constant</span> <span class="n">MY_OPERATING_SYSTEM</span> <span class="o">:</span> <span class="kt">string</span> <span class="o">:=</span> <span class="s">&quot;CHANGE THIS&quot;</span><span class="p">;</span> <span class="c1">-- e.g. WINDOWS, LINUX</span>
+</pre></div>
+</div>
+<p>Further informations are provided at
+<a class="reference internal" href="UsingPoC/VHDLConfiguration.html"><span class="doc">Creating my_config/my_project.vhdl</span></a>.</p>
+<p class="rubric">4. Adding PoC&#8217;s Common Packages to a Synthesis or Simulation Project</p>
+<p>PoC is shipped with a set of common packages, which are used by most of its
+modules. These packages are stored in the <code class="docutils literal"><span class="pre">PoCRoot\src\common</span></code> directory.
+PoC also provides a VHDL context in <code class="docutils literal"><span class="pre">common.vhdl</span></code> , which can be used to
+reference all packages at once.</p>
+<p class="rubric">5. Adding PoC&#8217;s Simulation Packages to a Simulation Project</p>
+<p>Simulation projects additionally require PoC&#8217;s simulation helper packages, which
+are located in the <code class="docutils literal"><span class="pre">PoCRoot\src\sim</span></code> directory. Because some VHDL version are
+incompatible among each other, PoC uses version suffixes like <code class="docutils literal"><span class="pre">*.v93.vhdl</span></code> or
+<code class="docutils literal"><span class="pre">*.v08.vhdl</span></code> in the file name to denote the supported VHDL version of a file.</p>
+<p class="rubric">6. Compiling Shipped IP Cores</p>
+<p>Some IP Cores are shipped are pre-configured vendor IP Cores. If such IP cores
+shall be used in a HDL project, it&#8217;s recommended to use PoC to create, compile
+and if needed patch these IP cores. See <a class="reference internal" href="UsingPoC/Synthesis.html"><span class="doc">Synthesis</span></a>
+for more details.</p>
+</div>
+<div class="section" id="run-a-simulation">
+<span id="quick-runsimulation"></span><h2><a class="toc-backref" href="#id5">Run a Simulation</a><a class="headerlink" href="#run-a-simulation" title="Permalink to this headline">¶</a></h2>
+<p>The following quick example uses the GHDL Simulator to analyze, elaborate and
+simulate a testbench for the module <code class="docutils literal"><span class="pre">arith_prng</span></code> (Pseudo Random Number
+Generator - PRNG). The VHDL file <code class="docutils literal"><span class="pre">arith_prng.vhdl</span></code> is located at
+<code class="docutils literal"><span class="pre">PoCRoot\src\arith</span></code> and virtually a member in the <cite>PoC.arith</cite> namespace.
+So the module can be identified by an unique name: <code class="docutils literal"><span class="pre">PoC.arith.prng</span></code>, which is
+passed to the frontend script.</p>
+<p class="rubric">Example:</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="p">.\</span><span class="n">poc</span><span class="p">.</span><span class="n">ps1</span> <span class="n">ghdl</span> <span class="n">PoC</span><span class="p">.</span><span class="n">arith</span><span class="p">.</span><span class="n">prng</span>
+</pre></div>
+</div>
+<p>The CLI command <code class="docutils literal"><span class="pre">ghdl</span></code> chooses <em>GHDL Simulator</em> as the simulator and
+passes the fully qualified PoC entity name <code class="docutils literal"><span class="pre">PoC.arith.prng</span></code> as a parameter
+to the tool. All required source file are gathered and compiled to an
+executable. Afterwards this executable is launched in CLI mode and its outputs
+are displayed in console:</p>
+<a class="reference external image-reference" href="/_static/images/ghdl/arith_prng_tb.posh.png:alt:PowerShellconsoleoutputafterrunningPoC.arith.prngwithGHDL."><img alt="_images/arith_prng_tb.posh.png" src="_images/arith_prng_tb.posh.png" /></a>
+<p>Each testbench uses PoC&#8217;s simulation helper packages to count asserts and to
+track active stimuli and checker processes. After a completed simulation run,
+an report is written to STDOUT or the simulator&#8217;s console. Note the line
+<code class="docutils literal"><span class="pre">SIMULATION</span> <span class="pre">RESULT</span> <span class="pre">=</span> <span class="pre">PASSED</span></code>. For each simulated PoC entity, a line in the
+overall report is created. It lists the runtime per testbench and the simulation
+status (<code class="docutils literal"><span class="pre">...</span> <span class="pre">ERROR</span></code>, <code class="docutils literal"><span class="pre">FAILED</span></code>, <code class="docutils literal"><span class="pre">NO</span> <span class="pre">ASSERTS</span></code> or <code class="docutils literal"><span class="pre">PASSED</span></code>). See
+<a class="reference internal" href="UsingPoC/Simulation.html"><span class="doc">Simulation</span></a> for more details.</p>
+</div>
+<div class="section" id="run-a-synthesis">
+<span id="quick-runsynthesis"></span><h2><a class="toc-backref" href="#id6">Run a Synthesis</a><a class="headerlink" href="#run-a-synthesis" title="Permalink to this headline">¶</a></h2>
+<p>The following quick example uses the Xilinx Systesis Tool (XST) to synthesize a
+netlist for IP core <code class="docutils literal"><span class="pre">arith_prng</span></code> (Pseudo Random Number Generator - PRNG). The
+VHDL file <code class="docutils literal"><span class="pre">arith_prng.vhdl</span></code> is located at <code class="docutils literal"><span class="pre">PoCRoot\src\arith</span></code> and virtually
+a member in the <cite>PoC.arith</cite> namespace. So the module can be identified by an
+unique name: <code class="docutils literal"><span class="pre">PoC.arith.prng</span></code>, which is passed to the frontend script.</p>
+<p class="rubric">Example:</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="p">.\</span><span class="n">poc</span><span class="p">.</span><span class="n">ps1</span> <span class="n">xst</span> <span class="n">PoC</span><span class="p">.</span><span class="n">arith</span><span class="p">.</span><span class="n">prng</span> <span class="p">-</span><span class="n">-board</span><span class="p">=</span><span class="n">KC705</span>
+</pre></div>
+</div>
+<p>The CLI command <code class="docutils literal"><span class="pre">xst</span></code> chooses <em>Xilinx Synthesis Tool</em> as the synthesizer and
+passes the fully qualified PoC entity name <code class="docutils literal"><span class="pre">PoC.arith.prng</span></code> as a parameter
+to the tool. Additionally, the development board name is required to load the
+correct <code class="docutils literal"><span class="pre">my_config.vhdl</span></code> file. All required source file are gathered and
+synthesized to a netlist.</p>
+<a class="reference external image-reference" href="/_static/images/xst/arith_prng.posh.png:alt:PowerShellconsoleoutputafterrunningPoC.arith.prngwithXST."><img alt="_images/arith_prng.posh.png" src="_images/arith_prng.posh.png" /></a>
+</div>
+<div class="section" id="updating">
+<span id="quick-updating"></span><h2><a class="toc-backref" href="#id7">Updating</a><a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h2>
+<p>The PoC-Library can be updated by using <code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span></code> and <code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span></code>.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="c"># update the local repository</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="p">-</span><span class="n">-prune</span>
+<span class="c"># review the commit tree and messages, using the &#39;treea&#39; alias</span>
+<span class="n">git</span> <span class="n">treea</span>
+<span class="c"># if all changes are OK, do a fast-forward merge</span>
+<span class="n">git</span> <span class="n">merge</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="UsingPoC/Simulation.html"><span class="doc">Running one or more testbenches</span></a></dt>
+<dd>The installation can be checked by running one or more of PoC&#8217;s testbenches.</dd>
+<dt><a class="reference internal" href="UsingPoC/Synthesis.html"><span class="doc">Running one or more netlist generation flows</span></a></dt>
+<dd>The installation can also be checked by running one or more of PoC&#8217;s
+synthesis flows.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GetInvolved/index.html" class="btn btn-neutral float-right" title="Get Involved" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="WhatIsPoC/WhoUsesPoC.html" class="btn btn-neutral" title="Who uses PoC?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

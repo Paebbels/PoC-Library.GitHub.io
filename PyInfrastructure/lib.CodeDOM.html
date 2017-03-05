@@ -1,0 +1,1136 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.CodeDOM &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>lib.CodeDOM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/lib.CodeDOM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.CodeDOM">
+<span id="lib-codedom"></span><h1>lib.CodeDOM<a class="headerlink" href="#module-lib.CodeDOM" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#lib.CodeDOM.CodeDOMMeta" title="lib.CodeDOM.CodeDOMMeta"><code class="xref py py-class docutils literal"><span class="pre">CodeDOMMeta</span></code></a>:
+type(object_or_name, bases, dict)</li>
+<li><a class="reference internal" href="#lib.CodeDOM.CodeDOMObject" title="lib.CodeDOM.CodeDOMObject"><code class="xref py py-class docutils literal"><span class="pre">CodeDOMObject</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.Expression" title="lib.CodeDOM.Expression"><code class="xref py py-class docutils literal"><span class="pre">Expression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.UnaryExpression" title="lib.CodeDOM.UnaryExpression"><code class="xref py py-class docutils literal"><span class="pre">UnaryExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.NotExpression" title="lib.CodeDOM.NotExpression"><code class="xref py py-class docutils literal"><span class="pre">NotExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.BinaryExpression" title="lib.CodeDOM.BinaryExpression"><code class="xref py py-class docutils literal"><span class="pre">BinaryExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.LogicalExpression" title="lib.CodeDOM.LogicalExpression"><code class="xref py py-class docutils literal"><span class="pre">LogicalExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.CompareExpression" title="lib.CodeDOM.CompareExpression"><code class="xref py py-class docutils literal"><span class="pre">CompareExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.EqualExpression" title="lib.CodeDOM.EqualExpression"><code class="xref py py-class docutils literal"><span class="pre">EqualExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.UnequalExpression" title="lib.CodeDOM.UnequalExpression"><code class="xref py py-class docutils literal"><span class="pre">UnequalExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.LessThanExpression" title="lib.CodeDOM.LessThanExpression"><code class="xref py py-class docutils literal"><span class="pre">LessThanExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.LessThanEqualExpression" title="lib.CodeDOM.LessThanEqualExpression"><code class="xref py py-class docutils literal"><span class="pre">LessThanEqualExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.GreaterThanExpression" title="lib.CodeDOM.GreaterThanExpression"><code class="xref py py-class docutils literal"><span class="pre">GreaterThanExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.GreaterThanEqualExpression" title="lib.CodeDOM.GreaterThanEqualExpression"><code class="xref py py-class docutils literal"><span class="pre">GreaterThanEqualExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.AndExpression" title="lib.CodeDOM.AndExpression"><code class="xref py py-class docutils literal"><span class="pre">AndExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.OrExpression" title="lib.CodeDOM.OrExpression"><code class="xref py py-class docutils literal"><span class="pre">OrExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.XorExpression" title="lib.CodeDOM.XorExpression"><code class="xref py py-class docutils literal"><span class="pre">XorExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.InExpression" title="lib.CodeDOM.InExpression"><code class="xref py py-class docutils literal"><span class="pre">InExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.NotInExpression" title="lib.CodeDOM.NotInExpression"><code class="xref py py-class docutils literal"><span class="pre">NotInExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.Function" title="lib.CodeDOM.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.ListElement" title="lib.CodeDOM.ListElement"><code class="xref py py-class docutils literal"><span class="pre">ListElement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.Literal" title="lib.CodeDOM.Literal"><code class="xref py py-class docutils literal"><span class="pre">Literal</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.StringLiteral" title="lib.CodeDOM.StringLiteral"><code class="xref py py-class docutils literal"><span class="pre">StringLiteral</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.IntegerLiteral" title="lib.CodeDOM.IntegerLiteral"><code class="xref py py-class docutils literal"><span class="pre">IntegerLiteral</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.Identifier" title="lib.CodeDOM.Identifier"><code class="xref py py-class docutils literal"><span class="pre">Identifier</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.Statement" title="lib.CodeDOM.Statement"><code class="xref py py-class docutils literal"><span class="pre">Statement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.BlockStatement" title="lib.CodeDOM.BlockStatement"><code class="xref py py-class docutils literal"><span class="pre">BlockStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.ConditionalBlockStatement" title="lib.CodeDOM.ConditionalBlockStatement"><code class="xref py py-class docutils literal"><span class="pre">ConditionalBlockStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.EmptyLine" title="lib.CodeDOM.EmptyLine"><code class="xref py py-class docutils literal"><span class="pre">EmptyLine</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.CommentLine" title="lib.CodeDOM.CommentLine"><code class="xref py py-class docutils literal"><span class="pre">CommentLine</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.BlockedStatement" title="lib.CodeDOM.BlockedStatement"><code class="xref py py-class docutils literal"><span class="pre">BlockedStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.CodeDOM.ExpressionChoice" title="lib.CodeDOM.ExpressionChoice"><code class="xref py py-class docutils literal"><span class="pre">ExpressionChoice</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="lib.CodeDOM.CodeDOMMeta">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">CodeDOMMeta</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#CodeDOMMeta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CodeDOMMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-41421daea9a66e432203dd20e43d33d8f9b62608.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CodeDOMMeta</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.CodeDOMMeta.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>mcls</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CodeDOMMeta.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CodeDOMMeta.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.CodeDOM.CodeDOMMeta.GetChoiceParser">
+<em class="property">static </em><code class="descname">GetChoiceParser</code><span class="sig-paren">(</span><em>choices</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CodeDOMMeta.GetChoiceParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CodeDOMMeta.GetChoiceParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.CodeDOM.CodeDOMMeta.GetRepeatParser">
+<em class="property">static </em><code class="descname">GetRepeatParser</code><span class="sig-paren">(</span><em>callback</em>, <em>generator</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CodeDOMMeta.GetRepeatParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CodeDOMMeta.GetRepeatParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.CodeDOMMeta.mro">
+<code class="descname">mro</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#lib.CodeDOM.CodeDOMMeta.mro" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a type&#8217;s method resolution order</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.CodeDOMObject">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">CodeDOMObject</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#CodeDOMObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CodeDOMObject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9e7ff905cd2c9db36088c24b6187767e8f7b2e8f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CodeDOMObject</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="lib.CodeDOM.CodeDOMObject.Parse">
+<em class="property">classmethod </em><code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CodeDOMObject.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CodeDOMObject.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.Expression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">Expression</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#Expression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.Expression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-364facb0b82d7a4dea081dda3592cfa141dd81da.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Expression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.Expression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.Expression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.UnaryExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">UnaryExpression</code><span class="sig-paren">(</span><em>child</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#UnaryExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.UnaryExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d5c1d575b2f75b02d6e63ba9096edbd8d74dcc80.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of UnaryExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.UnaryExpression.Child">
+<code class="descname">Child</code><a class="headerlink" href="#lib.CodeDOM.UnaryExpression.Child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.UnaryExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.UnaryExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.NotExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">NotExpression</code><span class="sig-paren">(</span><em>child</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#NotExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.NotExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-41379309d7a1beb63bdc68d1ddaaa437126e1da1.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of NotExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="lib.CodeDOM.NotExpression.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#NotExpression.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.NotExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.NotExpression.Child">
+<code class="descname">Child</code><a class="headerlink" href="#lib.CodeDOM.NotExpression.Child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.NotExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.NotExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.BinaryExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">BinaryExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BinaryExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BinaryExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9d891812b17f2d3122b8d3a75959665eb68f495b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of BinaryExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.BinaryExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.BinaryExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.BinaryExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.BinaryExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.BinaryExpression.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BinaryExpression.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BinaryExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.BinaryExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.BinaryExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.LogicalExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">LogicalExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#LogicalExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.LogicalExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-865df574c2b86e27525c1ea482c0e6e47fc7c22e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LogicalExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.LogicalExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.LogicalExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.LogicalExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.LogicalExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.LogicalExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.LogicalExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.LogicalExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.LogicalExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.CompareExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">CompareExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CompareExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CompareExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4d6117ea4c35531005415a5195efaa3540815081.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CompareExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.CompareExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.CompareExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.CompareExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.CompareExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.CompareExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.CompareExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.CompareExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.CompareExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.EqualExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">EqualExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#EqualExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.EqualExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-3a9962481d37971d76f7f83a7d90d5b173dbe248.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of EqualExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.EqualExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.EqualExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.EqualExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.EqualExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.EqualExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.EqualExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.EqualExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.EqualExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.UnequalExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">UnequalExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#UnequalExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.UnequalExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b04f0658576523552ec57928dc9e1ec0ca47964d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of UnequalExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.UnequalExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.UnequalExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.UnequalExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.UnequalExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.UnequalExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.UnequalExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.UnequalExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.UnequalExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.LessThanExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">LessThanExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#LessThanExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.LessThanExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-acbd68af20d56779468bad676a22adadfa17f8db.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LessThanExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.LessThanExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.LessThanExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.LessThanExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.LessThanExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.LessThanExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.LessThanExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.LessThanExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.LessThanExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.LessThanEqualExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">LessThanEqualExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#LessThanEqualExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.LessThanEqualExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-41e8bef798862c150d2ec1415ba81dea71170e72.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LessThanEqualExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.LessThanEqualExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.LessThanEqualExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.LessThanEqualExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.LessThanEqualExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.LessThanEqualExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.LessThanEqualExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.LessThanEqualExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.LessThanEqualExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.GreaterThanExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">GreaterThanExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#GreaterThanExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.GreaterThanExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-cb8bdc0a9f840a5ac95717815d879dc1d7fdb444.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GreaterThanExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.GreaterThanExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.GreaterThanExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.GreaterThanExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.GreaterThanExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.GreaterThanExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.GreaterThanExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.GreaterThanExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.GreaterThanExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.GreaterThanEqualExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">GreaterThanEqualExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#GreaterThanEqualExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.GreaterThanEqualExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-7daa5e330030412246ad2f95bb39324ef737e592.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GreaterThanEqualExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.GreaterThanEqualExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.GreaterThanEqualExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.GreaterThanEqualExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.GreaterThanEqualExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.GreaterThanEqualExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.GreaterThanEqualExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.GreaterThanEqualExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.GreaterThanEqualExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.AndExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">AndExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#AndExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.AndExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a320bb1c716463af0df839171ccf3fbdf01cd3bb.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AndExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.AndExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.AndExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.AndExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.AndExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.AndExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.AndExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.AndExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.AndExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.OrExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">OrExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#OrExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.OrExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-49203b8a23df51a1ae70867934ac82d55a07e01d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of OrExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.OrExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.OrExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.OrExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.OrExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.OrExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.OrExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.OrExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.OrExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.XorExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">XorExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#XorExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.XorExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-51fa8a85a139b221bee5861c835ea4887f28c297.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XorExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.XorExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.XorExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.XorExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.XorExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.XorExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.XorExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.XorExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.XorExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.InExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">InExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#InExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.InExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-7e8e8e8b546140fde099f49e6bd2522bcf796a5c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of InExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.InExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.InExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.InExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.InExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.InExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.InExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.InExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.InExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.NotInExpression">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">NotInExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#NotInExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.NotInExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8600738c067d09c8f0d65679c335e7adc922eaa3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of NotInExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.NotInExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.NotInExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.NotInExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#lib.CodeDOM.NotInExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.NotInExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.NotInExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.NotInExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#lib.CodeDOM.NotInExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.Function">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">Function</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#Function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.Function" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-50ba25ab9ffcb95d3c475c9a31c58ee44cf1eb51.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Function</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.Function.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.Function.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.ListElement">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">ListElement</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#ListElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.ListElement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0856025f16495342fc8a450b29701e124eccb452.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ListElement</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="lib.CodeDOM.ListElement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#ListElement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.ListElement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.ListElement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.ListElement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.Literal">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">Literal</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#Literal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.Literal" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b0a70f025094d0a4ef5b08dcfd5eb816eb0ee135.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Literal</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.Literal.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.Literal.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.StringLiteral">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">StringLiteral</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#StringLiteral"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.StringLiteral" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0dc487028f043f1d011a97a1a55ea36db0453c59.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of StringLiteral</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.StringLiteral.Value">
+<code class="descname">Value</code><a class="headerlink" href="#lib.CodeDOM.StringLiteral.Value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.StringLiteral.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#StringLiteral.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.StringLiteral.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.StringLiteral.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.StringLiteral.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.IntegerLiteral">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">IntegerLiteral</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#IntegerLiteral"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.IntegerLiteral" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-831fdaa95fecbf98373f14729fa0476bce7dccc4.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IntegerLiteral</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.IntegerLiteral.Value">
+<code class="descname">Value</code><a class="headerlink" href="#lib.CodeDOM.IntegerLiteral.Value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.IntegerLiteral.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#IntegerLiteral.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.IntegerLiteral.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.IntegerLiteral.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.IntegerLiteral.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.Identifier">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">Identifier</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#Identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.Identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c59717096ceed7b4e32435143a7d5eec0972caab.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Identifier</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.Identifier.Name">
+<code class="descname">Name</code><a class="headerlink" href="#lib.CodeDOM.Identifier.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.Identifier.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#Identifier.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.Identifier.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.Identifier.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.Identifier.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.Statement">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">Statement</code><span class="sig-paren">(</span><em>commentText=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#Statement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.Statement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c3b6e6c65ec2813c34bde5099fd114f246f68186.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Statement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.Statement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#lib.CodeDOM.Statement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.Statement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.Statement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.BlockStatement">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">BlockStatement</code><span class="sig-paren">(</span><em>commentText=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BlockStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6f1fab3583d423949a9598b5dd5ac7de91082a28.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of BlockStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="lib.CodeDOM.BlockStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockStatement.AddStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BlockStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.BlockStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#lib.CodeDOM.BlockStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.BlockStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#lib.CodeDOM.BlockStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.BlockStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.BlockStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.ConditionalBlockStatement">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">ConditionalBlockStatement</code><span class="sig-paren">(</span><em>expression</em>, <em>commentText=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#ConditionalBlockStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.ConditionalBlockStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-59de4b3aa2b82cb2fa035ee197ed84d0de3a6587.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ConditionalBlockStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.ConditionalBlockStatement.Expression">
+<code class="descname">Expression</code><a class="headerlink" href="#lib.CodeDOM.ConditionalBlockStatement.Expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.ConditionalBlockStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.ConditionalBlockStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.ConditionalBlockStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#lib.CodeDOM.ConditionalBlockStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.ConditionalBlockStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.ConditionalBlockStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.CodeDOM.ConditionalBlockStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#lib.CodeDOM.ConditionalBlockStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.EmptyLine">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">EmptyLine</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#EmptyLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.EmptyLine" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ac05846e7477b217540d97d28b706ae5d2d8304a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of EmptyLine</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="lib.CodeDOM.EmptyLine.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#EmptyLine.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.EmptyLine.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.EmptyLine.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.EmptyLine.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.CommentLine">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">CommentLine</code><span class="sig-paren">(</span><em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CommentLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CommentLine" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b75a939a1259189616d679b452fb2f134cd10d04.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CommentLine</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.CommentLine.Text">
+<code class="descname">Text</code><a class="headerlink" href="#lib.CodeDOM.CommentLine.Text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.CommentLine.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#CommentLine.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.CommentLine.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.CommentLine.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.CommentLine.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.BlockedStatement">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">BlockedStatement</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockedStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BlockedStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f771e5485a74ba8fb8f4481009d3b426ff93fe7f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of BlockedStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.BlockedStatement._allowedStatements">
+<code class="descname">_allowedStatements</code><em class="property"> = []</em><a class="headerlink" href="#lib.CodeDOM.BlockedStatement._allowedStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.BlockedStatement.AddChoice">
+<em class="property">classmethod </em><code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockedStatement.AddChoice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BlockedStatement.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.BlockedStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockedStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.BlockedStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.BlockedStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.BlockedStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.CodeDOM.ExpressionChoice">
+<em class="property">class </em><code class="descclassname">lib.CodeDOM.</code><code class="descname">ExpressionChoice</code><a class="reference internal" href="../_modules/lib/CodeDOM.html#ExpressionChoice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.ExpressionChoice" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-014c3c3a4eba5003f2f0e9c66c73cbd0ed42418d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ExpressionChoice</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="lib.CodeDOM.ExpressionChoice._allowedExpressions">
+<code class="descname">_allowedExpressions</code><em class="property"> = []</em><a class="headerlink" href="#lib.CodeDOM.ExpressionChoice._allowedExpressions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.ExpressionChoice.AddChoice">
+<em class="property">classmethod </em><code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#ExpressionChoice.AddChoice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.ExpressionChoice.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.CodeDOM.ExpressionChoice.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#ExpressionChoice.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.CodeDOM.ExpressionChoice.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.CodeDOM.ExpressionChoice.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.CodeDOM.ExpressionChoice.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

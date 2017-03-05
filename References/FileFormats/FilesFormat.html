@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>*.files Format &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="File Formats" href="index.html"/>
+        <link rel="next" title="*.rules Format" href="RulesFormat.html"/>
+        <link rel="prev" title="*.ini Format" href="IniFormat.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../more.html">More ...</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ListOfDevices.html">List of Supported FPGA Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ListOfBoards.html">List of Supported Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../WrapperScriptHookFiles.html">Wrapper Script Hook Files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">File Formats</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IniFormat.html">*.ini Format</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">*.files Format</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#document">Document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-file-statements">Source File Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boolean-expressions">Boolean Expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#path-expressions">Path Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="RulesFormat.html">*.rules Format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../NamingConventions.html">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../KnownIssues.html">Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Licenses/index.html">Local License Copies</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../more.html">More References</a> &raquo;</li>
+        
+          <li><a href="index.html">File Formats</a> &raquo;</li>
+        
+      <li>*.files Format</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/References/FileFormats/FilesFormat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="files-format">
+<span id="fileformat-files"></span><h1><a href="#id1"><span class="problematic" id="id2">*</span></a>.files Format<a class="headerlink" href="#files-format" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents-of-this-page">
+<p class="topic-title first">Contents of this Page</p>
+<ul class="simple">
+<li><a class="reference internal" href="#document" id="id3">Document</a></li>
+<li><a class="reference internal" href="#source-file-statements" id="id4">Source File Statements</a></li>
+<li><a class="reference internal" href="#conditional-statements" id="id5">Conditional Statements</a></li>
+<li><a class="reference internal" href="#boolean-expressions" id="id6">Boolean Expressions</a><ul>
+<li><a class="reference internal" href="#unary-operators" id="id7">Unary operators</a></li>
+<li><a class="reference internal" href="#binary-operators" id="id8">Binary operators</a></li>
+<li><a class="reference internal" href="#literals" id="id9">Literals</a></li>
+<li><a class="reference internal" href="#pre-defined-constants" id="id10">Pre-defined constants</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#path-expressions" id="id11">Path Expressions</a></li>
+</ul>
+</div>
+<p>Files files are used to ...</p>
+<p>Line comments start with <code class="docutils literal"><span class="pre">#</span></code>.</p>
+<div class="section" id="document">
+<h2><a class="toc-backref" href="#id3">Document</a><a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="source-file-statements">
+<h2><a class="toc-backref" href="#id4">Source File Statements</a><a class="headerlink" href="#source-file-statements" title="Permalink to this headline">¶</a></h2>
+<p>Bla <code class="xref std std-token docutils literal"><span class="pre">VHDLStatement</span></code> blub</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">vhdl</span> <span class="pre">Library</span> <span class="pre">&quot;&lt;VHDLFile&gt;&quot;</span></code>
+This statement references a VHDL source file.</li>
+<li><code class="docutils literal"><span class="pre">verilog</span> <span class="pre">&quot;&lt;VerilogFile&gt;&quot;</span></code>
+This statement references a Verilog source file.</li>
+<li><code class="docutils literal"><span class="pre">cocotb</span> <span class="pre">&quot;&lt;PythonFile&gt;&quot;</span></code>
+This statement references a Cocotb testbench file (Python file).</li>
+<li><code class="docutils literal"><span class="pre">ucf</span> <span class="pre">&quot;&lt;UCFFile&gt;&quot;</span></code>
+This statement references a Xilinx User Constraint File (UCF).</li>
+<li><code class="docutils literal"><span class="pre">sdc</span> <span class="pre">&quot;&lt;SDCFile&gt;&quot;</span></code>
+This statement references a Synopsys Design Constraint file (SDC).</li>
+<li><code class="docutils literal"><span class="pre">xdc</span> <span class="pre">&quot;&lt;XDCFile&gt;&quot;</span></code>
+This statement references a Xilinx Design Constraint file (XDC).</li>
+<li><code class="docutils literal"><span class="pre">ldc</span> <span class="pre">&quot;&lt;LDCFile&gt;&quot;</span></code>
+This statement references a Lattice Design Constraint file (LDC).</li>
+</ul>
+</div>
+<div class="section" id="conditional-statements">
+<h2><a class="toc-backref" href="#id5">Conditional Statements</a><a class="headerlink" href="#conditional-statements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">If</span> <span class="pre">(&lt;Expression&gt;)</span> <span class="pre">Then</span> <span class="pre">...</span> <span class="pre">[ElseIf</span> <span class="pre">(&lt;Expression&gt;)</span> <span class="pre">Then</span> <span class="pre">...][Else</span> <span class="pre">...]</span> <span class="pre">End</span> <span class="pre">IF</span></code>
+This allows the user to define conditions, when to load a source file into
+the file list. The <code class="docutils literal"><span class="pre">ElseIF</span></code> and <code class="docutils literal"><span class="pre">Else</span></code> clause of an <code class="docutils literal"><span class="pre">If</span></code> statement are optional.</li>
+</ul>
+</div>
+<div class="section" id="boolean-expressions">
+<h2><a class="toc-backref" href="#id6">Boolean Expressions</a><a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unary-operators">
+<h3><a class="toc-backref" href="#id7">Unary operators</a><a class="headerlink" href="#unary-operators" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">!</span></code> - not</li>
+<li><code class="docutils literal"><span class="pre">[...]</span></code> - list construction</li>
+<li><code class="docutils literal"><span class="pre">?</span></code> - file exists</li>
+</ul>
+</div>
+<div class="section" id="binary-operators">
+<h3><a class="toc-backref" href="#id8">Binary operators</a><a class="headerlink" href="#binary-operators" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">and</span></code> - and</li>
+<li><code class="docutils literal"><span class="pre">or</span></code> - or</li>
+<li><code class="docutils literal"><span class="pre">xor</span></code> - exclusive or</li>
+<li><code class="docutils literal"><span class="pre">in</span></code> - in list</li>
+<li><code class="docutils literal"><span class="pre">=</span></code> - equal</li>
+<li><code class="docutils literal"><span class="pre">!=</span></code> - unequal</li>
+<li><code class="docutils literal"><span class="pre">&lt;</span></code> - less than</li>
+<li><code class="docutils literal"><span class="pre">&lt;=</span></code> - less than or equal</li>
+<li><code class="docutils literal"><span class="pre">&gt;</span></code> - greater than</li>
+<li><code class="docutils literal"><span class="pre">&gt;=</span></code> - greater than or equal</li>
+</ul>
+</div>
+<div class="section" id="literals">
+<h3><a class="toc-backref" href="#id9">Literals</a><a class="headerlink" href="#literals" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;constant&gt;</span></code> - a pre-defined constant</li>
+<li><code class="docutils literal"><span class="pre">&quot;&lt;String&gt;&quot;</span></code> - Strings are enclosed in quote signs</li>
+<li><code class="docutils literal"><span class="pre">&lt;Integer&gt;</span></code> - Integers as decimal values</li>
+</ul>
+</div>
+<div class="section" id="pre-defined-constants">
+<h3><a class="toc-backref" href="#id10">Pre-defined constants</a><a class="headerlink" href="#pre-defined-constants" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Environment Variables:</p>
+<ul>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">Environment</span></code></dt>
+<dd><p class="first last">Values:</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&quot;Simulation&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&quot;Synthesis&quot;</span></code></li>
+</ul>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">ToolChain</span></code> - The used tool chain. E.g. <code class="docutils literal"><span class="pre">&quot;Xilinx_ISE&quot;</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">Tool</span></code> - The used tool. E.g. <code class="docutils literal"><span class="pre">&quot;Mentor_QuestaSim&quot;</span></code> or <code class="docutils literal"><span class="pre">&quot;Xilinx_XST&quot;</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">VHDL</span></code> - The used VHDL version. <code class="docutils literal"><span class="pre">1987</span></code>, <code class="docutils literal"><span class="pre">1993</span></code>, <code class="docutils literal"><span class="pre">2002</span></code>, <code class="docutils literal"><span class="pre">2008</span></code></p>
+</li>
+</ul>
+</li>
+<li><p class="first">Board Variables:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">BoardName</span></code> - A string. E.g. <code class="docutils literal"><span class="pre">&quot;KC705&quot;</span></code></li>
+</ul>
+</li>
+<li><p class="first">Device Variables:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">DeviceVendor</span></code> - The vendor of the device. E.g. <code class="docutils literal"><span class="pre">&quot;Altera&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">DeviceDevice</span></code> -</li>
+<li><code class="docutils literal"><span class="pre">DeviceFamily</span></code> -</li>
+<li><code class="docutils literal"><span class="pre">DeviceGeneration</span></code> -</li>
+<li><code class="docutils literal"><span class="pre">DeviceSeries</span></code> -</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="path-expressions">
+<h2><a class="toc-backref" href="#id11">Path Expressions</a><a class="headerlink" href="#path-expressions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/</span></code> - sub-directory</li>
+<li><code class="docutils literal"><span class="pre">&amp;</span></code> - string concat</li>
+</ul>
+<p>### Other Statements</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">include</span> <span class="pre">&quot;&lt;FilesFile&gt;&quot;</span></code>
+Include another *.files file.</li>
+<li><code class="docutils literal"><span class="pre">library</span> <span class="pre">&lt;VHDLLibrary&gt;</span> <span class="pre">&quot;&lt;LibraryPath&gt;&quot;</span></code>
+Reference an existing (pre-compiled) VHDL library, which is passed to the simulator, if external libraries are supported.</li>
+<li><code class="docutils literal"><span class="pre">report</span> <span class="pre">&quot;&lt;Message&gt;&quot;</span></code>
+Print a critical warning in the log window. This critical warning is treated as an error.</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="RulesFormat.html" class="btn btn-neutral float-right" title="*.rules Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="IniFormat.html" class="btn btn-neutral" title="*.ini Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

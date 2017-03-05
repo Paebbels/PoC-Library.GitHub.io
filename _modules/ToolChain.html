@@ -1,0 +1,1235 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>ToolChain</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for ToolChain</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-  tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#</span>
+<span class="c1"># Python package:   Contains PoC&#39;s configuration mechanism.</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">collections</span>        <span class="k">import</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">enum</span>               <span class="k">import</span> <span class="n">unique</span><span class="p">,</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>            <span class="k">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>      <span class="k">import</span> <span class="n">Init</span><span class="p">,</span> <span class="n">CallByRefBoolParam</span>
+<span class="kn">from</span> <span class="nn">Base</span>               <span class="k">import</span> <span class="n">ILogable</span><span class="p">,</span> <span class="n">IHost</span>
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>    <span class="k">import</span> <span class="n">ExceptionBase</span>
+<span class="kn">from</span> <span class="nn">Base.Executable</span>    <span class="k">import</span> <span class="n">Executable</span><span class="p">,</span> <span class="n">Environment</span>
+<span class="kn">from</span> <span class="nn">Base.Logging</span>       <span class="k">import</span> <span class="n">Severity</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;ToolChainException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ConfigurationException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;SkipConfigurationException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ConfigurationState&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ChangeState&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ToolMixIn&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;AskMixIn&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Configuration&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;VendorConfiguration&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ToolConfiguration&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;EditionDescription&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Edition&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ToolSelector&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Configurator&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="ToolChainException"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolChainException">[docs]</a><span class="k">class</span> <span class="nc">ToolChainException</span><span class="p">(</span><span class="n">ExceptionBase</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all tool specific exceptions&quot;&quot;&quot;</span></div>
+	
+<div class="viewcode-block" id="ConfigurationException"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ConfigurationException">[docs]</a><span class="k">class</span> <span class="nc">ConfigurationException</span><span class="p">(</span><span class="n">ExceptionBase</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;``ConfigurationException`` is raise while running configuration or database</span>
+<span class="sd">	tasks in PoC</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+<div class="viewcode-block" id="SkipConfigurationException"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.SkipConfigurationException">[docs]</a><span class="k">class</span> <span class="nc">SkipConfigurationException</span><span class="p">(</span><span class="n">ExceptionBase</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;``SkipConfigurationException`` is a :py:exc:`ConfigurationException`,</span>
+<span class="sd">	which can be skipped.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="ConfigurationState"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ConfigurationState">[docs]</a><span class="k">class</span> <span class="nc">ConfigurationState</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Describes the configuration state of a tool or vendor.&quot;&quot;&quot;</span>
+	<span class="n">Unconfigured</span> <span class="o">=</span>  <span class="mi">0</span>
+	<span class="n">Configured</span> <span class="o">=</span>    <span class="mi">1</span>
+	
+	<span class="k">def</span> <span class="nf">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">Configured</span></div>
+		
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="ChangeState"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ChangeState">[docs]</a><span class="k">class</span> <span class="nc">ChangeState</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Describes if a configuration was changed.&quot;&quot;&quot;</span>
+	<span class="n">Unchanged</span> <span class="o">=</span>   <span class="mi">0</span>
+	<span class="n">Changed</span> <span class="o">=</span>     <span class="mi">1</span>
+	
+	<span class="k">def</span> <span class="nf">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">Changed</span></div>
+		
+		
+<div class="viewcode-block" id="ToolMixIn"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.ToolMixIn">[docs]</a><span class="k">class</span> <span class="nc">ToolMixIn</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_platform</span> <span class="o">=</span>            <span class="n">platform</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span> <span class="o">=</span>              <span class="n">dryrun</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span> <span class="o">=</span> <span class="n">binaryDirectoryPath</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">=</span>             <span class="n">version</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span>              <span class="n">logger</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_environment</span> <span class="o">=</span>         <span class="n">Environment</span><span class="p">()</span></div>
+		
+		
+<div class="viewcode-block" id="AskMixIn"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.AskMixIn">[docs]</a><span class="k">class</span> <span class="nc">AskMixIn</span><span class="p">:</span>
+<div class="viewcode-block" id="AskMixIn._Ask"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.AskMixIn._Ask">[docs]</a>	<span class="k">def</span> <span class="nf">_Ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">beforeDefault</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">afterDefault</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+		<span class="n">question</span> <span class="o">+=</span> <span class="s2">&quot; [</span><span class="si">{beforeDefault!s}{CYAN}{default!s}{NOCOLOR}{afterDefault!s}</span><span class="s2">]: &quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beforeDefault</span><span class="o">=</span><span class="n">beforeDefault</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">afterDefault</span><span class="o">=</span><span class="n">afterDefault</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">[</span><span class="s2">&quot;GREEN&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">[</span><span class="s2">&quot;NOCOLOR&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+			<span class="n">answer</span> <span class="o">=</span> <span class="n">default</span>
+			<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\x1B</span><span class="s2">[1A&quot;</span> <span class="o">+</span> <span class="n">question</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{GREEN}{default!s}{NOCOLOR}</span><span class="s2">&quot;</span> <span class="c1"># cursor 1 up</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beforeDefault</span><span class="o">=</span><span class="n">beforeDefault</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">afterDefault</span><span class="o">=</span><span class="n">afterDefault</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">answer</span></div>
+		
+<div class="viewcode-block" id="AskMixIn._Ask_YesNoPass"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.AskMixIn._Ask_YesNoPass">[docs]</a>	<span class="k">def</span> <span class="nf">_Ask_YesNoPass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Ask a YES/no/pass question.&quot;&quot;&quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">isInstalled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">afterDefault</span><span class="o">=</span><span class="s2">&quot;/n/p&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">isInstalled</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">]):</span>
+				<span class="k">raise</span> <span class="n">SkipConfigurationException</span><span class="p">()</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">isInstalled</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">]):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">isInstalled</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">]):</span>
+				<span class="k">return</span> <span class="kc">True</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Unsupported choice &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">isInstalled</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span></div>
+				
+<div class="viewcode-block" id="AskMixIn._AskYes_NoPass"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.AskMixIn._AskYes_NoPass">[docs]</a>	<span class="k">def</span> <span class="nf">_AskYes_NoPass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Ask a yes/NO/pass question.&quot;&quot;&quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">isInstalled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="n">beforeDefault</span><span class="o">=</span><span class="s2">&quot;y/&quot;</span><span class="p">,</span> <span class="n">afterDefault</span><span class="o">=</span><span class="s2">&quot;/p&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">isInstalled</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">]):</span>
+				<span class="k">raise</span> <span class="n">SkipConfigurationException</span><span class="p">()</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">isInstalled</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">]):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">isInstalled</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">]):</span>
+				<span class="k">return</span> <span class="kc">True</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Unsupported choice &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">isInstalled</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span></div>
+				
+<div class="viewcode-block" id="AskMixIn._PrintAvailableEditions"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.AskMixIn._PrintAvailableEditions">[docs]</a>	<span class="k">def</span> <span class="nf">_PrintAvailableEditions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">editions</span><span class="p">,</span> <span class="n">selectedEdition</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Print all available editions and return the selected index.&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">editions</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))):</span>
+			<span class="n">editions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">editions</span><span class="p">)</span>
+			
+		<span class="n">selectedIndex</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">editions</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="ow">is</span> <span class="n">selectedEdition</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_CYAN}{0}</span><span class="s2">: </span><span class="si">{1!s}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+				<span class="n">selectedIndex</span> <span class="o">=</span> <span class="n">i</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">: </span><span class="si">{1!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">Name</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+				
+		<span class="k">return</span> <span class="n">selectedIndex</span></div></div>
+		
+		
+<div class="viewcode-block" id="Configuration"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configuration">[docs]</a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">ILogable</span><span class="p">,</span> <span class="n">AskMixIn</span><span class="p">):</span>    <span class="c1">#(ISubClassRegistration):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all Configuration classes.&quot;&quot;&quot;</span>
+	
+	<span class="n">_vendor</span> <span class="o">=</span>               <span class="s2">&quot;Unknown&quot;</span>           <span class="c1">#: The name of the tools vendor.</span>
+	<span class="n">_section</span> <span class="o">=</span>              <span class="s2">&quot;INSTALL.Name&quot;</span>      <span class="c1">#: The name of the configuration section. Pattern: ``INSTALL.Tool``.</span>
+	<span class="n">_multiVersionSupport</span> <span class="o">=</span>  <span class="kc">False</span>               <span class="c1">#: True if a tool supports multiple versions installed on the same system.</span>
+	<span class="n">_template</span> <span class="o">=</span>   <span class="p">{</span>
+		<span class="s2">&quot;ALL&quot;</span><span class="p">:</span>      <span class="p">{</span>   <span class="n">_section</span><span class="p">:</span> <span class="p">{}</span>  <span class="p">},</span>
+		<span class="s2">&quot;Darwin&quot;</span><span class="p">:</span>   <span class="p">{</span>   <span class="n">_section</span><span class="p">:</span> <span class="p">{}</span>  <span class="p">},</span>
+		<span class="s2">&quot;Linux&quot;</span><span class="p">:</span>    <span class="p">{</span>   <span class="n">_section</span><span class="p">:</span> <span class="p">{}</span>  <span class="p">},</span>
+		<span class="s2">&quot;Windows&quot;</span><span class="p">:</span>  <span class="p">{</span>   <span class="n">_section</span><span class="p">:</span> <span class="p">{}</span>  <span class="p">}</span>
+	<span class="p">}</span>                                   <span class="c1">#: The template for the configuration sections represented as nested dictionaries.</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span> <span class="p">:</span> <span class="n">IHost</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Class initializer.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span>    <span class="n">host</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">IsConfigured</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="o">=</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Unchanged</span>
+		
+		<span class="n">ILogable</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="o">.</span><span class="n">Logger</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">ILogable</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Host</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the hosting object.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">State</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the configuration state.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">SectionName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the configuration&#39;s section name.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_section</span>
+		
+<div class="viewcode-block" id="Configuration.IsSupportedPlatform"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.IsSupportedPlatform">[docs]</a>	<span class="k">def</span> <span class="nf">IsSupportedPlatform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return true if the given platform is supported by this configuration routine.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="p">(</span><span class="s1">&#39;ALL&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Configuration.IsConfigured"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.IsConfigured">[docs]</a>	<span class="k">def</span> <span class="nf">IsConfigured</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return true if the configurations section is configured&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">):</span>
+			<span class="n">optionCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">))</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">optionCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">ConfigurationState</span><span class="o">.</span><span class="n">Configured</span>
+				
+		<span class="k">return</span> <span class="n">ConfigurationState</span><span class="o">.</span><span class="n">Unconfigured</span></div>
+		
+<div class="viewcode-block" id="Configuration.CheckDependency"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.html#ToolChain.Configuration.CheckDependency">[docs]</a>	<span class="k">def</span> <span class="nf">CheckDependency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Check if all vendor or tool dependencies are fulfilled to configure this tool.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="kc">True</span></div>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Configuration.GetSections"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.GetSections">[docs]</a>	<span class="k">def</span> <span class="nf">GetSections</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">platform</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return all section names for this configuration.&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="s2">&quot;ALL&quot;</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_template</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">sectionName</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="s1">&#39;ALL&#39;</span><span class="p">]:</span>
+				<span class="k">yield</span> <span class="n">sectionName</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">platform</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_template</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">sectionName</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="n">platform</span><span class="p">]:</span>
+				<span class="k">yield</span> <span class="n">sectionName</span></div>
+				
+<div class="viewcode-block" id="Configuration.PrepareSections"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.PrepareSections">[docs]</a>	<span class="k">def</span> <span class="nf">PrepareSections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">warningWasWritten</span><span class="p">,</span> <span class="n">writeWarnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">pocConfig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span>
+		<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">platform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">sectionName</span><span class="p">,</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="n">platform</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+					<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">pocConfig</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="n">sectionName</span><span class="p">)):</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;WARNING: Adding new sections to configuration...&quot;</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="p">(</span><span class="n">writeWarnings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">warningWasWritten</span><span class="p">))</span>
+						<span class="n">warningWasWritten</span> <span class="o">|=</span> <span class="kc">True</span>
+						
+						<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Adding [</span><span class="si">{0}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sectionName</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">)</span>
+						<span class="n">pocConfig</span><span class="p">[</span><span class="n">sectionName</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span></div>
+						
+<div class="viewcode-block" id="Configuration.ClearSection"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.ClearSection">[docs]</a>	<span class="k">def</span> <span class="nf">ClearSection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writeWarnings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Clear the configuration section associated to this Configuration class.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;WARNING: Clearing section &#39;</span><span class="si">{0}</span><span class="s2">&#39;...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_multiVersionSupport</span><span class="p">:</span>
+			<span class="n">warningWasWritten</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="n">sectionNames</span> <span class="o">=</span> <span class="p">[</span><span class="n">sectionName</span> <span class="k">for</span> <span class="n">sectionName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">sectionName</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">))</span> <span class="ow">and</span> <span class="n">sectionName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">))]</span>
+			<span class="k">for</span> <span class="n">sectionName</span> <span class="ow">in</span> <span class="n">sectionNames</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;WARNING: Removing versioned sections...&quot;</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="p">(</span><span class="n">writeWarnings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">warningWasWritten</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">remove_section</span><span class="p">(</span><span class="n">sectionName</span><span class="p">)</span></div>
+				
+<div class="viewcode-block" id="Configuration.PrepareOptions"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.PrepareOptions">[docs]</a>	<span class="k">def</span> <span class="nf">PrepareOptions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writeWarnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">pocConfig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span>
+		<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">platform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">sectionName</span><span class="p">,</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="n">platform</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+					<span class="n">warningWasWritten</span> <span class="o">=</span> <span class="kc">False</span>
+					<span class="n">pocSection</span> <span class="o">=</span>        <span class="n">pocConfig</span><span class="p">[</span><span class="n">sectionName</span><span class="p">]</span>
+					
+					<span class="k">for</span> <span class="n">optionName</span><span class="p">,</span> <span class="n">optionValue</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+						<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">pocConfig</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">optionName</span><span class="p">)):</span>
+							<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding new options to section &#39;</span><span class="si">{0}</span><span class="s2">&#39;...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sectionName</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="p">(</span><span class="n">writeWarnings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">warningWasWritten</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+							<span class="n">warningWasWritten</span> <span class="o">|=</span> <span class="kc">True</span>
+							
+							<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_multiVersionSupport</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">optionValue</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+								<span class="n">value</span> <span class="o">=</span> <span class="n">optionValue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+								<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+									<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding </span><span class="si">{0}</span><span class="s2"> = </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionName</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+									<span class="n">pocSection</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+							<span class="k">else</span><span class="p">:</span>
+								<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding </span><span class="si">{0}</span><span class="s2"> = </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionName</span><span class="p">,</span> <span class="n">optionValue</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+								<span class="n">pocSection</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span> <span class="o">=</span> <span class="n">optionValue</span></div>
+								
+<div class="viewcode-block" id="Configuration.ConfigureForDarwin"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.ConfigureForDarwin">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForDarwin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Start the configuration procedure for Darwin.</span>
+<span class="sd">		</span>
+<span class="sd">		This method is a wrapper for :py:meth:`ConfigureForAll`. Overwrite this</span>
+<span class="sd">		method to implement a Darwin specific configuration routine.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ConfigureForAll</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Configuration.ConfigureForLinux"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.ConfigureForLinux">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForLinux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Start the configuration procedure for Linux.</span>
+<span class="sd">		</span>
+<span class="sd">		This method is a wrapper for :py:meth:`ConfigureForAll`. Overwrite this</span>
+<span class="sd">		method to implement a Linux specific configuration routine.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ConfigureForAll</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Configuration.ConfigureForWindows"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.ConfigureForWindows">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForWindows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Start the configuration procedure for Windows.</span>
+<span class="sd">		</span>
+<span class="sd">		This method is a wrapper for :py:meth:`ConfigureForAll`. Overwrite this</span>
+<span class="sd">		method to implement a Windows specific configuration routine.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ConfigureForAll</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Configuration.ConfigureForAll"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.html#ToolChain.Configuration.ConfigureForAll">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Start a generic (platform independent) configuration procedure.</span>
+<span class="sd">		</span>
+<span class="sd">		Overwrite this method to implement a generic configuration routine for a</span>
+<span class="sd">		(tool) Configuration class.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Either ``ConfigureForAll()`` or one of the platform specific ``ConfigureFor***()`` methods must be overwritten.&quot;</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the vendor name.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vendor</span>
+		
+<div class="viewcode-block" id="Configuration._AskInstalled"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration._AskInstalled">[docs]</a>	<span class="k">def</span> <span class="nf">_AskInstalled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Ask a Yes/No/Pass question.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ask_YesNoPass</span><span class="p">(</span><span class="n">question</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Configuration._ConfigureInstallationDirectory"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration._ConfigureInstallationDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureInstallationDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Asks for installation directory and updates section.</span>
+<span class="sd">		Checks if entered directory exists and returns Path object.</span>
+<span class="sd">		If no installation directory was configured before, then _GetDefaultInstallationDir is called.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># if self._host.PoCConfig.has_option(self._section, &#39;InstallationDirectory&#39;):</span>
+		<span class="n">defaultPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])</span>
+		<span class="c1"># else:</span>
+		<span class="c1"># 	unresolved = self._GetDefaultInstallationDirectory() # may return an unresolved configuration string</span>
+		<span class="c1"># 	self._host.PoCConfig[self._section][&#39;InstallationDirectory&#39;] = unresolved # create entry</span>
+		<span class="c1"># 	defaultPath = Path(self._host.PoCConfig[self._section][&#39;InstallationDirectory&#39;]) # resolve entry</span>
+		
+		<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2"> installation directory&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="n">installPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">defaultPath</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">installPath</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">installPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">installPath</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">installPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2"> installation directory &#39;</span><span class="si">{1!s}</span><span class="s2">&#39; does not exist.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">installPath</span><span class="p">))</span>  \
+				<span class="kn">from</span> <span class="nn">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">installPath</span><span class="p">))</span>
+				
+		<span class="k">if</span> <span class="n">installPath</span> <span class="o">!=</span> <span class="n">defaultPath</span><span class="p">:</span> <span class="c1"># update only if user entered something</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_multiVersionSupport</span><span class="p">:</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;SectionName&#39;</span><span class="p">]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_section</span>
+				
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">sectionName</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">installPath</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+			
+		<span class="k">return</span> <span class="n">installPath</span></div>
+		
+<div class="viewcode-block" id="Configuration._GetDefaultInstallationDirectory"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration._GetDefaultInstallationDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_GetDefaultInstallationDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return unresolved default installation directory (str) from template.</span>
+<span class="sd">		</span>
+<span class="sd">		Overwrite function in sub-class for automatic search of installation directory.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetDefaultOptionValue</span><span class="p">(</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Configuration._GetDefaultOptionValue"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration._GetDefaultOptionValue">[docs]</a>	<span class="k">def</span> <span class="nf">_GetDefaultOptionValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optionName</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">platform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">):</span>
+				<span class="n">platformDict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="n">platform</span><span class="p">]</span>
+				<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span> <span class="ow">in</span> <span class="n">platformDict</span><span class="p">):</span>
+					<span class="n">sectionDict</span> <span class="o">=</span> <span class="n">platformDict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">optionName</span> <span class="ow">in</span> <span class="n">sectionDict</span><span class="p">):</span>
+						<span class="n">optionValue</span> <span class="o">=</span> <span class="n">sectionDict</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span>
+						<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_multiVersionSupport</span><span class="p">:</span>
+							<span class="k">return</span> <span class="n">optionValue</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+						<span class="k">else</span><span class="p">:</span>
+							<span class="k">return</span> <span class="n">optionValue</span></div>
+							
+<div class="viewcode-block" id="Configuration._TestDefaultInstallPath"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration._TestDefaultInstallPath">[docs]</a>	<span class="k">def</span> <span class="nf">_TestDefaultInstallPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">defaults</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Helper function for automatic search of installation directory.&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">drive</span> <span class="ow">in</span> <span class="s2">&quot;CDEFGH&quot;</span><span class="p">:</span>
+				<span class="n">defaultPathNames</span> <span class="o">=</span> <span class="n">defaults</span><span class="p">[</span><span class="s2">&quot;Windows&quot;</span><span class="p">]</span>
+				<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">defaultPathNames</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))):</span>
+					<span class="n">defaultPathNames</span> <span class="o">=</span> <span class="p">(</span><span class="n">defaultPathNames</span><span class="p">)</span>
+				<span class="k">for</span> <span class="n">pathName</span> <span class="ow">in</span> <span class="n">defaultPathNames</span><span class="p">:</span>
+					<span class="n">defaultInstallPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">:/</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">drive</span><span class="p">,</span> <span class="n">pathName</span><span class="p">))</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">defaultInstallPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+							<span class="k">return</span> <span class="n">defaultInstallPath</span>
+					<span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+						<span class="k">pass</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">defaultPathNames</span> <span class="o">=</span> <span class="n">defaults</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">defaultPathNames</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))):</span>
+				<span class="n">defaultPathNames</span> <span class="o">=</span> <span class="p">(</span><span class="n">defaultPathNames</span><span class="p">)</span>
+				
+			<span class="k">for</span> <span class="n">pathName</span> <span class="ow">in</span> <span class="n">defaultPathNames</span><span class="p">:</span>
+				<span class="n">defaultInstallPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/opt&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">pathName</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;testing: </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultInstallPath</span><span class="p">))</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">defaultInstallPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+						<span class="k">return</span> <span class="n">defaultInstallPath</span>
+				<span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+					<span class="k">pass</span>
+					
+				<span class="n">defaultInstallPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/opt&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">pathName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;testing: </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultInstallPath</span><span class="p">))</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">defaultInstallPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+						<span class="k">return</span> <span class="n">defaultInstallPath</span>
+				<span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+					<span class="k">pass</span>
+					
+		<span class="k">return</span> <span class="kc">None</span></div>
+		
+<div class="viewcode-block" id="Configuration.RunPostConfigurationTasks"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.Xilinx.Vivado.html#ToolChain.Configuration.RunPostConfigurationTasks">[docs]</a>	<span class="k">def</span> <span class="nf">RunPostConfigurationTasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Virtual method. Overwrite to execute post-configuration tasks.&quot;&quot;&quot;</span>
+		<span class="k">pass</span></div></div>
+		
+		
+<div class="viewcode-block" id="VendorConfiguration"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.VendorConfiguration">[docs]</a><span class="k">class</span> <span class="nc">VendorConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all vendor Configuration classes.&quot;&quot;&quot;</span>
+	<span class="n">_section</span> <span class="o">=</span>      <span class="s2">&quot;INSTALL.Vendor.Tool&quot;</span>  <span class="c1">#: The name of the configuration section. Pattern: ``INSTALL.Vendor``.</span>
+	<span class="n">_template</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;Darwin&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;/opt/Vendor&quot;</span><span class="p">,</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Linux&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;/opt/Vendor&quot;</span><span class="p">,</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Windows&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;C:/Vendor&quot;</span><span class="p">,</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>  <span class="c1">#: The template for the configuration section represented as nested dictionaries.</span>
+	
+	<span class="c1"># Method aliases</span>
+	<span class="n">IsConfigured</span> <span class="o">=</span> <span class="n">Configuration</span><span class="o">.</span><span class="n">IsConfigured</span>
+	<span class="sd">&quot;&quot;&quot;Return true if the vendor represented by this Configuration class is</span>
+<span class="sd">	configured in PoC.</span>
+<span class="sd">	</span>
+<span class="sd">	Inherited method :py:meth:`~Configuration.IsConfigured` from class</span>
+<span class="sd">	:py:class:`Configuration`.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+<div class="viewcode-block" id="VendorConfiguration.ConfigureForAll"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.VendorConfiguration.ConfigureForAll">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Start a generic (platform independent) vendor configuration procedure.</span>
+<span class="sd">		</span>
+<span class="sd">		This method configures a vendor path. Overwrite this method to implement a</span>
+<span class="sd">		vendor specific configuration routine for a vendor Configuration class.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AskInstalled</span><span class="p">(</span><span class="s2">&quot;Are </span><span class="si">{0}</span><span class="s2"> products installed on your system?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vendor</span><span class="p">))):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureInstallationDirectory</span><span class="p">()</span>
+		<span class="k">except</span> <span class="n">SkipConfigurationException</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">ConfigurationState</span><span class="o">.</span><span class="n">Configured</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">raise</span></div></div>
+			
+			
+<div class="viewcode-block" id="ToolConfiguration"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration">[docs]</a><span class="k">class</span> <span class="nc">ToolConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all tool Configuration classes.&quot;&quot;&quot;</span>
+	
+	<span class="n">_section</span> <span class="o">=</span>              <span class="s2">&quot;INSTALL.Vendor.Tool&quot;</span>  <span class="c1">#: The name of the configuration section. Pattern: ``INSTALL.Vendor.ToolName``.</span>
+	<span class="n">_toolName</span> <span class="o">=</span>             <span class="s2">&quot;Tool&quot;</span>                 <span class="c1">#: The name of the tool.</span>
+	<span class="n">_template</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;ALL&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Darwin&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;${INSTALL.Vendor:InstallationDirectory}/$</span><span class="si">{Version}</span><span class="s2">/Tool&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/bin&quot;</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Linux&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;${INSTALL.Vendor:InstallationDirectory}/$</span><span class="si">{Version}</span><span class="s2">/Tool&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/bin&quot;</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Windows&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;${INSTALL.Vendor:InstallationDirectory}/$</span><span class="si">{Version}</span><span class="s2">/Tool/&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/bin&quot;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>  <span class="c1">#: The template for the configuration section represented as nested dictionaries.</span>
+	
+	<span class="c1"># Method aliases</span>
+	<span class="n">IsConfigured</span> <span class="o">=</span> <span class="n">Configuration</span><span class="o">.</span><span class="n">IsConfigured</span>
+	<span class="sd">&quot;&quot;&quot;Return true if the tool represented by this Configuration class is</span>
+<span class="sd">	configured in PoC.</span>
+<span class="sd">	</span>
+<span class="sd">	Inherited method :py:meth:`~Configuration.IsConfigured` from class</span>
+<span class="sd">	:py:class:`Configuration`.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+<div class="viewcode-block" id="ToolConfiguration._ConfigureVersion"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration._ConfigureVersion">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		If no version was configured before, then _GetDefaultVersion is called.</span>
+<span class="sd">		Asks for version and updates section. Returns version as string.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># if self._host.PoCConfig.has_option(self._section, &#39;Version&#39;):</span>
+		<span class="n">defaultVersion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span>
+		<span class="c1"># else:</span>
+		<span class="c1"># 	unresolved = self._GetDefaultVersion()  # may return an unresolved configuration string</span>
+		<span class="c1"># 	self._host.PoCConfig[self._section][&#39;Version&#39;] = unresolved  # create entry</span>
+		<span class="c1"># 	defaultVersion = self._host.PoCConfig[self._section][&#39;Version&#39;]  # resolve entry</span>
+		
+		<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2"> version&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultVersion</span><span class="p">)</span>
+		<span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">defaultVersion</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">version</span> <span class="o">!=</span> <span class="n">defaultVersion</span><span class="p">):</span>   <span class="c1"># update only if user entered something</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">version</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+			
+		<span class="k">return</span> <span class="n">version</span></div>
+		
+<div class="viewcode-block" id="ToolConfiguration._GetDefaultVersion"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration._GetDefaultVersion">[docs]</a>	<span class="k">def</span> <span class="nf">_GetDefaultVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Returns unresolved default version (str) from template.</span>
+<span class="sd">		</span>
+<span class="sd">		Overwrite this method in a sub-class for automatic search of version.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span></div>
+		
+<div class="viewcode-block" id="ToolConfiguration._ConfigureEdition"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration._ConfigureEdition">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureEdition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">editions</span><span class="p">,</span> <span class="n">defaultEdition</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  Which </span><span class="si">{0}</span><span class="s2"> edition is installed on the system?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_toolName</span><span class="p">))</span>
+		<span class="n">defaultIndex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_PrintAvailableEditions</span><span class="p">(</span><span class="n">editions</span><span class="p">,</span> <span class="n">defaultEdition</span><span class="p">)</span>
+		
+		<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;Installed edition [</span><span class="si">{CYAN}{0}{NOCOLOR}</span><span class="s2">]: &quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultIndex</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">[</span><span class="s2">&quot;GREEN&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+			<span class="n">selectedIndex</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">[</span><span class="s2">&quot;NOCOLOR&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+			
+			<span class="k">if</span> <span class="p">(</span><span class="n">selectedIndex</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+				<span class="c1"># FIXME: Can I use editions.Parse()?</span>
+				<span class="n">selectedIndex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectedIndex</span><span class="p">)</span>
+				<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">editions</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">selectedIndex</span><span class="p">):</span>
+						<span class="n">edition</span> <span class="o">=</span> <span class="n">item</span>
+						<span class="k">break</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;Invalid choice.&quot;</span><span class="p">)</span>
+					<span class="k">continue</span> <span class="c1"># the outer while loop</span>
+					
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">edition</span> <span class="o">=</span> <span class="n">defaultEdition</span>
+				<span class="c1"># reprint the colored lines on console</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\x1B</span><span class="s2">[</span><span class="si">{n}</span><span class="s2">A&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">editions</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># cursor n+2 up</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_PrintAvailableEditions</span><span class="p">(</span><span class="n">editions</span><span class="p">,</span> <span class="n">edition</span><span class="p">)</span>
+				<span class="n">question</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{GREEN}{0}</span><span class="s2">&quot;</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultIndex</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">break</span>
+			
+		<span class="k">return</span> <span class="n">edition</span></div>
+		
+<div class="viewcode-block" id="ToolConfiguration._GetDefaultEdition"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration._GetDefaultEdition">[docs]</a>	<span class="k">def</span> <span class="nf">_GetDefaultEdition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Returns unresolved default edition (str) from template.</span>
+<span class="sd">		</span>
+<span class="sd">		Overwrite this method in a sub-class for automatic search of editions.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Edition&#39;</span><span class="p">]</span></div>
+		
+<div class="viewcode-block" id="ToolConfiguration._ConfigureBinaryDirectory"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration._ConfigureBinaryDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureBinaryDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Updates section with value from :attr:`_template` and returns directory</span>
+<span class="sd">		as :class:`Path &lt;pathlib.Path&gt;` object.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># unresolved = self._template[self._host.Platform][self._section][&#39;BinaryDirectory&#39;]</span>
+		<span class="c1"># self._host.PoCConfig[self._section][&#39;BinaryDirectory&#39;] = unresolved  # create entry</span>
+		<span class="n">defaultPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;BinaryDirectory&#39;</span><span class="p">])</span>  <span class="c1"># resolve entry</span>
+		
+		<span class="n">binPath</span> <span class="o">=</span> <span class="n">defaultPath</span>  <span class="c1"># may be more complex in the future</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">binPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2"> binary directory &#39;</span><span class="si">{1!s}</span><span class="s2">&#39; does not exist.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binPath</span><span class="p">))</span> \
+				<span class="kn">from</span> <span class="nn">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">binPath</span><span class="p">))</span>
+				
+		<span class="k">return</span> <span class="n">binPath</span></div>
+		
+<div class="viewcode-block" id="ToolConfiguration.PrepareVersionedSections"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolConfiguration.PrepareVersionedSections">[docs]</a>	<span class="k">def</span> <span class="nf">PrepareVersionedSections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writeWarnings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="n">warningWasWritten</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="n">pocConfig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span>
+		<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="p">((</span><span class="n">platform</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="n">platform</span><span class="p">])):</span>
+				<span class="k">continue</span>
+				
+			<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;SectionName&#39;</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">pocConfig</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="n">sectionName</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;WARNING: Adding new sections to configuration...&quot;</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="p">(</span><span class="n">writeWarnings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">warningWasWritten</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+				<span class="n">warningWasWritten</span> <span class="o">|=</span> <span class="kc">True</span>
+				
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding [</span><span class="si">{0}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sectionName</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+				<span class="n">pocConfig</span><span class="p">[</span><span class="n">sectionName</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+				
+			<span class="n">section</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="n">platform</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span>
+			<span class="n">pocSection</span> <span class="o">=</span> <span class="n">pocConfig</span><span class="p">[</span><span class="n">sectionName</span><span class="p">]</span>
+			<span class="k">for</span> <span class="n">optionName</span><span class="p">,</span> <span class="n">optionValue</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">pocConfig</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">optionName</span><span class="p">)):</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding new options to section &#39;</span><span class="si">{0}</span><span class="s2">&#39;...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sectionName</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="p">(</span><span class="n">writeWarnings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">warningWasWritten</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+					<span class="n">warningWasWritten</span> <span class="o">|=</span> <span class="kc">True</span>
+					
+					<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_multiVersionSupport</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">optionValue</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+						<span class="n">value</span> <span class="o">=</span> <span class="n">optionValue</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+							<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding </span><span class="si">{0}</span><span class="s2"> = </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionName</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+							<span class="n">pocSection</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Adding </span><span class="si">{0}</span><span class="s2"> = </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionName</span><span class="p">,</span> <span class="n">optionValue</span><span class="p">),</span> <span class="n">condition</span><span class="o">=</span><span class="n">writeWarnings</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+						<span class="n">pocSection</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span> <span class="o">=</span> <span class="n">optionValue</span></div>
+						
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the tool name.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toolName</span></div>
+		
+		
+<span class="n">EditionDescription</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;EditionDescription&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Section&#39;</span><span class="p">])</span>
+
+
+<div class="viewcode-block" id="Edition"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Edition">[docs]</a><span class="k">class</span> <span class="nc">Edition</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">__</span><span class="p">):</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__members__</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+		<span class="n">obj</span><span class="o">.</span><span class="n">_value_</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">return</span> <span class="n">obj</span>
+		
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Section</span> <span class="o">=</span> <span class="n">section</span>
+		
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Resolve edition name to enum member&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">Name</span> <span class="o">==</span> <span class="n">value</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">item</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown enum value &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+		
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Name</span></div>
+		
+		
+<div class="viewcode-block" id="ToolSelector"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolSelector">[docs]</a><span class="k">class</span> <span class="nc">ToolSelector</span><span class="p">(</span><span class="n">ILogable</span><span class="p">,</span> <span class="n">AskMixIn</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all Selector classes.&quot;&quot;&quot;</span>
+	<span class="n">_toolName</span> <span class="o">=</span>     <span class="s2">&quot;&quot;</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">:</span> <span class="n">IHost</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Class initializer.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span> <span class="n">host</span>
+		
+		<span class="n">ILogable</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="o">.</span><span class="n">Logger</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">ILogable</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ToolName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toolName</span>
+		
+<div class="viewcode-block" id="ToolSelector._GetConfiguredEditions"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolSelector._GetConfiguredEditions">[docs]</a>	<span class="k">def</span> <span class="nf">_GetConfiguredEditions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">editions</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return all configured editions.&quot;&quot;&quot;</span>
+		<span class="n">_editions</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">edition</span> <span class="ow">in</span> <span class="n">editions</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">edition</span><span class="o">.</span><span class="n">Section</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="n">_editions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edition</span><span class="p">)</span>
+				
+		<span class="k">return</span> <span class="n">_editions</span></div>
+		
+<div class="viewcode-block" id="ToolSelector._AskSelection"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.ToolSelector._AskSelection">[docs]</a>	<span class="k">def</span> <span class="nf">_AskSelection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">editions</span><span class="p">,</span> <span class="n">defaultEdition</span><span class="p">):</span>
+		<span class="n">defaultIndex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_PrintAvailableEditions</span><span class="p">(</span><span class="n">editions</span><span class="p">,</span> <span class="n">defaultEdition</span><span class="p">)</span>
+		
+		<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;Selected installation [</span><span class="si">{CYAN}{0}{NOCOLOR}</span><span class="s2">]: &quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultIndex</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">appendLinebreak</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">[</span><span class="s2">&quot;GREEN&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+			<span class="n">selectedIndex</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">[</span><span class="s2">&quot;NOCOLOR&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+			
+			<span class="k">if</span> <span class="p">(</span><span class="n">selectedIndex</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+				<span class="c1"># FIXME: Can I use editions.Parse()?</span>
+				<span class="n">selectedIndex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">selectedIndex</span><span class="p">)</span>
+				<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">editions</span><span class="p">):</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">selectedIndex</span><span class="p">):</span>
+						<span class="n">edition</span> <span class="o">=</span> <span class="n">item</span>
+						<span class="k">break</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;Invalid choice.&quot;</span><span class="p">)</span>
+					<span class="k">continue</span>  <span class="c1"># the outer while loop</span>
+					
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">edition</span> <span class="o">=</span> <span class="n">defaultEdition</span>
+				<span class="c1"># reprint the colored lines on console</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\x1B</span><span class="s2">[</span><span class="si">{n}</span><span class="s2">A&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">editions</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># cursor n+2 up</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_PrintAvailableEditions</span><span class="p">(</span><span class="n">editions</span><span class="p">,</span> <span class="n">edition</span><span class="p">)</span>
+				<span class="n">question</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{GREEN}{0}</span><span class="s2">&quot;</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultIndex</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">break</span>
+			
+		<span class="k">return</span> <span class="n">edition</span></div></div>
+		
+		
+<div class="viewcode-block" id="Configurator"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator">[docs]</a><span class="k">class</span> <span class="nc">Configurator</span><span class="p">(</span><span class="n">ILogable</span><span class="p">,</span> <span class="n">AskMixIn</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;A instance of this class controls the interactive configuration process.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span> <span class="p">:</span> <span class="n">IHost</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Class initializier.&quot;&quot;&quot;</span>
+		<span class="n">ILogable</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="o">.</span><span class="n">Logger</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">ILogable</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span>              <span class="n">host</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_saveConfiguration</span> <span class="o">=</span> <span class="kc">True</span>
+		
+		<span class="kn">from</span> <span class="nn">.PoC</span>                 <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">PoC_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Git</span>                 <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Git_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Aldec</span>               <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Aldec_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Aldec.ActiveHDL</span>     <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">ActiveHDL_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Aldec.RivieraPRO</span>    <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">RivieraPRO_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Altera</span>              <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Altera_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Altera.Quartus</span>      <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">AlteraQuartus_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Altera.ModelSim</span>     <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">AlteraModelSim_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Intel</span>               <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Intel_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Intel.Quartus</span>       <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">IntelQuartus_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Intel.ModelSim</span>      <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">IntelModelSim_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.GHDL</span>                <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">GHDL_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.GTKWave</span>             <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">GTKW_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Lattice</span>             <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Lattice_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Lattice.Diamond</span>     <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Diamond_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Lattice.ActiveHDL</span>   <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">LatticeActiveHDL_Configuration</span>
+		<span class="c1"># from .Lattice.Symplify    import Configuration as LatticeSymplify_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Mentor</span>              <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Mentor_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Mentor.ModelSim</span>     <span class="k">import</span> <span class="n">ModelSimPEConfiguration</span><span class="p">,</span> <span class="n">ModelSimDEConfiguration</span><span class="p">,</span> <span class="n">ModelSimSE32Configuration</span><span class="p">,</span> <span class="n">ModelSimSE64Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Mentor.QuestaSim</span>    <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Questa_Configuration</span>
+		<span class="c1"># from .Mentor.PrecisionRTL import Configuration as PrecisionRTL_Configuration</span>
+		<span class="c1"># from .Synopsys            import Configuration as Synopsys_Configuration</span>
+		<span class="c1"># from .Synopsys.Symplify   import Configuration as Symplify_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Xilinx</span>              <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Xilinx_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Xilinx.ISE</span>          <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">ISE_Configuration</span>
+		<span class="kn">from</span> <span class="nn">.Xilinx.Vivado</span>       <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Vivado_Configuration</span>
+		
+		<span class="c1">#: List of all available (and thus enabled) Configuration classes.</span>
+		<span class="n">Configurations</span> <span class="o">=</span> <span class="p">[</span>
+			<span class="n">PoC_Configuration</span><span class="p">,</span>
+			<span class="n">Git_Configuration</span><span class="p">,</span>
+			<span class="c1"># Aldec products</span>
+			<span class="n">Aldec_Configuration</span><span class="p">,</span>
+			<span class="n">ActiveHDL_Configuration</span><span class="p">,</span>
+			<span class="n">RivieraPRO_Configuration</span><span class="p">,</span>
+			<span class="c1"># Altera products</span>
+			<span class="n">Altera_Configuration</span><span class="p">,</span>
+			<span class="n">AlteraQuartus_Configuration</span><span class="p">,</span>
+			<span class="n">AlteraModelSim_Configuration</span><span class="p">,</span>
+			<span class="c1"># Intel products</span>
+			<span class="n">Intel_Configuration</span><span class="p">,</span>
+			<span class="n">IntelQuartus_Configuration</span><span class="p">,</span>
+			<span class="n">IntelModelSim_Configuration</span><span class="p">,</span>
+			<span class="c1"># Lattice products</span>
+			<span class="n">Lattice_Configuration</span><span class="p">,</span>
+			<span class="n">Diamond_Configuration</span><span class="p">,</span>
+			<span class="n">LatticeActiveHDL_Configuration</span><span class="p">,</span>
+			<span class="c1"># Mentor products</span>
+			<span class="n">Mentor_Configuration</span><span class="p">,</span>
+			<span class="n">ModelSimPEConfiguration</span><span class="p">,</span>
+			<span class="n">ModelSimDEConfiguration</span><span class="p">,</span>
+			<span class="n">ModelSimSE32Configuration</span><span class="p">,</span>
+			<span class="n">ModelSimSE64Configuration</span><span class="p">,</span>
+			<span class="n">Questa_Configuration</span><span class="p">,</span>
+			<span class="c1"># Xilinx products</span>
+			<span class="n">Xilinx_Configuration</span><span class="p">,</span>
+			<span class="n">ISE_Configuration</span><span class="p">,</span>
+			<span class="n">Vivado_Configuration</span><span class="p">,</span>
+			<span class="c1"># other products</span>
+			<span class="n">GHDL_Configuration</span><span class="p">,</span>
+			<span class="n">GTKW_Configuration</span>
+		<span class="p">]</span>
+		
+		<span class="kn">from</span> <span class="nn">.Aldec.ActiveHDL</span>     <span class="k">import</span> <span class="n">Selector</span> <span class="k">as</span> <span class="n">ActiveHDL_Selector</span>
+		<span class="kn">from</span> <span class="nn">.Altera.Quartus</span>      <span class="k">import</span> <span class="n">Selector</span> <span class="k">as</span> <span class="n">Quartus_Selector</span>
+		<span class="kn">from</span> <span class="nn">.Mentor.ModelSim</span>     <span class="k">import</span> <span class="n">Selector</span> <span class="k">as</span> <span class="n">ModelSim_Selector</span>
+		<span class="c1">#: List of all available (and thus enabled) Selector classes.</span>
+		<span class="n">Selectors</span> <span class="o">=</span> <span class="p">[</span>
+			<span class="n">ActiveHDL_Selector</span><span class="p">,</span>
+			<span class="n">ModelSim_Selector</span><span class="p">,</span>
+			<span class="n">Quartus_Selector</span>
+		<span class="p">]</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_configurators</span> <span class="o">=</span>     <span class="p">[</span><span class="n">configuration</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">)</span>  <span class="k">for</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">Configurations</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_selectors</span> <span class="o">=</span>         <span class="p">[</span><span class="n">selector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">)</span>       <span class="k">for</span> <span class="n">selector</span>      <span class="ow">in</span> <span class="n">Selectors</span><span class="p">]</span>
+		
+<div class="viewcode-block" id="Configurator.ConfigureAll"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator.ConfigureAll">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Select all tool chains for configuration&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_WriteConfigurationHeader</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureTools</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_configurators</span><span class="p">)</span>
+		
+		<span class="c1"># Write and re-read configuration</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saveConfiguration</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">SaveAndReloadPoCConfiguration</span><span class="p">()</span></div>
+			
+<div class="viewcode-block" id="Configurator.ConfigureTool"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator.ConfigureTool">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureTool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toolChain</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Select tool chains for configuration.&quot;&quot;&quot;</span>
+		<span class="n">sectionName</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;INSTALL.</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">toolChain</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="n">configurators</span> <span class="o">=</span> <span class="p">[</span><span class="n">config</span> <span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configurators</span> <span class="k">if</span> <span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">SectionName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">sectionName</span><span class="p">))]</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">configurators</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{RED}</span><span class="s2">No configuration named &#39;</span><span class="si">{0}</span><span class="s2">&#39; found.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">toolChain</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+			<span class="k">return</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_WriteConfigurationHeader</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureTools</span><span class="p">(</span><span class="n">configurators</span><span class="p">)</span>
+		
+		<span class="c1"># Write and re-read configuration</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saveConfiguration</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">SaveAndReloadPoCConfiguration</span><span class="p">()</span></div>
+			
+<div class="viewcode-block" id="Configurator.InitializeConfiguration"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator.InitializeConfiguration">[docs]</a>	<span class="k">def</span> <span class="nf">InitializeConfiguration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Initialize PoC&#39;s configuration with empty sections.</span>
+<span class="sd">		</span>
+<span class="sd">		The list of sections is gathered from all enabled configurators&#39;</span>
+<span class="sd">		:py:data:`_template` fields.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">warningWasWritten</span> <span class="o">=</span> <span class="n">CallByRefBoolParam</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">configurator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configurators</span><span class="p">:</span>
+			<span class="n">configurator</span><span class="o">.</span><span class="n">PrepareSections</span><span class="p">(</span><span class="n">warningWasWritten</span><span class="p">,</span> <span class="n">writeWarnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Configurator.UpdateConfiguration"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator.UpdateConfiguration">[docs]</a>	<span class="k">def</span> <span class="nf">UpdateConfiguration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Update an existing configuration e.g. after a PoC update.&quot;&quot;&quot;</span>
+		<span class="n">warningWasWritten</span> <span class="o">=</span> <span class="n">CallByRefBoolParam</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">configurator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configurators</span><span class="p">:</span>
+			<span class="n">configurator</span><span class="o">.</span><span class="n">PrepareSections</span><span class="p">(</span><span class="n">warningWasWritten</span><span class="p">)</span>
+			
+			<span class="n">configured</span> <span class="o">=</span> <span class="n">configurator</span><span class="o">.</span><span class="n">IsConfigured</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">configured</span><span class="p">:</span>
+				<span class="n">configurator</span><span class="o">.</span><span class="n">PrepareOptions</span><span class="p">()</span></div>
+				
+		<span class="c1"># pocSections =    set([sectionName for sectionName in self._host.PoCConfig])</span>
+		<span class="c1"># configSections = set([sectionName for config in Configurations for sectionName in config.GetSections(self._host.Platform)]) # FIXME: what about the ALL platform?</span>
+		<span class="c1"># delSections = pocSections.difference(configSections)</span>
+		
+		<span class="c1"># if delSections:</span>
+		<span class="c1"># 	for sectionName in delSections:</span>
+		<span class="c1"># 		self._host.PoCConfig.remove_section(sectionName)</span>
+		
+<div class="viewcode-block" id="Configurator._ConfigureTools"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator._ConfigureTools">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureTools</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">configurators</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Run the configuration routines for a list of configurators&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{CYAN}</span><span class="s2">Configuring installed tools</span><span class="se">\n</span><span class="s2">---------------------------</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		
+		<span class="c1"># Configure each vendor or tool of a tool chain</span>
+		<span class="k">for</span> <span class="n">configurator</span> <span class="ow">in</span> <span class="n">configurators</span><span class="p">:</span>
+			<span class="c1"># Skip configuration with unsupported platforms</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">configurator</span><span class="o">.</span><span class="n">IsSupportedPlatform</span><span class="p">()):</span>
+				<span class="n">configurator</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+				<span class="k">continue</span>
+				
+			<span class="c1"># Skip configuration if dependency is not fulfilled</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">configurator</span><span class="o">.</span><span class="n">CheckDependency</span><span class="p">()):</span>
+				<span class="n">configurator</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+				<span class="k">continue</span>
+				
+			<span class="c1"># Start configuration</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_CYAN}</span><span class="s2">Configuring </span><span class="si">{0!s}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">configurator</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+			
+			<span class="c1"># Start configuration loop for the current configurator</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigurationLoop</span><span class="p">(</span><span class="n">configurator</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_saveConfiguration</span> <span class="o">=</span> <span class="kc">False</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{RED}</span><span class="s2">Abort configuration.</span><span class="se">\n</span><span class="s2">No files have been created or changed.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+				<span class="k">return</span>
+				
+			<span class="c1"># TODO: move to host instance</span>
+			<span class="c1"># Print the currently collected configuration if in debug mode</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">LogLevel</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Debug</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+				<span class="k">for</span> <span class="n">sectionName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">sections</span><span class="p">():</span>
+					<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">sectionName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;INSTALL&quot;</span><span class="p">)):</span>
+						<span class="k">continue</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">{0}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sectionName</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+					<span class="n">configSection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">sectionName</span><span class="p">]</span>
+					<span class="k">for</span> <span class="n">optionName</span> <span class="ow">in</span> <span class="n">configSection</span><span class="p">:</span>
+						<span class="n">optionRaw</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">optionName</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+						<span class="k">try</span><span class="p">:</span>
+							<span class="n">optionValue</span> <span class="o">=</span> <span class="n">configSection</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span>
+						<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+							<span class="n">optionValue</span> <span class="o">=</span> <span class="s2">&quot;-- ERROR --&quot;</span>
+							
+						<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0: &lt;23}</span><span class="s2"> </span><span class="si">{1: &lt;90}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionName</span> <span class="o">+</span> <span class="s2">&quot; =&quot;</span><span class="p">,</span> <span class="n">optionRaw</span><span class="p">,</span> <span class="n">optionValue</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+				
+		<span class="c1"># TODO: MultiVersion installations?</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AskConfigureDefaultTools</span><span class="p">():</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureDefaultTools</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;You can rerun this configuration step with &#39;.\poc.ps1 configure --set-default-tools&#39;.&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			
+		<span class="c1"># Write and re-read configuration</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">SaveAndReloadPoCConfiguration</span><span class="p">()</span>
+		
+		<span class="c1"># Run post-configuration tasks</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_CYAN}</span><span class="s2">Running post configuration tasks</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="k">for</span> <span class="n">configurator</span> <span class="ow">in</span> <span class="n">configurators</span><span class="p">:</span>
+			<span class="n">configurator</span><span class="o">.</span><span class="n">RunPostConfigurationTasks</span><span class="p">()</span></div>
+			
+<div class="viewcode-block" id="Configurator._ConfigurationLoop"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator._ConfigurationLoop">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigurationLoop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">configurator</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Retry to configure a vendor or tool until it succeeds or the user presses</span>
+<span class="sd">		:kbd:`P` to pass a configuration step.</span>
+<span class="sd">		</span>
+<span class="sd">		A :py:exec:`KeyboardInterrupt` should be handled in a calling method.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="c1"># Copy all options for a configurator&#39;s sections from _template into PoCConfig</span>
+			<span class="n">configurator</span><span class="o">.</span><span class="n">PrepareOptions</span><span class="p">(</span><span class="n">writeWarnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+			
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">):</span>     <span class="n">configurator</span><span class="o">.</span><span class="n">ConfigureForDarwin</span><span class="p">()</span>
+				<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span><span class="p">):</span>    <span class="n">configurator</span><span class="o">.</span><span class="n">ConfigureForLinux</span><span class="p">()</span>
+				<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>  <span class="n">configurator</span><span class="o">.</span><span class="n">ConfigureForWindows</span><span class="p">()</span>
+				
+				<span class="k">break</span>
+			<span class="k">except</span> <span class="n">SkipConfigurationException</span><span class="p">:</span>
+				<span class="k">break</span>
+			<span class="k">except</span> <span class="n">ExceptionBase</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{RED}</span><span class="s2">FAULT: </span><span class="si">{0}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span><span class="c1"># Print the currently collected configuration if in debug mode</span></div>
+				
+<div class="viewcode-block" id="Configurator.ConfigureDefaultTools"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator.ConfigureDefaultTools">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureDefaultTools</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_WriteConfigurationHeader</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureDefaultTools</span><span class="p">()</span>
+		
+		<span class="c1"># Write and re-read configuration</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saveConfiguration</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">SaveAndReloadPoCConfiguration</span><span class="p">()</span></div>
+			
+<div class="viewcode-block" id="Configurator._ConfigureDefaultTools"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator._ConfigureDefaultTools">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureDefaultTools</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{CYAN}</span><span class="s2">Choosing default tools</span><span class="se">\n</span><span class="s2">----------------------</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="k">for</span> <span class="n">selector</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selectors</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_CYAN}</span><span class="s2">Selecting </span><span class="si">{0}</span><span class="s2"> installation</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">selector</span><span class="o">.</span><span class="n">ToolName</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">selector</span><span class="o">.</span><span class="n">Select</span><span class="p">()</span>
+			<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_saveConfiguration</span> <span class="o">=</span> <span class="kc">False</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{RED}</span><span class="s2">Abort configuration.</span><span class="se">\n</span><span class="s2">No files have been created or changed.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+				<span class="k">return</span></div>
+				
+<div class="viewcode-block" id="Configurator._WriteConfigurationHeader"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator._WriteConfigurationHeader">[docs]</a>	<span class="k">def</span> <span class="nf">_WriteConfigurationHeader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Write a header containing general information about the configuration</span>
+<span class="sd">		and list allowed input values for yes/no/pass questions.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># self.LogVerbose(&quot;starting manual configuration...&quot;)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Explanation of abbreviations:&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{YELLOW}</span><span class="s2">Y</span><span class="si">{NOCOLOR}</span><span class="s2"> - yes      </span><span class="si">{YELLOW}</span><span class="s2">P</span><span class="si">{NOCOLOR}</span><span class="s2">        - pass (jump to next question)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{YELLOW}</span><span class="s2">N</span><span class="si">{NOCOLOR}</span><span class="s2"> - no       </span><span class="si">{YELLOW}</span><span class="s2">Ctrl + C</span><span class="si">{NOCOLOR}</span><span class="s2"> - abort (no changes are saved)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Upper case or value in &#39;[...]&#39; means default value&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Configurator._AskConfigureDefaultTools"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator._AskConfigureDefaultTools">[docs]</a>	<span class="k">def</span> <span class="nf">_AskConfigureDefaultTools</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Ask if default tools should be configured now.&quot;&quot;&quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">configureDefaultTools</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Ask</span><span class="p">(</span><span class="s2">&quot;Configure default tools?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">afterDefault</span><span class="o">=</span><span class="s2">&quot;/n&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">configureDefaultTools</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">]):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">configureDefaultTools</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">]):</span>
+				<span class="k">return</span> <span class="kc">True</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Unsupported choice &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">configureDefaultTools</span><span class="p">))</span></div>
+				
+<div class="viewcode-block" id="Configurator.Relocated"><a class="viewcode-back" href="../PyInfrastructure/ToolChain.html#ToolChain.Configurator.Relocated">[docs]</a>	<span class="k">def</span> <span class="nf">Relocated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Relocating PoC to &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Old location: </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])))</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+		
+		<span class="c1"># Write and re-read configuration</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">SaveAndReloadPoCConfiguration</span><span class="p">()</span></div></div>
+		
+		
+<span class="k">class</span> <span class="nc">OutputFilteredExecutable</span><span class="p">(</span><span class="n">Executable</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">executablePath</span><span class="p">,</span> <span class="n">environment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">executablePath</span><span class="p">,</span> <span class="n">environment</span><span class="o">=</span><span class="n">environment</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span>   <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">=</span>   <span class="kc">False</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">HasWarnings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;True if errors or fatals errors were found while processing the output stream.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">HasErrors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;True if errors or fatals errors were found while processing the output stream.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

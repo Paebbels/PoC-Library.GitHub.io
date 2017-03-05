@@ -1,0 +1,846 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiler &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>Compiler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Compiler</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-  tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:               Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python Sub Module:    TODO:</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">enum</span>                         <span class="k">import</span> <span class="n">unique</span><span class="p">,</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>                      <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">re</span>                           <span class="k">import</span> <span class="nb">compile</span> <span class="k">as</span> <span class="n">re_compile</span><span class="p">,</span> <span class="n">subn</span> <span class="k">as</span> <span class="n">re_subn</span><span class="p">,</span> <span class="n">IGNORECASE</span> <span class="k">as</span> <span class="n">RE_IGNORECASE</span><span class="p">,</span> <span class="n">MULTILINE</span> <span class="k">as</span> <span class="n">RE_MULTILINE</span><span class="p">,</span> <span class="n">DOTALL</span> <span class="k">as</span> <span class="n">RE_DOTALL</span>
+<span class="kn">from</span> <span class="nn">shutil</span>                       <span class="k">import</span> <span class="n">copy</span> <span class="k">as</span> <span class="n">shutil_copy</span>
+
+<span class="kn">from</span> <span class="nn">flags</span>                        <span class="k">import</span> <span class="n">Flags</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>                <span class="k">import</span> <span class="n">Init</span>
+<span class="kn">from</span> <span class="nn">lib.Parser</span>                   <span class="k">import</span> <span class="n">ParserException</span>
+<span class="kn">from</span> <span class="nn">Base</span>                         <span class="k">import</span> <span class="n">IHost</span>
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>              <span class="k">import</span> <span class="n">ExceptionBase</span><span class="p">,</span> <span class="n">SkipableException</span>
+<span class="kn">from</span> <span class="nn">Base.Project</span>                 <span class="k">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">VHDLVersion</span><span class="p">,</span> <span class="n">FileTypes</span>
+<span class="kn">from</span> <span class="nn">Base.Shared</span>                  <span class="k">import</span> <span class="n">Shared</span><span class="p">,</span> <span class="n">to_time</span>
+<span class="kn">from</span> <span class="nn">Parser.RulesParser</span>           <span class="k">import</span> <span class="n">CopyRuleMixIn</span><span class="p">,</span> <span class="n">DeleteRuleMixIn</span><span class="p">,</span> <span class="n">ReplaceRuleMixIn</span><span class="p">,</span> <span class="n">AppendLineRuleMixIn</span>
+<span class="kn">from</span> <span class="nn">DataBase.Solution</span>            <span class="k">import</span> <span class="n">RulesFile</span>
+<span class="kn">from</span> <span class="nn">DataBase.TestCase</span>            <span class="k">import</span> <span class="n">SynthesisSuite</span><span class="p">,</span> <span class="n">CompileStatus</span><span class="p">,</span> <span class="n">Synthesis</span>
+
+<span class="c1"># required for autoapi.sphinx</span>
+<span class="kn">from</span> <span class="nn">lib.SphinxExtensions</span> <span class="k">import</span> <span class="n">DocumentMemberAttribute</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;CompilerException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;SkipableCompilerException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CopyTask&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;DeleteTask&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ReplaceTask&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;AppendLineTask&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CompileState&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CompileResult&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Compiler&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="CompilerException"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.CompilerException">[docs]</a><span class="k">class</span> <span class="nc">CompilerException</span><span class="p">(</span><span class="n">ExceptionBase</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all CompilerException classes. It is raised while running</span>
+<span class="sd">	compiler (synthesis) tasks in PoC.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="SkipableCompilerException"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.SkipableCompilerException">[docs]</a><span class="k">class</span> <span class="nc">SkipableCompilerException</span><span class="p">(</span><span class="n">CompilerException</span><span class="p">,</span> <span class="n">SkipableException</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;``SkipableCompilerException`` is a :py:exc:`CompilerException`, which</span>
+<span class="sd">	can be skipped.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="CopyTask"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.CopyTask">[docs]</a><span class="k">class</span> <span class="nc">CopyTask</span><span class="p">(</span><span class="n">CopyRuleMixIn</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This class represents a &#39;copy task&#39; and inherits the partial class</span>
+<span class="sd">	:class:`CopyRuleMixIn &lt;Parser.RulesParser.CopyRuleMixIn&gt;`.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="DeleteTask"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.DeleteTask">[docs]</a><span class="k">class</span> <span class="nc">DeleteTask</span><span class="p">(</span><span class="n">DeleteRuleMixIn</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This class represents a &#39;delete task&#39; and inherits the partial class</span>
+<span class="sd">	:class:`DeleteRuleMixIn &lt;Parser.RulesParser.DeleteRuleMixIn&gt;`.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="ReplaceTask"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.ReplaceTask">[docs]</a><span class="k">class</span> <span class="nc">ReplaceTask</span><span class="p">(</span><span class="n">ReplaceRuleMixIn</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This class represents a &#39;replace task&#39; and inherits the partial class</span>
+<span class="sd">	:class:`ReplaceRuleMixIn &lt;Parser.RulesParser.ReplaceRuleMixIn&gt;`.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="AppendLineTask"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.AppendLineTask">[docs]</a><span class="k">class</span> <span class="nc">AppendLineTask</span><span class="p">(</span><span class="n">AppendLineRuleMixIn</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This class represents a &#39;append line task&#39; and inherits the partial class</span>
+<span class="sd">	:class:`AppendLineRuleMixIn &lt;Parser.RulesParser.AppendLineRuleMixIn&gt;`.</span>
+<span class="sd">	&quot;&quot;&quot;</span></div>
+	
+	
+<span class="nd">@unique</span>
+<span class="k">class</span> <span class="nc">CompileSteps</span><span class="p">(</span><span class="n">Flags</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Compiler step enumeration.&quot;&quot;&quot;</span>
+	<span class="n">Prepare</span> <span class="o">=</span>        <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span>
+	<span class="n">CleanUpBefore</span> <span class="o">=</span>  <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+	<span class="n">CleanUpAfter</span> <span class="o">=</span>   <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+	<span class="n">Synthesize</span> <span class="o">=</span>     <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span>
+	<span class="n">Merge</span> <span class="o">=</span>          <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>
+	<span class="n">AnalyzeTiming</span> <span class="o">=</span>  <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span>
+	<span class="n">Place</span> <span class="o">=</span>          <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span>
+	<span class="n">Route</span> <span class="o">=</span>          <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">9</span>
+	<span class="n">WriteBitfile</span> <span class="o">=</span>   <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span>
+	<span class="n">ShowReport</span> <span class="o">=</span>     <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">15</span>
+	<span class="n">ShowGUI</span> <span class="o">=</span>        <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span>
+	<span class="c1"># Recompile =      1 &lt;&lt; 25</span>
+	<span class="c1"># Resimulate =     1 &lt;&lt; 26</span>
+	<span class="c1"># Review =         1 &lt;&lt; 27</span>
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="CompileState"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.CompileState">[docs]</a><span class="k">class</span> <span class="nc">CompileState</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Compile state enumeration.&quot;&quot;&quot;</span>
+	<span class="n">Prepare</span> <span class="o">=</span>     <span class="mi">0</span>
+	<span class="n">PreCopy</span> <span class="o">=</span>    <span class="mi">10</span>
+	<span class="n">PrePatch</span> <span class="o">=</span>   <span class="mi">11</span>
+	
+	<span class="n">Compile</span> <span class="o">=</span>    <span class="mi">50</span>
+	<span class="c1"># Analyze =    61</span>
+	<span class="c1"># Elaborate =  62</span>
+	<span class="c1"># Optimize =   63</span>
+	<span class="c1"># Translate =  64</span>
+	<span class="c1"># Map =        65</span>
+	<span class="c1"># Place =      66</span>
+	<span class="c1"># Route =      67</span>
+	
+	<span class="n">PostCopy</span> <span class="o">=</span>   <span class="mi">90</span>
+	<span class="n">PostPatch</span> <span class="o">=</span>  <span class="mi">91</span>
+	<span class="n">PostDelete</span> <span class="o">=</span> <span class="mi">92</span>
+	<span class="n">CleanUp</span> <span class="o">=</span>    <span class="mi">99</span></div>
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="CompileResult"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.CompileResult">[docs]</a><span class="k">class</span> <span class="nc">CompileResult</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Compilation result enumeration.&quot;&quot;&quot;</span>
+	<span class="n">NotRun</span> <span class="o">=</span>      <span class="mi">0</span>
+	<span class="n">Error</span> <span class="o">=</span>       <span class="mi">1</span>
+	<span class="n">Failed</span> <span class="o">=</span>      <span class="mi">2</span>
+	<span class="n">Success</span> <span class="o">=</span>     <span class="mi">3</span></div>
+	
+	
+<div class="viewcode-block" id="Compiler"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.Compiler">[docs]</a><span class="k">class</span> <span class="nc">Compiler</span><span class="p">(</span><span class="n">Shared</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all Compiler classes.&quot;&quot;&quot;</span>
+	
+	<span class="n">ENVIRONMENT</span> <span class="o">=</span>     <span class="n">Environment</span><span class="o">.</span><span class="n">Synthesis</span>
+	<span class="n">VHDL_VERSION</span> <span class="o">=</span>    <span class="n">VHDLVersion</span><span class="o">.</span><span class="n">VHDL93</span>
+	
+	<span class="k">class</span> <span class="nc">__Directories__</span><span class="p">(</span><span class="n">Shared</span><span class="o">.</span><span class="n">__Directories__</span><span class="p">):</span>
+		<span class="n">Netlist</span> <span class="o">=</span>     <span class="kc">None</span>
+		<span class="n">Source</span> <span class="o">=</span>      <span class="kc">None</span>
+		<span class="n">Destination</span> <span class="o">=</span> <span class="kc">None</span>
+		
+	<span class="nd">@DocumentMemberAttribute</span><span class="p">()</span>
+<div class="viewcode-block" id="Compiler.__init__"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.Compiler.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span> <span class="p">:</span> <span class="n">IHost</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">noCleanUp</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Class initializer</span>
+<span class="sd">		</span>
+<span class="sd">		:type  host:      object</span>
+<span class="sd">		:param host:      The hosting instance for this instance.</span>
+<span class="sd">		:type  dryRun:    bool</span>
+<span class="sd">		:param dryRun:    Enable dry-run mode</span>
+<span class="sd">		:type  noCleanUp: bool</span>
+<span class="sd">		:param noCleanUp: Don&#39;t clean up after a run.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_noCleanUp</span> <span class="o">=</span>       <span class="n">noCleanUp</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span> <span class="o">=</span>       <span class="n">SynthesisSuite</span><span class="p">()</span>  <span class="c1"># TODO: This includes not the read ini files phases ...</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span>           <span class="n">CompileState</span><span class="o">.</span><span class="n">Prepare</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_preTasksTime</span> <span class="o">=</span>    <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_compileTime</span> <span class="o">=</span>     <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_postTasksTime</span> <span class="o">=</span>   <span class="kc">None</span></div>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">NoCleanUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_noCleanUp</span>
+	
+<div class="viewcode-block" id="Compiler._PrepareCompiler"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.Compiler._PrepareCompiler">[docs]</a>	<span class="k">def</span> <span class="nf">_PrepareCompiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Prepare for compilation. This method forwards to :py:meth:`Base.Compiler.Compiler._Prepare`,</span>
+<span class="sd">		which is inherited from :py:class:`Base.Shared.Shared`.</span>
+<span class="sd">		&quot;&quot;&quot;</span></div>
+		
+<div class="viewcode-block" id="Compiler.TryRun"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler.TryRun">[docs]</a>	<span class="k">def</span> <span class="nf">TryRun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Try to run a testbench. Skip skipable exceptions by printing the error and its cause.&quot;&quot;&quot;</span>
+		
+		<span class="n">__COMPILE_STATE_TO_SYNTHESIS_STATUS__</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">Prepare</span><span class="p">:</span>    <span class="n">CompileStatus</span><span class="o">.</span><span class="n">InternalError</span><span class="p">,</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">PreCopy</span><span class="p">:</span>    <span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span><span class="p">,</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">PrePatch</span><span class="p">:</span>   <span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span><span class="p">,</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">Compile</span><span class="p">:</span>    <span class="n">CompileStatus</span><span class="o">.</span><span class="n">CompileError</span><span class="p">,</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">PostCopy</span><span class="p">:</span>   <span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span><span class="p">,</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">PostPatch</span><span class="p">:</span>  <span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span><span class="p">,</span>
+			<span class="n">CompileState</span><span class="o">.</span><span class="n">PostDelete</span><span class="p">:</span> <span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span>
+		<span class="p">}</span>
+		
+		<span class="n">synthesis</span> <span class="o">=</span> <span class="n">Synthesis</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">AddSynthesis</span><span class="p">(</span><span class="n">synthesis</span><span class="p">)</span>
+		<span class="n">synthesis</span><span class="o">.</span><span class="n">StartTimer</span><span class="p">()</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">netlist</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+			<span class="c1"># synthesis.UpdateStatus(netlist.Result)</span>
+			<span class="n">synthesis</span><span class="o">.</span><span class="n">Status</span> <span class="o">=</span> <span class="n">CompileStatus</span><span class="o">.</span><span class="n">CompileSuccess</span>
+		<span class="k">except</span> <span class="n">SkipableCompilerException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="n">synthesis</span><span class="o">.</span><span class="n">Status</span> <span class="o">=</span> <span class="n">__COMPILE_STATE_TO_SYNTHESIS_STATUS__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">]</span>
+			
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{RED}</span><span class="s2">ERROR:</span><span class="si">{NOCOLOR}</span><span class="s2"> </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+			<span class="n">cause</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">__cause__</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">cause</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;    </span><span class="si">{YELLOW}{ExType}</span><span class="s2">:</span><span class="si">{NOCOLOR}</span><span class="s2"> </span><span class="si">{ExMsg!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ExType</span><span class="o">=</span><span class="n">cause</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">ExMsg</span><span class="o">=</span><span class="n">cause</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+				<span class="n">cause</span> <span class="o">=</span> <span class="n">cause</span><span class="o">.</span><span class="n">__cause__</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">cause</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;      </span><span class="si">{YELLOW}{ExType}</span><span class="s2">:</span><span class="si">{NOCOLOR}</span><span class="s2"> </span><span class="si">{ExMsg!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ExType</span><span class="o">=</span><span class="n">cause</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">ExMsg</span><span class="o">=</span><span class="n">cause</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{RED}</span><span class="s2">[SKIPPED DUE TO ERRORS]</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="k">except</span> <span class="n">CompilerException</span><span class="p">:</span>
+			<span class="n">synthesis</span><span class="o">.</span><span class="n">Status</span> <span class="o">=</span> <span class="n">__COMPILE_STATE_TO_SYNTHESIS_STATUS__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">]</span>
+			<span class="k">raise</span>
+		<span class="k">except</span> <span class="n">ExceptionBase</span><span class="p">:</span>
+			<span class="n">synthesis</span><span class="o">.</span><span class="n">Status</span> <span class="o">=</span> <span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span>
+			<span class="k">raise</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="n">synthesis</span><span class="o">.</span><span class="n">StopTimer</span><span class="p">()</span></div>
+			
+<div class="viewcode-block" id="Compiler.Run"><a class="viewcode-back" href="../PyInfrastructure/Compiler.html#Compiler.Compiler.Run">[docs]</a>	<span class="k">def</span> <span class="nf">Run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Run a testbench.&quot;&quot;&quot;</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{CYAN}</span><span class="s2">IP core: </span><span class="si">{0!s}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">Parent</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="c1"># # TODO: refactor</span>
+		<span class="c1"># self.LogNormal(&quot;Checking for dependencies:&quot;)</span>
+		<span class="c1"># for dependency in netlist.Dependencies:</span>
+		<span class="c1"># 	print(&quot;  &quot; + str(dependency))</span>
+		
+		<span class="c1"># setup all needed paths to execute fuse</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_PrepareCompilerEnvironment</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_WriteSpecialSectionIntoConfig</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_CreatePoCProject</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span><span class="p">,</span> <span class="n">board</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">netlist</span><span class="o">.</span><span class="n">FilesFile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_AddFileListFile</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">FilesFile</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">RulesFile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AddRulesFiles</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">RulesFile</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Compiler._PrepareCompilerEnvironment"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._PrepareCompilerEnvironment">[docs]</a>	<span class="k">def</span> <span class="nf">_PrepareCompilerEnvironment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Preparing synthesis environment...&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Destination</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Netlist</span> <span class="o">/</span> <span class="nb">str</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_PrepareEnvironment</span><span class="p">()</span>
+		
+		<span class="c1"># create output directory for CoreGen if not existent</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span> <span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Creating output directory for generated files.&quot;</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Output directory: </span><span class="si">{0!s}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Destination</span><span class="p">))</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error while creating &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Destination</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
+				
+<div class="viewcode-block" id="Compiler._WriteSpecialSectionIntoConfig"><a class="viewcode-back" href="../PyInfrastructure/Compiler.LSECompiler.html#Compiler.Compiler._WriteSpecialSectionIntoConfig">[docs]</a>	<span class="k">def</span> <span class="nf">_WriteSpecialSectionIntoConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+		<span class="c1"># add the key Device to section SPECIAL at runtime to change interpolation results</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">][</span><span class="s1">&#39;Device&#39;</span><span class="p">]</span> <span class="o">=</span>        <span class="n">device</span><span class="o">.</span><span class="n">ShortName</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">][</span><span class="s1">&#39;DeviceSeries&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">device</span><span class="o">.</span><span class="n">Series</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">][</span><span class="s1">&#39;OutputDir&#39;</span><span class="p">]</span>	<span class="o">=</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Compiler._AddRulesFiles"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._AddRulesFiles">[docs]</a>	<span class="k">def</span> <span class="nf">_AddRulesFiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rulesFilePath</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Reading rules from &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rulesFilePath</span><span class="p">))</span>
+		<span class="c1"># add the *.rules file, parse and evaluate it</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">rulesFile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pocProject</span><span class="o">.</span><span class="n">AddFile</span><span class="p">(</span><span class="n">RulesFile</span><span class="p">(</span><span class="n">rulesFilePath</span><span class="p">))</span>
+			<span class="n">rulesFile</span><span class="o">.</span><span class="n">Parse</span><span class="p">()</span>
+		<span class="k">except</span> <span class="n">ParserException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SkipableCompilerException</span><span class="p">(</span><span class="s2">&quot;Error while parsing &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rulesFilePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Pre-process rules:&quot;</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFile</span><span class="o">.</span><span class="n">PreProcessRules</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rule</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Post-process rules:&quot;</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFile</span><span class="o">.</span><span class="n">PostProcessRules</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rule</span><span class="p">))</span></div>
+			
+<div class="viewcode-block" id="Compiler._RunPreCopy"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._RunPreCopy">[docs]</a>	<span class="k">def</span> <span class="nf">_RunPreCopy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Copy further input files into temporary directory...&quot;</span><span class="p">)</span>
+		<span class="n">rulesFiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PoCProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">RulesFile</span><span class="p">)]</span>		<span class="c1"># FIXME: get rulefile from netlist object as a rulefile object instead of a path</span>
+		<span class="n">preCopyTasks</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">rulesFiles</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PreProcessRules</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">CopyRuleMixIn</span><span class="p">):</span>
+					<span class="n">sourcePath</span> <span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">destinationPath</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">DestinationPath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">CopyTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">sourcePath</span><span class="p">),</span> <span class="n">Path</span><span class="p">(</span><span class="n">destinationPath</span><span class="p">))</span>
+					<span class="n">preCopyTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">preCopyRules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;PreCopyRules&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ParseCopyRules</span><span class="p">(</span><span class="n">preCopyRules</span><span class="p">,</span> <span class="n">preCopyTasks</span><span class="p">,</span> <span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">preCopyTasks</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ExecuteCopyTasks</span><span class="p">(</span><span class="n">preCopyTasks</span><span class="p">,</span> <span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Nothing to copy&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Compiler._RunPostCopy"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._RunPostCopy">[docs]</a>	<span class="k">def</span> <span class="nf">_RunPostCopy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;copy generated files into netlist directory...&quot;</span><span class="p">)</span>
+		<span class="n">rulesFiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PoCProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">RulesFile</span><span class="p">)]</span>		<span class="c1"># FIXME: get rulefile from netlist object as a rulefile object instead of a path</span>
+		<span class="n">postCopyTasks</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">rulesFiles</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PostProcessRules</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">CopyRuleMixIn</span><span class="p">):</span>
+					<span class="n">sourcePath</span> <span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">destinationPath</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">DestinationPath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">CopyTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">sourcePath</span><span class="p">),</span> <span class="n">Path</span><span class="p">(</span><span class="n">destinationPath</span><span class="p">))</span>
+					<span class="n">postCopyTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">postCopyRules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;PostCopyRules&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ParseCopyRules</span><span class="p">(</span><span class="n">postCopyRules</span><span class="p">,</span> <span class="n">postCopyTasks</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">postCopyTasks</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ExecuteCopyTasks</span><span class="p">(</span><span class="n">postCopyTasks</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Nothing to copy&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Compiler._ParseCopyRules"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._ParseCopyRules">[docs]</a>	<span class="k">def</span> <span class="nf">_ParseCopyRules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rawList</span><span class="p">,</span> <span class="n">copyTasks</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="c1"># read copy tasks</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rawList</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Parsing </span><span class="si">{0}</span><span class="s2">-copy tasks from config file:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+			<span class="n">rawList</span> <span class="o">=</span> <span class="n">rawList</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+			
+			<span class="n">copyRegExpStr</span>  <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^\s*(?P&lt;SourceFilename&gt;.*?)&quot;</span> <span class="c1"># Source filename</span>
+			<span class="n">copyRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;\s-&gt;\s&quot;</span>                      <span class="c1"># Delimiter signs</span>
+			<span class="n">copyRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;DestFilename&gt;.*?)$&quot;</span>      <span class="c1"># Destination filename</span>
+			<span class="n">copyRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">copyRegExpStr</span><span class="p">)</span>
+			
+			<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">rawList</span><span class="p">:</span>
+				<span class="n">preCopyRegExpMatch</span> <span class="o">=</span> <span class="n">copyRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">preCopyRegExpMatch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error in copy rule &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+					
+				<span class="n">task</span> <span class="o">=</span> <span class="n">CopyTask</span><span class="p">(</span>
+					<span class="n">Path</span><span class="p">(</span><span class="n">preCopyRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;SourceFilename&#39;</span><span class="p">)),</span>
+					<span class="n">Path</span><span class="p">(</span><span class="n">preCopyRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;DestFilename&#39;</span><span class="p">))</span>
+				<span class="p">)</span>
+				<span class="n">copyTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;No </span><span class="si">{0}</span><span class="s2">-copy tasks specified in config file.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span></div>
+			
+<div class="viewcode-block" id="Compiler._ExecuteCopyTasks"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._ExecuteCopyTasks">[docs]</a>	<span class="k">def</span> <span class="nf">_ExecuteCopyTasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tasks</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Cannot </span><span class="si">{0}</span><span class="s2">-copy &#39;</span><span class="si">{1!s}</span><span class="s2">&#39; to destination.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">))</span>
+				
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">task</span><span class="o">.</span><span class="n">DestinationPath</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;mkdir &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">DestinationPath</span><span class="o">.</span><span class="n">parent</span><span class="p">))</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="n">task</span><span class="o">.</span><span class="n">DestinationPath</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+					<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+						<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error while creating &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">DestinationPath</span><span class="o">.</span><span class="n">parent</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+						
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">-copying &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">))</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Copy &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; to &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">DestinationPath</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">shutil_copy</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">DestinationPath</span><span class="p">))</span>
+				<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error while copying &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">SourcePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
+					
+<div class="viewcode-block" id="Compiler._RunPostDelete"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._RunPostDelete">[docs]</a>	<span class="k">def</span> <span class="nf">_RunPostDelete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;copy generated files into netlist directory...&quot;</span><span class="p">)</span>
+		<span class="n">rulesFiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PoCProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">RulesFile</span><span class="p">)]</span>  <span class="c1"># FIXME: get rulefile from netlist object as a rulefile object instead of a path</span>
+		<span class="n">postDeleteTasks</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">rulesFiles</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PostProcessRules</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">DeleteRuleMixIn</span><span class="p">):</span>
+					<span class="n">filePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">DeleteTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">))</span>
+					<span class="n">postDeleteTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">postDeleteRules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;PostDeleteRules&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ParseDeleteRules</span><span class="p">(</span><span class="n">postDeleteRules</span><span class="p">,</span> <span class="n">postDeleteTasks</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NoCleanUp</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;Disabled cleanup. Skipping post-delete rules.&quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">postDeleteTasks</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ExecuteDeleteTasks</span><span class="p">(</span><span class="n">postDeleteTasks</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Nothing to delete&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Compiler._ParseDeleteRules"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._ParseDeleteRules">[docs]</a>	<span class="k">def</span> <span class="nf">_ParseDeleteRules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rawList</span><span class="p">,</span> <span class="n">deleteTasks</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="c1"># read delete tasks</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rawList</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Parse </span><span class="si">{0}</span><span class="s2">-delete tasks from config file:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+			<span class="n">rawList</span> <span class="o">=</span> <span class="n">rawList</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+			
+			<span class="n">deleteRegExpStr</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^\s*(?P&lt;Filename&gt;.*?)$&quot;</span>  <span class="c1"># filename</span>
+			<span class="n">deleteRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">deleteRegExpStr</span><span class="p">)</span>
+			
+			<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">rawList</span><span class="p">:</span>
+				<span class="n">deleteRegExpMatch</span> <span class="o">=</span> <span class="n">deleteRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">deleteRegExpMatch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error in delete rule &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+					
+				<span class="n">task</span> <span class="o">=</span> <span class="n">DeleteTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">deleteRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Filename&#39;</span><span class="p">)))</span>
+				<span class="n">deleteTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;No </span><span class="si">{0}</span><span class="s2">-delete tasks specified in config file.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span></div>
+			
+<div class="viewcode-block" id="Compiler._ExecuteDeleteTasks"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._ExecuteDeleteTasks">[docs]</a>	<span class="k">def</span> <span class="nf">_ExecuteDeleteTasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tasks</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Cannot </span><span class="si">{0}</span><span class="s2">-delete &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span>
+				
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">-deleting &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Delete &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+				<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error while deleting &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
+					
+<div class="viewcode-block" id="Compiler._RunPreReplace"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._RunPreReplace">[docs]</a>	<span class="k">def</span> <span class="nf">_RunPreReplace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Patching files in temporary directory...&quot;</span><span class="p">)</span>
+		<span class="n">rulesFiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PoCProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">RulesFile</span><span class="p">)]</span>		<span class="c1"># FIXME: get rulefile from netlist object as a rulefile object instead of a path</span>
+		<span class="n">preReplaceTasks</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">rulesFiles</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PreProcessRules</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">ReplaceRuleMixIn</span><span class="p">):</span>
+					<span class="n">filePath</span> <span class="o">=</span>        <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">searchPattern</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">SearchPattern</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">replacePattern</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">ReplacePattern</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">ReplaceTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">),</span> <span class="n">searchPattern</span><span class="p">,</span> <span class="n">replacePattern</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">RegExpOption_MultiLine</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">RegExpOption_DotAll</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">RegExpOption_CaseInsensitive</span><span class="p">)</span>
+					<span class="n">preReplaceTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">AppendLineRuleMixIn</span><span class="p">):</span>
+					<span class="n">filePath</span> <span class="o">=</span>        <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">appendPattern</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">AppendPattern</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">AppendLineTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">),</span> <span class="n">appendPattern</span><span class="p">)</span>
+					<span class="n">preReplaceTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">CopyRuleMixIn</span><span class="p">):</span>
+					<span class="k">pass</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Unknown pre-process rule &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rule</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">preReplaceRules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;PreReplaceRules&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ParseReplaceRules</span><span class="p">(</span><span class="n">preReplaceRules</span><span class="p">,</span> <span class="n">preReplaceTasks</span><span class="p">,</span> <span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">preReplaceTasks</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ExecuteReplaceTasks</span><span class="p">(</span><span class="n">preReplaceTasks</span><span class="p">,</span> <span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Nothing to patch.&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Compiler._RunPostReplace"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._RunPostReplace">[docs]</a>	<span class="k">def</span> <span class="nf">_RunPostReplace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Patching files in netlist directory...&quot;</span><span class="p">)</span>
+		<span class="n">rulesFiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PoCProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">RulesFile</span><span class="p">)]</span>  <span class="c1"># FIXME: get rulefile from netlist object as a rulefile object instead of a path</span>
+		<span class="n">postReplaceTasks</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">rulesFiles</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rulesFiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PostProcessRules</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">ReplaceRuleMixIn</span><span class="p">):</span>
+					<span class="n">filePath</span> <span class="o">=</span>        <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">searchPattern</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">SearchPattern</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">replacePattern</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">ReplacePattern</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">ReplaceTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">),</span> <span class="n">searchPattern</span><span class="p">,</span> <span class="n">replacePattern</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">RegExpOption_MultiLine</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">RegExpOption_DotAll</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">RegExpOption_CaseInsensitive</span><span class="p">)</span>
+					<span class="n">postReplaceTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">AppendLineRuleMixIn</span><span class="p">):</span>
+					<span class="n">filePath</span> <span class="o">=</span>        <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">appendPattern</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">,</span> <span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">,</span> <span class="s2">&quot;RulesFile&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">AppendPattern</span><span class="p">,</span> <span class="p">{})</span>
+					<span class="n">task</span> <span class="o">=</span> <span class="n">AppendLineTask</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">),</span> <span class="n">appendPattern</span><span class="p">)</span>
+					<span class="n">postReplaceTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="p">(</span><span class="n">CopyRuleMixIn</span><span class="p">,</span> <span class="n">DeleteRuleMixIn</span><span class="p">)):</span>
+					<span class="k">pass</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Unknown post-process rule &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rule</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">postReplaceRules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;PostReplaceRules&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ParseReplaceRules</span><span class="p">(</span><span class="n">postReplaceRules</span><span class="p">,</span> <span class="n">postReplaceTasks</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">postReplaceTasks</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_ExecuteReplaceTasks</span><span class="p">(</span><span class="n">postReplaceTasks</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Nothing to patch.&quot;</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Compiler._ParseReplaceRules"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._ParseReplaceRules">[docs]</a>	<span class="k">def</span> <span class="nf">_ParseReplaceRules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rawList</span><span class="p">,</span> <span class="n">replaceTasks</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="c1"># read replace tasks</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rawList</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Parsing </span><span class="si">{0}</span><span class="s2">-replacement tasks:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+			<span class="n">rawList</span> <span class="o">=</span> <span class="n">rawList</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+			
+			<span class="c1"># FIXME: Rework inline replace rule syntax.</span>
+			<span class="n">replaceRegExpStr</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^\s*(?P&lt;Filename&gt;.*?)\s+:&quot;</span>  <span class="c1"># Filename</span>
+			<span class="n">replaceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;(?P&lt;Options&gt;[dim]{0,3}):\s+&quot;</span>  <span class="c1"># RegExp options</span>
+			<span class="n">replaceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">(?P&lt;Search&gt;.*?)</span><span class="se">\&quot;</span><span class="s2">\s+-&gt;\s+&quot;</span>  <span class="c1"># Search regexp</span>
+			<span class="n">replaceRegExpStr</span> <span class="o">+=</span> <span class="sa">r</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">(?P&lt;Replace&gt;.*?)</span><span class="se">\&quot;</span><span class="s2">$&quot;</span>  <span class="c1"># Replace regexp</span>
+			<span class="n">replaceRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">replaceRegExpStr</span><span class="p">)</span>
+			
+			<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">rawList</span><span class="p">:</span>
+				<span class="n">replaceRegExpMatch</span> <span class="o">=</span> <span class="n">replaceRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+				
+				<span class="k">if</span> <span class="p">(</span><span class="n">replaceRegExpMatch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error in replace rule &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+					
+				<span class="n">task</span> <span class="o">=</span> <span class="n">ReplaceTask</span><span class="p">(</span>
+					<span class="n">Path</span><span class="p">(</span><span class="n">replaceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Filename&#39;</span><span class="p">)),</span>
+					<span class="n">replaceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Search&#39;</span><span class="p">),</span>
+					<span class="n">replaceRegExpMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Replace&#39;</span><span class="p">),</span>
+					<span class="c1"># replaceRegExpMatch.group(&#39;Options&#39;),					# FIXME:</span>
+					<span class="c1"># replaceRegExpMatch.group(&#39;Options&#39;),					# FIXME:</span>
+					<span class="c1"># replaceRegExpMatch.group(&#39;Options&#39;),					# FIXME:</span>
+					<span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span>
+				<span class="p">)</span>
+				<span class="n">replaceTasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;No </span><span class="si">{0}</span><span class="s2">-replace tasks specified in config file.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span></div>
+			
+<div class="viewcode-block" id="Compiler._ExecuteReplaceTasks"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler._ExecuteReplaceTasks">[docs]</a>	<span class="k">def</span> <span class="nf">_ExecuteReplaceTasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tasks</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Cannot </span><span class="si">{0}</span><span class="s2">-replace in file &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">-replace in file &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;: search for &#39;</span><span class="si">{2}</span><span class="s2">&#39; replace by &#39;</span><span class="si">{3}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">SearchPattern</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">ReplacePattern</span><span class="p">))</span>
+			
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Patch &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">regExpFlags</span> <span class="o">=</span> <span class="mi">0</span>
+				<span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">RegExpOption_CaseInsensitive</span><span class="p">:</span> <span class="n">regExpFlags</span> <span class="o">|=</span> <span class="n">RE_IGNORECASE</span>
+				<span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">RegExpOption_MultiLine</span><span class="p">:</span>       <span class="n">regExpFlags</span> <span class="o">|=</span> <span class="n">RE_MULTILINE</span>
+				<span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">RegExpOption_DotAll</span><span class="p">:</span>          <span class="n">regExpFlags</span> <span class="o">|=</span> <span class="n">RE_DOTALL</span>
+				
+				<span class="c1"># compile regexp</span>
+				<span class="n">regExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">SearchPattern</span><span class="p">,</span> <span class="n">regExpFlags</span><span class="p">)</span>
+				<span class="c1"># open file and read all lines</span>
+				<span class="k">with</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+					<span class="n">FileContent</span> <span class="o">=</span> <span class="n">fileHandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+				<span class="c1"># replace</span>
+				<span class="n">NewContent</span><span class="p">,</span><span class="n">replaceCount</span> <span class="o">=</span> <span class="n">re_subn</span><span class="p">(</span><span class="n">regExp</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">ReplacePattern</span><span class="p">,</span> <span class="n">FileContent</span><span class="p">)</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">replaceCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;  Search pattern &#39;</span><span class="si">{0}</span><span class="s2">&#39; not found in file &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">SearchPattern</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="p">))</span>
+				<span class="c1"># open file to write the replaced data</span>
+				<span class="k">with</span> <span class="n">task</span><span class="o">.</span><span class="n">FilePath</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+					<span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">NewContent</span><span class="p">)</span></div>
+					
+<div class="viewcode-block" id="Compiler.PrintOverallCompileReport"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler.PrintOverallCompileReport">[docs]</a>	<span class="k">def</span> <span class="nf">PrintOverallCompileReport</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{HEADLINE}{line}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{HEADLINE}{headline: ^80s}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">headline</span><span class="o">=</span><span class="s2">&quot;Overall Compile Report&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{HEADLINE}{line}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="c1"># table header</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{Name: &lt;24}</span><span class="s2"> | </span><span class="si">{Duration: &gt;5}</span><span class="s2"> | </span><span class="si">{Status: ^11}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">Duration</span><span class="o">=</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">Status</span><span class="o">=</span><span class="s2">&quot;Status&quot;</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">PrintCompileReportLine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{HEADLINE}{line}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;Time: </span><span class="si">{time: &gt;5}</span><span class="s2">  Count: </span><span class="si">{count: &lt;3}</span><span class="s2">  Success: </span><span class="si">{success: &lt;3}</span><span class="s2">  Failed: </span><span class="si">{failed: &lt;2}</span><span class="s2">  Errors: </span><span class="si">{error: &lt;2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+			<span class="n">time</span><span class="o">=</span><span class="n">to_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">OverallRunTime</span><span class="p">),</span>
+			<span class="n">count</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span>
+			<span class="n">success</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">SuccessCount</span><span class="p">,</span>
+			<span class="n">failed</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">FailedCount</span><span class="p">,</span>
+			<span class="n">error</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">ErrorCount</span>
+		<span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{HEADLINE}{line}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span></div>
+		
+	<span class="n">__COMPILE_REPORT_COLOR_TABLE__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">Unknown</span><span class="p">:</span>        <span class="s2">&quot;RED&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">InternalError</span><span class="p">:</span>  <span class="s2">&quot;DARK_RED&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span><span class="p">:</span>    <span class="s2">&quot;DARK_RED&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">CompileError</span><span class="p">:</span>   <span class="s2">&quot;RED&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">CompileSuccess</span><span class="p">:</span> <span class="s2">&quot;GREEN&quot;</span>
+	<span class="p">}</span>
+	
+	<span class="n">__COMPILE_REPORT_STATUS_TEXT_TABLE__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">Unknown</span><span class="p">:</span>        <span class="s2">&quot;-- ?? --&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">InternalError</span><span class="p">:</span>  <span class="s2">&quot;INT. ERROR&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">SystemError</span><span class="p">:</span>    <span class="s2">&quot;SYS. ERROR&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">CompileError</span><span class="p">:</span>   <span class="s2">&quot;COMP. ERROR&quot;</span><span class="p">,</span>
+		<span class="n">CompileStatus</span><span class="o">.</span><span class="n">CompileSuccess</span><span class="p">:</span> <span class="s2">&quot;SUCCESS&quot;</span>
+	<span class="p">}</span>
+	
+<div class="viewcode-block" id="Compiler.PrintCompileReportLine"><a class="viewcode-back" href="../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.Compiler.PrintCompileReportLine">[docs]</a>	<span class="k">def</span> <span class="nf">PrintCompileReportLine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">testObject</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">nameColumnWidth</span><span class="p">):</span>
+		<span class="n">_indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">testObject</span><span class="o">.</span><span class="n">Groups</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{indent}</span><span class="s2">{{groupName: &lt;</span><span class="si">{nameColumnWidth}</span><span class="s2">}} |       | &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="n">_indent</span><span class="p">,</span> <span class="n">nameColumnWidth</span><span class="o">=</span><span class="n">nameColumnWidth</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="n">pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">groupName</span><span class="o">=</span><span class="n">group</span><span class="o">.</span><span class="n">Name</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">PrintCompileReportLine</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nameColumnWidth</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">synthesis</span> <span class="ow">in</span> <span class="n">testObject</span><span class="o">.</span><span class="n">Synthesises</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{indent}</span><span class="s2">{{netlistName: &lt;</span><span class="si">{nameColumnWidth}</span><span class="s2">}} | {{duration: &gt;5}} | {{</span><span class="si">{color}</span><span class="s2">}}{{status: ^11}}{{NOCOLOR}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+				<span class="n">indent</span><span class="o">=</span><span class="n">_indent</span><span class="p">,</span> <span class="n">nameColumnWidth</span><span class="o">=</span><span class="n">nameColumnWidth</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__COMPILE_REPORT_COLOR_TABLE__</span><span class="p">[</span><span class="n">synthesis</span><span class="o">.</span><span class="n">Status</span><span class="p">])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogQuiet</span><span class="p">(</span><span class="n">pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+				<span class="n">netlistName</span><span class="o">=</span><span class="n">synthesis</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span>
+				<span class="n">duration</span><span class="o">=</span><span class="n">to_time</span><span class="p">(</span><span class="n">synthesis</span><span class="o">.</span><span class="n">OverallRunTime</span><span class="p">),</span>
+				<span class="n">status</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__COMPILE_REPORT_STATUS_TEXT_TABLE__</span><span class="p">[</span><span class="n">synthesis</span><span class="o">.</span><span class="n">Status</span><span class="p">],</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span>
+			<span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

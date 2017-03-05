@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulator.CocotbSimulator &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Simulator" href="../Simulator.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../Simulator.html">Simulator</a> &raquo;</li>
+        
+      <li>Simulator.CocotbSimulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Simulator.CocotbSimulator</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    TODO</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">shutil</span>                  <span class="k">import</span> <span class="n">copy</span> <span class="k">as</span> <span class="n">shutil_copy</span>
+<span class="kn">from</span> <span class="nn">textwrap</span>                <span class="k">import</span> <span class="n">dedent</span>
+
+<span class="kn">from</span> <span class="nn">Base.Project</span>            <span class="k">import</span> <span class="n">FileTypes</span><span class="p">,</span> <span class="n">ToolChain</span><span class="p">,</span> <span class="n">Tool</span>
+<span class="kn">from</span> <span class="nn">DataBase.Config</span>         <span class="k">import</span> <span class="n">Vendors</span>
+<span class="kn">from</span> <span class="nn">DataBase.Entity</span>         <span class="k">import</span> <span class="n">WildCard</span>
+<span class="kn">from</span> <span class="nn">ToolChain.GNU</span>           <span class="k">import</span> <span class="n">Make</span>
+<span class="kn">from</span> <span class="nn">Simulator</span>               <span class="k">import</span> <span class="n">SimulatorException</span><span class="p">,</span> <span class="n">SimulationSteps</span><span class="p">,</span> <span class="n">Simulator</span> <span class="k">as</span> <span class="n">BaseSimulator</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;Simulator&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="Simulator"><a class="viewcode-back" href="../../PyInfrastructure/Simulator.CocotbSimulator.html#Simulator.CocotbSimulator.Simulator">[docs]</a><span class="k">class</span> <span class="nc">Simulator</span><span class="p">(</span><span class="n">BaseSimulator</span><span class="p">):</span>
+	<span class="n">TOOL_CHAIN</span> <span class="o">=</span>      <span class="n">ToolChain</span><span class="o">.</span><span class="n">Cocotb</span>
+	<span class="n">TOOL</span> <span class="o">=</span>            <span class="n">Tool</span><span class="o">.</span><span class="n">Cocotb_QuestaSim</span>
+	<span class="n">COCOTB_SIMBUILD_DIRECTORY</span> <span class="o">=</span> <span class="s2">&quot;sim_build&quot;</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">simulationSteps</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">simulationSteps</span><span class="p">)</span>
+		
+		<span class="n">configSection</span> <span class="o">=</span>                 <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;CONFIG.DirectoryNames&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">=</span>      <span class="n">host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Temp</span> <span class="o">/</span> <span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;CocotbFiles&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">PreCompiled</span> <span class="o">=</span>  <span class="n">host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">PreCompiled</span> <span class="o">/</span> <span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;ModelSimFiles&#39;</span><span class="p">]</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_PrepareSimulationEnvironment</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_PrepareSimulator</span><span class="p">()</span>
+		
+<div class="viewcode-block" id="Simulator._PrepareSimulator"><a class="viewcode-back" href="../../PyInfrastructure/Simulator.CocotbSimulator.html#Simulator.CocotbSimulator.Simulator._PrepareSimulator">[docs]</a>	<span class="k">def</span> <span class="nf">_PrepareSimulator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="c1"># create the Cocotb executable factory</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Preparing Cocotb simulator.&quot;</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Simulator.RunAll"><a class="viewcode-back" href="../../PyInfrastructure/Simulator.CocotbSimulator.html#Simulator.CocotbSimulator.Simulator.RunAll">[docs]</a>	<span class="k">def</span> <span class="nf">RunAll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fqnList</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">StartTimer</span><span class="p">()</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">fqn</span> <span class="ow">in</span> <span class="n">fqnList</span><span class="p">:</span>
+				<span class="n">entity</span> <span class="o">=</span> <span class="n">fqn</span><span class="o">.</span><span class="n">Entity</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">WildCard</span><span class="p">)):</span>
+					<span class="k">for</span> <span class="n">testbench</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">GetCocoTestbenches</span><span class="p">():</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">TryRun</span><span class="p">(</span><span class="n">testbench</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">testbench</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">CocoTestbench</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">TryRun</span><span class="p">(</span><span class="n">testbench</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;Received a keyboard interrupt.&quot;</span><span class="p">)</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">StopTimer</span><span class="p">()</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">PrintOverallSimulationReport</span><span class="p">()</span>
+		
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">IsAllPassed</span></div>
+		
+<div class="viewcode-block" id="Simulator._RunSimulation"><a class="viewcode-back" href="../../PyInfrastructure/Simulator.CocotbSimulator.html#Simulator.CocotbSimulator.Simulator._RunSimulation">[docs]</a>	<span class="k">def</span> <span class="nf">_RunSimulation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">testbench</span><span class="p">):</span> <span class="c1"># mccabe:disable=MC0001</span>
+		<span class="c1"># select modelsim.ini from precompiled</span>
+		<span class="n">precompiledModelsimIniPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">PreCompiled</span>
+		<span class="n">device_vendor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pocProject</span><span class="o">.</span><span class="n">Board</span><span class="o">.</span><span class="n">Device</span><span class="o">.</span><span class="n">Vendor</span>
+		<span class="k">if</span> <span class="n">device_vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Altera</span><span class="p">:</span>
+			<span class="n">precompiledModelsimIniPath</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;CONFIG.DirectoryNames&#39;</span><span class="p">][</span><span class="s1">&#39;AlteraSpecificFiles&#39;</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="n">device_vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Lattice</span><span class="p">:</span>
+			<span class="n">precompiledModelsimIniPath</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;CONFIG.DirectoryNames&#39;</span><span class="p">][</span><span class="s1">&#39;LatticeSpecificFiles&#39;</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="n">device_vendor</span> <span class="ow">is</span> <span class="n">Vendors</span><span class="o">.</span><span class="n">Xilinx</span><span class="p">:</span>
+			<span class="n">precompiledModelsimIniPath</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;CONFIG.DirectoryNames&#39;</span><span class="p">][</span><span class="s1">&#39;XilinxSpecificFiles&#39;</span><span class="p">]</span>
+			
+		<span class="n">precompiledModelsimIniPath</span> <span class="o">/=</span> <span class="s2">&quot;modelsim.ini&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">precompiledModelsimIniPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+			<span class="k">raise</span> <span class="n">SimulatorException</span><span class="p">(</span><span class="s2">&quot;ModelSim ini file &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precompiledModelsimIniPath</span><span class="p">))</span> \
+				<span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">precompiledModelsimIniPath</span><span class="p">))</span>
+				
+		<span class="n">simBuildPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">COCOTB_SIMBUILD_DIRECTORY</span>
+		<span class="c1"># create temporary directory for Cocotb if not existent</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">simBuildPath</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Creating build directory for simulator files.&quot;</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Build directory: </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">simBuildPath</span><span class="p">))</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">simBuildPath</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">SimulatorException</span><span class="p">(</span><span class="s2">&quot;Error while creating &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">simBuildPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+				
+		<span class="c1"># write local modelsim.ini</span>
+		<span class="n">modelsimIniPath</span> <span class="o">=</span> <span class="n">simBuildPath</span> <span class="o">/</span> <span class="s2">&quot;modelsim.ini&quot;</span>
+		<span class="k">if</span> <span class="n">modelsimIniPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">modelsimIniPath</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+			<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">SimulatorException</span><span class="p">(</span><span class="s2">&quot;Error while deleting &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modelsimIniPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+				
+		<span class="k">with</span> <span class="n">modelsimIniPath</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">fileContent</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">				[Library]</span>
+<span class="s2">				others = </span><span class="si">{0!s}</span><span class="s2"></span>
+<span class="s2">				&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precompiledModelsimIniPath</span><span class="p">)</span>
+			<span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fileContent</span><span class="p">)</span>
+			
+		<span class="c1">#</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Running simulation...&quot;</span><span class="p">)</span>
+		<span class="n">cocotbTemplateFilePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span> <span class="o">/</span> \
+															<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">testbench</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;CocotbMakefile&#39;</span><span class="p">]</span> <span class="c1"># depends on testbench</span>
+		<span class="n">topLevel</span> <span class="o">=</span>      <span class="n">testbench</span><span class="o">.</span><span class="n">TopLevel</span>
+		<span class="n">cocotbModule</span> <span class="o">=</span>  <span class="n">testbench</span><span class="o">.</span><span class="n">ModuleName</span>
+		
+		<span class="c1"># create one VHDL line for each VHDL file</span>
+		<span class="n">vhdlSources</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pocProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">VHDLSourceFile</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="n">SimulatorException</span><span class="p">(</span><span class="s2">&quot;Cannot add &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; to Cocotb Makefile.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">))</span> \
+					<span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">))</span>
+			<span class="n">vhdlSources</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+			
+		<span class="c1"># copy Cocotb (Python) files to temp directory</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Copying Cocotb (Python) files into temporary directory.&quot;</span><span class="p">)</span>
+		<span class="n">cocotbTempDir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pocProject</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">CocotbSourceFile</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="n">SimulatorException</span><span class="p">(</span><span class="s2">&quot;Cannot copy &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; to Cocotb temp directory.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">))</span> \
+					<span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;copy </span><span class="si">{0!s}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">cocotbTempDir</span><span class="p">))</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">shutil_copy</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">),</span> <span class="n">cocotbTempDir</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">SimulatorException</span><span class="p">(</span><span class="s2">&quot;Error while copying &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+				
+		<span class="c1"># read/write Makefile template</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Generating Makefile...&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Reading Cocotb Makefile template file from &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cocotbTemplateFilePath</span><span class="p">))</span>
+		<span class="k">with</span> <span class="n">cocotbTemplateFilePath</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">cocotbMakefileContent</span> <span class="o">=</span> <span class="n">fileHandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+			
+		<span class="n">cocotbMakefileContent</span> <span class="o">=</span> <span class="n">cocotbMakefileContent</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">PoCRootDirectory</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span><span class="p">),</span>
+																													<span class="n">VHDLSources</span><span class="o">=</span><span class="n">vhdlSources</span><span class="p">,</span>
+																													<span class="n">TopLevel</span><span class="o">=</span><span class="n">topLevel</span><span class="p">,</span> <span class="n">CocotbModule</span><span class="o">=</span><span class="n">cocotbModule</span><span class="p">)</span>
+																													
+		<span class="n">cocotbMakefilePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">/</span> <span class="s2">&quot;Makefile&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Writing Cocotb Makefile to &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cocotbMakefilePath</span><span class="p">))</span>
+		<span class="k">with</span> <span class="n">cocotbMakefilePath</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cocotbMakefileContent</span><span class="p">)</span>
+			
+		<span class="c1"># execute make</span>
+		<span class="n">make</span> <span class="o">=</span> <span class="n">Make</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">Platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">SimulationSteps</span><span class="o">.</span><span class="n">ShowWaveform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_simulationSteps</span><span class="p">):</span> <span class="n">make</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">Make</span><span class="o">.</span><span class="n">SwitchGui</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="n">testbench</span><span class="o">.</span><span class="n">Result</span> <span class="o">=</span> <span class="n">make</span><span class="o">.</span><span class="n">RunCocotb</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1624 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.Xilinx.ISE &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ToolChain.Xilinx.ISE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/ToolChain.Xilinx.ISE.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ToolChain.Xilinx.ISE">
+<span id="toolchain-xilinx-ise"></span><h1>ToolChain.Xilinx.ISE<a class="headerlink" href="#module-ToolChain.Xilinx.ISE" title="Permalink to this headline">¶</a></h1>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.ISEException" title="ToolChain.Xilinx.ISE.ISEException"><code class="xref py py-exc docutils literal"><span class="pre">ISEException</span></code></a>:
+Base class for all tool specific exceptions</li>
+</ul>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.Configuration" title="ToolChain.Xilinx.ISE.Configuration"><code class="xref py py-class docutils literal"><span class="pre">Configuration</span></code></a>:
+Base class for all tool Configuration classes.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.ISE" title="ToolChain.Xilinx.ISE.ISE"><code class="xref py py-class docutils literal"><span class="pre">ISE</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.Fuse" title="ToolChain.Xilinx.ISE.Fuse"><code class="xref py py-class docutils literal"><span class="pre">Fuse</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.ISESimulator" title="ToolChain.Xilinx.ISE.ISESimulator"><code class="xref py py-class docutils literal"><span class="pre">ISESimulator</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.Xst" title="ToolChain.Xilinx.ISE.Xst"><code class="xref py py-class docutils literal"><span class="pre">Xst</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.CoreGenerator" title="ToolChain.Xilinx.ISE.CoreGenerator"><code class="xref py py-class docutils literal"><span class="pre">CoreGenerator</span></code></a>:
+Represent an executable.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.ISEProject" title="ToolChain.Xilinx.ISE.ISEProject"><code class="xref py py-class docutils literal"><span class="pre">ISEProject</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.ISEProjectFile" title="ToolChain.Xilinx.ISE.ISEProjectFile"><code class="xref py py-class docutils literal"><span class="pre">ISEProjectFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.UserConstraintFile" title="ToolChain.Xilinx.ISE.UserConstraintFile"><code class="xref py py-class docutils literal"><span class="pre">UserConstraintFile</span></code></a>:
+Undocumented.</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.VhCompFilter" title="ToolChain.Xilinx.ISE.VhCompFilter"><code class="xref py py-func docutils literal"><span class="pre">VhCompFilter()</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.FuseFilter" title="ToolChain.Xilinx.ISE.FuseFilter"><code class="xref py py-func docutils literal"><span class="pre">FuseFilter()</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.SimulatorFilter" title="ToolChain.Xilinx.ISE.SimulatorFilter"><code class="xref py py-func docutils literal"><span class="pre">SimulatorFilter()</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.XstFilter" title="ToolChain.Xilinx.ISE.XstFilter"><code class="xref py py-func docutils literal"><span class="pre">XstFilter()</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#ToolChain.Xilinx.ISE.CoreGeneratorFilter" title="ToolChain.Xilinx.ISE.CoreGeneratorFilter"><code class="xref py py-func docutils literal"><span class="pre">CoreGeneratorFilter()</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="exception">
+<dt id="ToolChain.Xilinx.ISE.ISEException">
+<em class="property">exception </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">ISEException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISEException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEException" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-85a0af8bd72c1c19e35410aececbb0b40c06d8d0.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ISEException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Configuration">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-07376a86ec1e66d28a72807c86b926d9cc0e9b29.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Configuration</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration._vendor">
+<code class="descname">_vendor</code><em class="property"> = 'Xilinx'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._vendor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tools vendor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration._toolName">
+<code class="descname">_toolName</code><em class="property"> = 'Xilinx ISE'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._toolName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tool.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration._section">
+<code class="descname">_section</code><em class="property"> = 'INSTALL.Xilinx.ISE'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._section" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the configuration section. Pattern: <code class="docutils literal"><span class="pre">INSTALL.Vendor.ToolName</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration._multiVersionSupport">
+<code class="descname">_multiVersionSupport</code><em class="property"> = True</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._multiVersionSupport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Xilinx ISE supports multiple versions installed on the same system.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration._template">
+<code class="descname">_template</code><em class="property"> = {'Windows': {'INSTALL.Xilinx.ISE': {'Version': '14.7', 'SectionName': ('%{PathWithRoot}#${Version}', None), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', '${INSTALL.Xilinx:InstallationDirectory}/${Version}/ISE_DS'), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/ISE/bin/nt64')}}, 'Linux': {'INSTALL.Xilinx.ISE': {'Version': '14.7', 'SectionName': ('%{PathWithRoot}#${Version}', None), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', '${INSTALL.Xilinx:InstallationDirectory}/${Version}/ISE_DS'), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/ISE/bin/lin64')}}}</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The template for the configuration sections represented as nested dictionaries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.CheckDependency">
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if general Xilinx support is configured in PoC.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.ConfigureForAll">
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.ClearSection">
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the configuration section associated to this Configuration class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.ConfigureForDarwin">
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Darwin.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForAll" title="ToolChain.Xilinx.ISE.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Darwin specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.ConfigureForLinux">
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Linux.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForAll" title="ToolChain.Xilinx.ISE.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Linux specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.ConfigureForWindows">
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the configuration procedure for Windows.</p>
+<p>This method is a wrapper for <a class="reference internal" href="#ToolChain.Xilinx.ISE.Configuration.ConfigureForAll" title="ToolChain.Xilinx.ISE.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
+method to implement a Windows specific configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.GetSections">
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all section names for this configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration.Host">
+<code class="descname">Host</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.Host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hosting object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.IsConfigured">
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the configurations section is configured</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.IsSupportedPlatform">
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the given platform is supported by this configuration routine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.PrepareOptions">
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.PrepareSections">
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.PrepareVersionedSections">
+<code class="descname">PrepareVersionedSections</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.PrepareVersionedSections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration.RunPostConfigurationTasks">
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Virtual method. Overwrite to execute post-configuration tasks.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration&#8217;s section name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Configuration.State">
+<code class="descname">State</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._Ask">
+<code class="descname">_Ask</code><span class="sig-paren">(</span><em>question</em>, <em>default</em>, <em>beforeDefault=''</em>, <em>afterDefault=''</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._Ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._AskInstalled">
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a Yes/No/Pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._AskYes_NoPass">
+<code class="descname">_AskYes_NoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._AskYes_NoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a yes/NO/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._Ask_YesNoPass">
+<code class="descname">_Ask_YesNoPass</code><span class="sig-paren">(</span><em>question</em>, <em>indent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._Ask_YesNoPass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask a YES/no/pass question.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._Configuration__CheckISEVersion">
+<code class="descname">_Configuration__CheckISEVersion</code><span class="sig-paren">(</span><em>binPath</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._Configuration__CheckISEVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._ConfigureBinaryDirectory">
+<code class="descname">_ConfigureBinaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._ConfigureBinaryDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates section with value from <a class="reference internal" href="#ToolChain.Xilinx.ISE.Configuration._template" title="ToolChain.Xilinx.ISE.Configuration._template"><code class="xref py py-attr docutils literal"><span class="pre">_template</span></code></a> and returns directory
+as <a class="reference external" href="https://docs.python.org/3.6/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Path</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._ConfigureEdition">
+<code class="descname">_ConfigureEdition</code><span class="sig-paren">(</span><em>editions</em>, <em>defaultEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._ConfigureEdition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._ConfigureInstallationDirectory">
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks for installation directory and updates section.
+Checks if entered directory exists and returns Path object.
+If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._ConfigureVersion">
+<code class="descname">_ConfigureVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._ConfigureVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>If no version was configured before, then _GetDefaultVersion is called.
+Asks for version and updates section. Returns version as string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._GetDefaultEdition">
+<code class="descname">_GetDefaultEdition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._GetDefaultEdition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default edition (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of editions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._GetDefaultInstallationDirectory">
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unresolved default installation directory (str) from template.</p>
+<p>Overwrite function in sub-class for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._GetDefaultOptionValue">
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._GetDefaultVersion">
+<code class="descname">_GetDefaultVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._GetDefaultVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unresolved default version (str) from template.</p>
+<p>Overwrite this method in a sub-class for automatic search of version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._PrintAvailableEditions">
+<code class="descname">_PrintAvailableEditions</code><span class="sig-paren">(</span><em>editions</em>, <em>selectedEdition</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._PrintAvailableEditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all available editions and return the selected index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._TestDefaultInstallPath">
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for automatic search of installation directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Configuration._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Configuration._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISE">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">ISE</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISE" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-18f4ffa2913d57e05b8e15f7ca97624d04c1c71a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ISE</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISE.PreparseEnvironment">
+<code class="descname">PreparseEnvironment</code><span class="sig-paren">(</span><em>installationDirectory</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISE.PreparseEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISE.PreparseEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISE.GetVHDLCompiler">
+<code class="descname">GetVHDLCompiler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISE.GetVHDLCompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISE.GetVHDLCompiler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISE.GetFuse">
+<code class="descname">GetFuse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISE.GetFuse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISE.GetFuse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISE.GetXst">
+<code class="descname">GetXst</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISE.GetXst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISE.GetXst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISE.GetCoreGenerator">
+<code class="descname">GetCoreGenerator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISE.GetCoreGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISE.GetCoreGenerator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">Fuse</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-76d66f2b137ec3c20a881187e34e979899f4802f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Fuse</p></object>
+<p class="rubric">Members</p>
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Executable">
+<em class="property">class </em><code class="descname">Executable</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.FlagIncremental">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">FlagIncremental</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.FlagIncremental"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.FlagIncremental" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.FlagIncremental._name">
+<code class="descname">_name</code><em class="property"> = 'incremental'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.FlagIncremental._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.FlagRangeCheck">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">FlagRangeCheck</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.FlagRangeCheck"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.FlagRangeCheck" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.FlagRangeCheck._name">
+<code class="descname">_name</code><em class="property"> = 'rangecheck'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.FlagRangeCheck._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchMultiThreading">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">SwitchMultiThreading</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.SwitchMultiThreading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchMultiThreading" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchMultiThreading._name">
+<code class="descname">_name</code><em class="property"> = 'mt'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchMultiThreading._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchTimeResolution">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">SwitchTimeResolution</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.SwitchTimeResolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchTimeResolution" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchTimeResolution._name">
+<code class="descname">_name</code><em class="property"> = 'timeprecision_vhdl'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchTimeResolution._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchProjectFile">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">SwitchProjectFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.SwitchProjectFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchProjectFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchProjectFile._name">
+<code class="descname">_name</code><em class="property"> = 'prj'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchProjectFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchOutputFile">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">SwitchOutputFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.SwitchOutputFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchOutputFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SwitchOutputFile._name">
+<code class="descname">_name</code><em class="property"> = 'o'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SwitchOutputFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Fuse.ArgTopLevel">
+<em class="property">class </em><code class="descclassname">Fuse.</code><code class="descname">ArgTopLevel</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.ArgTopLevel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.ArgTopLevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Parameters">
+<code class="descclassname">Fuse.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Xilinx.ISE.Fuse.Executable'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.FlagIncremental'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.FlagRangeCheck'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.SwitchMultiThreading'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.SwitchTimeResolution'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.SwitchProjectFile'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.SwitchOutputFile'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Fuse.ArgTopLevel'&gt;]</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Link">
+<code class="descclassname">Fuse.</code><code class="descname">Link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Fuse.Link"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.GetReader">
+<code class="descclassname">Fuse.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.HasErrors">
+<code class="descclassname">Fuse.</code><code class="descname">HasErrors</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.HasErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.HasWarnings">
+<code class="descclassname">Fuse.</code><code class="descname">HasWarnings</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.HasWarnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Log">
+<code class="descclassname">Fuse.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogDebug">
+<code class="descclassname">Fuse.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogDryRun">
+<code class="descclassname">Fuse.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogError">
+<code class="descclassname">Fuse.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogFatal">
+<code class="descclassname">Fuse.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogInfo">
+<code class="descclassname">Fuse.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogNormal">
+<code class="descclassname">Fuse.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogQuiet">
+<code class="descclassname">Fuse.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogVerbose">
+<code class="descclassname">Fuse.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.LogWarning">
+<code class="descclassname">Fuse.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Logger">
+<code class="descclassname">Fuse.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Path">
+<code class="descclassname">Fuse.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.ReadUntilBoundary">
+<code class="descclassname">Fuse.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Send">
+<code class="descclassname">Fuse.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.SendBoundary">
+<code class="descclassname">Fuse.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.StartProcess">
+<code class="descclassname">Fuse.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse.Terminate">
+<code class="descclassname">Fuse.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Fuse._POC_BOUNDARY">
+<code class="descclassname">Fuse.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Fuse._TryLog">
+<code class="descclassname">Fuse.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Fuse._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">ISESimulator</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>executablePath</em>, <em>environment</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c405a188e77e5b966232f083c59d5038b18255cd.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ISESimulator</p></object>
+<p class="rubric">Members</p>
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Executable">
+<em class="property">class </em><code class="descname">Executable</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator.Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SwitchLogFile">
+<em class="property">class </em><code class="descclassname">ISESimulator.</code><code class="descname">SwitchLogFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator.SwitchLogFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SwitchLogFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SwitchLogFile._name">
+<code class="descname">_name</code><em class="property"> = 'log'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SwitchLogFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.FlagGuiMode">
+<em class="property">class </em><code class="descclassname">ISESimulator.</code><code class="descname">FlagGuiMode</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator.FlagGuiMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.FlagGuiMode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.FlagGuiMode._name">
+<code class="descname">_name</code><em class="property"> = 'gui'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.FlagGuiMode._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SwitchTclBatchFile">
+<em class="property">class </em><code class="descclassname">ISESimulator.</code><code class="descname">SwitchTclBatchFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator.SwitchTclBatchFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SwitchTclBatchFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SwitchTclBatchFile._name">
+<code class="descname">_name</code><em class="property"> = 'tclbatch'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SwitchTclBatchFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SwitchWaveformFile">
+<em class="property">class </em><code class="descclassname">ISESimulator.</code><code class="descname">SwitchWaveformFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator.SwitchWaveformFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SwitchWaveformFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SwitchWaveformFile._name">
+<code class="descname">_name</code><em class="property"> = 'view'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SwitchWaveformFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Parameters">
+<code class="descclassname">ISESimulator.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Xilinx.ISE.ISESimulator.Executable'&gt;, &lt;class 'ToolChain.Xilinx.ISE.ISESimulator.SwitchLogFile'&gt;, &lt;class 'ToolChain.Xilinx.ISE.ISESimulator.FlagGuiMode'&gt;, &lt;class 'ToolChain.Xilinx.ISE.ISESimulator.SwitchTclBatchFile'&gt;, &lt;class 'ToolChain.Xilinx.ISE.ISESimulator.SwitchWaveformFile'&gt;]</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Simulate">
+<code class="descclassname">ISESimulator.</code><code class="descname">Simulate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISESimulator.Simulate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Simulate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.GetReader">
+<code class="descclassname">ISESimulator.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.HasErrors">
+<code class="descclassname">ISESimulator.</code><code class="descname">HasErrors</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.HasErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.HasWarnings">
+<code class="descclassname">ISESimulator.</code><code class="descname">HasWarnings</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.HasWarnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Log">
+<code class="descclassname">ISESimulator.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogDebug">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogDryRun">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogError">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogFatal">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogInfo">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogNormal">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogQuiet">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogVerbose">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.LogWarning">
+<code class="descclassname">ISESimulator.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Logger">
+<code class="descclassname">ISESimulator.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Path">
+<code class="descclassname">ISESimulator.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.ReadUntilBoundary">
+<code class="descclassname">ISESimulator.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Send">
+<code class="descclassname">ISESimulator.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.SendBoundary">
+<code class="descclassname">ISESimulator.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.StartProcess">
+<code class="descclassname">ISESimulator.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator.Terminate">
+<code class="descclassname">ISESimulator.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator._POC_BOUNDARY">
+<code class="descclassname">ISESimulator.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISESimulator._TryLog">
+<code class="descclassname">ISESimulator.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISESimulator._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Xst">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">Xst</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Xst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ee5671f618a59c0bb74dc5d80885450304b37e57.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Xst</p></object>
+<p class="rubric">Members</p>
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Xst.Executable">
+<em class="property">class </em><code class="descname">Executable</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Xst.Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Xst.SwitchIntStyle">
+<em class="property">class </em><code class="descclassname">Xst.</code><code class="descname">SwitchIntStyle</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Xst.SwitchIntStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SwitchIntStyle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.SwitchIntStyle._name">
+<code class="descname">_name</code><em class="property"> = 'intstyle'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SwitchIntStyle._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Xst.SwitchXstFile">
+<em class="property">class </em><code class="descclassname">Xst.</code><code class="descname">SwitchXstFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Xst.SwitchXstFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SwitchXstFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.SwitchXstFile._name">
+<code class="descname">_name</code><em class="property"> = 'ifn'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SwitchXstFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.Xst.SwitchReportFile">
+<em class="property">class </em><code class="descclassname">Xst.</code><code class="descname">SwitchReportFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Xst.SwitchReportFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SwitchReportFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.SwitchReportFile._name">
+<code class="descname">_name</code><em class="property"> = 'ofn'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SwitchReportFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.Parameters">
+<code class="descclassname">Xst.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Xilinx.ISE.Xst.Executable'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Xst.SwitchIntStyle'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Xst.SwitchXstFile'&gt;, &lt;class 'ToolChain.Xilinx.ISE.Xst.SwitchReportFile'&gt;]</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.Compile">
+<code class="descclassname">Xst.</code><code class="descname">Compile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#Xst.Compile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.GetReader">
+<code class="descclassname">Xst.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.HasErrors">
+<code class="descclassname">Xst.</code><code class="descname">HasErrors</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.HasErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.HasWarnings">
+<code class="descclassname">Xst.</code><code class="descname">HasWarnings</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.HasWarnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.Log">
+<code class="descclassname">Xst.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogDebug">
+<code class="descclassname">Xst.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogDryRun">
+<code class="descclassname">Xst.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogError">
+<code class="descclassname">Xst.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogFatal">
+<code class="descclassname">Xst.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogInfo">
+<code class="descclassname">Xst.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogNormal">
+<code class="descclassname">Xst.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogQuiet">
+<code class="descclassname">Xst.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogVerbose">
+<code class="descclassname">Xst.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.LogWarning">
+<code class="descclassname">Xst.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.Logger">
+<code class="descclassname">Xst.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst.Path">
+<code class="descclassname">Xst.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.ReadUntilBoundary">
+<code class="descclassname">Xst.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.Send">
+<code class="descclassname">Xst.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.SendBoundary">
+<code class="descclassname">Xst.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.StartProcess">
+<code class="descclassname">Xst.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst.Terminate">
+<code class="descclassname">Xst.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.Xst._POC_BOUNDARY">
+<code class="descclassname">Xst.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.Xst._TryLog">
+<code class="descclassname">Xst.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.Xst._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">CoreGenerator</code><span class="sig-paren">(</span><em>toolchain: ToolChain.ToolMixIn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-268d19e4909fa51d1bcc1bf3d42d503c2ca2497a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CoreGenerator</p></object>
+<p class="rubric">Members</p>
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Executable">
+<em class="property">class </em><code class="descname">Executable</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGenerator.Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.FlagRegenerate">
+<em class="property">class </em><code class="descclassname">CoreGenerator.</code><code class="descname">FlagRegenerate</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGenerator.FlagRegenerate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.FlagRegenerate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.FlagRegenerate._name">
+<code class="descname">_name</code><em class="property"> = 'r'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.FlagRegenerate._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.SwitchProjectFile">
+<em class="property">class </em><code class="descclassname">CoreGenerator.</code><code class="descname">SwitchProjectFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGenerator.SwitchProjectFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.SwitchProjectFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.SwitchProjectFile._name">
+<code class="descname">_name</code><em class="property"> = 'p'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.SwitchProjectFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.SwitchBatchFile">
+<em class="property">class </em><code class="descclassname">CoreGenerator.</code><code class="descname">SwitchBatchFile</code><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGenerator.SwitchBatchFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.SwitchBatchFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.SwitchBatchFile._name">
+<code class="descname">_name</code><em class="property"> = 'b'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.SwitchBatchFile._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Parameters">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Xilinx.ISE.CoreGenerator.Executable'&gt;, &lt;class 'ToolChain.Xilinx.ISE.CoreGenerator.FlagRegenerate'&gt;, &lt;class 'ToolChain.Xilinx.ISE.CoreGenerator.SwitchProjectFile'&gt;, &lt;class 'ToolChain.Xilinx.ISE.CoreGenerator.SwitchBatchFile'&gt;]</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Generate">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGenerator.Generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.GetReader">
+<code class="descclassname">CoreGenerator.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.HasErrors">
+<code class="descclassname">CoreGenerator.</code><code class="descname">HasErrors</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.HasErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.HasWarnings">
+<code class="descclassname">CoreGenerator.</code><code class="descname">HasWarnings</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.HasWarnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if errors or fatals errors were found while processing the output stream.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Log">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogDebug">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogDryRun">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogError">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogFatal">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogInfo">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogNormal">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogQuiet">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogVerbose">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.LogWarning">
+<code class="descclassname">CoreGenerator.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Logger">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Path">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.ReadUntilBoundary">
+<code class="descclassname">CoreGenerator.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Send">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.SendBoundary">
+<code class="descclassname">CoreGenerator.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.StartProcess">
+<code class="descclassname">CoreGenerator.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator.Terminate">
+<code class="descclassname">CoreGenerator.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator._POC_BOUNDARY">
+<code class="descclassname">CoreGenerator.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.CoreGenerator._TryLog">
+<code class="descclassname">CoreGenerator.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGenerator._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISEProject">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">ISEProject</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISEProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-5d6b8d89357aec09049cf2ab315e60e70d33d01a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ISEProject</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.AddExternalVHDLLibraries">
+<code class="descname">AddExternalVHDLLibraries</code><span class="sig-paren">(</span><em>library</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.AddExternalVHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.AddFile">
+<code class="descname">AddFile</code><span class="sig-paren">(</span><em>file</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.AddFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.AddFileSet">
+<code class="descname">AddFileSet</code><span class="sig-paren">(</span><em>fileSet</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.AddFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.AddSourceFile">
+<code class="descname">AddSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.AddSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.Board">
+<code class="descname">Board</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.Board" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.CreateFileSet">
+<code class="descname">CreateFileSet</code><span class="sig-paren">(</span><em>name</em>, <em>setDefault=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.CreateFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.DefaultFileSet">
+<code class="descname">DefaultFileSet</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.DefaultFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.Device">
+<code class="descname">Device</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.Device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.Environment">
+<code class="descname">Environment</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.Environment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.ExternalVHDLLibraries">
+<code class="descname">ExternalVHDLLibraries</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.ExternalVHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.ExtractVHDLLibrariesFromVHDLSourceFiles">
+<code class="descname">ExtractVHDLLibrariesFromVHDLSourceFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.ExtractVHDLLibrariesFromVHDLSourceFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.FileSets">
+<code class="descname">FileSets</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.FileSets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.Files">
+<code class="descname">Files</code><span class="sig-paren">(</span><em>fileType=&lt;FileTypes(Text|ProjectFile|FileListFile|RulesFile|SourceFile|VHDLSourceFile|VerilogSourceFile|PythonSourceFile|CocotbSourceFile|ConstraintFile|UcfConstraintFile|XdcConstraintFile|SdcConstraintFile|LdcConstraintFile|SettingsFile|QuartusSettingsFile) bits=0xFFFF&gt;</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.GetVariables">
+<code class="descname">GetVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.GetVariables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.Name">
+<code class="descname">Name</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.RootDirectory">
+<code class="descname">RootDirectory</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.RootDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.Tool">
+<code class="descname">Tool</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.Tool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.ToolChain">
+<code class="descname">ToolChain</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.ToolChain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.VHDLLibraries">
+<code class="descname">VHDLLibraries</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.VHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.VHDLVersion">
+<code class="descname">VHDLVersion</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProject.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProject.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">ISEProjectFile</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#ISEProjectFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-cb8f6f4c39d912af1e379e87b525d10049d2b6df.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ISEProjectFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.ProjectFile bits=0x0002 data=UNDEFINED&gt;</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.ISEProjectFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.ISEProjectFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile">
+<em class="property">class </em><code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">UserConstraintFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#UserConstraintFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-15bb55a05fc096376a7bea156d00197df28cd82e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of UserConstraintFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Xilinx.ISE.UserConstraintFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.UcfConstraintFile bits=0x0400 data=UNDEFINED&gt;</em><a class="headerlink" href="#ToolChain.Xilinx.ISE.UserConstraintFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p><strong>Functions</strong></p>
+<dl class="function">
+<dt id="ToolChain.Xilinx.ISE.VhCompFilter">
+<code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">VhCompFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#VhCompFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.VhCompFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ToolChain.Xilinx.ISE.FuseFilter">
+<code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">FuseFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#FuseFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.FuseFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ToolChain.Xilinx.ISE.SimulatorFilter">
+<code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">SimulatorFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#SimulatorFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.SimulatorFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ToolChain.Xilinx.ISE.XstFilter">
+<code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">XstFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#XstFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.XstFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ToolChain.Xilinx.ISE.CoreGeneratorFilter">
+<code class="descclassname">ToolChain.Xilinx.ISE.</code><code class="descname">CoreGeneratorFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Xilinx/ISE.html#CoreGeneratorFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Xilinx.ISE.CoreGeneratorFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

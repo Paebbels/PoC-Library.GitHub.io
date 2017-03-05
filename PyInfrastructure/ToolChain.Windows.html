@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.Windows &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ToolChain.Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/ToolChain.Windows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ToolChain.Windows">
+<span id="toolchain-windows"></span><h1>ToolChain.Windows<a class="headerlink" href="#module-ToolChain.Windows" title="Permalink to this headline">¶</a></h1>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Windows.WindowsException" title="ToolChain.Windows.WindowsException"><code class="xref py py-exc docutils literal"><span class="pre">WindowsException</span></code></a>:
+Base class for all tool specific exceptions</li>
+</ul>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#ToolChain.Windows.Cmd" title="ToolChain.Windows.Cmd"><code class="xref py py-class docutils literal"><span class="pre">Cmd</span></code></a>:
+Represent an executable.</li>
+</ul>
+<dl class="exception">
+<dt id="ToolChain.Windows.WindowsException">
+<em class="property">exception </em><code class="descclassname">ToolChain.Windows.</code><code class="descname">WindowsException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Windows.html#WindowsException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Windows.WindowsException" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-57004d9c056b6211468d51cfb483c9b9b315fa8f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of WindowsException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="ToolChain.Windows.WindowsException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.WindowsException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.WindowsException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.WindowsException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Windows.WindowsException.args">
+<code class="descname">args</code><a class="headerlink" href="#ToolChain.Windows.WindowsException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Windows.Cmd">
+<em class="property">class </em><code class="descclassname">ToolChain.Windows.</code><code class="descname">Cmd</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Windows.html#Cmd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Windows.Cmd" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4aaf9cb9e8814b7836c6c1ed2647184ebfb57983.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Cmd</p></object>
+<p class="rubric">Members</p>
+<dl class="class">
+<dt id="ToolChain.Windows.Cmd.Executable">
+<em class="property">class </em><code class="descname">Executable</code><a class="reference internal" href="../_modules/ToolChain/Windows.html#Cmd.Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Windows.Cmd.Executable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ToolChain.Windows.Cmd.SwitchCommand">
+<em class="property">class </em><code class="descclassname">Cmd.</code><code class="descname">SwitchCommand</code><a class="reference internal" href="../_modules/ToolChain/Windows.html#Cmd.SwitchCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Windows.Cmd.SwitchCommand" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ToolChain.Windows.Cmd.SwitchCommand._name">
+<code class="descname">_name</code><em class="property"> = 'C'</em><a class="headerlink" href="#ToolChain.Windows.Cmd.SwitchCommand._name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Windows.Cmd.Parameters">
+<code class="descclassname">Cmd.</code><code class="descname">Parameters</code><em class="property"> = [&lt;class 'ToolChain.Windows.Cmd.Executable'&gt;, &lt;class 'ToolChain.Windows.Cmd.SwitchCommand'&gt;]</em><a class="headerlink" href="#ToolChain.Windows.Cmd.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.GetEnvironment">
+<code class="descclassname">Cmd.</code><code class="descname">GetEnvironment</code><span class="sig-paren">(</span><em>settingsFile=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/Windows.html#Cmd.GetEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.Windows.Cmd.GetEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.GetReader">
+<code class="descclassname">Cmd.</code><code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.GetReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.Log">
+<code class="descclassname">Cmd.</code><code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogDebug">
+<code class="descclassname">Cmd.</code><code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogDryRun">
+<code class="descclassname">Cmd.</code><code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogError">
+<code class="descclassname">Cmd.</code><code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogFatal">
+<code class="descclassname">Cmd.</code><code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogInfo">
+<code class="descclassname">Cmd.</code><code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogNormal">
+<code class="descclassname">Cmd.</code><code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogQuiet">
+<code class="descclassname">Cmd.</code><code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogVerbose">
+<code class="descclassname">Cmd.</code><code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.LogWarning">
+<code class="descclassname">Cmd.</code><code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Windows.Cmd.Logger">
+<code class="descclassname">Cmd.</code><code class="descname">Logger</code><a class="headerlink" href="#ToolChain.Windows.Cmd.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Windows.Cmd.Path">
+<code class="descclassname">Cmd.</code><code class="descname">Path</code><a class="headerlink" href="#ToolChain.Windows.Cmd.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.ReadUntilBoundary">
+<code class="descclassname">Cmd.</code><code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.Send">
+<code class="descclassname">Cmd.</code><code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.Send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.SendBoundary">
+<code class="descclassname">Cmd.</code><code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.StartProcess">
+<code class="descclassname">Cmd.</code><code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.StartProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd.Terminate">
+<code class="descclassname">Cmd.</code><code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd.Terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ToolChain.Windows.Cmd._POC_BOUNDARY">
+<code class="descclassname">Cmd.</code><code class="descname">_POC_BOUNDARY</code><em class="property"> = '====== POC BOUNDARY ======'</em><a class="headerlink" href="#ToolChain.Windows.Cmd._POC_BOUNDARY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ToolChain.Windows.Cmd._TryLog">
+<code class="descclassname">Cmd.</code><code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToolChain.Windows.Cmd._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

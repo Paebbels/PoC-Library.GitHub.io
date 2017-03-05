@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Main Program (PoC.py) &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Command Reference" href="../CommandReference.html"/>
+        <link rel="next" title="Pre-compile Scripts" href="Compile.html"/>
+        <link rel="prev" title="PoC Wrapper Scripts" href="Wrapper.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../CommandReference.html">Command Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Wrapper.html">PoC Wrapper Scripts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Main Program</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#poc-py">PoC.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-add-solution">PoC.py add-solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-asim">PoC.py asim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-cocotb">PoC.py cocotb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-configure">PoC.py configure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-coregen">PoC.py coregen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-ghdl">PoC.py ghdl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-help">PoC.py help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-info">PoC.py info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-ise">PoC.py ise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-isim">PoC.py isim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-list-netlist">PoC.py list-netlist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-list-project">PoC.py list-project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-list-solution">PoC.py list-solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-list-testbench">PoC.py list-testbench</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-lse">PoC.py lse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-quartus">PoC.py quartus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-query">PoC.py query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-remove-solution">PoC.py remove-solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-rpro">PoC.py rpro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-vivado">PoC.py vivado</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-vsim">PoC.py vsim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-xci">PoC.py xci</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-xsim">PoC.py xsim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#poc-py-xst">PoC.py xst</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Compile.html">Pre-compile Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../CommandReference.html">Command Reference</a> &raquo;</li>
+        
+      <li>Main Program (<code class="file docutils literal"><span class="pre">PoC.py</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/References/CmdRefs/PoC.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="main-program-poc-py">
+<span id="cmdref-poc"></span><h1>Main Program (<code class="file docutils literal"><span class="pre">PoC.py</span></code>)<a class="headerlink" href="#main-program-poc-py" title="Permalink to this headline">¶</a></h1>
+<p>The main program <code class="file docutils literal"><span class="pre">PoC.py</span></code> expects the environment variable
+<span class="target" id="index-0"></span><a class="reference internal" href="Wrapper.html#envvar-PoCRootDirectory"><code class="xref std std-envvar docutils literal"><span class="pre">PoCRootDirectory</span></code></a> to be set.</p>
+<div class="section" id="poc-py">
+<span id="cmdref-poc-py"></span><h2>PoC.py<a class="headerlink" href="#poc-py" title="Permalink to this headline">¶</a></h2>
+<p>This is the PoC-Library Service Tool.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py [--prj ProjectID] [--sln SolutionID] [-q] [-v] [-d] [--dryrun]</span>
+<span class="go">                  [-D]</span>
+<span class="go">                  {help,info,configure,add-solution,list-solution,remove-solution,list-project,query,list-testbench,asim,ghdl,isim,rpro,vsim,xsim,cocotb,list-netlist,ise,coregen,xst,xci,vivado,quartus,lse}</span>
+<span class="go">                  ...</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-prj">
+<code class="descname">--prj</code><code class="descclassname"> &lt;projectid&gt;</code><a class="headerlink" href="#cmdoption-poc-py-prj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-sln">
+<code class="descname">--sln</code><code class="descclassname"> &lt;solutionid&gt;</code><a class="headerlink" href="#cmdoption-poc-py-sln" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solution name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-q">
+<code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduce messages to a minimum.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-v">
+<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print out detailed messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-d">
+<code class="descname">-d</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--debug</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable debug mode.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-dryrun">
+<code class="descname">--dryrun</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-dryrun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t execute external programs.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="id1">
+<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable script wrapper debug mode. See also <a class="reference internal" href="Wrapper.html#cmdoption-poc-ps1-d"><code class="xref std std-option docutils literal"><span class="pre">poc.ps1</span> <span class="pre">-D</span></code></a>.</p>
+</dd></dl>
+
+<p>Pile-of-Cores</p>
+<hr class="docutils" />
+<div class="section" id="poc-py-add-solution">
+<span id="cmdref-poc-py-add-solution"></span><h3>PoC.py add-solution<a class="headerlink" href="#poc-py-add-solution" title="Permalink to this headline">¶</a></h3>
+<p>Add a solution to PoC.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py add-solution [-h]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-add-solution-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-add-solution-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-asim">
+<span id="cmdref-poc-py-asim"></span><h3>PoC.py asim<a class="headerlink" href="#poc-py-asim" title="Permalink to this headline">¶</a></h3>
+<p>Simulate a PoC Entity with Aldec Active-HDL.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py asim [-h] [-g] [-a] [-e] [-R] [-s] [-w] [-C] [-W] [-S] [-r]</span>
+<span class="go">                       [--std VHDLVersion] [--device DeviceName]</span>
+<span class="go">                       [--board BoardName]</span>
+<span class="go">                       PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-asim-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-asim-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-std">
+<code class="descname">--std</code><code class="descclassname"> &lt;vhdlversion&gt;</code><a class="headerlink" href="#cmdoption-poc-py-asim-std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate with VHDL-??</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-asim-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-asim-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-asim-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-cocotb">
+<span id="cmdref-poc-py-cocotb"></span><h3>PoC.py cocotb<a class="headerlink" href="#poc-py-cocotb" title="Permalink to this headline">¶</a></h3>
+<p>Simulate a PoC Entity with Cocotb and QuestaSim.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py cocotb [-h] [-g] [-a] [-e] [-R] [-s] [-w] [-C] [-W] [-S] [-r]</span>
+<span class="go">                         [--device DeviceName] [--board BoardName]</span>
+<span class="go">                         PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-cocotb-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-cocotb-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-cocotb-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-cocotb-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-cocotb-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-configure">
+<span id="cmdref-poc-py-configure"></span><h3>PoC.py configure<a class="headerlink" href="#poc-py-configure" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py configure [-h] [--set-default-tools] [--relocated] [ToolChain]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-configure-arg-toolchain">
+<code class="descname">toolchain</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-configure-arg-toolchain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify a tool chain to be configured.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-configure-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-configure-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-configure-set-default-tools">
+<code class="descname">--set-default-tools</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-configure-set-default-tools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set default tool for a tool chain.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-configure-relocated">
+<code class="descname">--relocated</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-configure-relocated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Consistency check after PoC was relocated.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-coregen">
+<span id="cmdref-poc-py-coregen"></span><h3>PoC.py coregen<a class="headerlink" href="#poc-py-coregen" title="Permalink to this headline">¶</a></h3>
+<p>Generate an IP core with Xilinx ISE Core Generator.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py coregen [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                          [--board BoardName]</span>
+<span class="go">                          PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-coregen-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-coregen-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-coregen-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-coregen-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-coregen-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-coregen-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-coregen-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-coregen-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-ghdl">
+<span id="cmdref-poc-py-ghdl"></span><h3>PoC.py ghdl<a class="headerlink" href="#poc-py-ghdl" title="Permalink to this headline">¶</a></h3>
+<p>Simulate a PoC Entity with GHDL.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py ghdl [-h] [--reproducer Name] [--with-coverage] [-g] [-a] [-e]</span>
+<span class="go">                       [-R] [-s] [-w] [-C] [-W] [-S] [-r] [--std VHDLVersion]</span>
+<span class="go">                       [--device DeviceName] [--board BoardName]</span>
+<span class="go">                       PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-ghdl-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-reproducer">
+<code class="descname">--reproducer</code><code class="descclassname"> &lt;name&gt;</code><a class="headerlink" href="#cmdoption-poc-py-ghdl-reproducer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a bug reproducer</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-with-coverage">
+<code class="descname">--with-coverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-with-coverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile with coverage information.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ghdl-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-std">
+<code class="descname">--std</code><code class="descclassname"> &lt;vhdlversion&gt;</code><a class="headerlink" href="#cmdoption-poc-py-ghdl-std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate with VHDL-??</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-ghdl-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ghdl-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-ghdl-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-help">
+<span id="cmdref-poc-py-help"></span><h3>PoC.py help<a class="headerlink" href="#poc-py-help" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py help [-h] [Command]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-help-arg-command">
+<code class="descname">command</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-help-arg-command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print help page(s) for a command.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-help-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-help-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-info">
+<span id="cmdref-poc-py-info"></span><h3>PoC.py info<a class="headerlink" href="#poc-py-info" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py info [-h]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-info-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-info-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-ise">
+<span id="cmdref-poc-py-ise"></span><h3>PoC.py ise<a class="headerlink" href="#poc-py-ise" title="Permalink to this headline">¶</a></h3>
+<p>Generate any IP core for the Xilinx ISE tool chain.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py ise [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                      [--board BoardName]</span>
+<span class="go">                      PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-ise-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ise-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ise-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ise-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-ise-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-ise-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-ise-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-ise-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-isim">
+<span id="cmdref-poc-py-isim"></span><h3>PoC.py isim<a class="headerlink" href="#poc-py-isim" title="Permalink to this headline">¶</a></h3>
+<p>Simulate a PoC Entity with Xilinx ISE Simulator (iSim).</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py isim [-h] [-g] [-a] [-e] [-R] [-s] [-w] [-C] [-W] [-S] [-r]</span>
+<span class="go">                       [--device DeviceName] [--board BoardName]</span>
+<span class="go">                       PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-isim-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-isim-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-isim-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-isim-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-isim-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-list-netlist">
+<span id="cmdref-poc-py-list-netlist"></span><h3>PoC.py list-netlist<a class="headerlink" href="#poc-py-list-netlist" title="Permalink to this headline">¶</a></h3>
+<p>List all netlists.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py list-netlist [-h] [--kind Kind] PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-list-netlist-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-list-netlist-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-list-netlist-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-list-netlist-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-list-netlist-kind">
+<code class="descname">--kind</code><code class="descclassname"> &lt;kind&gt;</code><a class="headerlink" href="#cmdoption-poc-py-list-netlist-kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Netlist kind: Lattice | Quartus | XST | CoreGen</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-list-project">
+<span id="cmdref-poc-py-list-project"></span><h3>PoC.py list-project<a class="headerlink" href="#poc-py-list-project" title="Permalink to this headline">¶</a></h3>
+<p>List all projects registered in PoC.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py list-project [-h]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-list-project-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-list-project-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-list-solution">
+<span id="cmdref-poc-py-list-solution"></span><h3>PoC.py list-solution<a class="headerlink" href="#poc-py-list-solution" title="Permalink to this headline">¶</a></h3>
+<p>List all solutions registered in PoC.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py list-solution [-h]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-list-solution-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-list-solution-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-list-testbench">
+<span id="cmdref-poc-py-list-testbench"></span><h3>PoC.py list-testbench<a class="headerlink" href="#poc-py-list-testbench" title="Permalink to this headline">¶</a></h3>
+<p>List all testbenches.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py list-testbench [-h] [--kind Kind] PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-list-testbench-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-list-testbench-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-list-testbench-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-list-testbench-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-list-testbench-kind">
+<code class="descname">--kind</code><code class="descclassname"> &lt;kind&gt;</code><a class="headerlink" href="#cmdoption-poc-py-list-testbench-kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testbench kind: VHDL | COCOTB</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-lse">
+<span id="cmdref-poc-py-lse"></span><h3>PoC.py lse<a class="headerlink" href="#poc-py-lse" title="Permalink to this headline">¶</a></h3>
+<p>Compile a PoC IP core with Lattice Diamond LSE to a netlist.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py lse [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                      [--board BoardName]</span>
+<span class="go">                      PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-lse-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-lse-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-lse-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-lse-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-lse-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-lse-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-lse-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-lse-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-quartus">
+<span id="cmdref-poc-py-quartus"></span><h3>PoC.py quartus<a class="headerlink" href="#poc-py-quartus" title="Permalink to this headline">¶</a></h3>
+<p>Compile a PoC IP core with Altera Quartus II Map to a netlist.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py quartus [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                          [--board BoardName]</span>
+<span class="go">                          PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-quartus-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-quartus-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-quartus-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-quartus-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-quartus-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-quartus-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-quartus-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-quartus-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-query">
+<span id="cmdref-poc-py-query"></span><h3>PoC.py query<a class="headerlink" href="#poc-py-query" title="Permalink to this headline">¶</a></h3>
+<p>Query PoC&#8217;s database.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py query [-h] Query</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-query-arg-query">
+<code class="descname">query</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-query-arg-query" title="Permalink to this definition">¶</a></dt>
+<dd><p>todo help</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-query-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-query-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-remove-solution">
+<span id="cmdref-poc-py-remove-solution"></span><h3>PoC.py remove-solution<a class="headerlink" href="#poc-py-remove-solution" title="Permalink to this headline">¶</a></h3>
+<p>Remove a solution from PoC.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py remove-solution [-h] SolutionID</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-remove-solution-arg-solutionid">
+<code class="descname">solutionid</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-remove-solution-arg-solutionid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solution name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-remove-solution-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-remove-solution-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-rpro">
+<span id="cmdref-poc-py-rpro"></span><h3>PoC.py rpro<a class="headerlink" href="#poc-py-rpro" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py rpro [-h] [-g] [-a] [-e] [-R] [-s] [-w] [-C] [-W] [-S] [-r]</span>
+<span class="go">                       [--std VHDLVersion] [--device DeviceName]</span>
+<span class="go">                       [--board BoardName]</span>
+<span class="go">                       PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-rpro-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-rpro-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-std">
+<code class="descname">--std</code><code class="descclassname"> &lt;vhdlversion&gt;</code><a class="headerlink" href="#cmdoption-poc-py-rpro-std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate with VHDL-??</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-rpro-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-rpro-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-rpro-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-vivado">
+<span id="cmdref-poc-py-vivado"></span><h3>PoC.py vivado<a class="headerlink" href="#poc-py-vivado" title="Permalink to this headline">¶</a></h3>
+<p>Compile a PoC IP core with Xilinx Vivado Synth to a design checkpoint.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py vivado [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                         [--board BoardName]</span>
+<span class="go">                         PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-vivado-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vivado-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vivado-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vivado-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vivado-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-vivado-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vivado-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-vivado-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-vsim">
+<span id="cmdref-poc-py-vsim"></span><h3>PoC.py vsim<a class="headerlink" href="#poc-py-vsim" title="Permalink to this headline">¶</a></h3>
+<p>Simulate a PoC Entity with Mentor QuestaSim or ModelSim (vsim).</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py vsim [-h] [--with-coverage] [-g] [-a] [-e] [-R] [-s] [-w] [-C]</span>
+<span class="go">                       [-W] [-S] [-r] [--std VHDLVersion] [--device DeviceName]</span>
+<span class="go">                       [--board BoardName]</span>
+<span class="go">                       PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-vsim-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-with-coverage">
+<code class="descname">--with-coverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-with-coverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile with coverage information.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-vsim-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-std">
+<code class="descname">--std</code><code class="descclassname"> &lt;vhdlversion&gt;</code><a class="headerlink" href="#cmdoption-poc-py-vsim-std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate with VHDL-??</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-vsim-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-vsim-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-vsim-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-xci">
+<span id="cmdref-poc-py-xci"></span><h3>PoC.py xci<a class="headerlink" href="#poc-py-xci" title="Permalink to this headline">¶</a></h3>
+<p>Generate an IP core from Xilinx Vivado IP Catalog.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py xci [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                      [--board BoardName]</span>
+<span class="go">                      PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-xci-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xci-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xci-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xci-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xci-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xci-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xci-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xci-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-xsim">
+<span id="cmdref-poc-py-xsim"></span><h3>PoC.py xsim<a class="headerlink" href="#poc-py-xsim" title="Permalink to this headline">¶</a></h3>
+<p>Simulate a PoC Entity with Xilinx Vivado Simulator (xSim).</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py xsim [-h] [-g] [-a] [-e] [-R] [-s] [-w] [-C] [-W] [-S] [-r]</span>
+<span class="go">                       [--std VHDLVersion] [--device DeviceName]</span>
+<span class="go">                       [--board BoardName]</span>
+<span class="go">                       PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-xsim-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-g">
+<code class="descname">-g</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--gui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all steps (prepare, analysis, elaboration, optimization, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--analyze</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and analysis step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-e">
+<code class="descname">-e</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--elaborate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and elaboration step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-r">
+<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recompile</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all compile steps (prepare, analysis, elaboration, optimization).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--simulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and simulation step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showwave</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-c">
+<code class="descname">-C</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showcoverage</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare step and display the coverage data in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-review">
+<code class="descname">-W</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--review</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-review" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-resimulate">
+<code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--resimulate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-resimulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all simulation steps (prepare, simulation) and finally display the waveform in a GUI window.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-showreport">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xsim-showreport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-std">
+<code class="descname">--std</code><code class="descclassname"> &lt;vhdlversion&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xsim-std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate with VHDL-??</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xsim-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xsim-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xsim-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</div>
+<div class="section" id="poc-py-xst">
+<span id="cmdref-poc-py-xst"></span><h3>PoC.py xst<a class="headerlink" href="#poc-py-xst" title="Permalink to this headline">¶</a></h3>
+<p>Compile a PoC IP core with Xilinx ISE XST to a netlist.
+<span class="xref std std-ref">IP:PoC.Mem</span>
+foooo baaarr.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">usage: PoC.py xst [-h] [-s] [-r] [--no-cleanup] [--device DeviceName]</span>
+<span class="go">                      [--board BoardName]</span>
+<span class="go">                      PoC Entity [PoC Entity ...]</span>
+</pre></div>
+</div>
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-arg-poc">
+<code class="descname">poc</code><code class="descclassname"> entity</code><a class="headerlink" href="#cmdoption-poc-py-xst-arg-poc" title="Permalink to this definition">¶</a></dt>
+<dd><p>A space separated list of PoC entities.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-h">
+<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xst-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-s">
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--synthesize</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xst-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run only the prepare and synthesize step.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--showreport</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xst-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a simulation report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-no-cleanup">
+<code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-poc-py-xst-no-cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don&#8217;t delete intermediate files. Skip post-delete rules.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-device">
+<code class="descname">--device</code><code class="descclassname"> &lt;devicename&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xst-device" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s device name.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-poc-py-xst-board">
+<code class="descname">--board</code><code class="descclassname"> &lt;boardname&gt;</code><a class="headerlink" href="#cmdoption-poc-py-xst-board" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target platform&#8217;s board name.</p>
+</dd></dl>
+
+</div>
+</div>
+<hr class="docutils" />
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Compile.html" class="btn btn-neutral float-right" title="Pre-compile Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Wrapper.html" class="btn btn-neutral" title="PoC Wrapper Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

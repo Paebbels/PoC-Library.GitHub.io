@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulator.ModelSimSimulator &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Simulator.ModelSimSimulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Simulator.ModelSimSimulator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Simulator.ModelSimSimulator">
+<span id="simulator-modelsimsimulator"></span><h1>Simulator.ModelSimSimulator<a class="headerlink" href="#module-Simulator.ModelSimSimulator" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="Simulator.html#module-Simulator" title="Simulator"><code class="xref py py-class docutils literal"><span class="pre">Simulator</span></code></a>:
+Base class for all Simulator classes.</li>
+</ul>
+<dl class="class">
+<dt id="Simulator.ModelSimSimulator.Simulator">
+<em class="property">class </em><code class="descclassname">Simulator.ModelSimSimulator.</code><code class="descname">Simulator</code><span class="sig-paren">(</span><em>host</em>, <em>dryRun</em>, <em>simulationSteps</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/ModelSimSimulator.html#Simulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f8a0d85f3a1d6d2b8df90bb1fbd2cd9b1f149e0b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Simulator</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.TOOL_CHAIN">
+<code class="descname">TOOL_CHAIN</code><em class="property"> = 70</em><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.TOOL_CHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.TOOL">
+<code class="descname">TOOL</code><em class="property"> = ('VSIM', 'Mentor ModelSim', 'Mentor Graphics ModelSim (vSim)')</em><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.TOOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._PrepareSimulator">
+<code class="descname">_PrepareSimulator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/ModelSimSimulator.html#Simulator._PrepareSimulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._PrepareSimulator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.Run">
+<code class="descname">Run</code><span class="sig-paren">(</span><em>testbench</em>, <em>board</em>, <em>vhdlVersion</em>, <em>vhdlGenerics=None</em>, <em>withCoverage=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/ModelSimSimulator.html#Simulator.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.Run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._RunAnalysis">
+<code class="descname">_RunAnalysis</code><span class="sig-paren">(</span><em>_</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/ModelSimSimulator.html#Simulator._RunAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._RunAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._RunSimulation">
+<code class="descname">_RunSimulation</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/ModelSimSimulator.html#Simulator._RunSimulation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._RunSimulation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._RunSimulationWithGUI">
+<code class="descname">_RunSimulationWithGUI</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/ModelSimSimulator.html#Simulator._RunSimulationWithGUI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._RunSimulationWithGUI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.Directories">
+<code class="descname">Directories</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.Directories" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.DryRun">
+<code class="descname">DryRun</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.DryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.ENVIRONMENT">
+<code class="descname">ENVIRONMENT</code><em class="property"> = 1</em><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.ENVIRONMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.Host">
+<code class="descname">Host</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.Host" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.PoCProject">
+<code class="descname">PoCProject</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.PoCProject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.PrintOverallSimulationReport">
+<code class="descname">PrintOverallSimulationReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.PrintOverallSimulationReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.PrintOverallSimulationReport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.PrintSimulationReportLine">
+<code class="descname">PrintSimulationReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.PrintSimulationReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.PrintSimulationReportLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.RunAll">
+<code class="descname">RunAll</code><span class="sig-paren">(</span><em>fqnList</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.RunAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.RunAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a list of testbenches. Expand wildcards to all selected testbenches.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.TestSuite">
+<code class="descname">TestSuite</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.TestSuite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator.TryRun">
+<code class="descname">TryRun</code><span class="sig-paren">(</span><em>testbench</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.TryRun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to run a testbench. Skip skipable exceptions by printing the error and its cause.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.VHDLVersion">
+<code class="descname">VHDLVersion</code><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Simulator.ModelSimSimulator.Simulator.VHDL_VERSION">
+<code class="descname">VHDL_VERSION</code><em class="property"> = 2008</em><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator.VHDL_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._AddFileListFile">
+<code class="descname">_AddFileListFile</code><span class="sig-paren">(</span><em>fileListFilePath</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._AddFileListFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._CreatePoCProject">
+<code class="descname">_CreatePoCProject</code><span class="sig-paren">(</span><em>projectName</em>, <em>board</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._CreatePoCProject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._GetHDLParameters">
+<code class="descname">_GetHDLParameters</code><span class="sig-paren">(</span><em>configSectionName</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._GetHDLParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse option &#8216;HDLParameters&#8217; for Verilog Parameters / VHDL Generics.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._GetTimeDeltaSinceLastEvent">
+<code class="descname">_GetTimeDeltaSinceLastEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._GetTimeDeltaSinceLastEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._Prepare">
+<code class="descname">_Prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._Prepare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._PrepareEnvironment">
+<code class="descname">_PrepareEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._PrepareEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._PrepareEnvironment_ChangeDirectory">
+<code class="descname">_PrepareEnvironment_ChangeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._PrepareEnvironment_ChangeDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change working directory to temporary path &#8216;temp/&lt;tool&gt;&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._PrepareEnvironment_CreatingDirectory">
+<code class="descname">_PrepareEnvironment_CreatingDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._PrepareEnvironment_CreatingDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._PrepareEnvironment_PurgeDirectory">
+<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._PrepareEnvironment_PurgeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._PrepareSimulationEnvironment">
+<code class="descname">_PrepareSimulationEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._PrepareSimulationEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._PrepareSimulationEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._RunCoverage">
+<code class="descname">_RunCoverage</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._RunCoverage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._RunElaboration">
+<code class="descname">_RunElaboration</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunElaboration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._RunElaboration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._RunView">
+<code class="descname">_RunView</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._RunView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Simulator.ModelSimSimulator.Simulator._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Simulator.ModelSimSimulator.Simulator._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

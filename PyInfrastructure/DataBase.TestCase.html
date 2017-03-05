@@ -1,0 +1,942 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.TestCase &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DataBase.TestCase</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/DataBase.TestCase.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-DataBase.TestCase">
+<span id="database-testcase"></span><h1>DataBase.TestCase<a class="headerlink" href="#module-DataBase.TestCase" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#DataBase.TestCase.SimulationStatus" title="DataBase.TestCase.SimulationStatus"><code class="xref py py-class docutils literal"><span class="pre">SimulationStatus</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.CompileStatus" title="DataBase.TestCase.CompileStatus"><code class="xref py py-class docutils literal"><span class="pre">CompileStatus</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.ElementBase" title="DataBase.TestCase.ElementBase"><code class="xref py py-class docutils literal"><span class="pre">ElementBase</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.GroupBase" title="DataBase.TestCase.GroupBase"><code class="xref py py-class docutils literal"><span class="pre">GroupBase</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.TestGroup" title="DataBase.TestCase.TestGroup"><code class="xref py py-class docutils literal"><span class="pre">TestGroup</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.SynthesisGroup" title="DataBase.TestCase.SynthesisGroup"><code class="xref py py-class docutils literal"><span class="pre">SynthesisGroup</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.SuiteMixIn" title="DataBase.TestCase.SuiteMixIn"><code class="xref py py-class docutils literal"><span class="pre">SuiteMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.TestSuite" title="DataBase.TestCase.TestSuite"><code class="xref py py-class docutils literal"><span class="pre">TestSuite</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.SynthesisSuite" title="DataBase.TestCase.SynthesisSuite"><code class="xref py py-class docutils literal"><span class="pre">SynthesisSuite</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.TestBase" title="DataBase.TestCase.TestBase"><code class="xref py py-class docutils literal"><span class="pre">TestBase</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.TestCase" title="DataBase.TestCase.TestCase"><code class="xref py py-class docutils literal"><span class="pre">TestCase</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.TestCase.Synthesis" title="DataBase.TestCase.Synthesis"><code class="xref py py-class docutils literal"><span class="pre">Synthesis</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="DataBase.TestCase.SimulationStatus">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">SimulationStatus</code><a class="reference internal" href="../_modules/DataBase/TestCase.html#SimulationStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SimulationStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1391dff01263c18a249944782088dab8df05031b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SimulationStatus</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.DryRun">
+<code class="descname">DryRun</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.DryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.SystemError">
+<code class="descname">SystemError</code><em class="property"> = 5</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.SystemError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.InternalError">
+<code class="descname">InternalError</code><em class="property"> = 6</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.InternalError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.AnalyzeError">
+<code class="descname">AnalyzeError</code><em class="property"> = 7</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.AnalyzeError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.ElaborationError">
+<code class="descname">ElaborationError</code><em class="property"> = 8</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.ElaborationError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.SimulationError">
+<code class="descname">SimulationError</code><em class="property"> = 9</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.SimulationError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.SimulationFailed">
+<code class="descname">SimulationFailed</code><em class="property"> = 10</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.SimulationFailed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.SimulationNoAsserts">
+<code class="descname">SimulationNoAsserts</code><em class="property"> = 15</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.SimulationNoAsserts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.SimulationSuccess">
+<code class="descname">SimulationSuccess</code><em class="property"> = 20</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.SimulationSuccess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SimulationStatus.SimulationGUIRun">
+<code class="descname">SimulationGUIRun</code><em class="property"> = 30</em><a class="headerlink" href="#DataBase.TestCase.SimulationStatus.SimulationGUIRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.CompileStatus">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">CompileStatus</code><a class="reference internal" href="../_modules/DataBase/TestCase.html#CompileStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.CompileStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9c5aa6921f751cca73397f1f971ec585d1f43c0b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CompileStatus</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.DryRun">
+<code class="descname">DryRun</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.DryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.SystemError">
+<code class="descname">SystemError</code><em class="property"> = 5</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.SystemError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.InternalError">
+<code class="descname">InternalError</code><em class="property"> = 6</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.InternalError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.CompileError">
+<code class="descname">CompileError</code><em class="property"> = 7</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.CompileError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.CompileFailed">
+<code class="descname">CompileFailed</code><em class="property"> = 10</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.CompileFailed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.CompileStatus.CompileSuccess">
+<code class="descname">CompileSuccess</code><em class="property"> = 20</em><a class="headerlink" href="#DataBase.TestCase.CompileStatus.CompileSuccess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.ElementBase">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">ElementBase</code><span class="sig-paren">(</span><em>name</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#ElementBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.ElementBase" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-3d064adfaa04fd5b0f37c4ae76fb5ea1c4a72df6.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ElementBase</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.ElementBase.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.ElementBase.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.ElementBase.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.ElementBase.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.GroupBase">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">GroupBase</code><span class="sig-paren">(</span><em>name</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#GroupBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.GroupBase" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-3d3e09f5eb0afc39256cfea9ca7e415b558299da.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GroupBase</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.GroupBase.Groups">
+<code class="descname">Groups</code><a class="headerlink" href="#DataBase.TestCase.GroupBase.Groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.GroupBase.Count">
+<code class="descname">Count</code><a class="headerlink" href="#DataBase.TestCase.GroupBase.Count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.GroupBase.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.GroupBase.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.GroupBase.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.GroupBase.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.TestGroup">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">TestGroup</code><span class="sig-paren">(</span><em>name</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-84ad0579f11efe36eff504323987dfd3ea427c2a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of TestGroup</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.TestCases">
+<code class="descname">TestCases</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.TestCases" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.PassedCount">
+<code class="descname">PassedCount</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.PassedCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.NoAssertsCount">
+<code class="descname">NoAssertsCount</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.NoAssertsCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.DryRunCount">
+<code class="descname">DryRunCount</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.DryRunCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.FailedCount">
+<code class="descname">FailedCount</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.FailedCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.ErrorCount">
+<code class="descname">ErrorCount</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.ErrorCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.Count">
+<code class="descname">Count</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.Count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.Groups">
+<code class="descname">Groups</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.Groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestGroup.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.TestGroup.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.SynthesisGroup">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">SynthesisGroup</code><span class="sig-paren">(</span><em>name</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#SynthesisGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-bd349d264b3ec03caa599e6c662d0a01360b63d2.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SynthesisGroup</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.Synthesises">
+<code class="descname">Synthesises</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.Synthesises" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.SuccessCount">
+<code class="descname">SuccessCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.SuccessCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.DryRunCount">
+<code class="descname">DryRunCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.DryRunCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.FailedCount">
+<code class="descname">FailedCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.FailedCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.ErrorCount">
+<code class="descname">ErrorCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.ErrorCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.Count">
+<code class="descname">Count</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.Count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.Groups">
+<code class="descname">Groups</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.Groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisGroup.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.SynthesisGroup.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.SuiteMixIn">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">SuiteMixIn</code><a class="reference internal" href="../_modules/DataBase/TestCase.html#SuiteMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-258578c6ef2e3d41d2cb7246de0aaea0f50a22a7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SuiteMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.TestCase.SuiteMixIn.StartTimer">
+<code class="descname">StartTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#SuiteMixIn.StartTimer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn.StartTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.SuiteMixIn.StopTimer">
+<code class="descname">StopTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#SuiteMixIn.StopTimer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn.StopTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SuiteMixIn.StartTime">
+<code class="descname">StartTime</code><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn.StartTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SuiteMixIn.EndTime">
+<code class="descname">EndTime</code><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn.EndTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SuiteMixIn.InitializationTime">
+<code class="descname">InitializationTime</code><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn.InitializationTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SuiteMixIn.OverallRunTime">
+<code class="descname">OverallRunTime</code><a class="headerlink" href="#DataBase.TestCase.SuiteMixIn.OverallRunTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.TestSuite">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">TestSuite</code><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestSuite"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestSuite" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d5f0d4e3bcc7c865e96929f5bc1b0a957bcf89d2.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of TestSuite</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.IsAllPassed">
+<code class="descname">IsAllPassed</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.IsAllPassed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestSuite.AddTestCase">
+<code class="descname">AddTestCase</code><span class="sig-paren">(</span><em>testCase</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestSuite.AddTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestSuite.AddTestCase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.Count">
+<code class="descname">Count</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.Count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.DryRunCount">
+<code class="descname">DryRunCount</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.DryRunCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.EndTime">
+<code class="descname">EndTime</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.EndTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.ErrorCount">
+<code class="descname">ErrorCount</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.ErrorCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.FailedCount">
+<code class="descname">FailedCount</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.FailedCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.Groups">
+<code class="descname">Groups</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.Groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.InitializationTime">
+<code class="descname">InitializationTime</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.InitializationTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.NoAssertsCount">
+<code class="descname">NoAssertsCount</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.NoAssertsCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.OverallRunTime">
+<code class="descname">OverallRunTime</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.OverallRunTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.PassedCount">
+<code class="descname">PassedCount</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.PassedCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.StartTime">
+<code class="descname">StartTime</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.StartTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestSuite.StartTimer">
+<code class="descname">StartTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.TestSuite.StartTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestSuite.StopTimer">
+<code class="descname">StopTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.TestSuite.StopTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestSuite.TestCases">
+<code class="descname">TestCases</code><a class="headerlink" href="#DataBase.TestCase.TestSuite.TestCases" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.SynthesisSuite">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">SynthesisSuite</code><a class="reference internal" href="../_modules/DataBase/TestCase.html#SynthesisSuite"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c3be56cd5d44ea3bd99999469acc76697abce0e0.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SynthesisSuite</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.IsAllSuccess">
+<code class="descname">IsAllSuccess</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.IsAllSuccess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.SynthesisSuite.AddSynthesis">
+<code class="descname">AddSynthesis</code><span class="sig-paren">(</span><em>synthesis</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#SynthesisSuite.AddSynthesis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.AddSynthesis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.Count">
+<code class="descname">Count</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.Count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.DryRunCount">
+<code class="descname">DryRunCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.DryRunCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.EndTime">
+<code class="descname">EndTime</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.EndTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.ErrorCount">
+<code class="descname">ErrorCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.ErrorCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.FailedCount">
+<code class="descname">FailedCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.FailedCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.Groups">
+<code class="descname">Groups</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.Groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.InitializationTime">
+<code class="descname">InitializationTime</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.InitializationTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.OverallRunTime">
+<code class="descname">OverallRunTime</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.OverallRunTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.StartTime">
+<code class="descname">StartTime</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.StartTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.SynthesisSuite.StartTimer">
+<code class="descname">StartTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.StartTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.SynthesisSuite.StopTimer">
+<code class="descname">StopTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.StopTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.SuccessCount">
+<code class="descname">SuccessCount</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.SuccessCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.SynthesisSuite.Synthesises">
+<code class="descname">Synthesises</code><a class="headerlink" href="#DataBase.TestCase.SynthesisSuite.Synthesises" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.TestBase">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">TestBase</code><span class="sig-paren">(</span><em>test</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestBase" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-711b8a169e0cbe7a4e68fed7d47162f765de7ffe.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of TestBase</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestBase.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.TestBase.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestBase.TestGroup">
+<code class="descname">TestGroup</code><a class="headerlink" href="#DataBase.TestCase.TestBase.TestGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestBase.Status">
+<code class="descname">Status</code><a class="headerlink" href="#DataBase.TestCase.TestBase.Status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestBase.StartTimer">
+<code class="descname">StartTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestBase.StartTimer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestBase.StartTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestBase.StopTimer">
+<code class="descname">StopTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestBase.StopTimer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestBase.StopTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestBase.OverallRunTime">
+<code class="descname">OverallRunTime</code><a class="headerlink" href="#DataBase.TestCase.TestBase.OverallRunTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestBase.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.TestBase.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.TestCase">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">TestCase</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-bb47e7631dc06a49e4d618d4774a8926f6e98796.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of TestCase</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestCase.Testbench">
+<code class="descname">Testbench</code><a class="headerlink" href="#DataBase.TestCase.TestCase.Testbench" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestCase.UpdateStatus">
+<code class="descname">UpdateStatus</code><span class="sig-paren">(</span><em>testResult</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#TestCase.UpdateStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.TestCase.UpdateStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestCase.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.TestCase.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestCase.OverallRunTime">
+<code class="descname">OverallRunTime</code><a class="headerlink" href="#DataBase.TestCase.TestCase.OverallRunTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestCase.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.TestCase.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestCase.StartTimer">
+<code class="descname">StartTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.TestCase.StartTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestCase.Status">
+<code class="descname">Status</code><a class="headerlink" href="#DataBase.TestCase.TestCase.Status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.TestCase.StopTimer">
+<code class="descname">StopTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.TestCase.StopTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.TestCase.TestGroup">
+<code class="descname">TestGroup</code><a class="headerlink" href="#DataBase.TestCase.TestCase.TestGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.TestCase.Synthesis">
+<em class="property">class </em><code class="descclassname">DataBase.TestCase.</code><code class="descname">Synthesis</code><span class="sig-paren">(</span><em>synthesis</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#Synthesis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.Synthesis" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9b13990923509cdd048baa1e9a91520e5dc2f134.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Synthesis</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.TestCase.Synthesis.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.TestCase.Synthesis.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.Synthesis.OverallRunTime">
+<code class="descname">OverallRunTime</code><a class="headerlink" href="#DataBase.TestCase.Synthesis.OverallRunTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.Synthesis.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.TestCase.Synthesis.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.Synthesis.StartTimer">
+<code class="descname">StartTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.Synthesis.StartTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.Synthesis.Status">
+<code class="descname">Status</code><a class="headerlink" href="#DataBase.TestCase.Synthesis.Status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.Synthesis.StopTimer">
+<code class="descname">StopTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.TestCase.Synthesis.StopTimer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.Synthesis.TestGroup">
+<code class="descname">TestGroup</code><a class="headerlink" href="#DataBase.TestCase.Synthesis.TestGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.TestCase.Synthesis.Netlist">
+<code class="descname">Netlist</code><a class="headerlink" href="#DataBase.TestCase.Synthesis.Netlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.TestCase.Synthesis.UpdateStatus">
+<code class="descname">UpdateStatus</code><span class="sig-paren">(</span><em>synthResult</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/TestCase.html#Synthesis.UpdateStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.TestCase.Synthesis.UpdateStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

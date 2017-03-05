@@ -1,0 +1,834 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiler &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Compiler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Compiler.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Compiler">
+<span id="compiler"></span><h1>Compiler<a class="headerlink" href="#module-Compiler" title="Permalink to this headline">¶</a></h1>
+<p><strong>Submodules</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.ISECompiler.html">Compiler.ISECompiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.LSECompiler.html">Compiler.LSECompiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.QuartusCompiler.html">Compiler.QuartusCompiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.VivadoCompiler.html">Compiler.VivadoCompiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.XCICompiler.html">Compiler.XCICompiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.XCOCompiler.html">Compiler.XCOCompiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Compiler.XSTCompiler.html">Compiler.XSTCompiler</a></li>
+</ul>
+</div>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Compiler.CompilerException" title="Compiler.CompilerException"><code class="xref py py-exc docutils literal"><span class="pre">CompilerException</span></code></a>:
+Base class for all CompilerException classes. It is raised while running</li>
+<li><a class="reference internal" href="#Compiler.SkipableCompilerException" title="Compiler.SkipableCompilerException"><code class="xref py py-exc docutils literal"><span class="pre">SkipableCompilerException</span></code></a>:
+<code class="docutils literal"><span class="pre">SkipableCompilerException</span></code> is a <a class="reference internal" href="#Compiler.CompilerException" title="Compiler.CompilerException"><code class="xref py py-exc docutils literal"><span class="pre">CompilerException</span></code></a>, which</li>
+</ul>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Compiler.CopyTask" title="Compiler.CopyTask"><code class="xref py py-class docutils literal"><span class="pre">CopyTask</span></code></a>:
+This class represents a &#8216;copy task&#8217; and inherits the partial class</li>
+<li><a class="reference internal" href="#Compiler.DeleteTask" title="Compiler.DeleteTask"><code class="xref py py-class docutils literal"><span class="pre">DeleteTask</span></code></a>:
+This class represents a &#8216;delete task&#8217; and inherits the partial class</li>
+<li><a class="reference internal" href="#Compiler.ReplaceTask" title="Compiler.ReplaceTask"><code class="xref py py-class docutils literal"><span class="pre">ReplaceTask</span></code></a>:
+This class represents a &#8216;replace task&#8217; and inherits the partial class</li>
+<li><a class="reference internal" href="#Compiler.AppendLineTask" title="Compiler.AppendLineTask"><code class="xref py py-class docutils literal"><span class="pre">AppendLineTask</span></code></a>:
+This class represents a &#8216;append line task&#8217; and inherits the partial class</li>
+<li><a class="reference internal" href="#Compiler.CompileState" title="Compiler.CompileState"><code class="xref py py-class docutils literal"><span class="pre">CompileState</span></code></a>:
+Compile state enumeration.</li>
+<li><a class="reference internal" href="#Compiler.CompileResult" title="Compiler.CompileResult"><code class="xref py py-class docutils literal"><span class="pre">CompileResult</span></code></a>:
+Compilation result enumeration.</li>
+<li><a class="reference internal" href="#module-Compiler" title="Compiler"><code class="xref py py-class docutils literal"><span class="pre">Compiler</span></code></a>:
+Base class for all Compiler classes.</li>
+</ul>
+<dl class="exception">
+<dt id="Compiler.CompilerException">
+<em class="property">exception </em><code class="descclassname">Compiler.</code><code class="descname">CompilerException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#CompilerException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.CompilerException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all CompilerException classes. It is raised while running
+compiler (synthesis) tasks in PoC.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-039ccb52ae9d04957f4d9d42586129c5d14ce0fb.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CompilerException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Compiler.CompilerException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.CompilerException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.CompilerException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.CompilerException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompilerException.args">
+<code class="descname">args</code><a class="headerlink" href="#Compiler.CompilerException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Compiler.SkipableCompilerException">
+<em class="property">exception </em><code class="descclassname">Compiler.</code><code class="descname">SkipableCompilerException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#SkipableCompilerException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.SkipableCompilerException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">SkipableCompilerException</span></code> is a <a class="reference internal" href="#Compiler.CompilerException" title="Compiler.CompilerException"><code class="xref py py-exc docutils literal"><span class="pre">CompilerException</span></code></a>, which
+can be skipped.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-43394afb1f0b99be2713ccf98cce67fb84c45d20.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SkipableCompilerException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Compiler.SkipableCompilerException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.SkipableCompilerException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.SkipableCompilerException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.SkipableCompilerException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.SkipableCompilerException.args">
+<code class="descname">args</code><a class="headerlink" href="#Compiler.SkipableCompilerException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.CopyTask">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">CopyTask</code><span class="sig-paren">(</span><em>sourcePath</em>, <em>destinationPath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#CopyTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.CopyTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a &#8216;copy task&#8217; and inherits the partial class
+<a class="reference internal" href="Parser.RulesParser.html#Parser.RulesParser.CopyRuleMixIn" title="Parser.RulesParser.CopyRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">CopyRuleMixIn</span></code></a>.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ae00456daffd9550244f97bebb7ec7d2faf23a82.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CopyTask</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.CopyTask.DestinationPath">
+<code class="descname">DestinationPath</code><a class="headerlink" href="#Compiler.CopyTask.DestinationPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CopyTask.SourcePath">
+<code class="descname">SourcePath</code><a class="headerlink" href="#Compiler.CopyTask.SourcePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.DeleteTask">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">DeleteTask</code><span class="sig-paren">(</span><em>filePath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#DeleteTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.DeleteTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a &#8216;delete task&#8217; and inherits the partial class
+<a class="reference internal" href="Parser.RulesParser.html#Parser.RulesParser.DeleteRuleMixIn" title="Parser.RulesParser.DeleteRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">DeleteRuleMixIn</span></code></a>.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-777764c2041d7da4a78af3db2598b784d16b0186.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of DeleteTask</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.DeleteTask.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Compiler.DeleteTask.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.ReplaceTask">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">ReplaceTask</code><span class="sig-paren">(</span><em>filePath</em>, <em>searchPattern</em>, <em>replacePattern</em>, <em>multiLine</em>, <em>dotAll</em>, <em>caseInSensitive</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#ReplaceTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ReplaceTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a &#8216;replace task&#8217; and inherits the partial class
+<a class="reference internal" href="Parser.RulesParser.html#Parser.RulesParser.ReplaceRuleMixIn" title="Parser.RulesParser.ReplaceRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">ReplaceRuleMixIn</span></code></a>.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-825e070d6edf27f2701ec7d0a25856cbaa703557.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ReplaceTask</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.ReplaceTask.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Compiler.ReplaceTask.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.ReplaceTask.RegExpOption_CaseInsensitive">
+<code class="descname">RegExpOption_CaseInsensitive</code><a class="headerlink" href="#Compiler.ReplaceTask.RegExpOption_CaseInsensitive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.ReplaceTask.RegExpOption_DotAll">
+<code class="descname">RegExpOption_DotAll</code><a class="headerlink" href="#Compiler.ReplaceTask.RegExpOption_DotAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.ReplaceTask.RegExpOption_MultiLine">
+<code class="descname">RegExpOption_MultiLine</code><a class="headerlink" href="#Compiler.ReplaceTask.RegExpOption_MultiLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.ReplaceTask.ReplacePattern">
+<code class="descname">ReplacePattern</code><a class="headerlink" href="#Compiler.ReplaceTask.ReplacePattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.ReplaceTask.SearchPattern">
+<code class="descname">SearchPattern</code><a class="headerlink" href="#Compiler.ReplaceTask.SearchPattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.AppendLineTask">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">AppendLineTask</code><span class="sig-paren">(</span><em>filePath</em>, <em>appendPattern</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#AppendLineTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.AppendLineTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a &#8216;append line task&#8217; and inherits the partial class
+<a class="reference internal" href="Parser.RulesParser.html#Parser.RulesParser.AppendLineRuleMixIn" title="Parser.RulesParser.AppendLineRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">AppendLineRuleMixIn</span></code></a>.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-fa2354b9749be5d19549e150dada765f7917dc6e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AppendLineTask</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.AppendLineTask.AppendPattern">
+<code class="descname">AppendPattern</code><a class="headerlink" href="#Compiler.AppendLineTask.AppendPattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.AppendLineTask.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Compiler.AppendLineTask.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.CompileState">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">CompileState</code><a class="reference internal" href="../_modules/Compiler.html#CompileState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.CompileState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile state enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-cce673ac777f1ae9b64499e86c857841f2711402.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CompileState</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.CompileState.Prepare">
+<code class="descname">Prepare</code><em class="property"> = 0</em><a class="headerlink" href="#Compiler.CompileState.Prepare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.PreCopy">
+<code class="descname">PreCopy</code><em class="property"> = 10</em><a class="headerlink" href="#Compiler.CompileState.PreCopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.PrePatch">
+<code class="descname">PrePatch</code><em class="property"> = 11</em><a class="headerlink" href="#Compiler.CompileState.PrePatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.Compile">
+<code class="descname">Compile</code><em class="property"> = 50</em><a class="headerlink" href="#Compiler.CompileState.Compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.PostCopy">
+<code class="descname">PostCopy</code><em class="property"> = 90</em><a class="headerlink" href="#Compiler.CompileState.PostCopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.PostPatch">
+<code class="descname">PostPatch</code><em class="property"> = 91</em><a class="headerlink" href="#Compiler.CompileState.PostPatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.PostDelete">
+<code class="descname">PostDelete</code><em class="property"> = 92</em><a class="headerlink" href="#Compiler.CompileState.PostDelete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileState.CleanUp">
+<code class="descname">CleanUp</code><em class="property"> = 99</em><a class="headerlink" href="#Compiler.CompileState.CleanUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.CompileResult">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">CompileResult</code><a class="reference internal" href="../_modules/Compiler.html#CompileResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.CompileResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compilation result enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ea84eefa88b7982ebad25ddd1bb5fbdcecdbed7b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CompileResult</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.CompileResult.NotRun">
+<code class="descname">NotRun</code><em class="property"> = 0</em><a class="headerlink" href="#Compiler.CompileResult.NotRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileResult.Error">
+<code class="descname">Error</code><em class="property"> = 1</em><a class="headerlink" href="#Compiler.CompileResult.Error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileResult.Failed">
+<code class="descname">Failed</code><em class="property"> = 2</em><a class="headerlink" href="#Compiler.CompileResult.Failed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.CompileResult.Success">
+<code class="descname">Success</code><em class="property"> = 3</em><a class="headerlink" href="#Compiler.CompileResult.Success" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Compiler.Compiler">
+<em class="property">class </em><code class="descclassname">Compiler.</code><code class="descname">Compiler</code><span class="sig-paren">(</span><em>host: Base.IHost</em>, <em>dryRun</em>, <em>noCleanUp</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all Compiler classes.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-5553ce5a14f409cbb94a04c3d5d490f06e5fbd56.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Compiler</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Compiler.Compiler.ENVIRONMENT">
+<code class="descname">ENVIRONMENT</code><em class="property"> = 2</em><a class="headerlink" href="#Compiler.Compiler.ENVIRONMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.VHDL_VERSION">
+<code class="descname">VHDL_VERSION</code><em class="property"> = 93</em><a class="headerlink" href="#Compiler.Compiler.VHDL_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>host: Base.IHost</em>, <em>dryRun</em>, <em>noCleanUp</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#object" title="(in Python v3.6)"><em>object</em></a>) &#8211; The hosting instance for this instance.</li>
+<li><strong>dryRun</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; Enable dry-run mode</li>
+<li><strong>noCleanUp</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; Don&#8217;t clean up after a run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.NoCleanUp">
+<code class="descname">NoCleanUp</code><a class="headerlink" href="#Compiler.Compiler.NoCleanUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._PrepareCompiler">
+<code class="descname">_PrepareCompiler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._PrepareCompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._PrepareCompiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare for compilation. This method forwards to <code class="xref py py-meth docutils literal"><span class="pre">Base.Compiler.Compiler._Prepare()</span></code>,
+which is inherited from <a class="reference internal" href="Base.Shared.html#Base.Shared.Shared" title="Base.Shared.Shared"><code class="xref py py-class docutils literal"><span class="pre">Base.Shared.Shared</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.TryRun">
+<code class="descname">TryRun</code><span class="sig-paren">(</span><em>netlist</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler.TryRun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to run a testbench. Skip skipable exceptions by printing the error and its cause.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.Run">
+<code class="descname">Run</code><span class="sig-paren">(</span><em>netlist</em>, <em>board</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler.Run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a testbench.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._PrepareCompilerEnvironment">
+<code class="descname">_PrepareCompilerEnvironment</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._PrepareCompilerEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._PrepareCompilerEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._WriteSpecialSectionIntoConfig">
+<code class="descname">_WriteSpecialSectionIntoConfig</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._WriteSpecialSectionIntoConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._WriteSpecialSectionIntoConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._AddRulesFiles">
+<code class="descname">_AddRulesFiles</code><span class="sig-paren">(</span><em>rulesFilePath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._AddRulesFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._AddRulesFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._RunPreCopy">
+<code class="descname">_RunPreCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPreCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._RunPreCopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._RunPostCopy">
+<code class="descname">_RunPostCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._RunPostCopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._ParseCopyRules">
+<code class="descname">_ParseCopyRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>copyTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseCopyRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._ParseCopyRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._ExecuteCopyTasks">
+<code class="descname">_ExecuteCopyTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteCopyTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._ExecuteCopyTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._RunPostDelete">
+<code class="descname">_RunPostDelete</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostDelete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._RunPostDelete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._ParseDeleteRules">
+<code class="descname">_ParseDeleteRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>deleteTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseDeleteRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._ParseDeleteRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._ExecuteDeleteTasks">
+<code class="descname">_ExecuteDeleteTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteDeleteTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._ExecuteDeleteTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._RunPreReplace">
+<code class="descname">_RunPreReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPreReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._RunPreReplace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._RunPostReplace">
+<code class="descname">_RunPostReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._RunPostReplace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._ParseReplaceRules">
+<code class="descname">_ParseReplaceRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>replaceTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseReplaceRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._ParseReplaceRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._ExecuteReplaceTasks">
+<code class="descname">_ExecuteReplaceTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteReplaceTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler._ExecuteReplaceTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.PrintOverallCompileReport">
+<code class="descname">PrintOverallCompileReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.PrintOverallCompileReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler.PrintOverallCompileReport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.PrintCompileReportLine">
+<code class="descname">PrintCompileReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.PrintCompileReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.Compiler.PrintCompileReportLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.Directories">
+<code class="descname">Directories</code><a class="headerlink" href="#Compiler.Compiler.Directories" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.DryRun">
+<code class="descname">DryRun</code><a class="headerlink" href="#Compiler.Compiler.DryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.Host">
+<code class="descname">Host</code><a class="headerlink" href="#Compiler.Compiler.Host" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.Log">
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an entry to the local logger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogDebug">
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogDebug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogDryRun">
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogError">
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogFatal">
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogFatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogInfo">
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogNormal">
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogNormal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogQuiet">
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogVerbose">
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler.LogWarning">
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler.LogWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.Logger">
+<code class="descname">Logger</code><a class="headerlink" href="#Compiler.Compiler.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the local logger instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.PoCProject">
+<code class="descname">PoCProject</code><a class="headerlink" href="#Compiler.Compiler.PoCProject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.TOOL">
+<code class="descname">TOOL</code><em class="property"> = 0</em><a class="headerlink" href="#Compiler.Compiler.TOOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.TOOL_CHAIN">
+<code class="descname">TOOL_CHAIN</code><em class="property"> = 0</em><a class="headerlink" href="#Compiler.Compiler.TOOL_CHAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Compiler.Compiler.VHDLVersion">
+<code class="descname">VHDLVersion</code><a class="headerlink" href="#Compiler.Compiler.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._AddFileListFile">
+<code class="descname">_AddFileListFile</code><span class="sig-paren">(</span><em>fileListFilePath</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._AddFileListFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._CreatePoCProject">
+<code class="descname">_CreatePoCProject</code><span class="sig-paren">(</span><em>projectName</em>, <em>board</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._CreatePoCProject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._GetHDLParameters">
+<code class="descname">_GetHDLParameters</code><span class="sig-paren">(</span><em>configSectionName</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._GetHDLParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse option &#8216;HDLParameters&#8217; for Verilog Parameters / VHDL Generics.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._GetTimeDeltaSinceLastEvent">
+<code class="descname">_GetTimeDeltaSinceLastEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._GetTimeDeltaSinceLastEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._Prepare">
+<code class="descname">_Prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._Prepare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._PrepareEnvironment">
+<code class="descname">_PrepareEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._PrepareEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._PrepareEnvironment_ChangeDirectory">
+<code class="descname">_PrepareEnvironment_ChangeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._PrepareEnvironment_ChangeDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change working directory to temporary path &#8216;temp/&lt;tool&gt;&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._PrepareEnvironment_CreatingDirectory">
+<code class="descname">_PrepareEnvironment_CreatingDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._PrepareEnvironment_CreatingDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._PrepareEnvironment_PurgeDirectory">
+<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Compiler.Compiler._TryLog">
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Compiler.Compiler._TryLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Get Involved &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="next" title="Apache License 2.0" href="../References/Licenses/License.html"/>
+        <link rel="prev" title="Quick Start Guide" href="../QuickStart.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get Involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#report-a-bug">Report a Bug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-request">Feature Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#talk-to-us-on-gitter">Talk to us on Gitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributers-license-agreement">Contributers License Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute-to-poc">Contribute to PoC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fork-the-poc-repository">1. Fork the PoC Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clone-the-new-fork">2. Clone the new Fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checkout-a-branch">3. Checkout a Branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-poc-for-developers">4. Setup PoC for Developers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-own-master-branch">5. Create your own <code class="docutils literal"><span class="pre">master</span></code> Branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-feature-branch">6. Create your Feature Branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-and-push-changes">7. Commit and Push Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-pull-request">8. Create a Pull-Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keep-your-master-up-to-date">9. Keep your <code class="docutils literal"><span class="pre">master</span></code> up-to-date</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#give-us-feedback">Give us Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-contributers">List of Contributers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Get Involved</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/GetInvolved/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="get-involved">
+<h1>Get Involved<a class="headerlink" href="#get-involved" title="Permalink to this headline">¶</a></h1>
+<p>A first step might be to use and explore PoC and it&#8217;s infrastructure in an own
+project. Moreover, we encurage to read our online help which covers all aspects
+from quickstart example up to detailed IP core documentation. While using PoC,
+you might discover issues or missing feature. Please report them as
+<a class="reference external" href="#report-a-bug">listed below</a>. If you have an interresting project, please
+send us feedback or get listed on our <a class="reference internal" href="../WhatIsPoC/WhoUsesPoC.html"><span class="doc">Who uses PoC?</span></a>
+page.</p>
+<p>If you are more familiar with PoC and it&#8217;s components, you might start asking
+youself how components internally work. Please read our more advanced topics in
+the online help, read our inline source code comments or start a discussion on
+<a class="reference external" href="#talk-to-us-on-gitter">Gitter</a> to ask us directly.</p>
+<p>Now you should be very familiar with our work and you might be interessted in
+developing own components and contribute them to the main repository. See the
+<a class="reference external" href="#contribute-to-poc">next section</a> for detailed instructions on the Git fork,
+commit, push and pull-request flow.</p>
+<p>PoC ships some <a class="reference internal" href="../Miscelaneous/ThirdParty.html"><span class="doc">third-party libraries</span></a>. If you
+are interessted in getting your library or components shipped as part of PoC or
+as a third-party components, please contact us.</p>
+<div class="section" id="report-a-bug">
+<h2>Report a Bug<a class="headerlink" href="#report-a-bug" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://github.com/VLSI-EDA/PoC/issues"><img alt="https://img.shields.io/github/issues/VLSI-EDA/PoC.svg" src="https://img.shields.io/github/issues/VLSI-EDA/PoC.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/VLSI-EDA/PoC/issues"><img alt="https://img.shields.io/github/issues-closed/VLSI-EDA/PoC.svg" src="https://img.shields.io/github/issues-closed/VLSI-EDA/PoC.svg" /></a>
+<p>Please report issues of any kind in our Git provider&#8217;s issue tracker. This allows
+us to categorize issues into groups and assign developers to them. You can track
+the issue&#8217;s state and see how it&#8217;s getting solved. All enhancements and feature
+requests are tracked on GitHub at
+<a class="reference external" href="https://github.com/VLSI-EDA/PoC/issues">GitHub Issues</a>.</p>
+</div>
+<div class="section" id="feature-request">
+<h2>Feature Request<a class="headerlink" href="#feature-request" title="Permalink to this headline">¶</a></h2>
+<p>Please report missing features of any kind. We are allways looking forward to
+provide a full feature set. Please use our Git provider&#8217;s issue tracker to report
+enhancements and feature requests, so you can track the request&#8217;s status and
+implementation. All enhancements and feature requests are tracked on GitHub at
+<a class="reference external" href="https://github.com/VLSI-EDA/PoC/issues">GitHub Issues</a>.</p>
+</div>
+<div class="section" id="talk-to-us-on-gitter">
+<h2>Talk to us on Gitter<a class="headerlink" href="#talk-to-us-on-gitter" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://gitter.im/VLSI-EDA/PoC"><img alt="https://badges.gitter.im/VLSI-EDA/PoC.svg" src="https://badges.gitter.im/VLSI-EDA/PoC.svg" /></a>
+<p>You can chat with us on <a class="reference external" href="https://gitter.im/">Gitter</a> in our Giiter Room
+<a class="reference external" href="https://gitter.im/VLSI-EDA/PoC">VLSI-EDA/PoC</a>. You can use Gitter for free
+with your existing GitHub or Twitter account.</p>
+</div>
+<div class="section" id="contributers-license-agreement">
+<h2>Contributers License Agreement<a class="headerlink" href="#contributers-license-agreement" title="Permalink to this headline">¶</a></h2>
+<p>We require all contributers to sign a Contributor License Agreement (CLA). If
+you don&#8217;t know whatfore a CLA is needed and how it prevents legal issues on both
+sides, read <a class="reference external" href="https://www.clahub.com/pages/why_cla">this short blog</a> post. PoC
+uses the <a class="reference internal" href="../References/Licenses/ApacheLicense2.0_ICLA.html"><span class="doc">Apache Contributor License Agreement</span></a>
+to match the <a class="reference internal" href="../References/Licenses/ApacheLicense2.0.html"><span class="doc">Apache License 2.0</span></a>.</p>
+<p>So to get started, <a class="reference external" href="https://www.clahub.com/agreements/VLSI-EDA/PoC">sign the Contributor License Agreement (CLA)</a>
+at <a class="reference external" href="https://www.clahub.com/">CLAHub.com</a>. You can authenticate yourself with
+an existing GitHub account.</p>
+</div>
+<div class="section" id="contribute-to-poc">
+<h2>Contribute to PoC<a class="headerlink" href="#contribute-to-poc" title="Permalink to this headline">¶</a></h2>
+<img alt="https://img.shields.io/github/contributors/VLSI-EDA/PoC.svg" src="https://img.shields.io/github/contributors/VLSI-EDA/PoC.svg" /><p>Contibuting source code via Git is very easy. We don&#8217;t provide direct write
+access to our repositories. Git offers the fork and pull-request philosophy,
+which means: You clone a repository, provide your changes in your own repository
+and notify us about outstanding changes via a pull-requests. We will then review
+your proposed changes and integrate them into our repository.</p>
+<p><em>Steps 1 to 5 are done only once for setting up a forked repository.</em></p>
+<div class="section" id="fork-the-poc-repository">
+<h3>1. Fork the PoC Repository<a class="headerlink" href="#fork-the-poc-repository" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="https://github.com/VLSI-EDA/PoC/network/members"><img alt="https://img.shields.io/github/forks/VLSI-EDA/PoC.svg" src="https://img.shields.io/github/forks/VLSI-EDA/PoC.svg" /></a>
+<p>Git repositories can be cloned on a Git provider&#8217;s server. This procedure is
+called <em>forking</em>. This allows Git providers to track the repository&#8217;s network,
+check if repositories are related to each other and notify if pull-requests are
+available.</p>
+<p>Fork our repository <code class="docutils literal"><span class="pre">VLSI-EDA/PoC</span></code> on GitHub into your or your&#8217;s Git
+organisation&#8217;s account. In the following the forked repository is referenced as
+<code class="docutils literal"><span class="pre">&lt;username&gt;/PoC</span></code>.</p>
+</div>
+<div class="section" id="clone-the-new-fork">
+<h3>2. Clone the new Fork<a class="headerlink" href="#clone-the-new-fork" title="Permalink to this headline">¶</a></h3>
+<p>Clone this new fork to your machine. See <a class="reference internal" href="../UsingPoC/Download.html#using-download"><span class="std std-ref">Downloading via Git clone</span></a>
+for more details on how to clone PoC. If you have already cloned PoC, then you
+can setup the new fork as an additional <em>remote</em>. You should set <code class="docutils literal"><span class="pre">VLSI-EDA/PoC</span></code>
+as fetch target and the new fork <code class="docutils literal"><span class="pre">&lt;username&gt;/PoC</span></code> as push target.</p>
+<p><strong>Shell Commands for Cloning:</strong></p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">GitRoot</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="p">-</span><span class="n">-recursive</span> <span class="s2">&quot;ssh://git@github.com:&lt;username&gt;/PoC.git&quot;</span> <span class="n">PoC</span>
+<span class="n">cd</span> <span class="n">PoC</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">rename</span> <span class="n">origin</span> <span class="n">github</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="s2">&quot;ssh://git@github.com:VLSI-EDA/PoC.git&quot;</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="p">-</span><span class="n">-prune</span> <span class="p">-</span><span class="n">-tags</span>
+</pre></div>
+</div>
+<p><strong>Shell Commands for Editing an existing Clone:</strong></p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">rename</span> <span class="n">github</span> <span class="n">upstream</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">github</span> <span class="s2">&quot;ssh://git@github.com:&lt;username&gt;/PoC.git&quot;</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="p">-</span><span class="n">-prune</span> <span class="p">-</span><span class="n">-tags</span>
+</pre></div>
+</div>
+<p><em>These commands work for Git submodules too.</em></p>
+</div>
+<div class="section" id="checkout-a-branch">
+<h3>3. Checkout a Branch<a class="headerlink" href="#checkout-a-branch" title="Permalink to this headline">¶</a></h3>
+<p>Checkout the <code class="docutils literal"><span class="pre">master</span></code> or <code class="docutils literal"><span class="pre">release</span></code> branch and maybe stash outstanding changes.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">release</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-poc-for-developers">
+<h3>4. Setup PoC for Developers<a class="headerlink" href="#setup-poc-for-developers" title="Permalink to this headline">¶</a></h3>
+<p>Run PoC&#8217;s <a class="reference internal" href="../UsingPoC/PoCConfiguration.html#using-pocconfig"><span class="std std-ref">configuration routines</span></a> and setup the
+developer tools.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="p">.\</span><span class="n">PoC</span><span class="p">.</span><span class="n">ps1</span> <span class="n">configure</span> <span class="n">git</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-your-own-master-branch">
+<h3>5. Create your own <code class="docutils literal"><span class="pre">master</span></code> Branch<a class="headerlink" href="#create-your-own-master-branch" title="Permalink to this headline">¶</a></h3>
+<p>Each developer has his own <code class="docutils literal"><span class="pre">master</span></code> branch. So create one and check it out.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/</span><span class="n">master</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/</span><span class="n">master</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">github</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/</span><span class="n">master</span>
+</pre></div>
+</div>
+<p>If PoC&#8217;s branches are moving forward, you can update your own master branch by
+merging changes into your branch.</p>
+</div>
+<div class="section" id="create-your-feature-branch">
+<h3>6. Create your Feature Branch<a class="headerlink" href="#create-your-feature-branch" title="Permalink to this headline">¶</a></h3>
+<p>Each new feature or bugfix is developed on a feature branch. Examples for
+branch names:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Branch name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bugfix-utils</td>
+<td>Fixes a bug in <code class="docutils literal"><span class="pre">utils.vhdl</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>docs-spelling</td>
+<td>Fixes the documentation.</td>
+</tr>
+<tr class="row-even"><td>spi-controller</td>
+<td>A new SPI controller implementation.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/&lt;</span><span class="n">feature</span><span class="p">&gt;</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/&lt;</span><span class="n">feature</span><span class="p">&gt;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">github</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/&lt;</span><span class="n">feature</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit-and-push-changes">
+<h3>7. Commit and Push Changes<a class="headerlink" href="#commit-and-push-changes" title="Permalink to this headline">¶</a></h3>
+<p>Commit your porposed changes onto your feature branch and push all changes to GitHub.</p>
+<div class="highlight-PowerShell"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PoCRoot</span>
+<span class="c"># git add ....</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;Fixed a bug in function bounds() in utils.vhdl.&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">github</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;/&lt;</span><span class="n">feature</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-pull-request">
+<h3>8. Create a Pull-Request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="https://github.com/VLSI-EDA/PoC/pulls"><img alt="https://img.shields.io/github/issues-pr/VLSI-EDA/PoC.svg" src="https://img.shields.io/github/issues-pr/VLSI-EDA/PoC.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/VLSI-EDA/PoC/pulls"><img alt="https://img.shields.io/github/issues-pr-closed/VLSI-EDA/PoC.svg" src="https://img.shields.io/github/issues-pr-closed/VLSI-EDA/PoC.svg" /></a>
+<p>Go to your forked repository and klick on &#8220;Compare and Pull-Request&#8221; or go to
+our PoC repository and create a new <a class="reference external" href="https://github.com/VLSI-EDA/PoC/pulls">pull request</a>.</p>
+<p>If this is your first Pull-Request, you need to sign our Contributers License
+Agreement (CLA).</p>
+</div>
+<div class="section" id="keep-your-master-up-to-date">
+<h3>9. Keep your <code class="docutils literal"><span class="pre">master</span></code> up-to-date<a class="headerlink" href="#keep-your-master-up-to-date" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">undocumented</p>
+</div>
+</div>
+</div>
+<div class="section" id="give-us-feedback">
+<h2>Give us Feedback<a class="headerlink" href="#give-us-feedback" title="Permalink to this headline">¶</a></h2>
+<p>Please send us feedback about the PoC documentation, our IP cores or your user
+story on how you use PoC.</p>
+</div>
+<div class="section" id="list-of-contributers">
+<h2>List of Contributers<a class="headerlink" href="#list-of-contributers" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Contributor <a class="footnote-reference" href="#f1" id="id3">[1]</a></th>
+<th class="head">Contact E-Mail</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Genßler, Paul</td>
+<td><a class="reference external" href="mailto:paul&#46;genssler&#37;&#52;&#48;tu-dresden&#46;de">paul<span>&#46;</span>genssler<span>&#64;</span>tu-dresden<span>&#46;</span>de</a></td>
+</tr>
+<tr class="row-odd"><td>Köhler, Steffen</td>
+<td><a class="reference external" href="mailto:steffen&#46;koehler&#37;&#52;&#48;tu-dresden&#46;de">steffen<span>&#46;</span>koehler<span>&#64;</span>tu-dresden<span>&#46;</span>de</a></td>
+</tr>
+<tr class="row-even"><td>Lehmann, Patrick <a class="footnote-reference" href="#f2" id="id4">[2]</a></td>
+<td><a class="reference external" href="mailto:patrick&#46;lehmann&#37;&#52;&#48;tu-dresden&#46;de">patrick<span>&#46;</span>lehmann<span>&#64;</span>tu-dresden<span>&#46;</span>de</a>; <a class="reference external" href="mailto:paebbels&#37;&#52;&#48;gmail&#46;com">paebbels<span>&#64;</span>gmail<span>&#46;</span>com</a></td>
+</tr>
+<tr class="row-odd"><td>Preußer, Thomas B. <a class="footnote-reference" href="#f2" id="id5">[2]</a></td>
+<td><a class="reference external" href="mailto:thomas&#46;preusser&#37;&#52;&#48;tu-dresden&#46;de">thomas<span>&#46;</span>preusser<span>&#64;</span>tu-dresden<span>&#46;</span>de</a>; <a class="reference external" href="mailto:thomas&#46;preusser&#37;&#52;&#48;utexas&#46;edu">thomas<span>&#46;</span>preusser<span>&#64;</span>utexas<span>&#46;</span>edu</a></td>
+</tr>
+<tr class="row-even"><td>Reichel, Peter</td>
+<td><a class="reference external" href="mailto:peter&#46;reichel&#37;&#52;&#48;eas&#46;iis&#46;fraunhofer&#46;de">peter<span>&#46;</span>reichel<span>&#64;</span>eas<span>&#46;</span>iis<span>&#46;</span>fraunhofer<span>&#46;</span>de</a>; <a class="reference external" href="mailto:peter&#37;&#52;&#48;peterreichel&#46;info">peter<span>&#64;</span>peterreichel<span>&#46;</span>info</a></td>
+</tr>
+<tr class="row-odd"><td>Schirok, Jan</td>
+<td><a class="reference external" href="mailto:janschirok&#37;&#52;&#48;gmx&#46;net">janschirok<span>&#64;</span>gmx<span>&#46;</span>net</a></td>
+</tr>
+<tr class="row-even"><td>Voß, Jens</td>
+<td><a class="reference external" href="mailto:jens&#46;voss&#37;&#52;&#48;mailbox&#46;tu-dresden&#46;de">jens<span>&#46;</span>voss<span>&#64;</span>mailbox<span>&#46;</span>tu-dresden<span>&#46;</span>de</a></td>
+</tr>
+<tr class="row-odd"><td>Zabel, Martin <a class="footnote-reference" href="#f2" id="id6">[2]</a></td>
+<td><a class="reference external" href="mailto:martin&#46;zabel&#37;&#52;&#48;tu-dresden&#46;de">martin<span>&#46;</span>zabel<span>&#64;</span>tu-dresden<span>&#46;</span>de</a></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>In alphabetical order.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>, <a class="fn-backref" href="#id6">3</a>)</em> Maintainer.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../References/Licenses/License.html" class="btn btn-neutral float-right" title="Apache License 2.0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../QuickStart.html" class="btn btn-neutral" title="Quick Start Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

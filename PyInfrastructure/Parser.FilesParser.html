@@ -1,0 +1,532 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parser.FilesParser &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Parser.FilesParser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Parser.FilesParser.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Parser.FilesParser">
+<span id="parser-filesparser"></span><h1>Parser.FilesParser<a class="headerlink" href="#module-Parser.FilesParser" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Parser.FilesParser.FileReference" title="Parser.FilesParser.FileReference"><code class="xref py py-class docutils literal"><span class="pre">FileReference</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.IncludeFileMixIn" title="Parser.FilesParser.IncludeFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">IncludeFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.VHDLSourceFileMixIn" title="Parser.FilesParser.VHDLSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">VHDLSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.VerilogSourceFileMixIn" title="Parser.FilesParser.VerilogSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">VerilogSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.CocotbSourceFileMixIn" title="Parser.FilesParser.CocotbSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">CocotbSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.LDCSourceFileMixIn" title="Parser.FilesParser.LDCSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">LDCSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.SDCSourceFileMixIn" title="Parser.FilesParser.SDCSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">SDCSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.UCFSourceFileMixIn" title="Parser.FilesParser.UCFSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">UCFSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.XDCSourceFileMixIn" title="Parser.FilesParser.XDCSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">XDCSourceFileMixIn</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.VHDLLibraryReference" title="Parser.FilesParser.VHDLLibraryReference"><code class="xref py py-class docutils literal"><span class="pre">VHDLLibraryReference</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesParser.FilesParserMixIn" title="Parser.FilesParser.FilesParserMixIn"><code class="xref py py-class docutils literal"><span class="pre">FilesParserMixIn</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="Parser.FilesParser.FileReference">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">FileReference</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#FileReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.FileReference" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c215fa3e5bd40ead293d1f5ba73094eddb74fc60.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FileReference</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.FileReference.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.FileReference.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.IncludeFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">IncludeFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#IncludeFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.IncludeFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8b4898fe154c93494ceba8b4eb88bbbeed407a25.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IncludeFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.IncludeFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.IncludeFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.VHDLSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">VHDLSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em>, <em>library</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#VHDLSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.VHDLSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a297eb03424542ed676dcd8bb8efbbe60f76877f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.VHDLSourceFileMixIn.LibraryName">
+<code class="descname">LibraryName</code><a class="headerlink" href="#Parser.FilesParser.VHDLSourceFileMixIn.LibraryName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.VHDLSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.VHDLSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.VerilogSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">VerilogSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#VerilogSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.VerilogSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-94428bfefb8a95b0acffacaf11f6cc77245ab302.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VerilogSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.VerilogSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.VerilogSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.CocotbSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">CocotbSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#CocotbSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.CocotbSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e1c826609dcaedcd32ce4f4c1b995b5d0a0db0c5.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CocotbSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.CocotbSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.CocotbSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.LDCSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">LDCSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#LDCSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.LDCSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-096a89d448cb12424ca89a8ff689e8058a11130d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LDCSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.LDCSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.LDCSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.SDCSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">SDCSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#SDCSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.SDCSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-eae28f32580d5d71c8343dfc349926012126ac96.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SDCSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.SDCSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.SDCSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.UCFSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">UCFSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#UCFSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.UCFSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0dd25a3e1f94d3216d08e572878ead4563f5e6d8.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of UCFSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.UCFSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.UCFSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.XDCSourceFileMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">XDCSourceFileMixIn</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#XDCSourceFileMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.XDCSourceFileMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a2aa2c088dbec573f18a90c438bc91949411b543.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XDCSourceFileMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.XDCSourceFileMixIn.File">
+<code class="descname">File</code><a class="headerlink" href="#Parser.FilesParser.XDCSourceFileMixIn.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.VHDLLibraryReference">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">VHDLLibraryReference</code><span class="sig-paren">(</span><em>name</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#VHDLLibraryReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.VHDLLibraryReference" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-aba0c1c104662f13d4493209ec610a60e2aedee6.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLLibraryReference</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.VHDLLibraryReference.Name">
+<code class="descname">Name</code><a class="headerlink" href="#Parser.FilesParser.VHDLLibraryReference.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.VHDLLibraryReference.Path">
+<code class="descname">Path</code><a class="headerlink" href="#Parser.FilesParser.VHDLLibraryReference.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesParser.FilesParserMixIn">
+<em class="property">class </em><code class="descclassname">Parser.FilesParser.</code><code class="descname">FilesParserMixIn</code><a class="reference internal" href="../_modules/Parser/FilesParser.html#FilesParserMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4e809345ebe1bcc1860e3ea80e5be8b6d61400b9.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FilesParserMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classIncludeFile">
+<code class="descname">_classIncludeFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classIncludeFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.IncludeFileMixIn" title="Parser.FilesParser.IncludeFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">IncludeFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classVHDLSourceFile">
+<code class="descname">_classVHDLSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classVHDLSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.VHDLSourceFileMixIn" title="Parser.FilesParser.VHDLSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">VHDLSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classVerilogSourceFile">
+<code class="descname">_classVerilogSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classVerilogSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.VerilogSourceFileMixIn" title="Parser.FilesParser.VerilogSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">VerilogSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classCocotbSourceFile">
+<code class="descname">_classCocotbSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classCocotbSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.CocotbSourceFileMixIn" title="Parser.FilesParser.CocotbSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">CocotbSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classLDCSourceFile">
+<code class="descname">_classLDCSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classLDCSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.LDCSourceFileMixIn" title="Parser.FilesParser.LDCSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">LDCSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classSDCSourceFile">
+<code class="descname">_classSDCSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classSDCSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.SDCSourceFileMixIn" title="Parser.FilesParser.SDCSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">SDCSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classUCFSourceFile">
+<code class="descname">_classUCFSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classUCFSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.UCFSourceFileMixIn" title="Parser.FilesParser.UCFSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">UCFSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn._classXDCSourceFile">
+<code class="descname">_classXDCSourceFile</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._classXDCSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.FilesParser.XDCSourceFileMixIn" title="Parser.FilesParser.XDCSourceFileMixIn"><code class="xref py py-class docutils literal"><span class="pre">XDCSourceFileMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesParser.FilesParserMixIn._Parse">
+<code class="descname">_Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#FilesParserMixIn._Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesParser.FilesParserMixIn._Resolve">
+<code class="descname">_Resolve</code><span class="sig-paren">(</span><em>host</em>, <em>statements=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#FilesParserMixIn._Resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._Resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesParser.FilesParserMixIn._Evaluate">
+<code class="descname">_Evaluate</code><span class="sig-paren">(</span><em>host</em>, <em>expr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#FilesParserMixIn._Evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._Evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesParser.FilesParserMixIn._EvaluatePath">
+<code class="descname">_EvaluatePath</code><span class="sig-paren">(</span><em>host</em>, <em>expr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesParser.html#FilesParserMixIn._EvaluatePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn._EvaluatePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn.Files">
+<code class="descname">Files</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn.Includes">
+<code class="descname">Includes</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn.Includes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn.Libraries">
+<code class="descname">Libraries</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn.Libraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesParser.FilesParserMixIn.Warnings">
+<code class="descname">Warnings</code><a class="headerlink" href="#Parser.FilesParser.FilesParserMixIn.Warnings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

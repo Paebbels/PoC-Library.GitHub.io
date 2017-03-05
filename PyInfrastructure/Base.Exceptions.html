@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Base.Exceptions &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Base.Exceptions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Base.Exceptions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Base.Exceptions">
+<span id="base-exceptions"></span><h1>Base.Exceptions<a class="headerlink" href="#module-Base.Exceptions" title="Permalink to this headline">¶</a></h1>
+<p><strong>Exceptions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Base.Exceptions.ExceptionBase" title="Base.Exceptions.ExceptionBase"><code class="xref py py-exc docutils literal"><span class="pre">ExceptionBase</span></code></a>:
+Base exception derived from <a class="reference external" href="https://docs.python.org/3.6/library/exceptions.html#Exception" title="(in Python v3.6)"><code class="xref py py-exc docutils literal"><span class="pre">Exception</span></code></a> for all</li>
+<li><a class="reference internal" href="#Base.Exceptions.EnvironmentException" title="Base.Exceptions.EnvironmentException"><code class="xref py py-exc docutils literal"><span class="pre">EnvironmentException</span></code></a>:
+<code class="docutils literal"><span class="pre">EnvironmentException</span></code> is raised when an expected environment variable is</li>
+<li><a class="reference internal" href="#Base.Exceptions.PlatformNotSupportedException" title="Base.Exceptions.PlatformNotSupportedException"><code class="xref py py-exc docutils literal"><span class="pre">PlatformNotSupportedException</span></code></a>:
+<code class="docutils literal"><span class="pre">PlatformNotSupportedException</span></code> is raise if the platform is not supported</li>
+<li><a class="reference internal" href="#Base.Exceptions.NotConfiguredException" title="Base.Exceptions.NotConfiguredException"><code class="xref py py-exc docutils literal"><span class="pre">NotConfiguredException</span></code></a>:
+<code class="docutils literal"><span class="pre">NotConfiguredException</span></code> is raise if PoC or the requested tool chain</li>
+<li><a class="reference internal" href="#Base.Exceptions.SkipableException" title="Base.Exceptions.SkipableException"><code class="xref py py-exc docutils literal"><span class="pre">SkipableException</span></code></a>:
+Base class for all skipable exceptions.</li>
+<li><a class="reference internal" href="#Base.Exceptions.CommonException" title="Base.Exceptions.CommonException"><code class="xref py py-exc docutils literal"><span class="pre">CommonException</span></code></a>:
+Base exception derived from <a class="reference external" href="https://docs.python.org/3.6/library/exceptions.html#Exception" title="(in Python v3.6)"><code class="xref py py-exc docutils literal"><span class="pre">Exception</span></code></a> for all</li>
+<li><a class="reference internal" href="#Base.Exceptions.SkipableCommonException" title="Base.Exceptions.SkipableCommonException"><code class="xref py py-exc docutils literal"><span class="pre">SkipableCommonException</span></code></a>:
+<code class="docutils literal"><span class="pre">SkipableCommonException</span></code> is a <a class="reference internal" href="#Base.Exceptions.CommonException" title="Base.Exceptions.CommonException"><code class="xref py py-exc docutils literal"><span class="pre">CommonException</span></code></a>, which can be</li>
+</ul>
+<dl class="exception">
+<dt id="Base.Exceptions.ExceptionBase">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">ExceptionBase</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#ExceptionBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.ExceptionBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base exception derived from <a class="reference external" href="https://docs.python.org/3.6/library/exceptions.html#Exception" title="(in Python v3.6)"><code class="xref py py-exc docutils literal"><span class="pre">Exception</span></code></a> for all
+custom exceptions in PoC.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-2f66453f374f74a5811275347d133895080fd201.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ExceptionBase</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.ExceptionBase.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#ExceptionBase.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.ExceptionBase.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.ExceptionBase.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#ExceptionBase.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.ExceptionBase.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.ExceptionBase.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.ExceptionBase.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Base.Exceptions.EnvironmentException">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">EnvironmentException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#EnvironmentException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.EnvironmentException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">EnvironmentException</span></code> is raised when an expected environment variable is
+missing for PoC.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4dd4055dbe83df6db0daa29629a04e000371e43a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of EnvironmentException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.EnvironmentException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.EnvironmentException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.EnvironmentException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.EnvironmentException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.EnvironmentException.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.EnvironmentException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Base.Exceptions.PlatformNotSupportedException">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">PlatformNotSupportedException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#PlatformNotSupportedException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.PlatformNotSupportedException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">PlatformNotSupportedException</span></code> is raise if the platform is not supported
+by PoC, or the selected tool flow is not supported on the host system by PoC.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-418e16857900af10bb8892682781948df0ec8788.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PlatformNotSupportedException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.PlatformNotSupportedException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.PlatformNotSupportedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.PlatformNotSupportedException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.PlatformNotSupportedException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.PlatformNotSupportedException.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.PlatformNotSupportedException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Base.Exceptions.NotConfiguredException">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">NotConfiguredException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#NotConfiguredException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.NotConfiguredException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">NotConfiguredException</span></code> is raise if PoC or the requested tool chain
+setting is not configured in PoC.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d71a129ef79d96dd69407dacc32fec3e5f839f69.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of NotConfiguredException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.NotConfiguredException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.NotConfiguredException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.NotConfiguredException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.NotConfiguredException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.NotConfiguredException.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.NotConfiguredException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Base.Exceptions.SkipableException">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">SkipableException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#SkipableException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.SkipableException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all skipable exceptions.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f21ffe5a32700b19689febe7f7a0b3e220d18849.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SkipableException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.SkipableException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.SkipableException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.SkipableException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.SkipableException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.SkipableException.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.SkipableException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Base.Exceptions.CommonException">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">CommonException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#CommonException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.CommonException" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-710f9984fc7f885ab3fe19e650402ff0151fa95d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CommonException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.CommonException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.CommonException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.CommonException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.CommonException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.CommonException.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.CommonException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Base.Exceptions.SkipableCommonException">
+<em class="property">exception </em><code class="descclassname">Base.Exceptions.</code><code class="descname">SkipableCommonException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Exceptions.html#SkipableCommonException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Exceptions.SkipableCommonException" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">SkipableCommonException</span></code> is a <a class="reference internal" href="#Base.Exceptions.CommonException" title="Base.Exceptions.CommonException"><code class="xref py py-exc docutils literal"><span class="pre">CommonException</span></code></a>, which can be
+skipped.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ee42f158bee6312676b6c80e5a6f45bd686e7fb3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SkipableCommonException</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Base.Exceptions.SkipableCommonException.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.SkipableCommonException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception initializer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; The exception message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Base.Exceptions.SkipableCommonException.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Base.Exceptions.SkipableCommonException.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exception&#8217;s message text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Base.Exceptions.SkipableCommonException.args">
+<code class="descname">args</code><a class="headerlink" href="#Base.Exceptions.SkipableCommonException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

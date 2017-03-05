@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PoC.Mem Interface &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="up" title="IP Core Interfaces" href="index.html"/>
+        <link rel="next" title="PoC.Stream Interface" href="Stream.html"/>
+        <link rel="prev" title="PoC.FIFO Interface" href="FIFO.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">IP Core Interfaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CommandStatusError.html">PoC.CSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FIFO.html">PoC.FIFO</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PoC.Mem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interface-signals">Interface signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operation">Operation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requests">Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#read-replies">Read Replies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Stream.html">PoC.Stream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">IP Core Interfaces</a> &raquo;</li>
+        
+      <li>PoC.Mem Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Interfaces/Memory.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="poc-mem-interface">
+<span id="int-poc-mem"></span><h1>PoC.Mem Interface<a class="headerlink" href="#poc-mem-interface" title="Permalink to this headline">¶</a></h1>
+<p>PoC.Mem is a single-cycle, pipelined memory interface used by various
+memory controllers and related components like caches. Memory accesses
+are always word aligned, and during writes a mask defines which bytes
+are actually written to the memory (if supported by the memory
+controller).</p>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Each entity may have an individual configuration, especially if it has
+two PoC.Mem interfaces or if it adapts between PoC.Mem and another
+interface.</p>
+<p>The typical configuration parameters are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ADDR_BITS or
+A_BITS</td>
+<td>Number of address bits. Each address identifies
+exactly one memory word.</td>
+</tr>
+<tr class="row-odd"><td>DATA_BITS or
+D_BITS</td>
+<td>Size of a memory word in bits. DATA_BITS must
+be divisible by 8.</td>
+</tr>
+</tbody>
+</table>
+<p>A memory word consists of DATA_BITS/8 bytes.</p>
+<p>Individual bytes are only addressed during writes by the write
+mask. The write mask has one mask-bit for each byte in a memory word.</p>
+<p>For example, a 1 KiByte memory with a 32-bit datapath has the
+following configuration:</p>
+<ul class="simple">
+<li>4 bytes per memory word,</li>
+<li>ADDR_BITS=8 because <span class="math">\(\log_2(1\,\mbox{KiByte} / 4\,\mbox{bytes}) = 8\)</span>, and</li>
+<li>DATA_BITS=32 which is the datapath size in bits.</li>
+</ul>
+</div>
+<div class="section" id="interface-signals">
+<h2>Interface signals<a class="headerlink" href="#interface-signals" title="Permalink to this headline">¶</a></h2>
+<p>The following signal names are typically prefixed in the port list of
+a concrete entity to separate the PoC.Mem interface from other
+interfaces of the entity. Moreover, clock and reset may be shared
+with other interfaces of the entity.</p>
+<p>The PoC.Mem interface consists of the following signals:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Signal</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>clk</td>
+<td>The clock. All other signals are synchronous
+to the rising edge of this clock.</td>
+</tr>
+<tr class="row-odd"><td>rst</td>
+<td>High-active synchronous reset.</td>
+</tr>
+<tr class="row-even"><td>rdy</td>
+<td>High-active ready for request.</td>
+</tr>
+<tr class="row-odd"><td>req</td>
+<td>High-active request.</td>
+</tr>
+<tr class="row-even"><td>write</td>
+<td>&#8216;1&#8217; if write request, &#8216;0&#8217; if read request</td>
+</tr>
+<tr class="row-odd"><td>addr</td>
+<td>The (word) address.</td>
+</tr>
+<tr class="row-even"><td>wdata</td>
+<td>The data to be written to the memory.</td>
+</tr>
+<tr class="row-odd"><td>wmask
+(optional)</td>
+<td>Write-mask, for each byte: &#8216;0&#8217; = write byte,
+&#8216;1&#8217; = mask byte from write. Signal/port is
+omitted if write mask is not supported.</td>
+</tr>
+<tr class="row-even"><td>rstb</td>
+<td>High-active read-strobe.</td>
+</tr>
+<tr class="row-odd"><td>rdata</td>
+<td>The read-data returned from the memory.</td>
+</tr>
+</tbody>
+</table>
+<p>The interface is actually splitted into two parts:</p>
+<ul class="simple">
+<li>the request part: signals <code class="docutils literal"><span class="pre">rdy</span></code>, <code class="docutils literal"><span class="pre">req</span></code>, <code class="docutils literal"><span class="pre">write</span></code>, <code class="docutils literal"><span class="pre">addr</span></code>,
+<code class="docutils literal"><span class="pre">wdata</span></code> and <code class="docutils literal"><span class="pre">wmask</span></code>, and</li>
+<li>the read-reply part: signals <code class="docutils literal"><span class="pre">rstb</span></code> and <code class="docutils literal"><span class="pre">rdata</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="operation">
+<h2>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h2>
+<p>The request and the read-reply part operate indepent of each other to
+support pipelined reading from memory. The pipeline depth is defined
+by the actual memory controller. If a user application does support
+only a specific number of outstanding reads, then the application must
+limit the number of issued reads on its own.</p>
+<div class="section" id="requests">
+<h3>Requests<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h3>
+<p>If <code class="docutils literal"><span class="pre">req</span></code> is low, then no request is issued to the memory in the current
+clock cycle. The state of the signals <code class="docutils literal"><span class="pre">write</span></code>, <code class="docutils literal"><span class="pre">addr</span></code>, <code class="docutils literal"><span class="pre">wdata</span></code>
+and <code class="docutils literal"><span class="pre">wmask</span></code> doesn&#8217;t care.</p>
+<p>If <code class="docutils literal"><span class="pre">req</span></code> is high, then a request is issued to the memory in the current
+clock cycle as given by <code class="docutils literal"><span class="pre">write</span></code>, <code class="docutils literal"><span class="pre">addr</span></code>, <code class="docutils literal"><span class="pre">wdata</span></code> and
+<code class="docutils literal"><span class="pre">wmask</span></code>. The request will be accepted by the memory, if <code class="docutils literal"><span class="pre">rdy</span></code> is
+high in the same clock cycle, otherwise the request will be ignored.
+<code class="docutils literal"><span class="pre">wdata</span></code> and <code class="docutils literal"><span class="pre">wmask</span></code> doesn&#8217;t care if a read request is issued.</p>
+<p><code class="docutils literal"><span class="pre">rdy</span></code> does not depend on <code class="docutils literal"><span class="pre">req</span></code> in the current clock cycle. <code class="docutils literal"><span class="pre">rdy</span></code>
+may go low in the following clock cycle after a request has been
+issued or a synchronous reset has been applied.</p>
+</div>
+<div class="section" id="read-replies">
+<h3>Read Replies<a class="headerlink" href="#read-replies" title="Permalink to this headline">¶</a></h3>
+<p>If <code class="docutils literal"><span class="pre">rstb</span></code> is high in the current clock cycle, then <code class="docutils literal"><span class="pre">rdata</span></code>
+delivers the requested read data (read reply). Otherwise, if <code class="docutils literal"><span class="pre">rstb</span></code>
+is low, then <code class="docutils literal"><span class="pre">rdata</span></code> is unknown. The user application has to
+immediatly handle the incoming read data, because it cannot
+signal ready or acknowledge.</p>
+<p>After issuing a read request, the memory responds with a read reply in
+the following clock cycle (i.e. synchronous read) or any later clock
+cycle depending on the pipeline depth. For each read request, a read
+reply is generated. Read requests are not reordered.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Stream.html" class="btn btn-neutral float-right" title="PoC.Stream Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="FIFO.html" class="btn btn-neutral" title="PoC.FIFO Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

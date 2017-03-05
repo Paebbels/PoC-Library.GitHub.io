@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parser.RulesCodeDOM &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Parser.RulesCodeDOM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Parser.RulesCodeDOM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Parser.RulesCodeDOM">
+<span id="parser-rulescodedom"></span><h1>Parser.RulesCodeDOM<a class="headerlink" href="#module-Parser.RulesCodeDOM" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.InFileStatements" title="Parser.RulesCodeDOM.InFileStatements"><code class="xref py py-class docutils literal"><span class="pre">InFileStatements</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.PreProcessStatements" title="Parser.RulesCodeDOM.PreProcessStatements"><code class="xref py py-class docutils literal"><span class="pre">PreProcessStatements</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.PostProcessStatements" title="Parser.RulesCodeDOM.PostProcessStatements"><code class="xref py py-class docutils literal"><span class="pre">PostProcessStatements</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.DocumentStatements" title="Parser.RulesCodeDOM.DocumentStatements"><code class="xref py py-class docutils literal"><span class="pre">DocumentStatements</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.CopyStatement" title="Parser.RulesCodeDOM.CopyStatement"><code class="xref py py-class docutils literal"><span class="pre">CopyStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.DeleteStatement" title="Parser.RulesCodeDOM.DeleteStatement"><code class="xref py py-class docutils literal"><span class="pre">DeleteStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.ReplaceStatement" title="Parser.RulesCodeDOM.ReplaceStatement"><code class="xref py py-class docutils literal"><span class="pre">ReplaceStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.AppendLineStatement" title="Parser.RulesCodeDOM.AppendLineStatement"><code class="xref py py-class docutils literal"><span class="pre">AppendLineStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.FileStatement" title="Parser.RulesCodeDOM.FileStatement"><code class="xref py py-class docutils literal"><span class="pre">FileStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement" title="Parser.RulesCodeDOM.ProcessRulesBlockStatement"><code class="xref py py-class docutils literal"><span class="pre">ProcessRulesBlockStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.PreProcessRulesStatement" title="Parser.RulesCodeDOM.PreProcessRulesStatement"><code class="xref py py-class docutils literal"><span class="pre">PreProcessRulesStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.PostProcessRulesStatement" title="Parser.RulesCodeDOM.PostProcessRulesStatement"><code class="xref py py-class docutils literal"><span class="pre">PostProcessRulesStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.RulesCodeDOM.Document" title="Parser.RulesCodeDOM.Document"><code class="xref py py-class docutils literal"><span class="pre">Document</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.InFileStatements">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">InFileStatements</code><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#InFileStatements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.InFileStatements" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f4128dc9c93278262652d7648110417abb1f89ec.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of InFileStatements</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.InFileStatements._allowedStatements">
+<code class="descname">_allowedStatements</code><em class="property"> = [&lt;class 'Parser.RulesCodeDOM.ReplaceStatement'&gt;, &lt;class 'Parser.RulesCodeDOM.AppendLineStatement'&gt;, &lt;class 'lib.CodeDOM.CommentLine'&gt;, &lt;class 'lib.CodeDOM.EmptyLine'&gt;]</em><a class="headerlink" href="#Parser.RulesCodeDOM.InFileStatements._allowedStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.InFileStatements.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.InFileStatements.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.InFileStatements.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.InFileStatements.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.InFileStatements.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.InFileStatements.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.PreProcessStatements">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">PreProcessStatements</code><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#PreProcessStatements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessStatements" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a36c86a2e9eb8ad2147e450b5d63dec7feaa4bc8.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PreProcessStatements</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.PreProcessStatements._allowedStatements">
+<code class="descname">_allowedStatements</code><em class="property"> = [&lt;class 'Parser.RulesCodeDOM.CopyStatement'&gt;, &lt;class 'Parser.RulesCodeDOM.FileStatement'&gt;, &lt;class 'lib.CodeDOM.CommentLine'&gt;, &lt;class 'lib.CodeDOM.EmptyLine'&gt;]</em><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessStatements._allowedStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PreProcessStatements.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessStatements.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PreProcessStatements.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessStatements.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PreProcessStatements.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessStatements.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.PostProcessStatements">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">PostProcessStatements</code><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#PostProcessStatements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessStatements" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d88d72b83fee32918d2ddf5053ad3a329ed4e3e3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PostProcessStatements</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.PostProcessStatements._allowedStatements">
+<code class="descname">_allowedStatements</code><em class="property"> = [&lt;class 'Parser.RulesCodeDOM.CopyStatement'&gt;, &lt;class 'Parser.RulesCodeDOM.DeleteStatement'&gt;, &lt;class 'Parser.RulesCodeDOM.FileStatement'&gt;, &lt;class 'lib.CodeDOM.CommentLine'&gt;, &lt;class 'lib.CodeDOM.EmptyLine'&gt;]</em><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessStatements._allowedStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PostProcessStatements.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessStatements.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PostProcessStatements.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessStatements.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PostProcessStatements.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessStatements.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.DocumentStatements">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">DocumentStatements</code><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#DocumentStatements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.DocumentStatements" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b204f9142c3d6843f90116c8a370d778b63384b1.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of DocumentStatements</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.DocumentStatements._allowedStatements">
+<code class="descname">_allowedStatements</code><em class="property"> = [&lt;class 'Parser.RulesCodeDOM.PreProcessRulesStatement'&gt;, &lt;class 'Parser.RulesCodeDOM.PostProcessRulesStatement'&gt;, &lt;class 'lib.CodeDOM.CommentLine'&gt;, &lt;class 'lib.CodeDOM.EmptyLine'&gt;]</em><a class="headerlink" href="#Parser.RulesCodeDOM.DocumentStatements._allowedStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.DocumentStatements.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.DocumentStatements.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.DocumentStatements.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.DocumentStatements.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.DocumentStatements.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.DocumentStatements.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.CopyStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">CopyStatement</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#CopyStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.CopyStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8bd84afb3a8f8825d4f1c3ec4f274aab29757458.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CopyStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.CopyStatement.SourcePath">
+<code class="descname">SourcePath</code><a class="headerlink" href="#Parser.RulesCodeDOM.CopyStatement.SourcePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.CopyStatement.DestinationPath">
+<code class="descname">DestinationPath</code><a class="headerlink" href="#Parser.RulesCodeDOM.CopyStatement.DestinationPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.CopyStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#CopyStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.CopyStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.CopyStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.CopyStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.CopyStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.CopyStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.DeleteStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">DeleteStatement</code><span class="sig-paren">(</span><em>file</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#DeleteStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.DeleteStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ccb93b35ebc82a1a44e9fef7a166e76b5a7c9b5c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of DeleteStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.DeleteStatement.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Parser.RulesCodeDOM.DeleteStatement.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.DeleteStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#DeleteStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.DeleteStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.DeleteStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.DeleteStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.DeleteStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.DeleteStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">ReplaceStatement</code><span class="sig-paren">(</span><em>searchPattern</em>, <em>replacePattern</em>, <em>caseInsensitive</em>, <em>multiLine</em>, <em>dotAll</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#ReplaceStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e310f31025a20f1748e88557aa705e12eb6649a7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ReplaceStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.SearchPattern">
+<code class="descname">SearchPattern</code><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.SearchPattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.ReplacePattern">
+<code class="descname">ReplacePattern</code><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.ReplacePattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.CaseInsensitive">
+<code class="descname">CaseInsensitive</code><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.CaseInsensitive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.MultiLine">
+<code class="descname">MultiLine</code><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.MultiLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.DotAll">
+<code class="descname">DotAll</code><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.DotAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#ReplaceStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.ReplaceStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.ReplaceStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.AppendLineStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">AppendLineStatement</code><span class="sig-paren">(</span><em>appendPattern</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#AppendLineStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.AppendLineStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8919b3a2ebce9412820073317039dfb8081a021a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AppendLineStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.AppendLineStatement.AppendPattern">
+<code class="descname">AppendPattern</code><a class="headerlink" href="#Parser.RulesCodeDOM.AppendLineStatement.AppendPattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.AppendLineStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#AppendLineStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.AppendLineStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.AppendLineStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.AppendLineStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.AppendLineStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.AppendLineStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.FileStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">FileStatement</code><span class="sig-paren">(</span><em>file</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#FileStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-02508952c7af2bd864c74d0ffd00d78f37f35430.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FileStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.FileStatement.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.FileStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#FileStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.FileStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.FileStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.FileStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.FileStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.RulesCodeDOM.FileStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.ProcessRulesBlockStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">ProcessRulesBlockStatement</code><span class="sig-paren">(</span><em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#ProcessRulesBlockStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-5983ecc3703cb7bb6262bb87a958ed264068ef82.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ProcessRulesBlockStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.ProcessRulesBlockStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#ProcessRulesBlockStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.ProcessRulesBlockStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ProcessRulesBlockStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.ProcessRulesBlockStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.ProcessRulesBlockStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.RulesCodeDOM.ProcessRulesBlockStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.PreProcessRulesStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">PreProcessRulesStatement</code><span class="sig-paren">(</span><em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#PreProcessRulesStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessRulesStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-553cdc911b5f71571b6e06fc5e6d36953368fdae.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PreProcessRulesStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PreProcessRulesStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessRulesStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.PreProcessRulesStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessRulesStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PreProcessRulesStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessRulesStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PreProcessRulesStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessRulesStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.PreProcessRulesStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.RulesCodeDOM.PreProcessRulesStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.PostProcessRulesStatement">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">PostProcessRulesStatement</code><span class="sig-paren">(</span><em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#PostProcessRulesStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessRulesStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1d52e241b6d4c15bdceaa4fb99dfef8db85247e7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PostProcessRulesStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PostProcessRulesStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessRulesStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.PostProcessRulesStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessRulesStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PostProcessRulesStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessRulesStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.PostProcessRulesStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessRulesStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.PostProcessRulesStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.RulesCodeDOM.PostProcessRulesStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesCodeDOM.Document">
+<em class="property">class </em><code class="descclassname">Parser.RulesCodeDOM.</code><code class="descname">Document</code><span class="sig-paren">(</span><em>commentText=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.Document" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4a0c30c3d452db80a5539ab48e67eccc0fd2a539.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Document</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="Parser.RulesCodeDOM.Document.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesCodeDOM.html#Document.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesCodeDOM.Document.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.Document.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.Document.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.Document.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.RulesCodeDOM.Document.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesCodeDOM.Document.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.RulesCodeDOM.Document.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesCodeDOM.Document.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.RulesCodeDOM.Document.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

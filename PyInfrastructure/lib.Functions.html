@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.Functions &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>lib.Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/lib.Functions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.Functions">
+<span id="lib-functions"></span><h1>lib.Functions<a class="headerlink" href="#module-lib.Functions" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#lib.Functions.CallByRefParam" title="lib.Functions.CallByRefParam"><code class="xref py py-class docutils literal"><span class="pre">CallByRefParam</span></code></a>:
+Implements a &#8220;call by reference&#8221; parameter.</li>
+<li><a class="reference internal" href="#lib.Functions.Init" title="lib.Functions.Init"><code class="xref py py-class docutils literal"><span class="pre">Init</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#lib.Functions.Exit" title="lib.Functions.Exit"><code class="xref py py-class docutils literal"><span class="pre">Exit</span></code></a>:
+Undocumented.</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#lib.Functions.merge" title="lib.Functions.merge"><code class="xref py py-func docutils literal"><span class="pre">merge()</span></code></a>:
+Merge 2 or more dictionaries.</li>
+<li><a class="reference internal" href="#lib.Functions.merge_with" title="lib.Functions.merge_with"><code class="xref py py-func docutils literal"><span class="pre">merge_with()</span></code></a>:
+Merge 2 or more dictionaries. Apply function f to each element during merge.</li>
+</ul>
+<dl class="class">
+<dt id="lib.Functions.CallByRefParam">
+<em class="property">class </em><code class="descclassname">lib.Functions.</code><code class="descname">CallByRefParam</code><span class="sig-paren">(</span><em>value=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#CallByRefParam"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.CallByRefParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements a &#8220;call by reference&#8221; parameter.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><code class="xref py py-class docutils literal"><span class="pre">CallByRefBoolParam</span></code></dt>
+<dd>A special &#8220;call by reference&#8221; implementation for boolean reference types.</dd>
+<dt><code class="xref py py-class docutils literal"><span class="pre">CallByRefIntParam</span></code></dt>
+<dd>A special &#8220;call by reference&#8221; implementation for integer reference types.</dd>
+</dl>
+</div>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f04b3e7ca0c7eaee17cc416ee511826b741059ba.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CallByRefParam</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.Functions.Init">
+<em class="property">class </em><code class="descclassname">lib.Functions.</code><code class="descname">Init</code><a class="reference internal" href="../_modules/lib/Functions.html#Init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Init" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1ec89b04f26c990a5a02996bd71bb4240d8b0436.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Init</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="lib.Functions.Init.init">
+<em class="property">classmethod </em><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Init.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Init.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.Functions.Init.Foreground">
+<code class="descname">Foreground</code><em class="property"> = {'RED': '\x1b[91m', 'DARK_RED': '\x1b[31m', 'GREEN': '\x1b[92m', 'DARK_GREEN': '\x1b[32m', 'YELLOW': '\x1b[93m', 'DARK_YELLOW': '\x1b[33m', 'MAGENTA': '\x1b[95m', 'BLUE': '\x1b[94m', 'CYAN': '\x1b[96m', 'DARK_CYAN': '\x1b[36m', 'GRAY': '\x1b[37m', 'DARK_GRAY': '\x1b[90m', 'WHITE': '\x1b[97m', 'NOCOLOR': '\x1b[39m', 'HEADLINE': '\x1b[95m', 'ERROR': '\x1b[91m', 'WARNING': '\x1b[93m'}</em><a class="headerlink" href="#lib.Functions.Init.Foreground" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.Functions.Exit">
+<em class="property">class </em><code class="descclassname">lib.Functions.</code><code class="descname">Exit</code><a class="reference internal" href="../_modules/lib/Functions.html#Exit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f453c9bbbade10e5fe5ca6f8680b4a962eca83eb.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Exit</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.exit">
+<em class="property">classmethod </em><code class="descname">exit</code><span class="sig-paren">(</span><em>returnCode=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.exit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.versionCheck">
+<em class="property">classmethod </em><code class="descname">versionCheck</code><span class="sig-paren">(</span><em>version</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.versionCheck"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.versionCheck" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.printException">
+<em class="property">classmethod </em><code class="descname">printException</code><span class="sig-paren">(</span><em>ex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.printException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.printException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.printNotImplementedError">
+<em class="property">classmethod </em><code class="descname">printNotImplementedError</code><span class="sig-paren">(</span><em>ex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.printNotImplementedError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.printNotImplementedError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.printExceptionBase">
+<em class="property">classmethod </em><code class="descname">printExceptionBase</code><span class="sig-paren">(</span><em>ex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.printExceptionBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.printExceptionBase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.printPlatformNotSupportedException">
+<em class="property">classmethod </em><code class="descname">printPlatformNotSupportedException</code><span class="sig-paren">(</span><em>ex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.printPlatformNotSupportedException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.printPlatformNotSupportedException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.printEnvironmentException">
+<em class="property">classmethod </em><code class="descname">printEnvironmentException</code><span class="sig-paren">(</span><em>ex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.printEnvironmentException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.printEnvironmentException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="lib.Functions.Exit.printNotConfiguredException">
+<em class="property">classmethod </em><code class="descname">printNotConfiguredException</code><span class="sig-paren">(</span><em>ex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#Exit.printNotConfiguredException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.Exit.printNotConfiguredException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p><strong>Functions</strong></p>
+<dl class="function">
+<dt id="lib.Functions.merge">
+<code class="descclassname">lib.Functions.</code><code class="descname">merge</code><span class="sig-paren">(</span><em>*dicts</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge 2 or more dictionaries.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lib.Functions.merge_with">
+<code class="descclassname">lib.Functions.</code><code class="descname">merge_with</code><span class="sig-paren">(</span><em>f</em>, <em>*dicts</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Functions.html#merge_with"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Functions.merge_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge 2 or more dictionaries. Apply function f to each element during merge.</p>
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

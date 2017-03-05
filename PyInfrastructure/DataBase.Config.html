@@ -1,0 +1,1171 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.Config &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DataBase.Config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/DataBase.Config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-DataBase.Config">
+<span id="database-config"></span><h1>DataBase.Config<a class="headerlink" href="#module-DataBase.Config" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#DataBase.Config.BaseEnum" title="DataBase.Config.BaseEnum"><code class="xref py py-class docutils literal"><span class="pre">BaseEnum</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.Config.Vendors" title="DataBase.Config.Vendors"><code class="xref py py-class docutils literal"><span class="pre">Vendors</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.Config.Families" title="DataBase.Config.Families"><code class="xref py py-class docutils literal"><span class="pre">Families</span></code></a>:
+Base enum for all Family enums.</li>
+<li><a class="reference internal" href="#DataBase.Config.GenericFamilies" title="DataBase.Config.GenericFamilies"><code class="xref py py-class docutils literal"><span class="pre">GenericFamilies</span></code></a>:
+Enumeration of all generic families.</li>
+<li><a class="reference internal" href="#DataBase.Config.AlteraFamilies" title="DataBase.Config.AlteraFamilies"><code class="xref py py-class docutils literal"><span class="pre">AlteraFamilies</span></code></a>:
+Enumeration of all Altera families.</li>
+<li><a class="reference internal" href="#DataBase.Config.LatticeFamilies" title="DataBase.Config.LatticeFamilies"><code class="xref py py-class docutils literal"><span class="pre">LatticeFamilies</span></code></a>:
+Enumeration of all Lattice families.</li>
+<li><a class="reference internal" href="#DataBase.Config.XilinxFamilies" title="DataBase.Config.XilinxFamilies"><code class="xref py py-class docutils literal"><span class="pre">XilinxFamilies</span></code></a>:
+Enumeration of all Xilinx families.</li>
+<li><a class="reference internal" href="#DataBase.Config.Devices" title="DataBase.Config.Devices"><code class="xref py py-class docutils literal"><span class="pre">Devices</span></code></a>:
+Base enum for all Device enums.</li>
+<li><a class="reference internal" href="#DataBase.Config.GenericDevices" title="DataBase.Config.GenericDevices"><code class="xref py py-class docutils literal"><span class="pre">GenericDevices</span></code></a>:
+Enumeration of all generic devices.</li>
+<li><a class="reference internal" href="#DataBase.Config.AlteraDevices" title="DataBase.Config.AlteraDevices"><code class="xref py py-class docutils literal"><span class="pre">AlteraDevices</span></code></a>:
+Enumeration of all Altera devices.</li>
+<li><a class="reference internal" href="#DataBase.Config.LatticeDevices" title="DataBase.Config.LatticeDevices"><code class="xref py py-class docutils literal"><span class="pre">LatticeDevices</span></code></a>:
+Enumeration of all Lattice devices.</li>
+<li><a class="reference internal" href="#DataBase.Config.XilinxDevices" title="DataBase.Config.XilinxDevices"><code class="xref py py-class docutils literal"><span class="pre">XilinxDevices</span></code></a>:
+Enumeration of all Xilinx devices.</li>
+<li><a class="reference internal" href="#DataBase.Config.SubTypes" title="DataBase.Config.SubTypes"><code class="xref py py-class docutils literal"><span class="pre">SubTypes</span></code></a>:
+Base enum for all SubType enums.</li>
+<li><a class="reference internal" href="#DataBase.Config.GenericSubTypes" title="DataBase.Config.GenericSubTypes"><code class="xref py py-class docutils literal"><span class="pre">GenericSubTypes</span></code></a>:
+Enumeration of all generic device subtype.</li>
+<li><a class="reference internal" href="#DataBase.Config.AlteraSubTypes" title="DataBase.Config.AlteraSubTypes"><code class="xref py py-class docutils literal"><span class="pre">AlteraSubTypes</span></code></a>:
+Enumeration of all Altera device subtype.</li>
+<li><a class="reference internal" href="#DataBase.Config.LatticeSubTypes" title="DataBase.Config.LatticeSubTypes"><code class="xref py py-class docutils literal"><span class="pre">LatticeSubTypes</span></code></a>:
+Enumeration of all Lattice device subtype.</li>
+<li><a class="reference internal" href="#DataBase.Config.XilinxSubTypes" title="DataBase.Config.XilinxSubTypes"><code class="xref py py-class docutils literal"><span class="pre">XilinxSubTypes</span></code></a>:
+Enumeration of all Xilinx device subtype.</li>
+<li><a class="reference internal" href="#DataBase.Config.Packages" title="DataBase.Config.Packages"><code class="xref py py-class docutils literal"><span class="pre">Packages</span></code></a>:
+An enumeration.</li>
+<li><a class="reference internal" href="#DataBase.Config.Device" title="DataBase.Config.Device"><code class="xref py py-class docutils literal"><span class="pre">Device</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Config.Board" title="DataBase.Config.Board"><code class="xref py py-class docutils literal"><span class="pre">Board</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="DataBase.Config.BaseEnum">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">BaseEnum</code><a class="reference internal" href="../_modules/DataBase/Config.html#BaseEnum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.BaseEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8004471edc26b4ecc39674a8f7fcaef2f4dff489.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of BaseEnum</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.Vendors">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">Vendors</code><a class="reference internal" href="../_modules/DataBase/Config.html#Vendors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Vendors" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-94ce70b9d96caa47d17b509cbfd44a0b27ab336b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Vendors</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.Vendors.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.Config.Vendors.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Vendors.Generic">
+<code class="descname">Generic</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.Config.Vendors.Generic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Vendors.Altera">
+<code class="descname">Altera</code><em class="property"> = 2</em><a class="headerlink" href="#DataBase.Config.Vendors.Altera" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Vendors.Lattice">
+<code class="descname">Lattice</code><em class="property"> = 3</em><a class="headerlink" href="#DataBase.Config.Vendors.Lattice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Vendors.MicroSemi">
+<code class="descname">MicroSemi</code><em class="property"> = 4</em><a class="headerlink" href="#DataBase.Config.Vendors.MicroSemi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Vendors.Xilinx">
+<code class="descname">Xilinx</code><em class="property"> = 5</em><a class="headerlink" href="#DataBase.Config.Vendors.Xilinx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.Families">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">Families</code><a class="reference internal" href="../_modules/DataBase/Config.html#Families"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Families" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base enum for all Family enums.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e005ed7d8a3e6607e1b254cad994d453cfdc9acf.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Families</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.GenericFamilies">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">GenericFamilies</code><a class="reference internal" href="../_modules/DataBase/Config.html#GenericFamilies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.GenericFamilies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all generic families.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-029663f5edae2c82da3960287601b58d82eaf1ac.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GenericFamilies</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.GenericFamilies.Unknown">
+<code class="descname">Unknown</code><em class="property"> = None</em><a class="headerlink" href="#DataBase.Config.GenericFamilies.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.GenericFamilies.Generic">
+<code class="descname">Generic</code><em class="property"> = 'g'</em><a class="headerlink" href="#DataBase.Config.GenericFamilies.Generic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.AlteraFamilies">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">AlteraFamilies</code><a class="reference internal" href="../_modules/DataBase/Config.html#AlteraFamilies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.AlteraFamilies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Altera families.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-73935fef7d70670501bd54309150811f8100a1bc.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AlteraFamilies</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraFamilies.Max">
+<code class="descname">Max</code><em class="property"> = 'm'</em><a class="headerlink" href="#DataBase.Config.AlteraFamilies.Max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraFamilies.Cyclone">
+<code class="descname">Cyclone</code><em class="property"> = 'c'</em><a class="headerlink" href="#DataBase.Config.AlteraFamilies.Cyclone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraFamilies.Arria">
+<code class="descname">Arria</code><em class="property"> = 'a'</em><a class="headerlink" href="#DataBase.Config.AlteraFamilies.Arria" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraFamilies.Stratix">
+<code class="descname">Stratix</code><em class="property"> = 's'</em><a class="headerlink" href="#DataBase.Config.AlteraFamilies.Stratix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.LatticeFamilies">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">LatticeFamilies</code><a class="reference internal" href="../_modules/DataBase/Config.html#LatticeFamilies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.LatticeFamilies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Lattice families.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-68d063c9e547189cbdff147431053d9265b8ceb7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LatticeFamilies</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeFamilies.ECP">
+<code class="descname">ECP</code><em class="property"> = 'lfe'</em><a class="headerlink" href="#DataBase.Config.LatticeFamilies.ECP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.XilinxFamilies">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">XilinxFamilies</code><a class="reference internal" href="../_modules/DataBase/Config.html#XilinxFamilies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.XilinxFamilies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Xilinx families.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-062145549150da3a7f0619e20d860941bf4295ed.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XilinxFamilies</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxFamilies.Spartan">
+<code class="descname">Spartan</code><em class="property"> = 's'</em><a class="headerlink" href="#DataBase.Config.XilinxFamilies.Spartan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxFamilies.Artix">
+<code class="descname">Artix</code><em class="property"> = 'a'</em><a class="headerlink" href="#DataBase.Config.XilinxFamilies.Artix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxFamilies.Kintex">
+<code class="descname">Kintex</code><em class="property"> = 'k'</em><a class="headerlink" href="#DataBase.Config.XilinxFamilies.Kintex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxFamilies.Virtex">
+<code class="descname">Virtex</code><em class="property"> = 'v'</em><a class="headerlink" href="#DataBase.Config.XilinxFamilies.Virtex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxFamilies.Zynq">
+<code class="descname">Zynq</code><em class="property"> = 'z'</em><a class="headerlink" href="#DataBase.Config.XilinxFamilies.Zynq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.Devices">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">Devices</code><a class="reference internal" href="../_modules/DataBase/Config.html#Devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base enum for all Device enums.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-730d90503b25fe4f00ce57387d5cef5c3bfeea2c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Devices</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.GenericDevices">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">GenericDevices</code><a class="reference internal" href="../_modules/DataBase/Config.html#GenericDevices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.GenericDevices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all generic devices.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-723528df97fa260d9692187828e4de7a05fc9969.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GenericDevices</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.GenericDevices.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.Config.GenericDevices.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.GenericDevices.Generic">
+<code class="descname">Generic</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.Config.GenericDevices.Generic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.AlteraDevices">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">AlteraDevices</code><a class="reference internal" href="../_modules/DataBase/Config.html#AlteraDevices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.AlteraDevices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Altera devices.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d4787d7cd2c37a51aaf116127558bc2ad5b99333.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AlteraDevices</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Max2">
+<code class="descname">Max2</code><em class="property"> = 100</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Max2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Max4">
+<code class="descname">Max4</code><em class="property"> = 101</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Max4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Max5">
+<code class="descname">Max5</code><em class="property"> = 102</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Max5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Max10">
+<code class="descname">Max10</code><em class="property"> = 103</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Max10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Cyclone3">
+<code class="descname">Cyclone3</code><em class="property"> = 110</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Cyclone3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Cyclone4">
+<code class="descname">Cyclone4</code><em class="property"> = 111</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Cyclone4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Cyclone5">
+<code class="descname">Cyclone5</code><em class="property"> = 112</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Cyclone5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Arria2">
+<code class="descname">Arria2</code><em class="property"> = 120</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Arria2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Arria5">
+<code class="descname">Arria5</code><em class="property"> = 121</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Arria5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Stratix2">
+<code class="descname">Stratix2</code><em class="property"> = 130</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Stratix2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Stratix4">
+<code class="descname">Stratix4</code><em class="property"> = 131</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Stratix4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Stratix5">
+<code class="descname">Stratix5</code><em class="property"> = 132</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Stratix5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraDevices.Stratix10">
+<code class="descname">Stratix10</code><em class="property"> = 133</em><a class="headerlink" href="#DataBase.Config.AlteraDevices.Stratix10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.LatticeDevices">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">LatticeDevices</code><a class="reference internal" href="../_modules/DataBase/Config.html#LatticeDevices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.LatticeDevices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Lattice devices.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-09d31f2a9cae6a0984284fc0eed8ac0a677afcea.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LatticeDevices</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.iCE40">
+<code class="descname">iCE40</code><em class="property"> = 200</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.iCE40" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.MachXO">
+<code class="descname">MachXO</code><em class="property"> = 210</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.MachXO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.MachXO2">
+<code class="descname">MachXO2</code><em class="property"> = 211</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.MachXO2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.MachXO3">
+<code class="descname">MachXO3</code><em class="property"> = 212</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.MachXO3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.ECP2">
+<code class="descname">ECP2</code><em class="property"> = 220</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.ECP2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.ECP3">
+<code class="descname">ECP3</code><em class="property"> = 221</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.ECP3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeDevices.ECP5">
+<code class="descname">ECP5</code><em class="property"> = 222</em><a class="headerlink" href="#DataBase.Config.LatticeDevices.ECP5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.XilinxDevices">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">XilinxDevices</code><a class="reference internal" href="../_modules/DataBase/Config.html#XilinxDevices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.XilinxDevices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Xilinx devices.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-911331e40f3cc73bfd1daf4966c4b9e22b665c37.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XilinxDevices</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Spartan3">
+<code class="descname">Spartan3</code><em class="property"> = 310</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Spartan3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Spartan6">
+<code class="descname">Spartan6</code><em class="property"> = 311</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Spartan6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Artix7">
+<code class="descname">Artix7</code><em class="property"> = 320</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Artix7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Kintex7">
+<code class="descname">Kintex7</code><em class="property"> = 330</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Kintex7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.KintexUltraScale">
+<code class="descname">KintexUltraScale</code><em class="property"> = 331</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.KintexUltraScale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.KintexUltraScalePlus">
+<code class="descname">KintexUltraScalePlus</code><em class="property"> = 332</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.KintexUltraScalePlus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Virtex2">
+<code class="descname">Virtex2</code><em class="property"> = 340</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Virtex2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Virtex4">
+<code class="descname">Virtex4</code><em class="property"> = 341</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Virtex4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Virtex5">
+<code class="descname">Virtex5</code><em class="property"> = 342</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Virtex5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Virtex6">
+<code class="descname">Virtex6</code><em class="property"> = 343</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Virtex6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Virtex7">
+<code class="descname">Virtex7</code><em class="property"> = 344</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Virtex7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.VirtexUltraScale">
+<code class="descname">VirtexUltraScale</code><em class="property"> = 345</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.VirtexUltraScale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.VirtexUltraScalePlus">
+<code class="descname">VirtexUltraScalePlus</code><em class="property"> = 346</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.VirtexUltraScalePlus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxDevices.Zynq7000">
+<code class="descname">Zynq7000</code><em class="property"> = 350</em><a class="headerlink" href="#DataBase.Config.XilinxDevices.Zynq7000" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.SubTypes">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">SubTypes</code><a class="reference internal" href="../_modules/DataBase/Config.html#SubTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.SubTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base enum for all SubType enums.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f833cc5aa65e6b8620595db28ee48c09d16ffe53.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SubTypes</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.GenericSubTypes">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">GenericSubTypes</code><a class="reference internal" href="../_modules/DataBase/Config.html#GenericSubTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.GenericSubTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all generic device subtype.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ad5ebd85832e070cb8a190337888c35827d001f1.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of GenericSubTypes</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.GenericSubTypes.Unknown">
+<code class="descname">Unknown</code><em class="property"> = None</em><a class="headerlink" href="#DataBase.Config.GenericSubTypes.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.GenericSubTypes.Generic">
+<code class="descname">Generic</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.Config.GenericSubTypes.Generic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.GenericSubTypes.NoSubType">
+<code class="descname">NoSubType</code><em class="property"> = ('', '')</em><a class="headerlink" href="#DataBase.Config.GenericSubTypes.NoSubType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.AlteraSubTypes">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">AlteraSubTypes</code><a class="reference internal" href="../_modules/DataBase/Config.html#AlteraSubTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.AlteraSubTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Altera device subtype.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-717b4a1b616d34ce8bf7efe0f169e88fdd573426.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AlteraSubTypes</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.NoSubType">
+<code class="descname">NoSubType</code><em class="property"> = ('', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.NoSubType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.LS">
+<code class="descname">LS</code><em class="property"> = ('ls', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.LS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.E">
+<code class="descname">E</code><em class="property"> = ('e', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.E" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.GS">
+<code class="descname">GS</code><em class="property"> = ('gs', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.GS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.GX">
+<code class="descname">GX</code><em class="property"> = ('gx', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.GX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.GT">
+<code class="descname">GT</code><em class="property"> = ('gt', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.GT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.GZ">
+<code class="descname">GZ</code><em class="property"> = ('gz', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.GZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.SX">
+<code class="descname">SX</code><em class="property"> = ('sx', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.SX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.AlteraSubTypes.ST">
+<code class="descname">ST</code><em class="property"> = ('st', '')</em><a class="headerlink" href="#DataBase.Config.AlteraSubTypes.ST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.LatticeSubTypes">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">LatticeSubTypes</code><a class="reference internal" href="../_modules/DataBase/Config.html#LatticeSubTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.LatticeSubTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Lattice device subtype.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d9bba27075335fc881ee741c543e627462f41f8f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LatticeSubTypes</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeSubTypes.NoSubType">
+<code class="descname">NoSubType</code><em class="property"> = ('', '')</em><a class="headerlink" href="#DataBase.Config.LatticeSubTypes.NoSubType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeSubTypes.U">
+<code class="descname">U</code><em class="property"> = ('u', '')</em><a class="headerlink" href="#DataBase.Config.LatticeSubTypes.U" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.LatticeSubTypes.UM">
+<code class="descname">UM</code><em class="property"> = ('um', '')</em><a class="headerlink" href="#DataBase.Config.LatticeSubTypes.UM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.XilinxSubTypes">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">XilinxSubTypes</code><a class="reference internal" href="../_modules/DataBase/Config.html#XilinxSubTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.XilinxSubTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration of all Xilinx device subtype.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-fab4d535ae3675aa71248d93a61cd6692af66c8b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XilinxSubTypes</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.NoSubType">
+<code class="descname">NoSubType</code><em class="property"> = ('', '')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.NoSubType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.DA">
+<code class="descname">DA</code><em class="property"> = ('d', 'a')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.DA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.E">
+<code class="descname">E</code><em class="property"> = ('', 'e')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.E" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.AN">
+<code class="descname">AN</code><em class="property"> = ('', 'an')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.AN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.X">
+<code class="descname">X</code><em class="property"> = ('x', '')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.T">
+<code class="descname">T</code><em class="property"> = ('', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.XT">
+<code class="descname">XT</code><em class="property"> = ('x', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.XT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.HT">
+<code class="descname">HT</code><em class="property"> = ('h', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.HT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.LX">
+<code class="descname">LX</code><em class="property"> = ('lx', '')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.LX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.SXT">
+<code class="descname">SXT</code><em class="property"> = ('sx', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.SXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.LXT">
+<code class="descname">LXT</code><em class="property"> = ('lx', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.LXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.TXT">
+<code class="descname">TXT</code><em class="property"> = ('tx', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.TXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.FXT">
+<code class="descname">FXT</code><em class="property"> = ('fx', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.FXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.CXT">
+<code class="descname">CXT</code><em class="property"> = ('cx', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.CXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.XilinxSubTypes.HXT">
+<code class="descname">HXT</code><em class="property"> = ('hx', 't')</em><a class="headerlink" href="#DataBase.Config.XilinxSubTypes.HXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.Packages">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">Packages</code><a class="reference internal" href="../_modules/DataBase/Config.html#Packages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Packages" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-150729fe7b2306bd02db87420198509a08f67cf8.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Packages</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.Unknown">
+<code class="descname">Unknown</code><em class="property"> = 0</em><a class="headerlink" href="#DataBase.Config.Packages.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.Generic">
+<code class="descname">Generic</code><em class="property"> = 1</em><a class="headerlink" href="#DataBase.Config.Packages.Generic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.TQG">
+<code class="descname">TQG</code><em class="property"> = 10</em><a class="headerlink" href="#DataBase.Config.Packages.TQG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.CLG">
+<code class="descname">CLG</code><em class="property"> = 20</em><a class="headerlink" href="#DataBase.Config.Packages.CLG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.CPG">
+<code class="descname">CPG</code><em class="property"> = 21</em><a class="headerlink" href="#DataBase.Config.Packages.CPG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.CSG">
+<code class="descname">CSG</code><em class="property"> = 22</em><a class="headerlink" href="#DataBase.Config.Packages.CSG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.CABGA">
+<code class="descname">CABGA</code><em class="property"> = 25</em><a class="headerlink" href="#DataBase.Config.Packages.CABGA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FBG">
+<code class="descname">FBG</code><em class="property"> = 30</em><a class="headerlink" href="#DataBase.Config.Packages.FBG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FF">
+<code class="descname">FF</code><em class="property"> = 31</em><a class="headerlink" href="#DataBase.Config.Packages.FF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FFG">
+<code class="descname">FFG</code><em class="property"> = 32</em><a class="headerlink" href="#DataBase.Config.Packages.FFG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FG">
+<code class="descname">FG</code><em class="property"> = 33</em><a class="headerlink" href="#DataBase.Config.Packages.FG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FGG">
+<code class="descname">FGG</code><em class="property"> = 34</em><a class="headerlink" href="#DataBase.Config.Packages.FGG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FLG">
+<code class="descname">FLG</code><em class="property"> = 35</em><a class="headerlink" href="#DataBase.Config.Packages.FLG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FT">
+<code class="descname">FT</code><em class="property"> = 36</em><a class="headerlink" href="#DataBase.Config.Packages.FT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.FTG">
+<code class="descname">FTG</code><em class="property"> = 37</em><a class="headerlink" href="#DataBase.Config.Packages.FTG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.RB">
+<code class="descname">RB</code><em class="property"> = 40</em><a class="headerlink" href="#DataBase.Config.Packages.RB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.RBG">
+<code class="descname">RBG</code><em class="property"> = 41</em><a class="headerlink" href="#DataBase.Config.Packages.RBG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.RF">
+<code class="descname">RF</code><em class="property"> = 42</em><a class="headerlink" href="#DataBase.Config.Packages.RF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.RS">
+<code class="descname">RS</code><em class="property"> = 43</em><a class="headerlink" href="#DataBase.Config.Packages.RS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.E">
+<code class="descname">E</code><em class="property"> = 50</em><a class="headerlink" href="#DataBase.Config.Packages.E" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.Q">
+<code class="descname">Q</code><em class="property"> = 51</em><a class="headerlink" href="#DataBase.Config.Packages.Q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.F">
+<code class="descname">F</code><em class="property"> = 52</em><a class="headerlink" href="#DataBase.Config.Packages.F" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.U">
+<code class="descname">U</code><em class="property"> = 53</em><a class="headerlink" href="#DataBase.Config.Packages.U" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Packages.M">
+<code class="descname">M</code><em class="property"> = 54</em><a class="headerlink" href="#DataBase.Config.Packages.M" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.Device">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">Device</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-96eaa312c124828d7c84157d960d004edc68330d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Device</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeGeneric">
+<code class="descname">_DecodeGeneric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeGeneric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeGeneric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeAltera">
+<code class="descname">_DecodeAltera</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeAltera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeAltera" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeLatticeICE">
+<code class="descname">_DecodeLatticeICE</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeLatticeICE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeLatticeICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeLatticeLCM">
+<code class="descname">_DecodeLatticeLCM</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeLatticeLCM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeLatticeLCM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeLatticeLFE">
+<code class="descname">_DecodeLatticeLFE</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeLatticeLFE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeLatticeLFE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeLatticeECP3">
+<code class="descname">_DecodeLatticeECP3</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeLatticeECP3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeLatticeECP3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeLatticeECP5">
+<code class="descname">_DecodeLatticeECP5</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeLatticeECP5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeLatticeECP5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device._DecodeXilinx">
+<code class="descname">_DecodeXilinx</code><span class="sig-paren">(</span><em>deviceString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device._DecodeXilinx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device._DecodeXilinx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Vendor">
+<code class="descname">Vendor</code><a class="headerlink" href="#DataBase.Config.Device.Vendor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Family">
+<code class="descname">Family</code><a class="headerlink" href="#DataBase.Config.Device.Family" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Device">
+<code class="descname">Device</code><a class="headerlink" href="#DataBase.Config.Device.Device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Generation">
+<code class="descname">Generation</code><a class="headerlink" href="#DataBase.Config.Device.Generation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Number">
+<code class="descname">Number</code><a class="headerlink" href="#DataBase.Config.Device.Number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.SpeedGrade">
+<code class="descname">SpeedGrade</code><a class="headerlink" href="#DataBase.Config.Device.SpeedGrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.PinCount">
+<code class="descname">PinCount</code><a class="headerlink" href="#DataBase.Config.Device.PinCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Package">
+<code class="descname">Package</code><a class="headerlink" href="#DataBase.Config.Device.Package" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Config.Device.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.ShortName">
+<code class="descname">ShortName</code><a class="headerlink" href="#DataBase.Config.Device.ShortName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.FullName">
+<code class="descname">FullName</code><a class="headerlink" href="#DataBase.Config.Device.FullName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.FullName2">
+<code class="descname">FullName2</code><a class="headerlink" href="#DataBase.Config.Device.FullName2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.FamilyName">
+<code class="descname">FamilyName</code><a class="headerlink" href="#DataBase.Config.Device.FamilyName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Device.Series">
+<code class="descname">Series</code><a class="headerlink" href="#DataBase.Config.Device.Series" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Device.GetVariables">
+<code class="descname">GetVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Device.GetVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Device.GetVariables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Config.Board">
+<em class="property">class </em><code class="descclassname">DataBase.Config.</code><code class="descname">Board</code><span class="sig-paren">(</span><em>host</em>, <em>boardName=None</em>, <em>device=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Board"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Board" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-1a4d801bf8590a26d42199ae16ea53613351f9eb.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Board</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Config.Board.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Config.Board.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Config.Board.Device">
+<code class="descname">Device</code><a class="headerlink" href="#DataBase.Config.Board.Device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Config.Board.GetVariables">
+<code class="descname">GetVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Config.html#Board.GetVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Config.Board.GetVariables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

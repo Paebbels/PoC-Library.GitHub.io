@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>List of Supported Boards &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="up" title="More References" href="more.html"/>
+        <link rel="next" title="Wrapper Script Hook Files" href="WrapperScriptHookFiles.html"/>
+        <link rel="prev" title="List of Supported FPGA Devices" href="ListOfDevices.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="more.html">More ...</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ListOfDevices.html">List of Supported FPGA Devices</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">List of Supported Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WrapperScriptHookFiles.html">Wrapper Script Hook Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileFormats/index.html">File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NamingConventions.html">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KnownIssues.html">Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Licenses/index.html">Local License Copies</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="more.html">More References</a> &raquo;</li>
+        
+      <li>List of Supported Boards</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/References/ListOfBoards.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="list-of-supported-boards">
+<h1>List of Supported Boards<a class="headerlink" href="#list-of-supported-boards" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="47%" />
+<col width="36%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Board Name</th>
+<th class="head">Device String</th>
+<th class="head">Device Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GENERIC</td>
+<td>GENERIC</td>
+<td>Generic board and device</td>
+</tr>
+<tr class="row-odd"><td><strong>Altera</strong></td>
+<td>⇒ <strong>DE4</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>DE0</td>
+<td>EP3C16F484</td>
+<td>Altera Cyclone III</td>
+</tr>
+<tr class="row-odd"><td>S2GXAV</td>
+<td>EP2SGX90FF1508C3</td>
+<td>Altera Stratix II</td>
+</tr>
+<tr class="row-even"><td>DE4</td>
+<td>EP4SGX230KF40C2</td>
+<td>Altera Stratix IV</td>
+</tr>
+<tr class="row-odd"><td>DE5</td>
+<td>EP5SGXEA7N2F45C2</td>
+<td>Altera Stratix V</td>
+</tr>
+<tr class="row-even"><td><strong>Lattice</strong></td>
+<td>⇒ <strong>ECP5Versa</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ECP5Versa</td>
+<td>LFE5UM-45F-6BG381C</td>
+<td>Lattice ECP5</td>
+</tr>
+<tr class="row-even"><td><strong>Xilinx</strong></td>
+<td>⇒ <strong>KC705</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>S3SK200</td>
+<td>XC3S200FT256</td>
+<td>Xilinx Spartan-3</td>
+</tr>
+<tr class="row-even"><td>S3ESK500</td>
+<td>XC3S500EFT256</td>
+<td>Xilinx Spartan-3</td>
+</tr>
+<tr class="row-odd"><td>S3SK1000</td>
+<td>XC3S1000FT256</td>
+<td>Xilinx Spartan-3</td>
+</tr>
+<tr class="row-even"><td>S3ESK1600</td>
+<td>XC3S1600EFT256</td>
+<td>Xilinx Spartan-3</td>
+</tr>
+<tr class="row-odd"><td>ATLYS</td>
+<td>XC6SLX45-3CSG324</td>
+<td>Xilinx Spartan-6</td>
+</tr>
+<tr class="row-even"><td>ZC706</td>
+<td>XC7Z045-2FFG900</td>
+<td>Xilinx Zynq-7000</td>
+</tr>
+<tr class="row-odd"><td>ZedBoard</td>
+<td>XC7Z020-1CLG484</td>
+<td>Xilinx Zynq-7000</td>
+</tr>
+<tr class="row-even"><td>AC701</td>
+<td>XC7A200T-2FBG676C</td>
+<td>Xilinx Artix-7</td>
+</tr>
+<tr class="row-odd"><td>KC705</td>
+<td>XC7K325T-2FFG900C</td>
+<td>Xilinx Kintex-7</td>
+</tr>
+<tr class="row-even"><td>ML505</td>
+<td>XC5VLX50T-1FF1136</td>
+<td>Xilinx Virtex-5</td>
+</tr>
+<tr class="row-odd"><td>ML506</td>
+<td>XC5VSX50T-1FFG1136</td>
+<td>Xilinx Virtex-5</td>
+</tr>
+<tr class="row-even"><td>ML507</td>
+<td>XC5VFX70T-1FFG1136</td>
+<td>Xilinx Virtex-5</td>
+</tr>
+<tr class="row-odd"><td>XUPV5</td>
+<td>XC5VLX110T-1FF1136</td>
+<td>Xilinx Virtex-5</td>
+</tr>
+<tr class="row-even"><td>ML605</td>
+<td>XC6VLX240T-1FF1156</td>
+<td>Xilinx Virtex-6</td>
+</tr>
+<tr class="row-odd"><td>VC707</td>
+<td>XC7VX485T-2FFG1761C</td>
+<td>Xilinx Virtex-7</td>
+</tr>
+<tr class="row-even"><td>VC709</td>
+<td>XC7VX690T-2FFG1761C</td>
+<td>Xilinx Virtex-7</td>
+</tr>
+<tr class="row-odd"><td><strong>Custom</strong></td>
+<td><strong>&lt;any device&gt;</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="WrapperScriptHookFiles.html" class="btn btn-neutral float-right" title="Wrapper Script Hook Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ListOfDevices.html" class="btn btn-neutral" title="List of Supported FPGA Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiler.XSTCompiler &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Compiler" href="../Compiler.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../Compiler.html">Compiler</a> &raquo;</li>
+        
+      <li>Compiler.XSTCompiler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Compiler.XSTCompiler</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    Xilinx ISE synthesizer (compiler).</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">datetime</span>                 <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>                  <span class="k">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">Base.Project</span>             <span class="k">import</span> <span class="n">ToolChain</span><span class="p">,</span> <span class="n">Tool</span>
+<span class="kn">from</span> <span class="nn">DataBase.Entity</span>          <span class="k">import</span> <span class="n">WildCard</span>
+<span class="kn">from</span> <span class="nn">ToolChain.Xilinx</span>         <span class="k">import</span> <span class="n">XilinxProjectExportMixIn</span>
+<span class="kn">from</span> <span class="nn">ToolChain.Xilinx.ISE</span>     <span class="k">import</span> <span class="n">ISE</span><span class="p">,</span> <span class="n">ISEException</span>
+<span class="kn">from</span> <span class="nn">Compiler</span>                 <span class="k">import</span> <span class="n">CompilerException</span><span class="p">,</span> <span class="n">SkipableCompilerException</span><span class="p">,</span> <span class="n">CompileState</span><span class="p">,</span> <span class="n">Compiler</span> <span class="k">as</span> <span class="n">BaseCompiler</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;Compiler&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="Compiler"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler">[docs]</a><span class="k">class</span> <span class="nc">Compiler</span><span class="p">(</span><span class="n">BaseCompiler</span><span class="p">,</span> <span class="n">XilinxProjectExportMixIn</span><span class="p">):</span>
+	<span class="n">TOOL_CHAIN</span> <span class="o">=</span>      <span class="n">ToolChain</span><span class="o">.</span><span class="n">Xilinx_ISE</span>
+	<span class="n">TOOL</span> <span class="o">=</span>            <span class="n">Tool</span><span class="o">.</span><span class="n">Xilinx_XST</span>
+	
+	<span class="k">class</span> <span class="nc">__Directories__</span><span class="p">(</span><span class="n">BaseCompiler</span><span class="o">.</span><span class="n">__Directories__</span><span class="p">):</span>
+		<span class="n">XSTFiles</span> <span class="o">=</span>    <span class="kc">None</span>
+		
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">noCleanUp</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">noCleanUp</span><span class="p">)</span>
+		<span class="n">XilinxProjectExportMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		
+		<span class="n">configSection</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;CONFIG.DirectoryNames&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">=</span>  <span class="n">host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Temp</span> <span class="o">/</span> <span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;ISESynthesisFiles&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">XSTFiles</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span> <span class="o">/</span> <span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;ISESynthesisFiles&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Netlist</span> <span class="o">=</span>  <span class="n">host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span> <span class="o">/</span> <span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;NetlistFiles&#39;</span><span class="p">]</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_PrepareCompiler</span><span class="p">()</span>
+		
+<div class="viewcode-block" id="Compiler._PrepareCompiler"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler._PrepareCompiler">[docs]</a>	<span class="k">def</span> <span class="nf">_PrepareCompiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_PrepareCompiler</span><span class="p">()</span>
+		<span class="n">iseSection</span> <span class="o">=</span>            <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.Xilinx.ISE&#39;</span><span class="p">]</span>
+		<span class="n">version</span> <span class="o">=</span>               <span class="n">iseSection</span><span class="p">[</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span>
+		<span class="n">installationDirectory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">iseSection</span><span class="p">[</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])</span>
+		<span class="n">binaryPath</span> <span class="o">=</span>            <span class="n">Path</span><span class="p">(</span><span class="n">iseSection</span><span class="p">[</span><span class="s1">&#39;BinaryDirectory&#39;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span> <span class="o">=</span>       <span class="n">ISE</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">Platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">,</span> <span class="n">binaryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span><span class="o">.</span><span class="n">PreparseEnvironment</span><span class="p">(</span><span class="n">installationDirectory</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Compiler.RunAll"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler.RunAll">[docs]</a>	<span class="k">def</span> <span class="nf">RunAll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fqnList</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Run a list of netlist compilations. Expand wildcards to all selected netlists.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">StartTimer</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fqnList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">fqn</span> <span class="ow">in</span> <span class="n">fqnList</span><span class="p">:</span>
+				<span class="n">entity</span> <span class="o">=</span> <span class="n">fqn</span><span class="o">.</span><span class="n">Entity</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">WildCard</span><span class="p">)):</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">=</span> <span class="mi">1</span>
+					<span class="k">for</span> <span class="n">netlist</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">GetXSTNetlists</span><span class="p">():</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">TryRun</span><span class="p">(</span><span class="n">netlist</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">netlist</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">XSTNetlist</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">TryRun</span><span class="p">(</span><span class="n">netlist</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;Received a keyboard interrupt.&quot;</span><span class="p">)</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">StopTimer</span><span class="p">()</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">PrintOverallCompileReport</span><span class="p">()</span>
+		
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_testSuite</span><span class="o">.</span><span class="n">IsAllSuccess</span></div>
+		
+<div class="viewcode-block" id="Compiler.Run"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler.Run">[docs]</a>	<span class="k">def</span> <span class="nf">Run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">netlist</span><span class="p">,</span> <span class="n">board</span><span class="p">)</span>
+		
+		<span class="n">netlist</span><span class="o">.</span><span class="n">XstFile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">/</span> <span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span> <span class="o">+</span> <span class="s2">&quot;.xst&quot;</span><span class="p">)</span>
+		<span class="n">netlist</span><span class="o">.</span><span class="n">PrjFile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">/</span> <span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span> <span class="o">+</span> <span class="s2">&quot;.prj&quot;</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_WriteXilinxProjectFile</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">PrjFile</span><span class="p">,</span> <span class="s2">&quot;XST&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_WriteXstOptionsFile</span><span class="p">(</span><span class="n">netlist</span><span class="p">,</span> <span class="n">board</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_prepareTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetTimeDeltaSinceLastEvent</span><span class="p">()</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Executing pre-processing tasks...&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">CompileState</span><span class="o">.</span><span class="n">PreCopy</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_RunPreCopy</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">CompileState</span><span class="o">.</span><span class="n">PrePatch</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_RunPreReplace</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_preTasksTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetTimeDeltaSinceLastEvent</span><span class="p">()</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Running Xilinx Synthesis Tool...&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">CompileState</span><span class="o">.</span><span class="n">Compile</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_RunCompile</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_compileTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetTimeDeltaSinceLastEvent</span><span class="p">()</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Executing post-processing tasks...&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">CompileState</span><span class="o">.</span><span class="n">PostCopy</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_RunPostCopy</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">CompileState</span><span class="o">.</span><span class="n">PostPatch</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_RunPostReplace</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">CompileState</span><span class="o">.</span><span class="n">PostDelete</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_RunPostDelete</span><span class="p">(</span><span class="n">netlist</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_postTasksTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetTimeDeltaSinceLastEvent</span><span class="p">()</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_endAt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Compiler._WriteSpecialSectionIntoConfig"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler._WriteSpecialSectionIntoConfig">[docs]</a>	<span class="k">def</span> <span class="nf">_WriteSpecialSectionIntoConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+		<span class="c1"># add the key Device to section SPECIAL at runtime to change interpolation results</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">][</span><span class="s1">&#39;Device&#39;</span><span class="p">]</span> <span class="o">=</span>        <span class="n">device</span><span class="o">.</span><span class="n">FullName</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">][</span><span class="s1">&#39;DeviceSeries&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">device</span><span class="o">.</span><span class="n">Series</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;SPECIAL&#39;</span><span class="p">][</span><span class="s1">&#39;OutputDir&#39;</span><span class="p">]</span>	<span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Compiler._RunCompile"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler._RunCompile">[docs]</a>	<span class="k">def</span> <span class="nf">_RunCompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">):</span>
+		<span class="n">reportFilePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Working</span> <span class="o">/</span> <span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span> <span class="o">+</span> <span class="s2">&quot;.log&quot;</span><span class="p">)</span>
+		
+		<span class="n">xst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span><span class="o">.</span><span class="n">GetXst</span><span class="p">()</span>
+		<span class="n">xst</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">xst</span><span class="o">.</span><span class="n">SwitchIntStyle</span><span class="p">]</span> <span class="o">=</span>    <span class="s2">&quot;xflow&quot;</span>
+		<span class="n">xst</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">xst</span><span class="o">.</span><span class="n">SwitchXstFile</span><span class="p">]</span> <span class="o">=</span>      <span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span> <span class="o">+</span> <span class="s2">&quot;.xst&quot;</span>
+		<span class="n">xst</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">xst</span><span class="o">.</span><span class="n">SwitchReportFile</span><span class="p">]</span> <span class="o">=</span>  <span class="nb">str</span><span class="p">(</span><span class="n">reportFilePath</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">xst</span><span class="o">.</span><span class="n">Compile</span><span class="p">()</span>
+		<span class="k">except</span> <span class="n">ISEException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;Error while compiling &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">netlist</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+		<span class="k">if</span> <span class="n">xst</span><span class="o">.</span><span class="n">HasErrors</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SkipableCompilerException</span><span class="p">(</span><span class="s2">&quot;Error while compiling &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">netlist</span><span class="p">))</span></div>
+			
+			
+<div class="viewcode-block" id="Compiler._WriteXstOptionsFile"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.XSTCompiler.html#Compiler.XSTCompiler.Compiler._WriteXstOptionsFile">[docs]</a>	<span class="k">def</span> <span class="nf">_WriteXstOptionsFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netlist</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Generating XST options file.&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># read XST options file template</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Reading Xilinx Compiler Tool option file from &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">XstTemplateFile</span><span class="p">))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">netlist</span><span class="o">.</span><span class="n">XstTemplateFile</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">CompilerException</span><span class="p">(</span><span class="s2">&quot;XST template files &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">XstTemplateFile</span><span class="p">))</span>\
+				<span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">XstTemplateFile</span><span class="p">))</span>
+				
+		<span class="k">with</span> <span class="n">netlist</span><span class="o">.</span><span class="n">XstTemplateFile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">xstFileContent</span> <span class="o">=</span> <span class="n">fileHandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+			
+		<span class="n">xstTemplateDictionary</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s1">&#39;prjFile&#39;</span><span class="p">:</span>                                                            <span class="nb">str</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">PrjFile</span><span class="p">),</span>
+			<span class="s1">&#39;UseNewParser&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.UseNewParser&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;InputFormat&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                   <span class="p">[</span><span class="s1">&#39;XSTOption.InputFormat&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;OutputFormat&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.OutputFormat&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;OutputName&#39;</span><span class="p">:</span>                                                         <span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span><span class="p">,</span>
+			<span class="s1">&#39;Part&#39;</span><span class="p">:</span>                                                               <span class="nb">str</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>
+			<span class="s1">&#39;TopModuleName&#39;</span><span class="p">:</span>                                                      <span class="n">netlist</span><span class="o">.</span><span class="n">ModuleName</span><span class="p">,</span>
+			<span class="s1">&#39;OptimizationMode&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>              <span class="p">[</span><span class="s1">&#39;XSTOption.OptimizationMode&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;OptimizationLevel&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>             <span class="p">[</span><span class="s1">&#39;XSTOption.OptimizationLevel&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;PowerReduction&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                <span class="p">[</span><span class="s1">&#39;XSTOption.PowerReduction&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;IgnoreSynthesisConstraintsFile&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;XSTOption.IgnoreSynthesisConstraintsFile&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;SynthesisConstraintsFile&#39;</span><span class="p">:</span>                                           <span class="nb">str</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">XcfFile</span><span class="p">),</span>
+			<span class="s1">&#39;KeepHierarchy&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                 <span class="p">[</span><span class="s1">&#39;XSTOption.KeepHierarchy&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;NetListHierarchy&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>              <span class="p">[</span><span class="s1">&#39;XSTOption.NetListHierarchy&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;GenerateRTLView&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>               <span class="p">[</span><span class="s1">&#39;XSTOption.GenerateRTLView&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;GlobalOptimization&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>            <span class="p">[</span><span class="s1">&#39;XSTOption.Globaloptimization&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ReadCores&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                     <span class="p">[</span><span class="s1">&#39;XSTOption.ReadCores&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;SearchDirectories&#39;</span><span class="p">:</span>                                                  <span class="s1">&#39;&quot;</span><span class="si">{0!s}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Destination</span><span class="p">),</span>
+			<span class="s1">&#39;WriteTimingConstraints&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>        <span class="p">[</span><span class="s1">&#39;XSTOption.WriteTimingConstraints&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;CrossClockAnalysis&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>            <span class="p">[</span><span class="s1">&#39;XSTOption.CrossClockAnalysis&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;HierarchySeparator&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>            <span class="p">[</span><span class="s1">&#39;XSTOption.HierarchySeparator&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;BusDelimiter&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.BusDelimiter&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;Case&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                          <span class="p">[</span><span class="s1">&#39;XSTOption.Case&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;SliceUtilizationRatio&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>         <span class="p">[</span><span class="s1">&#39;XSTOption.SliceUtilizationRatio&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;BRAMUtilizationRatio&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>          <span class="p">[</span><span class="s1">&#39;XSTOption.BRAMUtilizationRatio&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;DSPUtilizationRatio&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>           <span class="p">[</span><span class="s1">&#39;XSTOption.DSPUtilizationRatio&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;LUTCombining&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.LUTCombining&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ReduceControlSets&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>             <span class="p">[</span><span class="s1">&#39;XSTOption.ReduceControlSets&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;Verilog2001&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                   <span class="p">[</span><span class="s1">&#39;XSTOption.Verilog2001&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;FSMExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                    <span class="p">[</span><span class="s1">&#39;XSTOption.FSMExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;FSMEncoding&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                   <span class="p">[</span><span class="s1">&#39;XSTOption.FSMEncoding&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;FSMSafeImplementation&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>         <span class="p">[</span><span class="s1">&#39;XSTOption.FSMSafeImplementation&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;FSMStyle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                      <span class="p">[</span><span class="s1">&#39;XSTOption.FSMStyle&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;RAMExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                    <span class="p">[</span><span class="s1">&#39;XSTOption.RAMExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;RAMStyle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                      <span class="p">[</span><span class="s1">&#39;XSTOption.RAMStyle&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ROMExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                    <span class="p">[</span><span class="s1">&#39;XSTOption.ROMExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ROMStyle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                      <span class="p">[</span><span class="s1">&#39;XSTOption.ROMStyle&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;MUXExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                    <span class="p">[</span><span class="s1">&#39;XSTOption.MUXExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;MUXStyle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                      <span class="p">[</span><span class="s1">&#39;XSTOption.MUXStyle&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;DecoderExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                <span class="p">[</span><span class="s1">&#39;XSTOption.DecoderExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;PriorityExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>               <span class="p">[</span><span class="s1">&#39;XSTOption.PriorityExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ShRegExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.ShRegExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ShiftExtract&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.ShiftExtract&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;XorCollapse&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                   <span class="p">[</span><span class="s1">&#39;XSTOption.XorCollapse&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;AutoBRAMPacking&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>               <span class="p">[</span><span class="s1">&#39;XSTOption.AutoBRAMPacking&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ResourceSharing&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>               <span class="p">[</span><span class="s1">&#39;XSTOption.ResourceSharing&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;ASyncToSync&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                   <span class="p">[</span><span class="s1">&#39;XSTOption.ASyncToSync&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;UseDSP48&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                      <span class="p">[</span><span class="s1">&#39;XSTOption.UseDSP48&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;IOBuf&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                         <span class="p">[</span><span class="s1">&#39;XSTOption.IOBuf&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;MaxFanOut&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                     <span class="p">[</span><span class="s1">&#39;XSTOption.MaxFanOut&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;BufG&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                          <span class="p">[</span><span class="s1">&#39;XSTOption.BufG&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;RegisterDuplication&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>           <span class="p">[</span><span class="s1">&#39;XSTOption.RegisterDuplication&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;RegisterBalancing&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>             <span class="p">[</span><span class="s1">&#39;XSTOption.RegisterBalancing&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;SlicePacking&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.SlicePacking&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;OptimizePrimitives&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>            <span class="p">[</span><span class="s1">&#39;XSTOption.OptimizePrimitives&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;UseClockEnable&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                <span class="p">[</span><span class="s1">&#39;XSTOption.UseClockEnable&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;UseSyncSet&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                    <span class="p">[</span><span class="s1">&#39;XSTOption.UseSyncSet&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;UseSyncReset&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>                  <span class="p">[</span><span class="s1">&#39;XSTOption.UseSyncReset&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;PackIORegistersIntoIOBs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>       <span class="p">[</span><span class="s1">&#39;XSTOption.PackIORegistersIntoIOBs&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;EquivalentRegisterRemoval&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">]</span>     <span class="p">[</span><span class="s1">&#39;XSTOption.EquivalentRegisterRemoval&#39;</span><span class="p">],</span>
+			<span class="s1">&#39;SliceUtilizationRatioMaxMargin&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">][</span><span class="s1">&#39;XSTOption.SliceUtilizationRatioMaxMargin&#39;</span><span class="p">]</span>
+		<span class="p">}</span>
+		
+		<span class="n">xstFileContent</span> <span class="o">=</span> <span class="n">xstFileContent</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">xstTemplateDictionary</span><span class="p">)</span>
+		
+		<span class="n">hdlParameters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_GetHDLParameters</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">ConfigSectionName</span><span class="p">)</span>
+		<span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hdlParameters</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
+			<span class="n">xstFileContent</span> <span class="o">+=</span> <span class="s2">&quot;-generics {&quot;</span>
+			<span class="k">for</span> <span class="n">keyValuePair</span> <span class="ow">in</span> <span class="n">hdlParameters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="n">xstFileContent</span> <span class="o">+=</span> <span class="s2">&quot; </span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">keyValuePair</span><span class="p">)</span>
+			<span class="n">xstFileContent</span> <span class="o">+=</span> <span class="s2">&quot; }</span><span class="se">\n</span><span class="s2">&quot;</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Writing Xilinx Compiler Tool option file to &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">netlist</span><span class="o">.</span><span class="n">XstFile</span><span class="p">))</span>
+		<span class="k">with</span> <span class="n">netlist</span><span class="o">.</span><span class="n">XstFile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xstFileContent</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

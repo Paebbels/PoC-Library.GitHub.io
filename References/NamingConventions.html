@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Naming Conventions &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+        <link rel="up" title="More References" href="more.html"/>
+        <link rel="next" title="Known Issues" href="KnownIssues.html"/>
+        <link rel="prev" title="*.rules Format" href="FileFormats/RulesFormat.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="more.html">More ...</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ListOfDevices.html">List of Supported FPGA Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ListOfBoards.html">List of Supported Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WrapperScriptHookFiles.html">Wrapper Script Hook Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileFormats/index.html">File Formats</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Naming Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#root-directory-overview-pocroot">Root Directory Overview (PoCRoot)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces-and-modules">Namespaces and Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#namespaces">Namespaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-names">Module Names</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#signal-names">Signal Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KnownIssues.html">Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Licenses/index.html">Local License Copies</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="more.html">More References</a> &raquo;</li>
+        
+      <li>Naming Conventions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/References/NamingConventions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="naming-conventions">
+<h1>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Write an intruduction paragraph for this page.</p>
+</div>
+<div class="section" id="root-directory-overview-pocroot">
+<h2>Root Directory Overview (PoCRoot)<a class="headerlink" href="#root-directory-overview-pocroot" title="Permalink to this headline">¶</a></h2>
+<p>The PoC-Library is structured into several sub-directories, naming the purpose
+of the directory like <code class="docutils literal"><span class="pre">src</span></code> for sources files or <code class="docutils literal"><span class="pre">tb</span></code> for testbench files.
+The structure within these directories is most likely the same and based on
+PoC&#8217;s <a class="reference internal" href="../IPCores/index.html"><span class="doc">sub-namespace tree</span></a>. PoC&#8217;s installation directory is
+also referred to as <code class="docutils literal"><span class="pre">PoCRoot</span></code>.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">lib</span></code></dt>
+<dd>Third party libraries like Coctb, OSVVM or VUnit are shipped in this folder.
+The external library is stored in a sub directory named like the library. If
+a library is available as a Git submodule, then it is linked as a submodule
+for better version tracking.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">netlist</span></code></dt>
+<dd>This is the output directory for pre-configured netlists, synthesized by PoC.
+Netlists and related constaint files are the result of IP core synthesis
+flows, either from PoC&#8217;s source files or from vendor specific IP core files
+like *.xco files from Xilinx Core Generator. Generated IP cores are stored
+in device sub-directories, because most netlists formats are device specific.
+For example the IP core <code class="docutils literal"><span class="pre">PoC.arith.prng</span></code> created from source file
+<code class="docutils literal"><span class="pre">src\arith\arith_prng.vhdl</span></code> generated for a Kintex-7 325T mounted on a
+KC705 board will be copied to <code class="docutils literal"><span class="pre">netlist\XC7K325T-2FFG900\arith\arith_prng.ngc</span></code>
+if Xilinx ISE XST is used for synthesis.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">py</span></code></dt>
+<dd>The supporting Python infrastructure, the configuration files and the IP
+core &#8216;database&#8217; is stored in this directory.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">sim</span></code></dt>
+<dd>Some of PoC&#8217;s testbenches are shipped with pre-configured waveform views/
+waveform configuration files for selected simulators or waveform viewers.
+If a testbench is launched in GUI mode (<code class="docutils literal"><span class="pre">--gui</span></code>) and a waveform view for
+the choosen simulator is found, it&#8217;s loaded as the default view.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">src</span></code></dt>
+<dd>The source files of PoC&#8217;s IP cores are stored in this directory. The IP
+cores are grouped by their sub-namespace into sub-directories according to
+the <a class="reference internal" href="../IPCores/index.html"><span class="doc">sub-namespace tree</span></a>. See the paragraph below, for
+how IP cores are named and how PoC core names map to the sub-namespace
+hierachy and the resulting sub-namespace directory structure.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">tb</span></code></dt>
+<dd>PoC is shipped with testbenches. All testbenches are categorized and stored
+in sub-directories like the IP core, which is tested.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">tcl</span></code></dt>
+<dd>Supporting Tcl files.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">temp</span></code></dt>
+<dd>A pre-created temporary directors for various tool&#8217;s intermediate outputs.
+In case of errors in a used vendor tool or in PoC&#8217;s infrastructure, this
+directory contains intermediate files, log files and report files, which
+can be used to analyze the error.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">tools</span></code></dt>
+<dd>This directory contains miscelaneous files or scripts for external tools
+like emacs, git or text editor syntax highlighting files.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">ucf</span></code></dt>
+<dd>Pre-configured constraint files (*.ucf, *.xdc, *.sdc) for many FPGA
+boards, containing physical (pin, placement) and timing constraints.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">xst</span></code></dt>
+<dd>Configuration files to synthesize PoC modules with Xilinx XST into a
+netlist.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="namespaces-and-modules">
+<h2>Namespaces and Modules<a class="headerlink" href="#namespaces-and-modules" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
+<p>PoC uses namespaces and sub-namespaces to categorize all VHDL and Verilog
+modules. Despite VHDL doesn&#8217;t support sub-namespaces yet, PoC already uses
+sub-namespaces enforced by a strict naming schema.</p>
+<p><strong>Rules:</strong> <br />
+1. Namespace names are lower-case, underscore free, valid VHDL identifiers. <br />
+2. A namespace name is unique, but can be part of a entity name.</p>
+</div>
+<div class="section" id="module-names">
+<h3>Module Names<a class="headerlink" href="#module-names" title="Permalink to this headline">¶</a></h3>
+<p>Module names are prefixed with its parents namespace name. A module name can
+contain underscores to denote implementation variants of a module.</p>
+<p><strong>Rules:</strong> <br />
+3. Modul names are valid VHDL identifiers prefixed with its parent namespace&#8217;s name. <br />
+4. The first part of module name must not contain the parents namespace name. <br /></p>
+<p class="rubric">Example 1 - <code class="docutils literal"><span class="pre">PoC.fifo.cc_got</span></code></p>
+<p>For example a FIFO module with a common clock interface and a <em>got</em>
+semantic is named <code class="docutils literal"><span class="pre">PoC.fifo.cc_got</span></code> (fully qualified name). This name can
+be split at every dot and underscore sign, resulting in the following table of
+name parts:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="22%" />
+<col width="35%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">PoC</th>
+<th class="head">fifo</th>
+<th class="head">cc</th>
+<th class="head">got</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Root Namespace</td>
+<td>Sub-Namespace</td>
+<td>Common Clock Interface</td>
+<td>Got Semantic</td>
+</tr>
+</tbody>
+</table>
+<p>Because <code class="docutils literal"><span class="pre">PoC.fifo.cc_got</span></code> refers to an IP core, the source file is located in
+the <code class="docutils literal"><span class="pre">&lt;PoCRoot&gt;\src</span></code> directory. The (sub-)namespace of the PoC entity is
+<code class="docutils literal"><span class="pre">fifo</span></code>, so it&#8217;s stored in the sub-directory <code class="docutils literal"><span class="pre">fifo</span></code>. The file name <code class="docutils literal"><span class="pre">cc_got</span></code>
+FIFO is prefixed with the last sub-namespace: In this case <code class="docutils literal"><span class="pre">fifo_</span></code>. This is
+summarized in the following table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Fully Qualified Name</td>
+<td>PoC.fifo.cc_got</td>
+</tr>
+<tr class="row-odd"><td>VHDL entity name</td>
+<td>fifo_cc_got</td>
+</tr>
+<tr class="row-even"><td>File name</td>
+<td>fifo_cc_got.vhdl</td>
+</tr>
+<tr class="row-odd"><td>IP Core Description File</td>
+<td>\src\fifo\fifo_cc_got.files</td>
+</tr>
+<tr class="row-even"><td>Source File Location</td>
+<td>\src\fifo\fifo_cc_got.vhdl</td>
+</tr>
+<tr class="row-odd"><td>Testbench Location</td>
+<td>\tb\fifo\fifo_cc_got_tb.vhdl</td>
+</tr>
+<tr class="row-even"><td>Testbench Description File</td>
+<td>\tb\fifo\fifo_cc_got_tb.files</td>
+</tr>
+<tr class="row-odd"><td>Waveform Description Files</td>
+<td>\sim\fifo\fifo_cc_got_tb.*</td>
+</tr>
+</tbody>
+</table>
+<p>Other implementation variants are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">_dc</span></code> – dependent clock / related clock</li>
+<li><code class="docutils literal"><span class="pre">_ic</span></code> – independent clock / cross clock</li>
+<li><code class="docutils literal"><span class="pre">_got_tempgot</span></code> – got interface extended by a temporary got interface</li>
+<li><code class="docutils literal"><span class="pre">_got_tempput</span></code> – got interface extended by a temporary put interface</li>
+</ul>
+<p class="rubric">Example 2 - <code class="docutils literal"><span class="pre">PoC.mem.ocram.tdp</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="21%" />
+<col width="21%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">PoC</th>
+<th class="head">mem</th>
+<th class="head">ocram</th>
+<th class="head">tdp</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Root Namespace</td>
+<td>Sub-Namespace</td>
+<td>Sub-Namespace</td>
+<td>True-Dual-Port</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Fully Qualified Name</td>
+<td>PoC.mem.ocram.tdp</td>
+</tr>
+<tr class="row-odd"><td>VHDL entity name</td>
+<td>ocram_tdp</td>
+</tr>
+<tr class="row-even"><td>File name</td>
+<td>ocram_tdp.vhdl</td>
+</tr>
+<tr class="row-odd"><td>IP Core Description File</td>
+<td>\src\mem\ocram\ocram_tdp.files</td>
+</tr>
+<tr class="row-even"><td>Source File Location</td>
+<td>\src\mem\ocram\ocram_tdp.vhdl</td>
+</tr>
+<tr class="row-odd"><td>Testbench Location</td>
+<td>\tb\mem\ocram\ocram_tdp_tb.vhdl</td>
+</tr>
+<tr class="row-even"><td>Testbench Description File</td>
+<td>\tb\mem\ocram\ocram_tdp_tb.files</td>
+</tr>
+<tr class="row-odd"><td>Waveform Description Files</td>
+<td>\sim\mem\ocram\ocram_tdp_tb.*</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Not all sub-namespace parts are include as a prefix in the name, only
+the last one.</p>
+</div>
+</div>
+<div class="section" id="signal-names">
+<h2>Signal Names<a class="headerlink" href="#signal-names" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">No documentation available.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="KnownIssues.html" class="btn btn-neutral float-right" title="Known Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="FileFormats/RulesFormat.html" class="btn btn-neutral" title="*.rules Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

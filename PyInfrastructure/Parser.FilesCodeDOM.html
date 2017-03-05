@@ -1,0 +1,1119 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parser.FilesCodeDOM &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Parser.FilesCodeDOM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Parser.FilesCodeDOM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Parser.FilesCodeDOM">
+<span id="parser-filescodedom"></span><h1>Parser.FilesCodeDOM<a class="headerlink" href="#module-Parser.FilesCodeDOM" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.BlockedStatement" title="Parser.FilesCodeDOM.BlockedStatement"><code class="xref py py-class docutils literal"><span class="pre">BlockedStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.IfThenElseExpressions" title="Parser.FilesCodeDOM.IfThenElseExpressions"><code class="xref py py-class docutils literal"><span class="pre">IfThenElseExpressions</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ListElementExpressions" title="Parser.FilesCodeDOM.ListElementExpressions"><code class="xref py py-class docutils literal"><span class="pre">ListElementExpressions</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.PathExpressions" title="Parser.FilesCodeDOM.PathExpressions"><code class="xref py py-class docutils literal"><span class="pre">PathExpressions</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ListConstructorExpression" title="Parser.FilesCodeDOM.ListConstructorExpression"><code class="xref py py-class docutils literal"><span class="pre">ListConstructorExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.SubDirectoryExpression" title="Parser.FilesCodeDOM.SubDirectoryExpression"><code class="xref py py-class docutils literal"><span class="pre">SubDirectoryExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ConcatenateExpression" title="Parser.FilesCodeDOM.ConcatenateExpression"><code class="xref py py-class docutils literal"><span class="pre">ConcatenateExpression</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ExistsFunction" title="Parser.FilesCodeDOM.ExistsFunction"><code class="xref py py-class docutils literal"><span class="pre">ExistsFunction</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.VHDLStatement" title="Parser.FilesCodeDOM.VHDLStatement"><code class="xref py py-class docutils literal"><span class="pre">VHDLStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.VerilogStatement" title="Parser.FilesCodeDOM.VerilogStatement"><code class="xref py py-class docutils literal"><span class="pre">VerilogStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.CocotbStatement" title="Parser.FilesCodeDOM.CocotbStatement"><code class="xref py py-class docutils literal"><span class="pre">CocotbStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ConstraintStatement" title="Parser.FilesCodeDOM.ConstraintStatement"><code class="xref py py-class docutils literal"><span class="pre">ConstraintStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.LDCStatement" title="Parser.FilesCodeDOM.LDCStatement"><code class="xref py py-class docutils literal"><span class="pre">LDCStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.SDCStatement" title="Parser.FilesCodeDOM.SDCStatement"><code class="xref py py-class docutils literal"><span class="pre">SDCStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.UCFStatement" title="Parser.FilesCodeDOM.UCFStatement"><code class="xref py py-class docutils literal"><span class="pre">UCFStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.XDCStatement" title="Parser.FilesCodeDOM.XDCStatement"><code class="xref py py-class docutils literal"><span class="pre">XDCStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.InterpolateLiteral" title="Parser.FilesCodeDOM.InterpolateLiteral"><code class="xref py py-class docutils literal"><span class="pre">InterpolateLiteral</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.PathStatement" title="Parser.FilesCodeDOM.PathStatement"><code class="xref py py-class docutils literal"><span class="pre">PathStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ReportStatement" title="Parser.FilesCodeDOM.ReportStatement"><code class="xref py py-class docutils literal"><span class="pre">ReportStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.LibraryStatement" title="Parser.FilesCodeDOM.LibraryStatement"><code class="xref py py-class docutils literal"><span class="pre">LibraryStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.IncludeStatement" title="Parser.FilesCodeDOM.IncludeStatement"><code class="xref py py-class docutils literal"><span class="pre">IncludeStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.IfStatement" title="Parser.FilesCodeDOM.IfStatement"><code class="xref py py-class docutils literal"><span class="pre">IfStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ElseIfStatement" title="Parser.FilesCodeDOM.ElseIfStatement"><code class="xref py py-class docutils literal"><span class="pre">ElseIfStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.ElseStatement" title="Parser.FilesCodeDOM.ElseStatement"><code class="xref py py-class docutils literal"><span class="pre">ElseStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.IfElseIfElseStatement" title="Parser.FilesCodeDOM.IfElseIfElseStatement"><code class="xref py py-class docutils literal"><span class="pre">IfElseIfElseStatement</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#Parser.FilesCodeDOM.Document" title="Parser.FilesCodeDOM.Document"><code class="xref py py-class docutils literal"><span class="pre">Document</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.BlockedStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">BlockedStatement</code><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#BlockedStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.BlockedStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ce49ea9df1b4ad0ec00956e437db6ea8b170d62b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of BlockedStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.BlockedStatement._allowedStatements">
+<code class="descname">_allowedStatements</code><em class="property"> = [&lt;class 'Parser.FilesCodeDOM.IncludeStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.LibraryStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.VHDLStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.VerilogStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.CocotbStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.LDCStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.SDCStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.UCFStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.XDCStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.PathStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.ReportStatement'&gt;, &lt;class 'Parser.FilesCodeDOM.IfElseIfElseStatement'&gt;, &lt;class 'lib.CodeDOM.CommentLine'&gt;, &lt;class 'lib.CodeDOM.EmptyLine'&gt;]</em><a class="headerlink" href="#Parser.FilesCodeDOM.BlockedStatement._allowedStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.BlockedStatement.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockedStatement.AddChoice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.BlockedStatement.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.BlockedStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/CodeDOM.html#BlockedStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.BlockedStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.BlockedStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.BlockedStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.IfThenElseExpressions">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">IfThenElseExpressions</code><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IfThenElseExpressions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IfThenElseExpressions" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-f326677d2df40d5613d3649c1ca1af4f79242fc1.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IfThenElseExpressions</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfThenElseExpressions._allowedExpressions">
+<code class="descname">_allowedExpressions</code><em class="property"> = [&lt;class 'lib.CodeDOM.Identifier'&gt;, &lt;class 'lib.CodeDOM.StringLiteral'&gt;, &lt;class 'lib.CodeDOM.IntegerLiteral'&gt;, &lt;class 'lib.CodeDOM.NotExpression'&gt;, &lt;class 'Parser.FilesCodeDOM.ExistsFunction'&gt;, &lt;class 'lib.CodeDOM.AndExpression'&gt;, &lt;class 'lib.CodeDOM.OrExpression'&gt;, &lt;class 'lib.CodeDOM.XorExpression'&gt;, &lt;class 'lib.CodeDOM.EqualExpression'&gt;, &lt;class 'lib.CodeDOM.UnequalExpression'&gt;, &lt;class 'lib.CodeDOM.LessThanExpression'&gt;, &lt;class 'lib.CodeDOM.LessThanEqualExpression'&gt;, &lt;class 'lib.CodeDOM.GreaterThanExpression'&gt;, &lt;class 'lib.CodeDOM.GreaterThanEqualExpression'&gt;, &lt;class 'lib.CodeDOM.InExpression'&gt;, &lt;class 'lib.CodeDOM.NotInExpression'&gt;]</em><a class="headerlink" href="#Parser.FilesCodeDOM.IfThenElseExpressions._allowedExpressions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IfThenElseExpressions.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IfThenElseExpressions.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IfThenElseExpressions.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IfThenElseExpressions.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IfThenElseExpressions.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IfThenElseExpressions.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ListElementExpressions">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ListElementExpressions</code><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ListElementExpressions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ListElementExpressions" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-27f8393f264eebc7a52f76a60113f13d245f990c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ListElementExpressions</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ListElementExpressions._allowedExpressions">
+<code class="descname">_allowedExpressions</code><em class="property"> = [&lt;class 'lib.CodeDOM.Identifier'&gt;, &lt;class 'lib.CodeDOM.StringLiteral'&gt;, &lt;class 'lib.CodeDOM.IntegerLiteral'&gt;]</em><a class="headerlink" href="#Parser.FilesCodeDOM.ListElementExpressions._allowedExpressions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ListElementExpressions.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ListElementExpressions.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ListElementExpressions.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ListElementExpressions.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ListElementExpressions.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ListElementExpressions.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.PathExpressions">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">PathExpressions</code><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#PathExpressions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.PathExpressions" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ffcb1a9baea463749a1f85b10fdd209b323ffb16.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PathExpressions</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.PathExpressions._allowedExpressions">
+<code class="descname">_allowedExpressions</code><em class="property"> = [&lt;class 'lib.CodeDOM.Identifier'&gt;, &lt;class 'lib.CodeDOM.StringLiteral'&gt;, &lt;class 'Parser.FilesCodeDOM.InterpolateLiteral'&gt;, &lt;class 'Parser.FilesCodeDOM.SubDirectoryExpression'&gt;, &lt;class 'Parser.FilesCodeDOM.ConcatenateExpression'&gt;]</em><a class="headerlink" href="#Parser.FilesCodeDOM.PathExpressions._allowedExpressions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.PathExpressions.AddChoice">
+<code class="descname">AddChoice</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.PathExpressions.AddChoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.PathExpressions.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.PathExpressions.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.PathExpressions.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.PathExpressions.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ListConstructorExpression">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ListConstructorExpression</code><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ListConstructorExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ListConstructorExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-2e31d861b667ed13b380ab46f12fd8b942d67458.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ListConstructorExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ListConstructorExpression.List">
+<code class="descname">List</code><a class="headerlink" href="#Parser.FilesCodeDOM.ListConstructorExpression.List" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ListConstructorExpression.AddElement">
+<code class="descname">AddElement</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ListConstructorExpression.AddElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ListConstructorExpression.AddElement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.ListConstructorExpression.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ListConstructorExpression.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ListConstructorExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ListConstructorExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ListConstructorExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.SubDirectoryExpression">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">SubDirectoryExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#SubDirectoryExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.SubDirectoryExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6eb999e9ea7a7495c05abf54a19090e1d054c98f.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SubDirectoryExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.SubDirectoryExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.SubDirectoryExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.SubDirectoryExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#Parser.FilesCodeDOM.SubDirectoryExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.SubDirectoryExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.SubDirectoryExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.SubDirectoryExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#Parser.FilesCodeDOM.SubDirectoryExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ConcatenateExpression">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ConcatenateExpression</code><span class="sig-paren">(</span><em>leftChild</em>, <em>rightChild</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ConcatenateExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ConcatenateExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b11be46f92b3ecf7d060f9a6bb77a9a55a99c454.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ConcatenateExpression</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ConcatenateExpression.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ConcatenateExpression.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ConcatenateExpression.LeftChild">
+<code class="descname">LeftChild</code><a class="headerlink" href="#Parser.FilesCodeDOM.ConcatenateExpression.LeftChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ConcatenateExpression.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ConcatenateExpression.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ConcatenateExpression.RightChild">
+<code class="descname">RightChild</code><a class="headerlink" href="#Parser.FilesCodeDOM.ConcatenateExpression.RightChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ExistsFunction">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ExistsFunction</code><span class="sig-paren">(</span><em>expression</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ExistsFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ExistsFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-79b2105e3271582483f3952fcf528662b7cc6bfe.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ExistsFunction</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ExistsFunction.Expression">
+<code class="descname">Expression</code><a class="headerlink" href="#Parser.FilesCodeDOM.ExistsFunction.Expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.ExistsFunction.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ExistsFunction.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ExistsFunction.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ExistsFunction.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ExistsFunction.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.VHDLStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">VHDLStatement</code><span class="sig-paren">(</span><em>libraryName</em>, <em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#VHDLStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.VHDLStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-fcd59d8de6a46f2cb84756b211bd31b4a92bb6e3.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VHDLStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.VHDLStatement.LibraryName">
+<code class="descname">LibraryName</code><a class="headerlink" href="#Parser.FilesCodeDOM.VHDLStatement.LibraryName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.VHDLStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.VHDLStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.VHDLStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#VHDLStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.VHDLStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.VHDLStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.VHDLStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.VHDLStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.VHDLStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.VerilogStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">VerilogStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#VerilogStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.VerilogStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-3cd448d5e8fa84e8e8beb49066156ae501183c9d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VerilogStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.VerilogStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.VerilogStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.VerilogStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#VerilogStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.VerilogStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.VerilogStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.VerilogStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.VerilogStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.VerilogStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.CocotbStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">CocotbStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#CocotbStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.CocotbStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4d8218362ee1e97137f2ce16bccc7593b658e4d6.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CocotbStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.CocotbStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.CocotbStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.CocotbStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#CocotbStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.CocotbStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.CocotbStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.CocotbStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.CocotbStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.CocotbStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ConstraintStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ConstraintStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ConstraintStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ConstraintStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-750fcf0692e0922f76cd4c5a877e9f40d3d04758.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ConstraintStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ConstraintStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.ConstraintStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.ConstraintStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ConstraintStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ConstraintStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ConstraintStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.ConstraintStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ConstraintStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ConstraintStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.LDCStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">LDCStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#LDCStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.LDCStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a9b1f697efab263b8d12085da0ba65353d456df6.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LDCStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.LDCStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.LDCStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.LDCStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.LDCStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.LDCStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.LDCStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.LDCStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.LDCStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.SDCStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">SDCStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#SDCStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.SDCStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d837e481636de53d10573d4d0c6b1df8f5eae46d.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of SDCStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.SDCStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.SDCStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.SDCStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.SDCStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.SDCStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.SDCStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.SDCStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.SDCStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.UCFStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">UCFStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#UCFStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.UCFStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-5d6d7cca2c06d9b31ff11f6e0eef00630c7332eb.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of UCFStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.UCFStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.UCFStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.UCFStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.UCFStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.UCFStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.UCFStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.UCFStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.UCFStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.XDCStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">XDCStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#XDCStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.XDCStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e5635a2d1c9d8e14baf1b6bd470036be6988006c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of XDCStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.XDCStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.XDCStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.XDCStatement.GetParser">
+<code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.XDCStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.XDCStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.XDCStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.XDCStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.XDCStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.InterpolateLiteral">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">InterpolateLiteral</code><span class="sig-paren">(</span><em>sectionName</em>, <em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#InterpolateLiteral"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.InterpolateLiteral" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9a2ed077de859419d8a8e465eba67bf08f800c91.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of InterpolateLiteral</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.InterpolateLiteral.SectionName">
+<code class="descname">SectionName</code><a class="headerlink" href="#Parser.FilesCodeDOM.InterpolateLiteral.SectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.InterpolateLiteral.OptionName">
+<code class="descname">OptionName</code><a class="headerlink" href="#Parser.FilesCodeDOM.InterpolateLiteral.OptionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.InterpolateLiteral.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#InterpolateLiteral.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.InterpolateLiteral.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.InterpolateLiteral.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.InterpolateLiteral.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.PathStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">PathStatement</code><span class="sig-paren">(</span><em>variable</em>, <em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#PathStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.PathStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b983632e4fcf183c8a00109e507b0c4b65abf99e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of PathStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.PathStatement.Variable">
+<code class="descname">Variable</code><a class="headerlink" href="#Parser.FilesCodeDOM.PathStatement.Variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.PathStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.PathStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.PathStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#PathStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.PathStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.PathStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.PathStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.PathStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.PathStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ReportStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ReportStatement</code><span class="sig-paren">(</span><em>message</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ReportStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ReportStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b14e4814d3e264d022004221bddf7f9f580e2c9c.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ReportStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ReportStatement.Message">
+<code class="descname">Message</code><a class="headerlink" href="#Parser.FilesCodeDOM.ReportStatement.Message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.ReportStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ReportStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ReportStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ReportStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.ReportStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ReportStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ReportStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.LibraryStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">LibraryStatement</code><span class="sig-paren">(</span><em>library</em>, <em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#LibraryStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.LibraryStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-92da5900f7b9cf420e5d23a434ac2dd652efc2db.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LibraryStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.LibraryStatement.Library">
+<code class="descname">Library</code><a class="headerlink" href="#Parser.FilesCodeDOM.LibraryStatement.Library" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.LibraryStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.LibraryStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.LibraryStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#LibraryStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.LibraryStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.LibraryStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.LibraryStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.LibraryStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.LibraryStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.IncludeStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">IncludeStatement</code><span class="sig-paren">(</span><em>pathExpression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IncludeStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IncludeStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-14a4274b13711092a1a7d75ab89c4c76f541b6e2.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IncludeStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IncludeStatement.PathExpression">
+<code class="descname">PathExpression</code><a class="headerlink" href="#Parser.FilesCodeDOM.IncludeStatement.PathExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.IncludeStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IncludeStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IncludeStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IncludeStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.IncludeStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IncludeStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IncludeStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.IfStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">IfStatement</code><span class="sig-paren">(</span><em>expression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IfStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-d65f97d46fa8a72b6ab53bf5b24574e848dae155.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IfStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.IfStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IfStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IfStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfStatement.Expression">
+<code class="descname">Expression</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement.Expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IfStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ElseIfStatement</code><span class="sig-paren">(</span><em>expression</em>, <em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ElseIfStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-b69e88c699f722b799992bdb052d6a5caf08bdb4.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ElseIfStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ElseIfStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement.Expression">
+<code class="descname">Expression</code><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement.Expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ElseIfStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.FilesCodeDOM.ElseIfStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.ElseStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">ElseStatement</code><span class="sig-paren">(</span><em>commentText</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ElseStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ElseStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-321949943c18d38d9e1cc78fee654e9aa3c14852.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ElseStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.ElseStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#ElseStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.ElseStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ElseStatement.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ElseStatement.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ElseStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.ElseStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.ElseStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.ElseStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.ElseStatement.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.FilesCodeDOM.ElseStatement.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">IfElseIfElseStatement</code><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IfElseIfElseStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4f619a6e1557d32af97bb98d88774f4f795307c8.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of IfElseIfElseStatement</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement.IfClause">
+<code class="descname">IfClause</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement.IfClause" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement.ElseIfClauses">
+<code class="descname">ElseIfClauses</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement.ElseIfClauses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement.ElseClause">
+<code class="descname">ElseClause</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement.ElseClause" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#IfElseIfElseStatement.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.IfElseIfElseStatement.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.IfElseIfElseStatement.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.FilesCodeDOM.Document">
+<em class="property">class </em><code class="descclassname">Parser.FilesCodeDOM.</code><code class="descname">Document</code><span class="sig-paren">(</span><em>commentText=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.Document" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-4bc408a88003f69ba5d37776b09040728bc3d5dd.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Document</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.Document.AddStatement">
+<code class="descname">AddStatement</code><span class="sig-paren">(</span><em>stmt</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.Document.AddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.Document.CommentText">
+<code class="descname">CommentText</code><a class="headerlink" href="#Parser.FilesCodeDOM.Document.CommentText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.FilesCodeDOM.Document.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>string</em>, <em>printChar</em><span class="sig-paren">)</span><a class="headerlink" href="#Parser.FilesCodeDOM.Document.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.FilesCodeDOM.Document.Statements">
+<code class="descname">Statements</code><a class="headerlink" href="#Parser.FilesCodeDOM.Document.Statements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Parser.FilesCodeDOM.Document.GetParser">
+<em class="property">classmethod </em><code class="descname">GetParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/FilesCodeDOM.html#Document.GetParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.FilesCodeDOM.Document.GetParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

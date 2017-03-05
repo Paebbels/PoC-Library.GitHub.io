@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.ExtendedConfigParser &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>lib.ExtendedConfigParser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for lib.ExtendedConfigParser</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    Derived and extended configparser from Python standard library</span>
+<span class="c1">#</span>
+<span class="c1"># Description:</span>
+<span class="c1"># ------------------------------------</span>
+<span class="c1">#   - Improved interpolation algorithm</span>
+<span class="c1">#   - Added an interpolation cache</span>
+<span class="c1">#   - Added recursive interpolation (indirect addressing): ${key1.${key2:opt2}:opt1}</span>
+<span class="c1">#   - Added %{keyword} interpolation, to access the section name: %{parent}</span>
+<span class="c1">#   - Added support for multiple DEFAULT sections [CONFIG.DEFAULT] for all [CONFIG.**] sections</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Patrick Lehmann - Dresden, Germany</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">itertools</span>    <span class="k">import</span> <span class="n">chain</span> <span class="k">as</span> <span class="n">itertools_chain</span>
+<span class="kn">from</span> <span class="nn">functools</span>    <span class="k">import</span> <span class="n">partial</span> <span class="k">as</span> <span class="n">functools_partial</span>
+<span class="kn">from</span> <span class="nn">re</span>           <span class="k">import</span> <span class="nb">compile</span> <span class="k">as</span> <span class="n">re_compile</span><span class="p">,</span> <span class="n">escape</span> <span class="k">as</span> <span class="n">re_escape</span><span class="p">,</span> <span class="n">VERBOSE</span> <span class="k">as</span> <span class="n">RE_VERBOSE</span>
+<span class="kn">from</span> <span class="nn">sys</span>          <span class="k">import</span> <span class="n">version_info</span>
+
+<span class="kn">from</span> <span class="nn">collections</span>  <span class="k">import</span> <span class="n">OrderedDict</span> <span class="k">as</span> <span class="n">_default_dict</span><span class="p">,</span> <span class="n">ChainMap</span> <span class="k">as</span> <span class="n">_ChainMap</span><span class="p">,</span> <span class="n">MutableMapping</span>
+<span class="kn">from</span> <span class="nn">configparser</span> <span class="k">import</span> <span class="n">ConfigParser</span><span class="p">,</span> <span class="n">SectionProxy</span><span class="p">,</span> <span class="n">Interpolation</span><span class="p">,</span> <span class="n">MAX_INTERPOLATION_DEPTH</span><span class="p">,</span> <span class="n">DEFAULTSECT</span><span class="p">,</span> <span class="n">_UNSET</span>
+<span class="kn">from</span> <span class="nn">configparser</span> <span class="k">import</span> <span class="n">NoSectionError</span><span class="p">,</span> <span class="n">InterpolationDepthError</span><span class="p">,</span> <span class="n">InterpolationSyntaxError</span><span class="p">,</span> <span class="n">NoOptionError</span><span class="p">,</span> <span class="n">InterpolationMissingOptionError</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;ExtendedSectionProxy&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ExtendedInterpolation&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ExtendedConfigParser&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="ExtendedSectionProxy"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedSectionProxy">[docs]</a><span class="k">class</span> <span class="nc">ExtendedSectionProxy</span><span class="p">(</span><span class="n">SectionProxy</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span></div>
+		
+<span class="c1"># WORKAROUND: Required for ReadTheDocs, which doesn&#39;t support Python 3.5 yet.</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">)):</span>
+	<span class="k">class</span> <span class="nc">ConverterMapping</span><span class="p">(</span><span class="n">MutableMapping</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Enables reuse of get*() methods between the parser and section proxies.</span>
+<span class="sd">		</span>
+<span class="sd">		If a parser class implements a getter directly, the value for the given</span>
+<span class="sd">		key will be ``None``. The presence of the converter name here enables</span>
+<span class="sd">		section proxies to find and use the implementation on the parser class.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		
+		<span class="n">GETTERCRE</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^get(?P&lt;name&gt;.+)$&quot;</span><span class="p">)</span>
+		
+		<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_parser</span> <span class="o">=</span> <span class="n">parser</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">{}</span>
+			<span class="k">for</span> <span class="n">getter</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="p">):</span>
+				<span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GETTERCRE</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">getter</span><span class="p">)</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">m</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">callable</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="p">,</span> <span class="n">getter</span><span class="p">)):</span>
+					<span class="k">continue</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># See class docstring.</span>
+				
+		<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+			
+		<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;get&#39;</span> <span class="o">+</span> <span class="n">key</span>
+			<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Incompatible key: </span><span class="si">{}</span><span class="s1"> (type: </span><span class="si">{}</span><span class="s1">)&#39;</span>
+												 <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">)))</span>
+			<span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;get&#39;</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Incompatible key: cannot use &quot;&quot; as a name&#39;</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+			<span class="n">func</span> <span class="o">=</span> <span class="n">functools_partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="o">.</span><span class="n">_get_conv</span><span class="p">,</span> <span class="n">conv</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+			<span class="n">func</span><span class="o">.</span><span class="n">converter</span> <span class="o">=</span> <span class="n">value</span>
+			<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">proxy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+				<span class="n">getter</span> <span class="o">=</span> <span class="n">functools_partial</span><span class="p">(</span><span class="n">proxy</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">_impl</span><span class="o">=</span><span class="n">func</span><span class="p">)</span>
+				<span class="nb">setattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">getter</span><span class="p">)</span>
+				
+		<span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;get&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="n">key</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+			<span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">itertools_chain</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="p">,),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parser</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="nb">delattr</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+				<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+					<span class="c1"># don&#39;t raise since the entry was present in _data, silently</span>
+					<span class="c1"># clean up</span>
+					<span class="k">continue</span>
+					
+		<span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+			
+		<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="kn">from</span> <span class="nn">configparser</span> <span class="k">import</span> <span class="n">ConverterMapping</span>
+	
+	
+<span class="c1"># Monkey patching ... (a.k.a. duck punshing</span>
+<span class="kn">import</span> <span class="nn">configparser</span>
+<span class="n">configparser</span><span class="o">.</span><span class="n">SectionProxy</span> <span class="o">=</span> <span class="n">ExtendedSectionProxy</span>
+
+
+<div class="viewcode-block" id="ExtendedInterpolation"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation">[docs]</a><span class="k">class</span> <span class="nc">ExtendedInterpolation</span><span class="p">(</span><span class="n">Interpolation</span><span class="p">):</span>
+	<span class="n">_KEYCRE</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\$\{(?P&lt;ref&gt;[^}]+)\}&quot;</span><span class="p">)</span>
+	<span class="n">_KEYCRE2</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\$\[(?P&lt;ref&gt;[^\]]+)\}&quot;</span><span class="p">)</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		
+<div class="viewcode-block" id="ExtendedInterpolation.clear_cache"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.clear_cache">[docs]</a>	<span class="k">def</span> <span class="nf">clear_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="ExtendedInterpolation.before_get"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.before_get">[docs]</a>	<span class="k">def</span> <span class="nf">before_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">defaults</span><span class="p">):</span>
+		<span class="c1"># print(&quot;before_get: {0}:{1} = &#39;{2}&#39;&quot;.format(section, option, value))</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetCached</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">defaults</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">UpdateCache</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+		<span class="c1"># print(&quot;before_get: =&gt; &#39;{0}&#39;\n&quot;.format(result))</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+		
+<div class="viewcode-block" id="ExtendedInterpolation.before_set"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.before_set">[docs]</a>	<span class="k">def</span> <span class="nf">before_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">tmp_value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;$$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># escaped dollar signs</span>
+		<span class="n">tmp_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_KEYCRE</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">tmp_value</span><span class="p">)</span> <span class="c1"># valid syntax</span>
+		<span class="k">if</span> <span class="s1">&#39;$&#39;</span> <span class="ow">in</span> <span class="n">tmp_value</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;invalid interpolation syntax in </span><span class="si">{0!r}</span><span class="s2"> at position </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">tmp_value</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">)))</span>
+		<span class="k">return</span> <span class="n">value</span></div>
+		
+<div class="viewcode-block" id="ExtendedInterpolation.interpolate"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.interpolate">[docs]</a>	<span class="k">def</span> <span class="nf">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">depth</span> <span class="o">&gt;</span> <span class="n">MAX_INTERPOLATION_DEPTH</span><span class="p">:</span>      <span class="k">raise</span> <span class="n">InterpolationDepthError</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		
+		<span class="c1"># short cut operations if empty or a normal string</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+			<span class="c1"># print(&quot;interpol: SHORT -&gt; empty string&quot;)</span>
+			<span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="p">((</span><span class="s2">&quot;$&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;%&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)):</span>
+			<span class="c1"># print(&quot;interpol: SHORT -&gt; {0}&quot;.format(value))</span>
+			<span class="k">return</span> <span class="n">value</span>
+			
+		<span class="c1"># print(&quot;interpol: PREPARE section={0} option={1} value=&#39;{2}&#39;&quot;.format(section, option, value))</span>
+		<span class="n">rawValue</span> <span class="o">=</span>    <span class="n">value</span>
+		<span class="n">rest</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		
+		<span class="k">while</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rawValue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="n">beginPos</span> <span class="o">=</span> <span class="n">rawValue</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">beginPos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="n">rest</span> <span class="o">+=</span> <span class="n">rawValue</span>
+				<span class="n">rawValue</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">rest</span> <span class="o">+=</span> <span class="n">rawValue</span><span class="p">[:</span><span class="n">beginPos</span><span class="p">]</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">rawValue</span><span class="p">[</span><span class="n">beginPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;%&quot;</span><span class="p">):</span>
+					<span class="n">rest</span> <span class="o">+=</span> <span class="s2">&quot;%&quot;</span>
+					<span class="n">rawValue</span> <span class="o">=</span> <span class="n">rawValue</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+				<span class="k">elif</span> <span class="p">(</span><span class="n">rawValue</span><span class="p">[</span><span class="n">beginPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;{&quot;</span><span class="p">):</span>
+					<span class="n">endPos</span> <span class="o">=</span> <span class="n">rawValue</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;}&quot;</span><span class="p">,</span> <span class="n">beginPos</span><span class="p">)</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">endPos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+						<span class="k">raise</span> <span class="n">InterpolationSyntaxError</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;bad interpolation variable reference </span><span class="si">{0!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rawValue</span><span class="p">))</span>
+					<span class="n">path</span> <span class="o">=</span>      <span class="n">rawValue</span><span class="p">[</span><span class="n">beginPos</span> <span class="o">+</span> <span class="mi">2</span><span class="p">:</span><span class="n">endPos</span><span class="p">]</span>
+					<span class="n">rawValue</span> <span class="o">=</span>  <span class="n">rawValue</span><span class="p">[</span><span class="n">endPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+					<span class="n">rest</span> <span class="o">+=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">GetSpecial</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+					
+		<span class="c1"># print(&quot;interpol: BEGIN   section={0} option={1} value=&#39;{2}&#39;&quot;.format(section, option, rest))</span>
+		<span class="n">result</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span>
+		<span class="k">while</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="c1"># print(&quot;interpol: LOOP    rest=&#39;{0}&#39;&quot;.format(rest))</span>
+			<span class="n">beginPos</span> <span class="o">=</span> <span class="n">rest</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">beginPos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="n">result</span> <span class="o">+=</span> <span class="n">rest</span>
+				<span class="n">rest</span> <span class="o">=</span>    <span class="s2">&quot;&quot;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">result</span> <span class="o">+=</span> <span class="n">rest</span><span class="p">[:</span><span class="n">beginPos</span><span class="p">]</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">rest</span><span class="p">[</span><span class="n">beginPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;$&quot;</span><span class="p">):</span>
+					<span class="n">result</span> <span class="o">+=</span>  <span class="s2">&quot;$&quot;</span>
+					<span class="n">rest</span> <span class="o">=</span>    <span class="n">rest</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+				<span class="k">elif</span> <span class="p">(</span><span class="n">rest</span><span class="p">[</span><span class="n">beginPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;{&quot;</span><span class="p">):</span>
+					<span class="n">endPos</span> <span class="o">=</span>  <span class="n">rest</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;}&quot;</span><span class="p">,</span> <span class="n">beginPos</span><span class="p">)</span>
+					<span class="n">nextPos</span> <span class="o">=</span>  <span class="n">rest</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="n">beginPos</span><span class="p">,</span> <span class="n">endPos</span><span class="p">)</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">endPos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>  <span class="k">raise</span> <span class="n">InterpolationSyntaxError</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;bad interpolation variable reference </span><span class="si">{0!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span>
+					<span class="k">if</span> <span class="p">((</span><span class="n">nextPos</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">nextPos</span> <span class="o">&lt;</span> <span class="n">endPos</span><span class="p">)):</span>  <span class="c1"># an embedded $-sign</span>
+						<span class="n">path</span> <span class="o">=</span> <span class="n">rest</span><span class="p">[</span><span class="n">nextPos</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="n">endPos</span><span class="p">]</span>
+						<span class="c1"># print(&quot;interpol: path=&#39;{0}&#39;&quot;.format(path))</span>
+						<span class="n">innervalue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+						<span class="c1"># innervalue = self.interpolate(parser, section, option, path, map, depth + 1)</span>
+						<span class="c1"># print(&quot;interpol: innervalue=&#39;{0}&#39;&quot;.format(innervalue))</span>
+						<span class="n">rest</span> <span class="o">=</span> <span class="n">rest</span><span class="p">[</span><span class="n">beginPos</span><span class="p">:</span><span class="n">nextPos</span><span class="p">]</span> <span class="o">+</span> <span class="n">innervalue</span> <span class="o">+</span> <span class="n">rest</span><span class="p">[</span><span class="n">endPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+						<span class="c1"># print(&quot;interpol: new rest=&#39;{0}&#39;&quot;.format(rest))</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">path</span> <span class="o">=</span>    <span class="n">rest</span><span class="p">[</span><span class="n">beginPos</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="n">endPos</span><span class="p">]</span>
+						<span class="n">rest</span> <span class="o">=</span>    <span class="n">rest</span><span class="p">[</span><span class="n">endPos</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+						<span class="n">result</span> <span class="o">+=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+						
+					<span class="c1"># print(&quot;interpol: LOOP END - result=&#39;{0}&#39;&quot;.format(result))</span>
+					
+		<span class="c1"># print(&quot;interpol: RESULT =&gt; &#39;{0}&#39;&quot;.format(result))</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+		
+	<span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ExtendedInterpolation.GetSpecial"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.GetSpecial">[docs]</a>	<span class="k">def</span> <span class="nf">GetSpecial</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+		<span class="n">parts</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;Root&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;Parent&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;ParentWithRoot&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;GrantParent&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;Path&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;PathWithRoot&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="n">section</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;Name&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">InterpolationSyntaxError</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;Unknown keyword &#39;</span><span class="si">{0}</span><span class="s2">&#39;in special operator.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
+			
+<div class="viewcode-block" id="ExtendedInterpolation.GetValue"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.GetValue">[docs]</a>	<span class="k">def</span> <span class="nf">GetValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+		<span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+			<span class="n">sec</span> <span class="o">=</span> <span class="n">section</span>
+			<span class="n">opt</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">optionxform</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="n">sec</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">opt</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">optionxform</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">InterpolationSyntaxError</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;More than one &#39;:&#39; found.&quot;</span><span class="p">)</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetCached</span><span class="p">(</span><span class="n">sec</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">pass</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sec</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+			<span class="c1"># print(&quot;GetValue: successful parser access: &#39;{0}&#39;&quot;.format(value))</span>
+		<span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">NoSectionError</span><span class="p">,</span> <span class="n">NoOptionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">InterpolationMissingOptionError</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="k">if</span> <span class="p">((</span><span class="s2">&quot;$&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;%&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">sec</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="p">{})</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">UpdateCache</span><span class="p">(</span><span class="n">sec</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">value</span></div>
+		
+<div class="viewcode-block" id="ExtendedInterpolation.GetCached"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.GetCached">[docs]</a>	<span class="k">def</span> <span class="nf">GetCached</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+		<span class="c1"># print(&quot;GetCached: {0}:{1}&quot;.format(section, option))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+		<span class="n">sect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">section</span><span class="p">]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">option</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sect</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">))</span>
+			
+		<span class="n">value</span> <span class="o">=</span> <span class="n">sect</span><span class="p">[</span><span class="n">option</span><span class="p">]</span>
+		<span class="c1"># print(&quot;GetCached: found: {0}&quot;.format(value))</span>
+		<span class="k">return</span> <span class="n">value</span></div>
+		
+<div class="viewcode-block" id="ExtendedInterpolation.UpdateCache"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedInterpolation.UpdateCache">[docs]</a>	<span class="k">def</span> <span class="nf">UpdateCache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="c1"># print(&quot;UpdateCache: {0}:{1} &lt;- {2}&quot;.format(section, option, value))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">):</span>
+			<span class="n">sect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">section</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">option</span> <span class="ow">in</span> <span class="n">sect</span><span class="p">):</span>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;This value is already cached.&quot;</span><span class="p">)</span>
+			<span class="n">sect</span><span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">section</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">option</span> <span class="p">:</span> <span class="n">value</span><span class="p">}</span></div></div>
+			
+			
+<div class="viewcode-block" id="ExtendedConfigParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedConfigParser">[docs]</a><span class="k">class</span> <span class="nc">ExtendedConfigParser</span><span class="p">(</span><span class="n">ConfigParser</span><span class="p">):</span>
+	<span class="n">_DEFAULT_INTERPOLATION</span> <span class="o">=</span> <span class="n">ExtendedInterpolation</span><span class="p">()</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dict_type</span><span class="o">=</span><span class="n">_default_dict</span><span class="p">,</span> <span class="n">allow_no_value</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">delimiters</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">),</span> <span class="n">comment_prefixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">),</span> <span class="n">inline_comment_prefixes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+								<span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">empty_lines_in_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default_section</span><span class="o">=</span><span class="n">DEFAULTSECT</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">_UNSET</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="n">_UNSET</span><span class="p">):</span>
+		<span class="c1"># replacement of ConfigParser.__init__, do not call super-class constructor</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dict</span> <span class="o">=</span>      <span class="n">dict_type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span> <span class="o">=</span>  <span class="n">dict_type</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_sections</span> <span class="o">=</span>  <span class="n">dict_type</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_proxies</span> <span class="o">=</span>    <span class="n">dict_type</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span>      <span class="nb">dict</span><span class="p">()</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_comment_prefixes</span> <span class="o">=</span>        <span class="nb">tuple</span><span class="p">(</span><span class="n">comment_prefixes</span> <span class="ow">or</span> <span class="p">())</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_inline_comment_prefixes</span> <span class="o">=</span>  <span class="nb">tuple</span><span class="p">(</span><span class="n">inline_comment_prefixes</span> <span class="ow">or</span> <span class="p">())</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_strict</span> <span class="o">=</span> <span class="n">strict</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_allow_no_value</span> <span class="o">=</span> <span class="n">allow_no_value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_empty_lines_in_values</span> <span class="o">=</span> <span class="n">empty_lines_in_values</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">default_section</span> <span class="o">=</span> <span class="n">default_section</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_converters</span> <span class="o">=</span> <span class="n">ConverterMapping</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">converters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">_UNSET</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_converters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">converters</span><span class="p">)</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_proxies</span><span class="p">[</span><span class="n">default_section</span><span class="p">]</span> <span class="o">=</span> <span class="n">SectionProxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">default_section</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="n">defaults</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">defaults</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">optionxform</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
+				
+		<span class="bp">self</span><span class="o">.</span><span class="n">_delimiters</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">delimiters</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">delimiters</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_optcre</span> <span class="o">=</span>                <span class="bp">self</span><span class="o">.</span><span class="n">OPTCRE_NV</span> <span class="k">if</span> <span class="n">allow_no_value</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">OPTCRE</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re_escape</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">delimiters</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">allow_no_value</span><span class="p">:</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_optcre</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_OPT_NV_TMPL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="n">d</span><span class="p">),</span> <span class="n">RE_VERBOSE</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">_optcre</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_OPT_TMPL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="n">d</span><span class="p">),</span> <span class="n">RE_VERBOSE</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="n">interpolation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_interpolation</span> <span class="o">=</span> <span class="n">Interpolation</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">interpolation</span> <span class="ow">is</span> <span class="n">_UNSET</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interpolation</span> <span class="o">=</span> <span class="n">ExtendedInterpolation</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="bp">self</span><span class="o">.</span><span class="n">_interpolation</span> <span class="o">=</span> <span class="n">interpolation</span>
+		
+<div class="viewcode-block" id="ExtendedConfigParser.clear"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedConfigParser.clear">[docs]</a>	<span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_interpolation</span><span class="p">,</span> <span class="n">ExtendedInterpolation</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_interpolation</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span></div>
+			
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Interpolation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interpolation</span>
+		
+<div class="viewcode-block" id="ExtendedConfigParser._unify_values"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedConfigParser._unify_values">[docs]</a>	<span class="k">def</span> <span class="nf">_unify_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">variables</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Create a sequence of lookups with &#39;variables&#39; taking priority over</span>
+<span class="sd">		the &#39;section&#39; which takes priority over the DEFAULTSECT.</span>
+<span class="sd">		</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">sectiondict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">[</span><span class="n">section</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">section</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_section</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">NoSectionError</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">sectiondict</span> <span class="o">=</span> <span class="p">{}</span>
+				
+		<span class="c1"># Update with the entry specific variables</span>
+		<span class="n">vardict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">if</span> <span class="n">variables</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">variables</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+				<span class="n">vardict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">optionxform</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="n">prefix</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.DEFAULT&quot;</span>
+		<span class="c1"># print(&quot;searched for {0}&quot;.format(prefix))</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">defaultdict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">[</span><span class="n">prefix</span><span class="p">]</span>
+			<span class="k">return</span> <span class="n">_ChainMap</span><span class="p">(</span><span class="n">vardict</span><span class="p">,</span> <span class="n">sectiondict</span><span class="p">,</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">_ChainMap</span><span class="p">(</span><span class="n">vardict</span><span class="p">,</span> <span class="n">sectiondict</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="ExtendedConfigParser.has_option"><a class="viewcode-back" href="../../PyInfrastructure/lib.ExtendedConfigParser.html#Base.ExtendedConfigParser.has_option">[docs]</a>	<span class="k">def</span> <span class="nf">has_option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Check for the existence of a given option in a given section.</span>
+<span class="sd">		If the specified `section` is None or an empty string, DEFAULT is</span>
+<span class="sd">		assumed. If the specified `section` does not exist, returns False.&quot;&quot;&quot;</span>
+		<span class="n">option</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">optionxform</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">((</span><span class="ow">not</span> <span class="n">section</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">section</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_section</span><span class="p">)):</span>
+			<span class="n">sect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">prefix</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.DEFAULT&quot;</span>
+			<span class="k">if</span> <span class="p">((</span><span class="n">prefix</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">option</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">[</span><span class="n">prefix</span><span class="p">])):</span>
+				<span class="k">return</span> <span class="kc">True</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">sect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">[</span><span class="n">section</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">sect</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

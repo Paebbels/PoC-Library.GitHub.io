@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parser.RulesParser &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Parser.RulesParser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/Parser.RulesParser.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Parser.RulesParser">
+<span id="parser-rulesparser"></span><h1>Parser.RulesParser<a class="headerlink" href="#module-Parser.RulesParser" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#Parser.RulesParser.Rule" title="Parser.RulesParser.Rule"><code class="xref py py-class docutils literal"><span class="pre">Rule</span></code></a>:
+Base class for all Rule and RuleMixIn classes.</li>
+<li><a class="reference internal" href="#Parser.RulesParser.CopyRuleMixIn" title="Parser.RulesParser.CopyRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">CopyRuleMixIn</span></code></a>:
+A partial class (MixIn) to represent a &#8216;copy rule&#8217;.</li>
+<li><a class="reference internal" href="#Parser.RulesParser.DeleteRuleMixIn" title="Parser.RulesParser.DeleteRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">DeleteRuleMixIn</span></code></a>:
+A partial class (MixIn) to represent a &#8216;delete rule&#8217;.</li>
+<li><a class="reference internal" href="#Parser.RulesParser.ReplaceRuleMixIn" title="Parser.RulesParser.ReplaceRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">ReplaceRuleMixIn</span></code></a>:
+A partial class (MixIn) to represent a &#8216;replace rule&#8217;.</li>
+<li><a class="reference internal" href="#Parser.RulesParser.AppendLineRuleMixIn" title="Parser.RulesParser.AppendLineRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">AppendLineRuleMixIn</span></code></a>:
+A partial class (MixIn) to represent a &#8216;append line rule&#8217;.</li>
+<li><a class="reference internal" href="#Parser.RulesParser.RulesParserMixIn" title="Parser.RulesParser.RulesParserMixIn"><code class="xref py py-class docutils literal"><span class="pre">RulesParserMixIn</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="Parser.RulesParser.Rule">
+<em class="property">class </em><code class="descclassname">Parser.RulesParser.</code><code class="descname">Rule</code><a class="reference internal" href="../_modules/Parser/RulesParser.html#Rule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.Rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all Rule and RuleMixIn classes.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-7be6f9afab0384da8a13dcf3d76f66c0a1702a00.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Rule</p></object>
+<p class="rubric">Members</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesParser.CopyRuleMixIn">
+<em class="property">class </em><code class="descclassname">Parser.RulesParser.</code><code class="descname">CopyRuleMixIn</code><span class="sig-paren">(</span><em>sourcePath</em>, <em>destinationPath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#CopyRuleMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.CopyRuleMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>A partial class (MixIn) to represent a &#8216;copy rule&#8217;.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-78f27f0177cb96a0bdd6ed13482ffa74a53cb7d7.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of CopyRuleMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesParser.CopyRuleMixIn.SourcePath">
+<code class="descname">SourcePath</code><a class="headerlink" href="#Parser.RulesParser.CopyRuleMixIn.SourcePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.CopyRuleMixIn.DestinationPath">
+<code class="descname">DestinationPath</code><a class="headerlink" href="#Parser.RulesParser.CopyRuleMixIn.DestinationPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesParser.DeleteRuleMixIn">
+<em class="property">class </em><code class="descclassname">Parser.RulesParser.</code><code class="descname">DeleteRuleMixIn</code><span class="sig-paren">(</span><em>filePath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#DeleteRuleMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.DeleteRuleMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>A partial class (MixIn) to represent a &#8216;delete rule&#8217;.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-6abea89acd4596f5946a568f4357ddf5d94aa660.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of DeleteRuleMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesParser.DeleteRuleMixIn.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Parser.RulesParser.DeleteRuleMixIn.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn">
+<em class="property">class </em><code class="descclassname">Parser.RulesParser.</code><code class="descname">ReplaceRuleMixIn</code><span class="sig-paren">(</span><em>filePath</em>, <em>searchPattern</em>, <em>replacePattern</em>, <em>multiLine</em>, <em>dotAll</em>, <em>caseInSensitive</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#ReplaceRuleMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>A partial class (MixIn) to represent a &#8216;replace rule&#8217;.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-20704a8f3ce1aa318c4ae960d26e031be2d69360.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ReplaceRuleMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn.SearchPattern">
+<code class="descname">SearchPattern</code><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn.SearchPattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn.ReplacePattern">
+<code class="descname">ReplacePattern</code><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn.ReplacePattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn.RegExpOption_MultiLine">
+<code class="descname">RegExpOption_MultiLine</code><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn.RegExpOption_MultiLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn.RegExpOption_DotAll">
+<code class="descname">RegExpOption_DotAll</code><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn.RegExpOption_DotAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.ReplaceRuleMixIn.RegExpOption_CaseInsensitive">
+<code class="descname">RegExpOption_CaseInsensitive</code><a class="headerlink" href="#Parser.RulesParser.ReplaceRuleMixIn.RegExpOption_CaseInsensitive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesParser.AppendLineRuleMixIn">
+<em class="property">class </em><code class="descclassname">Parser.RulesParser.</code><code class="descname">AppendLineRuleMixIn</code><span class="sig-paren">(</span><em>filePath</em>, <em>appendPattern</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#AppendLineRuleMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.AppendLineRuleMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>A partial class (MixIn) to represent a &#8216;append line rule&#8217;.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8a656f000e0ae833239d8f1be3f0e5196512b037.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of AppendLineRuleMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesParser.AppendLineRuleMixIn.FilePath">
+<code class="descname">FilePath</code><a class="headerlink" href="#Parser.RulesParser.AppendLineRuleMixIn.FilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.AppendLineRuleMixIn.AppendPattern">
+<code class="descname">AppendPattern</code><a class="headerlink" href="#Parser.RulesParser.AppendLineRuleMixIn.AppendPattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Parser.RulesParser.RulesParserMixIn">
+<em class="property">class </em><code class="descclassname">Parser.RulesParser.</code><code class="descname">RulesParserMixIn</code><a class="reference internal" href="../_modules/Parser/RulesParser.html#RulesParserMixIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-8e3300ed210e69d2a6b5b4cd31a9d8a607c86504.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of RulesParserMixIn</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="Parser.RulesParser.RulesParserMixIn._classCopyRule">
+<code class="descname">_classCopyRule</code><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._classCopyRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.RulesParser.CopyRuleMixIn" title="Parser.RulesParser.CopyRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">CopyRuleMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.RulesParserMixIn._classDeleteRule">
+<code class="descname">_classDeleteRule</code><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._classDeleteRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.RulesParser.DeleteRuleMixIn" title="Parser.RulesParser.DeleteRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">DeleteRuleMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.RulesParserMixIn._classReplaceRule">
+<code class="descname">_classReplaceRule</code><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._classReplaceRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.RulesParser.ReplaceRuleMixIn" title="Parser.RulesParser.ReplaceRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">ReplaceRuleMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.RulesParserMixIn._classAppendLineRule">
+<code class="descname">_classAppendLineRule</code><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._classAppendLineRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#Parser.RulesParser.AppendLineRuleMixIn" title="Parser.RulesParser.AppendLineRuleMixIn"><code class="xref py py-class docutils literal"><span class="pre">AppendLineRuleMixIn</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesParser.RulesParserMixIn._Parse">
+<code class="descname">_Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#RulesParserMixIn._Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesParser.RulesParserMixIn._Resolve">
+<code class="descname">_Resolve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#RulesParserMixIn._Resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._Resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Parser.RulesParser.RulesParserMixIn._ResolveRule">
+<code class="descname">_ResolveRule</code><span class="sig-paren">(</span><em>ruleStatement</em>, <em>lst</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Parser/RulesParser.html#RulesParserMixIn._ResolveRule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn._ResolveRule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.RulesParserMixIn.PreProcessRules">
+<code class="descname">PreProcessRules</code><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn.PreProcessRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Parser.RulesParser.RulesParserMixIn.PostProcessRules">
+<code class="descname">PostProcessRules</code><a class="headerlink" href="#Parser.RulesParser.RulesParserMixIn.PostProcessRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

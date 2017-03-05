@@ -1,0 +1,1070 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.Solution &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DataBase.Solution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/PyInfrastructure/DataBase.Solution.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-DataBase.Solution">
+<span id="database-solution"></span><h1>DataBase.Solution<a class="headerlink" href="#module-DataBase.Solution" title="Permalink to this headline">¶</a></h1>
+<p><strong>Classes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="Base.html#module-Base" title="Base"><code class="xref py py-class docutils literal"><span class="pre">Base</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.Repository" title="DataBase.Solution.Repository"><code class="xref py py-class docutils literal"><span class="pre">Repository</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.Solution" title="DataBase.Solution.Solution"><code class="xref py py-class docutils literal"><span class="pre">Solution</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.Project" title="DataBase.Solution.Project"><code class="xref py py-class docutils literal"><span class="pre">Project</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.ISEProject" title="DataBase.Solution.ISEProject"><code class="xref py py-class docutils literal"><span class="pre">ISEProject</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.VivadoProject" title="DataBase.Solution.VivadoProject"><code class="xref py py-class docutils literal"><span class="pre">VivadoProject</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.QuartusProject" title="DataBase.Solution.QuartusProject"><code class="xref py py-class docutils literal"><span class="pre">QuartusProject</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.LatticeProject" title="DataBase.Solution.LatticeProject"><code class="xref py py-class docutils literal"><span class="pre">LatticeProject</span></code></a>:
+Base class for Repository, Solution and Project.</li>
+<li><a class="reference internal" href="#DataBase.Solution.VirtualProject" title="DataBase.Solution.VirtualProject"><code class="xref py py-class docutils literal"><span class="pre">VirtualProject</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Solution.FileListFile" title="DataBase.Solution.FileListFile"><code class="xref py py-class docutils literal"><span class="pre">FileListFile</span></code></a>:
+Undocumented.</li>
+<li><a class="reference internal" href="#DataBase.Solution.RulesFile" title="DataBase.Solution.RulesFile"><code class="xref py py-class docutils literal"><span class="pre">RulesFile</span></code></a>:
+Undocumented.</li>
+</ul>
+<dl class="class">
+<dt id="DataBase.Solution.Base">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Base</code><span class="sig-paren">(</span><em>host</em>, <em>sectionPrefix</em>, <em>sectionID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for Repository, Solution and Project.
+It implements ILazyLoadable.</p>
+<p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0b60b29765c2bbe0516d5006f4c0668c1996fa29.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Base</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.Base.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.Base.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Base.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.Base.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Base.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.Base.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Base._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Base._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Base._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Base.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.Base.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Base._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.Base._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.Repository">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Repository</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-42103ff5bf869d22921e422899d7a892a2fdbce8.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Repository</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.Kind">
+<code class="descname">Kind</code><a class="headerlink" href="#DataBase.Solution.Repository.Kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Repository._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository._Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Repository._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Repository.AddSolution">
+<code class="descname">AddSolution</code><span class="sig-paren">(</span><em>solutionID</em>, <em>solutionName</em>, <em>solutionRootPath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository.AddSolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository.AddSolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Repository.RemoveSolution">
+<code class="descname">RemoveSolution</code><span class="sig-paren">(</span><em>solution</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository.RemoveSolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository.RemoveSolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.Solutions">
+<code class="descname">Solutions</code><a class="headerlink" href="#DataBase.Solution.Repository.Solutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.SolutionNames">
+<code class="descname">SolutionNames</code><a class="headerlink" href="#DataBase.Solution.Repository.SolutionNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.Repository.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.Repository.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.Repository.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Repository.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.Repository.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.Solution">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Solution</code><span class="sig-paren">(</span><em>host</em>, <em>slnID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-ac814cfda5cc65106825f790753b00e529c26f7b.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Solution</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Solution.Solution.Register">
+<code class="descname">Register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution.Register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.Register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Solution.Unregister">
+<code class="descname">Unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution.Unregister"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.Unregister" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Solution.CreateFiles">
+<code class="descname">CreateFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution.CreateFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.CreateFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Solution._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.Solution.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Solution.Solution.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.Projects">
+<code class="descname">Projects</code><a class="headerlink" href="#DataBase.Solution.Solution.Projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.ProjectNames">
+<code class="descname">ProjectNames</code><a class="headerlink" href="#DataBase.Solution.Solution.ProjectNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.Solution.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.Solution.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.Solution.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Solution.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.Solution.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Solution._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.Solution._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.Project">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a4d108113cb3644c6672a3a5af42cb264c860058.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of Project</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.Project.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.Project.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Project.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.Project.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Project.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.Project.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Project.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.Project.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.Project.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.Project.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Project._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.Project._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.Project._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.Project._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.ISEProject">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">ISEProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#ISEProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.ISEProject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-c07d48ded5e805c87133e73736665a7f0c4ccc81.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of ISEProject</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.ISEProject.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.ISEProject.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.ISEProject.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.ISEProject.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.ISEProject.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.ISEProject.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.ISEProject.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.ISEProject.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.ISEProject.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.ISEProject.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.ISEProject._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.ISEProject._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.ISEProject._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.ISEProject._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.VivadoProject">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">VivadoProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#VivadoProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.VivadoProject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-0111347df1a4026b0b5ea0cffd132d44724a8b0e.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VivadoProject</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.VivadoProject.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.VivadoProject.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VivadoProject.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.VivadoProject.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VivadoProject.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.VivadoProject.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VivadoProject.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.VivadoProject.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VivadoProject.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.VivadoProject.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VivadoProject._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VivadoProject._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VivadoProject._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VivadoProject._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.QuartusProject">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">QuartusProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#QuartusProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.QuartusProject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-a40811538adaf84a101c3da74f4455c7e7c58130.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of QuartusProject</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.QuartusProject.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.QuartusProject.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.QuartusProject.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.QuartusProject.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.QuartusProject.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.QuartusProject.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.QuartusProject.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.QuartusProject.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.QuartusProject.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.QuartusProject.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.QuartusProject._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.QuartusProject._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.QuartusProject._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.QuartusProject._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.LatticeProject">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">LatticeProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#LatticeProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.LatticeProject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-5f1cfd579a2744b76c8742a8c55bb91ebcab941a.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of LatticeProject</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.LatticeProject.ConfigSectionName">
+<code class="descname">ConfigSectionName</code><a class="headerlink" href="#DataBase.Solution.LatticeProject.ConfigSectionName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.LatticeProject.ID">
+<code class="descname">ID</code><a class="headerlink" href="#DataBase.Solution.LatticeProject.ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.LatticeProject.LazyLoadable_IsLoaded">
+<code class="descname">LazyLoadable_IsLoaded</code><a class="headerlink" href="#DataBase.Solution.LatticeProject.LazyLoadable_IsLoaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.LatticeProject.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.LatticeProject.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.LatticeProject.Parent">
+<code class="descname">Parent</code><a class="headerlink" href="#DataBase.Solution.LatticeProject.Parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.LatticeProject._LazyLoadable_Load">
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.LatticeProject._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.LatticeProject._Load">
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.LatticeProject._Load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method for early loading.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.VirtualProject">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">VirtualProject</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#VirtualProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.VirtualProject" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-9819d9a0380978240e9f4992b993b05b65c131fb.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of VirtualProject</p></object>
+<p class="rubric">Members</p>
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.AddExternalVHDLLibraries">
+<code class="descname">AddExternalVHDLLibraries</code><span class="sig-paren">(</span><em>library</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.AddExternalVHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.AddFile">
+<code class="descname">AddFile</code><span class="sig-paren">(</span><em>file</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.AddFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.AddFileSet">
+<code class="descname">AddFileSet</code><span class="sig-paren">(</span><em>fileSet</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.AddFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.AddSourceFile">
+<code class="descname">AddSourceFile</code><span class="sig-paren">(</span><em>file</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.AddSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.Board">
+<code class="descname">Board</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.Board" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.CreateFileSet">
+<code class="descname">CreateFileSet</code><span class="sig-paren">(</span><em>name</em>, <em>setDefault=True</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.CreateFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.DefaultFileSet">
+<code class="descname">DefaultFileSet</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.DefaultFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.Device">
+<code class="descname">Device</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.Device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.Environment">
+<code class="descname">Environment</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.Environment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.ExternalVHDLLibraries">
+<code class="descname">ExternalVHDLLibraries</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.ExternalVHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.ExtractVHDLLibrariesFromVHDLSourceFiles">
+<code class="descname">ExtractVHDLLibrariesFromVHDLSourceFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.ExtractVHDLLibrariesFromVHDLSourceFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.FileSets">
+<code class="descname">FileSets</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.FileSets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.Files">
+<code class="descname">Files</code><span class="sig-paren">(</span><em>fileType=&lt;FileTypes(Text|ProjectFile|FileListFile|RulesFile|SourceFile|VHDLSourceFile|VerilogSourceFile|PythonSourceFile|CocotbSourceFile|ConstraintFile|UcfConstraintFile|XdcConstraintFile|SdcConstraintFile|LdcConstraintFile|SettingsFile|QuartusSettingsFile) bits=0xFFFF&gt;</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.GetVariables">
+<code class="descname">GetVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.GetVariables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.Name">
+<code class="descname">Name</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.RootDirectory">
+<code class="descname">RootDirectory</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.RootDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.Tool">
+<code class="descname">Tool</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.Tool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.ToolChain">
+<code class="descname">ToolChain</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.ToolChain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.VHDLLibraries">
+<code class="descname">VHDLLibraries</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.VHDLLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.VirtualProject.VHDLVersion">
+<code class="descname">VHDLVersion</code><a class="headerlink" href="#DataBase.Solution.VirtualProject.VHDLVersion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.VirtualProject.pprint">
+<code class="descname">pprint</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.VirtualProject.pprint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.FileListFile">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">FileListFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-e0780cb4e92903f455a10a0ac137057677869037.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of FileListFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.FileListFile bits=0x0004 data=UNDEFINED&gt;</em><a class="headerlink" href="#DataBase.Solution.FileListFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classVHDLSourceFile">
+<code class="descname">_classVHDLSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classVHDLSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">VHDLSourceFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classVerilogSourceFile">
+<code class="descname">_classVerilogSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classVerilogSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">VerilogSourceFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classCocotbSourceFile">
+<code class="descname">_classCocotbSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classCocotbSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CocotbSourceFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile.CopyFilesToFileSet">
+<code class="descname">CopyFilesToFileSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile.CopyFilesToFileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.CopyFilesToFileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile.CopyExternalLibraries">
+<code class="descname">CopyExternalLibraries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile.CopyExternalLibraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.CopyExternalLibraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#DataBase.Solution.FileListFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#DataBase.Solution.FileListFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#DataBase.Solution.FileListFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.Files">
+<code class="descname">Files</code><a class="headerlink" href="#DataBase.Solution.FileListFile.Files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.Includes">
+<code class="descname">Includes</code><a class="headerlink" href="#DataBase.Solution.FileListFile.Includes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.Libraries">
+<code class="descname">Libraries</code><a class="headerlink" href="#DataBase.Solution.FileListFile.Libraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Solution.FileListFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#DataBase.Solution.FileListFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile.Warnings">
+<code class="descname">Warnings</code><a class="headerlink" href="#DataBase.Solution.FileListFile.Warnings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile._Evaluate">
+<code class="descname">_Evaluate</code><span class="sig-paren">(</span><em>host</em>, <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile._Evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile._EvaluatePath">
+<code class="descname">_EvaluatePath</code><span class="sig-paren">(</span><em>host</em>, <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile._EvaluatePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile._Parse">
+<code class="descname">_Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile._Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.FileListFile._Resolve">
+<code class="descname">_Resolve</code><span class="sig-paren">(</span><em>host</em>, <em>statements=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.FileListFile._Resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classIncludeFile">
+<code class="descname">_classIncludeFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classIncludeFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">IncludeFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classLDCSourceFile">
+<code class="descname">_classLDCSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classLDCSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">LDCSourceFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classSDCSourceFile">
+<code class="descname">_classSDCSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classSDCSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">SDCSourceFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classUCFSourceFile">
+<code class="descname">_classUCFSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classUCFSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">UCFSourceFileMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.FileListFile._classXDCSourceFile">
+<code class="descname">_classXDCSourceFile</code><a class="headerlink" href="#DataBase.Solution.FileListFile._classXDCSourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">XDCSourceFileMixIn</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DataBase.Solution.RulesFile">
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">RulesFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#RulesFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.RulesFile" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Inheritance</p>
+<object data="../_images/inheritance-47d21443d6c2faf472f97c1a21dd8063aa0900cf.svg" type="image/svg+xml">
+            <p class="warning">Inheritance diagram of RulesFile</p></object>
+<p class="rubric">Members</p>
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile._FileType">
+<code class="descname">_FileType</code><em class="property"> = &lt;FileTypes.RulesFile bits=0x0008 data=UNDEFINED&gt;</em><a class="headerlink" href="#DataBase.Solution.RulesFile._FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.FileName">
+<code class="descname">FileName</code><a class="headerlink" href="#DataBase.Solution.RulesFile.FileName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.FileSet">
+<code class="descname">FileSet</code><a class="headerlink" href="#DataBase.Solution.RulesFile.FileSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.FileType">
+<code class="descname">FileType</code><a class="headerlink" href="#DataBase.Solution.RulesFile.FileType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile.Open">
+<code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.RulesFile.Open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.Path">
+<code class="descname">Path</code><a class="headerlink" href="#DataBase.Solution.RulesFile.Path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.PostProcessRules">
+<code class="descname">PostProcessRules</code><a class="headerlink" href="#DataBase.Solution.RulesFile.PostProcessRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.PreProcessRules">
+<code class="descname">PreProcessRules</code><a class="headerlink" href="#DataBase.Solution.RulesFile.PreProcessRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile.Project">
+<code class="descname">Project</code><a class="headerlink" href="#DataBase.Solution.RulesFile.Project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile.ReadFile">
+<code class="descname">ReadFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.RulesFile.ReadFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile._Parse">
+<code class="descname">_Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.RulesFile._Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile._ReadContent">
+<code class="descname">_ReadContent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.RulesFile._ReadContent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile._Resolve">
+<code class="descname">_Resolve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.RulesFile._Resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile._ResolveRule">
+<code class="descname">_ResolveRule</code><span class="sig-paren">(</span><em>ruleStatement</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#DataBase.Solution.RulesFile._ResolveRule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile._classAppendLineRule">
+<code class="descname">_classAppendLineRule</code><a class="headerlink" href="#DataBase.Solution.RulesFile._classAppendLineRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">AppendLineRuleMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile._classCopyRule">
+<code class="descname">_classCopyRule</code><a class="headerlink" href="#DataBase.Solution.RulesFile._classCopyRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CopyRuleMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile._classDeleteRule">
+<code class="descname">_classDeleteRule</code><a class="headerlink" href="#DataBase.Solution.RulesFile._classDeleteRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">DeleteRuleMixIn</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DataBase.Solution.RulesFile._classReplaceRule">
+<code class="descname">_classReplaceRule</code><a class="headerlink" href="#DataBase.Solution.RulesFile._classReplaceRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ReplaceRuleMixIn</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DataBase.Solution.RulesFile.Parse">
+<code class="descname">Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#RulesFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.RulesFile.Parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

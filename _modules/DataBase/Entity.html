@@ -1,0 +1,1122 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.Entity &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="DataBase" href="../DataBase.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../DataBase.html">DataBase</a> &raquo;</li>
+        
+      <li>DataBase.Entity</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for DataBase.Entity</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     TODO</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">collections</span>          <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">enum</span>                 <span class="k">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>              <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">flags</span>                <span class="k">import</span> <span class="n">Flags</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>        <span class="k">import</span> <span class="n">Init</span>
+<span class="kn">from</span> <span class="nn">lib.Decorators</span>       <span class="k">import</span> <span class="n">LazyLoadTrigger</span><span class="p">,</span> <span class="n">ILazyLoadable</span>
+<span class="kn">from</span> <span class="nn">ToolChain</span>            <span class="k">import</span> <span class="n">ConfigurationException</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;EntityTypes&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;_PoCEntityTypes_parser&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;BaseFlags&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;TestbenchKind&#39;</span><span class="p">,</span> <span class="s1">&#39;NetlistKind&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;NamespaceRoot&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Visibility&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;PathElement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Namespace&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Library&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;WildCard&#39;</span><span class="p">,</span> <span class="s1">&#39;StarWildCard&#39;</span><span class="p">,</span> <span class="s1">&#39;AskWildCard&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;IPCore&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;LazyPathElement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Testbench&#39;</span><span class="p">,</span> <span class="s1">&#39;VHDLTestbench&#39;</span><span class="p">,</span> <span class="s1">&#39;CocoTestbench&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Netlist&#39;</span><span class="p">,</span> <span class="s1">&#39;XstNetlist&#39;</span><span class="p">,</span> <span class="s1">&#39;QuartusNetlist&#39;</span><span class="p">,</span> <span class="s1">&#39;LatticeNetlist&#39;</span><span class="p">,</span> <span class="s1">&#39;CoreGeneratorNetlist&#39;</span><span class="p">,</span> <span class="s1">&#39;VivadoNetlist&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;FQN&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="EntityTypes"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.EntityTypes">[docs]</a><span class="k">class</span> <span class="nc">EntityTypes</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="n">Unknown</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">Source</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">Testbench</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">NetList</span> <span class="o">=</span> <span class="mi">3</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span>   <span class="p">(</span><span class="bp">self</span> <span class="ow">is</span> <span class="n">EntityTypes</span><span class="o">.</span><span class="n">Unknown</span><span class="p">):</span>    <span class="k">return</span> <span class="s2">&quot;??&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span> <span class="ow">is</span> <span class="n">EntityTypes</span><span class="o">.</span><span class="n">Source</span><span class="p">):</span>    <span class="k">return</span> <span class="s2">&quot;src&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span> <span class="ow">is</span> <span class="n">EntityTypes</span><span class="o">.</span><span class="n">Testbench</span><span class="p">):</span>  <span class="k">return</span> <span class="s2">&quot;tb&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span> <span class="ow">is</span> <span class="n">EntityTypes</span><span class="o">.</span><span class="n">NetList</span><span class="p">):</span>    <span class="k">return</span> <span class="s2">&quot;nl&quot;</span></div>
+		
+<div class="viewcode-block" id="_PoCEntityTypes_parser"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity._PoCEntityTypes_parser">[docs]</a><span class="k">def</span> <span class="nf">_PoCEntityTypes_parser</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">Enum</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># map strings to enum values, default to Unknown</span>
+		<span class="k">return</span> <span class="p">{</span>
+			<span class="s1">&#39;src&#39;</span><span class="p">:</span>      <span class="n">EntityTypes</span><span class="o">.</span><span class="n">Source</span><span class="p">,</span>
+			<span class="s1">&#39;tb&#39;</span><span class="p">:</span>        <span class="n">EntityTypes</span><span class="o">.</span><span class="n">Testbench</span><span class="p">,</span>
+			<span class="s1">&#39;nl&#39;</span><span class="p">:</span>        <span class="n">EntityTypes</span><span class="o">.</span><span class="n">NetList</span>
+		<span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value</span><span class="p">,</span>	<span class="n">EntityTypes</span><span class="o">.</span><span class="n">Unknown</span><span class="p">)</span></div>
+		
+<span class="c1"># override __new__ method in EntityTypes with _PoCEntityTypes_parser</span>
+<span class="nb">setattr</span><span class="p">(</span><span class="n">EntityTypes</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">,</span> <span class="n">_PoCEntityTypes_parser</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaseFlags"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.BaseFlags">[docs]</a><span class="k">class</span> <span class="nc">BaseFlags</span><span class="p">(</span><span class="n">Flags</span><span class="p">):</span>
+	<span class="n">__no_flags_name__</span> <span class="o">=</span>   <span class="s2">&quot;Unknown&quot;</span>
+	<span class="n">__all_flags_name__</span> <span class="o">=</span>  <span class="s2">&quot;All&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="TestbenchKind"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.TestbenchKind">[docs]</a><span class="k">class</span> <span class="nc">TestbenchKind</span><span class="p">(</span><span class="n">BaseFlags</span><span class="p">):</span>
+	<span class="n">VHDLTestbench</span> <span class="o">=</span> <span class="p">()</span>
+	<span class="n">CocoTestbench</span> <span class="o">=</span> <span class="p">()</span></div>
+	
+	
+<div class="viewcode-block" id="NetlistKind"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.NetlistKind">[docs]</a><span class="k">class</span> <span class="nc">NetlistKind</span><span class="p">(</span><span class="n">BaseFlags</span><span class="p">):</span>
+	<span class="n">LatticeNetlist</span> <span class="o">=</span> <span class="p">()</span>
+	<span class="n">QuartusNetlist</span> <span class="o">=</span> <span class="p">()</span>
+	<span class="n">XstNetlist</span> <span class="o">=</span> <span class="p">()</span>
+	<span class="n">CoreGeneratorNetlist</span> <span class="o">=</span> <span class="p">()</span>
+	<span class="n">VivadoNetlist</span> <span class="o">=</span> <span class="p">()</span></div>
+	
+	
+<div class="viewcode-block" id="NamespaceRoot"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.NamespaceRoot">[docs]</a><span class="k">class</span> <span class="nc">NamespaceRoot</span><span class="p">:</span>
+	<span class="n">__POCRoot_Name</span> <span class="o">=</span>            <span class="s2">&quot;PoC&quot;</span>
+	<span class="n">__POCRoot_SectionName</span> <span class="o">=</span>     <span class="s2">&quot;PoC&quot;</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span>              <span class="n">host</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span> <span class="o">=</span>        <span class="n">OrderedDict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__POCRoot_Name</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Library</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__POCRoot_Name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__POCRoot_SectionName</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Libraries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="p">[</span><span class="n">lib</span> <span class="k">for</span> <span class="n">lib</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">LibraryNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="p">[</span><span class="n">libName</span> <span class="k">for</span> <span class="n">libName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+	
+<div class="viewcode-block" id="NamespaceRoot.GetLibraries"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.NamespaceRoot.GetLibraries">[docs]</a>	<span class="k">def</span> <span class="nf">GetLibraries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></div>
+<div class="viewcode-block" id="NamespaceRoot.GetLibraryNames"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.NamespaceRoot.GetLibraryNames">[docs]</a>	<span class="k">def</span> <span class="nf">GetLibraryNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
+	
+	<span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span>
+		
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+		
+<div class="viewcode-block" id="NamespaceRoot.AddLibrary"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.NamespaceRoot.AddLibrary">[docs]</a>	<span class="k">def</span> <span class="nf">AddLibrary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">libraryName</span><span class="p">,</span> <span class="n">libraryPrefix</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__libraries</span><span class="p">[</span><span class="n">libraryName</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Library</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">libraryName</span><span class="p">,</span> <span class="n">libraryPrefix</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span></div></div>
+		
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="Visibility"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Visibility">[docs]</a><span class="k">class</span> <span class="nc">Visibility</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="n">Unknown</span> <span class="o">=</span>		<span class="mi">0</span>
+	<span class="n">Private</span> <span class="o">=</span>   <span class="mi">1</span>
+	<span class="n">Public</span> <span class="o">=</span>    <span class="mi">2</span>
+	
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">member</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="o">==</span> <span class="n">value</span><span class="p">):</span>
+				<span class="k">return</span> <span class="n">member</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">{0!s}</span><span class="s2">&#39; is not a valid </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span></div>
+		
+		
+<div class="viewcode-block" id="PathElement"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.PathElement">[docs]</a><span class="k">class</span> <span class="nc">PathElement</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span>              <span class="n">host</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span>              <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span>            <span class="n">parent</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span> <span class="o">=</span> <span class="n">configSectionName</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_visibility</span> <span class="o">=</span>        <span class="n">Visibility</span><span class="o">.</span><span class="n">Unknown</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Load</span><span class="p">()</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>               <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ConfigSectionName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ConfigSection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="p">]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">Level</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_visibility</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">IsVisible</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>          <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Repository</span><span class="o">.</span><span class="n">Kind</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_visibility</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cur</span><span class="p">)</span>
+			<span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">Parent</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">Library</span><span class="p">):</span>
+				<span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Hierarchy error. Expected Library.&quot;</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">result</span>
+		
+<div class="viewcode-block" id="PathElement._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.PathElement._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_visibility</span> <span class="o">=</span> <span class="n">Visibility</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s1">&#39;Visibility&#39;</span><span class="p">])</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Parent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="Namespace"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace">[docs]</a><span class="k">class</span> <span class="nc">Namespace</span><span class="p">(</span><span class="n">PathElement</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__namespaces</span> <span class="o">=</span>    <span class="n">OrderedDict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__entities</span> <span class="o">=</span>      <span class="n">OrderedDict</span><span class="p">()</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		
+<div class="viewcode-block" id="Namespace._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_Load</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">optionName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">:</span>
+			<span class="n">kind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;Namespace&quot;</span><span class="p">):</span>
+				<span class="c1"># print(&quot;loading namespace: {0}&quot;.format(optionName))</span>
+				<span class="n">section</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">ns</span> <span class="o">=</span> <span class="n">Namespace</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">section</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__namespaces</span><span class="p">[</span><span class="n">optionName</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">ns</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;Entity&quot;</span><span class="p">):</span>
+				<span class="c1"># print(&quot;loading entity: {0}&quot;.format(optionName))</span>
+				<span class="n">section</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;IP&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="p">[</span><span class="n">optionName</span><span class="p">])</span>
+				<span class="n">ent</span> <span class="o">=</span> <span class="n">IPCore</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">section</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__entities</span><span class="p">[</span><span class="n">optionName</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">ent</span></div>
+				
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Namespaces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>         <span class="k">return</span> <span class="p">[</span><span class="n">ns</span> <span class="k">for</span> <span class="n">ns</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNamespaces</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">NamespaceNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="p">[</span><span class="n">nsName</span> <span class="k">for</span> <span class="n">nsName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNamespaceNames</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Entities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>           <span class="k">return</span> <span class="p">[</span><span class="n">entity</span> <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">EntityNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="p">[</span><span class="n">entityName</span> <span class="k">for</span> <span class="n">entityName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetEntityNames</span><span class="p">()]</span>
+	
+<div class="viewcode-block" id="Namespace.GetNamespaces"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace.GetNamespaces">[docs]</a>	<span class="k">def</span> <span class="nf">GetNamespaces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">namespace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__namespaces</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">namespace</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="n">namespace</span></div>
+				
+<div class="viewcode-block" id="Namespace.GetNamespaceNames"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace.GetNamespaceNames">[docs]</a>	<span class="k">def</span> <span class="nf">GetNamespaceNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">namespace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__namespaces</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">namespace</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="n">namespace</span><span class="o">.</span><span class="n">Name</span></div>
+				
+<div class="viewcode-block" id="Namespace.GetEntities"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace.GetEntities">[docs]</a>	<span class="k">def</span> <span class="nf">GetEntities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__entities</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">entity</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="n">entity</span></div>
+				
+<div class="viewcode-block" id="Namespace.GetEntityNames"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace.GetEntityNames">[docs]</a>	<span class="k">def</span> <span class="nf">GetEntityNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__entities</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">entity</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="n">entity</span><span class="o">.</span><span class="n">Name</span></div>
+				
+<div class="viewcode-block" id="Namespace.GetAllEntities"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace.GetAllEntities">[docs]</a>	<span class="k">def</span> <span class="nf">GetAllEntities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">namespace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNamespaces</span><span class="p">():</span>
+			<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">namespace</span><span class="o">.</span><span class="n">GetAllEntities</span><span class="p">():</span>
+				<span class="k">yield</span> <span class="n">entity</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">():</span>
+			<span class="k">yield</span> <span class="n">entity</span></div>
+			
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__namespaces</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__entities</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Item &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; is not visible.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+			
+		<span class="k">return</span> <span class="n">item</span>
+		
+<div class="viewcode-block" id="Namespace.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Namespace.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">():</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="n">ent</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">ns</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNamespaces</span><span class="p">():</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="n">ns</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="Library"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Library">[docs]</a><span class="k">class</span> <span class="nc">Library</span><span class="p">(</span><span class="n">Namespace</span><span class="p">):</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="mi">0</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Name</span></div>
+		
+		
+<div class="viewcode-block" id="WildCard"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard">[docs]</a><span class="k">class</span> <span class="nc">WildCard</span><span class="p">(</span><span class="n">PathElement</span><span class="p">):</span>
+<div class="viewcode-block" id="WildCard.GetEntities"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetEntities">[docs]</a>	<span class="k">def</span> <span class="nf">GetEntities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="WildCard.GetTestbenches"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetTestbenches">[docs]</a>	<span class="k">def</span> <span class="nf">GetTestbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">TestbenchKind</span><span class="o">.</span><span class="n">All</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">():</span>
+			<span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">GetTestbenches</span><span class="p">():</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">tb</span><span class="o">.</span><span class="n">Kind</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+					<span class="k">yield</span> <span class="n">tb</span></div>
+					
+<div class="viewcode-block" id="WildCard.GetVHDLTestbenches"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetVHDLTestbenches">[docs]</a>	<span class="k">def</span> <span class="nf">GetVHDLTestbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetTestbenches</span><span class="p">(</span><span class="n">TestbenchKind</span><span class="o">.</span><span class="n">VHDLTestbench</span><span class="p">)</span></div>
+<div class="viewcode-block" id="WildCard.GetCocoTestbenches"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetCocoTestbenches">[docs]</a>	<span class="k">def</span> <span class="nf">GetCocoTestbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetTestbenches</span><span class="p">(</span><span class="n">TestbenchKind</span><span class="o">.</span><span class="n">CocoTestbench</span><span class="p">)</span></div>
+	
+<div class="viewcode-block" id="WildCard.GetNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">All</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">():</span>
+			<span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">(</span><span class="n">kind</span><span class="p">):</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">Kind</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+					<span class="k">yield</span> <span class="n">nl</span></div>
+					
+<div class="viewcode-block" id="WildCard.GetLatticeNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetLatticeNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetLatticeNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">LatticeNetlist</span><span class="p">)</span></div>
+<div class="viewcode-block" id="WildCard.GetQuartusNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetQuartusNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetQuartusNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">QuartusNetlist</span><span class="p">)</span></div>
+<div class="viewcode-block" id="WildCard.GetXSTNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetXSTNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetXSTNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">XstNetlist</span><span class="p">)</span></div>
+<div class="viewcode-block" id="WildCard.GetCoreGenNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetCoreGenNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetCoreGenNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">CoreGeneratorNetlist</span><span class="p">)</span></div>
+<div class="viewcode-block" id="WildCard.GetVivadoNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.WildCard.GetVivadoNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetVivadoNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">VivadoNetlist</span><span class="p">)</span></div>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Testbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="p">[</span><span class="n">tb</span> <span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetTestbenches</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">VHDLTestbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="p">[</span><span class="n">tb</span> <span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVHDLTestbenches</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">CocoTestbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="p">[</span><span class="n">tb</span> <span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetCocoTestbenches</span><span class="p">()]</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Netlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>           <span class="k">return</span> <span class="p">[</span><span class="n">tb</span> <span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNetlists</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">LatticeNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="p">[</span><span class="n">nl</span> <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetLatticeNetlists</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">QuartusNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="p">[</span><span class="n">nl</span> <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetQuartusNetlists</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">XSTNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="p">[</span><span class="n">nl</span> <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetXSTNetlists</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">CoreGenNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">return</span> <span class="p">[</span><span class="n">nl</span> <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetCoreGenNetlists</span><span class="p">()]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">VivadoNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="p">[</span><span class="n">nl</span> <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVivadoNetlists</span><span class="p">()]</span></div>
+	
+	
+<div class="viewcode-block" id="StarWildCard"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.StarWildCard">[docs]</a><span class="k">class</span> <span class="nc">StarWildCard</span><span class="p">(</span><span class="n">WildCard</span><span class="p">):</span>
+<div class="viewcode-block" id="StarWildCard._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.StarWildCard._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+		
+<div class="viewcode-block" id="StarWildCard.GetEntities"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.StarWildCard.GetEntities">[docs]</a>	<span class="k">def</span> <span class="nf">GetEntities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">GetAllEntities</span><span class="p">():</span>
+			<span class="k">yield</span> <span class="n">entity</span></div></div>
+			
+			
+<div class="viewcode-block" id="AskWildCard"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.AskWildCard">[docs]</a><span class="k">class</span> <span class="nc">AskWildCard</span><span class="p">(</span><span class="n">WildCard</span><span class="p">):</span>
+<div class="viewcode-block" id="AskWildCard._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.AskWildCard._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+		
+<div class="viewcode-block" id="AskWildCard.GetEntities"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.AskWildCard.GetEntities">[docs]</a>	<span class="k">def</span> <span class="nf">GetEntities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">():</span>
+			<span class="k">yield</span> <span class="n">entity</span></div></div>
+			
+			
+<div class="viewcode-block" id="IPCore"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.IPCore">[docs]</a><span class="k">class</span> <span class="nc">IPCore</span><span class="p">(</span><span class="n">PathElement</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dependencies</span> <span class="o">=</span>    <span class="p">[]</span>
+		<span class="c1"># Testbenches</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span> <span class="o">=</span>          <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span> <span class="o">=</span>          <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		<span class="c1"># Netlists</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_latticeNetlist</span> <span class="o">=</span>  <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_quartusNetlist</span> <span class="o">=</span>  <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span> <span class="o">=</span>      <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span> <span class="o">=</span>  <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span> <span class="o">=</span>   <span class="p">[]</span>		<span class="c1"># OrderedDict()</span>
+		
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>	  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dependencies</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">VHDLTestbench</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No VHDL testbench configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">CocoTestbench</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No Cocotb testbench configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+<div class="viewcode-block" id="IPCore.GetTestbenches"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.IPCore.GetTestbenches">[docs]</a>	<span class="k">def</span> <span class="nf">GetTestbenches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">TestbenchKind</span><span class="o">.</span><span class="n">All</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">TestbenchKind</span><span class="o">.</span><span class="n">VHDLTestbench</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">tb</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">tb</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">TestbenchKind</span><span class="o">.</span><span class="n">CocoTestbench</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">tb</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">tb</span></div>
+					
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">LatticeNetlist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_latticeNetlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No Lattice netlist configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_latticeNetlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">QuartusNetlist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_quartusNetlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No Quartus-II netlist configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quartusNetlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">XSTNetlist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No XST netlist configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">CGNetlist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No CoreGen netlist configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">VivadoNetlist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;No Vivado netlist configured for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		
+<div class="viewcode-block" id="IPCore.GetNetlists"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.IPCore.GetNetlists">[docs]</a>	<span class="k">def</span> <span class="nf">GetNetlists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">All</span><span class="p">):</span> <span class="c1"># mccabe:disable=MC0001</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">LatticeNetlist</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_latticeNetlist</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">nl</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">nl</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">QuartusNetlist</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quartusNetlist</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">nl</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">nl</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">XstNetlist</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">nl</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">nl</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">CoreGeneratorNetlist</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">nl</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">nl</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">NetlistKind</span><span class="o">.</span><span class="n">VivadoNetlist</span> <span class="ow">in</span> <span class="n">kind</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">nl</span><span class="o">.</span><span class="n">IsVisible</span><span class="p">:</span>
+					<span class="k">yield</span> <span class="n">nl</span></div>
+					
+<div class="viewcode-block" id="IPCore._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.IPCore._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_Load</span><span class="p">()</span>
+		<span class="n">section</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span>
+		<span class="c1"># load dependencies (as names)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dependencies</span> <span class="o">=</span>  <span class="n">section</span><span class="p">[</span><span class="s1">&#39;Dependencies&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+		
+		<span class="c1"># load testbenches and netlists</span>
+		<span class="k">for</span> <span class="n">optionName</span> <span class="ow">in</span> <span class="n">section</span><span class="p">:</span>
+			<span class="n">kind</span> <span class="o">=</span> <span class="n">section</span><span class="p">[</span><span class="n">optionName</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;vhdltestbench&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;TB&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">tb</span> <span class="o">=</span> <span class="n">VHDLTestbench</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+				<span class="c1"># self._vhdltb[optionName] = tb</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;cocotestbench&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;COCOTB&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">tb</span> <span class="o">=</span> <span class="n">CocoTestbench</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+				<span class="c1"># self._cocotb[optionName] = tb</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;lsenetlist&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;LSE&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">nl</span> <span class="o">=</span> <span class="n">LatticeNetlist</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_latticeNetlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nl</span><span class="p">)</span>
+				<span class="c1"># self._xstNetlist[optionName] = nl</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;quartusnetlist&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;QMAP&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">nl</span> <span class="o">=</span> <span class="n">QuartusNetlist</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_quartusNetlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nl</span><span class="p">)</span>
+				<span class="c1"># self._xstNetlist[optionName] = nl</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;xstnetlist&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;XST&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">nl</span> <span class="o">=</span> <span class="n">XstNetlist</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nl</span><span class="p">)</span>
+				<span class="c1"># self._xstNetlist[optionName] = nl</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;coregennetlist&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;CG&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">nl</span> <span class="o">=</span> <span class="n">CoreGeneratorNetlist</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nl</span><span class="p">)</span>
+				<span class="c1"># self._coreGenNetlist[optionName] = nl</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;vivadonetlist&quot;</span><span class="p">):</span>
+				<span class="n">sectionName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSectionName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;IP&quot;</span><span class="p">,</span> <span class="s2">&quot;VIVADO&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">optionName</span>
+				<span class="n">nl</span> <span class="o">=</span> <span class="n">VivadoNetlist</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">optionName</span><span class="p">,</span> <span class="n">configSectionName</span><span class="o">=</span><span class="n">sectionName</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nl</span><span class="p">)</span></div>
+				<span class="c1"># self._vivadoNetlist[optionName] = nl</span>
+				
+<div class="viewcode-block" id="IPCore.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.IPCore.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Entity: </span><span class="si">{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdltb</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cocotb</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xstNetlist</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coreGenNetlist</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vivadoNetlist</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="LazyPathElement"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.LazyPathElement">[docs]</a><span class="k">class</span> <span class="nc">LazyPathElement</span><span class="p">(</span><span class="n">PathElement</span><span class="p">,</span> <span class="n">ILazyLoadable</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>        <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="n">ILazyLoadable</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Kind</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kind</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span></div>
+		
+		
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="SimulationResult"><a class="viewcode-back" href="../../PyInfrastructure/Simulator.html#DataBase.Entity.SimulationResult">[docs]</a><span class="k">class</span> <span class="nc">SimulationResult</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Simulation result enumeration.&quot;&quot;&quot;</span>
+	<span class="n">NotRun</span> <span class="o">=</span>      <span class="mi">0</span>
+	<span class="n">DryRun</span> <span class="o">=</span>      <span class="mi">1</span>
+	<span class="n">Error</span> <span class="o">=</span>       <span class="mi">2</span>
+	<span class="n">Failed</span> <span class="o">=</span>      <span class="mi">3</span>
+	<span class="n">NoAsserts</span> <span class="o">=</span>   <span class="mi">4</span>
+	<span class="n">Passed</span> <span class="o">=</span>      <span class="mi">5</span>
+	<span class="n">GUIRun</span> <span class="o">=</span>      <span class="mi">6</span></div>
+	
+	
+<div class="viewcode-block" id="Testbench"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Testbench">[docs]</a><span class="k">class</span> <span class="nc">Testbench</span><span class="p">(</span><span class="n">LazyPathElement</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>        <span class="n">TestbenchKind</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>   <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span>      <span class="n">SimulationResult</span><span class="o">.</span><span class="n">NotRun</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">ModuleName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span>
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">FilesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span>
+	<span class="nd">@Result</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="n">value</span>
+	
+	<span class="c1"># def __setattr__(self, key, value):</span>
+	<span class="c1"># 	super().__setattr__(key, value)</span>
+	
+<div class="viewcode-block" id="Testbench._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Testbench._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;TestbenchModule&quot;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>    <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;FilesFile&quot;</span><span class="p">])</span></div>
+		
+<div class="viewcode-block" id="Testbench.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Testbench.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span>  <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Testbench:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="VHDLTestbench"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.VHDLTestbench">[docs]</a><span class="k">class</span> <span class="nc">VHDLTestbench</span><span class="p">(</span><span class="n">Testbench</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span> <span class="n">TestbenchKind</span><span class="o">.</span><span class="n">VHDLTestbench</span>
+		
+<div class="viewcode-block" id="VHDLTestbench._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.VHDLTestbench._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (VHDL testbench)&quot;</span>
+		
+<div class="viewcode-block" id="VHDLTestbench.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.VHDLTestbench.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">VHDL Testbench:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="CocoTestbench"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.CocoTestbench">[docs]</a><span class="k">class</span> <span class="nc">CocoTestbench</span><span class="p">(</span><span class="n">Testbench</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_topLevel</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>      <span class="n">TestbenchKind</span><span class="o">.</span><span class="n">CocoTestbench</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">TopLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topLevel</span>
+		
+<div class="viewcode-block" id="CocoTestbench._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.CocoTestbench._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_topLevel</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;TopLevel&quot;</span><span class="p">]</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (Cocotb testbench)&quot;</span>
+		
+<div class="viewcode-block" id="CocoTestbench.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.CocoTestbench.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Cocotb Testbench:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="Netlist"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Netlist">[docs]</a><span class="k">class</span> <span class="nc">Netlist</span><span class="p">(</span><span class="n">LazyPathElement</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>            <span class="n">NetlistKind</span><span class="o">.</span><span class="n">Unknown</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span> <span class="o">=</span>      <span class="s2">&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span> <span class="o">=</span>       <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">ModuleName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span>
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">RulesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span>
+	
+<div class="viewcode-block" id="Netlist._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.Netlist._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span> <span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;TopLevel&quot;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dependencies</span> <span class="o">=</span>    <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s1">&#39;Dependencies&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+		<span class="n">value</span> <span class="o">=</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;RulesFile&quot;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span> <span class="o">=</span>       <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span></div></div>
+		
+		
+<div class="viewcode-block" id="XstNetlist"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.XstNetlist">[docs]</a><span class="k">class</span> <span class="nc">XstNetlist</span><span class="p">(</span><span class="n">Netlist</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>       <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_prjFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xcfFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filterFile</span> <span class="o">=</span>      <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xstTemplateFile</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xstFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>            <span class="n">NetlistKind</span><span class="o">.</span><span class="n">XstNetlist</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">FilesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span>
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">XcfFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>          <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xcfFile</span>
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">FilterFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filterFile</span>
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">XstTemplateFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xstTemplateFile</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">PrjFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prjFile</span>
+	<span class="nd">@PrjFile</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">PrjFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_prjFile</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">XstFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xstFile</span>
+	<span class="nd">@XstFile</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">XstFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xstFile</span> <span class="o">=</span> <span class="n">value</span>
+		
+<div class="viewcode-block" id="XstNetlist._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.XstNetlist._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>       <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;FilesFile&quot;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xcfFile</span> <span class="o">=</span>         <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s1">&#39;XSTConstraintsFile&#39;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filterFile</span> <span class="o">=</span>      <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s1">&#39;XSTFilterFile&#39;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xstTemplateFile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s1">&#39;XSTOptionsFile&#39;</span><span class="p">])</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (XST netlist)&quot;</span>
+		
+<div class="viewcode-block" id="XstNetlist.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.XstNetlist.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Netlist: </span><span class="si">{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Rules: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+<div class="viewcode-block" id="QuartusNetlist"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.QuartusNetlist">[docs]</a><span class="k">class</span> <span class="nc">QuartusNetlist</span><span class="p">(</span><span class="n">Netlist</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>       <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_qsfFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>            <span class="n">NetlistKind</span><span class="o">.</span><span class="n">QuartusNetlist</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">FilesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">QsfFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_qsfFile</span>
+	<span class="nd">@QsfFile</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">QsfFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_qsfFile</span> <span class="o">=</span> <span class="n">value</span>
+		
+<div class="viewcode-block" id="QuartusNetlist._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.QuartusNetlist._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;FilesFile&quot;</span><span class="p">])</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (Quartus netlist)&quot;</span>
+		
+<div class="viewcode-block" id="QuartusNetlist.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.QuartusNetlist.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Netlist: </span><span class="si">{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Rules: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="LatticeNetlist"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.LatticeNetlist">[docs]</a><span class="k">class</span> <span class="nc">LatticeNetlist</span><span class="p">(</span><span class="n">Netlist</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>       <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_prjFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>            <span class="n">NetlistKind</span><span class="o">.</span><span class="n">LatticeNetlist</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">FilesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">PrjFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>          <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prjFile</span>
+	<span class="nd">@PrjFile</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">PrjFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_prjFile</span> <span class="o">=</span> <span class="n">value</span>
+		
+<div class="viewcode-block" id="LatticeNetlist._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.LatticeNetlist._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>        <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;FilesFile&quot;</span><span class="p">])</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (Lattice netlist)&quot;</span>
+		
+<div class="viewcode-block" id="LatticeNetlist.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.LatticeNetlist.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Netlist: </span><span class="si">{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Rules: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="CoreGeneratorNetlist"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.CoreGeneratorNetlist">[docs]</a><span class="k">class</span> <span class="nc">CoreGeneratorNetlist</span><span class="p">(</span><span class="n">Netlist</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xcoFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>            <span class="n">NetlistKind</span><span class="o">.</span><span class="n">CoreGeneratorNetlist</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (Core Generator netlist)&quot;</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FilesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="kc">None</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">XcoFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xcoFile</span>
+	
+<div class="viewcode-block" id="CoreGeneratorNetlist._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.CoreGeneratorNetlist._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_xcoFile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s1">&#39;CoreGeneratorFile&#39;</span><span class="p">])</span></div>
+		
+<div class="viewcode-block" id="CoreGeneratorNetlist.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.CoreGeneratorNetlist.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Netlist: </span><span class="si">{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Rules: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="VivadoNetlist"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.VivadoNetlist">[docs]</a><span class="k">class</span> <span class="nc">VivadoNetlist</span><span class="p">(</span><span class="n">Netlist</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>       <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_tclFile</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">configSectionName</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span>            <span class="n">NetlistKind</span><span class="o">.</span><span class="n">VivadoNetlist</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">FilesFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">TclFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tclFile</span>
+	<span class="nd">@TclFile</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">TclFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_tclFile</span> <span class="o">=</span> <span class="n">value</span>
+		
+<div class="viewcode-block" id="VivadoNetlist._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.VivadoNetlist._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span> <span class="o">=</span>       <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ConfigSection</span><span class="p">[</span><span class="s2">&quot;FilesFile&quot;</span><span class="p">])</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; (Vivado netlist)&quot;</span>
+		
+<div class="viewcode-block" id="VivadoNetlist.pprint"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.VivadoNetlist.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Netlist: </span><span class="si">{1}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_moduleName</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Files: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesFile</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">  Rules: </span><span class="si">{1!s}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rulesFile</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div></div>
+		
+		
+<div class="viewcode-block" id="FQN"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.FQN">[docs]</a><span class="k">class</span> <span class="nc">FQN</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">fqn</span><span class="p">,</span> <span class="n">defaultLibrary</span><span class="o">=</span><span class="s2">&quot;PoC&quot;</span><span class="p">,</span> <span class="n">defaultType</span><span class="o">=</span><span class="n">EntityTypes</span><span class="o">.</span><span class="n">Source</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__host</span> <span class="o">=</span>   <span class="n">host</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__type</span> <span class="o">=</span>   <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__parts</span> <span class="o">=</span>  <span class="p">[]</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">fqn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;fqn&#39; is None.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">fqn</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;fqn&#39; is empty.&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># extract EntityType</span>
+		<span class="n">splitList1</span> <span class="o">=</span> <span class="n">fqn</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">splitList1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__type</span> <span class="o">=</span> <span class="n">defaultType</span>
+			<span class="n">entity</span> <span class="o">=</span>      <span class="n">fqn</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">splitList1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__type</span> <span class="o">=</span> <span class="n">EntityTypes</span><span class="p">(</span><span class="n">splitList1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+			<span class="n">entity</span> <span class="o">=</span>      <span class="n">splitList1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Argument &#39;fqn&#39; has to many &#39;:&#39; signs.&quot;</span><span class="p">)</span>
+			
+		<span class="c1"># extract parts</span>
+		<span class="n">parts</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__host</span><span class="o">.</span><span class="n">Root</span><span class="p">):</span>
+			<span class="n">parts</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">defaultLibrary</span><span class="p">)</span>
+			
+		<span class="c1"># check and resolve parts</span>
+		<span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__host</span><span class="o">.</span><span class="n">Root</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
+		<span class="n">last</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+		<span class="k">for</span> <span class="n">pos</span><span class="p">,</span><span class="n">part</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">parts</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">((</span><span class="n">pos</span> <span class="o">==</span> <span class="n">last</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">)):</span>
+				<span class="n">pe</span> <span class="o">=</span> <span class="n">StarWildCard</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">part</span><span class="p">,</span> <span class="s2">&quot;----&quot;</span><span class="p">,</span> <span class="n">cur</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pe</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">((</span><span class="n">pos</span> <span class="o">==</span> <span class="n">last</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;?&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">)):</span>
+				<span class="n">pe</span> <span class="o">=</span> <span class="n">AskWildCard</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">part</span><span class="p">,</span> <span class="s2">&quot;----&quot;</span><span class="p">,</span> <span class="n">cur</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pe</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">pe</span> <span class="o">=</span> <span class="n">cur</span><span class="p">[</span><span class="n">part</span><span class="p">]</span>
+				<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;PoC entity &#39;</span><span class="si">{GREEN}{good}{RED}</span><span class="s2">.</span><span class="si">{bad}{NOCOLOR}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">good</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[:</span><span class="n">pos</span><span class="p">])),</span> <span class="n">bad</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="n">pos</span><span class="p">:])),</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pe</span><span class="p">)</span>
+				<span class="n">cur</span> <span class="o">=</span> <span class="n">pe</span>
+				
+<div class="viewcode-block" id="FQN.Root"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Entity.html#DataBase.Entity.FQN.Root">[docs]</a>	<span class="k">def</span> <span class="nf">Root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__host</span><span class="o">.</span><span class="n">Root</span></div>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Entity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Entity</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

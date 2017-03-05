@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataBase.Solution &mdash; The PoC-Library 1.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="DataBase" href="../DataBase.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../DataBase.html">DataBase</a> &raquo;</li>
+        
+      <li>DataBase.Solution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for DataBase.Solution</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     TODO</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">collections</span>        <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">textwrap</span>           <span class="k">import</span> <span class="n">dedent</span>
+
+<span class="kn">from</span> <span class="nn">lib.Decorators</span>     <span class="k">import</span> <span class="n">ILazyLoadable</span><span class="p">,</span> <span class="n">LazyLoadTrigger</span>
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>    <span class="k">import</span> <span class="n">CommonException</span>
+<span class="kn">from</span> <span class="nn">Base.Project</span>       <span class="k">import</span> <span class="n">Project</span> <span class="k">as</span> <span class="n">BaseProject</span><span class="p">,</span> <span class="n">File</span><span class="p">,</span> <span class="n">FileTypes</span><span class="p">,</span> <span class="n">VHDLSourceFile</span><span class="p">,</span> <span class="n">VerilogSourceFile</span><span class="p">,</span> <span class="n">CocotbSourceFile</span>  <span class="c1">#, ProjectFile</span>
+<span class="kn">from</span> <span class="nn">Parser.FilesParser</span> <span class="k">import</span> <span class="n">FilesParserMixIn</span>
+<span class="kn">from</span> <span class="nn">Parser.RulesParser</span> <span class="k">import</span> <span class="n">RulesParserMixIn</span>
+<span class="kn">from</span> <span class="nn">DataBase</span>           <span class="k">import</span> <span class="n">__POC_SOLUTION_KEYWORD__</span>
+<span class="kn">from</span> <span class="nn">DataBase.Entity</span>    <span class="k">import</span> <span class="n">Visibility</span>
+<span class="kn">from</span> <span class="nn">ToolChain</span>          <span class="k">import</span> <span class="n">ConfigurationException</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;Base&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Repository&#39;</span><span class="p">,</span> <span class="s1">&#39;Solution&#39;</span><span class="p">,</span> <span class="s1">&#39;Project&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ISEProject&#39;</span><span class="p">,</span> <span class="s1">&#39;VivadoProject&#39;</span><span class="p">,</span> <span class="s1">&#39;QuartusProject&#39;</span><span class="p">,</span> <span class="s1">&#39;LatticeProject&#39;</span><span class="p">,</span> <span class="s1">&#39;VirtualProject&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;FileListFile&#39;</span><span class="p">,</span> <span class="s1">&#39;RulesFile&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="Base"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Base">[docs]</a><span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">ILazyLoadable</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Base class for Repository, Solution and Project.</span>
+<span class="sd">	It implements ILazyLoadable.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">sectionPrefix</span><span class="p">,</span> <span class="n">sectionID</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="n">ILazyLoadable</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span>          <span class="n">host</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span>            <span class="n">sectionID</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span> <span class="o">=</span>  <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sectionPrefix</span><span class="p">,</span> <span class="n">sectionID</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span>        <span class="n">parent</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Load</span><span class="p">()</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ConfigSectionName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span>
+	
+<div class="viewcode-block" id="Base._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Base._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Implement this method for early loading.&quot;&quot;&quot;</span>
+		<span class="k">pass</span></div></div>
+		
+		
+<div class="viewcode-block" id="Repository"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Repository">[docs]</a><span class="k">class</span> <span class="nc">Repository</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span> <span class="o">=</span>  <span class="p">{}</span>
+		
+		<span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;Public&quot;</span>
+		<span class="k">if</span> <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="s2">&quot;INSTALL.PoC&quot;</span><span class="p">,</span> <span class="s2">&quot;RepositoryKind&quot;</span><span class="p">):</span>
+			<span class="n">kind</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;RepositoryKind&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_kind</span> <span class="o">=</span> <span class="n">Visibility</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">kind</span><span class="p">)</span>
+		
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="s2">&quot;SOLUTION&quot;</span><span class="p">,</span> <span class="s2">&quot;Solutions&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Kind</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kind</span>
+		
+<div class="viewcode-block" id="Repository._Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Repository._Load">[docs]</a>	<span class="k">def</span> <span class="nf">_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span></div>
+		
+	<span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+		<span class="k">return</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+		
+<div class="viewcode-block" id="Repository._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Repository._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="c1"># load solutions</span>
+		<span class="k">for</span> <span class="n">slnID</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="n">slnID</span><span class="p">]</span> <span class="o">==</span> <span class="n">__POC_SOLUTION_KEYWORD__</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">[</span><span class="n">slnID</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">slnID</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
+				
+<div class="viewcode-block" id="Repository.AddSolution"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Repository.AddSolution">[docs]</a>	<span class="k">def</span> <span class="nf">AddSolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solutionID</span><span class="p">,</span> <span class="n">solutionName</span><span class="p">,</span> <span class="n">solutionRootPath</span><span class="p">):</span>
+		<span class="n">solution</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">solutionID</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">solution</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">solutionName</span>
+		<span class="n">solution</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">solutionRootPath</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="n">solutionID</span><span class="p">]</span> <span class="o">=</span> <span class="n">__POC_SOLUTION_KEYWORD__</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">[</span><span class="n">solutionID</span><span class="p">]</span> <span class="o">=</span> <span class="n">solution</span>
+		<span class="n">solution</span><span class="o">.</span><span class="n">Register</span><span class="p">()</span>
+		<span class="n">solution</span><span class="o">.</span><span class="n">CreateFiles</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">solution</span></div>
+		
+<div class="viewcode-block" id="Repository.RemoveSolution"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Repository.RemoveSolution">[docs]</a>	<span class="k">def</span> <span class="nf">RemoveSolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">solution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">[</span><span class="n">solution</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="n">Solution</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter solution is not of type str or Solution.&quot;</span><span class="p">)</span>
+			
+		<span class="n">solution</span><span class="o">.</span><span class="n">Unregister</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">ID</span><span class="p">)</span></div>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">Solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Returns the list of all registered solutions.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">SolutionNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Returns the identifier list of all registered solutions.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
+		
+		
+<div class="viewcode-block" id="Solution"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Solution">[docs]</a><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+	<span class="n">__SOLUTION_CONFIG_FILE__</span> <span class="o">=</span>  <span class="s2">&quot;solution.config.ini&quot;</span>
+	<span class="n">__SOLUTION_DEFAULT_FILE__</span> <span class="o">=</span>  <span class="s2">&quot;solution.defaults.ini&quot;</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">slnID</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="s2">&quot;SOLUTION&quot;</span><span class="p">,</span> <span class="n">slnID</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span>      <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span>      <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_projects</span> <span class="o">=</span>  <span class="p">{}</span>
+		
+<div class="viewcode-block" id="Solution.Register"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Solution.Register">[docs]</a>	<span class="k">def</span> <span class="nf">Register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="s1">&#39;Path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Solution.Unregister"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Solution.Unregister">[docs]</a>	<span class="k">def</span> <span class="nf">Unregister</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">remove_section</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Solution.CreateFiles"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Solution.CreateFiles">[docs]</a>	<span class="k">def</span> <span class="nf">CreateFiles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">solutionConfigPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">/</span> <span class="s2">&quot;.poc&quot;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()):</span>
+			<span class="n">solutionConfigPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span> <span class="o">/</span> <span class="n">solutionConfigPath</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">solutionConfigPath</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Error while creating &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solutionConfigPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="n">solutionConfigFile</span> <span class="o">=</span> <span class="n">solutionConfigPath</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">__SOLUTION_CONFIG_FILE__</span>
+		<span class="k">with</span> <span class="n">solutionConfigFile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">fileContent</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">				[SOLUTION.</span><span class="si">{slnID}</span><span class="s2">]</span>
+<span class="s2">				DefaultLibrary =</span>
+<span class="s2">				&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">slnID</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_id</span><span class="p">))</span>
+			<span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fileContent</span><span class="p">)</span>
+			
+		<span class="n">solutionDefaultFile</span> <span class="o">=</span> <span class="n">solutionConfigPath</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">__SOLUTION_DEFAULT_FILE__</span>
+		<span class="k">with</span> <span class="n">solutionDefaultFile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileHandle</span><span class="p">:</span>
+			<span class="n">fileContent</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">				[SOLUTION.DEFAULTS]</span>
+<span class="s2">				&quot;&quot;&quot;</span><span class="p">)</span>
+			<span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fileContent</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="Solution._LazyLoadable_Load"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Solution._LazyLoadable_Load">[docs]</a>	<span class="k">def</span> <span class="nf">_LazyLoadable_Load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_LazyLoadable_Load</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="s1">&#39;Path&#39;</span><span class="p">]</span>
+		
+		<span class="n">solutionConfigPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">/</span> <span class="s2">&quot;.poc&quot;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()):</span>
+			<span class="n">solutionConfigPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Directories</span><span class="o">.</span><span class="n">Root</span> <span class="o">/</span> <span class="n">solutionConfigPath</span>
+			
+		<span class="n">configFiles</span> <span class="o">=</span> <span class="p">[</span>
+			<span class="n">solutionConfigPath</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">__SOLUTION_CONFIG_FILE__</span><span class="p">,</span>
+			<span class="n">solutionConfigPath</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">__SOLUTION_DEFAULT_FILE__</span>
+		<span class="p">]</span>
+		
+		<span class="k">for</span> <span class="n">configFile</span> <span class="ow">in</span> <span class="n">configFiles</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">configFile</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Solution configuration file &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">configFile</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">configFile</span><span class="p">))</span>
+				
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">configFile</span><span class="p">))</span>
+			
+		<span class="c1"># load projects</span>
+		<span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">]:</span>
+			<span class="n">project</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="n">option</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ISEProject&quot;</span><span class="p">):</span>
+				<span class="n">project</span> <span class="o">=</span> <span class="n">ISEProject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="n">option</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;VivadoProject&quot;</span><span class="p">):</span>
+				<span class="n">project</span> <span class="o">=</span> <span class="n">VivadoProject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="n">option</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;QuartusProject&quot;</span><span class="p">):</span>
+				<span class="n">project</span> <span class="o">=</span> <span class="n">QuartusProject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_configSection</span><span class="p">][</span><span class="n">option</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;LatticeProject&quot;</span><span class="p">):</span>
+				<span class="n">project</span> <span class="o">=</span> <span class="n">LatticeProject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+				
+			<span class="k">if</span> <span class="p">(</span><span class="n">project</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_projects</span><span class="p">[</span><span class="n">option</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">project</span></div>
+				
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets the name of this solution.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+	<span class="nd">@Name</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Sets the name of this solution.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">Path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets the path to the solution.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span>
+	<span class="nd">@Path</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Sets the path of the solution.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">Projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets a list of all registered projects.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_projects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">ProjectNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets a list of identifiers of all registered projects.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_projects</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
+		
+		
+<div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.Project">[docs]</a><span class="k">class</span> <span class="nc">Project</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">prjID</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="s2">&quot;PROJECT&quot;</span><span class="p">,</span> <span class="n">prjID</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="kc">None</span>
+		
+	<span class="nd">@property</span>
+	<span class="nd">@LazyLoadTrigger</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets the name of this solution.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+	<span class="nd">@Name</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Sets the name of this solution.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span></div>
+		
+<div class="viewcode-block" id="ISEProject"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.ISEProject">[docs]</a><span class="k">class</span> <span class="nc">ISEProject</span><span class="p">(</span><span class="n">Project</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="VivadoProject"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.VivadoProject">[docs]</a><span class="k">class</span> <span class="nc">VivadoProject</span><span class="p">(</span><span class="n">Project</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="QuartusProject"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.QuartusProject">[docs]</a><span class="k">class</span> <span class="nc">QuartusProject</span><span class="p">(</span><span class="n">Project</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="LatticeProject"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.LatticeProject">[docs]</a><span class="k">class</span> <span class="nc">LatticeProject</span><span class="p">(</span><span class="n">Project</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="VirtualProject"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.VirtualProject">[docs]</a><span class="k">class</span> <span class="nc">VirtualProject</span><span class="p">(</span><span class="n">BaseProject</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="FileListFile"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.FileListFile">[docs]</a><span class="k">class</span> <span class="nc">FileListFile</span><span class="p">(</span><span class="n">File</span><span class="p">,</span> <span class="n">FilesParserMixIn</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">FileListFile</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="n">fileSet</span><span class="p">)</span>
+		<span class="n">FilesParserMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_variables</span> <span class="o">=</span>               <span class="kc">None</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_classFileListFile</span> <span class="o">=</span>       <span class="n">FileListFile</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_classVHDLSourceFile</span> <span class="o">=</span>     <span class="n">VHDLSourceFile</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_classVerilogSourceFile</span> <span class="o">=</span>  <span class="n">VerilogSourceFile</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_classCocotbSourceFile</span> <span class="o">=</span>   <span class="n">CocotbSourceFile</span>
+		
+<div class="viewcode-block" id="FileListFile.Parse"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.FileListFile.Parse">[docs]</a>	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>                 <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;File &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; is not associated to a fileset.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>                 <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;File &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; is not associated to a project.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">RootDirectory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>   <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;No RootDirectory configured for this project.&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># prepare FilesParserMixIn environment</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rootDirectory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Project</span><span class="o">.</span><span class="n">RootDirectory</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_variables</span> <span class="o">=</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Project</span><span class="o">.</span><span class="n">GetVariables</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Parse</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Resolve</span><span class="p">(</span><span class="n">host</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="FileListFile.CopyFilesToFileSet"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.FileListFile.CopyFilesToFileSet">[docs]</a>	<span class="k">def</span> <span class="nf">CopyFilesToFileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_fileSet</span><span class="o">.</span><span class="n">AddFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="FileListFile.CopyExternalLibraries"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.FileListFile.CopyExternalLibraries">[docs]</a>	<span class="k">def</span> <span class="nf">CopyExternalLibraries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">lib</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_libraries</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">AddExternalVHDLLibraries</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span></div>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;FileList file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="RulesFile"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.RulesFile">[docs]</a><span class="k">class</span> <span class="nc">RulesFile</span><span class="p">(</span><span class="n">File</span><span class="p">,</span> <span class="n">RulesParserMixIn</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">RulesFile</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="n">fileSet</span><span class="p">)</span>
+		<span class="n">RulesParserMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_variables</span> <span class="o">=</span>                <span class="kc">None</span>
+		
+<div class="viewcode-block" id="RulesFile.Parse"><a class="viewcode-back" href="../../PyInfrastructure/DataBase.Solution.html#DataBase.Solution.RulesFile.Parse">[docs]</a>	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>                      <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;File &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; is not associated to a fileset.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>                      <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;File &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; is not associated to a project.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">RootDirectory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>        <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;No RootDirectory configured for this project.&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># prepare FilesParserMixIn environment</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rootDirectory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Project</span><span class="o">.</span><span class="n">RootDirectory</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_variables</span> <span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">Project</span><span class="o">.</span><span class="n">GetVariables</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Parse</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Resolve</span><span class="p">()</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;FileList file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 05, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
