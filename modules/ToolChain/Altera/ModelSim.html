@@ -1,0 +1,411 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.Altera.ModelSim &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../../index.html"/>
+        <link rel="up" title="ToolChain.Altera" href="../Altera.html"/> 
+
+  
+  <script src="../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../ToolChain.html">ToolChain</a> &raquo;</li>
+        
+          <li><a href="../Altera.html">ToolChain.Altera</a> &raquo;</li>
+        
+      <li>ToolChain.Altera.ModelSim</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for ToolChain.Altera.ModelSim</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#                   Thomas B. Preusser</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     Altera ModelSim specific classes</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">enum</span>                         <span class="k">import</span> <span class="n">unique</span>
+<span class="kn">from</span> <span class="nn">re</span>                           <span class="k">import</span> <span class="nb">compile</span> <span class="k">as</span> <span class="n">re_compile</span>
+<span class="kn">from</span> <span class="nn">subprocess</span>                   <span class="k">import</span> <span class="n">check_output</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>                <span class="k">import</span> <span class="n">Init</span>
+<span class="kn">from</span> <span class="nn">ToolChain</span>                    <span class="k">import</span> <span class="n">ConfigurationException</span><span class="p">,</span> <span class="n">EditionDescription</span><span class="p">,</span> <span class="n">Edition</span>
+<span class="kn">from</span> <span class="nn">ToolChain.Altera</span>             <span class="k">import</span> <span class="n">AlteraException</span>
+<span class="kn">from</span> <span class="nn">ToolChain.Mentor.ModelSim</span>    <span class="k">import</span> <span class="n">Configuration</span> <span class="k">as</span> <span class="n">Mentor_ModelSim_Configuration</span><span class="p">,</span> <span class="n">ModelSimException</span> <span class="k">as</span> <span class="n">Mentor_ModelSimException</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;ModelSimException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;AlteraModelSimEditions&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Configuration&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="ModelSimException"><a class="viewcode-back" href="../../../PyInfrastructure/ToolChain.Altera.ModelSim.html#ToolChain.Altera.ModelSim.ModelSimException">[docs]</a><span class="k">class</span> <span class="nc">ModelSimException</span><span class="p">(</span><span class="n">AlteraException</span><span class="p">,</span> <span class="n">Mentor_ModelSimException</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="AlteraModelSimEditions"><a class="viewcode-back" href="../../../PyInfrastructure/ToolChain.Altera.ModelSim.html#ToolChain.Altera.ModelSim.AlteraModelSimEditions">[docs]</a><span class="k">class</span> <span class="nc">AlteraModelSimEditions</span><span class="p">(</span><span class="n">Edition</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Enumeration of all ModelSim editions provided by Altera.&quot;&quot;&quot;</span>
+	<span class="n">ModelSimAlteraEdition</span> <span class="o">=</span>         <span class="n">EditionDescription</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">&quot;ModelSim Altera Edition&quot;</span><span class="p">,</span>          <span class="n">Section</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+	<span class="n">ModelSimAlteraStarterEdition</span> <span class="o">=</span>  <span class="n">EditionDescription</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">&quot;ModelSim Altera Starter Edition&quot;</span><span class="p">,</span>  <span class="n">Section</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></div>
+	
+	
+<div class="viewcode-block" id="Configuration"><a class="viewcode-back" href="../../../PyInfrastructure/ToolChain.Altera.ModelSim.html#ToolChain.Altera.ModelSim.Configuration">[docs]</a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">Mentor_ModelSim_Configuration</span><span class="p">):</span>
+	<span class="n">_vendor</span> <span class="o">=</span>               <span class="s2">&quot;Altera&quot;</span>                    <span class="c1">#: The name of the tools vendor.</span>
+	<span class="n">_toolName</span> <span class="o">=</span>             <span class="s2">&quot;ModelSim Altera Edition&quot;</span>   <span class="c1">#: The name of the tool.</span>
+	<span class="n">_section</span>  <span class="o">=</span>             <span class="s2">&quot;INSTALL.Altera.ModelSim&quot;</span>   <span class="c1">#: The name of the configuration section. Pattern: ``INSTALL.Vendor.ToolName``.</span>
+	<span class="n">_multiVersionSupport</span> <span class="o">=</span>  <span class="kc">False</span>                       <span class="c1">#: Altera ModelSim Edition doesn&#39;t support multiple versions.</span>
+	<span class="n">_template</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;Windows&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;10.4b&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Edition&quot;</span><span class="p">:</span>                <span class="s2">&quot;ModelSim Altera Edition&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;${INSTALL.Altera:InstallationDirectory}/${INSTALL.Altera.Quartus:Version}/modelsim_ae&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/win32aloem&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;AdditionalVComOptions&quot;</span><span class="p">:</span>  <span class="s2">&quot;&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;AdditionalVSimOptions&quot;</span><span class="p">:</span>  <span class="s2">&quot;&quot;</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Linux&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;10.4b&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Edition&quot;</span><span class="p">:</span>                <span class="s2">&quot;ModelSim Altera Edition&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;${INSTALL.Altera:InstallationDirectory}/${INSTALL.Altera.Quartus:Version}/modelsim_ae&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/linuxaloem&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;AdditionalVComOptions&quot;</span><span class="p">:</span>  <span class="s2">&quot;&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;AdditionalVSimOptions&quot;</span><span class="p">:</span>  <span class="s2">&quot;&quot;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>                                                   <span class="c1">#: The template for the configuration sections represented as nested dictionaries.</span>
+	
+<div class="viewcode-block" id="Configuration.CheckDependency"><a class="viewcode-back" href="../../../PyInfrastructure/ToolChain.Altera.ModelSim.html#ToolChain.Altera.ModelSim.Configuration.CheckDependency">[docs]</a>	<span class="k">def</span> <span class="nf">CheckDependency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Check if general Altera support is configured in PoC.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.Altera&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Configuration.ConfigureForAll"><a class="viewcode-back" href="../../../PyInfrastructure/ToolChain.Altera.ModelSim.html#ToolChain.Altera.ModelSim.Configuration.ConfigureForAll">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AskInstalled</span><span class="p">(</span><span class="s2">&quot;Is ModelSim Altera Edition installed on your system?&quot;</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># Configure ModelSim version</span>
+				
+				<span class="n">changed</span><span class="p">,</span><span class="n">edition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureEdition</span><span class="p">()</span>
+				<span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+					<span class="n">configSection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">edition</span> <span class="ow">is</span> <span class="n">AlteraModelSimEditions</span><span class="o">.</span><span class="n">ModelSimAlteraEdition</span><span class="p">):</span>
+						<span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">,</span> <span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_ase&quot;</span><span class="p">,</span> <span class="s2">&quot;_ae&quot;</span><span class="p">)</span>
+					<span class="k">elif</span> <span class="p">(</span><span class="n">edition</span> <span class="ow">is</span> <span class="n">AlteraModelSimEditions</span><span class="o">.</span><span class="n">ModelSimAlteraStarterEdition</span><span class="p">):</span>
+						<span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">,</span> <span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_ae&quot;</span><span class="p">,</span> <span class="s2">&quot;_ase&quot;</span><span class="p">)</span>
+						
+				<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureInstallationDirectory</span><span class="p">()</span>
+				<span class="n">binPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureBinaryDirectory</span><span class="p">()</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__GetModelSimVersion</span><span class="p">(</span><span class="n">binPath</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">Altera ModelSim is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">except</span> <span class="n">ConfigurationException</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">raise</span></div>
+			
+<div class="viewcode-block" id="Configuration._ConfigureEdition"><a class="viewcode-back" href="../../../PyInfrastructure/ToolChain.Altera.ModelSim.html#ToolChain.Altera.ModelSim.Configuration._ConfigureEdition">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureEdition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Configure ModelSim for Altera.&quot;&quot;&quot;</span>
+		<span class="n">configSection</span> <span class="o">=</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span>
+		<span class="n">defaultEdition</span> <span class="o">=</span>  <span class="n">AlteraModelSimEditions</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;Edition&#39;</span><span class="p">])</span>
+		<span class="n">edition</span> <span class="o">=</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_ConfigureEdition</span><span class="p">(</span><span class="n">AlteraModelSimEditions</span><span class="p">,</span> <span class="n">defaultEdition</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">edition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defaultEdition</span><span class="p">):</span>
+			<span class="n">configSection</span><span class="p">[</span><span class="s1">&#39;Edition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edition</span><span class="o">.</span><span class="n">Name</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="o">.</span><span class="n">Interpolation</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+			<span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">edition</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">edition</span><span class="p">)</span></div>
+			
+	<span class="k">def</span> <span class="nf">__GetModelSimVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binPath</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>
+			<span class="n">vsimPath</span> <span class="o">=</span> <span class="n">binPath</span> <span class="o">/</span> <span class="s2">&quot;vsim.exe&quot;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">vsimPath</span> <span class="o">=</span> <span class="n">binPath</span> <span class="o">/</span> <span class="s2">&quot;vsim&quot;</span>
+			
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">vsimPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Executable &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vsimPath</span><span class="p">))</span> \
+				<span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vsimPath</span><span class="p">))</span>
+				
+		<span class="c1"># get version and backend</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">output</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">vsimPath</span><span class="p">),</span> <span class="s2">&quot;-version&quot;</span><span class="p">],</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Error while accessing &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vsimPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="n">version</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">versionRegExpStr</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^.* vsim (.+?) &quot;</span>
+		<span class="n">versionRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">versionRegExpStr</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">match</span> <span class="o">=</span> <span class="n">versionRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">version</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+					
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">version</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

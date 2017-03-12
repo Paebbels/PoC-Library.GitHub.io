@@ -1,0 +1,877 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Base.Executable &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../index.html"/>
+        <link rel="up" title="Base" href="../Base.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../Base.html">Base</a> &raquo;</li>
+        
+      <li>Base.Executable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Base.Executable</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    Basic abstraction layer for executables.</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>                <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">subprocess</span>             <span class="k">import</span> <span class="n">Popen</span>				<span class="k">as</span> <span class="n">Subprocess_Popen</span>
+<span class="kn">from</span> <span class="nn">subprocess</span>             <span class="k">import</span> <span class="n">PIPE</span>					<span class="k">as</span> <span class="n">Subprocess_Pipe</span>
+<span class="kn">from</span> <span class="nn">subprocess</span>             <span class="k">import</span> <span class="n">STDOUT</span>				<span class="k">as</span> <span class="n">Subprocess_StdOut</span>
+
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>        <span class="k">import</span> <span class="n">CommonException</span><span class="p">,</span> <span class="n">ExceptionBase</span>
+<span class="kn">from</span> <span class="nn">Base.Logging</span>           <span class="k">import</span> <span class="n">ILogable</span><span class="p">,</span> <span class="n">Logger</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;ExecutableException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommandLineArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ExecutableArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;NamedCommandLineArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommandArgument&#39;</span><span class="p">,</span>        <span class="s1">&#39;ShortCommandArgument&#39;</span><span class="p">,</span>         <span class="s1">&#39;LongCommandArgument&#39;</span><span class="p">,</span>        <span class="s1">&#39;WindowsCommandArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;StringArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;StringListArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;PathArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;FlagArgument&#39;</span><span class="p">,</span>           <span class="s1">&#39;ShortFlagArgument&#39;</span><span class="p">,</span>            <span class="s1">&#39;LongFlagArgument&#39;</span><span class="p">,</span>           <span class="s1">&#39;WindowsFlagArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ValuedFlagArgument&#39;</span><span class="p">,</span>     <span class="s1">&#39;ShortValuedFlagArgument&#39;</span><span class="p">,</span>      <span class="s1">&#39;LongValuedFlagArgument&#39;</span><span class="p">,</span>     <span class="s1">&#39;WindowsValuedFlagArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ValuedFlagListArgument&#39;</span><span class="p">,</span> <span class="s1">&#39;ShortValuedFlagListArgument&#39;</span><span class="p">,</span>  <span class="s1">&#39;LongValuedFlagListArgument&#39;</span><span class="p">,</span> <span class="s1">&#39;WindowsValuedFlagListArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;TupleArgument&#39;</span><span class="p">,</span>          <span class="s1">&#39;ShortTupleArgument&#39;</span><span class="p">,</span>           <span class="s1">&#39;LongTupleArgument&#39;</span><span class="p">,</span>          <span class="s1">&#39;WindowsTupleArgument&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommandLineArgumentList&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Environment&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Executable&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="ExecutableException"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ExecutableException">[docs]</a><span class="k">class</span> <span class="nc">ExecutableException</span><span class="p">(</span><span class="n">ExceptionBase</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This exception is raised by all executable abstraction classes.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span></div>
+		
+<span class="k">class</span> <span class="nc">DryRunException</span><span class="p">(</span><span class="n">ExecutableException</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This exception is raised if a simulator runs in dry-run mode.&quot;&quot;&quot;</span>
+	
+	
+<div class="viewcode-block" id="CommandLineArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.CommandLineArgument">[docs]</a><span class="k">class</span> <span class="nc">CommandLineArgument</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class (and meta class) for all Arguments classes.&quot;&quot;&quot;</span>
+	<span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span></div>
+	
+	<span class="c1"># def __new__(mcls, name, bases, nmspc):</span>
+	<span class="c1"># 	print(&quot;CommandLineArgument.new: %s - %s&quot; % (name, nmspc))</span>
+	<span class="c1"># 	return super(CommandLineArgument, mcls).__new__(mcls, name, bases, nmspc)</span>
+	
+	
+<div class="viewcode-block" id="ExecutableArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ExecutableArgument">[docs]</a><span class="k">class</span> <span class="nc">ExecutableArgument</span><span class="p">(</span><span class="n">CommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents the executable.&quot;&quot;&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>      <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type str or Path.&quot;</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>       <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+<div class="viewcode-block" id="ExecutableArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ExecutableArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>       <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Executable argument is still empty.&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span></div></div>
+		
+		
+<div class="viewcode-block" id="NamedCommandLineArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.NamedCommandLineArgument">[docs]</a><span class="k">class</span> <span class="nc">NamedCommandLineArgument</span><span class="p">(</span><span class="n">CommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all command line arguments with a name.&quot;&quot;&quot;</span>
+	<span class="n">_name</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># set in sub-classes</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
+		
+		
+<div class="viewcode-block" id="CommandArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.CommandArgument">[docs]</a><span class="k">class</span> <span class="nc">CommandArgument</span><span class="p">(</span><span class="n">NamedCommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a command name.</span>
+<span class="sd">	</span>
+<span class="sd">	It is usually used to select a sub parser in a CLI argument parser or to hand</span>
+<span class="sd">	over all following parameters to a separate tool. An example for a command is</span>
+<span class="sd">	&#39;checkout&#39; in ``git.exe checkout``, which calls ``git-checkout.exe``.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>    <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type bool.&quot;</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>      <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                          <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="CommandArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.CommandArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>      <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                          <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="ShortCommandArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ShortCommandArgument">[docs]</a><span class="k">class</span> <span class="nc">ShortCommandArgument</span><span class="p">(</span><span class="n">CommandArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a command name with a single dash.&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="LongCommandArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.LongCommandArgument">[docs]</a><span class="k">class</span> <span class="nc">LongCommandArgument</span><span class="p">(</span><span class="n">CommandArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a command name with a double dash.&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="WindowsCommandArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.WindowsCommandArgument">[docs]</a><span class="k">class</span> <span class="nc">WindowsCommandArgument</span><span class="p">(</span><span class="n">CommandArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a command name with a single slash.&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="StringArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.StringArgument">[docs]</a><span class="k">class</span> <span class="nc">StringArgument</span><span class="p">(</span><span class="n">CommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a simple string argument.&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; cannot be converted to type str.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>      <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                          <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="StringArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.StringArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>      <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                          <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="StringListArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.StringListArgument">[docs]</a><span class="k">class</span> <span class="nc">StringListArgument</span><span class="p">(</span><span class="n">CommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a list of string arguments.&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+			<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Item &#39;</span><span class="si">{0}</span><span class="s2">&#39; in parameter &#39;value&#39; cannot be converted to type str.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is no list or tuple.&quot;</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">])</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="StringListArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.StringListArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>      <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>              <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>                          <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="PathArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.PathArgument">[docs]</a><span class="k">class</span> <span class="nc">PathArgument</span><span class="p">(</span><span class="n">CommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a path argument.</span>
+<span class="sd">	</span>
+<span class="sd">	The output format can be forced to the POSIX format with :py:data:`_PosixFormat`.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_PosixFormat</span> <span class="o">=</span> <span class="kc">False</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>              <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>    <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type Path.&quot;</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_PosixFormat</span><span class="p">):</span>        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+		<span class="k">else</span><span class="p">:</span>                            <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+		
+<div class="viewcode-block" id="PathArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.PathArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>        <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_PosixFormat</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>                            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span></div></div>
+		
+		
+<div class="viewcode-block" id="FlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.FlagArgument">[docs]</a><span class="k">class</span> <span class="nc">FlagArgument</span><span class="p">(</span><span class="n">NamedCommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Base class for all FlagArgument classes, which represents a simple flag argument.</span>
+<span class="sd">	</span>
+<span class="sd">	A simple flag is a single boolean value (absent/present or off/on) with no data.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>    <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type bool.&quot;</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="FlagArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.FlagArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="ShortFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ShortFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">ShortFlagArgument</span><span class="p">(</span><span class="n">FlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a flag argument with a single dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``-optimize``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="LongFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.LongFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">LongFlagArgument</span><span class="p">(</span><span class="n">FlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a flag argument with a double dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``--optimize``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="WindowsFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.WindowsFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">WindowsFlagArgument</span><span class="p">(</span><span class="n">FlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a flag argument with a single slash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``/optimize``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="ValuedFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ValuedFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">ValuedFlagArgument</span><span class="p">(</span><span class="n">NamedCommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Class and base class for all ValuedFlagArgument classes, which represents a flag argument with data.</span>
+<span class="sd">	</span>
+<span class="sd">	A valued flag is a flag name followed by a value. The default delimiter sign is equal (``=``). Name and</span>
+<span class="sd">	value are passed as one arguments to the executable even if the delimiter sign is a whitespace character.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``width=100``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; cannot be converted to type str.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="ValuedFlagArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ValuedFlagArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="ShortValuedFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ShortValuedFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">ShortValuedFlagArgument</span><span class="p">(</span><span class="n">ValuedFlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`ValuedFlagArgument` with a single dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``-optimizer=on``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="LongValuedFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.LongValuedFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">LongValuedFlagArgument</span><span class="p">(</span><span class="n">ValuedFlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`ValuedFlagArgument` with a double dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``--optimizer=on``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="WindowsValuedFlagArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.WindowsValuedFlagArgument">[docs]</a><span class="k">class</span> <span class="nc">WindowsValuedFlagArgument</span><span class="p">(</span><span class="n">ValuedFlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`ValuedFlagArgument` with a single slash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``/optimizer:on``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">&quot;</span></div>
+	
+	
+<span class="k">class</span> <span class="nc">OptionalValuedFlagArgument</span><span class="p">(</span><span class="n">NamedCommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Class and base class for all OptionalValuedFlagArgument classes, which represents a flag argument with data.</span>
+<span class="sd">	</span>
+<span class="sd">	An optional valued flag is a flag name followed by a value. The default delimiter sign is equal (``=``).</span>
+<span class="sd">	Name and value are passed as one arguments to the executable even if the delimiter sign is a whitespace</span>
+<span class="sd">	character. If the value is None, no delimiter sign and value is passed.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``width=100``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>          <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	<span class="n">_patternWithValue</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; cannot be converted to type str.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="kc">None</span>
+		
+		
+<span class="k">class</span> <span class="nc">ShortOptionalValuedFlagArgument</span><span class="p">(</span><span class="n">OptionalValuedFlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`OptionalValuedFlagArgument` with a single dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``-optimizer=on``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>          <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	<span class="n">_patternWithValue</span> <span class="o">=</span> <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span>
+	
+	
+<span class="k">class</span> <span class="nc">LongOptionalValuedFlagArgument</span><span class="p">(</span><span class="n">OptionalValuedFlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`OptionalValuedFlagArgument` with a double dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``--optimizer=on``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>          <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	<span class="n">_patternWithValue</span> <span class="o">=</span> <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span>
+	
+	
+<span class="k">class</span> <span class="nc">WindowsOptionalValuedFlagArgument</span><span class="p">(</span><span class="n">OptionalValuedFlagArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`OptionalValuedFlagArgument` with a single slash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``/optimizer:on``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span>          <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	<span class="n">_patternWithValue</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span>
+	
+	
+<div class="viewcode-block" id="ValuedFlagListArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ValuedFlagListArgument">[docs]</a><span class="k">class</span> <span class="nc">ValuedFlagListArgument</span><span class="p">(</span><span class="n">NamedCommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Class and base class for all ValuedFlagListArgument classes, which represents a list of :py:class:`ValuedFlagArgument` instances.</span>
+<span class="sd">	</span>
+<span class="sd">	Each list item gets translated into a :py:class:`ValuedFlagArgument`, with the same flag name, but differing values. Each</span>
+<span class="sd">	:py:class:`ValuedFlagArgument` is passed as a single argument to the executable, even if the delimiter sign is a whitespace</span>
+<span class="sd">	character.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``file=file1.txt file=file2.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span><span class="nb">list</span><span class="p">)):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>                                  <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type tuple or list.&quot;</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>  <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">])</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="ValuedFlagListArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ValuedFlagListArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>  <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="ShortValuedFlagListArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ShortValuedFlagListArgument">[docs]</a><span class="k">class</span> <span class="nc">ShortValuedFlagListArgument</span><span class="p">(</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`ValuedFlagListArgument` with a single dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``-file=file1.txt -file=file2.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="LongValuedFlagListArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.LongValuedFlagListArgument">[docs]</a><span class="k">class</span> <span class="nc">LongValuedFlagListArgument</span><span class="p">(</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`ValuedFlagListArgument` with a double dash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``--file=file1.txt --file=file2.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="WindowsValuedFlagListArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.WindowsValuedFlagListArgument">[docs]</a><span class="k">class</span> <span class="nc">WindowsValuedFlagListArgument</span><span class="p">(</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`ValuedFlagListArgument` with a single slash.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``/file:file1.txt /file:file2.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_pattern</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">:</span><span class="si">{1}</span><span class="s2">&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="TupleArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.TupleArgument">[docs]</a><span class="k">class</span> <span class="nc">TupleArgument</span><span class="p">(</span><span class="n">NamedCommandLineArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Class and base class for all TupleArgument classes, which represents a switch with separate data.</span>
+<span class="sd">	</span>
+<span class="sd">	A tuple switch is a command line argument followed by a separate value. Name and value are passed as</span>
+<span class="sd">	two arguments to the executable.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``width 100``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_switchPattern</span> <span class="o">=</span>  <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	<span class="n">_valuePattern</span> <span class="o">=</span>   <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@Value</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; cannot be converted to type str.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_switchPattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valuePattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+		
+<div class="viewcode-block" id="TupleArgument.AsArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.TupleArgument.AsArgument">[docs]</a>	<span class="k">def</span> <span class="nf">AsArgument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>     <span class="k">return</span> <span class="kc">None</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">:</span>             <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_switchPattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valuePattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)]</span>
+		<span class="k">else</span><span class="p">:</span>                         <span class="k">return</span> <span class="kc">None</span></div></div>
+		
+<div class="viewcode-block" id="ShortTupleArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.ShortTupleArgument">[docs]</a><span class="k">class</span> <span class="nc">ShortTupleArgument</span><span class="p">(</span><span class="n">TupleArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`TupleArgument` with a single dash in front of the switch name.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``-file file1.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_switchPattern</span> <span class="o">=</span> <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="LongTupleArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.LongTupleArgument">[docs]</a><span class="k">class</span> <span class="nc">LongTupleArgument</span><span class="p">(</span><span class="n">TupleArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`TupleArgument` with a double dash in front of the switch name.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``--file file1.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_switchPattern</span> <span class="o">=</span> <span class="s2">&quot;--</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+<div class="viewcode-block" id="WindowsTupleArgument"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.WindowsTupleArgument">[docs]</a><span class="k">class</span> <span class="nc">WindowsTupleArgument</span><span class="p">(</span><span class="n">TupleArgument</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represents a :py:class:`TupleArgument` with a single slash in front of the switch name.</span>
+<span class="sd">	</span>
+<span class="sd">	Example: ``/file file1.txt``</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">_switchPattern</span> <span class="o">=</span> <span class="s2">&quot;/</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="CommandLineArgumentList"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.CommandLineArgumentList">[docs]</a><span class="k">class</span> <span class="nc">CommandLineArgumentList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represent a list of all available commands, flags and switch of an executable.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+			
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+		
+	<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="kc">None</span>
+		
+<div class="viewcode-block" id="CommandLineArgumentList.ToArgumentList"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.CommandLineArgumentList.ToArgumentList">[docs]</a>	<span class="k">def</span> <span class="nf">ToArgumentList</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="n">arg</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">AsArgument</span><span class="p">()</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">arg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>           <span class="k">pass</span>
+			<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span> <span class="n">result</span> <span class="o">+=</span> <span class="n">arg</span>
+			<span class="k">else</span><span class="p">:</span>                       <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">result</span></div></div>
+		
+		
+<div class="viewcode-block" id="Environment"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Environment">[docs]</a><span class="k">class</span> <span class="nc">Environment</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Variables</span> <span class="o">=</span> <span class="p">{}</span></div>
+		
+		
+<div class="viewcode-block" id="Executable"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable">[docs]</a><span class="k">class</span> <span class="nc">Executable</span><span class="p">(</span><span class="n">ILogable</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Represent an executable.&quot;&quot;&quot;</span>
+	<span class="n">_POC_BOUNDARY</span> <span class="o">=</span> <span class="s2">&quot;====== POC BOUNDARY ======&quot;</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dryrun</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">executablePath</span> <span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">environment</span> <span class="p">:</span> <span class="n">Environment</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">logger</span> <span class="p">:</span> <span class="n">Logger</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_platform</span> <span class="o">=</span>    <span class="n">platform</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span> <span class="o">=</span>      <span class="n">dryrun</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_environment</span> <span class="o">=</span> <span class="n">environment</span> <span class="c1">#if (environment is not None) else Environment()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span>     <span class="kc">None</span>
+		
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">executablePath</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>             <span class="n">executablePath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">executablePath</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">executablePath</span><span class="p">,</span> <span class="n">Path</span><span class="p">)):</span>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;executablePath&#39; is not of type str or Path.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">executablePath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">if</span> <span class="n">dryrun</span><span class="p">:</span>  <span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;File check for &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; failed. [SKIPPING]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">executablePath</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>       <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Executable &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">executablePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">executablePath</span><span class="p">))</span>
+			
+		<span class="c1"># prepend the executable</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_executablePath</span> <span class="o">=</span>    <span class="n">executablePath</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_iterator</span> <span class="o">=</span>          <span class="kc">None</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_executablePath</span>
+		
+<div class="viewcode-block" id="Executable.StartProcess"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable.StartProcess">[docs]</a>	<span class="k">def</span> <span class="nf">StartProcess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameterList</span><span class="p">):</span>
+		<span class="c1"># start child process</span>
+		<span class="c1"># parameterList.insert(0, str(self._executablePath))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_environment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="n">envVariables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_environment</span><span class="o">.</span><span class="n">Variables</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">envVariables</span> <span class="o">=</span> <span class="kc">None</span>
+				
+			<span class="k">try</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">Subprocess_Popen</span><span class="p">(</span>
+					<span class="n">parameterList</span><span class="p">,</span>
+					<span class="n">stdin</span><span class="o">=</span><span class="n">Subprocess_Pipe</span><span class="p">,</span>
+					<span class="n">stdout</span><span class="o">=</span><span class="n">Subprocess_Pipe</span><span class="p">,</span>
+					<span class="n">stderr</span><span class="o">=</span><span class="n">Subprocess_StdOut</span><span class="p">,</span>
+					<span class="n">env</span><span class="o">=</span><span class="n">envVariables</span><span class="p">,</span>
+					<span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+					<span class="n">bufsize</span><span class="o">=</span><span class="mi">256</span>
+				<span class="p">)</span>
+			<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Error while accessing &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_executablePath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Start process: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span></div>
+			
+<div class="viewcode-block" id="Executable.Send"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable.Send">[docs]</a>	<span class="k">def</span> <span class="nf">Send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Executable.SendBoundary"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable.SendBoundary">[docs]</a>	<span class="k">def</span> <span class="nf">SendBoundary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="s2">&quot;puts </span><span class="se">\&quot;</span><span class="si">{0}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_POC_BOUNDARY</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="Executable.Terminate"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable.Terminate">[docs]</a>	<span class="k">def</span> <span class="nf">Terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Executable.GetReader"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable.GetReader">[docs]</a>	<span class="k">def</span> <span class="nf">GetReader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+					<span class="k">yield</span> <span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">ex</span>
+			<span class="c1"># finally:</span>
+				<span class="c1"># self._process.terminate()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">DryRunException</span><span class="p">()</span></div>
+			
+<div class="viewcode-block" id="Executable.ReadUntilBoundary"><a class="viewcode-back" href="../../PyInfrastructure/Base.Executable.html#Base.Executable.Executable.ReadUntilBoundary">[docs]</a>	<span class="k">def</span> <span class="nf">ReadUntilBoundary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">__indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_iterator</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">())</span>
+			
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iterator</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">__indent</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_POC_BOUNDARY</span> <span class="ow">in</span> <span class="n">line</span><span class="p">):</span>
+				<span class="k">break</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;Quartus II is ready&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

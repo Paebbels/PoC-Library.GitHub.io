@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Base.Logging &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>Base.Logging &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="Base" href="Base.html"/>
+        <link rel="next" title="Base.Project" href="Base.Project.html"/>
+        <link rel="prev" title="Base.Executable" href="Base.Executable.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Base.html">Base</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Base.Exceptions.html">Base.Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Executable.html">Base.Executable</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Base.Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Project.html">Base.Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Shared.html">Base.Shared</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +182,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="Base.html">Base</a> &raquo;</li>
+        
       <li>Base.Logging</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/Base.Logging.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/Base.Logging.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -195,7 +220,7 @@ A mixin class to provide local logging methods.</li>
 </ul>
 <dl class="class">
 <dt id="Base.Logging.Severity">
-<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">Severity</code><span class="sig-paren">(</span><em>*_</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Severity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Severity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">Severity</code><span class="sig-paren">(</span><em>*_</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Severity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Severity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logging message severity levels.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-f724721c7ffc842b19d3d6784ec6983e17a04f27.svg" type="image/svg+xml">
@@ -255,7 +280,7 @@ A mixin class to provide local logging methods.</li>
 
 <dl class="class">
 <dt id="Base.Logging.LogEntry">
-<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">LogEntry</code><span class="sig-paren">(</span><em>message</em>, <em>severity=&lt;Severity.Normal: 4&gt;</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#LogEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.LogEntry" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">LogEntry</code><span class="sig-paren">(</span><em>message</em>, <em>severity=&lt;Severity.Normal: 4&gt;</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#LogEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.LogEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a single line log message with a severity and indentation level.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-fc2aff4a4c2bb4240cc0bc14dfa22565cb5d3808.svg" type="image/svg+xml">
@@ -263,7 +288,7 @@ A mixin class to provide local logging methods.</li>
 <p class="rubric">Members</p>
 <dl class="attribute">
 <dt id="Base.Logging.LogEntry._Log_MESSAGE_FORMAT__">
-<code class="descname">_Log_MESSAGE_FORMAT__</code><em class="property"> = {&lt;Severity.Fatal: 30&gt;: 'FATAL: {message}', &lt;Severity.Error: 25&gt;: 'ERROR: {message}', &lt;Severity.Warning: 15&gt;: 'WARNING: {message}', &lt;Severity.Info: 10&gt;: 'INFO: {message}', &lt;Severity.Quiet: 20&gt;: '{message}', &lt;Severity.Normal: 4&gt;: '{message}', &lt;Severity.Verbose: 2&gt;: 'VERBOSE: {message}', &lt;Severity.Debug: 1&gt;: 'DEBUG: {message}', &lt;Severity.DryRun: 5&gt;: 'DRYRUN: {message}'}</em><a class="headerlink" href="#Base.Logging.LogEntry._Log_MESSAGE_FORMAT__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_Log_MESSAGE_FORMAT__</code><em class="property"> = {&lt;Severity.Warning: 15&gt;: 'WARNING: {message}', &lt;Severity.Debug: 1&gt;: 'DEBUG: {message}', &lt;Severity.Quiet: 20&gt;: '{message}', &lt;Severity.Verbose: 2&gt;: 'VERBOSE: {message}', &lt;Severity.Error: 25&gt;: 'ERROR: {message}', &lt;Severity.Fatal: 30&gt;: 'FATAL: {message}', &lt;Severity.Normal: 4&gt;: '{message}', &lt;Severity.Info: 10&gt;: 'INFO: {message}', &lt;Severity.DryRun: 5&gt;: 'DRYRUN: {message}'}</em><a class="headerlink" href="#Base.Logging.LogEntry._Log_MESSAGE_FORMAT__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -286,7 +311,7 @@ A mixin class to provide local logging methods.</li>
 
 <dl class="method">
 <dt id="Base.Logging.LogEntry.IndentBy">
-<code class="descname">IndentBy</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#LogEntry.IndentBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.LogEntry.IndentBy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">IndentBy</code><span class="sig-paren">(</span><em>indent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#LogEntry.IndentBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.LogEntry.IndentBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase a log message&#8217;s indentation level.</p>
 </dd></dl>
 
@@ -294,7 +319,7 @@ A mixin class to provide local logging methods.</li>
 
 <dl class="class">
 <dt id="Base.Logging.Logger">
-<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>logLevel</em>, <em>printToStdOut=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>logLevel</em>, <em>printToStdOut=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-8c39fa774f084b08b6ac05d4ca916ba31c280a31.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Logger</p></object>
@@ -312,69 +337,69 @@ A mixin class to provide local logging methods.</li>
 
 <dl class="attribute">
 <dt id="Base.Logging.Logger._Log_MESSAGE_FORMAT__">
-<code class="descname">_Log_MESSAGE_FORMAT__</code><em class="property"> = {&lt;Severity.Fatal: 30&gt;: '{DARK_RED}{message}{NOCOLOR}', &lt;Severity.Error: 25&gt;: '{RED}{message}{NOCOLOR}', &lt;Severity.Quiet: 20&gt;: '{WHITE}{message}{NOCOLOR}', &lt;Severity.Warning: 15&gt;: '{YELLOW}{message}{NOCOLOR}', &lt;Severity.Info: 10&gt;: '{WHITE}{message}{NOCOLOR}', &lt;Severity.DryRun: 5&gt;: '{DARK_CYAN}{message}{NOCOLOR}', &lt;Severity.Normal: 4&gt;: '{WHITE}{message}{NOCOLOR}', &lt;Severity.Verbose: 2&gt;: '{GRAY}{message}{NOCOLOR}', &lt;Severity.Debug: 1&gt;: '{DARK_GRAY}{message}{NOCOLOR}'}</em><a class="headerlink" href="#Base.Logging.Logger._Log_MESSAGE_FORMAT__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_Log_MESSAGE_FORMAT__</code><em class="property"> = {&lt;Severity.Warning: 15&gt;: '{YELLOW}{message}{NOCOLOR}', &lt;Severity.Debug: 1&gt;: '{DARK_GRAY}{message}{NOCOLOR}', &lt;Severity.Quiet: 20&gt;: '{WHITE}{message}{NOCOLOR}', &lt;Severity.Verbose: 2&gt;: '{GRAY}{message}{NOCOLOR}', &lt;Severity.Error: 25&gt;: '{RED}{message}{NOCOLOR}', &lt;Severity.Fatal: 30&gt;: '{DARK_RED}{message}{NOCOLOR}', &lt;Severity.Normal: 4&gt;: '{WHITE}{message}{NOCOLOR}', &lt;Severity.Info: 10&gt;: '{WHITE}{message}{NOCOLOR}', &lt;Severity.DryRun: 5&gt;: '{DARK_CYAN}{message}{NOCOLOR}'}</em><a class="headerlink" href="#Base.Logging.Logger._Log_MESSAGE_FORMAT__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.Write">
-<code class="descname">Write</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.Write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.Write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Write</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.Write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.Write" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.TryWrite">
-<code class="descname">TryWrite</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.TryWrite"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.TryWrite" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TryWrite</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.TryWrite"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.TryWrite" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteFatal">
-<code class="descname">WriteFatal</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteFatal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteFatal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteFatal</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteFatal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteFatal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteError">
-<code class="descname">WriteError</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteError" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteError</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteError" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteWarning">
-<code class="descname">WriteWarning</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteWarning" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteWarning</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteWarning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteInfo">
-<code class="descname">WriteInfo</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteInfo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteInfo</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteInfo" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteQuiet">
-<code class="descname">WriteQuiet</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteQuiet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteQuiet" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteQuiet</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteQuiet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteQuiet" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteNormal">
-<code class="descname">WriteNormal</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteNormal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteNormal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteNormal</code><span class="sig-paren">(</span><em>message</em>, <em>indent=0</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteNormal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteNormal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteVerbose">
-<code class="descname">WriteVerbose</code><span class="sig-paren">(</span><em>message</em>, <em>indent=1</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteVerbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteVerbose" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteVerbose</code><span class="sig-paren">(</span><em>message</em>, <em>indent=1</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteVerbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteVerbose" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteDebug">
-<code class="descname">WriteDebug</code><span class="sig-paren">(</span><em>message</em>, <em>indent=2</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteDebug" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteDebug</code><span class="sig-paren">(</span><em>message</em>, <em>indent=2</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteDebug" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.Logger.WriteDryRun">
-<code class="descname">WriteDryRun</code><span class="sig-paren">(</span><em>message</em>, <em>indent=2</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#Logger.WriteDryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteDryRun" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WriteDryRun</code><span class="sig-paren">(</span><em>message</em>, <em>indent=2</em>, <em>appendLinebreak=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#Logger.WriteDryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.Logger.WriteDryRun" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="Base.Logging.ILogable">
-<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">ILogable</code><span class="sig-paren">(</span><em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Logging.</code><code class="descname">ILogable</code><span class="sig-paren">(</span><em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable" title="Permalink to this definition">¶</a></dt>
 <dd><p>A mixin class to provide local logging methods.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-94ea46ec53f0b78f3da948f6a572acb90b19a1a7.svg" type="image/svg+xml">
@@ -388,58 +413,58 @@ A mixin class to provide local logging methods.</li>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.Log">
-<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.Log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.Log" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Log</code><span class="sig-paren">(</span><em>entry</em>, <em>condition=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.Log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.Log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write an entry to the local logger.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable._TryLog">
-<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable._TryLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable._TryLog" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_TryLog</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable._TryLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable._TryLog" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogFatal">
-<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogFatal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogFatal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogFatal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogFatal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogFatal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogError">
-<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogError" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogError</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogError" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogWarning">
-<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogWarning" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogWarning</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogWarning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogInfo">
-<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogInfo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogInfo" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogQuiet">
-<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogQuiet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogQuiet" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogQuiet</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogQuiet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogQuiet" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogNormal">
-<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogNormal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogNormal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogNormal</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogNormal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogNormal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogVerbose">
-<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogVerbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogVerbose" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogVerbose</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogVerbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogVerbose" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogDebug">
-<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogDebug" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogDebug</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogDebug" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Logging.ILogable.LogDryRun">
-<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Logging.html#ILogable.LogDryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogDryRun" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LogDryRun</code><span class="sig-paren">(</span><em>*args</em>, <em>condition=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Logging.html#ILogable.LogDryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Logging.ILogable.LogDryRun" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -460,13 +485,22 @@ A mixin class to provide local logging methods.</li>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Base.Project.html" class="btn btn-neutral float-right" title="Base.Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Base.Executable.html" class="btn btn-neutral" title="Base.Executable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -488,25 +522,25 @@ A mixin class to provide local logging methods.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

@@ -1,0 +1,832 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.GHDL &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../index.html"/>
+        <link rel="up" title="ToolChain" href="../ToolChain.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../ToolChain.html">ToolChain</a> &raquo;</li>
+        
+      <li>ToolChain.GHDL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for ToolChain.GHDL</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#                   Thomas B. Preusser</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     GHDL specific classes</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>                <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">re</span>                     <span class="k">import</span> <span class="nb">compile</span> <span class="k">as</span> <span class="n">re_compile</span>
+<span class="kn">from</span> <span class="nn">subprocess</span>             <span class="k">import</span> <span class="n">check_output</span><span class="p">,</span> <span class="n">CalledProcessError</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>          <span class="k">import</span> <span class="n">CallByRefParam</span><span class="p">,</span> <span class="n">Init</span>
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>        <span class="k">import</span> <span class="n">PlatformNotSupportedException</span>
+<span class="kn">from</span> <span class="nn">Base.Logging</span>           <span class="k">import</span> <span class="n">LogEntry</span><span class="p">,</span> <span class="n">Severity</span>
+<span class="kn">from</span> <span class="nn">Base.Executable</span>        <span class="k">import</span> <span class="n">LongValuedFlagArgument</span><span class="p">,</span> <span class="n">DryRunException</span>
+<span class="kn">from</span> <span class="nn">Base.Executable</span>        <span class="k">import</span> <span class="n">ExecutableArgument</span><span class="p">,</span> <span class="n">PathArgument</span><span class="p">,</span> <span class="n">StringArgument</span><span class="p">,</span> <span class="n">ValuedFlagListArgument</span>
+<span class="kn">from</span> <span class="nn">Base.Executable</span>        <span class="k">import</span> <span class="n">ShortFlagArgument</span><span class="p">,</span> <span class="n">LongFlagArgument</span><span class="p">,</span> <span class="n">CommandLineArgumentList</span>
+<span class="kn">from</span> <span class="nn">DataBase.Entity</span>        <span class="k">import</span> <span class="n">SimulationResult</span>
+<span class="kn">from</span> <span class="nn">ToolChain</span>              <span class="k">import</span> <span class="n">ToolMixIn</span><span class="p">,</span> <span class="n">ToolChainException</span><span class="p">,</span> <span class="n">ConfigurationException</span><span class="p">,</span> <span class="n">ToolConfiguration</span><span class="p">,</span> <span class="n">OutputFilteredExecutable</span>
+<span class="kn">from</span> <span class="nn">Simulator</span>              <span class="k">import</span> <span class="n">PoCSimulationResultFilter</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;GHDLException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLReanalyzeException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Configuration&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDL&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLAnalyze&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLElaborate&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLRun&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLAnalyzeFilter&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLElaborateFilter&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GHDLRunFilter&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="GHDLException"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLException">[docs]</a><span class="k">class</span> <span class="nc">GHDLException</span><span class="p">(</span><span class="n">ToolChainException</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="GHDLReanalyzeException"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLReanalyzeException">[docs]</a><span class="k">class</span> <span class="nc">GHDLReanalyzeException</span><span class="p">(</span><span class="n">GHDLException</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="Configuration"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.Configuration">[docs]</a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">ToolConfiguration</span><span class="p">):</span>
+	<span class="n">_vendor</span> <span class="o">=</span>               <span class="s2">&quot;tgingold&quot;</span>                  <span class="c1">#: The name of the tools vendor.</span>
+	<span class="n">_toolName</span> <span class="o">=</span>             <span class="s2">&quot;GHDL&quot;</span>                      <span class="c1">#: The name of the tool.</span>
+	<span class="n">_section</span>  <span class="o">=</span>             <span class="s2">&quot;INSTALL.GHDL&quot;</span>              <span class="c1">#: The name of the configuration section. Pattern: ``INSTALL.Vendor.ToolName``.</span>
+	<span class="n">_multiVersionSupport</span> <span class="o">=</span>  <span class="kc">True</span>                        <span class="c1">#: Git supports multiple versions installed on the same system.</span>
+	<span class="n">_template</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;Windows&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;0.34-dev&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Backend&quot;</span><span class="p">:</span>                <span class="s2">&quot;mcode&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Runtime&quot;</span><span class="p">:</span>                <span class="s2">&quot;gnatgpl32&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;SectionName&quot;</span><span class="p">:</span>            <span class="p">(</span><span class="s2">&quot;%</span><span class="si">{PathWithRoot}</span><span class="s2">#$</span><span class="si">{Version}</span><span class="s2">-$</span><span class="si">{Runtime}</span><span class="s2">-$</span><span class="si">{Backend}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="kc">None</span><span class="p">),</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:InstallationDirectory}&quot;</span><span class="p">,</span>           <span class="s2">&quot;C:/Tools/GHDL/$</span><span class="si">{Version}</span><span class="s2">-$</span><span class="si">{Runtime}</span><span class="s2">-$</span><span class="si">{Backend}</span><span class="s2">&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:BinaryDirectory}&quot;</span><span class="p">,</span>                 <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/bin&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;ScriptDirectory&quot;</span><span class="p">:</span>        <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:ScriptDirectory}&quot;</span><span class="p">,</span>                 <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/lib/vendors&quot;</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Linux&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;0.34-dev&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Backend&quot;</span><span class="p">:</span>                <span class="s2">&quot;llvm&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;SectionName&quot;</span><span class="p">:</span>            <span class="p">(</span><span class="s2">&quot;%</span><span class="si">{PathWithRoot}</span><span class="s2">#$</span><span class="si">{Version}</span><span class="s2">-$</span><span class="si">{Backend}</span><span class="s2">&quot;</span><span class="p">,</span>   <span class="kc">None</span><span class="p">),</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:InstallationDirectory}&quot;</span><span class="p">,</span> <span class="s2">&quot;/usr/local&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:BinaryDirectory}&quot;</span><span class="p">,</span>       <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/bin&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;ScriptDirectory&quot;</span><span class="p">:</span>        <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:ScriptDirectory}&quot;</span><span class="p">,</span>       <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/lib/ghdl/vendors&quot;</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Darwin&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;0.34-dev&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;Backend&quot;</span><span class="p">:</span>                <span class="s2">&quot;llvm&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;SectionName&quot;</span><span class="p">:</span>            <span class="p">(</span><span class="s2">&quot;%</span><span class="si">{PathWithRoot}</span><span class="s2">#$</span><span class="si">{Version}</span><span class="s2">-$</span><span class="si">{Backend}</span><span class="s2">&quot;</span><span class="p">,</span>   <span class="kc">None</span><span class="p">),</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:InstallationDirectory}&quot;</span><span class="p">,</span> <span class="s2">&quot;/usr/local&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:BinaryDirectory}&quot;</span><span class="p">,</span>       <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/bin&quot;</span><span class="p">),</span>
+				<span class="s2">&quot;ScriptDirectory&quot;</span><span class="p">:</span>        <span class="p">(</span><span class="s2">&quot;${$</span><span class="si">{SectionName}</span><span class="s2">:ScriptDirectory}&quot;</span><span class="p">,</span>       <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/lib/ghdl/vendors&quot;</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>                                                   <span class="c1">#: The template for the configuration sections represented as nested dictionaries.</span>
+	
+<div class="viewcode-block" id="Configuration.ConfigureForAll"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.Configuration.ConfigureForAll">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AskInstalled</span><span class="p">(</span><span class="s2">&quot;Is GHDL installed on your system?&quot;</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># Configure GHDL version</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_multiVersionSupport</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">PrepareVersionedSections</span><span class="p">()</span>
+					
+				<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureInstallationDirectory</span><span class="p">()</span>
+				<span class="n">binPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureBinaryDirectory</span><span class="p">()</span>
+				
+				<span class="bp">self</span><span class="o">.</span><span class="n">__WriteGHDLSection</span><span class="p">(</span><span class="n">binPath</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">GHDL is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">except</span> <span class="n">ConfigurationException</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">raise</span></div>
+			
+<div class="viewcode-block" id="Configuration._GetDefaultInstallationDirectory"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.Configuration._GetDefaultInstallationDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_GetDefaultInstallationDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">]):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">name</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;which&quot;</span><span class="p">,</span> <span class="s2">&quot;ghdl&quot;</span><span class="p">],</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+				<span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+			<span class="k">except</span> <span class="n">CalledProcessError</span><span class="p">:</span>
+				<span class="k">pass</span> <span class="c1"># `which` returns non-zero exit code if GHDL is not in PATH</span>
+				
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_GetDefaultInstallationDirectory</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Configuration._ConfigureBinaryDirectory"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.Configuration._ConfigureBinaryDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureBinaryDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Updates section with value from _template and returns directory as Path object.&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureScriptDirectory</span><span class="p">()</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_ConfigureBinaryDirectory</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Configuration._ConfigureScriptDirectory"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.Configuration._ConfigureScriptDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_ConfigureScriptDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Updates section with value from _template and returns directory as Path object.&quot;&quot;&quot;</span>
+		<span class="c1"># unresolved = self._template[self._host.Platform][self._section][&#39;ScriptDirectory&#39;]</span>
+		<span class="c1"># self._host.PoCConfig[self._section][&#39;ScriptDirectory&#39;] = unresolved  # create entry</span>
+		<span class="n">scriptPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;ScriptDirectory&#39;</span><span class="p">])</span>  <span class="c1"># resolve entry</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">scriptPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0!s}</span><span class="s2"> script directory &#39;</span><span class="si">{1!s}</span><span class="s2">&#39; does not exist.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scriptPath</span><span class="p">))</span> \
+				<span class="kn">from</span> <span class="nn">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">scriptPath</span><span class="p">))</span></div>
+				
+	<span class="k">def</span> <span class="nf">__WriteGHDLSection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binPath</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>
+			<span class="n">ghdlPath</span> <span class="o">=</span> <span class="n">binPath</span> <span class="o">/</span> <span class="s2">&quot;ghdl.exe&quot;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">ghdlPath</span> <span class="o">=</span> <span class="n">binPath</span> <span class="o">/</span> <span class="s2">&quot;ghdl&quot;</span>
+			
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">ghdlPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Executable &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ghdlPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span>
+				<span class="nb">str</span><span class="p">(</span><span class="n">ghdlPath</span><span class="p">))</span>
+				
+		<span class="c1"># get version and backend</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ghdlPath</span><span class="p">),</span> <span class="s2">&quot;-v&quot;</span><span class="p">],</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="n">version</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">backend</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">versionRegExpStr</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^GHDL (.+?) &quot;</span>
+		<span class="n">versionRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">versionRegExpStr</span><span class="p">)</span>
+		<span class="n">backendRegExpStr</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(?i).*(mcode|gcc|llvm).* code generator&quot;</span>
+		<span class="n">backendRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">backendRegExpStr</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">match</span> <span class="o">=</span> <span class="n">versionRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">version</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+					
+			<span class="k">if</span> <span class="n">backend</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">match</span> <span class="o">=</span> <span class="n">backendRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">backend</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+					
+		<span class="k">if</span> <span class="p">((</span><span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">backend</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Version number or back-end name not found in &#39;</span><span class="si">{0!s}</span><span class="s2"> -v&#39; output.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ghdlPath</span><span class="p">))</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">version</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Backend&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">backend</span></div>
+		
+		
+<div class="viewcode-block" id="GHDL"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL">[docs]</a><span class="k">class</span> <span class="nc">GHDL</span><span class="p">(</span><span class="n">OutputFilteredExecutable</span><span class="p">,</span> <span class="n">ToolMixIn</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="n">ToolMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>     <span class="n">executablePath</span> <span class="o">=</span> <span class="n">binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;ghdl.exe&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span><span class="p">):</span>     <span class="n">executablePath</span> <span class="o">=</span> <span class="n">binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;ghdl&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">):</span>    <span class="n">executablePath</span> <span class="o">=</span> <span class="n">binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;ghdl&quot;</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="k">raise</span> <span class="n">PlatformNotSupportedException</span><span class="p">(</span><span class="n">platform</span><span class="p">)</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">executablePath</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">Executable</span> <span class="o">=</span> <span class="n">executablePath</span>
+		<span class="c1">#self.Parameters[self.Executable] = executablePath</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;llvm&quot;</span><span class="p">,</span> <span class="s2">&quot;mcode&quot;</span><span class="p">]):</span>        <span class="k">raise</span> <span class="n">GHDLException</span><span class="p">(</span><span class="s2">&quot;GHDL for Windows does not support backend &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend</span><span class="p">))</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;gcc&quot;</span><span class="p">,</span> <span class="s2">&quot;llvm&quot;</span><span class="p">,</span> <span class="s2">&quot;mcode&quot;</span><span class="p">]):</span> <span class="k">raise</span> <span class="n">GHDLException</span><span class="p">(</span><span class="s2">&quot;GHDL for Linux does not support backend &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend</span><span class="p">))</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;gcc&quot;</span><span class="p">,</span> <span class="s2">&quot;llvm&quot;</span><span class="p">,</span> <span class="s2">&quot;mcode&quot;</span><span class="p">]):</span> <span class="k">raise</span> <span class="n">GHDLException</span><span class="p">(</span><span class="s2">&quot;GHDL for OS X does not support backend &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend</span><span class="p">))</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span> <span class="o">=</span>  <span class="n">binaryDirectoryPath</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">=</span>              <span class="n">backend</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">=</span>              <span class="n">version</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">BinaryDirectoryPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Backend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span>
+	
+<div class="viewcode-block" id="GHDL.deco"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.deco">[docs]</a>	<span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="n">Arg</span><span class="p">):</span>
+		<span class="k">def</span> <span class="nf">getter</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+			<span class="k">return</span> <span class="n">Arg</span><span class="o">.</span><span class="n">Value</span>
+		<span class="k">def</span> <span class="nf">setter</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+			<span class="n">Arg</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">return</span> <span class="nb">property</span><span class="p">(</span><span class="n">getter</span><span class="p">,</span> <span class="n">setter</span><span class="p">)</span></div>
+		
+	<span class="n">Executable</span> <span class="o">=</span> <span class="n">deco</span><span class="p">(</span><span class="n">ExecutableArgument</span><span class="p">(</span><span class="s2">&quot;Executable&quot;</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{}))</span>
+	
+	<span class="c1">#class Executable(metaclass=ExecutableArgument):</span>
+	<span class="c1">#	pass</span>
+	
+<div class="viewcode-block" id="GHDL.CmdAnalyze"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.CmdAnalyze">[docs]</a>	<span class="k">class</span> <span class="nc">CmdAnalyze</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;a&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.CmdElaborate"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.CmdElaborate">[docs]</a>	<span class="k">class</span> <span class="nc">CmdElaborate</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;e&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.CmdRun"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.CmdRun">[docs]</a>	<span class="k">class</span> <span class="nc">CmdRun</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;r&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagVerbose"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagVerbose">[docs]</a>	<span class="k">class</span> <span class="nc">FlagVerbose</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;v&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagDebug"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagDebug">[docs]</a>	<span class="k">class</span> <span class="nc">FlagDebug</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;g&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagExplicit"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagExplicit">[docs]</a>	<span class="k">class</span> <span class="nc">FlagExplicit</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;fexplicit&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagRelaxedRules"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagRelaxedRules">[docs]</a>	<span class="k">class</span> <span class="nc">FlagRelaxedRules</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;frelaxed-rules&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagWarnBinding"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagWarnBinding">[docs]</a>	<span class="k">class</span> <span class="nc">FlagWarnBinding</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;warn-binding&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagNoVitalChecks"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagNoVitalChecks">[docs]</a>	<span class="k">class</span> <span class="nc">FlagNoVitalChecks</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;no-vital-checks&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagMultiByteComments"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagMultiByteComments">[docs]</a>	<span class="k">class</span> <span class="nc">FlagMultiByteComments</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;mb-comments&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagSynBinding"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagSynBinding">[docs]</a>	<span class="k">class</span> <span class="nc">FlagSynBinding</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;syn-binding&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagPSL"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagPSL">[docs]</a>	<span class="k">class</span> <span class="nc">FlagPSL</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;fpsl&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagProfileArcs"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagProfileArcs">[docs]</a>	<span class="k">class</span> <span class="nc">FlagProfileArcs</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;fprofile-arcs&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.FlagTestCoverage"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.FlagTestCoverage">[docs]</a>	<span class="k">class</span> <span class="nc">FlagTestCoverage</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ShortFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>    <span class="s2">&quot;ftest-coverage&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchCompilerOption"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchCompilerOption">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchCompilerOption</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+		<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">,</span><span class="si">{1}</span><span class="s2">&quot;</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;Wc&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchAssemblerOption"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchAssemblerOption">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchAssemblerOption</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+		<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">,</span><span class="si">{1}</span><span class="s2">&quot;</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;Wa&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchLinkerOption"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchLinkerOption">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchLinkerOption</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+		<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;-</span><span class="si">{0}</span><span class="s2">,</span><span class="si">{1}</span><span class="s2">&quot;</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;Wl&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchIEEEFlavor"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchIEEEFlavor">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchIEEEFlavor</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;ieee&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchVHDLVersion"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchVHDLVersion">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchVHDLVersion</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;std&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchVHDLLibrary"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchVHDLLibrary">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchVHDLLibrary</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;work&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.ArgListLibraryReferences"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.ArgListLibraryReferences">[docs]</a>	<span class="k">class</span> <span class="nc">ArgListLibraryReferences</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ValuedFlagListArgument</span><span class="p">):</span>
+		<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;-</span><span class="si">{0}{1}</span><span class="s2">&quot;</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;P&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.ArgSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.ArgSourceFile">[docs]</a>	<span class="k">class</span> <span class="nc">ArgSourceFile</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">PathArgument</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+		
+<div class="viewcode-block" id="GHDL.ArgTopLevel"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.ArgTopLevel">[docs]</a>	<span class="k">class</span> <span class="nc">ArgTopLevel</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">StringArgument</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+		
+	<span class="n">Parameters</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="c1">#Executable,</span>
+		<span class="n">CmdAnalyze</span><span class="p">,</span>
+		<span class="n">CmdElaborate</span><span class="p">,</span>
+		<span class="n">CmdRun</span><span class="p">,</span>
+		<span class="n">FlagVerbose</span><span class="p">,</span>
+		<span class="n">FlagDebug</span><span class="p">,</span>
+		<span class="n">FlagExplicit</span><span class="p">,</span>
+		<span class="n">FlagRelaxedRules</span><span class="p">,</span>
+		<span class="n">FlagWarnBinding</span><span class="p">,</span>
+		<span class="n">FlagNoVitalChecks</span><span class="p">,</span>
+		<span class="n">FlagMultiByteComments</span><span class="p">,</span>
+		<span class="n">FlagSynBinding</span><span class="p">,</span>
+		<span class="n">FlagPSL</span><span class="p">,</span>
+		<span class="n">FlagProfileArcs</span><span class="p">,</span>
+		<span class="n">FlagTestCoverage</span><span class="p">,</span>
+		<span class="n">SwitchCompilerOption</span><span class="p">,</span>
+		<span class="n">SwitchAssemblerOption</span><span class="p">,</span>
+		<span class="n">SwitchLinkerOption</span><span class="p">,</span>
+		<span class="n">SwitchIEEEFlavor</span><span class="p">,</span>
+		<span class="n">SwitchVHDLVersion</span><span class="p">,</span>
+		<span class="n">SwitchVHDLLibrary</span><span class="p">,</span>
+		<span class="n">ArgListLibraryReferences</span><span class="p">,</span>
+		<span class="n">ArgSourceFile</span><span class="p">,</span>
+		<span class="n">ArgTopLevel</span>
+	<span class="p">)</span>
+	
+<div class="viewcode-block" id="GHDL.SwitchIEEEAsserts"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchIEEEAsserts">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchIEEEAsserts</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;ieee-asserts&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchStopDelta"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchStopDelta">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchStopDelta</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;stop-delta&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchVCDWaveform"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchVCDWaveform">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchVCDWaveform</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;vcd&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchVCDGZWaveform"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchVCDGZWaveform">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchVCDGZWaveform</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;vcdgz&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchFastWaveform"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchFastWaveform">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchFastWaveform</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;fst&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchGHDLWaveform"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchGHDLWaveform">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchGHDLWaveform</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;wave&quot;</span></div>
+		
+<div class="viewcode-block" id="GHDL.SwitchWaveformOptionFile"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.SwitchWaveformOptionFile">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchWaveformOptionFile</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;read-wave-opt&quot;</span>		<span class="c1"># requires GHDL update</span></div>
+		
+	<span class="n">RunOptions</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="n">SwitchIEEEAsserts</span><span class="p">,</span>
+		<span class="n">SwitchStopDelta</span><span class="p">,</span>
+		<span class="n">SwitchVCDWaveform</span><span class="p">,</span>
+		<span class="n">SwitchVCDGZWaveform</span><span class="p">,</span>
+		<span class="n">SwitchFastWaveform</span><span class="p">,</span>
+		<span class="n">SwitchGHDLWaveform</span><span class="p">,</span>
+		<span class="n">SwitchWaveformOptionFile</span>
+	<span class="p">)</span>
+	
+<div class="viewcode-block" id="GHDL.GetGHDLAnalyze"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.GetGHDLAnalyze">[docs]</a>	<span class="k">def</span> <span class="nf">GetGHDLAnalyze</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">ghdl</span> <span class="o">=</span> <span class="n">GHDLAnalyze</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">ghdl</span><span class="o">.</span><span class="n">Executable</span><span class="p">):</span>
+				<span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span>       <span class="kc">None</span>
+		<span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">ghdl</span><span class="o">.</span><span class="n">CmdAnalyze</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ghdl</span></div>
+		
+<div class="viewcode-block" id="GHDL.GetGHDLElaborate"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.GetGHDLElaborate">[docs]</a>	<span class="k">def</span> <span class="nf">GetGHDLElaborate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">ghdl</span> <span class="o">=</span> <span class="n">GHDLElaborate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">ghdl</span><span class="o">.</span><span class="n">Executable</span><span class="p">):</span>
+				<span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">ghdl</span><span class="o">.</span><span class="n">CmdElaborate</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ghdl</span></div>
+		
+<div class="viewcode-block" id="GHDL.GetGHDLRun"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDL.GetGHDLRun">[docs]</a>	<span class="k">def</span> <span class="nf">GetGHDLRun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">ghdl</span> <span class="o">=</span> <span class="n">GHDLRun</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">ghdl</span><span class="o">.</span><span class="n">Executable</span><span class="p">):</span>
+				<span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span>        <span class="kc">None</span>
+		<span class="n">ghdl</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">ghdl</span><span class="o">.</span><span class="n">CmdRun</span><span class="p">]</span> <span class="o">=</span>      <span class="kc">True</span>
+		<span class="k">return</span> <span class="n">ghdl</span></div></div>
+		
+		
+<div class="viewcode-block" id="GHDLAnalyze"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLAnalyze">[docs]</a><span class="k">class</span> <span class="nc">GHDLAnalyze</span><span class="p">(</span><span class="n">GHDL</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+		
+<div class="viewcode-block" id="GHDLAnalyze.Analyze"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLAnalyze.Analyze">[docs]</a>	<span class="k">def</span> <span class="nf">Analyze</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Executable</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GHDLException</span><span class="p">(</span><span class="s2">&quot;Failed to launch GHDL analyze.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span>    <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">=</span>  <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">=</span>    <span class="kc">False</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">GHDLAnalyzeFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">()))</span>
+			
+			<span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span>    <span class="kc">True</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;ghdl analyze messages for &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ArgSourceFile</span><span class="p">]),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">((</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">78</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span><span class="o">*</span><span class="mi">2</span><span class="p">)),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">|=</span>  <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">Severity</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">|=</span>    <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">Severity</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+				
+				<span class="n">line</span><span class="o">.</span><span class="n">IndentBy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				<span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+				
+		<span class="k">except</span> <span class="n">DryRunException</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">((</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">78</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span><span class="o">*</span><span class="mi">2</span><span class="p">)),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div></div>
+				
+				
+<div class="viewcode-block" id="GHDLElaborate"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLElaborate">[docs]</a><span class="k">class</span> <span class="nc">GHDLElaborate</span><span class="p">(</span><span class="n">GHDL</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+		
+<div class="viewcode-block" id="GHDLElaborate.Elaborate"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLElaborate.Elaborate">[docs]</a>	<span class="k">def</span> <span class="nf">Elaborate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Executable</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GHDLException</span><span class="p">(</span><span class="s2">&quot;Failed to launch GHDL elaborate.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">GHDLElaborateFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">()))</span>
+			
+			<span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+			<span class="n">line</span><span class="o">.</span><span class="n">IndentBy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">vhdlLibraryName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">SwitchVHDLLibrary</span><span class="p">]</span>
+			<span class="n">topLevel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ArgTopLevel</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;ghdl elaborate messages for &#39;</span><span class="si">{0}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vhdlLibraryName</span><span class="p">,</span> <span class="n">topLevel</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">((</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">78</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span><span class="o">*</span><span class="mi">2</span><span class="p">)),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+			
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">|=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">Severity</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">|=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">Severity</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+				
+				<span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+				<span class="n">line</span><span class="o">.</span><span class="n">IndentBy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				
+		<span class="k">except</span> <span class="n">DryRunException</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">((</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">78</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span><span class="o">*</span><span class="mi">2</span><span class="p">)),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div></div>
+				
+				
+<div class="viewcode-block" id="GHDLRun"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLRun">[docs]</a><span class="k">class</span> <span class="nc">GHDLRun</span><span class="p">(</span><span class="n">GHDL</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">dryrun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span>
+		
+<div class="viewcode-block" id="GHDLRun.Run"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLRun.Run">[docs]</a>	<span class="k">def</span> <span class="nf">Run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">RunOptions</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Executable</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GHDLException</span><span class="p">(</span><span class="s2">&quot;Failed to launch GHDL run.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span>    <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">=</span>  <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">=</span>    <span class="kc">False</span>
+		<span class="n">simulationResult</span> <span class="o">=</span>  <span class="n">CallByRefParam</span><span class="p">(</span><span class="n">SimulationResult</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">PoCSimulationResultFilter</span><span class="p">(</span><span class="n">GHDLRunFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">()),</span> <span class="n">simulationResult</span><span class="p">))</span>
+			
+			<span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+			<span class="n">line</span><span class="o">.</span><span class="n">IndentBy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">vhdlLibraryName</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">SwitchVHDLLibrary</span><span class="p">]</span>
+			<span class="n">topLevel</span> <span class="o">=</span>        <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ArgTopLevel</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;ghdl run messages for &#39;</span><span class="si">{0}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vhdlLibraryName</span><span class="p">,</span> <span class="n">topLevel</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">78</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+			
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hasWarnings</span> <span class="o">|=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">Severity</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hasErrors</span> <span class="o">|=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">Severity</span> <span class="ow">is</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+				
+				<span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+				<span class="n">line</span><span class="o">.</span><span class="n">IndentBy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">BaseIndent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				
+		<span class="k">except</span> <span class="n">DryRunException</span><span class="p">:</span>
+			<span class="n">simulationResult</span> <span class="o">&lt;&lt;=</span> <span class="n">SimulationResult</span><span class="o">.</span><span class="n">DryRun</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">finally</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasOutput</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">78</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+				
+		<span class="k">return</span> <span class="n">simulationResult</span><span class="o">.</span><span class="n">value</span></div></div>
+		
+		
+<div class="viewcode-block" id="GHDLAnalyzeFilter"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLAnalyzeFilter">[docs]</a><span class="k">def</span> <span class="nf">GHDLAnalyzeFilter</span><span class="p">(</span><span class="n">gen</span><span class="p">):</span>
+	<span class="n">filterPattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.+?:\d+:\d+:(?P&lt;warning&gt;warning:)? (?P&lt;message&gt;.*)&quot;</span>			<span class="c1"># &lt;Path&gt;:&lt;line&gt;:&lt;column&gt;:[warning:] &lt;message&gt;</span>
+	<span class="n">filterRegExp</span>  <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">filterPattern</span><span class="p">)</span>
+	
+	<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+		<span class="n">filterMatch</span> <span class="o">=</span> <span class="n">filterRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="s2">&quot;ghdl: compilation error&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+			<span class="k">continue</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">filterMatch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">filterMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;warning&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
+				<span class="k">continue</span>
+				
+			<span class="n">message</span> <span class="o">=</span> <span class="n">filterMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;has changed and must be reanalysed&quot;</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="n">GHDLReanalyzeException</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+			<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+			<span class="k">continue</span>
+			
+		<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Normal</span><span class="p">)</span></div>
+		
+<span class="n">GHDLElaborateFilter</span> <span class="o">=</span> <span class="n">GHDLAnalyzeFilter</span>
+
+<div class="viewcode-block" id="GHDLRunFilter"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.GHDL.html#ToolChain.GHDL.GHDLRunFilter">[docs]</a><span class="k">def</span> <span class="nf">GHDLRunFilter</span><span class="p">(</span><span class="n">gen</span><span class="p">):</span>
+	<span class="c1">#  Pattern                                                             Classification</span>
+	<span class="c1"># ------------------------------------------------------------------------------------------------------</span>
+	<span class="c1">#  &lt;path&gt;:&lt;line&gt;:&lt;column&gt;: &lt;message&gt;                                -&gt; Severity.Error (by (*))</span>
+	<span class="c1">#  &lt;path&gt;:&lt;line&gt;:&lt;column&gt;:&lt;severity&gt;: &lt;message&gt;                     -&gt; According to &lt;severity&gt;</span>
+	<span class="c1">#  &lt;path&gt;:&lt;line&gt;:&lt;column&gt;:@&lt;time&gt;:(report &lt;severity&gt;): &lt;message&gt;    -&gt; According to &lt;severity&gt;</span>
+	<span class="c1">#  others                                                           -&gt; Severity.Normal</span>
+	<span class="c1">#  (*) -&gt; unknown &lt;severity&gt;                                        -&gt; Severity.Error</span>
+	
+	<span class="n">filterPattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.+?:\d+:\d+:((?P&lt;report&gt;@\w+:\((?:report|assertion) )?(?P&lt;severity&gt;\w+)(?(report)\)):)? (?P&lt;message&gt;.*)&quot;</span>
+	<span class="n">filterRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">filterPattern</span><span class="p">)</span>
+	
+	<span class="n">lineno</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">lineno</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="n">lineno</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Linking in memory&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">)</span>
+				<span class="k">continue</span>
+			<span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Starting simulation&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">)</span>
+				<span class="k">continue</span>
+				
+		<span class="n">filterMatch</span> <span class="o">=</span> <span class="n">filterRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">filterMatch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">ParseVHDLSeverityLevel</span><span class="p">(</span><span class="n">filterMatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;severity&#39;</span><span class="p">),</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Error</span><span class="p">))</span>
+			<span class="k">continue</span>
+			
+		<span class="k">yield</span> <span class="n">LogEntry</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">Severity</span><span class="o">.</span><span class="n">Normal</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

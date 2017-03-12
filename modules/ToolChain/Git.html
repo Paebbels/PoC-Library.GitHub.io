@@ -1,0 +1,883 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ToolChain.Git &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../index.html"/>
+        <link rel="up" title="ToolChain" href="../ToolChain.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../ToolChain.html">ToolChain</a> &raquo;</li>
+        
+      <li>ToolChain.Git</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for ToolChain.Git</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#										Thomas B. Preusser</span>
+<span class="c1">#</span>
+<span class="c1"># Python Class:     Git specific classes</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>              <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">re</span>                   <span class="k">import</span> <span class="nb">compile</span> <span class="k">as</span> <span class="n">re_compile</span>
+<span class="kn">from</span> <span class="nn">subprocess</span>           <span class="k">import</span> <span class="n">check_output</span><span class="p">,</span> <span class="n">CalledProcessError</span>
+<span class="kn">from</span> <span class="nn">os</span>                   <span class="k">import</span> <span class="n">environ</span>
+<span class="kn">from</span> <span class="nn">shutil</span>               <span class="k">import</span> <span class="n">copy</span> <span class="k">as</span> <span class="n">shutil_copy</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>        <span class="k">import</span> <span class="n">Init</span>
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>      <span class="k">import</span> <span class="n">PlatformNotSupportedException</span><span class="p">,</span> <span class="n">CommonException</span>
+<span class="kn">from</span> <span class="nn">Base.Executable</span>      <span class="k">import</span> <span class="n">Executable</span><span class="p">,</span> <span class="n">ExecutableArgument</span><span class="p">,</span> <span class="n">CommandLineArgumentList</span>
+<span class="kn">from</span> <span class="nn">Base.Executable</span>      <span class="k">import</span> <span class="n">CommandArgument</span><span class="p">,</span> <span class="n">LongFlagArgument</span><span class="p">,</span> <span class="n">ValuedFlagArgument</span><span class="p">,</span> <span class="n">StringArgument</span><span class="p">,</span> <span class="n">LongValuedFlagArgument</span><span class="p">,</span> <span class="n">LongTupleArgument</span>
+<span class="kn">from</span> <span class="nn">ToolChain</span>            <span class="k">import</span> <span class="n">ToolMixIn</span><span class="p">,</span> <span class="n">ToolChainException</span><span class="p">,</span> <span class="n">ConfigurationException</span><span class="p">,</span> <span class="n">SkipConfigurationException</span><span class="p">,</span> <span class="n">ChangeState</span><span class="p">,</span> <span class="n">ToolConfiguration</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;GitException&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Configuration&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Git&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GitSCM&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GitRevParse&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GitRevList&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GitDescribe&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GitConfig&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="GitException"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitException">[docs]</a><span class="k">class</span> <span class="nc">GitException</span><span class="p">(</span><span class="n">ToolChainException</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="Configuration"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Configuration">[docs]</a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">ToolConfiguration</span><span class="p">):</span>
+	<span class="n">_vendor</span> <span class="o">=</span>               <span class="s2">&quot;Git SCM&quot;</span>                   <span class="c1">#: The name of the tools vendor.</span>
+	<span class="n">_toolName</span> <span class="o">=</span>             <span class="s2">&quot;Git&quot;</span>                       <span class="c1">#: The name of the tool.</span>
+	<span class="n">_section</span>  <span class="o">=</span>             <span class="s2">&quot;INSTALL.Git&quot;</span>               <span class="c1">#: The name of the configuration section. Pattern: ``INSTALL.Vendor.ToolName``.</span>
+	<span class="n">_template</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;Windows&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;2.8.2&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;C:/Program Files/Git&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">/cmd&quot;</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="s2">&quot;Linux&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="n">_section</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">&quot;Version&quot;</span><span class="p">:</span>                <span class="s2">&quot;2.8.1&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;InstallationDirectory&quot;</span><span class="p">:</span>  <span class="s2">&quot;/usr/bin&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;BinaryDirectory&quot;</span><span class="p">:</span>        <span class="s2">&quot;$</span><span class="si">{InstallationDirectory}</span><span class="s2">&quot;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>                                                   <span class="c1">#: The template for the configuration sections represented as nested dictionaries.</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_git</span> <span class="o">=</span> <span class="kc">None</span>
+		
+<div class="viewcode-block" id="Configuration.ConfigureForAll"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Configuration.ConfigureForAll">[docs]</a>	<span class="k">def</span> <span class="nf">ConfigureForAll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AskInstalled</span><span class="p">(</span><span class="s2">&quot;Is Git installed on your system?&quot;</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># Configure Git version</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span>
+				
+				
+				<span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureInstallationDirectory</span><span class="p">()</span>
+				<span class="n">binPath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ConfigureBinaryDirectory</span><span class="p">()</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__WriteGitSection</span><span class="p">(</span><span class="n">binPath</span><span class="p">)</span>
+		<span class="k">except</span> <span class="n">ConfigurationException</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">ClearSection</span><span class="p">()</span>
+			<span class="k">raise</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.Git&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Skipping further Git setup. No Git installation found.&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">Git is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">return</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">binaryDirectoryPath</span> <span class="o">=</span> <span class="n">binPath</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_git</span> <span class="o">=</span> <span class="n">Git</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">DryRun</span><span class="p">,</span> <span class="n">binaryDirectoryPath</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__IsUnderGitControl</span><span class="p">()):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;Skipping Git setup. This directory is not under Git control.&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">Git is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">return</span>
+			
+		<span class="n">pocSection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span>
+		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AskYes_NoPass</span><span class="p">(</span><span class="s2">&quot;Install Git mechanisms for PoC developers?&quot;</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="o">=</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Changed</span>
+				<span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitFilters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
+				<span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitHooks&#39;</span><span class="p">]</span> <span class="o">=</span>   <span class="s2">&quot;False&quot;</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">Git is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+				<span class="k">return</span>
+		<span class="k">except</span> <span class="n">SkipConfigurationException</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">Git is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">raise</span>
+			
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_AskInstalled</span><span class="p">(</span><span class="s2">&quot;Install Git filters?&quot;</span><span class="p">))</span> <span class="ow">and</span>
+				<span class="p">(</span><span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitFilters&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;False&quot;</span><span class="p">)):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="o">=</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Changed</span>
+			<span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitFilters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitFilters&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="o">=</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Changed</span>
+			<span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitFilters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
+			
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_AskInstalled</span><span class="p">(</span><span class="s2">&quot;Install Git hooks?&quot;</span><span class="p">))</span> <span class="ow">and</span>
+				<span class="p">(</span><span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitHooks&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;False&quot;</span><span class="p">)):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="o">=</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Changed</span>
+			<span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitHooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitHooks&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="o">=</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Changed</span>
+			<span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitHooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{DARK_GREEN}</span><span class="s2">Git is now configured.</span><span class="si">{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Configuration._GetDefaultInstallationDirectory"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Configuration._GetDefaultInstallationDirectory">[docs]</a>	<span class="k">def</span> <span class="nf">_GetDefaultInstallationDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>
+			<span class="c1"># TODO: extract to base class -&gt; provide a SearchInPath method</span>
+			<span class="n">envPath</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PATH&#39;</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">pathItem</span> <span class="ow">in</span> <span class="n">envPath</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">):</span>
+				<span class="n">binaryDirectoryPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">pathItem</span><span class="p">)</span>
+				<span class="n">gitPath</span> <span class="o">=</span>             <span class="n">binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;git.exe&quot;</span>
+				<span class="k">if</span> <span class="n">gitPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+					<span class="k">return</span> <span class="n">binaryDirectoryPath</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">]):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">name</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;which&quot;</span><span class="p">,</span> <span class="s2">&quot;git&quot;</span><span class="p">],</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+				<span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+					<span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+			<span class="k">except</span> <span class="n">CalledProcessError</span><span class="p">:</span>
+				<span class="k">pass</span>  <span class="c1"># `which` returns non-zero exit code if GHDL is not in PATH</span>
+				
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_GetDefaultInstallationDirectory</span><span class="p">()</span></div>
+		
+<div class="viewcode-block" id="Configuration.RunPostConfigurationTasks"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Configuration.RunPostConfigurationTasks">[docs]</a>	<span class="k">def</span> <span class="nf">RunPostConfigurationTasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_changed</span> <span class="ow">is</span> <span class="n">ChangeState</span><span class="o">.</span><span class="n">Changed</span><span class="p">:</span>
+			<span class="n">pocSection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitFilters&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__InstallGitFilters</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__UninstallGitFilters</span><span class="p">()</span>
+				
+			<span class="k">if</span> <span class="p">(</span><span class="n">pocSection</span><span class="p">[</span><span class="s1">&#39;HasInstalledGitHooks&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__InstallGitHooks</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__UninstallGitHooks</span><span class="p">()</span></div>
+				
+	<span class="k">def</span> <span class="nf">__WriteGitSection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binPath</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">Platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>
+			<span class="n">gitPath</span> <span class="o">=</span> <span class="n">binPath</span> <span class="o">/</span> <span class="s2">&quot;git.exe&quot;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">gitPath</span> <span class="o">=</span> <span class="n">binPath</span> <span class="o">/</span> <span class="s2">&quot;git&quot;</span>
+			
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">gitPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Executable &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gitPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gitPath</span><span class="p">))</span>
+			
+		<span class="c1"># get version and backend</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">gitPath</span><span class="p">),</span> <span class="s2">&quot;--version&quot;</span><span class="p">],</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="n">version</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">versionRegExpStr</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^git version (\d+\.\d+\.\d+).*&quot;</span>
+		<span class="n">versionRegExp</span> <span class="o">=</span> <span class="n">re_compile</span><span class="p">(</span><span class="n">versionRegExpStr</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">match</span> <span class="o">=</span> <span class="n">versionRegExp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">version</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+					
+		<span class="k">if</span> <span class="p">(</span><span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Version number not found in &#39;</span><span class="si">{0!s}</span><span class="s2"> --version&#39; output.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gitPath</span><span class="p">))</span>
+			
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_section</span><span class="p">][</span><span class="s1">&#39;Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">version</span>
+		
+	<span class="k">def</span> <span class="nf">__IsUnderGitControl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">gitRevParse</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_git</span><span class="o">.</span><span class="n">GetGitRevParse</span><span class="p">()</span>
+			<span class="n">gitRevParse</span><span class="o">.</span><span class="n">RevParseParameters</span><span class="p">[</span><span class="n">gitRevParse</span><span class="o">.</span><span class="n">SwitchInsideWorkingTree</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">output</span> <span class="o">=</span> <span class="n">gitRevParse</span><span class="o">.</span><span class="n">Execute</span><span class="p">()</span>
+			<span class="k">return</span> <span class="p">(</span><span class="n">output</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="n">CommonException</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+			
+	<span class="k">def</span> <span class="nf">__UninstallGitFilters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  Uninstalling Git filters...&quot;</span><span class="p">)</span>
+		
+		<span class="k">for</span> <span class="n">fileFormat</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;rest&quot;</span><span class="p">,</span> <span class="s2">&quot;vhdl&quot;</span><span class="p">]:</span>
+			<span class="n">filterName</span> <span class="o">=</span> <span class="s2">&quot;filter.normalize&quot;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">fileFormat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="n">filterName</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">fileFormat</span>
+				
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">git</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_git</span><span class="o">.</span><span class="n">GetGitConfig</span><span class="p">()</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">git</span><span class="o">.</span><span class="n">SwitchRemoveSection</span><span class="p">]</span> <span class="o">=</span>   <span class="kc">True</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">git</span><span class="o">.</span><span class="n">ValueFilterParameters</span><span class="p">]</span> <span class="o">=</span> <span class="n">filterName</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">Execute</span><span class="p">()</span>
+			<span class="k">except</span> <span class="n">CommonException</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;    Error while removing section </span><span class="si">{0}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filterName</span><span class="p">))</span>
+				
+	<span class="k">def</span> <span class="nf">__InstallGitFilters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  Installing Git filters...&quot;</span><span class="p">)</span>
+		
+		<span class="n">normalizeScript</span> <span class="o">=</span>     <span class="s2">&quot;tools/git/filters/normalize.pl&quot;</span>
+		<span class="n">pocInstallationPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])</span>
+		<span class="n">normalizeScriptPath</span> <span class="o">=</span> <span class="n">pocInstallationPath</span> <span class="o">/</span> <span class="n">normalizeScript</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">normalizeScriptPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Normalize script &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">normalizeScriptPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">normalizeScriptPath</span><span class="p">))</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">commonCleanParameters</span> <span class="o">=</span>   <span class="n">normalizeScript</span> <span class="o">+</span> <span class="s2">&quot; clean&quot;</span>
+			<span class="n">commonSmudgeParameters</span> <span class="o">=</span>  <span class="n">normalizeScript</span> <span class="o">+</span> <span class="s2">&quot; smudge&quot;</span>
+			
+			<span class="k">for</span> <span class="n">fileFormat</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;rest&quot;</span><span class="p">,</span> <span class="s2">&quot;vhdl&quot;</span><span class="p">]:</span>
+				<span class="n">filterName</span> <span class="o">=</span>        <span class="s2">&quot;normalize&quot;</span>
+				<span class="n">cleanParameters</span> <span class="o">=</span>   <span class="n">commonCleanParameters</span>
+				<span class="n">smudgeParameters</span> <span class="o">=</span>  <span class="n">commonSmudgeParameters</span>
+				
+				<span class="k">if</span> <span class="p">(</span><span class="n">fileFormat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+					<span class="n">filterName</span> <span class="o">+=</span>       <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">fileFormat</span>
+					<span class="n">cleanParameters</span> <span class="o">+=</span>  <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">fileFormat</span>
+					<span class="n">smudgeParameters</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">fileFormat</span>
+					
+				<span class="n">git</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_git</span><span class="o">.</span><span class="n">GetGitConfig</span><span class="p">()</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">git</span><span class="o">.</span><span class="n">ValueFilterClean</span><span class="p">]</span> <span class="o">=</span>      <span class="n">filterName</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">git</span><span class="o">.</span><span class="n">ValueFilterParameters</span><span class="p">]</span> <span class="o">=</span> <span class="n">cleanParameters</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">Execute</span><span class="p">()</span>
+				
+				<span class="n">git</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_git</span><span class="o">.</span><span class="n">GetGitConfig</span><span class="p">()</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">git</span><span class="o">.</span><span class="n">ValueFilterSmudge</span><span class="p">]</span> <span class="o">=</span>     <span class="n">filterName</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">git</span><span class="o">.</span><span class="n">ValueFilterParameters</span><span class="p">]</span> <span class="o">=</span> <span class="n">smudgeParameters</span>
+				<span class="n">git</span><span class="o">.</span><span class="n">Execute</span><span class="p">()</span>
+		<span class="k">except</span> <span class="n">CommonException</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+			
+	<span class="k">def</span> <span class="nf">__UninstallGitHooks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  Uninstalling Git hooks...&quot;</span><span class="p">)</span>
+		<span class="n">pocInstallationPath</span> <span class="o">=</span>   <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])</span>
+		<span class="n">hookRunnerPath</span> <span class="o">=</span>        <span class="n">pocInstallationPath</span> <span class="o">/</span> <span class="s2">&quot;tools/git/hooks/run-hook.sh&quot;</span>
+		
+		<span class="n">gitDirectoryPath</span> <span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">__GetGitDirectory</span><span class="p">()</span>
+		<span class="n">gitHookDirectoryPath</span> <span class="o">=</span>  <span class="n">gitDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;hooks&quot;</span>
+		
+		<span class="k">for</span> <span class="n">hookName</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;pre-commit&quot;</span><span class="p">]:</span>
+			<span class="n">gitHookPath</span> <span class="o">=</span> <span class="n">gitHookDirectoryPath</span> <span class="o">/</span> <span class="n">hookName</span>
+			<span class="k">if</span> <span class="n">gitHookPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">gitHookPath</span><span class="o">.</span><span class="n">is_symlink</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">gitHookPath</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="o">==</span> <span class="n">hookRunnerPath</span><span class="p">)):</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  &#39;</span><span class="si">{0}</span><span class="s2">&#39; hook is configured for PoC. Deleting.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookName</span><span class="p">))</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="n">gitHookPath</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+					<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+						<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Cannot remove &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gitHookPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1"># TODO: check if file was copied -&gt; Hash compare?</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;  &#39;</span><span class="si">{0}</span><span class="s2">&#39; hook is in use by another script. Skipping.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookName</span><span class="p">))</span>
+					
+	<span class="k">def</span> <span class="nf">__InstallGitHooks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  Installing Git hooks...&quot;</span><span class="p">)</span>
+		<span class="n">pocInstallationPath</span> <span class="o">=</span>   <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])</span>
+		<span class="n">hookRunnerPath</span> <span class="o">=</span>        <span class="n">pocInstallationPath</span> <span class="o">/</span> <span class="s2">&quot;tools/git/hooks/run-hook.sh&quot;</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">hookRunnerPath</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">(</span><span class="s2">&quot;Runner script &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookRunnerPath</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hookRunnerPath</span><span class="p">))</span>
+			
+		<span class="n">gitDirectoryPath</span> <span class="o">=</span>      <span class="bp">self</span><span class="o">.</span><span class="n">__GetGitDirectory</span><span class="p">()</span>
+		<span class="n">gitHookDirectoryPath</span> <span class="o">=</span>  <span class="n">gitDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;hooks&quot;</span>
+		
+		<span class="k">for</span> <span class="n">hookName</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;pre-commit&quot;</span><span class="p">]:</span>
+			<span class="n">gitHookPath</span> <span class="o">=</span> <span class="n">gitHookDirectoryPath</span> <span class="o">/</span> <span class="n">hookName</span>
+			<span class="k">if</span> <span class="n">gitHookPath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">gitHookPath</span><span class="o">.</span><span class="n">is_symlink</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">gitHookPath</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="o">==</span> <span class="n">hookRunnerPath</span><span class="p">)):</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  &#39;</span><span class="si">{0}</span><span class="s2">&#39; hook is already configured for PoC.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookName</span><span class="p">))</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s2">&quot;  &#39;</span><span class="si">{0}</span><span class="s2">&#39; hook is already in use by another script.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookName</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogNormal</span><span class="p">(</span><span class="s2">&quot;  Setting &#39;</span><span class="si">{0}</span><span class="s2">&#39; hook for PoC...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookName</span><span class="p">))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;symlink &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; -&gt; &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gitHookPath</span><span class="p">,</span> <span class="n">hookRunnerPath</span><span class="p">))</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">gitHookPath</span><span class="o">.</span><span class="n">symlink_to</span><span class="p">(</span><span class="n">hookRunnerPath</span><span class="p">)</span>
+				<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+					<span class="c1"># if symlink fails, do a copy as backup solution</span>
+					<span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="s1">&#39;winerror&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1314</span><span class="p">:</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s2">&quot;copy &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; to &#39;</span><span class="si">{1!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hookRunnerPath</span><span class="p">,</span> <span class="n">gitHookPath</span><span class="p">))</span>
+						<span class="k">try</span><span class="p">:</span>
+							<span class="n">shutil_copy</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hookRunnerPath</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">gitHookPath</span><span class="p">))</span>
+						<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex2</span><span class="p">:</span>
+							<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">()</span> <span class="kn">from</span> <span class="nn">ex2</span>
+							
+	<span class="k">def</span> <span class="nf">__GetGitDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">gitRevParse</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_git</span><span class="o">.</span><span class="n">GetGitRevParse</span><span class="p">()</span>
+			<span class="n">gitRevParse</span><span class="o">.</span><span class="n">RevParseParameters</span><span class="p">[</span><span class="n">gitRevParse</span><span class="o">.</span><span class="n">SwitchGitDir</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">gitDirectory</span> <span class="o">=</span>      <span class="n">gitRevParse</span><span class="o">.</span><span class="n">Execute</span><span class="p">()</span>
+			<span class="n">gitDirectoryPath</span> <span class="o">=</span>  <span class="n">Path</span><span class="p">(</span><span class="n">gitDirectory</span><span class="p">)</span>
+		<span class="k">except</span> <span class="n">CommonException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ConfigurationException</span><span class="p">()</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="c1"># WORKAROUND: GIT REV-PARSE</span>
+		<span class="c1"># if the Git repository isn&#39;t a Git submodule AND the current working</span>
+		<span class="c1"># directory is the Git top-level directory, then &#39;rev-parse&#39; returns a</span>
+		<span class="c1"># relative path, otherwise the path is already absolute.</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">gitDirectoryPath</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()):</span>
+			<span class="n">pocInstallationPath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_host</span><span class="o">.</span><span class="n">PoCConfig</span><span class="p">[</span><span class="s1">&#39;INSTALL.PoC&#39;</span><span class="p">][</span><span class="s1">&#39;InstallationDirectory&#39;</span><span class="p">])</span>
+			<span class="n">gitDirectoryPath</span> <span class="o">=</span>    <span class="n">pocInstallationPath</span> <span class="o">/</span> <span class="n">gitDirectoryPath</span>
+			
+		<span class="k">return</span> <span class="n">gitDirectoryPath</span></div>
+		
+		
+<div class="viewcode-block" id="Git"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Git">[docs]</a><span class="k">class</span> <span class="nc">Git</span><span class="p">(</span><span class="n">ToolMixIn</span><span class="p">):</span>
+<div class="viewcode-block" id="Git.GetGitRevParse"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Git.GetGitRevParse">[docs]</a>	<span class="k">def</span> <span class="nf">GetGitRevParse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">git</span> <span class="o">=</span> <span class="n">GitRevParse</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">RevParseParameters</span><span class="p">[</span><span class="n">GitRevParse</span><span class="o">.</span><span class="n">Command</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		
+		<span class="k">return</span> <span class="n">git</span></div>
+		
+<div class="viewcode-block" id="Git.GetGitRevList"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Git.GetGitRevList">[docs]</a>	<span class="k">def</span> <span class="nf">GetGitRevList</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">git</span> <span class="o">=</span> <span class="n">GitRevList</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">RevListParameters</span><span class="p">[</span><span class="n">GitRevList</span><span class="o">.</span><span class="n">Command</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		
+		<span class="k">return</span> <span class="n">git</span></div>
+		
+<div class="viewcode-block" id="Git.GetGitDescribe"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Git.GetGitDescribe">[docs]</a>	<span class="k">def</span> <span class="nf">GetGitDescribe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">git</span> <span class="o">=</span> <span class="n">GitDescribe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">DescribeParameters</span><span class="p">[</span><span class="n">GitDescribe</span><span class="o">.</span><span class="n">Command</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		
+		<span class="k">return</span> <span class="n">git</span></div>
+		
+<div class="viewcode-block" id="Git.GetGitConfig"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.Git.GetGitConfig">[docs]</a>	<span class="k">def</span> <span class="nf">GetGitConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">git</span> <span class="o">=</span> <span class="n">GitConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="n">git</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">GitConfig</span><span class="o">.</span><span class="n">Command</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		
+		<span class="k">return</span> <span class="n">git</span></div></div>
+		
+		
+<div class="viewcode-block" id="GitSCM"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitSCM">[docs]</a><span class="k">class</span> <span class="nc">GitSCM</span><span class="p">(</span><span class="n">Executable</span><span class="p">,</span> <span class="n">ToolMixIn</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toolchain</span> <span class="p">:</span> <span class="n">ToolMixIn</span><span class="p">):</span>
+		<span class="n">ToolMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+			<span class="bp">self</span><span class="p">,</span> <span class="n">toolchain</span><span class="o">.</span><span class="n">_platform</span><span class="p">,</span> <span class="n">toolchain</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">,</span> <span class="n">toolchain</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span><span class="p">,</span> <span class="n">toolchain</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span>
+			<span class="n">toolchain</span><span class="o">.</span><span class="n">_logger</span><span class="p">)</span>
+			
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">):</span>     <span class="n">executablePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;git.exe&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span><span class="p">):</span>     <span class="n">executablePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;git&quot;</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">):</span>    <span class="n">executablePath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binaryDirectoryPath</span> <span class="o">/</span> <span class="s2">&quot;git&quot;</span>
+		<span class="k">else</span><span class="p">:</span>                           <span class="k">raise</span> <span class="n">PlatformNotSupportedException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span><span class="p">)</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_platform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">,</span> <span class="n">executablePath</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Executable</span><span class="p">]</span> <span class="o">=</span> <span class="n">executablePath</span>
+		
+<div class="viewcode-block" id="GitSCM.Clear"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitSCM.Clear">[docs]</a>	<span class="k">def</span> <span class="nf">Clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Executable</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
+				
+<div class="viewcode-block" id="GitSCM.Executable"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitSCM.Executable">[docs]</a>	<span class="k">class</span> <span class="nc">Executable</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ExecutableArgument</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+		
+<div class="viewcode-block" id="GitSCM.Switch_Version"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitSCM.Switch_Version">[docs]</a>	<span class="k">class</span> <span class="nc">Switch_Version</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;version&quot;</span></div>
+		
+	<span class="n">Parameters</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="n">Executable</span><span class="p">,</span>
+		<span class="n">Switch_Version</span>
+	<span class="p">)</span></div>
+	
+	
+<div class="viewcode-block" id="GitRevParse"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse">[docs]</a><span class="k">class</span> <span class="nc">GitRevParse</span><span class="p">(</span><span class="n">GitSCM</span><span class="p">):</span>
+<div class="viewcode-block" id="GitRevParse.Clear"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse.Clear">[docs]</a>	<span class="k">def</span> <span class="nf">Clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">RevParseParameters</span><span class="p">:</span>
+			<span class="c1"># if isinstance(param, ExecutableArgument):</span>
+			<span class="c1"># 	print(&quot;{0}&quot;.format(param.Value))</span>
+			<span class="c1"># elif isinstance(param, NamedCommandLineArgument):</span>
+			<span class="c1"># 	print(&quot;{0}&quot;.format(param.Name))</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+				<span class="c1"># print(&quot;  clearing: {0} = {1} to None&quot;.format(param.Name, param.Value))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">RevParseParameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
+				
+<div class="viewcode-block" id="GitRevParse.Command"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse.Command">[docs]</a>	<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CommandArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;rev-parse&quot;</span></div>
+		
+<div class="viewcode-block" id="GitRevParse.SwitchInsideWorkingTree"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse.SwitchInsideWorkingTree">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchInsideWorkingTree</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;is-inside-work-tree&quot;</span></div>
+		
+<div class="viewcode-block" id="GitRevParse.SwitchShowTopLevel"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse.SwitchShowTopLevel">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchShowTopLevel</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;show-toplevel&quot;</span></div>
+		
+<div class="viewcode-block" id="GitRevParse.SwitchGitDir"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse.SwitchGitDir">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchGitDir</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;git-dir&quot;</span></div>
+		
+	<span class="n">RevParseParameters</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="n">Command</span><span class="p">,</span>
+		<span class="n">SwitchInsideWorkingTree</span><span class="p">,</span>
+		<span class="n">SwitchShowTopLevel</span><span class="p">,</span>
+		<span class="n">SwitchGitDir</span>
+	<span class="p">)</span>
+	
+<div class="viewcode-block" id="GitRevParse.Execute"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevParse.Execute">[docs]</a>	<span class="k">def</span> <span class="nf">Execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">RevParseParameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Start process: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+			<span class="k">return</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GitException</span><span class="p">(</span><span class="s2">&quot;Failed to launch Git.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="c1"># FIXME: Replace GetReader with a shorter call to e.g. GetLine and/or GetLines</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">():</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="n">line</span>
+			
+		<span class="k">return</span> <span class="n">output</span></div></div>
+		
+<div class="viewcode-block" id="GitRevList"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevList">[docs]</a><span class="k">class</span> <span class="nc">GitRevList</span><span class="p">(</span><span class="n">GitSCM</span><span class="p">):</span>
+<div class="viewcode-block" id="GitRevList.Clear"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevList.Clear">[docs]</a>	<span class="k">def</span> <span class="nf">Clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">RevListParameters</span><span class="p">:</span>
+			<span class="c1"># if isinstance(param, ExecutableArgument):</span>
+			<span class="c1"># 	print(&quot;{0}&quot;.format(param.Value))</span>
+			<span class="c1"># elif isinstance(param, NamedCommandLineArgument):</span>
+			<span class="c1"># 	print(&quot;{0}&quot;.format(param.Name))</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+				<span class="c1"># print(&quot;  clearing: {0} = {1} to None&quot;.format(param.Name, param.Value))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">RevListParameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
+				
+<div class="viewcode-block" id="GitRevList.Command"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevList.Command">[docs]</a>	<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CommandArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;rev-list&quot;</span></div>
+		
+<div class="viewcode-block" id="GitRevList.SwitchTags"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevList.SwitchTags">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchTags</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;tags&quot;</span></div>
+		
+<div class="viewcode-block" id="GitRevList.SwitchMaxCount"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevList.SwitchMaxCount">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchMaxCount</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;max-count&quot;</span></div>
+		
+	<span class="n">RevListParameters</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="n">Command</span><span class="p">,</span>
+		<span class="n">SwitchTags</span><span class="p">,</span>
+		<span class="n">SwitchMaxCount</span>
+	<span class="p">)</span>
+	
+<div class="viewcode-block" id="GitRevList.Execute"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitRevList.Execute">[docs]</a>	<span class="k">def</span> <span class="nf">Execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">RevListParameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Start process: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+			<span class="k">return</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GitException</span><span class="p">(</span><span class="s2">&quot;Failed to launch Git.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="c1"># FIXME: Replace GetReader with a shorter call to e.g. GetLine and/or GetLines</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">():</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="n">line</span>
+			
+		<span class="k">return</span> <span class="n">output</span></div></div>
+		
+<div class="viewcode-block" id="GitDescribe"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitDescribe">[docs]</a><span class="k">class</span> <span class="nc">GitDescribe</span><span class="p">(</span><span class="n">GitSCM</span><span class="p">):</span>
+<div class="viewcode-block" id="GitDescribe.Clear"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitDescribe.Clear">[docs]</a>	<span class="k">def</span> <span class="nf">Clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">DescribeParameters</span><span class="p">:</span>
+			<span class="c1"># if isinstance(param, ExecutableArgument):</span>
+			<span class="c1"># 	print(&quot;{0}&quot;.format(param.Value))</span>
+			<span class="c1"># elif isinstance(param, NamedCommandLineArgument):</span>
+			<span class="c1"># 	print(&quot;{0}&quot;.format(param.Name))</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+				<span class="c1"># print(&quot;  clearing: {0} = {1} to None&quot;.format(param.Name, param.Value))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">DescribeParameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
+				
+<div class="viewcode-block" id="GitDescribe.Command"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitDescribe.Command">[docs]</a>	<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CommandArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;describe&quot;</span></div>
+		
+<div class="viewcode-block" id="GitDescribe.SwitchAbbrev"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitDescribe.SwitchAbbrev">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchAbbrev</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;abbrev&quot;</span></div>
+		
+<div class="viewcode-block" id="GitDescribe.SwitchTags"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitDescribe.SwitchTags">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchTags</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongTupleArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;tags&quot;</span></div>
+		
+	<span class="n">DescribeParameters</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="n">Command</span><span class="p">,</span>
+		<span class="n">SwitchAbbrev</span><span class="p">,</span>
+		<span class="n">SwitchTags</span>
+	<span class="p">)</span>
+	
+<div class="viewcode-block" id="GitDescribe.Execute"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitDescribe.Execute">[docs]</a>	<span class="k">def</span> <span class="nf">Execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">DescribeParameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Start process: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+			<span class="k">return</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GitException</span><span class="p">(</span><span class="s2">&quot;Failed to launch Git.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="c1"># FIXME: Replace GetReader with a shorter call to e.g. GetLine and/or GetLines</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">():</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="n">line</span>
+			
+		<span class="k">return</span> <span class="n">output</span></div></div>
+		
+<div class="viewcode-block" id="GitConfig"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig">[docs]</a><span class="k">class</span> <span class="nc">GitConfig</span><span class="p">(</span><span class="n">GitSCM</span><span class="p">):</span>
+<div class="viewcode-block" id="GitConfig.Clear"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.Clear">[docs]</a>	<span class="k">def</span> <span class="nf">Clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">:</span>
+			<span class="c1"># if isinstance(param, ExecutableArgument):</span>
+				<span class="c1"># print(&quot;{0}&quot;.format(param.Value))</span>
+			<span class="c1"># elif isinstance(param, NamedCommandLineArgument):</span>
+				<span class="c1"># print(&quot;{0}&quot;.format(param.Name))</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+				<span class="c1"># print(&quot;  clearing: {0} = {1} to None&quot;.format(param.Name, param.Value))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
+				
+<div class="viewcode-block" id="GitConfig.Command"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.Command">[docs]</a>	<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CommandArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;config&quot;</span></div>
+		
+<div class="viewcode-block" id="GitConfig.SwitchUnset"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.SwitchUnset">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchUnset</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;unset&quot;</span></div>
+		
+<div class="viewcode-block" id="GitConfig.SwitchRemoveSection"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.SwitchRemoveSection">[docs]</a>	<span class="k">class</span> <span class="nc">SwitchRemoveSection</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">LongFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;remove-section&quot;</span></div>
+		
+<div class="viewcode-block" id="GitConfig.ValueFilterClean"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.ValueFilterClean">[docs]</a>	<span class="k">class</span> <span class="nc">ValueFilterClean</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;clean&quot;</span>
+		<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;filter.</span><span class="si">{1}</span><span class="s2">.</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+		
+<div class="viewcode-block" id="GitConfig.ValueFilterSmudge"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.ValueFilterSmudge">[docs]</a>	<span class="k">class</span> <span class="nc">ValueFilterSmudge</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ValuedFlagArgument</span><span class="p">):</span>
+		<span class="n">_name</span> <span class="o">=</span>     <span class="s2">&quot;smudge&quot;</span>
+		<span class="n">_pattern</span> <span class="o">=</span>  <span class="s2">&quot;filter.</span><span class="si">{1}</span><span class="s2">.</span><span class="si">{0}</span><span class="s2">&quot;</span></div>
+		
+<div class="viewcode-block" id="GitConfig.ValueFilterParameters"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.ValueFilterParameters">[docs]</a>	<span class="k">class</span> <span class="nc">ValueFilterParameters</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">StringArgument</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+		
+	<span class="n">ConfigParameters</span> <span class="o">=</span> <span class="n">CommandLineArgumentList</span><span class="p">(</span>
+		<span class="n">Command</span><span class="p">,</span>
+		<span class="n">SwitchUnset</span><span class="p">,</span>
+		<span class="n">SwitchRemoveSection</span><span class="p">,</span>
+		<span class="n">ValueFilterClean</span><span class="p">,</span>
+		<span class="n">ValueFilterSmudge</span><span class="p">,</span>
+		<span class="n">ValueFilterParameters</span>
+	<span class="p">)</span>
+	
+<div class="viewcode-block" id="GitConfig.Execute"><a class="viewcode-back" href="../../PyInfrastructure/ToolChain.Git.html#ToolChain.Git.GitConfig.Execute">[docs]</a>	<span class="k">def</span> <span class="nf">Execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">parameterList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Parameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="n">parameterList</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConfigParameters</span><span class="o">.</span><span class="n">ToArgumentList</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;command: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+		
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dryrun</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogDryRun</span><span class="p">(</span><span class="s2">&quot;Start process: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)))</span>
+			<span class="k">return</span>
+			
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">StartProcess</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">GitException</span><span class="p">(</span><span class="s2">&quot;Failed to launch Git.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
+			
+		<span class="c1"># FIXME: Replace GetReader with a shorter call to e.g. GetLine and/or GetLines</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetReader</span><span class="p">():</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="n">line</span>
+			
+		<span class="k">return</span> <span class="n">output</span></div></div>
+		
+	<span class="c1"># LOCAL = git rev-parse @</span>
+	<span class="c1"># PS G:\git\PoC&gt; git rev-parse &quot;@&quot;</span>
+	<span class="c1"># 9c05494ef52c276dabec69dbf734a22f65939305</span>
+	
+	<span class="c1"># REMOTE = git rev-parse @{u}</span>
+	<span class="c1"># PS G:\git\PoC&gt; git rev-parse &quot;@{u}&quot;</span>
+	<span class="c1"># 0ff166a40010c1b85a5ab655eea0148474f680c6</span>
+	
+	<span class="c1"># MERGEBASE = git merge-base @ @{u}</span>
+	<span class="c1"># PS G:\git\PoC&gt; git merge-base &quot;@&quot; &quot;@{u}&quot;</span>
+	<span class="c1"># 0ff166a40010c1b85a5ab655eea0148474f680c6</span>
+	
+	<span class="c1"># if (local == remote):   return &quot;Up-to-date&quot;</span>
+	<span class="c1"># elif (local == base):   return &quot;Need to pull&quot;</span>
+	<span class="c1"># elif (remote == base):  return &quot;Need to push&quot;</span>
+	<span class="c1"># else:                   return &quot;divergent&quot;</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

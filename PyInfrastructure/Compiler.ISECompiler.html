@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compiler.ISECompiler &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>Compiler.ISECompiler &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="Compiler" href="Compiler.html"/>
+        <link rel="next" title="Compiler.LSECompiler" href="Compiler.LSECompiler.html"/>
+        <link rel="prev" title="Compiler" href="Compiler.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Compiler.html">Compiler</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Compiler.ISECompiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compiler.LSECompiler.html">Compiler.LSECompiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compiler.QuartusCompiler.html">Compiler.QuartusCompiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compiler.VivadoCompiler.html">Compiler.VivadoCompiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compiler.XCICompiler.html">Compiler.XCICompiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compiler.XCOCompiler.html">Compiler.XCOCompiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compiler.XSTCompiler.html">Compiler.XSTCompiler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +184,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="Compiler.html">Compiler</a> &raquo;</li>
+        
       <li>Compiler.ISECompiler</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/Compiler.ISECompiler.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/Compiler.ISECompiler.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,7 +216,7 @@ Base class for all Compiler classes.</li>
 </ul>
 <dl class="class">
 <dt id="Compiler.ISECompiler.Compiler">
-<em class="property">class </em><code class="descclassname">Compiler.ISECompiler.</code><code class="descname">Compiler</code><span class="sig-paren">(</span><em>host</em>, <em>dryRun</em>, <em>noCleanUp</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/ISECompiler.html#Compiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Compiler.ISECompiler.</code><code class="descname">Compiler</code><span class="sig-paren">(</span><em>host</em>, <em>dryRun</em>, <em>noCleanUp</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler/ISECompiler.html#Compiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-1d05a004349d067c110ffbf70127fffcf8231615.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Compiler</p></object>
@@ -206,17 +233,17 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._PrepareCompiler">
-<code class="descname">_PrepareCompiler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/ISECompiler.html#Compiler._PrepareCompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._PrepareCompiler" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareCompiler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler/ISECompiler.html#Compiler._PrepareCompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._PrepareCompiler" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler.RunAll">
-<code class="descname">RunAll</code><span class="sig-paren">(</span><em>fqnList</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/ISECompiler.html#Compiler.RunAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.RunAll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RunAll</code><span class="sig-paren">(</span><em>fqnList</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler/ISECompiler.html#Compiler.RunAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.RunAll" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler.Run">
-<code class="descname">Run</code><span class="sig-paren">(</span><em>entity</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler/ISECompiler.html#Compiler.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.Run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Run</code><span class="sig-paren">(</span><em>entity</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler/ISECompiler.html#Compiler.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.Run" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -308,17 +335,17 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler.PrintCompileReportLine">
-<code class="descname">PrintCompileReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.PrintCompileReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.PrintCompileReportLine" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PrintCompileReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler.PrintCompileReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.PrintCompileReportLine" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler.PrintOverallCompileReport">
-<code class="descname">PrintOverallCompileReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.PrintOverallCompileReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.PrintOverallCompileReport" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PrintOverallCompileReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler.PrintOverallCompileReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.PrintOverallCompileReport" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler.TryRun">
-<code class="descname">TryRun</code><span class="sig-paren">(</span><em>netlist</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.TryRun" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TryRun</code><span class="sig-paren">(</span><em>netlist</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler.TryRun" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to run a testbench. Skip skipable exceptions by printing the error and its cause.</p>
 </dd></dl>
 
@@ -339,7 +366,7 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._AddRulesFiles">
-<code class="descname">_AddRulesFiles</code><span class="sig-paren">(</span><em>rulesFilePath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._AddRulesFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._AddRulesFiles" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_AddRulesFiles</code><span class="sig-paren">(</span><em>rulesFilePath</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._AddRulesFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._AddRulesFiles" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -349,17 +376,17 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._ExecuteCopyTasks">
-<code class="descname">_ExecuteCopyTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteCopyTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ExecuteCopyTasks" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ExecuteCopyTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._ExecuteCopyTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ExecuteCopyTasks" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._ExecuteDeleteTasks">
-<code class="descname">_ExecuteDeleteTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteDeleteTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ExecuteDeleteTasks" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ExecuteDeleteTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._ExecuteDeleteTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ExecuteDeleteTasks" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._ExecuteReplaceTasks">
-<code class="descname">_ExecuteReplaceTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ExecuteReplaceTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ExecuteReplaceTasks" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ExecuteReplaceTasks</code><span class="sig-paren">(</span><em>tasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._ExecuteReplaceTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ExecuteReplaceTasks" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -375,17 +402,17 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._ParseCopyRules">
-<code class="descname">_ParseCopyRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>copyTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseCopyRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ParseCopyRules" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ParseCopyRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>copyTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._ParseCopyRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ParseCopyRules" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._ParseDeleteRules">
-<code class="descname">_ParseDeleteRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>deleteTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseDeleteRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ParseDeleteRules" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ParseDeleteRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>deleteTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._ParseDeleteRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ParseDeleteRules" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._ParseReplaceRules">
-<code class="descname">_ParseReplaceRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>replaceTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._ParseReplaceRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ParseReplaceRules" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ParseReplaceRules</code><span class="sig-paren">(</span><em>rawList</em>, <em>replaceTasks</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._ParseReplaceRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._ParseReplaceRules" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -395,7 +422,7 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._PrepareCompilerEnvironment">
-<code class="descname">_PrepareCompilerEnvironment</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._PrepareCompilerEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._PrepareCompilerEnvironment" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareCompilerEnvironment</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._PrepareCompilerEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._PrepareCompilerEnvironment" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -421,27 +448,27 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._RunPostCopy">
-<code class="descname">_RunPostCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPostCopy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunPostCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._RunPostCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPostCopy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._RunPostDelete">
-<code class="descname">_RunPostDelete</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostDelete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPostDelete" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunPostDelete</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._RunPostDelete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPostDelete" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._RunPostReplace">
-<code class="descname">_RunPostReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPostReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPostReplace" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunPostReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._RunPostReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPostReplace" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._RunPreCopy">
-<code class="descname">_RunPreCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPreCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPreCopy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunPreCopy</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._RunPreCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPreCopy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._RunPreReplace">
-<code class="descname">_RunPreReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._RunPreReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPreReplace" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunPreReplace</code><span class="sig-paren">(</span><em>netlist</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._RunPreReplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._RunPreReplace" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -451,7 +478,7 @@ Base class for all Compiler classes.</li>
 
 <dl class="method">
 <dt id="Compiler.ISECompiler.Compiler._WriteSpecialSectionIntoConfig">
-<code class="descname">_WriteSpecialSectionIntoConfig</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Compiler.html#Compiler._WriteSpecialSectionIntoConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._WriteSpecialSectionIntoConfig" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_WriteSpecialSectionIntoConfig</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Compiler.html#Compiler._WriteSpecialSectionIntoConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Compiler.ISECompiler.Compiler._WriteSpecialSectionIntoConfig" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -472,13 +499,22 @@ Base class for all Compiler classes.</li>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Compiler.LSECompiler.html" class="btn btn-neutral float-right" title="Compiler.LSECompiler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Compiler.html" class="btn btn-neutral" title="Compiler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -500,25 +536,25 @@ Base class for all Compiler classes.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

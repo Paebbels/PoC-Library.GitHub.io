@@ -1,8 +1,0 @@
-.. _TODO:
-
-ToDo List
-#########
-
-This is a list of collected ToDo items from all over the documentation.
-
-.. todolist::

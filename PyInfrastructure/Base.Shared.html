@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Base.Shared &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>Base.Shared &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="Base" href="Base.html"/>
+        <link rel="next" title="Compiler" href="Compiler.html"/>
+        <link rel="prev" title="Base.Project" href="Base.Project.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Base.html">Base</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Base.Exceptions.html">Base.Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Executable.html">Base.Executable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Logging.html">Base.Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Project.html">Base.Project</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Base.Shared</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +182,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="Base.html">Base</a> &raquo;</li>
+        
       <li>Base.Shared</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/Base.Shared.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/Base.Shared.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -194,7 +219,7 @@ Convert <em>n</em> seconds to a <a class="reference external" href="https://docs
 </ul>
 <dl class="class">
 <dt id="Base.Shared.Shared">
-<em class="property">class </em><code class="descclassname">Base.Shared.</code><code class="descname">Shared</code><span class="sig-paren">(</span><em>host: Base.IHost</em>, <em>dryRun</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Shared.</code><code class="descname">Shared</code><span class="sig-paren">(</span><em>host: Base.IHost</em>, <em>dryRun</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for Simulator and Compiler.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -260,48 +285,48 @@ Convert <em>n</em> seconds to a <a class="reference external" href="https://docs
 
 <dl class="method">
 <dt id="Base.Shared.Shared._GetTimeDeltaSinceLastEvent">
-<code class="descname">_GetTimeDeltaSinceLastEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._GetTimeDeltaSinceLastEvent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._GetTimeDeltaSinceLastEvent" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_GetTimeDeltaSinceLastEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._GetTimeDeltaSinceLastEvent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._GetTimeDeltaSinceLastEvent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._PrepareEnvironment">
-<code class="descname">_PrepareEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._PrepareEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._PrepareEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._PrepareEnvironment_PurgeDirectory">
-<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._PrepareEnvironment_PurgeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._PrepareEnvironment_PurgeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._PrepareEnvironment_CreatingDirectory">
-<code class="descname">_PrepareEnvironment_CreatingDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._PrepareEnvironment_CreatingDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment_CreatingDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareEnvironment_CreatingDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._PrepareEnvironment_CreatingDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment_CreatingDirectory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._PrepareEnvironment_ChangeDirectory">
-<code class="descname">_PrepareEnvironment_ChangeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._PrepareEnvironment_ChangeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment_ChangeDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareEnvironment_ChangeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._PrepareEnvironment_ChangeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._PrepareEnvironment_ChangeDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change working directory to temporary path &#8216;temp/&lt;tool&gt;&#8217;.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._Prepare">
-<code class="descname">_Prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._Prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._Prepare" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_Prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._Prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._Prepare" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._CreatePoCProject">
-<code class="descname">_CreatePoCProject</code><span class="sig-paren">(</span><em>projectName</em>, <em>board</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._CreatePoCProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._CreatePoCProject" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_CreatePoCProject</code><span class="sig-paren">(</span><em>projectName</em>, <em>board</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._CreatePoCProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._CreatePoCProject" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._AddFileListFile">
-<code class="descname">_AddFileListFile</code><span class="sig-paren">(</span><em>fileListFilePath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._AddFileListFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._AddFileListFile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_AddFileListFile</code><span class="sig-paren">(</span><em>fileListFilePath</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._AddFileListFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._AddFileListFile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Shared.Shared._GetHDLParameters">
-<code class="descname">_GetHDLParameters</code><span class="sig-paren">(</span><em>configSectionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#Shared._GetHDLParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._GetHDLParameters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_GetHDLParameters</code><span class="sig-paren">(</span><em>configSectionName</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#Shared._GetHDLParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.Shared._GetHDLParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse option &#8216;HDLParameters&#8217; for Verilog Parameters / VHDL Generics.</p>
 </dd></dl>
 
@@ -372,7 +397,7 @@ Convert <em>n</em> seconds to a <a class="reference external" href="https://docs
 <p><strong>Functions</strong></p>
 <dl class="function">
 <dt id="Base.Shared.to_time">
-<code class="descclassname">Base.Shared.</code><code class="descname">to_time</code><span class="sig-paren">(</span><em>seconds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Shared.html#to_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.to_time" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Base.Shared.</code><code class="descname">to_time</code><span class="sig-paren">(</span><em>seconds</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Shared.html#to_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Shared.to_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert <em>n</em> seconds to a <a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> with this pattern: &#8220;{min}:{sec:02}&#8221;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -404,13 +429,22 @@ Convert <em>n</em> seconds to a <a class="reference external" href="https://docs
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Compiler.html" class="btn btn-neutral float-right" title="Compiler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Base.Project.html" class="btn btn-neutral" title="Base.Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -432,25 +466,25 @@ Convert <em>n</em> seconds to a <a class="reference external" href="https://docs
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

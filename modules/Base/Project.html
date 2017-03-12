@@ -1,0 +1,925 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Base.Project &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../index.html"/>
+        <link rel="up" title="Base" href="../Base.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../Base.html">Base</a> &raquo;</li>
+        
+      <li>Base.Project</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Base.Project</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    TODO</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">enum</span>               <span class="k">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
+<span class="kn">from</span> <span class="nn">pathlib</span>            <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">flags</span>              <span class="k">import</span> <span class="n">Flags</span>
+
+<span class="kn">from</span> <span class="nn">lib.Functions</span>      <span class="k">import</span> <span class="n">merge</span>
+<span class="kn">from</span> <span class="nn">Base.Exceptions</span>    <span class="k">import</span> <span class="n">CommonException</span>
+<span class="kn">from</span> <span class="nn">Parser.FilesParser</span> <span class="k">import</span> <span class="n">VHDLSourceFileMixIn</span><span class="p">,</span> <span class="n">VerilogSourceFileMixIn</span><span class="p">,</span> <span class="n">CocotbSourceFileMixIn</span>
+<span class="kn">from</span> <span class="nn">DataBase.Config</span>    <span class="k">import</span> <span class="n">Board</span><span class="p">,</span> <span class="n">Device</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;FileTypes&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;ToolChain&#39;</span><span class="p">,</span> <span class="s1">&#39;Tool&#39;</span><span class="p">,</span> <span class="s1">&#39;VHDLVersion&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Project&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;FileSet&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;VHDLLibrary&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;File&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ProjectFile&#39;</span><span class="p">,</span>    <span class="s1">&#39;ConstraintFile&#39;</span><span class="p">,</span>     <span class="s1">&#39;SettingsFile&#39;</span><span class="p">,</span>     <span class="s1">&#39;SourceFile&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;VHDLSourceFile&#39;</span><span class="p">,</span> <span class="s1">&#39;VerilogSourceFile&#39;</span><span class="p">,</span>  <span class="s1">&#39;PythonSourceFile&#39;</span><span class="p">,</span> <span class="s1">&#39;CocotbSourceFile&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<span class="c1"># TODO: nested filesets</span>
+
+<div class="viewcode-block" id="FileTypes"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.FileTypes">[docs]</a><span class="k">class</span> <span class="nc">FileTypes</span><span class="p">(</span><span class="n">Flags</span><span class="p">):</span>
+	<span class="n">__no_flags_name__</span> <span class="o">=</span>   <span class="s2">&quot;Unknown&quot;</span>
+	<span class="n">__all_flags_name__</span> <span class="o">=</span>  <span class="s2">&quot;Any&quot;</span>
+	<span class="n">Text</span> <span class="o">=</span>                <span class="p">()</span>
+	<span class="n">ProjectFile</span> <span class="o">=</span>         <span class="p">()</span>
+	<span class="n">FileListFile</span> <span class="o">=</span>        <span class="p">()</span>
+	<span class="n">RulesFile</span> <span class="o">=</span>           <span class="p">()</span>
+	<span class="n">SourceFile</span> <span class="o">=</span>          <span class="p">()</span>
+	<span class="n">VHDLSourceFile</span> <span class="o">=</span>      <span class="p">()</span>
+	<span class="n">VerilogSourceFile</span> <span class="o">=</span>   <span class="p">()</span>
+	<span class="n">PythonSourceFile</span> <span class="o">=</span>    <span class="p">()</span>
+	<span class="n">CocotbSourceFile</span> <span class="o">=</span>    <span class="p">()</span>
+	<span class="n">ConstraintFile</span> <span class="o">=</span>      <span class="p">()</span>
+	<span class="n">UcfConstraintFile</span> <span class="o">=</span>   <span class="p">()</span>
+	<span class="n">XdcConstraintFile</span> <span class="o">=</span>   <span class="p">()</span>
+	<span class="n">SdcConstraintFile</span> <span class="o">=</span>   <span class="p">()</span>
+	<span class="n">LdcConstraintFile</span> <span class="o">=</span>   <span class="p">()</span>
+	<span class="n">SettingsFile</span> <span class="o">=</span>        <span class="p">()</span>
+	<span class="n">QuartusSettingsFile</span> <span class="o">=</span> <span class="p">()</span>
+	
+	<span class="n">__FILE_EXTENSION_MAPPING__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">Text</span><span class="p">:</span>                 <span class="s2">&quot;txt&quot;</span><span class="p">,</span>
+		<span class="n">FileListFile</span><span class="p">:</span>         <span class="s2">&quot;files&quot;</span><span class="p">,</span>
+		<span class="n">RulesFile</span><span class="p">:</span>            <span class="s2">&quot;rules&quot;</span><span class="p">,</span>
+		<span class="n">VHDLSourceFile</span><span class="p">:</span>       <span class="s2">&quot;vhdl&quot;</span><span class="p">,</span>
+		<span class="n">VerilogSourceFile</span><span class="p">:</span>    <span class="s2">&quot;v&quot;</span><span class="p">,</span>
+		<span class="n">PythonSourceFile</span><span class="p">:</span>     <span class="s2">&quot;py&quot;</span><span class="p">,</span>
+		<span class="n">CocotbSourceFile</span><span class="p">:</span>     <span class="s2">&quot;py&quot;</span><span class="p">,</span>
+		<span class="n">UcfConstraintFile</span><span class="p">:</span>    <span class="s2">&quot;ucf&quot;</span><span class="p">,</span>
+		<span class="n">XdcConstraintFile</span><span class="p">:</span>    <span class="s2">&quot;xdc&quot;</span><span class="p">,</span>
+		<span class="n">SdcConstraintFile</span><span class="p">:</span>    <span class="s2">&quot;sdc&quot;</span><span class="p">,</span>
+		<span class="n">LdcConstraintFile</span><span class="p">:</span>    <span class="s2">&quot;ldc&quot;</span><span class="p">,</span>
+		<span class="n">QuartusSettingsFile</span><span class="p">:</span>  <span class="s2">&quot;qsf&quot;</span>
+	<span class="p">}</span>
+	
+<div class="viewcode-block" id="FileTypes.Extension"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.FileTypes.Extension">[docs]</a>	<span class="k">def</span> <span class="nf">Extension</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__FILE_EXTENSION_MAPPING__</span><span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Generic file type.&quot;</span><span class="p">)</span></div>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+		
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="Environment"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Environment">[docs]</a><span class="k">class</span> <span class="nc">Environment</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="n">Any</span> <span class="o">=</span>         <span class="mi">0</span>
+	<span class="n">Simulation</span> <span class="o">=</span>  <span class="mi">1</span>
+	<span class="n">Synthesis</span> <span class="o">=</span>   <span class="mi">2</span></div>
+	
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="ToolChain"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.ToolChain">[docs]</a><span class="k">class</span> <span class="nc">ToolChain</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="n">Any</span> <span class="o">=</span>                <span class="mi">0</span>
+	<span class="n">Aldec_ActiveHDL</span> <span class="o">=</span>   <span class="mi">10</span>
+	<span class="n">Aldec_RivieraPRO</span> <span class="o">=</span>  <span class="mi">15</span>
+	<span class="n">Altera_Quartus</span> <span class="o">=</span>    <span class="mi">20</span>
+	<span class="n">Altera_ModelSim</span> <span class="o">=</span>   <span class="mi">21</span>
+	<span class="n">Cocotb</span> <span class="o">=</span>            <span class="mi">30</span>
+	<span class="n">GHDL_GTKWave</span> <span class="o">=</span>      <span class="mi">40</span>
+	<span class="n">Intel_Quartus</span> <span class="o">=</span>     <span class="mi">50</span>
+	<span class="n">Intel_ModelSim</span> <span class="o">=</span>    <span class="mi">51</span>
+	<span class="n">Lattice_Diamond</span> <span class="o">=</span>   <span class="mi">60</span>
+	<span class="n">Lattice_Synplify</span> <span class="o">=</span>  <span class="mi">65</span>
+	<span class="n">Mentor_ModelSim</span> <span class="o">=</span>   <span class="mi">70</span>
+	<span class="n">Mentor_QuestaSim</span> <span class="o">=</span>  <span class="mi">75</span>
+	<span class="n">Xilinx_ISE</span> <span class="o">=</span>        <span class="mi">80</span>
+	<span class="n">Xilinx_PlanAhead</span> <span class="o">=</span>  <span class="mi">81</span>
+	<span class="n">Xilinx_Vivado</span> <span class="o">=</span>     <span class="mi">82</span></div>
+	
+	
+<span class="nd">@unique</span>
+<div class="viewcode-block" id="Tool"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Tool">[docs]</a><span class="k">class</span> <span class="nc">Tool</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>      <span class="c1"># ID     Short Name       Long Name</span>
+	<span class="n">Any</span> <span class="o">=</span>                 <span class="mi">0</span>
+	<span class="n">Aldec_aSim</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;ASIM&quot;</span><span class="p">,</span>   <span class="s2">&quot;Aldec Active-HDL&quot;</span><span class="p">,</span>         <span class="s2">&quot;Aldec Active-HDL&quot;</span><span class="p">)</span>
+	<span class="n">Aldec_rPro</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;RPRO&quot;</span><span class="p">,</span>   <span class="s2">&quot;Aldec Riviera-PRO&quot;</span><span class="p">,</span>        <span class="s2">&quot;Aldec Riviera-PRO&quot;</span><span class="p">)</span>
+	<span class="n">Altera_Quartus_Map</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;QMAP&quot;</span><span class="p">,</span>   <span class="s2">&quot;Quartus Map&quot;</span><span class="p">,</span>              <span class="s2">&quot;Altera Quartus Map (quartus_map)&quot;</span><span class="p">)</span>
+	<span class="c1"># ModelSim Altera Edition?</span>
+	<span class="n">Cocotb_QuestaSim</span> <span class="o">=</span>   <span class="p">(</span><span class="s2">&quot;COCO&quot;</span><span class="p">,</span>   <span class="s2">&quot;Cocotb&quot;</span><span class="p">,</span>                   <span class="s2">&quot;Coroutine Cosimulation Testbench (Cocotb)&quot;</span><span class="p">)</span>
+	<span class="n">GHDL</span> <span class="o">=</span>               <span class="p">(</span><span class="s2">&quot;GHDL&quot;</span><span class="p">,</span>   <span class="s2">&quot;GHDL&quot;</span><span class="p">,</span>                     <span class="s2">&quot;GHDL&quot;</span><span class="p">)</span>
+	<span class="n">GTKwave</span> <span class="o">=</span>            <span class="p">(</span><span class="s2">&quot;GTKW&quot;</span><span class="p">,</span>   <span class="s2">&quot;GTKWave&quot;</span><span class="p">,</span>                  <span class="s2">&quot;GTKWave&quot;</span><span class="p">)</span>
+	<span class="n">Lattice_LSE</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;LSE&quot;</span><span class="p">,</span>    <span class="s2">&quot;Lattice LSE&quot;</span><span class="p">,</span>              <span class="s2">&quot;Lattice Synthesis Engine (LSE)&quot;</span><span class="p">)</span>
+	<span class="n">Mentor_vSim</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;VSIM&quot;</span><span class="p">,</span>   <span class="s2">&quot;Mentor ModelSim&quot;</span><span class="p">,</span>          <span class="s2">&quot;Mentor Graphics ModelSim (vSim)&quot;</span><span class="p">)</span>
+	<span class="c1"># Mentor ModelSim?</span>
+	<span class="n">Xilinx_iSim</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;XSIM&quot;</span><span class="p">,</span>   <span class="s2">&quot;Xilinx iSim&quot;</span><span class="p">,</span>              <span class="s2">&quot;Xilinx ISE Simulator (iSim)&quot;</span><span class="p">)</span>
+	<span class="n">Xilinx_XST</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;XST&quot;</span><span class="p">,</span>    <span class="s2">&quot;Xilinx XST&quot;</span><span class="p">,</span>               <span class="s2">&quot;Xilinx Synthesis Tool (XST)&quot;</span><span class="p">)</span>
+	<span class="n">Xilinx_CoreGen</span> <span class="o">=</span>     <span class="p">(</span><span class="s2">&quot;CG&quot;</span><span class="p">,</span>     <span class="s2">&quot;Xilinx CoreGen&quot;</span><span class="p">,</span>           <span class="s2">&quot;Xilinx Core Generator Tool (CoreGen)&quot;</span><span class="p">)</span>
+	<span class="n">Xilinx_xSim</span> <span class="o">=</span>        <span class="p">(</span><span class="s2">&quot;XSIM&quot;</span><span class="p">,</span>   <span class="s2">&quot;Xilinx xSim&quot;</span><span class="p">,</span>              <span class="s2">&quot;Xilinx Vivado Simulator (xSim)&quot;</span><span class="p">)</span>
+	<span class="n">Xilinx_Synth</span> <span class="o">=</span>       <span class="p">(</span><span class="s2">&quot;VIVADO&quot;</span><span class="p">,</span> <span class="s2">&quot;Xilinx Vivado Synthesis&quot;</span><span class="p">,</span>  <span class="s2">&quot;Xilinx Vivado Synthesis (synth)&quot;</span><span class="p">)</span>
+	<span class="n">Xilinx_IPCatalog</span> <span class="o">=</span>   <span class="p">(</span><span class="s2">&quot;XCI&quot;</span><span class="p">,</span>    <span class="s2">&quot;Xilinx Vivado IP Catalog&quot;</span><span class="p">,</span> <span class="s2">&quot;Xilinx Vivado IP Catalog&quot;</span><span class="p">)</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Patch the embedded MAP dictionary&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__TOOL_ID_MAPPINGS__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="p">((</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__TOOL_ID_MAPPINGS__</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+				
+	<span class="n">__TOOL_ID_MAPPINGS__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;QMAP&quot;</span><span class="p">:</span>   <span class="n">Altera_Quartus_Map</span><span class="p">,</span>
+		<span class="s2">&quot;LSE&quot;</span><span class="p">:</span>    <span class="n">Lattice_LSE</span><span class="p">,</span>
+		<span class="s2">&quot;CG&quot;</span><span class="p">:</span>     <span class="n">Xilinx_CoreGen</span><span class="p">,</span>
+		<span class="s2">&quot;XST&quot;</span><span class="p">:</span>    <span class="n">Xilinx_XST</span><span class="p">,</span>
+		<span class="s2">&quot;XCI&quot;</span><span class="p">:</span>    <span class="n">Xilinx_IPCatalog</span>
+	<span class="p">}</span>
+	
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__TOOL_ID_MAPPINGS__</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Value &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; cannot be parsed to member of </span><span class="si">{1}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+			
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ShortName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">LongName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ShortName</span>
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span></div>
+	
+	
+<div class="viewcode-block" id="VHDLVersion"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.VHDLVersion">[docs]</a><span class="k">class</span> <span class="nc">VHDLVersion</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+	<span class="n">Any</span> <span class="o">=</span>                 <span class="mi">0</span>
+	<span class="n">VHDL87</span> <span class="o">=</span>             <span class="mi">87</span>
+	<span class="n">VHDL93</span> <span class="o">=</span>             <span class="mi">93</span>
+	<span class="n">VHDL2002</span> <span class="o">=</span>         <span class="mi">2002</span>
+	<span class="n">VHDL2008</span> <span class="o">=</span>         <span class="mi">2008</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Patch the embedded MAP dictionary&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__VHDL_VERSION_MAPPINGS__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="p">((</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__VHDL_VERSION_MAPPINGS__</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+				
+	<span class="n">__VHDL_VERSION_MAPPINGS__</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="mi">87</span><span class="p">:</span>     <span class="n">VHDL87</span><span class="p">,</span>
+		<span class="mi">93</span><span class="p">:</span>     <span class="n">VHDL93</span><span class="p">,</span>
+		<span class="mi">2</span><span class="p">:</span>      <span class="n">VHDL2002</span><span class="p">,</span>
+		<span class="mi">8</span><span class="p">:</span>      <span class="n">VHDL2008</span><span class="p">,</span>
+		<span class="mi">1987</span><span class="p">:</span>   <span class="n">VHDL87</span><span class="p">,</span>
+		<span class="mi">1993</span><span class="p">:</span>   <span class="n">VHDL93</span><span class="p">,</span>
+		<span class="mi">2002</span><span class="p">:</span>   <span class="n">VHDL2002</span><span class="p">,</span>
+		<span class="mi">2008</span><span class="p">:</span>   <span class="n">VHDL2008</span><span class="p">,</span>
+		<span class="s2">&quot;87&quot;</span><span class="p">:</span>   <span class="n">VHDL87</span><span class="p">,</span>
+		<span class="s2">&quot;93&quot;</span><span class="p">:</span>   <span class="n">VHDL93</span><span class="p">,</span>
+		<span class="s2">&quot;02&quot;</span><span class="p">:</span>   <span class="n">VHDL2002</span><span class="p">,</span>
+		<span class="s2">&quot;08&quot;</span><span class="p">:</span>   <span class="n">VHDL2008</span><span class="p">,</span>
+		<span class="s2">&quot;1987&quot;</span><span class="p">:</span> <span class="n">VHDL87</span><span class="p">,</span>
+		<span class="s2">&quot;1993&quot;</span><span class="p">:</span> <span class="n">VHDL93</span><span class="p">,</span>
+		<span class="s2">&quot;2002&quot;</span><span class="p">:</span> <span class="n">VHDL2002</span><span class="p">,</span>
+		<span class="s2">&quot;2008&quot;</span><span class="p">:</span> <span class="n">VHDL2008</span>
+	<span class="p">}</span>
+	
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__VHDL_VERSION_MAPPINGS__</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Value &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; cannot be parsed to member of </span><span class="si">{1}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+			
+	<span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span>  <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span> <span class="ow">is</span> <span class="n">VHDLVersion</span><span class="o">.</span><span class="n">Any</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">other</span> <span class="ow">is</span> <span class="n">VHDLVersion</span><span class="o">.</span><span class="n">Any</span><span class="p">)):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;VHDL&#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+		
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project">[docs]</a><span class="k">class</span> <span class="nc">Project</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span>                  <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rootDirectory</span> <span class="o">=</span>         <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span> <span class="o">=</span>              <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="o">=</span>        <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_vhdlLibraries</span> <span class="o">=</span>         <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_externalVHDLLibraries</span> <span class="o">=</span> <span class="p">[]</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_board</span> <span class="o">=</span>                 <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_device</span> <span class="o">=</span>                <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_environment</span> <span class="o">=</span>           <span class="n">Environment</span><span class="o">.</span><span class="n">Any</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span> <span class="o">=</span>             <span class="n">ToolChain</span><span class="o">.</span><span class="n">Any</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_tool</span> <span class="o">=</span>                  <span class="n">Tool</span><span class="o">.</span><span class="n">Any</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_vhdlVersion</span> <span class="o">=</span>           <span class="n">VHDLVersion</span><span class="o">.</span><span class="n">Any</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">CreateFileSet</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">setDefault</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">RootDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rootDirectory</span>
+		
+	<span class="nd">@RootDirectory</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">RootDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rootDirectory</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Board</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_board</span>
+		
+	<span class="nd">@Board</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Board</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Board</span><span class="p">)):</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;board&#39; is not of type Board.&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_board</span> <span class="o">=</span>   <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_device</span> <span class="o">=</span>  <span class="n">value</span><span class="o">.</span><span class="n">Device</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Device</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span>
+		
+	<span class="nd">@Device</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Device</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Device</span><span class="p">)):</span>
+			<span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="s2">&quot;custom&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;device&#39; is not of type str or Device.&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_board</span> <span class="o">=</span>   <span class="n">board</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_device</span> <span class="o">=</span>  <span class="n">board</span><span class="o">.</span><span class="n">Device</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Environment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_environment</span>
+	<span class="nd">@Environment</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_environment</span> <span class="o">=</span> <span class="n">value</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ToolChain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>          <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span>
+	<span class="nd">@ToolChain</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">ToolChain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span> <span class="o">=</span> <span class="n">value</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Tool</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>               <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tool</span>
+	<span class="nd">@Tool</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_tool</span> <span class="o">=</span> <span class="n">value</span>
+	
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">VHDLVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdlVersion</span>
+	<span class="nd">@VHDLVersion</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">VHDLVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdlVersion</span> <span class="o">=</span> <span class="n">value</span>
+	
+	
+<div class="viewcode-block" id="Project.CreateFileSet"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.CreateFileSet">[docs]</a>	<span class="k">def</span> <span class="nf">CreateFileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">setDefault</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">fs</span> <span class="o">=</span>                      <span class="n">FileSet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span>    <span class="n">fs</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">setDefault</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="o">=</span>  <span class="n">fs</span></div>
+			
+<div class="viewcode-block" id="Project.AddFileSet"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.AddFileSet">[docs]</a>	<span class="k">def</span> <span class="nf">AddFileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileSet</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileSet</span><span class="p">,</span> <span class="n">FileSet</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;fileSet&#39; is not of type Base.Project.FileSet.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FileSets</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Project already contains this fileSet.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span><span class="o">.</span><span class="n">Name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+			<span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Project already contains a fileset named &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fileSet</span><span class="o">.</span><span class="n">Name</span><span class="p">))</span>
+		<span class="n">fileSet</span><span class="o">.</span><span class="n">Project</span> <span class="o">=</span> <span class="bp">self</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="p">[</span><span class="n">fileSet</span><span class="o">.</span><span class="n">Name</span><span class="p">]</span> <span class="o">=</span> <span class="n">fileSet</span></div>
+		
+		<span class="c1"># TODO: assign all files to this project</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FileSets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">DefaultFileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span>
+		
+	<span class="nd">@DefaultFileSet</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">DefaultFileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>      <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Fileset &#39;</span><span class="si">{0}</span><span class="s2">&#39; is not in this project.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">FileSet</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FileSets</span><span class="p">):</span>              <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Fileset &#39;</span><span class="si">{0}</span><span class="s2">&#39; is not associated to this project.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>                                           <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported parameter type for &#39;value&#39;.&quot;</span><span class="p">)</span>
+		
+<div class="viewcode-block" id="Project.AddFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.AddFile">[docs]</a>	<span class="k">def</span> <span class="nf">AddFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="c1"># print(&quot;Project.AddFile: file={0}&quot;.format(file))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">File</span><span class="p">)):</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;file&#39; is not of type Base.Project.File.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Neither the parameter &#39;file&#39; set nor a default file set is given.&quot;</span><span class="p">)</span>
+			<span class="n">fileSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileSet</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">fileSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="p">[</span><span class="n">fileSet</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileSet</span><span class="p">,</span> <span class="n">FileSet</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FileSets</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Fileset &#39;</span><span class="si">{0}</span><span class="s2">&#39; is not associated to this project.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fileSet</span><span class="o">.</span><span class="n">Name</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>                                           <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported parameter type for &#39;fileSet&#39;.&quot;</span><span class="p">)</span>
+		<span class="n">fileSet</span><span class="o">.</span><span class="n">AddFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">file</span></div>
+		
+<div class="viewcode-block" id="Project.AddSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.AddSourceFile">[docs]</a>	<span class="k">def</span> <span class="nf">AddSourceFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="c1"># print(&quot;Project.AddSourceFile: file={0}&quot;.format(file))</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">SourceFile</span><span class="p">)):</span>          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;file&#39; is not of type Base.Project.SourceFile.&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Neither the parameter &#39;file&#39; set nor a default file set is given.&quot;</span><span class="p">)</span>
+			<span class="n">fileSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileSet</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">fileSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSets</span><span class="p">[</span><span class="n">fileSet</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fileSet</span><span class="p">,</span> <span class="n">FileSet</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FileSets</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Fileset &#39;</span><span class="si">{0}</span><span class="s2">&#39; is not associated to this project.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fileSet</span><span class="o">.</span><span class="n">Name</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>                                           <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported parameter type for &#39;fileSet&#39;.&quot;</span><span class="p">)</span>
+		<span class="n">fileSet</span><span class="o">.</span><span class="n">AddSourceFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">file</span></div>
+		
+<div class="viewcode-block" id="Project.Files"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.Files">[docs]</a>	<span class="k">def</span> <span class="nf">Files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">fileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Neither the parameter &#39;fileSet&#39; set nor a default file set is given.&quot;</span><span class="p">)</span>
+			<span class="n">fileSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultFileSet</span>
+		<span class="c1"># print(&quot;init Project.Files generator&quot;)</span>
+		<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">fileSet</span><span class="o">.</span><span class="n">Files</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">FileType</span> <span class="ow">in</span> <span class="n">fileType</span><span class="p">):</span>
+				<span class="k">yield</span> <span class="n">file</span></div>
+				
+<div class="viewcode-block" id="Project.ExtractVHDLLibrariesFromVHDLSourceFiles"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.ExtractVHDLLibrariesFromVHDLSourceFiles">[docs]</a>	<span class="k">def</span> <span class="nf">ExtractVHDLLibrariesFromVHDLSourceFiles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Files</span><span class="p">(</span><span class="n">fileType</span><span class="o">=</span><span class="n">FileTypes</span><span class="o">.</span><span class="n">VHDLSourceFile</span><span class="p">):</span>
+			<span class="n">libraryName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">LibraryName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">libraryName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdlLibraries</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_vhdlLibraries</span><span class="p">[</span><span class="n">libraryName</span><span class="p">]</span> <span class="o">=</span> <span class="n">library</span> <span class="o">=</span>  <span class="n">VHDLLibrary</span><span class="p">(</span><span class="n">libraryName</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">library</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdlLibraries</span><span class="p">[</span><span class="n">libraryName</span><span class="p">]</span>
+			<span class="n">library</span><span class="o">.</span><span class="n">AddFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">VHDLLibrary</span> <span class="o">=</span> <span class="n">library</span></div>
+			
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">VHDLLibraries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>          <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vhdlLibraries</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ExternalVHDLLibraries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_externalVHDLLibraries</span>
+	
+<div class="viewcode-block" id="Project.AddExternalVHDLLibraries"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.AddExternalVHDLLibraries">[docs]</a>	<span class="k">def</span> <span class="nf">AddExternalVHDLLibraries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">library</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_externalVHDLLibraries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">library</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Project.GetVariables"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.GetVariables">[docs]</a>	<span class="k">def</span> <span class="nf">GetVariables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;ProjectName&quot;</span><span class="p">:</span>      <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
+			<span class="s2">&quot;RootDirectory&quot;</span><span class="p">:</span>    <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rootDirectory</span><span class="p">),</span>
+			<span class="s2">&quot;Environment&quot;</span><span class="p">:</span>      <span class="bp">self</span><span class="o">.</span><span class="n">_environment</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+			<span class="s2">&quot;ToolChain&quot;</span><span class="p">:</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_toolChain</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+			<span class="s2">&quot;Tool&quot;</span><span class="p">:</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_tool</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+			<span class="s2">&quot;VHDLVersion&quot;</span><span class="p">:</span>      <span class="bp">self</span><span class="o">.</span><span class="n">_vhdlVersion</span><span class="o">.</span><span class="n">value</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_board</span><span class="o">.</span><span class="n">GetVariables</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">GetVariables</span><span class="p">())</span></div>
+		
+<div class="viewcode-block" id="Project.pprint"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.Project.pprint">[docs]</a>	<span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">_indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span>  <span class="s2">&quot;Project: </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span>  <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;o-Settings:</span><span class="se">\n</span><span class="s2">&quot;</span>
+		<span class="n">buffer</span> <span class="o">+=</span>  <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;| o-Board: </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_board</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span>  <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;| o-Device: </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">fileSet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FileSets</span><span class="p">:</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;o-FileSet: </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fileSet</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">fileSet</span><span class="o">.</span><span class="n">Files</span><span class="p">:</span>
+				<span class="n">buffer</span> <span class="o">+=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;| o-</span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">FileName</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;o-VHDL Libraries:</span><span class="se">\n</span><span class="s2">&quot;</span>
+		<span class="k">for</span> <span class="n">lib</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">VHDLLibraries</span><span class="p">:</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;| o-</span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">Files</span><span class="p">:</span>
+				<span class="n">buffer</span> <span class="o">+=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;| | o-</span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+		<span class="n">buffer</span> <span class="o">+=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;o-External VHDL libraries:&quot;</span>
+		<span class="k">for</span> <span class="n">lib</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_externalVHDLLibraries</span><span class="p">:</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{0}</span><span class="s2">| o-</span><span class="si">{1}</span><span class="s2"> -&gt; </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_indent</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">buffer</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
+		
+<div class="viewcode-block" id="FileSet"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.FileSet">[docs]</a><span class="k">class</span> <span class="nc">FileSet</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="c1"># print(&quot;FileSet.__init__: name={0}  project={0}&quot;.format(name, project))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span>    <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">project</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_files</span> <span class="o">=</span>   <span class="p">[]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+		
+	<span class="nd">@Project</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Project</span><span class="p">):</span>              <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type Base.Project.Project.&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span>
+		
+<div class="viewcode-block" id="FileSet.AddFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.FileSet.AddFile">[docs]</a>	<span class="k">def</span> <span class="nf">AddFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+		<span class="c1"># print(&quot;FileSet.AddFile: file={0}&quot;.format(file))</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">SourceFile</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">AddSourceFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+			<span class="k">return</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">File</span><span class="p">)):</span>              <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported parameter type for &#39;file&#39;.&quot;</span><span class="p">)</span>
+		<span class="n">file</span><span class="o">.</span><span class="n">FileSet</span> <span class="o">=</span> <span class="bp">self</span>
+		<span class="n">file</span><span class="o">.</span><span class="n">Project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+		
+		<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">FileName</span> <span class="o">==</span> <span class="n">file</span><span class="o">.</span><span class="n">FileName</span><span class="p">):</span>  <span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+			
+<div class="viewcode-block" id="FileSet.AddSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.FileSet.AddSourceFile">[docs]</a>	<span class="k">def</span> <span class="nf">AddSourceFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+		<span class="c1"># print(&quot;FileSet.AddSourceFile: file={0}&quot;.format(file))</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">SourceFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">SourceFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">SourceFile</span><span class="p">)):</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported parameter type for &#39;file&#39;.&quot;</span><span class="p">)</span>
+		<span class="n">file</span><span class="o">.</span><span class="n">FileSet</span> <span class="o">=</span> <span class="bp">self</span>
+		<span class="n">file</span><span class="o">.</span><span class="n">Project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+		
+		<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">FileName</span> <span class="o">==</span> <span class="n">file</span><span class="o">.</span><span class="n">FileName</span><span class="p">):</span>  <span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
+		
+<div class="viewcode-block" id="VHDLLibrary"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.VHDLLibrary">[docs]</a><span class="k">class</span> <span class="nc">VHDLLibrary</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span>    <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">project</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_files</span> <span class="o">=</span>   <span class="p">[]</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+		
+	<span class="nd">@Project</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Project</span><span class="p">):</span>              <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type Base.Project.Project.&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span>
+		
+<div class="viewcode-block" id="VHDLLibrary.AddFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.VHDLLibrary.AddFile">[docs]</a>	<span class="k">def</span> <span class="nf">AddFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">VHDLSourceFile</span><span class="p">)):</span>      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported parameter type for &#39;file&#39;.&quot;</span><span class="p">)</span>
+		<span class="n">file</span><span class="o">.</span><span class="n">VHDLLibrary</span> <span class="o">=</span> <span class="bp">self</span>
+		
+		<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">FileName</span> <span class="o">==</span> <span class="n">file</span><span class="o">.</span><span class="n">FileName</span><span class="p">):</span>  <span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+			
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
+		
+		
+<div class="viewcode-block" id="File"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.File">[docs]</a><span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">Unknown</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="o">=</span>  <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span>  <span class="kc">None</span>
+		
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span>    <span class="n">file</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">project</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_fileSet</span> <span class="o">=</span> <span class="n">fileSet</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+		
+	<span class="nd">@Project</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">Project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Project</span><span class="p">):</span>              <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Parameter &#39;value&#39; is not of type Base.Project.Project.&quot;</span><span class="p">)</span>
+		<span class="c1"># print(&quot;File.Project(setter): value={0}&quot;.format(value))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileSet</span>
+		
+	<span class="nd">@FileSet</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">FileSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>                              <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;value&#39; is None&quot;</span><span class="p">)</span>
+		<span class="c1"># print(&quot;File.FileSet(setter): value={0}&quot;.format(value))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_fileSet</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">Project</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FileType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FileType</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">FileName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>
+		
+<div class="viewcode-block" id="File.Open"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.File.Open">[docs]</a>	<span class="k">def</span> <span class="nf">Open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>    <span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;File &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Error while opening file &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
+			
+<div class="viewcode-block" id="File.ReadFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.File.ReadFile">[docs]</a>	<span class="k">def</span> <span class="nf">ReadFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">Open</span><span class="p">()</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">CommonException</span><span class="p">(</span><span class="s2">&quot;Error while reading file &#39;</span><span class="si">{0!s}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
+			
+	<span class="c1"># interface method for FilesParserMixIn</span>
+<div class="viewcode-block" id="File._ReadContent"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.File._ReadContent">[docs]</a>	<span class="k">def</span> <span class="nf">_ReadContent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ReadFile</span><span class="p">()</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="ProjectFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.ProjectFile">[docs]</a><span class="k">class</span> <span class="nc">ProjectFile</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">ProjectFile</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Project file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="SourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.SourceFile">[docs]</a><span class="k">class</span> <span class="nc">SourceFile</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">SourceFile</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Source file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="ConstraintFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.ConstraintFile">[docs]</a><span class="k">class</span> <span class="nc">ConstraintFile</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">ConstraintFile</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Constraint file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="SettingsFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.SettingsFile">[docs]</a><span class="k">class</span> <span class="nc">SettingsFile</span><span class="p">(</span><span class="n">File</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">SettingsFile</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Settings file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="VHDLSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.VHDLSourceFile">[docs]</a><span class="k">class</span> <span class="nc">VHDLSourceFile</span><span class="p">(</span><span class="n">SourceFile</span><span class="p">,</span> <span class="n">VHDLSourceFileMixIn</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">VHDLSourceFile</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">vhdlLibraryName</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="n">fileSet</span><span class="p">)</span>
+		<span class="n">VHDLSourceFileMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">vhdlLibraryName</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+		
+<div class="viewcode-block" id="VHDLSourceFile.Parse"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.VHDLSourceFile.Parse">[docs]</a>	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_Parse</span><span class="p">()</span><span class="c1"># only available via late binding</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;VHDL file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="VerilogSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.VerilogSourceFile">[docs]</a><span class="k">class</span> <span class="nc">VerilogSourceFile</span><span class="p">(</span><span class="n">SourceFile</span><span class="p">,</span> <span class="n">VerilogSourceFileMixIn</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">VerilogSourceFile</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fileSet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="n">fileSet</span><span class="p">)</span>
+		<span class="n">VerilogSourceFileMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Verilog file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="PythonSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.PythonSourceFile">[docs]</a><span class="k">class</span> <span class="nc">PythonSourceFile</span><span class="p">(</span><span class="n">SourceFile</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">PythonSourceFile</span>
+	
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Python file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="CocotbSourceFile"><a class="viewcode-back" href="../../PyInfrastructure/Base.Project.html#Base.Project.CocotbSourceFile">[docs]</a><span class="k">class</span> <span class="nc">CocotbSourceFile</span><span class="p">(</span><span class="n">PythonSourceFile</span><span class="p">,</span> <span class="n">CocotbSourceFileMixIn</span><span class="p">):</span>
+	<span class="n">_FileType</span> <span class="o">=</span> <span class="n">FileTypes</span><span class="o">.</span><span class="n">CocotbSourceFile</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">fileSet</span><span class="o">=</span><span class="n">fileSet</span><span class="p">)</span>
+		<span class="n">CocotbSourceFileMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;Cocotb file: &#39;</span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span></div>
+		
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

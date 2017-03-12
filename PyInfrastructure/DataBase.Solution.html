@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>DataBase.Solution &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>DataBase.Solution &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="DataBase" href="DataBase.html"/>
+        <link rel="next" title="DataBase.TestCase" href="DataBase.TestCase.html"/>
+        <link rel="prev" title="DataBase.Entity" href="DataBase.Entity.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="DataBase.html">DataBase</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DataBase.Config.html">DataBase.Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.Entity.html">DataBase.Entity</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DataBase.Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataBase.TestCase.html">DataBase.TestCase</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +181,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="DataBase.html">DataBase</a> &raquo;</li>
+        
       <li>DataBase.Solution</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/DataBase.Solution.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/DataBase.Solution.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -209,7 +233,7 @@ Undocumented.</li>
 </ul>
 <dl class="class">
 <dt id="DataBase.Solution.Base">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Base</code><span class="sig-paren">(</span><em>host</em>, <em>sectionPrefix</em>, <em>sectionID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Base" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Base</code><span class="sig-paren">(</span><em>host</em>, <em>sectionPrefix</em>, <em>sectionID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Base" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for Repository, Solution and Project.
 It implements ILazyLoadable.</p>
 <p class="rubric">Inheritance</p>
@@ -233,7 +257,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="method">
 <dt id="DataBase.Solution.Base._Load">
-<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Base._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Base._Load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Base._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Base._Load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implement this method for early loading.</p>
 </dd></dl>
 
@@ -251,7 +275,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.Repository">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Repository</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Repository</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-42103ff5bf869d22921e422899d7a892a2fdbce8.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Repository</p></object>
@@ -263,22 +287,22 @@ It implements ILazyLoadable.</p>
 
 <dl class="method">
 <dt id="DataBase.Solution.Repository._Load">
-<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository._Load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Repository._Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository._Load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.Repository._LazyLoadable_Load">
-<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Repository._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.Repository.AddSolution">
-<code class="descname">AddSolution</code><span class="sig-paren">(</span><em>solutionID</em>, <em>solutionName</em>, <em>solutionRootPath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository.AddSolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository.AddSolution" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AddSolution</code><span class="sig-paren">(</span><em>solutionID</em>, <em>solutionName</em>, <em>solutionRootPath</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Repository.AddSolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository.AddSolution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.Repository.RemoveSolution">
-<code class="descname">RemoveSolution</code><span class="sig-paren">(</span><em>solution</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Repository.RemoveSolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository.RemoveSolution" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RemoveSolution</code><span class="sig-paren">(</span><em>solution</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Repository.RemoveSolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Repository.RemoveSolution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -315,29 +339,29 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.Solution">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Solution</code><span class="sig-paren">(</span><em>host</em>, <em>slnID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Solution</code><span class="sig-paren">(</span><em>host</em>, <em>slnID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-ac814cfda5cc65106825f790753b00e529c26f7b.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Solution</p></object>
 <p class="rubric">Members</p>
 <dl class="method">
 <dt id="DataBase.Solution.Solution.Register">
-<code class="descname">Register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution.Register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.Register" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Solution.Register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.Register" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.Solution.Unregister">
-<code class="descname">Unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution.Unregister"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.Unregister" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Solution.Unregister"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.Unregister" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.Solution.CreateFiles">
-<code class="descname">CreateFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution.CreateFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.CreateFiles" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CreateFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Solution.CreateFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution.CreateFiles" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.Solution._LazyLoadable_Load">
-<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Solution._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_LazyLoadable_Load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Solution._LazyLoadable_Load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Solution._LazyLoadable_Load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -390,7 +414,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.Project">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Project" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.Project" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-a4d108113cb3644c6672a3a5af42cb264c860058.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Project</p></object>
@@ -435,7 +459,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.ISEProject">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">ISEProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#ISEProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.ISEProject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">ISEProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#ISEProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.ISEProject" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-c07d48ded5e805c87133e73736665a7f0c4ccc81.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of ISEProject</p></object>
@@ -480,7 +504,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.VivadoProject">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">VivadoProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#VivadoProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.VivadoProject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">VivadoProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#VivadoProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.VivadoProject" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-0111347df1a4026b0b5ea0cffd132d44724a8b0e.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of VivadoProject</p></object>
@@ -525,7 +549,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.QuartusProject">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">QuartusProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#QuartusProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.QuartusProject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">QuartusProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#QuartusProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.QuartusProject" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-a40811538adaf84a101c3da74f4455c7e7c58130.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of QuartusProject</p></object>
@@ -570,7 +594,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.LatticeProject">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">LatticeProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#LatticeProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.LatticeProject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">LatticeProject</code><span class="sig-paren">(</span><em>host</em>, <em>prjID</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#LatticeProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.LatticeProject" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-5f1cfd579a2744b76c8742a8c55bb91ebcab941a.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of LatticeProject</p></object>
@@ -615,7 +639,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.VirtualProject">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">VirtualProject</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#VirtualProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.VirtualProject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">VirtualProject</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#VirtualProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.VirtualProject" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-9819d9a0380978240e9f4992b993b05b65c131fb.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of VirtualProject</p></object>
@@ -729,7 +753,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.FileListFile">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">FileListFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">FileListFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#FileListFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-e0780cb4e92903f455a10a0ac137057677869037.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of FileListFile</p></object>
@@ -759,17 +783,17 @@ It implements ILazyLoadable.</p>
 
 <dl class="method">
 <dt id="DataBase.Solution.FileListFile.Parse">
-<code class="descname">Parse</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.Parse" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Parse</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#FileListFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.Parse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.FileListFile.CopyFilesToFileSet">
-<code class="descname">CopyFilesToFileSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile.CopyFilesToFileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.CopyFilesToFileSet" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CopyFilesToFileSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#FileListFile.CopyFilesToFileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.CopyFilesToFileSet" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="DataBase.Solution.FileListFile.CopyExternalLibraries">
-<code class="descname">CopyExternalLibraries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#FileListFile.CopyExternalLibraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.CopyExternalLibraries" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CopyExternalLibraries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#FileListFile.CopyExternalLibraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.FileListFile.CopyExternalLibraries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -886,7 +910,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="class">
 <dt id="DataBase.Solution.RulesFile">
-<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">RulesFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#RulesFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.RulesFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">DataBase.Solution.</code><code class="descname">RulesFile</code><span class="sig-paren">(</span><em>file</em>, <em>project=None</em>, <em>fileSet=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#RulesFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.RulesFile" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-47d21443d6c2faf472f97c1a21dd8063aa0900cf.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of RulesFile</p></object>
@@ -987,7 +1011,7 @@ It implements ILazyLoadable.</p>
 
 <dl class="method">
 <dt id="DataBase.Solution.RulesFile.Parse">
-<code class="descname">Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/DataBase/Solution.html#RulesFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.RulesFile.Parse" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/DataBase/Solution.html#RulesFile.Parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#DataBase.Solution.RulesFile.Parse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1008,13 +1032,22 @@ It implements ILazyLoadable.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DataBase.TestCase.html" class="btn btn-neutral float-right" title="DataBase.TestCase" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DataBase.Entity.html" class="btn btn-neutral" title="DataBase.Entity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -1036,25 +1069,25 @@ It implements ILazyLoadable.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

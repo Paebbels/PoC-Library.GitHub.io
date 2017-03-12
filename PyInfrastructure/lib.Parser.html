@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>lib.Parser &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>lib.Parser &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="lib" href="lib.html"/>
+        <link rel="next" title="lib.SphinxExtensions" href="lib.SphinxExtensions.html"/>
+        <link rel="prev" title="lib.Functions" href="lib.Functions.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="lib.html">lib</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lib.CodeDOM.html">lib.CodeDOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.Decorators.html">lib.Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.ExtendedConfigParser.html">lib.ExtendedConfigParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.Functions.html">lib.Functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">lib.Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.SphinxExtensions.html">lib.SphinxExtensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.pyAttribute.html">lib.pyAttribute</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +184,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="lib.html">lib</a> &raquo;</li>
+        
       <li>lib.Parser</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/lib.Parser.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/lib.Parser.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -222,7 +249,7 @@ Undocumented.</li>
 </ul>
 <dl class="exception">
 <dt id="lib.Parser.ParserException">
-<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">ParserException</code><a class="reference internal" href="../_modules/lib/Parser.html#ParserException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.ParserException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">ParserException</code><a class="reference internal" href="../modules/lib/Parser.html#ParserException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.ParserException" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-cf85cd27a5fe425d0e2e85ed9f4b4039239a0ac0.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of ParserException</p></object>
@@ -243,7 +270,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="exception">
 <dt id="lib.Parser.MismatchingParserResult">
-<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">MismatchingParserResult</code><a class="reference internal" href="../_modules/lib/Parser.html#MismatchingParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.MismatchingParserResult" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">MismatchingParserResult</code><a class="reference internal" href="../modules/lib/Parser.html#MismatchingParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.MismatchingParserResult" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-003dc0fa108f5b8fae3818fa4b96d96d2ad1d9de.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of MismatchingParserResult</p></object>
@@ -270,7 +297,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="exception">
 <dt id="lib.Parser.EmptyChoiseParserResult">
-<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">EmptyChoiseParserResult</code><a class="reference internal" href="../_modules/lib/Parser.html#EmptyChoiseParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.EmptyChoiseParserResult" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">EmptyChoiseParserResult</code><a class="reference internal" href="../modules/lib/Parser.html#EmptyChoiseParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.EmptyChoiseParserResult" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-41dd0f1878c406e893dbed13f90b9b10eea7a665.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of EmptyChoiseParserResult</p></object>
@@ -297,7 +324,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="exception">
 <dt id="lib.Parser.MatchingParserResult">
-<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">MatchingParserResult</code><a class="reference internal" href="../_modules/lib/Parser.html#MatchingParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.MatchingParserResult" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">MatchingParserResult</code><a class="reference internal" href="../modules/lib/Parser.html#MatchingParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.MatchingParserResult" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-737533eae97fb094833b055e9ab14fbdb3cfa2b5.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of MatchingParserResult</p></object>
@@ -324,7 +351,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="exception">
 <dt id="lib.Parser.GreedyMatchingParserResult">
-<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">GreedyMatchingParserResult</code><a class="reference internal" href="../_modules/lib/Parser.html#GreedyMatchingParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.GreedyMatchingParserResult" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">lib.Parser.</code><code class="descname">GreedyMatchingParserResult</code><a class="reference internal" href="../modules/lib/Parser.html#GreedyMatchingParserResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.GreedyMatchingParserResult" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-290acb15de5314ae3adb26209c593bcce84cbc5f.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GreedyMatchingParserResult</p></object>
@@ -351,7 +378,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.SourceCodePosition">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">SourceCodePosition</code><span class="sig-paren">(</span><em>row</em>, <em>column</em>, <em>absolute</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#SourceCodePosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.SourceCodePosition" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">SourceCodePosition</code><span class="sig-paren">(</span><em>row</em>, <em>column</em>, <em>absolute</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#SourceCodePosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.SourceCodePosition" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-9d14dbb700e8364db7a7033f1bea86992b111c1c.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of SourceCodePosition</p></object>
@@ -360,7 +387,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.Token">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">Token</code><span class="sig-paren">(</span><em>previousToken</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#Token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Token" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">Token</code><span class="sig-paren">(</span><em>previousToken</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#Token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Token" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-84c6885d2231726eca8a183c9d3abb3c6701ce81.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Token</p></object>
@@ -379,7 +406,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.SuperToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">SuperToken</code><span class="sig-paren">(</span><em>startToken</em>, <em>endToken=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#SuperToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.SuperToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">SuperToken</code><span class="sig-paren">(</span><em>startToken</em>, <em>endToken=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#SuperToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.SuperToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-edecb76da810285fc80e0fac9930f62ae28fb267.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of SuperToken</p></object>
@@ -398,7 +425,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.ValuedToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">ValuedToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#ValuedToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.ValuedToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">ValuedToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#ValuedToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.ValuedToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-f2751b2f4574255c5f5f632cc5a2acc9bbd96565.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of ValuedToken</p></object>
@@ -417,7 +444,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.StartOfDocumentToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">StartOfDocumentToken</code><a class="reference internal" href="../_modules/lib/Parser.html#StartOfDocumentToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.StartOfDocumentToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">StartOfDocumentToken</code><a class="reference internal" href="../modules/lib/Parser.html#StartOfDocumentToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.StartOfDocumentToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-06d67aaa79272d5467283209398f8ca05c1d1550.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of StartOfDocumentToken</p></object>
@@ -436,7 +463,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.CharacterToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">CharacterToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#CharacterToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.CharacterToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">CharacterToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#CharacterToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.CharacterToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-4fa6de093969d150a96e1a0d19618abd2f5207fd.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of CharacterToken</p></object>
@@ -455,7 +482,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.SpaceToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">SpaceToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#SpaceToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.SpaceToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">SpaceToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#SpaceToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.SpaceToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-26b800778fa36cf7048603a01503ab41fbbd58c2.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of SpaceToken</p></object>
@@ -474,7 +501,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.DelimiterToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">DelimiterToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#DelimiterToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.DelimiterToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">DelimiterToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#DelimiterToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.DelimiterToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-3e19dbd87a881b0328b86841b09a7446c9579df1.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of DelimiterToken</p></object>
@@ -493,7 +520,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.NumberToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">NumberToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#NumberToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.NumberToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">NumberToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#NumberToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.NumberToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-06cb73b23ad47bbef08353af64b7a8257d0ac2b5.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of NumberToken</p></object>
@@ -512,7 +539,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.StringToken">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">StringToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#StringToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.StringToken" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">StringToken</code><span class="sig-paren">(</span><em>previousToken</em>, <em>value</em>, <em>start</em>, <em>end=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#StringToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.StringToken" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-f475a8f1ad33e7e3678dc9c06583e9b1c3b11fe5.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of StringToken</p></object>
@@ -531,14 +558,14 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="class">
 <dt id="lib.Parser.Tokenizer">
-<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">Tokenizer</code><a class="reference internal" href="../_modules/lib/Parser.html#Tokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lib.Parser.</code><code class="descname">Tokenizer</code><a class="reference internal" href="../modules/lib/Parser.html#Tokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-19bb418836859e366f970f1c9db6b7bb58966125.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Tokenizer</p></object>
 <p class="rubric">Members</p>
 <dl class="class">
 <dt id="lib.Parser.Tokenizer.TokenKind">
-<em class="property">class </em><code class="descname">TokenKind</code><a class="reference internal" href="../_modules/lib/Parser.html#Tokenizer.TokenKind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer.TokenKind" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">TokenKind</code><a class="reference internal" href="../modules/lib/Parser.html#Tokenizer.TokenKind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer.TokenKind" title="Permalink to this definition">¶</a></dt>
 <dd><p>An enumeration.</p>
 <dl class="attribute">
 <dt id="lib.Parser.Tokenizer.TokenKind.SpaceChars">
@@ -569,12 +596,12 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="staticmethod">
 <dt id="lib.Parser.Tokenizer.GetCharacterTokenizer">
-<em class="property">static </em><code class="descclassname">Tokenizer.</code><code class="descname">GetCharacterTokenizer</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#Tokenizer.GetCharacterTokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer.GetCharacterTokenizer" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descclassname">Tokenizer.</code><code class="descname">GetCharacterTokenizer</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#Tokenizer.GetCharacterTokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer.GetCharacterTokenizer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="lib.Parser.Tokenizer.GetWordTokenizer">
-<em class="property">classmethod </em><code class="descclassname">Tokenizer.</code><code class="descname">GetWordTokenizer</code><span class="sig-paren">(</span><em>iterable</em>, <em>alphaCharacters='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'</em>, <em>numberCharacters='0123456789'</em>, <em>whiteSpaceCharacters=' \t'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lib/Parser.html#Tokenizer.GetWordTokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer.GetWordTokenizer" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descclassname">Tokenizer.</code><code class="descname">GetWordTokenizer</code><span class="sig-paren">(</span><em>iterable</em>, <em>alphaCharacters='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'</em>, <em>numberCharacters='0123456789'</em>, <em>whiteSpaceCharacters=' \t'</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/lib/Parser.html#Tokenizer.GetWordTokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#lib.Parser.Tokenizer.GetWordTokenizer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -595,13 +622,22 @@ set self.__traceback__ to tb and return self.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lib.SphinxExtensions.html" class="btn btn-neutral float-right" title="lib.SphinxExtensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lib.Functions.html" class="btn btn-neutral" title="lib.Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -623,25 +659,25 @@ set self.__traceback__ to tb and return self.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

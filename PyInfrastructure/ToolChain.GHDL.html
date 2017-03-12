@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ToolChain.GHDL &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>ToolChain.GHDL &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="ToolChain" href="ToolChain.html"/>
+        <link rel="next" title="ToolChain.GNU" href="ToolChain.GNU.html"/>
+        <link rel="prev" title="ToolChain.Altera.Quartus" href="ToolChain.Altera.Quartus.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ToolChain.html">ToolChain</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Aldec.html">ToolChain.Aldec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Altera.html">ToolChain.Altera</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ToolChain.GHDL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.GNU.html">ToolChain.GNU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.GTKWave.html">ToolChain.GTKWave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Git.html">ToolChain.Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Intel.html">ToolChain.Intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Lattice.html">ToolChain.Lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Mentor.html">ToolChain.Mentor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.PoC.html">ToolChain.PoC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Synopsys.html">ToolChain.Synopsys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Windows.html">ToolChain.Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToolChain.Xilinx.html">ToolChain.Xilinx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +190,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="ToolChain.html">ToolChain</a> &raquo;</li>
+        
       <li>ToolChain.GHDL</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/ToolChain.GHDL.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/ToolChain.GHDL.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -213,7 +246,7 @@ Undocumented.</li>
 </ul>
 <dl class="exception">
 <dt id="ToolChain.GHDL.GHDLException">
-<em class="property">exception </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLException" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-d83c3b2ccd20c0f78295fe5365c7f0d8c767f606.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GHDLException</p></object>
@@ -247,7 +280,7 @@ Undocumented.</li>
 
 <dl class="exception">
 <dt id="ToolChain.GHDL.GHDLReanalyzeException">
-<em class="property">exception </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLReanalyzeException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLReanalyzeException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLReanalyzeException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLReanalyzeException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLReanalyzeException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLReanalyzeException" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-387c6e3858a092458633b1eea99c490cd436999a.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GHDLReanalyzeException</p></object>
@@ -281,7 +314,7 @@ Undocumented.</li>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.Configuration">
-<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>host: Base.IHost</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-495d237e09f0aab76a7bf4814bc52a0bb8dd780b.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Configuration</p></object>
@@ -312,47 +345,47 @@ Undocumented.</li>
 
 <dl class="attribute">
 <dt id="ToolChain.GHDL.Configuration._template">
-<code class="descname">_template</code><em class="property"> = {'Windows': {'INSTALL.GHDL': {'Version': '0.34-dev', 'Backend': 'mcode', 'Runtime': 'gnatgpl32', 'SectionName': ('%{PathWithRoot}#${Version}-${Runtime}-${Backend}', None), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', 'C:/Tools/GHDL/${Version}-${Runtime}-${Backend}'), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/bin'), 'ScriptDirectory': ('${${SectionName}:ScriptDirectory}', '${InstallationDirectory}/lib/vendors')}}, 'Linux': {'INSTALL.GHDL': {'Version': '0.34-dev', 'Backend': 'llvm', 'SectionName': ('%{PathWithRoot}#${Version}-${Backend}', None), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', '/usr/local'), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/bin'), 'ScriptDirectory': ('${${SectionName}:ScriptDirectory}', '${InstallationDirectory}/lib/ghdl/vendors')}}, 'Darwin': {'INSTALL.GHDL': {'Version': '0.34-dev', 'Backend': 'llvm', 'SectionName': ('%{PathWithRoot}#${Version}-${Backend}', None), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', '/usr/local'), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/bin'), 'ScriptDirectory': ('${${SectionName}:ScriptDirectory}', '${InstallationDirectory}/lib/ghdl/vendors')}}}</em><a class="headerlink" href="#ToolChain.GHDL.Configuration._template" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_template</code><em class="property"> = {'Windows': {'INSTALL.GHDL': {'SectionName': ('%{PathWithRoot}#${Version}-${Runtime}-${Backend}', None), 'Runtime': 'gnatgpl32', 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', 'C:/Tools/GHDL/${Version}-${Runtime}-${Backend}'), 'Backend': 'mcode', 'Version': '0.34-dev', 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/bin'), 'ScriptDirectory': ('${${SectionName}:ScriptDirectory}', '${InstallationDirectory}/lib/vendors')}}, 'Linux': {'INSTALL.GHDL': {'SectionName': ('%{PathWithRoot}#${Version}-${Backend}', None), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/bin'), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', '/usr/local'), 'Backend': 'llvm', 'Version': '0.34-dev', 'ScriptDirectory': ('${${SectionName}:ScriptDirectory}', '${InstallationDirectory}/lib/ghdl/vendors')}}, 'Darwin': {'INSTALL.GHDL': {'SectionName': ('%{PathWithRoot}#${Version}-${Backend}', None), 'BinaryDirectory': ('${${SectionName}:BinaryDirectory}', '${InstallationDirectory}/bin'), 'InstallationDirectory': ('${${SectionName}:InstallationDirectory}', '/usr/local'), 'Backend': 'llvm', 'Version': '0.34-dev', 'ScriptDirectory': ('${${SectionName}:ScriptDirectory}', '${InstallationDirectory}/lib/ghdl/vendors')}}}</em><a class="headerlink" href="#ToolChain.GHDL.Configuration._template" title="Permalink to this definition">¶</a></dt>
 <dd><p>The template for the configuration sections represented as nested dictionaries.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.ConfigureForAll">
-<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ConfigureForAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#Configuration.ConfigureForAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForAll" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._GetDefaultInstallationDirectory">
-<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_GetDefaultInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#Configuration._GetDefaultInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._GetDefaultInstallationDirectory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._ConfigureBinaryDirectory">
-<code class="descname">_ConfigureBinaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#Configuration._ConfigureBinaryDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._ConfigureBinaryDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ConfigureBinaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#Configuration._ConfigureBinaryDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._ConfigureBinaryDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates section with value from _template and returns directory as Path object.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._ConfigureScriptDirectory">
-<code class="descname">_ConfigureScriptDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#Configuration._ConfigureScriptDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._ConfigureScriptDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ConfigureScriptDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#Configuration._ConfigureScriptDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._ConfigureScriptDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates section with value from _template and returns directory as Path object.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.CheckDependency">
-<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CheckDependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.CheckDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.CheckDependency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if all vendor or tool dependencies are fulfilled to configure this tool.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.ClearSection">
-<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ClearSection</code><span class="sig-paren">(</span><em>writeWarnings=False</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.ClearSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ClearSection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the configuration section associated to this Configuration class.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.ConfigureForDarwin">
-<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ConfigureForDarwin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.ConfigureForDarwin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForDarwin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the configuration procedure for Darwin.</p>
 <p>This method is a wrapper for <a class="reference internal" href="#ToolChain.GHDL.Configuration.ConfigureForAll" title="ToolChain.GHDL.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
 method to implement a Darwin specific configuration routine.</p>
@@ -360,7 +393,7 @@ method to implement a Darwin specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.ConfigureForLinux">
-<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ConfigureForLinux</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.ConfigureForLinux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForLinux" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the configuration procedure for Linux.</p>
 <p>This method is a wrapper for <a class="reference internal" href="#ToolChain.GHDL.Configuration.ConfigureForAll" title="ToolChain.GHDL.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
 method to implement a Linux specific configuration routine.</p>
@@ -368,7 +401,7 @@ method to implement a Linux specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.ConfigureForWindows">
-<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ConfigureForWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.ConfigureForWindows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.ConfigureForWindows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the configuration procedure for Windows.</p>
 <p>This method is a wrapper for <a class="reference internal" href="#ToolChain.GHDL.Configuration.ConfigureForAll" title="ToolChain.GHDL.Configuration.ConfigureForAll"><code class="xref py py-meth docutils literal"><span class="pre">ConfigureForAll()</span></code></a>. Overwrite this
 method to implement a Windows specific configuration routine.</p>
@@ -376,7 +409,7 @@ method to implement a Windows specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.GetSections">
-<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetSections</code><span class="sig-paren">(</span><em>platform</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.GetSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.GetSections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all section names for this configuration.</p>
 </dd></dl>
 
@@ -388,13 +421,13 @@ method to implement a Windows specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.IsConfigured">
-<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
+<code class="descname">IsConfigured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.IsConfigured"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.IsConfigured" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return true if the configurations section is configured</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.IsSupportedPlatform">
-<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
+<code class="descname">IsSupportedPlatform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.IsSupportedPlatform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.IsSupportedPlatform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return true if the given platform is supported by this configuration routine.</p>
 </dd></dl>
 
@@ -457,12 +490,12 @@ method to implement a Windows specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.PrepareOptions">
-<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PrepareOptions</code><span class="sig-paren">(</span><em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.PrepareOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.PrepareOptions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.PrepareSections">
-<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PrepareSections</code><span class="sig-paren">(</span><em>warningWasWritten</em>, <em>writeWarnings=True</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.PrepareSections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.PrepareSections" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -472,7 +505,7 @@ method to implement a Windows specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration.RunPostConfigurationTasks">
-<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RunPostConfigurationTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration.RunPostConfigurationTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration.RunPostConfigurationTasks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Virtual method. Overwrite to execute post-configuration tasks.</p>
 </dd></dl>
 
@@ -495,7 +528,7 @@ method to implement a Windows specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._AskInstalled">
-<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_AskInstalled</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration._AskInstalled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._AskInstalled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask a Yes/No/Pass question.</p>
 </dd></dl>
 
@@ -523,7 +556,7 @@ method to implement a Windows specific configuration routine.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._ConfigureInstallationDirectory">
-<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_ConfigureInstallationDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration._ConfigureInstallationDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._ConfigureInstallationDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Asks for installation directory and updates section.
 Checks if entered directory exists and returns Path object.
 If no installation directory was configured before, then _GetDefaultInstallationDir is called.</p>
@@ -545,7 +578,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._GetDefaultOptionValue">
-<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_GetDefaultOptionValue</code><span class="sig-paren">(</span><em>optionName</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration._GetDefaultOptionValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._GetDefaultOptionValue" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -563,7 +596,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.Configuration._TestDefaultInstallPath">
-<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_TestDefaultInstallPath</code><span class="sig-paren">(</span><em>defaults</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain.html#Configuration._TestDefaultInstallPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.Configuration._TestDefaultInstallPath" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper function for automatic search of installation directory.</p>
 </dd></dl>
 
@@ -576,7 +609,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL">
-<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDL</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDL</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-c9f99b54a98cf524cf581adf6626347cfe1bc12d.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GHDL</p></object>
@@ -598,7 +631,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDL.deco">
-<code class="descname">deco</code><span class="sig-paren">(</span><em>Arg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.deco"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.deco" title="Permalink to this definition">¶</a></dt>
+<code class="descname">deco</code><span class="sig-paren">(</span><em>Arg</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.deco"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.deco" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -608,7 +641,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.CmdAnalyze">
-<em class="property">class </em><code class="descname">CmdAnalyze</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.CmdAnalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdAnalyze" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">CmdAnalyze</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.CmdAnalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdAnalyze" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.CmdAnalyze._name">
 <code class="descname">_name</code><em class="property"> = 'a'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdAnalyze._name" title="Permalink to this definition">¶</a></dt>
@@ -618,7 +651,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.CmdElaborate">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">CmdElaborate</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.CmdElaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdElaborate" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">CmdElaborate</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.CmdElaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdElaborate" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.CmdElaborate._name">
 <code class="descname">_name</code><em class="property"> = 'e'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdElaborate._name" title="Permalink to this definition">¶</a></dt>
@@ -628,7 +661,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.CmdRun">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">CmdRun</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.CmdRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdRun" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">CmdRun</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.CmdRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdRun" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.CmdRun._name">
 <code class="descname">_name</code><em class="property"> = 'r'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.CmdRun._name" title="Permalink to this definition">¶</a></dt>
@@ -638,7 +671,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagVerbose">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagVerbose</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagVerbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagVerbose" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagVerbose</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagVerbose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagVerbose" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagVerbose._name">
 <code class="descname">_name</code><em class="property"> = 'v'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagVerbose._name" title="Permalink to this definition">¶</a></dt>
@@ -648,7 +681,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagDebug">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagDebug</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagDebug" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagDebug</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagDebug" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagDebug._name">
 <code class="descname">_name</code><em class="property"> = 'g'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagDebug._name" title="Permalink to this definition">¶</a></dt>
@@ -658,7 +691,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagExplicit">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagExplicit</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagExplicit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagExplicit" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagExplicit</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagExplicit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagExplicit" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagExplicit._name">
 <code class="descname">_name</code><em class="property"> = 'fexplicit'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagExplicit._name" title="Permalink to this definition">¶</a></dt>
@@ -668,7 +701,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagRelaxedRules">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagRelaxedRules</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagRelaxedRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagRelaxedRules" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagRelaxedRules</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagRelaxedRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagRelaxedRules" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagRelaxedRules._name">
 <code class="descname">_name</code><em class="property"> = 'frelaxed-rules'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagRelaxedRules._name" title="Permalink to this definition">¶</a></dt>
@@ -678,7 +711,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagWarnBinding">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagWarnBinding</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagWarnBinding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagWarnBinding" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagWarnBinding</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagWarnBinding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagWarnBinding" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagWarnBinding._name">
 <code class="descname">_name</code><em class="property"> = 'warn-binding'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagWarnBinding._name" title="Permalink to this definition">¶</a></dt>
@@ -688,7 +721,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagNoVitalChecks">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagNoVitalChecks</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagNoVitalChecks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagNoVitalChecks" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagNoVitalChecks</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagNoVitalChecks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagNoVitalChecks" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagNoVitalChecks._name">
 <code class="descname">_name</code><em class="property"> = 'no-vital-checks'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagNoVitalChecks._name" title="Permalink to this definition">¶</a></dt>
@@ -698,7 +731,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagMultiByteComments">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagMultiByteComments</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagMultiByteComments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagMultiByteComments" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagMultiByteComments</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagMultiByteComments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagMultiByteComments" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagMultiByteComments._name">
 <code class="descname">_name</code><em class="property"> = 'mb-comments'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagMultiByteComments._name" title="Permalink to this definition">¶</a></dt>
@@ -708,7 +741,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagSynBinding">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagSynBinding</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagSynBinding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagSynBinding" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagSynBinding</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagSynBinding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagSynBinding" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagSynBinding._name">
 <code class="descname">_name</code><em class="property"> = 'syn-binding'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagSynBinding._name" title="Permalink to this definition">¶</a></dt>
@@ -718,7 +751,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagPSL">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagPSL</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagPSL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagPSL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagPSL</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagPSL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagPSL" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagPSL._name">
 <code class="descname">_name</code><em class="property"> = 'fpsl'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagPSL._name" title="Permalink to this definition">¶</a></dt>
@@ -728,7 +761,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagProfileArcs">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagProfileArcs</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagProfileArcs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagProfileArcs" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagProfileArcs</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagProfileArcs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagProfileArcs" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagProfileArcs._name">
 <code class="descname">_name</code><em class="property"> = 'fprofile-arcs'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagProfileArcs._name" title="Permalink to this definition">¶</a></dt>
@@ -738,7 +771,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.FlagTestCoverage">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagTestCoverage</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.FlagTestCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagTestCoverage" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">FlagTestCoverage</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.FlagTestCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagTestCoverage" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.FlagTestCoverage._name">
 <code class="descname">_name</code><em class="property"> = 'ftest-coverage'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.FlagTestCoverage._name" title="Permalink to this definition">¶</a></dt>
@@ -748,7 +781,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchCompilerOption">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchCompilerOption</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchCompilerOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchCompilerOption" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchCompilerOption</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchCompilerOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchCompilerOption" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchCompilerOption._pattern">
 <code class="descname">_pattern</code><em class="property"> = '-{0},{1}'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchCompilerOption._pattern" title="Permalink to this definition">¶</a></dt>
@@ -763,7 +796,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchAssemblerOption">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchAssemblerOption</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchAssemblerOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchAssemblerOption" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchAssemblerOption</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchAssemblerOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchAssemblerOption" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchAssemblerOption._pattern">
 <code class="descname">_pattern</code><em class="property"> = '-{0},{1}'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchAssemblerOption._pattern" title="Permalink to this definition">¶</a></dt>
@@ -778,7 +811,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchLinkerOption">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchLinkerOption</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchLinkerOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchLinkerOption" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchLinkerOption</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchLinkerOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchLinkerOption" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchLinkerOption._pattern">
 <code class="descname">_pattern</code><em class="property"> = '-{0},{1}'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchLinkerOption._pattern" title="Permalink to this definition">¶</a></dt>
@@ -793,7 +826,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchIEEEFlavor">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchIEEEFlavor</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchIEEEFlavor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchIEEEFlavor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchIEEEFlavor</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchIEEEFlavor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchIEEEFlavor" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchIEEEFlavor._name">
 <code class="descname">_name</code><em class="property"> = 'ieee'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchIEEEFlavor._name" title="Permalink to this definition">¶</a></dt>
@@ -803,7 +836,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchVHDLVersion">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVHDLVersion</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchVHDLVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVHDLVersion" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVHDLVersion</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchVHDLVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVHDLVersion" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchVHDLVersion._name">
 <code class="descname">_name</code><em class="property"> = 'std'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVHDLVersion._name" title="Permalink to this definition">¶</a></dt>
@@ -813,7 +846,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchVHDLLibrary">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVHDLLibrary</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchVHDLLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVHDLLibrary" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVHDLLibrary</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchVHDLLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVHDLLibrary" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchVHDLLibrary._name">
 <code class="descname">_name</code><em class="property"> = 'work'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVHDLLibrary._name" title="Permalink to this definition">¶</a></dt>
@@ -823,7 +856,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.ArgListLibraryReferences">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">ArgListLibraryReferences</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.ArgListLibraryReferences"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgListLibraryReferences" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">ArgListLibraryReferences</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.ArgListLibraryReferences"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgListLibraryReferences" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.ArgListLibraryReferences._pattern">
 <code class="descname">_pattern</code><em class="property"> = '-{0}{1}'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgListLibraryReferences._pattern" title="Permalink to this definition">¶</a></dt>
@@ -838,12 +871,12 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.ArgSourceFile">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">ArgSourceFile</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.ArgSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgSourceFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">ArgSourceFile</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.ArgSourceFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgSourceFile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.ArgTopLevel">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">ArgTopLevel</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.ArgTopLevel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgTopLevel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">ArgTopLevel</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.ArgTopLevel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.ArgTopLevel" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -853,7 +886,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchIEEEAsserts">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchIEEEAsserts</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchIEEEAsserts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchIEEEAsserts" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchIEEEAsserts</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchIEEEAsserts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchIEEEAsserts" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchIEEEAsserts._name">
 <code class="descname">_name</code><em class="property"> = 'ieee-asserts'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchIEEEAsserts._name" title="Permalink to this definition">¶</a></dt>
@@ -863,7 +896,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchStopDelta">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchStopDelta</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchStopDelta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchStopDelta" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchStopDelta</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchStopDelta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchStopDelta" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchStopDelta._name">
 <code class="descname">_name</code><em class="property"> = 'stop-delta'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchStopDelta._name" title="Permalink to this definition">¶</a></dt>
@@ -873,7 +906,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchVCDWaveform">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVCDWaveform</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchVCDWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVCDWaveform" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVCDWaveform</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchVCDWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVCDWaveform" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchVCDWaveform._name">
 <code class="descname">_name</code><em class="property"> = 'vcd'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVCDWaveform._name" title="Permalink to this definition">¶</a></dt>
@@ -883,7 +916,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchVCDGZWaveform">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVCDGZWaveform</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchVCDGZWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVCDGZWaveform" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchVCDGZWaveform</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchVCDGZWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVCDGZWaveform" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchVCDGZWaveform._name">
 <code class="descname">_name</code><em class="property"> = 'vcdgz'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchVCDGZWaveform._name" title="Permalink to this definition">¶</a></dt>
@@ -893,7 +926,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchFastWaveform">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchFastWaveform</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchFastWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchFastWaveform" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchFastWaveform</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchFastWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchFastWaveform" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchFastWaveform._name">
 <code class="descname">_name</code><em class="property"> = 'fst'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchFastWaveform._name" title="Permalink to this definition">¶</a></dt>
@@ -903,7 +936,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchGHDLWaveform">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchGHDLWaveform</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchGHDLWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchGHDLWaveform" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchGHDLWaveform</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchGHDLWaveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchGHDLWaveform" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchGHDLWaveform._name">
 <code class="descname">_name</code><em class="property"> = 'wave'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchGHDLWaveform._name" title="Permalink to this definition">¶</a></dt>
@@ -913,7 +946,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDL.SwitchWaveformOptionFile">
-<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchWaveformOptionFile</code><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.SwitchWaveformOptionFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchWaveformOptionFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">GHDL.</code><code class="descname">SwitchWaveformOptionFile</code><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.SwitchWaveformOptionFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchWaveformOptionFile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ToolChain.GHDL.GHDL.SwitchWaveformOptionFile._name">
 <code class="descname">_name</code><em class="property"> = 'read-wave-opt'</em><a class="headerlink" href="#ToolChain.GHDL.GHDL.SwitchWaveformOptionFile._name" title="Permalink to this definition">¶</a></dt>
@@ -928,17 +961,17 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDL.GetGHDLAnalyze">
-<code class="descclassname">GHDL.</code><code class="descname">GetGHDLAnalyze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.GetGHDLAnalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.GetGHDLAnalyze" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">GHDL.</code><code class="descname">GetGHDLAnalyze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.GetGHDLAnalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.GetGHDLAnalyze" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDL.GetGHDLElaborate">
-<code class="descclassname">GHDL.</code><code class="descname">GetGHDLElaborate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.GetGHDLElaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.GetGHDLElaborate" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">GHDL.</code><code class="descname">GetGHDLElaborate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.GetGHDLElaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.GetGHDLElaborate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDL.GetGHDLRun">
-<code class="descclassname">GHDL.</code><code class="descname">GetGHDLRun</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDL.GetGHDLRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.GetGHDLRun" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">GHDL.</code><code class="descname">GetGHDLRun</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDL.GetGHDLRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDL.GetGHDLRun" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1059,14 +1092,14 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDLAnalyze">
-<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLAnalyze</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLAnalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLAnalyze" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLAnalyze</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLAnalyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLAnalyze" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-6a5c90b4ab6a21e4072aa6dfabdef94d228c0b86.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GHDLAnalyze</p></object>
 <p class="rubric">Members</p>
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDLAnalyze.Analyze">
-<code class="descname">Analyze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLAnalyze.Analyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLAnalyze.Analyze" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Analyze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLAnalyze.Analyze"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLAnalyze.Analyze" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
@@ -1547,14 +1580,14 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDLElaborate">
-<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLElaborate</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLElaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLElaborate" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLElaborate</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLElaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLElaborate" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-4e2569805352de76c138dddab69576720b7a7425.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GHDLElaborate</p></object>
 <p class="rubric">Members</p>
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDLElaborate.Elaborate">
-<code class="descname">Elaborate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLElaborate.Elaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLElaborate.Elaborate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Elaborate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLElaborate.Elaborate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLElaborate.Elaborate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
@@ -2035,14 +2068,14 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="class">
 <dt id="ToolChain.GHDL.GHDLRun">
-<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLRun</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLRun" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLRun</code><span class="sig-paren">(</span><em>platform</em>, <em>dryrun</em>, <em>binaryDirectoryPath</em>, <em>version</em>, <em>backend</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLRun" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-b3aa20f9c47e35f0f1751ed1a04a2848717a498e.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of GHDLRun</p></object>
 <p class="rubric">Members</p>
 <dl class="method">
 <dt id="ToolChain.GHDL.GHDLRun.Run">
-<code class="descname">Run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLRun.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLRun.Run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLRun.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLRun.Run" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
@@ -2524,7 +2557,7 @@ Asks for version and updates section. Returns version as string.</p>
 <p><strong>Functions</strong></p>
 <dl class="function">
 <dt id="ToolChain.GHDL.GHDLAnalyzeFilter">
-<code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLAnalyzeFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLAnalyzeFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLAnalyzeFilter" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLAnalyzeFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLAnalyzeFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLAnalyzeFilter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -2534,7 +2567,7 @@ Asks for version and updates section. Returns version as string.</p>
 
 <dl class="function">
 <dt id="ToolChain.GHDL.GHDLRunFilter">
-<code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLRunFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ToolChain/GHDL.html#GHDLRunFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLRunFilter" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ToolChain.GHDL.</code><code class="descname">GHDLRunFilter</code><span class="sig-paren">(</span><em>gen</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/ToolChain/GHDL.html#GHDLRunFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ToolChain.GHDL.GHDLRunFilter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -2553,13 +2586,22 @@ Asks for version and updates section. Returns version as string.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ToolChain.GNU.html" class="btn btn-neutral float-right" title="ToolChain.GNU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ToolChain.Altera.Quartus.html" class="btn btn-neutral" title="ToolChain.Altera.Quartus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -2581,25 +2623,25 @@ Asks for version and updates section. Returns version as string.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

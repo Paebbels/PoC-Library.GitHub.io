@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Base.Executable &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>Base.Executable &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="Base" href="Base.html"/>
+        <link rel="next" title="Base.Logging" href="Base.Logging.html"/>
+        <link rel="prev" title="Base.Exceptions" href="Base.Exceptions.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Base.html">Base</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Base.Exceptions.html">Base.Exceptions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Base.Executable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Logging.html">Base.Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Project.html">Base.Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Base.Shared.html">Base.Shared</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +182,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="Base.html">Base</a> &raquo;</li>
+        
       <li>Base.Executable</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/Base.Executable.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/Base.Executable.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -250,7 +275,7 @@ Represent an executable.</li>
 </ul>
 <dl class="exception">
 <dt id="Base.Executable.ExecutableException">
-<em class="property">exception </em><code class="descclassname">Base.Executable.</code><code class="descname">ExecutableException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#ExecutableException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ExecutableException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">Base.Executable.</code><code class="descname">ExecutableException</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#ExecutableException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ExecutableException" title="Permalink to this definition">¶</a></dt>
 <dd><p>This exception is raised by all executable abstraction classes.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-50434ab12a09fec8a55e194128d714a8f256d8b0.svg" type="image/svg+xml">
@@ -271,7 +296,7 @@ Represent an executable.</li>
 
 <dl class="class">
 <dt id="Base.Executable.CommandLineArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">CommandLineArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#CommandLineArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandLineArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">CommandLineArgument</code><a class="reference internal" href="../modules/Base/Executable.html#CommandLineArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandLineArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class (and meta class) for all Arguments classes.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-8eae36f523432efddb09ccde2fd3f94e8c8aa08f.svg" type="image/svg+xml">
@@ -292,7 +317,7 @@ Represent an executable.</li>
 
 <dl class="class">
 <dt id="Base.Executable.ExecutableArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ExecutableArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ExecutableArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ExecutableArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ExecutableArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ExecutableArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ExecutableArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents the executable.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-119b54a57c1003b50b4e14d1b1f284b16a77ffa7.svg" type="image/svg+xml">
@@ -305,7 +330,7 @@ Represent an executable.</li>
 
 <dl class="method">
 <dt id="Base.Executable.ExecutableArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#ExecutableArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ExecutableArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#ExecutableArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ExecutableArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -323,7 +348,7 @@ Represent an executable.</li>
 
 <dl class="class">
 <dt id="Base.Executable.NamedCommandLineArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">NamedCommandLineArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#NamedCommandLineArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.NamedCommandLineArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">NamedCommandLineArgument</code><a class="reference internal" href="../modules/Base/Executable.html#NamedCommandLineArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.NamedCommandLineArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for all command line arguments with a name.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-e27cac512175fec8cee676fc54ba7a8b218f312b.svg" type="image/svg+xml">
@@ -354,7 +379,7 @@ Represent an executable.</li>
 
 <dl class="class">
 <dt id="Base.Executable.CommandArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">CommandArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#CommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">CommandArgument</code><a class="reference internal" href="../modules/Base/Executable.html#CommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a command name.</p>
 <p>It is usually used to select a sub parser in a CLI argument parser or to hand
 over all following parameters to a separate tool. An example for a command is
@@ -375,7 +400,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="method">
 <dt id="Base.Executable.CommandArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#CommandArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#CommandArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -403,7 +428,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.ShortCommandArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortCommandArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ShortCommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortCommandArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortCommandArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ShortCommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortCommandArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a command name with a single dash.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-699e8cdbd8f9ecc032ba1793d194fafa97839916.svg" type="image/svg+xml">
@@ -449,7 +474,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.LongCommandArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongCommandArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#LongCommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongCommandArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongCommandArgument</code><a class="reference internal" href="../modules/Base/Executable.html#LongCommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongCommandArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a command name with a double dash.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-56c788708f011c93f5d98e8cc74727ca62bf5ede.svg" type="image/svg+xml">
@@ -495,7 +520,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.WindowsCommandArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsCommandArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#WindowsCommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsCommandArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsCommandArgument</code><a class="reference internal" href="../modules/Base/Executable.html#WindowsCommandArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsCommandArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a command name with a single slash.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-d5c6c046eaa82b5db671adc6ce00d42ab8b7ceae.svg" type="image/svg+xml">
@@ -541,7 +566,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.StringArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">StringArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#StringArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">StringArgument</code><a class="reference internal" href="../modules/Base/Executable.html#StringArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a simple string argument.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-b0022785f7dda911e5dc71e36e7159a6a4b16242.svg" type="image/svg+xml">
@@ -559,7 +584,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="method">
 <dt id="Base.Executable.StringArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#StringArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#StringArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -577,7 +602,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.StringListArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">StringListArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#StringListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringListArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">StringListArgument</code><a class="reference internal" href="../modules/Base/Executable.html#StringListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringListArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a list of string arguments.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-ec0984e5a00e7eea9de6c4dcd5b043a8cf26c96e.svg" type="image/svg+xml">
@@ -595,7 +620,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="method">
 <dt id="Base.Executable.StringListArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#StringListArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringListArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#StringListArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.StringListArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -613,7 +638,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.PathArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">PathArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#PathArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.PathArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">PathArgument</code><a class="reference internal" href="../modules/Base/Executable.html#PathArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.PathArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a path argument.</p>
 <p>The output format can be forced to the POSIX format with <a class="reference internal" href="#Base.Executable.PathArgument._PosixFormat" title="Base.Executable.PathArgument._PosixFormat"><code class="xref py py-data docutils literal"><span class="pre">_PosixFormat</span></code></a>.</p>
 <p class="rubric">Inheritance</p>
@@ -632,7 +657,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="method">
 <dt id="Base.Executable.PathArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#PathArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.PathArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#PathArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.PathArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -650,7 +675,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.FlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">FlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#FlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.FlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">FlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#FlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.FlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for all FlagArgument classes, which represents a simple flag argument.</p>
 <p>A simple flag is a single boolean value (absent/present or off/on) with no data.</p>
 <p class="rubric">Inheritance</p>
@@ -669,7 +694,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="method">
 <dt id="Base.Executable.FlagArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#FlagArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.FlagArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#FlagArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.FlagArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -697,7 +722,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.ShortFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ShortFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ShortFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a flag argument with a single dash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">-optimize</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -744,7 +769,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.LongFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#LongFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#LongFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a flag argument with a double dash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">--optimize</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -791,7 +816,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.WindowsFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#WindowsFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#WindowsFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a flag argument with a single slash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">/optimize</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -838,7 +863,7 @@ over all following parameters to a separate tool. An example for a command is
 
 <dl class="class">
 <dt id="Base.Executable.ValuedFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ValuedFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ValuedFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class and base class for all ValuedFlagArgument classes, which represents a flag argument with data.</p>
 <p>A valued flag is a flag name followed by a value. The default delimiter sign is equal (<code class="docutils literal"><span class="pre">=</span></code>). Name and
 value are passed as one arguments to the executable even if the delimiter sign is a whitespace character.</p>
@@ -859,7 +884,7 @@ value are passed as one arguments to the executable even if the delimiter sign i
 
 <dl class="method">
 <dt id="Base.Executable.ValuedFlagArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#ValuedFlagArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#ValuedFlagArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -887,7 +912,7 @@ value are passed as one arguments to the executable even if the delimiter sign i
 
 <dl class="class">
 <dt id="Base.Executable.ShortValuedFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortValuedFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ShortValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortValuedFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ShortValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.ValuedFlagArgument" title="Base.Executable.ValuedFlagArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagArgument</span></code></a> with a single dash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">-optimizer=on</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -934,7 +959,7 @@ value are passed as one arguments to the executable even if the delimiter sign i
 
 <dl class="class">
 <dt id="Base.Executable.LongValuedFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongValuedFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#LongValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongValuedFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#LongValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.ValuedFlagArgument" title="Base.Executable.ValuedFlagArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagArgument</span></code></a> with a double dash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">--optimizer=on</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -981,7 +1006,7 @@ value are passed as one arguments to the executable even if the delimiter sign i
 
 <dl class="class">
 <dt id="Base.Executable.WindowsValuedFlagArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsValuedFlagArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#WindowsValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsValuedFlagArgument</code><a class="reference internal" href="../modules/Base/Executable.html#WindowsValuedFlagArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsValuedFlagArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.ValuedFlagArgument" title="Base.Executable.ValuedFlagArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagArgument</span></code></a> with a single slash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">/optimizer:on</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1028,7 +1053,7 @@ value are passed as one arguments to the executable even if the delimiter sign i
 
 <dl class="class">
 <dt id="Base.Executable.ValuedFlagListArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ValuedFlagListArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ValuedFlagListArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class and base class for all ValuedFlagListArgument classes, which represents a list of <a class="reference internal" href="#Base.Executable.ValuedFlagArgument" title="Base.Executable.ValuedFlagArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagArgument</span></code></a> instances.</p>
 <p>Each list item gets translated into a <a class="reference internal" href="#Base.Executable.ValuedFlagArgument" title="Base.Executable.ValuedFlagArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagArgument</span></code></a>, with the same flag name, but differing values. Each
 <a class="reference internal" href="#Base.Executable.ValuedFlagArgument" title="Base.Executable.ValuedFlagArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagArgument</span></code></a> is passed as a single argument to the executable, even if the delimiter sign is a whitespace
@@ -1050,7 +1075,7 @@ character.</p>
 
 <dl class="method">
 <dt id="Base.Executable.ValuedFlagListArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#ValuedFlagListArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagListArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#ValuedFlagListArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ValuedFlagListArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1078,7 +1103,7 @@ character.</p>
 
 <dl class="class">
 <dt id="Base.Executable.ShortValuedFlagListArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortValuedFlagListArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ShortValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortValuedFlagListArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ShortValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.ValuedFlagListArgument" title="Base.Executable.ValuedFlagListArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagListArgument</span></code></a> with a single dash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">-file=file1.txt</span> <span class="pre">-file=file2.txt</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1125,7 +1150,7 @@ character.</p>
 
 <dl class="class">
 <dt id="Base.Executable.LongValuedFlagListArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongValuedFlagListArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#LongValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongValuedFlagListArgument</code><a class="reference internal" href="../modules/Base/Executable.html#LongValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.ValuedFlagListArgument" title="Base.Executable.ValuedFlagListArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagListArgument</span></code></a> with a double dash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">--file=file1.txt</span> <span class="pre">--file=file2.txt</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1172,7 +1197,7 @@ character.</p>
 
 <dl class="class">
 <dt id="Base.Executable.WindowsValuedFlagListArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsValuedFlagListArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#WindowsValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsValuedFlagListArgument</code><a class="reference internal" href="../modules/Base/Executable.html#WindowsValuedFlagListArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsValuedFlagListArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.ValuedFlagListArgument" title="Base.Executable.ValuedFlagListArgument"><code class="xref py py-class docutils literal"><span class="pre">ValuedFlagListArgument</span></code></a> with a single slash.</p>
 <p>Example: <code class="docutils literal"><span class="pre">/file:file1.txt</span> <span class="pre">/file:file2.txt</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1219,7 +1244,7 @@ character.</p>
 
 <dl class="class">
 <dt id="Base.Executable.TupleArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">TupleArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#TupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.TupleArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">TupleArgument</code><a class="reference internal" href="../modules/Base/Executable.html#TupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.TupleArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class and base class for all TupleArgument classes, which represents a switch with separate data.</p>
 <p>A tuple switch is a command line argument followed by a separate value. Name and value are passed as
 two arguments to the executable.</p>
@@ -1245,7 +1270,7 @@ two arguments to the executable.</p>
 
 <dl class="method">
 <dt id="Base.Executable.TupleArgument.AsArgument">
-<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#TupleArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.TupleArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AsArgument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#TupleArgument.AsArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.TupleArgument.AsArgument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1273,7 +1298,7 @@ two arguments to the executable.</p>
 
 <dl class="class">
 <dt id="Base.Executable.ShortTupleArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortTupleArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#ShortTupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortTupleArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">ShortTupleArgument</code><a class="reference internal" href="../modules/Base/Executable.html#ShortTupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.ShortTupleArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.TupleArgument" title="Base.Executable.TupleArgument"><code class="xref py py-class docutils literal"><span class="pre">TupleArgument</span></code></a> with a single dash in front of the switch name.</p>
 <p>Example: <code class="docutils literal"><span class="pre">-file</span> <span class="pre">file1.txt</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1325,7 +1350,7 @@ two arguments to the executable.</p>
 
 <dl class="class">
 <dt id="Base.Executable.LongTupleArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongTupleArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#LongTupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongTupleArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">LongTupleArgument</code><a class="reference internal" href="../modules/Base/Executable.html#LongTupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.LongTupleArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.TupleArgument" title="Base.Executable.TupleArgument"><code class="xref py py-class docutils literal"><span class="pre">TupleArgument</span></code></a> with a double dash in front of the switch name.</p>
 <p>Example: <code class="docutils literal"><span class="pre">--file</span> <span class="pre">file1.txt</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1377,7 +1402,7 @@ two arguments to the executable.</p>
 
 <dl class="class">
 <dt id="Base.Executable.WindowsTupleArgument">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsTupleArgument</code><a class="reference internal" href="../_modules/Base/Executable.html#WindowsTupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsTupleArgument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">WindowsTupleArgument</code><a class="reference internal" href="../modules/Base/Executable.html#WindowsTupleArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.WindowsTupleArgument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a <a class="reference internal" href="#Base.Executable.TupleArgument" title="Base.Executable.TupleArgument"><code class="xref py py-class docutils literal"><span class="pre">TupleArgument</span></code></a> with a single slash in front of the switch name.</p>
 <p>Example: <code class="docutils literal"><span class="pre">/file</span> <span class="pre">file1.txt</span></code></p>
 <p class="rubric">Inheritance</p>
@@ -1429,7 +1454,7 @@ two arguments to the executable.</p>
 
 <dl class="class">
 <dt id="Base.Executable.CommandLineArgumentList">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">CommandLineArgumentList</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#CommandLineArgumentList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandLineArgumentList" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">CommandLineArgumentList</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#CommandLineArgumentList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandLineArgumentList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent a list of all available commands, flags and switch of an executable.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-4461f060fb75a60d66909b6f5fabbd69b542dae4.svg" type="image/svg+xml">
@@ -1437,7 +1462,7 @@ two arguments to the executable.</p>
 <p class="rubric">Members</p>
 <dl class="method">
 <dt id="Base.Executable.CommandLineArgumentList.ToArgumentList">
-<code class="descname">ToArgumentList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#CommandLineArgumentList.ToArgumentList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandLineArgumentList.ToArgumentList" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ToArgumentList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#CommandLineArgumentList.ToArgumentList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.CommandLineArgumentList.ToArgumentList" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1504,7 +1529,7 @@ two arguments to the executable.</p>
 
 <dl class="class">
 <dt id="Base.Executable.Environment">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">Environment</code><a class="reference internal" href="../_modules/Base/Executable.html#Environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Environment" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">Environment</code><a class="reference internal" href="../modules/Base/Executable.html#Environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Environment" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-5fd83219287fe6f27eb469889bcbf2cc19a724a0.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Environment</p></object>
@@ -1513,7 +1538,7 @@ two arguments to the executable.</p>
 
 <dl class="class">
 <dt id="Base.Executable.Executable">
-<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">Executable</code><span class="sig-paren">(</span><em>platform: str</em>, <em>dryrun: bool</em>, <em>executablePath: pathlib.Path</em>, <em>environment: Base.Executable.Environment = None</em>, <em>logger: Base.Logging.Logger = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Base.Executable.</code><code class="descname">Executable</code><span class="sig-paren">(</span><em>platform: str</em>, <em>dryrun: bool</em>, <em>executablePath: pathlib.Path</em>, <em>environment: Base.Executable.Environment = None</em>, <em>logger: Base.Logging.Logger = None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent an executable.</p>
 <p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-d4fe589b02ac4cf93172fe62081a830899bbf98e.svg" type="image/svg+xml">
@@ -1593,32 +1618,32 @@ two arguments to the executable.</p>
 
 <dl class="method">
 <dt id="Base.Executable.Executable.StartProcess">
-<code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable.StartProcess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.StartProcess" title="Permalink to this definition">¶</a></dt>
+<code class="descname">StartProcess</code><span class="sig-paren">(</span><em>parameterList</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable.StartProcess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.StartProcess" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Executable.Executable.Send">
-<code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable.Send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.Send" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Send</code><span class="sig-paren">(</span><em>line</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable.Send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.Send" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Executable.Executable.SendBoundary">
-<code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable.SendBoundary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.SendBoundary" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SendBoundary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable.SendBoundary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.SendBoundary" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Executable.Executable.Terminate">
-<code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable.Terminate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.Terminate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable.Terminate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.Terminate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Executable.Executable.GetReader">
-<code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable.GetReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.GetReader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable.GetReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.GetReader" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Base.Executable.Executable.ReadUntilBoundary">
-<code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Base/Executable.html#Executable.ReadUntilBoundary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ReadUntilBoundary</code><span class="sig-paren">(</span><em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Base/Executable.html#Executable.ReadUntilBoundary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Base.Executable.Executable.ReadUntilBoundary" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1639,13 +1664,22 @@ two arguments to the executable.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Base.Logging.html" class="btn btn-neutral float-right" title="Base.Logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Base.Exceptions.html" class="btn btn-neutral" title="Base.Exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -1667,25 +1701,25 @@ two arguments to the executable.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

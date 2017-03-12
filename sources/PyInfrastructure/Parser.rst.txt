@@ -1,0 +1,24 @@
+Parser
+==========
+
+.. automodule:: Parser
+
+
+
+.. #-----------------------------------
+
+**Submodules**
+
+.. toctree::
+
+   Parser.FilesCodeDOM
+   Parser.FilesParser
+   Parser.RulesCodeDOM
+   Parser.RulesParser
+   Parser.VHDLCodeDOM
+   Parser.VHDLParser
+
+.. currentmodule:: Parser
+
+
+.. #-----------------------------------

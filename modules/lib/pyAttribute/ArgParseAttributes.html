@@ -1,0 +1,451 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.pyAttribute.ArgParseAttributes &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../../index.html"/>
+        <link rel="up" title="lib.pyAttribute" href="../pyAttribute.html"/> 
+
+  
+  <script src="../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../pyAttribute.html">lib.pyAttribute</a> &raquo;</li>
+        
+      <li>lib.pyAttribute.ArgParseAttributes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for lib.pyAttribute.ArgParseAttributes</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-  tab-width: 2; indent-tabs-mode: t -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#                 _   _   _        _ _           _</span>
+<span class="c1">#  _ __  _   _   / \ | |_| |_ _ __(_) |__  _   _| |_ ___</span>
+<span class="c1"># | &#39;_ \| | | | / _ \| __| __| &#39;__| | &#39;_ \| | | | __/ _ \</span>
+<span class="c1"># | |_) | |_| |/ ___ \ |_| |_| |  | | |_) | |_| | ||  __/</span>
+<span class="c1"># | .__/ \__, /_/   \_\__|\__|_|  |_|_.__/ \__,_|\__\___|</span>
+<span class="c1"># |_|    |___/</span>
+<span class="c1">#</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1"># Authors:						Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python module:	    pyAttributes for ArgParse</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Patrick Lehmann - Dresden, Germany</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#		http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">argparse</span>   <span class="k">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">from</span> <span class="nn">.</span>          <span class="k">import</span> <span class="n">Attribute</span><span class="p">,</span> <span class="n">AttributeHelperMixin</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;CommandGroupAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;DefaultAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommandAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ArgumentAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;SwitchArgumentAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommonArgumentAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommonSwitchArgumentAttribute&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ArgParseMixin&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<div class="viewcode-block" id="CommandGroupAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.CommandGroupAttribute">[docs]</a><span class="k">class</span> <span class="nc">CommandGroupAttribute</span><span class="p">(</span><span class="n">Attribute</span><span class="p">):</span>
+	<span class="n">__groupName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">groupName</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__groupName</span> <span class="o">=</span> <span class="n">groupName</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">GroupName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__groupName</span></div>
+		
+		
+<div class="viewcode-block" id="DefaultAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.DefaultAttribute">[docs]</a><span class="k">class</span> <span class="nc">DefaultAttribute</span><span class="p">(</span><span class="n">Attribute</span><span class="p">):</span>
+	<span class="n">__handler</span> <span class="o">=</span> <span class="kc">None</span>
+	
+	<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__handler</span> <span class="o">=</span> <span class="n">func</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__handler</span></div>
+		
+		
+<div class="viewcode-block" id="CommandAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.CommandAttribute">[docs]</a><span class="k">class</span> <span class="nc">CommandAttribute</span><span class="p">(</span><span class="n">Attribute</span><span class="p">):</span>
+	<span class="n">__command</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="n">__handler</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">__kwargs</span> <span class="o">=</span>  <span class="kc">None</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__command</span> <span class="o">=</span>  <span class="n">command</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__kwargs</span> <span class="o">=</span>   <span class="n">kwargs</span>
+		
+	<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__handler</span> <span class="o">=</span>  <span class="n">func</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Command</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__command</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__handler</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">KWArgs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__kwargs</span></div>
+		
+		
+<div class="viewcode-block" id="ArgumentAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.ArgumentAttribute">[docs]</a><span class="k">class</span> <span class="nc">ArgumentAttribute</span><span class="p">(</span><span class="n">Attribute</span><span class="p">):</span>
+	<span class="n">__args</span> <span class="o">=</span>    <span class="kc">None</span>
+	<span class="n">__kwargs</span> <span class="o">=</span>  <span class="kc">None</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__args</span> <span class="o">=</span>   <span class="n">args</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__args</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">KWArgs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__kwargs</span></div>
+		
+		
+<div class="viewcode-block" id="SwitchArgumentAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.SwitchArgumentAttribute">[docs]</a><span class="k">class</span> <span class="nc">SwitchArgumentAttribute</span><span class="p">(</span><span class="n">ArgumentAttribute</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;action&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="s2">&quot;store_const&quot;</span>
+		<span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;const&#39;</span><span class="p">]</span> <span class="o">=</span>   <span class="kc">True</span>
+		<span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="CommonArgumentAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.CommonArgumentAttribute">[docs]</a><span class="k">class</span> <span class="nc">CommonArgumentAttribute</span><span class="p">(</span><span class="n">ArgumentAttribute</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="CommonSwitchArgumentAttribute"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.CommonSwitchArgumentAttribute">[docs]</a><span class="k">class</span> <span class="nc">CommonSwitchArgumentAttribute</span><span class="p">(</span><span class="n">SwitchArgumentAttribute</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="ArgParseMixin"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.ArgParseMixin">[docs]</a><span class="k">class</span> <span class="nc">ArgParseMixin</span><span class="p">(</span><span class="n">AttributeHelperMixin</span><span class="p">):</span>
+	<span class="n">__mainParser</span> <span class="o">=</span>  <span class="kc">None</span>
+	<span class="n">__subParser</span> <span class="o">=</span>   <span class="kc">None</span>
+	<span class="n">__subParsers</span> <span class="o">=</span>  <span class="p">{}</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		
+		<span class="c1"># create a commandline argument parser</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__subParser</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;sub-command help&#39;</span><span class="p">)</span>
+		
+		<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">CommonArgumentAttribute</span><span class="o">.</span><span class="n">GetMethods</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">comAttribute</span> <span class="ow">in</span> <span class="n">CommonArgumentAttribute</span><span class="o">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">comAttribute</span><span class="o">.</span><span class="n">Args</span><span class="p">),</span> <span class="o">**</span><span class="p">(</span><span class="n">comAttribute</span><span class="o">.</span><span class="n">KWArgs</span><span class="p">))</span>
+				
+		<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">CommonSwitchArgumentAttribute</span><span class="o">.</span><span class="n">GetMethods</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">comAttribute</span> <span class="ow">in</span> <span class="n">CommonSwitchArgumentAttribute</span><span class="o">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">comAttribute</span><span class="o">.</span><span class="n">Args</span><span class="p">),</span> <span class="o">**</span><span class="p">(</span><span class="n">comAttribute</span><span class="o">.</span><span class="n">KWArgs</span><span class="p">))</span>
+				
+		<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetMethods</span><span class="p">():</span>
+			<span class="n">defAttributes</span> <span class="o">=</span> <span class="n">DefaultAttribute</span><span class="o">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">defAttributes</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="n">defAttribute</span> <span class="o">=</span> <span class="n">defAttributes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">defAttribute</span><span class="o">.</span><span class="n">Handler</span><span class="p">)</span>
+				<span class="k">continue</span>
+				
+			<span class="n">cmdAttributes</span> <span class="o">=</span> <span class="n">CommandAttribute</span><span class="o">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cmdAttributes</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="n">cmdAttribute</span> <span class="o">=</span> <span class="n">cmdAttributes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+				<span class="n">subParser</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subParser</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="n">cmdAttribute</span><span class="o">.</span><span class="n">Command</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="n">cmdAttribute</span><span class="o">.</span><span class="n">KWArgs</span><span class="p">))</span>
+				<span class="n">subParser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">cmdAttribute</span><span class="o">.</span><span class="n">Handler</span><span class="p">)</span>
+				
+				<span class="k">for</span> <span class="n">argAttribute</span> <span class="ow">in</span> <span class="n">ArgumentAttribute</span><span class="o">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+					<span class="n">subParser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">argAttribute</span><span class="o">.</span><span class="n">Args</span><span class="p">),</span> <span class="o">**</span><span class="p">(</span><span class="n">argAttribute</span><span class="o">.</span><span class="n">KWArgs</span><span class="p">))</span>
+					
+				<span class="bp">self</span><span class="o">.</span><span class="n">__subParsers</span><span class="p">[</span><span class="n">cmdAttribute</span><span class="o">.</span><span class="n">Command</span><span class="p">]</span> <span class="o">=</span> <span class="n">subParser</span>
+				<span class="k">continue</span>
+				
+<div class="viewcode-block" id="ArgParseMixin.Run"><a class="viewcode-back" href="../../../PyInfrastructure/lib.pyAttribute.ArgParseAttributes.html#lib.pyAttribute.ArgParseAttributes.ArgParseMixin.Run">[docs]</a>	<span class="k">def</span> <span class="nf">Run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="kn">from</span> <span class="nn">argcomplete</span>  <span class="k">import</span> <span class="n">autocomplete</span>
+			<span class="n">autocomplete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+			<span class="k">pass</span>
+			
+		<span class="c1"># parse command line options and process split arguments in callback functions</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+		<span class="c1"># because func is a function (unbound to an object), it MUST be called with self as a first parameter</span>
+		<span class="n">args</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">MainParser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mainParser</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">SubParsers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subParsers</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

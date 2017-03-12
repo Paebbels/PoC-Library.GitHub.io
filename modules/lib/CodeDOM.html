@@ -1,0 +1,923 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.CodeDOM &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>lib.CodeDOM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for lib.CodeDOM</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#                   Martin Zabel</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    TODO</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Patrick Lehmann - Dresden, Germany</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">lib.Functions</span> <span class="k">import</span> <span class="n">Init</span>
+<span class="kn">from</span> <span class="nn">lib.Parser</span>    <span class="k">import</span> <span class="n">MismatchingParserResult</span><span class="p">,</span> <span class="n">MatchingParserResult</span><span class="p">,</span> <span class="n">EmptyChoiseParserResult</span><span class="p">,</span> <span class="n">GreedyMatchingParserResult</span>
+<span class="kn">from</span> <span class="nn">lib.Parser</span>    <span class="k">import</span> <span class="n">SpaceToken</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">,</span> <span class="n">StringToken</span><span class="p">,</span> <span class="n">NumberToken</span><span class="p">,</span> <span class="n">Tokenizer</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;CodeDOMMeta&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CodeDOMObject&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Expression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;UnaryExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;NotExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;BinaryExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;LogicalExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CompareExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;EqualExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;UnequalExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;LessThanExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;LessThanEqualExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GreaterThanExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;GreaterThanEqualExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;AndExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;OrExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;XorExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;InExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;NotInExpression&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Function&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ListElement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Literal&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;StringLiteral&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;IntegerLiteral&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Identifier&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;Statement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;BlockStatement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ConditionalBlockStatement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;EmptyLine&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;CommentLine&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;BlockedStatement&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;ExpressionChoice&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+
+<span class="n">DEBUG</span> <span class="o">=</span>   <span class="kc">False</span><span class="c1">#True</span>
+
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Base classes</span>
+<span class="c1"># ==============================================================================</span>
+<div class="viewcode-block" id="CodeDOMMeta"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CodeDOMMeta">[docs]</a><span class="k">class</span> <span class="nc">CodeDOMMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+<div class="viewcode-block" id="CodeDOMMeta.parse"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CodeDOMMeta.parse">[docs]</a>	<span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">mcls</span><span class="p">):</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="n">mcls</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">result</span></div>
+		
+	<span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CodeDOMMeta.GetChoiceParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CodeDOMMeta.GetChoiceParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetChoiceParser</span><span class="p">(</span><span class="n">choices</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init ChoiceParser&quot;</span><span class="p">)</span>
+		<span class="n">parsers</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">choices</span><span class="p">:</span>
+			<span class="n">parser</span> <span class="o">=</span> <span class="n">choice</span><span class="o">.</span><span class="n">GetParser</span><span class="p">()</span>
+			<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+			<span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="n">choice</span><span class="p">,</span> <span class="n">parser</span><span class="p">)</span>
+			<span class="n">parsers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
+			
+		<span class="n">removeList</span> <span class="o">=</span>  <span class="p">[]</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">for</span> <span class="n">parser</span> <span class="ow">in</span> <span class="n">parsers</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">parser</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				<span class="k">except</span> <span class="n">MismatchingParserResult</span><span class="p">:</span>
+					<span class="n">removeList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+				<span class="k">except</span> <span class="n">MatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ChoiceParser: found a matching choice&quot;</span><span class="p">)</span>
+					<span class="k">raise</span> <span class="n">ex</span>
+					
+			<span class="k">for</span> <span class="n">parser</span> <span class="ow">in</span> <span class="n">removeList</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;deactivating parser for </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">parser</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+				<span class="n">parsers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+			<span class="n">removeList</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+			
+			<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parsers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+				<span class="k">break</span>
+				
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ChoiceParser: list of choices is empty -&gt; no match found&quot;</span><span class="p">)</span>
+		<span class="k">raise</span> <span class="n">EmptyChoiseParserResult</span><span class="p">(</span><span class="s2">&quot;ChoiceParser: &quot;</span><span class="p">)</span></div>
+		
+	<span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CodeDOMMeta.GetRepeatParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CodeDOMMeta.GetRepeatParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetRepeatParser</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">generator</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init RepeatParser&quot;</span><span class="p">)</span>
+		<span class="n">parser</span> <span class="o">=</span> <span class="n">generator</span><span class="p">()</span>
+		<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+			<span class="k">except</span> <span class="n">EmptyChoiseParserResult</span><span class="p">:</span>
+				<span class="k">break</span>
+			<span class="k">except</span> <span class="n">MismatchingParserResult</span><span class="p">:</span>
+				<span class="k">break</span>
+			<span class="k">except</span> <span class="n">MatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RepeatParser: found a statement&quot;</span><span class="p">)</span>
+				<span class="n">callback</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+				
+				<span class="n">parser</span> <span class="o">=</span> <span class="n">generator</span><span class="p">()</span>
+				<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+				
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RepeatParser: repeat end&quot;</span><span class="p">)</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">()</span></div></div>
+		
+		
+<div class="viewcode-block" id="CodeDOMObject"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CodeDOMObject">[docs]</a><span class="k">class</span> <span class="nc">CodeDOMObject</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CodeDOMMeta</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="CodeDOMObject.Parse"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CodeDOMObject.Parse">[docs]</a>	<span class="k">def</span> <span class="nf">Parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">printChar</span><span class="p">):</span>
+		<span class="n">parser</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">GetParser</span><span class="p">()</span>
+		<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">Tokenizer</span><span class="o">.</span><span class="n">GetWordTokenizer</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+				<span class="k">if</span> <span class="n">printChar</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{BLUE}{token!s}{NOCOLOR}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="o">**</span><span class="n">Init</span><span class="o">.</span><span class="n">Foreground</span><span class="p">))</span>
+				<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				
+			<span class="c1"># FIXME: print(&quot;send empty token&quot;)</span>
+			<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		<span class="k">except</span> <span class="n">MatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">ex</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">except</span> <span class="n">MismatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div></div>
+			
+		<span class="c1"># print(&quot;close root parser&quot;)</span>
+		<span class="c1"># parser.close()</span>
+		
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Expressions</span>
+<span class="c1"># ==============================================================================</span>
+<div class="viewcode-block" id="Expression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.Expression">[docs]</a><span class="k">class</span> <span class="nc">Expression</span><span class="p">(</span><span class="n">CodeDOMObject</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+<div class="viewcode-block" id="UnaryExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.UnaryExpression">[docs]</a><span class="k">class</span> <span class="nc">UnaryExpression</span><span class="p">(</span><span class="n">Expression</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_child</span> <span class="o">=</span> <span class="n">child</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Child</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_child</span></div>
+		
+<div class="viewcode-block" id="NotExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.NotExpression">[docs]</a><span class="k">class</span> <span class="nc">NotExpression</span><span class="p">(</span><span class="n">UnaryExpression</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+		
+	<span class="n">__PARSER_EXPRESSIONS__</span> <span class="o">=</span>  <span class="kc">None</span>
+	
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="NotExpression.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.NotExpression.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init NotExpressionParser&quot;</span><span class="p">)</span>
+		<span class="n">child</span> <span class="o">=</span> <span class="kc">None</span>
+		
+		<span class="c1"># match for &quot;!&quot;</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="c1"># if (not isinstance(token, StringToken)):    raise MismatchingParserResult()</span>
+		<span class="c1"># if (token.Value != &quot;not&quot;):                  raise MismatchingParserResult()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span> <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="s2">&quot;!&quot;</span><span class="p">):</span>                    <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="c1"># match for optional whitespace</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		
+		<span class="c1"># match for sub expression</span>
+		<span class="c1"># ==========================================================================</span>
+		<span class="n">parser</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_EXPRESSIONS__</span><span class="o">.</span><span class="n">GetParser</span><span class="p">()</span>
+		<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">except</span> <span class="n">MatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="n">child</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">value</span>
+			
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NotExpressionParser: matched </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;not </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_child</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span></div>
+		
+<div class="viewcode-block" id="BinaryExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BinaryExpression">[docs]</a><span class="k">class</span> <span class="nc">BinaryExpression</span><span class="p">(</span><span class="n">Expression</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">leftChild</span><span class="p">,</span> <span class="n">rightChild</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_leftChild</span> <span class="o">=</span>   <span class="n">leftChild</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_rightChild</span> <span class="o">=</span>  <span class="n">rightChild</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">LeftChild</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_leftChild</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">RightChild</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rightChild</span>
+		
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="kc">None</span>
+	<span class="n">__PARSER_LHS_EXPRESSIONS__</span> <span class="o">=</span>  <span class="kc">None</span>
+	<span class="n">__PARSER_RHS_EXPRESSIONS__</span> <span class="o">=</span>  <span class="kc">None</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="kc">None</span>
+	
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BinaryExpression.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BinaryExpression.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init &quot;</span> <span class="o">+</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_NAME__</span><span class="p">)</span>
+		<span class="n">leftChild</span> <span class="o">=</span>   <span class="kc">None</span>
+		<span class="n">rightChild</span> <span class="o">=</span>  <span class="kc">None</span>
+		
+		<span class="c1"># match for opening (</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span> <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="s2">&quot;(&quot;</span><span class="p">):</span>                    <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="c1"># match for optional whitespace</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		
+		<span class="c1"># match for sub expression</span>
+		<span class="c1"># ==========================================================================</span>
+		<span class="n">parser</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_LHS_EXPRESSIONS__</span><span class="o">.</span><span class="n">GetParser</span><span class="p">()</span>
+		<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				<span class="n">token</span> <span class="o">=</span>   <span class="k">yield</span>
+		<span class="k">except</span> <span class="n">GreedyMatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="n">leftChild</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">except</span> <span class="n">MatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="n">leftChild</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">token</span> <span class="o">=</span>     <span class="k">yield</span>
+			
+		<span class="c1"># match for optional whitespace</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="c1"># match for operator keyword or sign(s)</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">StringToken</span><span class="p">)):</span>      <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">):</span>  <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">)):</span>       <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">:</span>
+				<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span> <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="n">sign</span><span class="p">):</span>                   <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+				<span class="c1"># match for optional whitespace</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+				<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">StringToken</span><span class="p">)):</span>    <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="n">kw</span><span class="p">):</span>                     <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+				<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">)):</span>     <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="n">kw</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">StringToken</span><span class="p">)):</span>      <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="n">kw</span><span class="p">):</span>                       <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">)):</span>       <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			
+		<span class="c1"># match for sub expression</span>
+		<span class="c1"># ==========================================================================</span>
+		<span class="n">parser</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_RHS_EXPRESSIONS__</span><span class="o">.</span><span class="n">GetParser</span><span class="p">()</span>
+		<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				<span class="n">token</span> <span class="o">=</span>     <span class="k">yield</span>
+		<span class="k">except</span> <span class="n">GreedyMatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="n">rightChild</span> <span class="o">=</span>  <span class="n">ex</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">except</span> <span class="n">MatchingParserResult</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+			<span class="n">rightChild</span> <span class="o">=</span>  <span class="n">ex</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">token</span> <span class="o">=</span>       <span class="k">yield</span>
+			
+		<span class="c1"># match for optional whitespace</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="c1"># match for closing )</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span> <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="s2">&quot;)&quot;</span><span class="p">):</span>                    <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">leftChild</span><span class="p">,</span> <span class="n">rightChild</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_NAME__</span> <span class="o">+</span> <span class="s2">&quot;: matched </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span>   <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span> <span class="n">op</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>  <span class="n">op</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>                                             <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__PARSER_OPERATOR__</span>
+		
+		<span class="k">return</span> <span class="s2">&quot;(</span><span class="si">{left!s}</span><span class="s2"> </span><span class="si">{op}</span><span class="s2"> </span><span class="si">{right!s}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_leftChild</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_rightChild</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="LogicalExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.LogicalExpression">[docs]</a><span class="k">class</span> <span class="nc">LogicalExpression</span><span class="p">(</span><span class="n">BinaryExpression</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+<div class="viewcode-block" id="CompareExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CompareExpression">[docs]</a><span class="k">class</span> <span class="nc">CompareExpression</span><span class="p">(</span><span class="n">LogicalExpression</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+<div class="viewcode-block" id="EqualExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.EqualExpression">[docs]</a><span class="k">class</span> <span class="nc">EqualExpression</span><span class="p">(</span><span class="n">CompareExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;EqualExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">,)</span></div>
+	
+	
+<div class="viewcode-block" id="UnequalExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.UnequalExpression">[docs]</a><span class="k">class</span> <span class="nc">UnequalExpression</span><span class="p">(</span><span class="n">CompareExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;UnequalExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span></div>
+	
+	
+<div class="viewcode-block" id="LessThanExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.LessThanExpression">[docs]</a><span class="k">class</span> <span class="nc">LessThanExpression</span><span class="p">(</span><span class="n">CompareExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;LessThanExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,)</span></div>
+	
+	
+<div class="viewcode-block" id="LessThanEqualExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.LessThanEqualExpression">[docs]</a><span class="k">class</span> <span class="nc">LessThanEqualExpression</span><span class="p">(</span><span class="n">CompareExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;LessThanEqualExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span></div>
+	
+	
+<div class="viewcode-block" id="GreaterThanExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.GreaterThanExpression">[docs]</a><span class="k">class</span> <span class="nc">GreaterThanExpression</span><span class="p">(</span><span class="n">CompareExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;GreaterThanExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,)</span></div>
+	
+	
+<div class="viewcode-block" id="GreaterThanEqualExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.GreaterThanEqualExpression">[docs]</a><span class="k">class</span> <span class="nc">GreaterThanEqualExpression</span><span class="p">(</span><span class="n">CompareExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;GreaterThanEqualExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span></div>
+	
+	
+<div class="viewcode-block" id="AndExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.AndExpression">[docs]</a><span class="k">class</span> <span class="nc">AndExpression</span><span class="p">(</span><span class="n">LogicalExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;AndExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="s2">&quot;and&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="OrExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.OrExpression">[docs]</a><span class="k">class</span> <span class="nc">OrExpression</span><span class="p">(</span><span class="n">LogicalExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;OrExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="s2">&quot;or&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="XorExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.XorExpression">[docs]</a><span class="k">class</span> <span class="nc">XorExpression</span><span class="p">(</span><span class="n">LogicalExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;XorExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="s2">&quot;xor&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="InExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.InExpression">[docs]</a><span class="k">class</span> <span class="nc">InExpression</span><span class="p">(</span><span class="n">LogicalExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;InExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="s2">&quot;in&quot;</span></div>
+	
+	
+<div class="viewcode-block" id="NotInExpression"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.NotInExpression">[docs]</a><span class="k">class</span> <span class="nc">NotInExpression</span><span class="p">(</span><span class="n">LogicalExpression</span><span class="p">):</span>
+	<span class="n">__PARSER_NAME__</span> <span class="o">=</span>             <span class="s2">&quot;NotInExpressionParser&quot;</span>
+	<span class="n">__PARSER_OPERATOR__</span> <span class="o">=</span>         <span class="p">[</span><span class="s2">&quot;not&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">]</span></div>
+	
+	
+<div class="viewcode-block" id="Function"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.Function">[docs]</a><span class="k">class</span> <span class="nc">Function</span><span class="p">(</span><span class="n">Expression</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+	
+<div class="viewcode-block" id="ListElement"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.ListElement">[docs]</a><span class="k">class</span> <span class="nc">ListElement</span><span class="p">(</span><span class="n">Expression</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		
+	<span class="n">__PARSER_LIST_ELEMENT_EXPRESSIONS__</span> <span class="o">=</span> <span class="kc">None</span>
+	
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ListElement.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.ListElement.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init ListElementParser&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># match for EXISTS keyword</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span> <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="s2">&quot;,&quot;</span><span class="p">):</span>                    <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="c1"># match for optional whitespace</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		
+		<span class="n">parser</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__PARSER_LIST_ELEMENT_EXPRESSIONS__</span><span class="o">.</span><span class="n">GetParser</span><span class="p">()</span>
+		<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+		
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">parser</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span></div></div>
+			
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Literals</span>
+<span class="c1"># ==============================================================================</span>
+<div class="viewcode-block" id="Literal"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.Literal">[docs]</a><span class="k">class</span> <span class="nc">Literal</span><span class="p">(</span><span class="n">Expression</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+	
+<div class="viewcode-block" id="StringLiteral"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.StringLiteral">[docs]</a><span class="k">class</span> <span class="nc">StringLiteral</span><span class="p">(</span><span class="n">Literal</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="StringLiteral.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.StringLiteral.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init StringLiteralParser&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># match for opening &quot;</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span>    <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">!=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">):</span>                      <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="c1"># match for string: value</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="n">wasEscapeSign</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">):</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">):</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">wasEscapeSign</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
+						<span class="n">wasEscapeSign</span> <span class="o">=</span> <span class="kc">False</span>
+						<span class="n">value</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+						<span class="k">continue</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="k">break</span>
+				<span class="k">elif</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">):</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">wasEscapeSign</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
+						<span class="n">wasEscapeSign</span> <span class="o">=</span> <span class="kc">False</span>
+						<span class="n">value</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span>
+						<span class="k">continue</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">wasEscapeSign</span> <span class="o">=</span> <span class="kc">True</span>
+						<span class="k">continue</span>
+			<span class="n">value</span> <span class="o">+=</span> <span class="n">token</span><span class="o">.</span><span class="n">Value</span>
+			
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;StringLiteralParser: matched </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="si">{0}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="IntegerLiteral"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.IntegerLiteral">[docs]</a><span class="k">class</span> <span class="nc">IntegerLiteral</span><span class="p">(</span><span class="n">Literal</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="IntegerLiteral.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.IntegerLiteral.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init IntegerLiteralParser&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># match for opening &quot;</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">NumberToken</span><span class="p">)):</span>      <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span>
+		
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IntegerLiteralParser: matched </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span></div>
+		
+		
+<div class="viewcode-block" id="Identifier"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.Identifier">[docs]</a><span class="k">class</span> <span class="nc">Identifier</span><span class="p">(</span><span class="n">Expression</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Identifier.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.Identifier.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init IdentifierParser&quot;</span><span class="p">)</span>
+		
+		<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">StringToken</span><span class="p">):</span>
+				<span class="n">name</span> <span class="o">+=</span> <span class="n">token</span><span class="o">.</span><span class="n">Value</span>
+			<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">NumberToken</span><span class="p">):</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+					<span class="n">name</span> <span class="o">+=</span> <span class="n">token</span><span class="o">.</span><span class="n">Value</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">(</span><span class="s2">&quot;IdentifierParser: Expected identifier name. Got a number.&quot;</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span><span class="p">)):</span>
+				<span class="n">name</span> <span class="o">+=</span> <span class="n">token</span><span class="o">.</span><span class="n">Value</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">(</span><span class="s2">&quot;IdentifierParser: Expected identifier name.&quot;</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">break</span>
+				
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IdentifierParser: matched </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+		<span class="k">raise</span> <span class="n">GreedyMatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
+		
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Statements</span>
+<span class="c1"># ==============================================================================</span>
+<div class="viewcode-block" id="Statement"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.Statement">[docs]</a><span class="k">class</span> <span class="nc">Statement</span><span class="p">(</span><span class="n">CodeDOMObject</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commentText</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_commentText</span> <span class="o">=</span> <span class="n">commentText</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">CommentText</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commentText</span>
+	<span class="nd">@CommentText</span><span class="o">.</span><span class="n">setter</span>
+	<span class="k">def</span> <span class="nf">CommentText</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commentText</span> <span class="o">=</span> <span class="n">value</span></div>
+	
+	
+<div class="viewcode-block" id="BlockStatement"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BlockStatement">[docs]</a><span class="k">class</span> <span class="nc">BlockStatement</span><span class="p">(</span><span class="n">Statement</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commentText</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">commentText</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_statements</span> <span class="o">=</span> <span class="p">[]</span>
+		
+<div class="viewcode-block" id="BlockStatement.AddStatement"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BlockStatement.AddStatement">[docs]</a>	<span class="k">def</span> <span class="nf">AddStatement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stmt</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_statements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span></div>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Statements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">_indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;BlockStatement&quot;</span>
+		<span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span><span class="p">:</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">buffer</span></div>
+		
+		
+<div class="viewcode-block" id="ConditionalBlockStatement"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.ConditionalBlockStatement">[docs]</a><span class="k">class</span> <span class="nc">ConditionalBlockStatement</span><span class="p">(</span><span class="n">BlockStatement</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expression</span><span class="p">,</span> <span class="n">commentText</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">commentText</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_expression</span> <span class="o">=</span> <span class="n">expression</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Expression</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expression</span>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">_indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span>
+		<span class="n">buffer</span> <span class="o">=</span> <span class="n">_indent</span> <span class="o">+</span> <span class="s2">&quot;ConditionalBlockStatement &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expression</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span><span class="p">:</span>
+			<span class="n">buffer</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">buffer</span></div>
+		
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Empty and comment lines</span>
+<span class="c1"># ==============================================================================</span>
+<div class="viewcode-block" id="EmptyLine"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.EmptyLine">[docs]</a><span class="k">class</span> <span class="nc">EmptyLine</span><span class="p">(</span><span class="n">CodeDOMObject</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="EmptyLine.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.EmptyLine.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="c1"># match for optional whitespace</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>            <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		
+		<span class="c1"># match for delimiter sign: \n</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span>  <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span> <span class="o">+</span> <span class="s2">&quot;&lt;empty&gt;&quot;</span></div>
+		
+		
+<div class="viewcode-block" id="CommentLine"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CommentLine">[docs]</a><span class="k">class</span> <span class="nc">CommentLine</span><span class="p">(</span><span class="n">CodeDOMObject</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commentText</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_commentText</span> <span class="o">=</span> <span class="n">commentText</span>
+		
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">Text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commentText</span>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="CommentLine.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.CommentLine.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="c1"># match for optional whitespace</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">SpaceToken</span><span class="p">):</span>           <span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+		
+		<span class="c1"># match for sign: #</span>
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">)):</span> <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;#&quot;</span><span class="p">):</span>            <span class="k">raise</span> <span class="n">MismatchingParserResult</span><span class="p">()</span>
+		
+		<span class="c1"># match for any until line end</span>
+		<span class="n">commentText</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="k">yield</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">CharacterToken</span><span class="p">):</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">Value</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>      <span class="k">break</span>
+			<span class="n">commentText</span> <span class="o">+=</span> <span class="n">token</span><span class="o">.</span><span class="n">Value</span>
+			
+		<span class="c1"># construct result</span>
+		<span class="n">result</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">commentText</span><span class="p">)</span>
+		<span class="k">raise</span> <span class="n">MatchingParserResult</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+		
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">#</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="n">indent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commentText</span><span class="p">)</span></div>
+		
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Forward declarations</span>
+<span class="c1"># ==============================================================================</span>
+<div class="viewcode-block" id="BlockedStatement"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BlockedStatement">[docs]</a><span class="k">class</span> <span class="nc">BlockedStatement</span><span class="p">(</span><span class="n">CodeDOMObject</span><span class="p">):</span>
+	<span class="n">_allowedStatements</span> <span class="o">=</span> <span class="p">[]</span>
+	
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BlockedStatement.AddChoice"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BlockedStatement.AddChoice">[docs]</a>	<span class="k">def</span> <span class="nf">AddChoice</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">cls</span><span class="o">.</span><span class="n">_allowedStatements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BlockedStatement.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.BlockedStatement.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">GetChoiceParser</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_allowedStatements</span><span class="p">)</span></div></div>
+		
+		
+<div class="viewcode-block" id="ExpressionChoice"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.ExpressionChoice">[docs]</a><span class="k">class</span> <span class="nc">ExpressionChoice</span><span class="p">(</span><span class="n">CodeDOMObject</span><span class="p">):</span>
+	<span class="n">_allowedExpressions</span> <span class="o">=</span> <span class="p">[]</span>
+	
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ExpressionChoice.AddChoice"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.ExpressionChoice.AddChoice">[docs]</a>	<span class="k">def</span> <span class="nf">AddChoice</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">cls</span><span class="o">.</span><span class="n">_allowedExpressions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+		
+	<span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ExpressionChoice.GetParser"><a class="viewcode-back" href="../../PyInfrastructure/lib.CodeDOM.html#Parser.FilesCodeDOM.ExpressionChoice.GetParser">[docs]</a>	<span class="k">def</span> <span class="nf">GetParser</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">GetChoiceParser</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_allowedExpressions</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

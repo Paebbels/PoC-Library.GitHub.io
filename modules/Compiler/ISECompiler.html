@@ -1,0 +1,334 @@
+﻿
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiler.ISECompiler &mdash; The PoC-Library 1.1.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../../index.html"/>
+        <link rel="up" title="Compiler" href="../Compiler.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The PoC-Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../WhatIsPoC/index.html">What is PoC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QuickStart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GetInvolved/index.html">Get Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Licenses/License.html">Apache License 2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UsingPoC/index.html">Using PoC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interfaces/index.html">IP Core Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IPCores/index.html">IP Core Documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Miscelaneous/ThirdParty.html">Third Party Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ConstraintFiles/index.html">Constraint Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolChains/index.html">Tool Chain Specifics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../References/CommandReference.html">Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PyInfrastructure/index.html">Python Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References/more.html">More ...</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ChangeLog/index.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Internal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/ToDo.html">ToDo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Internal/Sphinx.html">Sphinx</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The PoC-Library</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../Compiler.html">Compiler</a> &raquo;</li>
+        
+      <li>Compiler.ISECompiler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Compiler.ISECompiler</h1><div class="highlight"><pre>
+<span></span><span class="c1"># EMACS settings: -*-	tab-width: 2; indent-tabs-mode: t; python-indent-offset: 2 -*-</span>
+<span class="c1"># vim: tabstop=2:shiftwidth=2:noexpandtab</span>
+<span class="c1"># kate: tab-width 2; replace-tabs off; indent-width 2;</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Authors:          Patrick Lehmann</span>
+<span class="c1">#</span>
+<span class="c1"># Python Module:    Xilinx ISE synthesizer (compiler).</span>
+<span class="c1">#</span>
+<span class="c1"># License:</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Copyright 2007-2016 Technische Universitaet Dresden - Germany</span>
+<span class="c1">#                     Chair of VLSI-Design, Diagnostics and Architecture</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># load dependencies</span>
+<span class="kn">from</span> <span class="nn">Base.Project</span>           <span class="k">import</span> <span class="n">ToolChain</span><span class="p">,</span> <span class="n">Tool</span>
+<span class="kn">from</span> <span class="nn">DataBase.Entity</span>        <span class="k">import</span> <span class="n">WildCard</span><span class="p">,</span> <span class="n">FQN</span><span class="p">,</span> <span class="n">EntityTypes</span>
+<span class="kn">from</span> <span class="nn">Compiler</span>               <span class="k">import</span> <span class="n">Compiler</span> <span class="k">as</span> <span class="n">BaseCompiler</span>
+<span class="kn">from</span> <span class="nn">Compiler.XCOCompiler</span>   <span class="k">import</span> <span class="n">Compiler</span> <span class="k">as</span> <span class="n">XCOCompiler</span>
+<span class="kn">from</span> <span class="nn">Compiler.XSTCompiler</span>   <span class="k">import</span> <span class="n">Compiler</span> <span class="k">as</span> <span class="n">XSTCompiler</span>
+
+
+<span class="n">__api__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">&#39;Compiler&#39;</span>
+<span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="n">__api__</span>
+
+<div class="viewcode-block" id="Compiler"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.ISECompiler.html#Compiler.ISECompiler.Compiler">[docs]</a><span class="k">class</span> <span class="nc">Compiler</span><span class="p">(</span><span class="n">BaseCompiler</span><span class="p">):</span>
+	<span class="n">TOOL_CHAIN</span> <span class="o">=</span>      <span class="n">ToolChain</span><span class="o">.</span><span class="n">Xilinx_ISE</span>
+	<span class="n">TOOL</span> <span class="o">=</span>            <span class="n">Tool</span><span class="o">.</span><span class="n">Any</span>
+	
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">noCleanUp</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">dryRun</span><span class="p">,</span> <span class="n">noCleanUp</span><span class="p">)</span>
+		
+		<span class="bp">self</span><span class="o">.</span><span class="n">_PrepareCompiler</span><span class="p">()</span>
+		
+<div class="viewcode-block" id="Compiler._PrepareCompiler"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.ISECompiler.html#Compiler.ISECompiler.Compiler._PrepareCompiler">[docs]</a>	<span class="k">def</span> <span class="nf">_PrepareCompiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Preparing Meta-Compiler for the Xilinx ISE tool chain.&quot;</span><span class="p">)</span></div>
+		
+<div class="viewcode-block" id="Compiler.RunAll"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.ISECompiler.html#Compiler.ISECompiler.Compiler.RunAll">[docs]</a>	<span class="k">def</span> <span class="nf">RunAll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fqnList</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">fqn</span> <span class="ow">in</span> <span class="n">fqnList</span><span class="p">:</span>
+			<span class="n">entity</span> <span class="o">=</span> <span class="n">fqn</span><span class="o">.</span><span class="n">Entity</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">WildCard</span><span class="p">)):</span>
+				<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">GetEntities</span><span class="p">():</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">ent</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span></div>
+				
+<div class="viewcode-block" id="Compiler.Run"><a class="viewcode-back" href="../../PyInfrastructure/Compiler.ISECompiler.html#Compiler.ISECompiler.Compiler.Run">[docs]</a>	<span class="k">def</span> <span class="nf">Run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;Checking &#39;</span><span class="si">{0!s}</span><span class="s2">&#39; for dependencies...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entity</span><span class="p">))</span>
+		<span class="n">dependencies</span> <span class="o">=</span>  <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">dependency</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">Dependencies</span><span class="p">:</span>
+			<span class="n">toolName</span><span class="p">,</span> <span class="n">entityName</span> <span class="o">=</span> <span class="n">dependency</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+			<span class="n">dependencyFQN</span> <span class="o">=</span> <span class="n">FQN</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="p">,</span> <span class="n">entityName</span><span class="p">,</span> <span class="n">defaultLibrary</span><span class="o">=</span><span class="s2">&quot;PoC&quot;</span><span class="p">,</span> <span class="n">defaultType</span><span class="o">=</span><span class="n">EntityTypes</span><span class="o">.</span><span class="n">NetList</span><span class="p">)</span>
+			<span class="n">tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">toolName</span><span class="p">)</span>
+			<span class="n">dependencies</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">tool</span><span class="p">,</span> <span class="n">dependencyFQN</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">LogVerbose</span><span class="p">(</span><span class="s2">&quot;  IP core: </span><span class="si">{1!s}</span><span class="s2"> compile with </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dependencyFQN</span><span class="p">,</span> <span class="n">tool</span><span class="p">))</span>
+			
+		<span class="k">for</span> <span class="n">tool</span><span class="p">,</span><span class="n">fqn</span> <span class="ow">in</span> <span class="n">dependencies</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">tool</span> <span class="ow">is</span> <span class="n">Tool</span><span class="o">.</span><span class="n">Xilinx_CoreGen</span><span class="p">):</span>
+				<span class="n">compiler</span> <span class="o">=</span> <span class="n">XCOCompiler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NoCleanUp</span><span class="p">)</span>
+				<span class="n">compiler</span><span class="o">.</span><span class="n">RunAll</span><span class="p">([</span><span class="n">fqn</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">tool</span> <span class="ow">is</span> <span class="n">Tool</span><span class="o">.</span><span class="n">Xilinx_XST</span><span class="p">):</span>
+				<span class="n">compiler</span> <span class="o">=</span> <span class="n">XSTCompiler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DryRun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NoCleanUp</span><span class="p">)</span>
+				<span class="n">compiler</span><span class="o">.</span><span class="n">RunAll</span><span class="p">([</span><span class="n">fqn</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
+      Last updated on Mar 12, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
+      <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

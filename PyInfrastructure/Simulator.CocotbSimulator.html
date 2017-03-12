@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Simulator.CocotbSimulator &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>Simulator.CocotbSimulator &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,21 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/> 
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
+        <link rel="up" title="Simulator" href="Simulator.html"/>
+        <link rel="next" title="Simulator.GHDLSimulator" href="Simulator.GHDLSimulator.html"/>
+        <link rel="prev" title="Simulator.ActiveHDLSimulator" href="Simulator.ActiveHDLSimulator.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -103,9 +106,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a></li>
 </ul>
 <p class="caption"><span class="caption-text">References</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PoC.html">PoC.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Base.html">Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Compiler.html">Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataBase.html">DataBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parser.html">Parser</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Simulator.html">Simulator</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Simulator.ActiveHDLSimulator.html">Simulator.ActiveHDLSimulator</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Simulator.CocotbSimulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Simulator.GHDLSimulator.html">Simulator.GHDLSimulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Simulator.ISESimulator.html">Simulator.ISESimulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Simulator.ModelSimSimulator.html">Simulator.ModelSimSimulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Simulator.QuestaSimulator.html">Simulator.QuestaSimulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Simulator.RivieraPROSimulator.html">Simulator.RivieraPROSimulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Simulator.VivadoSimulator.html">Simulator.VivadoSimulator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ToolChain.html">ToolChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -161,13 +185,17 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Python Infrastructure</a> &raquo;</li>
+        
+          <li><a href="Simulator.html">Simulator</a> &raquo;</li>
+        
       <li>Simulator.CocotbSimulator</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/PyInfrastructure/Simulator.CocotbSimulator.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/PyInfrastructure/Simulator.CocotbSimulator.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,7 +217,7 @@ Base class for all Simulator classes.</li>
 </ul>
 <dl class="class">
 <dt id="Simulator.CocotbSimulator.Simulator">
-<em class="property">class </em><code class="descclassname">Simulator.CocotbSimulator.</code><code class="descname">Simulator</code><span class="sig-paren">(</span><em>host</em>, <em>dryRun</em>, <em>simulationSteps</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/CocotbSimulator.html#Simulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">Simulator.CocotbSimulator.</code><code class="descname">Simulator</code><span class="sig-paren">(</span><em>host</em>, <em>dryRun</em>, <em>simulationSteps</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator/CocotbSimulator.html#Simulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Inheritance</p>
 <object data="../_images/inheritance-3fee2bf8b35db7ed8b4aa4f3c9beab004c6f39bc.svg" type="image/svg+xml">
             <p class="warning">Inheritance diagram of Simulator</p></object>
@@ -211,17 +239,17 @@ Base class for all Simulator classes.</li>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._PrepareSimulator">
-<code class="descname">_PrepareSimulator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/CocotbSimulator.html#Simulator._PrepareSimulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._PrepareSimulator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareSimulator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator/CocotbSimulator.html#Simulator._PrepareSimulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._PrepareSimulator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator.RunAll">
-<code class="descname">RunAll</code><span class="sig-paren">(</span><em>fqnList</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/CocotbSimulator.html#Simulator.RunAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.RunAll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RunAll</code><span class="sig-paren">(</span><em>fqnList</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator/CocotbSimulator.html#Simulator.RunAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.RunAll" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._RunSimulation">
-<code class="descname">_RunSimulation</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator/CocotbSimulator.html#Simulator._RunSimulation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunSimulation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunSimulation</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator/CocotbSimulator.html#Simulator._RunSimulation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunSimulation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -308,17 +336,17 @@ Base class for all Simulator classes.</li>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator.PrintOverallSimulationReport">
-<code class="descname">PrintOverallSimulationReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.PrintOverallSimulationReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.PrintOverallSimulationReport" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PrintOverallSimulationReport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator.PrintOverallSimulationReport"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.PrintOverallSimulationReport" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator.PrintSimulationReportLine">
-<code class="descname">PrintSimulationReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.PrintSimulationReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.PrintSimulationReportLine" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PrintSimulationReportLine</code><span class="sig-paren">(</span><em>testObject</em>, <em>indent</em>, <em>nameColumnWidth</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator.PrintSimulationReportLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.PrintSimulationReportLine" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator.Run">
-<code class="descname">Run</code><span class="sig-paren">(</span><em>testbench</em>, <em>board</em>, <em>vhdlVersion</em>, <em>vhdlGenerics=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.Run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Run</code><span class="sig-paren">(</span><em>testbench</em>, <em>board</em>, <em>vhdlVersion</em>, <em>vhdlGenerics=None</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator.Run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.Run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the Testbench message line, create a PoCProject and add the first <a href="#id1"><span class="problematic" id="id2">*</span></a>.files file to it.</p>
 </dd></dl>
 
@@ -329,7 +357,7 @@ Base class for all Simulator classes.</li>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator.TryRun">
-<code class="descname">TryRun</code><span class="sig-paren">(</span><em>testbench</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.TryRun" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TryRun</code><span class="sig-paren">(</span><em>testbench</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator.TryRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator.TryRun" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to run a testbench. Skip skipable exceptions by printing the error and its cause.</p>
 </dd></dl>
 
@@ -387,32 +415,32 @@ Base class for all Simulator classes.</li>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._PrepareEnvironment_PurgeDirectory">
-<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._PrepareEnvironment_PurgeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareEnvironment_PurgeDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator._PrepareEnvironment_PurgeDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._PrepareEnvironment_PurgeDirectory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._PrepareSimulationEnvironment">
-<code class="descname">_PrepareSimulationEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._PrepareSimulationEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._PrepareSimulationEnvironment" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_PrepareSimulationEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator._PrepareSimulationEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._PrepareSimulationEnvironment" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._RunAnalysis">
-<code class="descname">_RunAnalysis</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunAnalysis" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunAnalysis</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator._RunAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunAnalysis" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._RunCoverage">
-<code class="descname">_RunCoverage</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunCoverage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunCoverage</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator._RunCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunCoverage" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._RunElaboration">
-<code class="descname">_RunElaboration</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunElaboration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunElaboration" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunElaboration</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator._RunElaboration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunElaboration" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="Simulator.CocotbSimulator.Simulator._RunView">
-<code class="descname">_RunView</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Simulator.html#Simulator._RunView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunView" title="Permalink to this definition">¶</a></dt>
+<code class="descname">_RunView</code><span class="sig-paren">(</span><em>testbench</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/Simulator.html#Simulator._RunView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Simulator.CocotbSimulator.Simulator._RunView" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -438,13 +466,22 @@ Base class for all Simulator classes.</li>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Simulator.GHDLSimulator.html" class="btn btn-neutral float-right" title="Simulator.GHDLSimulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Simulator.ActiveHDLSimulator.html" class="btn btn-neutral" title="Simulator.ActiveHDLSimulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -466,25 +503,25 @@ Base class for all Simulator classes.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

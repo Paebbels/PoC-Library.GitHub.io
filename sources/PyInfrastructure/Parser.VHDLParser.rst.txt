@@ -1,0 +1,10 @@
+Parser.VHDLParser
+=====================
+
+.. automodule:: Parser.VHDLParser
+
+
+.. currentmodule:: Parser.VHDLParser
+
+
+.. #-----------------------------------

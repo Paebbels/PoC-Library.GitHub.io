@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Simulation &mdash; The PoC-Library 1.1.1 documentation</title>
+  <title>Simulation &mdash; The PoC-Library 1.1.2 documentation</title>
   
 
   
@@ -24,24 +24,24 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="The PoC-Library 1.1.1 documentation" href="../index.html"/>
+    <link rel="top" title="The PoC-Library 1.1.2 documentation" href="../index.html"/>
         <link rel="up" title="Using PoC" href="index.html"/>
         <link rel="next" title="Synthesis" href="Synthesis.html"/>
         <link rel="prev" title="Adding IP Cores to a Project" href="AddingIPCores.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -138,6 +138,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../References/CommandReference.html">Command Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/Database.html">IP Core Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyInfrastructure/index.html">Python Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References/more.html">More ...</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
@@ -201,7 +202,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/UsingPoC/Simulation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/UsingPoC/Simulation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -285,7 +286,7 @@ passes the fully qualified PoC entity name <code class="docutils literal"><span 
 to the tool. All required source file are gathered and compiled to an
 executable. Afterwards this executable is launched in CLI mode and it&#8217;s outputs
 are displayed in console:</p>
-<a class="reference external image-reference" href="/_static/images/ghdl/arith_prng_tb.posh.png:alt:PowerShellconsoleoutputafterrunningPoC.arith.prngwithGHDL."><img alt="../_images/arith_prng_tb.posh.png" src="../_images/arith_prng_tb.posh.png" /></a>
+<a class="reference external image-reference" href="/_static/images/ghdl/arith_prng_tb.posh.png:alt:PowerShellconsoleoutputafterrunningPoC.arith.prngwithGHDL."><img alt="../_images/arith_prng_tb.posh.png" src="../images/arith_prng_tb.posh.png" /></a>
 <p>Each testbench uses PoC&#8217;s simulation helper packages to count asserts and to
 track active stimuli and checker processes. After a completed simulation run,
 an report is written to STDOUT or the simulator&#8217;s console. Note the line
@@ -301,7 +302,7 @@ file for GTKWave), then it is preloaded into the simulator&#8217;s waveform view
 </pre></div>
 </div>
 <p>The opened waveform viewer and displayed waveform should look like this:</p>
-<a class="reference external image-reference" href="/_static/images/gtkwave/arith_prng_tb.png:alt:GTKWavewaveformviewofPoC.arith.prng."><img alt="../_images/arith_prng_tb.png" src="../_images/arith_prng_tb.png" /></a>
+<a class="reference external image-reference" href="/_static/images/gtkwave/arith_prng_tb.png:alt:GTKWavewaveformviewofPoC.arith.prng."><img alt="../_images/arith_prng_tb.png" src="../images/arith_prng_tb.png" /></a>
 </div>
 <div class="section" id="vendor-specific-testbenches">
 <span id="using-sim-vendor"></span><h2><a class="toc-backref" href="#id5">Vendor Specific Testbenches</a><a class="headerlink" href="#vendor-specific-testbenches" title="Permalink to this headline">¶</a></h2>
@@ -744,7 +745,7 @@ current namespace and all sub-namespaces.</p>
 </pre></div>
 </div>
 <p><strong>Resulting output:</strong></p>
-<a class="reference external image-reference" href="/_static/images/active-hdl/multiple.png:alt:ReportafterrunningmultipletestbenchesinActive-HDL."><img alt="../_images/multiple.png" src="../_images/multiple.png" /></a>
+<a class="reference external image-reference" href="/_static/images/active-hdl/multiple.png:alt:ReportafterrunningmultipletestbenchesinActive-HDL."><img alt="../_images/multiple.png" src="../images/multiple.png" /></a>
 </div>
 <div class="section" id="continuous-integration-ci">
 <span id="using-sim-ci"></span><h2><a class="toc-backref" href="#id14">Continuous Integration (CI)</a><a class="headerlink" href="#continuous-integration-ci" title="Permalink to this headline">¶</a></h2>
@@ -759,7 +760,7 @@ messages:</p>
 <span class="p">.\</span><span class="n">poc</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-q</span> <span class="n">ghdl</span> <span class="n">PoC</span><span class="p">.*</span>
 </pre></div>
 </div>
-<a class="reference external image-reference" href="/_static/images/ghdl/PoC_all.png"><img alt="Overall testbench report after running all PoC testbenches in GHDL." src="../_images/PoC_all.png" /></a>
+<a class="reference external image-reference" href="/_static/images/ghdl/PoC_all.png"><img alt="Overall testbench report after running all PoC testbenches in GHDL." src="../images/PoC_all.png" /></a>
 <p>If the vendor libraries are available and pre-compiled, then it&#8217;s also possible
 to run a CI flow for a specific vendor. This is an Altera example for the
 Terrasic DE4 board:</p>
@@ -809,7 +810,7 @@ simulator tool chains. This is required to invoke the simulators.</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2007-2016 Technische Universitaet Dresden - Germany, Chair of VLSI-Design, Diagnostics and Architecture.
-      Last updated on Mar 05, 2017.
+      Last updated on Mar 12, 2017.
 
     </p>
   </div>
@@ -831,25 +832,25 @@ simulator tool chains. This is required to invoke the simulators.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.1.1',
+            VERSION:'1.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/skins/default.js"></script>
       <script type="text/javascript" src="http://wavedrom.com/WaveDrom.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   
